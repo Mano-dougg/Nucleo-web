@@ -106,7 +106,7 @@ main {
     align-items: center;
 
     gap: 15px;
-    padding: 8px 12px;
+    padding: 0 12px;
     border-radius: 22px;
 
     background-color: var(--bg-social-med9a);
