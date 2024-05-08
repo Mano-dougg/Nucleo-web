@@ -71,6 +71,12 @@ footer{
     justify-content: flex-end;
 }
 
+#imgRedes{
+    width: 231px;
+    height: 44px;
+    display: none;
+}
+
 .rodape{
     width: 524px;
     height: 60px;

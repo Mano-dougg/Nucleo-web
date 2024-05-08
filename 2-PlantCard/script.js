@@ -1,4 +1,9 @@
 function clicar() {
-    document.getElementById("imgRedes").innerHTML =
-    "<img src='imagens/redes sociais.png'>";
+    if (imgRedes.style.display == 'none') {
+        imgRedes.style.display = 'block'
+    }
+
+    else {
+    imgRedes.style.display = 'none'
+    }
 }   
