@@ -103,17 +103,6 @@ footer{
     justify-content: space-between;
 }
 
-h2{
-    font-family: "Overpass";
-    font-size: 24px;
-}
-
-.pData{
-    margin-top: 0;
-    font-family: "Overpass";
-    font-weight: bold;
-}
-
 
 /* RESPONSIVIDADE */ 
 @media (max-width: 492px) {
