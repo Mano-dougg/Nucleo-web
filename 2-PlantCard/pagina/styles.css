@@ -59,37 +59,34 @@ p{
     cursor: pointer;
 }
 @media (width<= 400px){
-    body{
-        height: 19px;
-        padding-top: 0px;
-        flex-direction: column;
-    }
     h1{
         padding-top: 25px;
     }
-    .plantas img{
+    .plantas{
         width:350px;
-        height: auto;   
+        max-height: 202px;
+        overflow: hidden;
+        border-radius: 30px 30px 0px 0px;
     }
     .card{
-        padding-top: 202px;
-        margin-top: 50px;
-        max-height: max-content;
+        max-height: 708px;
         flex-direction: column;
         max-width: 350px;
-        background:#DFDFD6
-        
+        margin-block: 30px;
     }
     .descricao{
-        padding-top: 100px;
-    }
-    #folhas{
-        max-height: 202px;
-    }
+        padding-top: 0px;
+        background:#DFDFD6;
+        max-height: 506px;
+        border-radius: 0px 0px 30px 30px;
+    }   
     .autor{
-        padding-top: 50px;
+        padding-top: 30px;
     }
     .hamburguer{
-        margin-left: 60px;
+        margin-left: 60px;  
+    }
+    #folhas{
+        width: 100%;
     }
 }
