@@ -152,7 +152,8 @@ img{
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 470px){
+@media (min-width: 470px) and (max-width: 769px){
+    /* MOBILE */
     .card{
         max-width: 320px;
         max-height:800px;
@@ -191,6 +192,56 @@ img{
 
     .menu-wrap{
         left: 25%;
+        width: 200px;
+    }
+
+    .menu{
+        border-radius: 35px;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 991px){
+    /* TABLET */
+
+    .card{
+        max-width: 620px;
+        max-height: 1100px;
+        flex-direction: column;
+    }
+
+    .card-image{  
+        max-height: inherit;
+        background-image: url(assets/img/folha\ tablet.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 25px 25px 0 0;
+        object-fit: cover;
+        max-width: 690px;
+        max-height: 300px;
+        margin: 0;
+        position: relative;
+    }
+
+    .card-image img{
+        opacity: 0;
+    }
+
+    .card-content{
+        padding: 25px;
+    }
+
+    .card-content-text .text{
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .card-content-footer{
+        margin-top: 70px;
+    }
+
+    .menu-wrap{
+        left: 65%;
         width: 200px;
     }
 
