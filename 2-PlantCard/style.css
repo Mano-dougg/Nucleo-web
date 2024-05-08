@@ -1,3 +1,9 @@
+/* ANIMAÇÕES */
+@keyframes animationRedes{
+    from {width: 0px;}  
+    to {width: 231px;}
+}
+
 /* AJUSTES GERAIS */
 * {
     padding: 0;
@@ -75,6 +81,8 @@ footer{
     width: 231px;
     height: 44px;
     display: none;
+    animation-name: animationRedes;
+    animation-duration: 1s;
 }
 
 .rodape{
