@@ -58,3 +58,38 @@ p{
     background-color:#DFDFD6;
     cursor: pointer;
 }
+@media (width<= 400px){
+    body{
+        height: 19px;
+        padding-top: 0px;
+        flex-direction: column;
+    }
+    h1{
+        padding-top: 25px;
+    }
+    .plantas img{
+        width:350px;
+        height: auto;   
+    }
+    .card{
+        padding-top: 202px;
+        margin-top: 50px;
+        max-height: max-content;
+        flex-direction: column;
+        max-width: 350px;
+        background:#DFDFD6
+        
+    }
+    .descricao{
+        padding-top: 100px;
+    }
+    #folhas{
+        max-height: 202px;
+    }
+    .autor{
+        padding-top: 50px;
+    }
+    .hamburguer{
+        margin-left: 60px;
+    }
+}
