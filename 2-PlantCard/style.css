@@ -4,6 +4,11 @@
     to {width: 231px;}
 }
 
+@keyframes animationTextBox {
+    from {transform: translateX(1200px);}
+    to {transform: translateX(0px);}
+}
+
 /* AJUSTES GERAIS */
 * {
     padding: 0;
@@ -42,6 +47,8 @@ header{
     margin-left: 30px;
     display: flex;
     align-items: center;
+    animation-name: animationTextBox;
+    animation-duration: 2s;
 }
 
 h1{
@@ -55,6 +62,8 @@ main{
     width: 524px;
     height: 222px;
     margin-left: 30px;
+    animation-name: animationTextBox;
+    animation-duration: 2s;
 }
 
 p{
@@ -68,6 +77,8 @@ footer{
     width: 524px;
     height: 152px;
     margin-left: 30px;
+    animation-name: animationTextBox;
+    animation-duration: 2s;
 }
 
 .share{
