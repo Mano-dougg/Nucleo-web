@@ -32,10 +32,9 @@
     font-family:Overpass;
     font-size: 20px;
     font-weight: 500;
-    line-height: 25.32px;
-    text-align: center center;
-    margin: 0;
-    align-items: flex-end;
+   
+    text-align: center;
+    margin-top: -2px;   
 
 }
 
@@ -43,6 +42,7 @@
 .conteudo-share img {
     margin-top: auto;
     margin-right: 10px;
+    margin-top: 5px;
     width: 24px;
     height: 24px;
 }
@@ -53,7 +53,7 @@ section {
 
 #conteudo {
     width: 80%; 
-    max-width: 300px; 
+    max-width: 231px; 
     position: absolute;
     right: 40px;
    
@@ -70,7 +70,7 @@ section {
     
 #conteudo {
     width: 80%; 
-    max-width: 300px; 
+    max-width: 221px; 
     position: absolute;
     right: 10px;
    
