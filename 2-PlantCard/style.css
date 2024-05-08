@@ -47,7 +47,7 @@ h1{
 /* MAIN */
 main{
     width: 524px;
-    height: 154px;
+    height: 222px;
     margin-left: 30px;
 }
 
@@ -60,22 +60,20 @@ p{
 /* FOOTER */
 footer{
     width: 524px;
-    height: 220px;
+    height: 152px;
     margin-left: 30px;
 }
 
 .share{
     width: 524px;
-    height: 112px;
+    height: 60px;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
 }
 
 .rodape{
     width: 524px;
     height: 60px;
-    margin-top: 7px;
     display: flex;
     justify-content: space-between;
 }
