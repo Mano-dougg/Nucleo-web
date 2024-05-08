@@ -149,3 +149,53 @@ img{
     transform: scale(1.1);
     transition: 0.3s;
 }
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 470px){
+    .card{
+        max-width: 320px;
+        max-height:800px;
+        flex-direction: column;
+    }
+
+    .card-image{  
+        max-height: inherit;
+        background-image: url(assets/img/folha\ mobile.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 25px 25px 0 0;
+        object-fit: cover;
+        max-width: 390px;
+        max-height: 200px;
+        margin: 0;
+        position: relative;
+    }
+
+    .card-image img{
+        opacity: 0;
+    }
+
+    .card-content{
+        padding: 25px;
+    }
+
+    .card-content-text .text{
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    .card-content-footer{
+        margin-top: 70px;
+    }
+
+    .menu-wrap{
+        left: 25%;
+        width: 200px;
+    }
+
+    .menu{
+        border-radius: 35px;
+        padding: 5px;
+    }
+}
