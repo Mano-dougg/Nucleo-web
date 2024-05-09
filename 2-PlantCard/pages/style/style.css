@@ -5,6 +5,10 @@ main{
     justify-content: center;
 }
 
+main img#main-image-responsive{
+    display: none;
+}
+
 main section#card{
     display: flex;
     justify-content: space-between;
@@ -102,4 +106,42 @@ main section#share-modal p{
     font-size: 20px;
     color: #DFDFD6;
 
+}
+
+@media screen and (max-width: 950px) {
+    main {
+        flex-direction: column;
+        /* height: 100%; */
+        align-items: center;
+        justify-content: center;
+    }
+
+    main img#main-image{
+        display: none;
+    }
+
+    main img#main-image-responsive{
+        display: flex;
+    }
+
+    main section#card{
+        width: 350px;
+        height: 70vh;
+
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+
+    main section#card section#card-text{
+        width: 290px;
+    }
+
+    main section#card footer, main section#modal-container{
+        width: 290px;
+    }
+
+    main section#share-modal{
+        margin-bottom: 17px;
+    }
 }
