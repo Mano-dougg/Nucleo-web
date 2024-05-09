@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(188, 205, 208, 1);
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 375px; 
+    gap: 0px;
+}
+
+.banner {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0px;
+    transform: rotate(90deg);
+    width: 350px;
+}
+
+.b-image{
+    width: 202px;
+    height: 350px;
+}
+
+.content{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    background-color: rgba(223, 223, 214, 1);
+    width: 350px;
+
+}
+
+/*Div do conteudo principal*/
+.main-content{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 25px;
+}
+
+/* Texto principal */
+.main-text{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    width: 290px;
+
+    h1{
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 36px;
+        font-weight: 600;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    p{
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: justify;
+        text-justify: distribute-all-lines;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+}
+
+/*Menu Hamburguer*/
+
+.sharing-links{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    width: 290px;
+    
+}
+
+.sharing-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(105, 111, 90, 1);
+    border-color: transparent;
+    border-radius: 15px;
+    padding: 5px, 10px, 5px, 10px;
+    column-gap: 15px;
+    width:221.02px;
+    height: 34px;
+}
+
+.share-text{
+    font-family: "Overpass", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(223, 223, 214, 1);
+}
+
+.share-icon{
+    width: 24px;
+    height: 24px;
+}
+
+/*Rodapé do conteudo*/
+.main-footer{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    column-gap: 71px;
+    margin-bottom: 25px;
+}
+
+.footer-section{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    column-gap: 15px;
+    height: 60px
+}
+
+.dog-photo{
+    width: 60px;
+    height: 60px;
+    border-radius: 110px;
+}
+
+.text-footer{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-family: "Overpass",sans-serif;
+    font-weight: 500;
+    row-gap: 10px;
+    height: 60px;
+
+    h3{
+        font-size: 24px;
+        width: 87px;
+        height: 30px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    p{
+        font-size: 16px;
+        width: 96px;
+        height: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.active{
+    display: flex;
+    align-content: center;
+}
+
+.press-active{
+    width: 52px;
+    height: 52px;
+    border-radius: 85px;
+    background-color:rgba(105, 111, 90, 1);
+    border-color: transparent;
+}
