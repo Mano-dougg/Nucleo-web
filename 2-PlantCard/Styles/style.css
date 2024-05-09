@@ -53,6 +53,7 @@ img {
 #userShare {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 #usuario {
     display: flex;
@@ -89,6 +90,24 @@ img {
 #botaoShare:hover {
     transform: scale(1.05);
 }
+#compartilhar {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #696F5A;
+    padding: 10px 15px;
+    right: 0;
+    bottom: 72px;
+    gap: 15px;
+}
+#compartilhar li {
+    color: #DFDFD6;
+    font-family: 'Overpass';
+    font-size: 20px;
+    font-weight: 500;
+}
 
 @media (max-width: 900px) {
     #carta {
@@ -108,5 +127,9 @@ img {
     }
     #textoCarta {
         gap: 10px;
+    }
+    #compartilhar {
+        padding: 5px 10px;
+        /*N SEI PQ : ITENS DESCENTRALIZAM AQUI (ACHO Q 1 POUCO NO OUTRO TBM)*/
     }
 }
