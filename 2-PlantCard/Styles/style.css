@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
-/*main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #BCCDD0;
-}*/
 body {
     display: flex;
     justify-content: center;
@@ -85,7 +79,6 @@ img {
     gap: 10px;
     cursor: pointer;
     transition: .5s;
-    /*N SEI PQ : ANIMAÇÃO NÃO CONSIDERA ESSE DELAY PARA BUTTON*/
 }
 #botaoShare:hover {
     transform: scale(1.05);
@@ -113,6 +106,8 @@ img {
     font-weight: 500;
     opacity: 0%;
     transition: .5s;
+    letter-spacing: 8px;
+    display: flex;
 }
 #compartilhar li img {
     cursor: pointer;
@@ -131,9 +126,6 @@ img {
 #compartilhar.ativo li {
     opacity: 100%;
 }
-/*#compartilhar.ativo button {
-    transform: rotate(360deg);
-}*/
 
 @media (max-width: 900px) {
     #carta {
@@ -156,6 +148,5 @@ img {
     }
     #compartilhar {
         padding: 5px 10px;
-        /*N SEI PQ : ITENS DESCENTRALIZAM AQUI (ACHO Q 1 POUCO NO OUTRO TBM)*/
     }
 }
