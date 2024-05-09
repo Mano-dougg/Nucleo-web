@@ -92,7 +92,7 @@ img {
 }
 #compartilhar {
     position: absolute;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
@@ -107,6 +107,9 @@ img {
     font-family: 'Overpass';
     font-size: 20px;
     font-weight: 500;
+}
+#compartilhar.ativo {
+    display: flex;
 }
 
 @media (max-width: 900px) {
