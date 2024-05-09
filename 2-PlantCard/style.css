@@ -81,7 +81,41 @@
 
 .share {
     margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
 }
+
+.div-share {
+    margin-left: auto;
+    position: relative;
+    display: inline-block;
+}
+
+.redes-sociais {
+    display: none;
+    position: absolute;
+    background-color: #696F5A;
+    z-index: 1;
+    bottom: 63px;
+    right: 0;
+    border-radius: 15px;
+    width: 201px;
+    height: 29px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10px 15px 10px 15px;
+}
+
+.fonte-share {
+    font-family: Overpass;
+    font-size: 20px;
+    font-weight: 500;
+    color: #DFDFD6;
+    margin: 0;
+}
+
 
 @media (max-width: 668px) {
 .section {
@@ -102,6 +136,14 @@
     padding-bottom: 25px;
     height: inherit;
 }
+
+.redes-sociais {
+    padding: 5px, 10px, 5px, 10px;
+    width: 200px;
+    height: 24px;
+}
+
+
 
 .fonte-texto {
     font-size: 16px;

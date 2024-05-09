@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Overpass:400,500,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600" rel="stylesheet" type="text/css">
@@ -15,7 +16,6 @@
             <div class="tecere">
                 <h1 class="fonte-titulo">Decore sua casa com plantas!</h1>
                 <p class="fonte-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut. Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. Tristique velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, varius auctor cursus commodo. Nisi, non molestie tincidunt posuere leo etiam eu, orci. Consequat diam facilisi neque, est sit. Gravida nibh magna cursus eget eget velit cras.</p>
-
             </div>
                 <div class="div-perfil">
                     <img src="imagens/foto_de_perfil.svg" alt="" class="foto">
@@ -23,7 +23,15 @@
                         <p class="fonte-perfil">Doguito</p>
                         <time datetime="29/09/2022" class="fonte-data">29/09/2022</time>
                     </div>
-                    <img src="imagens/share.svg" alt="" class="share">
+                    <div id="botao" class="div-share">
+                        <img src="imagens/share.svg" alt="" class="share" onclick="document.getElementById('id-dropup').style.display = 'flex'">
+                        <div class="redes-sociais" id="id-dropup" onmouseleave="document.getElementById('id-dropup').style.display = 'none'">
+                            <h3 class="fonte-share">S H A R E</h3>
+                            <a href="https://www.youtube.com/watch?v=GIXk9QBmbE0" target="_blank" rel="noreferrer noopener"><img src="imagens/facebook.svg" alt=""></a>
+                            <a href="https://www.youtube.com/watch?v=GIXk9QBmbE0" target="_blank" rel="noreferrer noopener"><img src="imagens/twitter.svg" alt=""></a>
+                            <a href="https://www.youtube.com/watch?v=GIXk9QBmbE0" target="_blank" rel="noreferrer noopener"><img src="imagens/pinterest.svg" alt=""></a>
+                        </div>
+                    </div>
                  </div>        
             </div>
     </section>
