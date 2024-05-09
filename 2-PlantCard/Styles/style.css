@@ -94,6 +94,7 @@ img {
     position: absolute;
     display: flex;
     visibility: hidden;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
@@ -120,10 +121,14 @@ img {
 }
 #compartilhar.ativo {
     visibility: visible;
+    overflow: auto;
     bottom: 72px;
     background-color: #696F5A;
     width: 231px;
 }
+/*#compartilhar.ativo button {
+    transform: rotate(360deg);
+}*/
 
 @media (max-width: 900px) {
     #carta {
