@@ -15,6 +15,10 @@
     margin: 0;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 .container{
     background-color: #BCCDD0;
     width: 100%;    
