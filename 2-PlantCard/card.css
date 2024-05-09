@@ -186,6 +186,23 @@ body{
     line-height: 25.32px;
     text-align: left;
     color: #DFDFD6;
+    animation-name: infiniteupdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all , 3s;
+}
+
+@keyframes infiniteupdown {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 .icons nav {
