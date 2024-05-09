@@ -117,6 +117,7 @@ footer{
 .imgBotao:hover{
     width: 57px;
     height: 57px;
+    opacity: 97.5%;
 }
 
 /* RESPONSIVIDADE */ 
