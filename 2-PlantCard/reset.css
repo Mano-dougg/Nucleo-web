@@ -24,7 +24,8 @@ dl,
 figure,
 blockquote,
 fieldset,
-legend {
+legend,
+button {
   padding: 0;
   margin: 0;
 }
@@ -57,4 +58,7 @@ a {
 /* remover a borda dos botões */
 button, input{
   border: none;
+  color: inherit;
+  background-color: inherit;
+  font-size: inherit;
 }

@@ -1,3 +1,18 @@
+/* defining the animation for the hamburguer tab */
+@keyframes pop {
+    0% {
+      transform: scale(0.8) rotate(0deg); 
+      opacity: 0; 
+    }
+    50% {
+      transform: scale(1.1) rotate(5deg); 
+      opacity: 1; 
+    }
+    100% {
+      transform: scale(1) rotate(0deg); 
+    }
+  }
+
 body{
     width: 100vw;
     height: 100vh;
@@ -48,12 +63,36 @@ body{
 }
 
 .post-text{
-    font-size: 0.7rem;
+    font-size: 0.73rem;
     font-weight: 500;
 }
 
 .post-options{
+    display: flex;
+    justify-content: right;
+    align-items: center;
     height: 10%;
+}
+
+.post-options__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #696F5A;
+    color: #DFDFD6;
+    height: 90%;
+    width: 48%;
+    padding: 0 12px;
+    border-radius: 10px;
+    animation: pop 0.4s ease-in-out; 
+}
+
+.post-options__list__option{
+    font-size: 1.1rem;
+}
+
+.invisible{
+    display: none;
 }
 
 .post-data{
@@ -100,9 +139,11 @@ body{
     font-size: 1rem;
 }
 
+/* making the responsive part */
+
 @media screen and (max-width: 1000px) {
     html{
-        font-size: 19px;
+        font-size: 21px;
     }
 
     .main__article{
@@ -127,4 +168,10 @@ body{
         height: 65%;
         border-radius: 0 0 10px 10px;
     }
+
+    .post-options__list{
+        width: 75%;
+        border-radius: 50px;
+    }
 }
+
