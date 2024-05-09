@@ -1,29 +1,36 @@
 * {
     box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
 }
 
 
 
 body{
     background: rgba(188, 205, 208, 1);
-    height: 812px;
-    padding: 29px 12px 33px 13px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    
 
 }
 
-.Card{
-    
-    top: 29px;
-    left: 13px;
+.Card {
+    padding:20px;
     margin:auto;
-
     min-width: 375px;
     max-width: 1920;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    .picture{
     
-    }
+}
+
+picture{
+    width: 350w;
+}
 
     .info{
     width: Fill 350px;
@@ -107,7 +114,12 @@ body{
 
 
 @media (max-width: 500px){
+
+    picture{
+        
+        }
     
+
 
 }
 
