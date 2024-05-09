@@ -84,6 +84,7 @@ img {
     gap: 10px;
     cursor: pointer;
     transition: 0.5s;
+    /*N SEI PQ : ANIMAÇÃO NÃO CONSIDERA ESSE DELAY PARA BUTTON*/
 }
 #botaoShare:hover {
     transform: scale(1.05);
