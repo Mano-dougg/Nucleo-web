@@ -41,6 +41,7 @@ div{
     display: none;
 }
 
+
 /* HEADER */
 header{
     height: 118px;
@@ -103,6 +104,16 @@ footer{
     justify-content: space-between;
 }
 
+.imgBotao{
+    width: 52px;
+    height: 52px;
+    transition-duration: 0.5s;
+}
+
+.imgBotao:hover{
+    width: 57px;
+    height: 57px;
+}
 
 /* RESPONSIVIDADE */ 
 @media (max-width: 492px) {
