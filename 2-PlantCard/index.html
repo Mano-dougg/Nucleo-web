@@ -7,7 +7,6 @@
     <title>Plant Card</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/bed6247297.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,32 +18,45 @@
 
             <div class="principal_texto">
                 <h1>Decore sua casa com plantas!</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut.
-                    Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. Tristique
-                    velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, varius auctor
-                    cursus commodo. Nisi, non molestie tincidunt posuere leo etiam eu, orci. Consequat diam facilisi neque,
-                    est sit. Gravida nibh magna cursus eget eget velit cras.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut.
+                        Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. Tristique
+                        velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, varius auctor
+                        cursus commodo. Nisi, non molestie tincidunt posuere leo etiam eu, orci. Consequat diam facilisi neque,
+                        est sit. Gravida nibh magna cursus eget eget velit cras.
+                    </p>
 
-                <div class="principal_footer">
-                    <div class="uno">
-                    <img class="icone_cachorro"src="img/imagecachoro.png" alt="icone_cachorro">
-                    <h2>Doguito
-                        <br>
-                        <br>
-                        29/09/2022
-                    </h2>
+                    <div class="show_modal">
+                        <div class="modal_main" id ="modal_main">
+                                <nav id="modal">
+                                    <li class="modal_share">SHARE</li>
+                                    <li></li><a href='https://www.facebook.com' target="_blank"><img class="item_modal"src="img/facebook.png" width="24"
+                                        height="24"></a></li>
+                                    <li><a href='https://twitter.com' target="_blank"><img class="item_modal" src="img/tt.png" width="24"
+                                        height="24"></a></li>
+                                    <li><a href='https://br.pinterest.com' target="_blank"><img  class="item_modal"src="img/pinterest.png" width="24"
+                                        height="24"></a></li>
+                                </nav>
+                            </div>
+                        </div>
+                    <div class="main_footer">
+                            <div class="main_footer_dog">
+                            <img class="icone_cachorro" src="img/imagecachoro.png" alt="icone_cachorro">
+                            <h2>Doguito
+                                <br>
+                                <br>
+                                29/09/2022
+                            </h2>
                     </div>
 
-                    <div class="duo">
-                        <button class="btn-modal"><i class="fa-solid fa-share fa-2xl" style="color: #DFDFD6;"></i></button>
+                    <div class="main_footer_botao">
+                        <button type="button" class="btn-modal" id="btn_modal" style="cursor: pointer;"><img src="img/encaminhar.png" width="24"
+                            height="24"></button>
                     </div>
-                </div>
-
-
             </div>
         </section>
     </main>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
