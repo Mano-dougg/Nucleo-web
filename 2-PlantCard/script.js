@@ -1,9 +1,9 @@
 function clicar() {
-    if (imgRedes.style.display == 'none') {
-        imgRedes.style.display = 'block'
+    if (imgRedes.style.maxWidth == '0%') {
+        imgRedes.style.maxWidth = '100%';
     }
 
     else {
-    imgRedes.style.display = 'none'
+        imgRedes.style.maxWidth = '0%';
     }
 }   
