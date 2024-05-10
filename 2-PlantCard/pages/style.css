@@ -1,45 +1,89 @@
-* {
-    font-family: 'Open Sans', sans-serif;
-}
-
 body{
+    display: flex;
+    height: 100vh;
     background-color: #BCCDD0;
     margin:0;
+    align-items: center;
 }
 
-main {
+main{
+    max-width: 875px;
     margin: auto;
-    width: 60%;
-    justify-content: flex-start;
     display: flex;
-    flex-direction: row;
-    background-color: #DFDFD6;
-    font-size: 16px;
-    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo h1{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.conteudo p{
+    font-family: 'Open Sans', sans-serif;
 }
 
 .conteudo{
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 50px;
+    max-width: 584px;
+    max-height: 492px;
     display: flex;
     flex-direction: column;
+    background-color: #DFDFD6;
+    font-size: 16px;
+    border-radius: 0px 30px 30px 0px;
 }
 
 picture img{
-    width: 100%;
-    padding: 0;
+    max-width: 291px;
+    max-height: 492px;
     border-radius: 30px 0px 0px 30px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.informations{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.informations p{
+    margin: 0;
+    font-family: 'Overpass', sans-serif;
+}
+
+.texto{
+    padding-left: 11px;
+    font-size: 16px;
+}
+
+.informations img {
+    width: 60px;
+    height: 60px;
+}
+
+.share img{
+    width: 52px;
+    height: 52px;
 }
 
 @media (max-width: 800px){
 
     main{
+        border-radius: 30px 30px 0px 0px;
         flex-direction: column;
+        margin: 10px;
     }
 
     .conteudo{
         padding-top: 25px;
+        border-radius: 0px 0px 30px 30px;
     }
     
     picture img{
