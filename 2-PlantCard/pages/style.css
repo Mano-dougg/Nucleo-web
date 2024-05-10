@@ -14,18 +14,25 @@ main{
     align-items: center;
 }
 
-.conteudo h1{
-    font-family: 'Josefin Sans', sans-serif;
+.conteudo p.titulo{
+    font-family: 'Josefin Sans';
+    font-weight: bold;
+    font-size: 36px;
+    margin:0;
+    padding-bottom: 32px;
 }
 
 .conteudo p{
     font-family: 'Open Sans', sans-serif;
+    margin:0;
 }
 
 .conteudo{
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 50px;
+    padding-bottom: 41px;
+    margin:0;
     max-width: 584px;
     max-height: 492px;
     display: flex;
@@ -45,17 +52,22 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 42px;
 }
 
 .informations{
     display: flex;
     align-items: center;
-    font-weight: bold;
 }
 
 .informations p{
     margin: 0;
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Overpass';
+}
+
+.informations p.autor {
+    font-weight: 500;
+    font-size: 24px;
 }
 
 .texto{
