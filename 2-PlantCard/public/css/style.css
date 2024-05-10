@@ -1,0 +1,148 @@
+:root {
+    --blue: #BCCDD0;
+    --black: #111313;
+    --green: #696F5A;
+    --brown: #7C795E;
+    --white: #DFDFD6;
+}
+
+body {
+    background: var(--blue);
+}
+
+.open-sans-p {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--black);
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.josefin-sans-h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--black);
+  margin: 0;
+}
+
+.overpass-text {
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--black);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    height: 100vh;
+    width: 100vw;
+}
+
+.plant-card {
+    display: flex;
+    flex-direction: row;
+    max-width: 54.6875rem;
+    max-height: 30.72675rem;
+}
+
+.card-background {
+    border-radius: 1.875rem 0rem 0rem 1.875rem;
+    content: url("../images/leafs.png");
+    object-fit: cover;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.12rem 1.875rem 2.56rem;
+    background: var(--white);
+    border-radius: 0rem 1.875rem 1.875rem 0rem;
+    align-self: stretch;
+    height: 100%;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.6875rem;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.625rem;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+}
+
+.share-btn {
+    background-color: var(--green);
+    height: 3.25rem;
+    width: 3.25rem;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .main-container {
+        padding: 1.62rem 0.813rem 2.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plant-card {
+        display: flex;
+        flex-direction: column;
+        max-height: unset;
+        height: 100%;
+    }
+
+    .card-background {
+        content: url("../images/vert-leafs.png");
+        max-height: 33%;
+        border-radius: 1.875rem 1.875rem 0rem 0rem;
+    }
+
+    .card-info {
+        padding: 1.563rem 1.875rem;
+        border-radius: 0rem 0rem 1.875rem 1.875rem;
+        align-self: stretch;
+        min-height: 0;
+        min-width: 0;
+    }
+
+}
