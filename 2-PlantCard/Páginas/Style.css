@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 /* Telas pequenas*/
-@media(max-width: 1000px) {
+@media(max-width: 1300px) {
+
+    /* Cabeçalho e base*/
     body {
       width: 375px;
       height: 812px;
@@ -12,6 +14,19 @@
       gap: 0px;
       opacity: 0px;
       background-color: #BCCDD0;
+      transition: 800ms;
+    }
+    body[style*="background-color: rgb(101, 179, 7)"]{
+      width: 375px;
+      height: 812px;
+      top: -485px;
+      left: 1029px;
+      padding: 29px 12px 33px 13px;
+      margin:0;
+      gap: 0px;
+      opacity: 0px;
+      background-color: rgb(101, 179, 7);
+      transition: 800ms;
     }
     div.Card{
       width: 350px;
@@ -22,7 +37,7 @@
       opacity: 0px;
     }
     figure.flh{
-      width: 365px;
+      width: 361px;
       height: 202px;
       gap: 0px;
       border-radius: 30px 30px 0px 0px;
@@ -43,6 +58,8 @@
       display: flex;
       justify-content: center;
     }
+
+    /* Parte branca e subdivisões*/
     div.info{
       width: 300px;
       height: 548px;
@@ -52,7 +69,7 @@
       opacity: 0px;
       background-color: #DFDFD6;
       position: absolute;
-      top: 64%; 
+      top: 64.25%; 
       left: 53%; 
       transform: translate(-50%, -50%);
     }
@@ -141,6 +158,8 @@
       left: 41.5%; 
       transform: translate(-50%, -50%);
     }
+
+    /*Seção do botão e uso do JS*/
     button.but{
       width: 52px;
       height: 52px;
@@ -171,7 +190,7 @@
       padding: 5px 10px 5px 10px;
       gap: 15px;
       border-radius: 15px 15px 15px 15px;
-      opacity: 0px;
+      opacity: 0;
       background-color:#696F5A;
       justify-content: center; 
       align-items: center; 
@@ -180,6 +199,24 @@
       left: 56.75%; 
       transform: translate(-50%, -50%);
       visibility: hidden;
+      transition:800ms;
+    }
+    div.compar[style*="visibility: visible"]{
+      width: 221.02px;
+      height: 25px;
+      padding: 5px 10px 5px 10px;
+      gap: 15px;
+      border-radius: 15px 15px 15px 15px;
+      opacity: 1;
+      background-color:#696F5A;
+      justify-content: center; 
+      align-items: center; 
+      position: absolute;
+      top: 78%; 
+      left: 56.75%; 
+      transform: translate(-50%, -50%);
+      transition: 900ms;
+      visibility: visible;
     }
     h3.SH{
       width: 84px;
@@ -233,20 +270,57 @@
       transform: translate(-50%, -50%);
       cursor: pointer;
     }
-
+    button.mudador{
+      opacity: 0px;
+      width: 80px;
+      height: 40px;
+      font-family: Open Sans;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21.79px;
+      background-color: #7ED321;
+      display: block;
+      text-align: center;
+      border-radius: 15px;
+      cursor: pointer;
+      position: absolute;
+      top: 104%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      transition: 500ms width;
+    }
+    button.mudador:hover{
+      width: 85px;
+    }
 }
 
+
+
 /* Telas maiores*/
-@media(min-width: 1000px) {
+@media(min-width: 1300px) {
+
+  /*Cabeçalho e base*/
     body {
       width: 250px;
-      height: 550px;
+      height: 480px;
       top: -485px;
       left: -1004px;
       padding: 294px 522px 294.37px 523px;
       gap: 0px;
       opacity: 0px;
       background-color: #BCCDD0;
+      transition: 800ms;
+    }
+    body[style*="background-color: rgb(101, 179, 7)"]{
+      width: 250px;
+      height: 480px;
+      top: -485px;
+      left: -1004px;
+      padding: 294px 522px 294.37px 523px;
+      gap: 0px;
+      opacity: 0px;
+      background-color: rgb(101, 179, 7);
+      transition: 800ms;
     }
     figure.flh{
       width: 291px;
@@ -256,10 +330,11 @@
       opacity: 0px;
       position: absolute;
       top: 40%; 
-      left: 25%; 
+      left: 22%; 
       transform: translate(-50%, -50%);
       transform: rotate(-90deg);
     }
+    /*Parte branca e subdivisões*/
     div.info{
       width: 510px;
       height: 460px;
@@ -271,7 +346,7 @@
       background-color: #DFDFD6;
       position: absolute;
       top: 60.85%; 
-      left: 65%; 
+      left: 62.25%; 
       transform: translate(-50%, -50%);
     }
     h1.deco{
@@ -348,6 +423,8 @@
       left: 25%; 
       transform: translate(-50%, -50%);
     }
+
+    /*Botão e uso do JS*/
     button.but{
       width: 52px;
       height: 10px;
@@ -379,9 +456,9 @@
     }
     img.but:hover{
       height: 120%;
-      object-fit: fill;
+      object-fit: cover;
     }
-    div.compar[style*="visibility: hidden"]{
+    div.compar{
       width: 231.02px;
       height: 20px;
       padding: 10px 15px 10px 15px;
@@ -409,8 +486,6 @@
       transform: translate(-50%, -50%);
       opacity: 1;
       transition: 900ms;
-      transition-delay: 0.2s;
-      visibility: visible;
     }
     h3.SH{
       width: 84px;
@@ -465,5 +540,31 @@
       left: 73%;
       transform: translate(-50%, -50%);
       cursor: pointer;
+    }
+    button.mudador{
+      position: absolute;
+      top: 98.5%;
+      left: 24.5%;
+      transform: translate(-50%, -50%);
+      opacity: 0px;
+      width: 220px;
+      height: 51px;
+      font-family: Open Sans;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21.79px;
+      background-color: #7ED321;
+      display: block;
+      text-align: center;
+      border-radius: 15px;
+      cursor: pointer;
+      position: absolute;
+      top: 5%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      transition: 500ms height;
+  }
+    button.mudador:hover{
+      height: 57px;
     }
   }

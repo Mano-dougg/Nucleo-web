@@ -8,10 +8,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass&display=swap">
-    <script defer src="Base.js"></script>
     <title>WeplantCard</title>
 </head>
-<body>
+<body class=corpo style="background-color: rgb(188,205,208)">
     <div class=Card>
     <header>
         <figure class = flh>
@@ -37,10 +36,10 @@
                 29/02/2022
             </p>
             <button id = "mostra" class=but>
-                <img src="share.png"/>
+                <img src="share.svg"/>
             </button>
             </div>
-            <div class=compar>
+            <div style="visibility: hidden" class=compar>
                 <h3 class=SH>
                     S H A R E
                 </h3>
@@ -56,6 +55,8 @@
             </div>
         </div>
     </main>
+    <button class=mudador id="cor">NATURE</button>
     </div>
+    <script src="Base.js"></script>
 </body>
 </html>
