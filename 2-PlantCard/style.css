@@ -2,20 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Background Geral */
+html{
+    width: 100%;
+    height: 100%;
+}
+
 body{
     display: flex;
     align-items: flex-start;
     justify-content: center;
     background-color: rgba(188, 205, 208, 1);
+    width: 100%;
+    height: 100%;
 }
 
 /* Container Pai-de-Todos */
 .container {
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    width: 375px; 
+    width: 93.3%; 
+    height: 80%;
     gap: 0px;
 }
 
@@ -28,6 +36,8 @@ body{
     gap: 0px;
     transform: rotate(90deg);
     width: 350px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .b-image{
@@ -45,7 +55,8 @@ body{
     gap: 18px;
     background-color: rgba(223, 223, 214, 1);
     width: 350px;
-
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 /* Div do conteudo principal */
@@ -179,7 +190,7 @@ body{
     border-color: transparent;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 425px) {
     body{
         display: flex;
         align-items: center;
@@ -199,7 +210,7 @@ body{
         gap: 0px;
     }
 
-/* Banner - Posicionamento e Formatação */
+    /* Banner - Posicionamento e Formatação */
     .banner {
         display: flex;
         flex-flow: column nowrap;
