@@ -1,4 +1,4 @@
-let popupDrawer = document.getElementById("popup_drawer");
+let popupDrawer = document.getElementById("popup-drawer");
 
 
 function sharePopUp() {

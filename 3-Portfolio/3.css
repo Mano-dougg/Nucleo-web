@@ -83,7 +83,7 @@ a {
 .scrollview {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   margin-top: 50px;
   gap: 80px;
 }
@@ -91,6 +91,7 @@ a {
 .section1 {
   display: flex;
   flex-direction: column;
+  width: 962px;
   gap: 40px;
 }
 
@@ -113,6 +114,10 @@ h1 {
   margin: 0;
 }
 
+.dividerplaceholder {
+  width: 962px;
+}
+
 .divider-s {
   width: 192px;
   border-top: 1px solid rgba(0, 101, 255, 1);
@@ -129,7 +134,7 @@ h1 {
   font-weight: 400;
   line-height: 24.84px;
   text-align: left;
-  width: 962px;
+  width: 960px;
   margin: 0px;
 }
 
