@@ -6,6 +6,15 @@
   visibility: visible;
 }
 
+button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  width: 25px;
+  height: 25px;
+}
+
 body {
   height: 100vh; 
   display: flex;
@@ -25,7 +34,6 @@ body {
     flex-direction: column;
   }
 }
-
 
 aside {
   display: flex;
@@ -140,7 +148,7 @@ footer {
   object-fit: cover;
 }
 
-button {
+.share-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,16 +158,25 @@ button {
   width: 52px;
   background: rgba(105, 111, 90, 1);
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.3s;
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-.btn:active {
-  transform: scale(0.90)
+.share-btn:active {
+  transform: scale(0.70);
 }
 
-.share-button {
+.social-btns {
+  transition: transform 0.2s;  
+  cursor: pointer;
+}
+
+.social-btns:active {
+  transform: scale(0.65);
+}
+
+.share-button-div {
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
@@ -177,7 +194,6 @@ button {
   background: rgba(105, 111, 90, 1);
   border-radius: 15px;
   gap: 15px;
-  visibility: hidden;
   bottom: -12px;
   right: -324px;
 }

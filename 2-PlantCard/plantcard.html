@@ -14,11 +14,17 @@
         <h1>Decore sua casa com plantas!</h1>
         <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut. Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. Tristique velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, varius auctor cursus commodo. Nisi, non molestie tincidunt posuere leo etiam eu, orci. Consequat diam facilisi neque, est sit. Gravida nibh magna cursus eget eget velit cras.</p>
       </div>
-      <div class="popup-drawer" id="popup-drawer">
+      <div class="popup-drawer" id="popup-drawer" style="visibility: hidden;">
         <p class="share">S H A R E</p>
-        <img src="assets/akar-icons_facebook-fill.png" alt="facebook logo">
-        <img src="assets/Vector.png" alt="twitter logo">
-        <img src="assets/akar-icons_pinterest-fill.png" alt="pinterest logo">
+        <button class="social-btns">
+          <img src="assets/akar-icons_facebook-fill.png" alt="facebook logo">
+        </button>
+        <button class="social-btns">
+          <img src="assets/Vector.png" alt="twitter logo">
+        </button>
+        <button class="social-btns">
+          <img src="assets/akar-icons_pinterest-fill.png" alt="pinterest logo">
+        </button>
       </div>
       <footer>
         <div class="profile-infos">
@@ -28,8 +34,8 @@
             <h3 class="date">29/09/2022</h3>
           </div>
         </div>
-        <div class="share-button">
-          <button class="btn" id="btn" onclick="sharePopUp();">
+        <div class="share-button-div">
+          <button class="share-btn" id="share-btn" onclick="sharePopUp();">
             <img id="send-icon" src="assets/fa-solid_share.png" alt="share icon">
           </button>
         </div>
