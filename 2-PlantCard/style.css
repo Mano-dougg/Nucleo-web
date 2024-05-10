@@ -19,6 +19,7 @@ body, html{
 /* CARD */
 
 .card{
+
     margin:auto;
     min-width: 375px;
     max-width: 875px;
@@ -27,7 +28,7 @@ body, html{
     align-items: center;
     flex-direction: row;
     border-radius: 30px ;
-    height: 500px;   
+    height: 500px; 
 }
 
 
@@ -93,7 +94,7 @@ picture{
     
     width:100%;
     display: flex;
-    margin-top: 18%;
+    margin-top: 6%;
     justify-content: space-between;
     align-items: center;
     justify-content: center;
@@ -144,7 +145,7 @@ picture{
 
 
 .share{
-
+    border:none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,50 +156,123 @@ picture{
     background: rgba(105, 111, 90, 1);
 }
 
+/* SHARE CARD */
+
+.share-card.active{
+    visibility: visible;
+    
+}
+.share-card{
+
+    visibility: hidden;
+    display:flex;
+    margin-top: 11%;
+    margin-left: 45%;
+    background: rgba(105, 111, 90, 1);
+    border-radius: 15px;
+    width: 36%;
+    height: 12%;
+    
+    
+}
+
+
+
+ul {
+    list-style: none;
+    display:flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: center;
+    margin-left:3%;
+    
+}
+
+.redes-sociais ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: right;   
+}
+
+.redes-sociais li{
+    display: flex;
+    margin-right: 16%;    
+}
+
+.texto-share{
+    text-decoration: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:5%;
+    font-family: "Overpass",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100.32px;
+    text-align: left;
+    color: rgba(223, 223, 214, 1);
+
+
+}
+
 /* MOBILE */
 
 @media(max-width:500px){
 
     .card{
         display: flex;
-        margin:auto;
         flex-direction: column;
-        margin:0%;
-        height: auto;
         width:350px;
         align-items: center;
         justify-content: center;
+        height: 750px;
     }
 
     .info{
+
+        height: 100%;
         display:flex;
         flex-direction: column;
         justify-content: center;
         margin:auto;
         border-radius: 0px 0px 30px 30px;
         padding: 25px;
-        margin-bottom: 20%;
+        margin-bottom: 5%;
+        
         
     }
 
     picture{
-        height: 100%;
-        width:auto;
-        margin-bottom: -20%;
+        height: auto;
+        width:78.82%;
+        margin-bottom: -21%;
         transform: rotate(90deg);
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
+
 
     #imgteste{
 
-        width: 76%;
-        margin-bottom: 0%;
+        height: auto;
+        width: 75%;
         display: flex;
         justify-content: center;
        
+    }
+
+    .share-card{
+        display:flex;
+        margin-top: 5%;
+        margin-left: 30%;
+        width: 60%;
+        height: 8%;
+
+    }
+
+    .footer{
+        margin-bottom: -5%;
     }
 }
 
