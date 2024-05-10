@@ -1,9 +1,12 @@
 function clicar() {
-    if (imgRedes.style.maxWidth == '0%') {
-        imgRedes.style.maxWidth = '100%';
+    if (linkShare.style.width == '0px') {
+        linkShare.style.width = '231px';
+        linkShare.style.padding = '5px 10px 5px 10px';
     }
 
     else {
-        imgRedes.style.maxWidth = '0%';
+        linkShare.style.width = '0px';
+        linkShare.style.padding = '0px';
+       
     }
 }   
