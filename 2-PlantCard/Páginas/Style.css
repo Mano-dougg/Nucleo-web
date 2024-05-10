@@ -173,11 +173,10 @@
       border-radius: 15px 15px 15px 15px;
       opacity: 0px;
       background-color:#696F5A;
-      display: flex;
       justify-content: center; 
       align-items: center; 
       position: absolute;
-      top: 73%; 
+      top: 78%; 
       left: 56.75%; 
       transform: translate(-50%, -50%);
       visibility: hidden;
@@ -208,16 +207,18 @@
       top: 8%; 
       left: 37.5%; 
       transform: translate(-50%, -50%);
+      cursor: pointer;
     }
     figure.tt{
-      width: 24.02px;
-      height: 21.34px;
+      width: 20px;
+      height: 20px;
       gap: 0px;
       opacity: 1;
       position: absolute;
       top: 1.5%; 
       left: 55.5%; 
       transform: translate(-50%, -50%);
+      cursor: pointer;
 
     }
     figure.pin{
@@ -229,6 +230,7 @@
       top: 6%; 
       left: 73.5%; 
       transform: translate(-50%, -50%);
+      cursor: pointer;
     }
 
 }
@@ -409,6 +411,7 @@
       top: 15%;
       left: 35%;
       transform: translate(-50%, -50%);
+      cursor: pointer;
 
     }
     img.face{
@@ -424,6 +427,7 @@
       top: 7%;
       left: 55%;
       transform: translate(-50%, -50%);
+      cursor: pointer;
     }
     figure.pin{
       width: 24px;
@@ -434,6 +438,7 @@
       top: 5%;
       left: 73%;
       transform: translate(-50%, -50%);
+      cursor: pointer;
 
     }
   }
