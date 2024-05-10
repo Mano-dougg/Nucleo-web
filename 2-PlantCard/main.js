@@ -1,6 +1,6 @@
 // Definição das variaveis 
-let menu = document.querySelector("button.sharing-button")
-let botao = document.querySelector("button.press-active")
+var menu = document.querySelector("button.sharing-button")
+var botao = document.querySelector("button.press-active")
 // Definir Padrão do menu e EventListener
 menu.style.display = "none"
 botao.addEventListener("click", openOrclosemenu)
