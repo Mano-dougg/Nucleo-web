@@ -18,13 +18,13 @@
     padding-right: 30px;
     padding-top: 50px;
     padding-bottom: 41px;
-    box-sizing:content-box;
+    box-sizing: content-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.tecere {
+.div-texto {
     display: flex;
     flex-direction: column;
 }
@@ -83,6 +83,7 @@
     margin-left: auto;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .div-share {
@@ -115,6 +116,21 @@
     color: #DFDFD6;
     margin: 0;
 }
+
+.share:hover {
+    transform: scale(110%);
+}
+
+a:hover {
+    transition-duration: 0.2s;
+    transform: scale(110%);
+}
+
+.redes-sociais:hover {
+    transition-duration: 0.1s;
+    transform:scale(105%);
+}
+
 
 
 @media (max-width: 668px) {
