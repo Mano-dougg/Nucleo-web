@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* Telas pequenas*/
-@media(max-width: 1300px) {
+@media(max-width: 1299px) {
 
     /* Cabeçalho e base*/
     body {
