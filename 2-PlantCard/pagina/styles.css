@@ -88,6 +88,11 @@ a{
     h1{
         padding-top: 25px;
     }
+    .menu-compartilhar{
+        margin-left: 40px;
+        margin-top: 40px;
+        margin-bottom: 5px;
+    }
     .plantas{
         width:350px;
         max-height: 202px;
@@ -107,7 +112,11 @@ a{
         border-radius: 0px 0px 30px 30px;
     }   
     .autor{
-        margin-top: 30px;
+        margin-top: 88px;
+        padding-bottom: 20px;
+    }
+    .identificacao{
+        max-height: max-content;
     }
     .hamburguer{
         margin-left: 60px;  
