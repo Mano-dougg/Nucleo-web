@@ -283,7 +283,7 @@
   /*Cabeçalho e base*/
     body {
       width: 250px;
-      height: 480px;
+      height: 100px;
       top: -485px;
       left: -1004px;
       padding: 294px 522px 294.37px 523px;
@@ -291,6 +291,13 @@
       opacity: 0px;
       background-color: #BCCDD0;
       transition: 800ms;
+    }
+    main.prin{
+      height: 200px;
+    }
+    div.Card{
+      width: 0px;
+      height:0px;
     }
     body[style*="background-color: rgb(101, 179, 7)"]{
       width: 250px;
@@ -309,9 +316,12 @@
       gap: 0px;
       border-radius: 30px 0px 0px 30px;
       opacity: 0px;
-      position: absolute;
+      display: flex;
+      align-items: center;
+      position: relative;
       top: 40%; 
-      left: 22%; 
+      left: -300px; 
+      right: 100px;
       transform: translate(-50%, -50%);
       transform: rotate(-90deg);
     }
@@ -325,9 +335,12 @@
       border-radius: 0px 30px 30px 0px;
       opacity: 0px;
       background-color: #DFDFD6;
-      position: absolute;
-      top: 60.85%; 
-      left: 62.25%; 
+      display: flex;
+      align-items: center;
+      position: relative;
+      top: -392px; 
+      bottom: 50px;
+      left: 330px; 
       transform: translate(-50%, -50%);
     }
     h1.deco{
