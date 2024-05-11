@@ -2,6 +2,7 @@ import s from './Header.module.css';
 import twitterIcon from '../../assets/twitter-icon.svg';
 import instagramIcon from '../../assets/instagram-icon.svg';
 import figmaIcon from '../../assets/figma-icon.svg';
+import { useEffect, useState } from 'react';
 
 
 
@@ -9,10 +10,19 @@ export default function Header({changeDarkMode}) {
 
     const setDarkMode = () => {
         document.querySelector("body").setAttribute("data-theme", "dark")
+        localStorage.setItem("theme", "dark")
     }
     
     const setLightMode = () => {
         document.querySelector("body").setAttribute("data-theme", "light")
+        localStorage.setItem("theme", "light")
+    }
+
+    const getTheme = localStorage.getItem("theme")
+    if(getTheme === "dark"){
+        setDarkMode()
+    }else{
+        setLightMode()
     }
     
     const toggleTheme = (e) =>{
@@ -52,7 +62,7 @@ export default function Header({changeDarkMode}) {
                 <div className={s.darkMode}>
                     DarkMode: 
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={toggleTheme} />
+                        <input class="form-check-input" type="checkbox" defaultChecked={getTheme === "dark"? true: false} role="switch" id="flexSwitchCheckDefault" onChange={toggleTheme} />
                     </div>
                 </div>
             </div>
