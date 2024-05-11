@@ -146,7 +146,7 @@ h3{
 
 
 /* RESPONSIVIDADE MOBILE */ 
-@media (max-width: 492px) {
+@media (max-width: 375px) {
 
 /* Altera o alinhamento dos itens */
     .container{
@@ -160,7 +160,8 @@ h3{
     }
     
     .box {
-    width: 341px;
+    max-width: 277.3px;
+    width: 100%;
     border-radius: 0px 0px 30px 30px;
 }
 
