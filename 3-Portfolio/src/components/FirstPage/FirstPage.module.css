@@ -2,13 +2,17 @@
     width: 100px;
     border-radius: 93px;
     box-shadow: 0px 25px 65px 0px #00000026;
+    margin-bottom: 40px;
 }
 .title{
     font-family: 'EB Garamond', sans-serif;
     color: #0065FF;
+    width: 100%;
+}
+
+.title h1{
     font-size: 70px;
     font-weight: 700;
-    width: 100%;
 }
 
 
@@ -125,6 +129,8 @@
         cursor: pointer;
     }
     
-    
+    .title h1{
+        font-size: 32px;
+    }
 
 }

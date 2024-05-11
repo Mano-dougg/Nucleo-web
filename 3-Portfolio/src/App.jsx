@@ -8,7 +8,7 @@ import HamburguerMenu from './components/HamburguerMenu/HamburguerMenu'
 function App() {
 
   return (
-    <ChakraProvider>
+    <>
       <section className={s.header}>
         <Header />
       </section>
@@ -17,7 +17,7 @@ function App() {
         <FirstPage />
         <SecondPage />
       </section>
-    </ChakraProvider>
+    </>
   )
 }
 

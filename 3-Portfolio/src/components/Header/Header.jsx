@@ -2,7 +2,6 @@ import s from './Header.module.css';
 import twitterIcon from '../../assets/twitter-icon.svg';
 import instagramIcon from '../../assets/instagram-icon.svg';
 import figmaIcon from '../../assets/figma-icon.svg';
-import { Switch } from '@chakra-ui/react'
 
 export default function Header() {
     return (
@@ -32,7 +31,8 @@ export default function Header() {
                 </div>
 
                 <div className={s.darkMode}>
-                    DarkMode: <Switch /> 
+                    DarkMode: 
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"></input> 
                 </div>
             </div>
         </>
