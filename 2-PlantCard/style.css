@@ -62,7 +62,6 @@ header{
     align-items: center;
     animation-name: animationTextBox;
     animation-duration: 2s;
-    
 }
 
 h1{
@@ -130,7 +129,7 @@ h3{
     height: 60px;
     display: flex;
     justify-content: space-between;
-}
+}   
 
 .imgBotao{
     width: 52px;
@@ -144,6 +143,7 @@ h3{
     opacity: 97.5%;
     cursor: pointer;
 }
+
 
 /* RESPONSIVIDADE MOBILE */ 
 @media (max-width: 492px) {
