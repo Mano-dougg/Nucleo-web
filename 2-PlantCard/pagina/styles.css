@@ -110,10 +110,12 @@ a{
         background:#DFDFD6;
         max-height: 506px;
         border-radius: 0px 0px 30px 30px;
+        padding-bottom: 15px;
     }   
     .autor{
         margin-top: 88px;
         padding-bottom: 20px;
+        padding-top: 10px;
     }
     .identificacao{
         max-height: max-content;
