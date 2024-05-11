@@ -135,14 +135,6 @@ a {color:white; cursor: pointer; text-decoration: none;}
     main {
         flex-direction: column;
         max-width: 340px;
-        padding-right: 20px;
-        /* max-width: 375px; */
-
-        /* justify-content: center;
-        align-items: center;
-        width: 70%;
-        max-width: 875px;
-        height: 491.63px; */
     }
     #fotoPlanta{
         display: none;
@@ -160,7 +152,6 @@ a {color:white; cursor: pointer; text-decoration: none;}
 
     /*2- Mexendo no conteúdo do card */
  /* 2.1- mexendo no texto */
-
     .texto {
         max-width: 280px;
         padding-bottom: 10px;
@@ -239,17 +230,11 @@ a {color:white; cursor: pointer; text-decoration: none;}
     }
 
     .menuEscondido {
-        /* max-width: 221px; */
-        
+        max-height: 22px;
         font-size: 19px;
     }
 
-
     .shareText {
-        text-align: left;
-        font-family: 'Overpass';
-        font-style: normal;
-        font-weight: 500;
-        color: white;
+        padding-top: 1px;
     }
 }
