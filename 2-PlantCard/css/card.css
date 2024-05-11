@@ -151,6 +151,7 @@ footer {
 
     .card .info {
         width: 350px;
+        height: 100%;
     
         padding-top: 25px;
         padding-left: 30px;
@@ -174,12 +175,16 @@ footer {
         justify-content: space-between;
     }
 
-    .name {
-        font-family: Overpass;
+    .perfil .name {
+        font-family: "Overpass";
         font-size: 24px;
         font-weight: 500;
         line-height: 30.38px;
-        text-align: left;
+    }
 
+    .perfil .post_date {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20.26px;
     }
 }
