@@ -14,12 +14,14 @@ body {
     width: 100wh;
 }
 
+#fotoPlantaMobile {
+    display: none;
+}
 /* Alinhando o card com a foto da planta */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
     max-width: 875px;
     height: 491.63px;
 }
@@ -32,12 +34,9 @@ main {
     justify-content: space-between;
     background-color: white;
     width: 100%;
-    padding: 50px 30px 30px 40px;
+    padding: 50px 30px 40px;
     border-radius: 0px 30px 30px 0px;
-
-    max-width: 875px;
     height: 100%;
-    gap: 0px;
 }
 /*2- Mexendo no conteúdo do card */
  /* 2.1- mexendo no texto */
@@ -104,7 +103,6 @@ h1 {
 button {
     cursor: pointer;
     border: none;
-    padding-top: 0px;
     width: 52px;
     height: 52px;
     background: #696F5A;
@@ -133,31 +131,125 @@ button {
 
 a {color:white; cursor: pointer; text-decoration: none;}
 
-@media (max-width: 600px) {
-    /* main {
-        display: flex;
+@media (max-width: 375px) {
+    main {
         flex-direction: column;
-        justify-content: center;
+        max-width: 340px;
+        padding-right: 20px;
+        /* max-width: 375px; */
+
+        /* justify-content: center;
         align-items: center;
         width: 70%;
-    } */
+        max-width: 875px;
+        height: 491.63px; */
+    }
+    #fotoPlanta{
+        display: none;
+    }
+    #fotoPlantaMobile {
+        display: flex;
+        max-width: 340px;
+    }
+    /*1- o card */
+    .card {
+        padding: 25px 30px;
+        border-radius: 0px 0px 30px 30px;
+        max-width: 350px;
+    }
 
-    #fotoPlanta {
-        transform: rotate(90deg)
+    /*2- Mexendo no conteúdo do card */
+ /* 2.1- mexendo no texto */
+
+    .texto {
+        max-width: 280px;
+        padding-bottom: 10px;
+        gap: 1px;
+    }
+
+    h1 {
+        font-family: 'Josefin Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        color: #111313;
+    }
+    #p {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        color: rgb(0, 0, 0);
+    }
+
+    /*2.2- Mexendo no footer (perfil doguito, menu-hamburguer) */
+    .profile {
+        max-width: 280px;
+        padding-top: 20px;
     }
     
-    /* .card {
-        display: flex;
-        box-sizing: border-box;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: white;
-        width: 100%;
-        padding: 50px 30px 30px 40px;
-        border-radius: 30px;
     
-        max-width: 350px;
-        height: 100%;
-        gap: 0px;
-    } */
+    .esquerda {
+        display: flex;
+        flex-direction: row;
+        max-width: 17px;
+        max-height: 60px;
+        padding-top: 50px;
+    }
+    
+    #fotoDoguito {
+        max-width: 60px;
+        max-height: 60px;
+        padding-right: 7px;
+    }
+
+    .profileText {
+        gap: 1px;
+    /*  display: flex;
+        flex-direction: column;
+        justify-items: flex-start;
+        align-items: flex-start;
+        font-family: 'Overpass';
+        font-style: normal;
+        font-weight: 500;
+        text-decoration: black; */
+    }
+
+    .profileText>h2 {
+        font-family: 'Overpass';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+    }
+
+    .profileText>p {
+        font-size: 16px;
+    }
+
+    .menu {
+        padding-bottom:px;
+        gap: 11px;
+    }
+
+    button {
+        width: 52px;
+        height: 52px;
+        background: #696F5A;
+        border-radius: 85px;
+    }
+
+    .menuEscondido {
+        /* max-width: 221px; */
+        
+        font-size: 19px;
+    }
+
+
+    .shareText {
+        text-align: left;
+        font-family: 'Overpass';
+        font-style: normal;
+        font-weight: 500;
+        color: white;
+    }
 }
