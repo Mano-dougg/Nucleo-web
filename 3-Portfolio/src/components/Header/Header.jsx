@@ -3,7 +3,26 @@ import twitterIcon from '../../assets/twitter-icon.svg';
 import instagramIcon from '../../assets/instagram-icon.svg';
 import figmaIcon from '../../assets/figma-icon.svg';
 
-export default function Header() {
+
+
+export default function Header({changeDarkMode}) {
+
+    const setDarkMode = () => {
+        document.querySelector("body").setAttribute("data-theme", "dark")
+    }
+    
+    const setLightMode = () => {
+        document.querySelector("body").setAttribute("data-theme", "light")
+    }
+    
+    const toggleTheme = (e) =>{
+        if(e.target.checked){
+            setDarkMode()
+        }else {
+            setLightMode()
+        }
+    }
+
     return (
         <>
             <div className={s.leftSide}>
@@ -32,7 +51,9 @@ export default function Header() {
 
                 <div className={s.darkMode}>
                     DarkMode: 
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"></input> 
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={toggleTheme} />
+                    </div>
                 </div>
             </div>
         </>

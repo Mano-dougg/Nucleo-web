@@ -1,5 +1,22 @@
 :root {
   font-family: "Be Vietnam Pro", sans-serif;
+  --background_header: #fff;
+  --background_color: #fff;
+  --text_color: #000;
+  --blue_color: #0065FF;
+  --gray: #F8F9FA;
+}
+
+[data-theme="dark"] {
+  --background_header: #3C3B3A;
+  --background_color: #222222;
+  --text_color: #fff;
+  --blue_color: #fff;
+  --gray: #3C3B3A;
+}
+
+body{
+  background-color: var(--background_color);
 }
 
 *{
