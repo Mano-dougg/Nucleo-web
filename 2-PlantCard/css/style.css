@@ -86,8 +86,7 @@ h2{
 h3{
     font-family: 'Overpass';
     font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 20px;
 }
 
 p{
@@ -117,10 +116,11 @@ menu>h3{
     font-family: 'Overpass';
     color: #DFDFD6;
     font-size: 20px;
-    line-height: 25px;
+    line-height: 25.23px;
     width: 84px;
     height: 21px;
     text-align: center;
+    letter-spacing: 4px;
 }
 
 @media only screen and (max-width: 875px){
