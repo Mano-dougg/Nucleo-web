@@ -105,26 +105,26 @@ button{
     margin-top: 10px;
 }
 
-@media (max-width: 1307px) {
+@media (max-width: 1265px) {
 
     body{
         display: flex;
-        margin: 20px;
+        margin: 8px;
         justify-content: center;
     }
     
     .plantas {
         transform: rotate(90deg);
-        width: 59%;
-        height: 59%;
+        width: 60.5%;
+        height: auto;
         margin-bottom: 0px;
         margin-top: 0px;
     }
     section{
         flex-direction: column;
-        width: 59%;
-        height:59%;
-        padding-top: 0%;
+        width: 100%;
+        height:100%;
+        padding: 10px;
         margin: 1px;
         left:  0px;
     }
@@ -149,7 +149,10 @@ button{
 
     footer p{
         font-size: 20px;
+        gap: 0;
     }
 
-
+    .menu-hamburguer{
+        width: 60.5;
+    }
 }
