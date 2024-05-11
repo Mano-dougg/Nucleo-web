@@ -64,3 +64,61 @@ div#row{
     display: flex;
     flex-direction: row;
 }
+
+h1{
+    margin-bottom: 32px;
+    font-family: 'Josefin Sans';
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 36px;
+    color: #111313;
+}
+
+h2{
+    color: #111313;
+    font-family: 'Overpass';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+h3{
+    font-family: 'Overpass';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+p{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0px 0px 0px 0px;
+}
+
+img#doguito{
+    margin-right: 11px;
+}
+
+menu{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 231.02px;
+    height: 44px;
+    background: #696F5A;
+    border-radius: 15px;
+}
+
+menu>h3{
+    font-family: 'Overpass';
+    color: #DFDFD6;
+    font-size: 20px;
+    line-height: 25px;
+    width: 84px;
+    height: 21px;
+    text-align: center;
+}
