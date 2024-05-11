@@ -1,0 +1,38 @@
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    font-size: 1vw;
+}
+
+h1 {
+    font-size: 10em; /* em rem */
+}
+
+span {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 25px;
+}
+
+p {
+    max-width: 500px; /* vh vw %*/
+    font-size: 35px;
+}
+
+@media screen and (max-width: 1120px) {
+    h1 {
+        /* font-size: 50px; */
+    }
+
+    span {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    p {
+        font-size: 25px;
+    }
+}
