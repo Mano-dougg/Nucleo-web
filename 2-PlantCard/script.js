@@ -1,14 +1,14 @@
 function clickmenu(){
-    var alt = window.innerWidth;
+    var larg = window.innerWidth;
 
-    if(alt > 775){
+    if(larg > 775){
 
-        if(compartilhado.style.display == 'block' && usuario.style.marginTop == '2.46%'){
+        if(compartilhado.style.display == 'block'){
             compartilhado.style.display = 'none'
             usuario.style.marginTop = '20%'
         } else { 
             compartilhado.style.display = 'block'
-            usuario.style.marginTop = '2.46%'
+            usuario.style.marginTop = '2.48%'
         }
 
     } else{
