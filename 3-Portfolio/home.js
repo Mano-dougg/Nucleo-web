@@ -13,8 +13,7 @@ function clickMenu(event) {
     if (hamMenu.style.visibility === "hidden") {
         hamMenu.style.visibility = "visible";
         hamMenu.style.height = "100%";
-        botaoMenu.style.visibility = "hidden";
-        botaoMenu.style.height = "0";
+        botaoMenu.style.display = "none";
     } else{
         // hamMenu.style.visibility = "hidden";
         // hamMenu.style.height = "0";
@@ -25,9 +24,12 @@ function clickXis(event){
     event.preventDefault();
     hamMenu.style.visibility = "hidden";
     hamMenu.style.height = "0";
+    botaoMenu.style.display = "";
+    
+  
 
 }
     
-// hamMenu.style.visibility = "hidden";
-// hamMenu.style.height = "0";
+
 botaoMenu.onclick = clickMenu;
+cuno.onclick = clickXis

@@ -166,6 +166,12 @@ body{
     height: 0;
 }
 
+.hamdiv{
+    display: none;
+}
+
+
+
 
 @media(max-width: 850px){
     .redes, .sections{
@@ -221,8 +227,7 @@ body{
 
     .hamdiv{
         width: 100%;
-        /* visibility: hidden;
-        height: 0; */
+        display: flex;
     } 
 
     .cula{
