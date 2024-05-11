@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="styles.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <title>PlantCard</title>
+</head>
+<body> <!-- Conteúdo da página, que o usuário verá -->
+    <main>
+        <img id="fotoPlanta" src="./imagens/imagemplanta.svg" alt="imagem de planta">
+        <section class="card">
+                <div clas="texto">
+                    <h1>Decore sua casa com plantas!</h1>
+                    <p id="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut. Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. Tristique velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, varius auctor cursus commodo. Nisi, non molestie tincidunt posuere leo etiam eu, orci. Consequat diam facilisi neque, est sit. Gravida nibh magna cursus eget eget velit cras.</p>
+                </div>
+                <footer class="profile">
+                    <div class="esquerda">
+                        <img id="fotoDoguito" src="./imagens/doguinho.svg" alt="Foto doguinho 3x4">
+                        <div class="profileText">
+                            <h2>Doguito</h2>
+                            <p>29/09/2022</p>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="menuEscondido" role="Menu de redes sociais">
+                            <p class="shareText">S H A R E</p>
+                            <a href="https://www.facebook.com" target="_blank"><i class="ai-facebook-fill"></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class="ai-twitter-fill"></i></a>
+                            <a href="https://br.pinterest.com/" target="_blank"><i class="ai-pinterest-fill"></i></a>
+                        </div>
+                        <button id="shareButton" onclick="mostrarMenu()">
+                            <img id="shareIcon" src="./imagens/share.svg">
+                        </button>
+                    </div>
+                </footer>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
