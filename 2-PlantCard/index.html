@@ -4,7 +4,7 @@
         <title>Home</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="./style.css">
-
+        <script src="./script.js"></script>
 
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Josefin+Sans">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
@@ -19,14 +19,14 @@
 
                 <div class="imagem">
                     <picture>
-                        <source media="(max-width: 375px)" srcset="./imagens/folhas-horizontal.png">
+                        <source media="(max-width: 775px)" srcset="./imagens/folhas-horizontal.png">
                         <img src="./imagens/folhas.png" alt="gotas e folhas">
                     </picture>
                 </div>
 
-                <div class="conteudo" id="fundo">
+                <div class="conteudo">
 
-                    <div class="texto" id="fundo">
+                    <div class="texto">
                         <h1>Decore sua casa com plantas!</h1>
 
                         <p>
@@ -39,18 +39,34 @@
                         </p>
                     </div> 
 
-                    <div class="user" id="fundo">
+                    <div class="compartilhado" id="compartilhado">
+                        <h3>SHARE</h3>
+
+                        <div  id="facebook">
+                            <img src="./imagens/rede1.png" alt="face">
+                        </div>
+
+                        <div id="twit">
+                            <img src="./imagens/rede2.png" alt="twitter">
+                        </div>
+
+                        <div id="print">
+                            <img src="./imagens/rede3.png" alt="print">
+                        </div>
+                    </div>
+
+                    <div class="user" id="usuario">
                         
                         <img src="./imagens/dog.png" id="dog" alt="usuario">
 
-                        <div class="nome-user" id="fundo">
+                        <div class="nome-user">
 
                             <p id="nome">Doguito</p>
                             <p id="data">29/09/2022</p>
 
                         </div>
 
-                        <img src="./imagens/share.png" id="share" alt="compartilhar">
+                        <button id="share" onclick="clickmenu()"><img src="./imagens/share.png" alt="compartilhar"></button>
                         
 
                     </div>
