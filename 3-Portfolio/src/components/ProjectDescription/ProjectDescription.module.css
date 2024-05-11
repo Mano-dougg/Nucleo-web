@@ -45,3 +45,16 @@
     color:#0065FF;
     margin-top: 20px;
 }
+
+@media screen and (max-width: 905px){
+    .container{
+        flex-direction: column-reverse !important; 
+        gap: 40px;
+        margin-top: 26px;
+        align-items: center;
+    }
+
+    .button{
+        width: 100%;
+    }
+}

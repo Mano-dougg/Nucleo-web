@@ -3,12 +3,15 @@ import checkIcon from '../../assets/check-circle-solid-light.svg';
 import s from './FirstPage.module.css';
 
 export default function FirstPage() {
+
     return (
         <div className={s.container}>
             <img src={profileImage} alt="profile" className={s.profileImage} />
             <div className={s.title}>
-                <h1 >Hello </h1>
-                   <h1> 
+                <h1 >
+                    Hello.
+                </h1>
+                <h1> 
                     My name is Israel.
                 </h1>
             </div>

@@ -43,7 +43,7 @@
     width: 192px;
     height: 2px;
     background-color: #0065FF;
-    margin: 80px 0;
+    margin: 40px 0;
 }
 
 .container{
@@ -90,4 +90,41 @@
     align-items: center;
     justify-content: center;
     margin-top: 46px;
+}
+
+.menuButton{
+    display: none;
+}
+
+
+@media screen and (max-width: 905px){
+    .container{
+        align-items: center;
+        justify-content: center;
+        width: 75%;
+    }
+
+    .title{
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .availableForWork{
+        width: 100%;
+    }
+    .profileImage{
+        margin-bottom: 40px;
+        box-shadow: 0px 25px 65px 0px #00000026;
+    }
+
+    .menuButton {
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    
+
 }

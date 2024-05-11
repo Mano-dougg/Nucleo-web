@@ -3,6 +3,7 @@ import FirstPage from './components/FirstPage/FirstPage'
 import s from './App.module.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import SecondPage from './components/SecondPage/SecondPage'
+import HamburguerMenu from './components/HamburguerMenu/HamburguerMenu'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Header />
       </section>
       <section className={s.main}>
+        <HamburguerMenu />
         <FirstPage />
         <SecondPage />
       </section>

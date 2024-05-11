@@ -17,3 +17,9 @@
     line-height: 24.84px;
     text-align: left;
 }
+
+@media screen and (max-width: 905px){
+    .container{
+        width: 75%;
+    }
+}
