@@ -31,7 +31,7 @@ export default function Header() {
                     <img src={instagramIcon} alt="instagram icon" />
                 </div>
 
-                <div>
+                <div className={s.darkMode}>
                     DarkMode: <Switch /> 
                 </div>
             </div>
