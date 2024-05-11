@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="../code/menu-hamburguer.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <title>PlantCard</title>
 </head>
 <body>
     <section>
-            <img src="../img/plantas.svg" alt="Muitas Plantas">
+            <img src="../img/plantas.svg" alt="Muitas Plantas" class="plantas">
             <div class="infoCard">
                 <div class="texto">
                     <h1>Decore sua casa com plantas!</h1>
@@ -33,7 +34,17 @@
                             <p>29/09/2022</p>
                         </div>
                     </div>
-                    <img src="../img/iconeHamburguer.svg" alt="icone de compartilhamento">
+                    <div class="menu">
+                        <div class="menu-hamburguer">
+                            <p>SHARE</p>
+                            <img src="../img/Facebook.svg" alt="Facebook">
+                            <img src="../img/xwiter.svg" alt="Twiter">
+                            <img src="../img/pinterest.svg" alt="pinterest">
+                        </div>
+                        <button onclick= "abrirMenu()">
+                            <img src="../img/iconeHamburguer.svg" alt="icone de compartilhamento">
+                        </button>
+                    </div>
                 </footer>
 
             </div>
