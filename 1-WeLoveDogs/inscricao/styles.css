@@ -67,23 +67,17 @@ input[type=text] {
 }
 .entradas{
     flex-direction: column;
-    padding-right: 100px;
+    padding-right: 50px;
     margin-left: 0;
     
 }
 .entrada-simples{
+    display: flex;
     font-weight: bold;
-    text-align: justify;
+    text-align: center;
     margin-left: 0;
     padding-left: 5px;
     padding-right: 5px;
-}
-.simples{
-    padding-inline: 5px;
-    text-align: center;
-}
-textarea{
-    resize: none;
 }
 .enviar{
     margin-left: auto;
@@ -91,4 +85,25 @@ textarea{
     background-color: #7ED321;
     padding-inline: 35px;
     border-radius: 10px;
+}
+.simples{
+    margin-right: 40px;
+    margin-left: 30px;
+}
+.pergunta{
+    margin-left: 10px;
+    margin-right: 57px;
+}
+#nome{
+    margin-left: 40px;
+}
+#idade{
+    margin-left: 43px;
+}
+#email{
+    margin-left: 36px;
+}
+#amacachorros{
+    width: 350px;
+    height: 80px;
 }
