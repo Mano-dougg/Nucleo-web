@@ -6,16 +6,13 @@ section{
     display: flex;
     align-items: center;
     font-family: "Josefin Sans", sans-serif;
-    width: 875;
-    height: 491.63;
-    top: 294px ;
+    width: auto;
+    height: auto;
     left: 523px;
     border-radius: 30px 30px 30px 30px;
     background-color: #DFDFD6;
     margin: 200px;
-    max-inline-size: 100%;
-    max-width: 100%;
- 
+    box-sizing: border-box;
 }
 
 
@@ -23,11 +20,12 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: Hug (524px)px;
-    height: Hug (222px)px;
-    gap: 125px;
+    width: auto;
+    height: auto;
+    gap: 75px;
     margin-left: 32px;
     margin-right: 32px;
+    
 
 }
 
@@ -45,7 +43,7 @@ h1{
     font-size: 36px;
     font-weight: 600;
     line-height: 36px;
-    text-align: left;
+    text-align: center;
 }
 
 p{
@@ -60,8 +58,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .caixaInfo{
@@ -90,6 +87,7 @@ button{
 }
 
 .menu-hamburguer p{
+    display: flex;
     color: #DFDFD6;   
     letter-spacing: 4px; 
 }
@@ -105,4 +103,53 @@ button{
 button{
     display: flex;
     margin-top: 10px;
+}
+
+@media (max-width: 1307px) {
+
+    body{
+        display: flex;
+        margin: 20px;
+        justify-content: center;
+    }
+    
+    .plantas {
+        transform: rotate(90deg);
+        width: 59%;
+        height: 59%;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    section{
+        flex-direction: column;
+        width: 59%;
+        height:59%;
+        padding-top: 0%;
+        margin: 1px;
+        left:  0px;
+    }
+    
+    .infoCard{
+        height: auto;
+        width: auto;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    h1{
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 36px;
+        text-align: center;
+        line-height: 1;
+    }
+    .texto p{
+        font-size: 30px ;
+    }
+
+    footer p{
+        font-size: 20px;
+    }
+
+
 }
