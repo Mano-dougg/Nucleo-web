@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #BCCDD0;
+}
+
+h1 {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-family: sans-serif;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 80rem;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    background-color: #DFDFD6;
+    border-radius: 1rem;
+}
+
+.side-img {
+    background-color: #BCCDD0;
+}
+
+.side-img::before {
+    content: url("../img/image.svg");
+}
+
+.main-text-wrapper {
+    position: relative;
+    left: -3rem;
+    border-radius:2rem;
+    background-color: #DFDFD6;
+}
+
+.main-text {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 2rem 0 0 3rem;
+    border-radius: 5rem;
+}
+
+.social-icons {
+    display: none; 
+    text-align: end;
+    position: absolute;
+    bottom: 12rem;
+    right: 0;
+}
+
+.social-area footer {
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.social-area footer .profile {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.name-bold {
+    font-weight: bold;
+}
+
+button {
+    background-color: #DFDFD6;
+    border: none;
+    cursor: pointer;
+}
+
+@media(max-width: 800px) {
+    .content-wrapper {
+        max-width: 35.4rem;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-img::before {
+        content: url(../img/mobileimg/image.svg);
+    }
+
+    .main-text-wrapper {
+        position: relative;
+        left: 0;
+        top: -3rem;
+    }
+
+    .main-text {
+        margin: 2rem 3rem 0 3rem;
+    }
+
+    .social-icons {
+        bottom: 8rem;
+        right: 4rem;
+    }
+
+    .social-icons img {
+        max-height: 3rem;
+    }
+}
