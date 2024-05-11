@@ -122,3 +122,32 @@ menu>h3{
     height: 21px;
     text-align: center;
 }
+
+@media only screen and (max-width: 875px){
+    section{
+        display: flex;
+        flex-direction: column;
+    }
+    div#main{
+        width: 350px;
+        height: 548px;
+        border-radius: 0px 0px 30px 30px;
+    }
+    div#text{
+        padding: 25px 30px 0px 30px;
+        
+    }
+    div#footer{
+        padding: 0px 30px 25px 30px;
+    }
+    picture{
+        height: 202px;
+    }
+    h1{
+        margin-bottom: 10px;
+    }
+    menu{
+        width: 221px;
+        height: 34px;
+    }
+}
