@@ -1,0 +1,40 @@
+.leftSide{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    
+}
+
+.leftSide h1{
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #0065FF;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.rightSide{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.iconImages{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.8rem;
+}
