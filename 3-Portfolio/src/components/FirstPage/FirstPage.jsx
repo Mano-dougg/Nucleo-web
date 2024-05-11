@@ -6,9 +6,12 @@ export default function FirstPage() {
     return (
         <div className={s.container}>
             <img src={profileImage} alt="profile" className={s.profileImage} />
-            <h1 className={s.title}>Hello. <br/>
-                My name is Israel.
-            </h1>
+            <div className={s.title}>
+                <h1 >Hello </h1>
+                   <h1> 
+                    My name is Israel.
+                </h1>
+            </div>
 
             <div className={s.description}>
                 <p>
