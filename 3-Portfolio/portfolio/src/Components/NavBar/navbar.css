@@ -1,6 +1,35 @@
-.navzinha{
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
-    display: block;
+/* Toggle Switch: */
+
+#chk{
+    display: none;
+}
+
+.switch{
+    position: relative;
+    background-color: #E5E5E5; /*MUDAR!!*/
+    width: 40px;
+    height: 22px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.slider{
+    position: absolute;
+    background-color: #202020; /*MUDAR!*/
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    transition: all .5s ease-in-out;
+}
+
+#chk:checked ~ .switch{
+    background-color: #FAF4E6;
+}
+
+#chk:checked ~ .switch .slider {
+    transform: translateX(15px);
 }
