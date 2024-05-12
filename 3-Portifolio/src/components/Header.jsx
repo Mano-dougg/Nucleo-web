@@ -1,4 +1,6 @@
-
+import twitterIcon from './images/twitterIcon.png'
+import figmaIcon from './images/figmaIcon.png'
+import InstaIcon from './images/instagramIcon.png'
 
 function Header(){
     return(
@@ -20,11 +22,11 @@ function Header(){
         </article>
         <article>
             <div className="iconsHeader">
-                <img src="" alt="" />   
-                <img src="" alt="" />
-                <img src="" alt="" />
+                <img src={twitterIcon} alt="Logo do twitter" />   
+                <img src={figmaIcon} alt="Logo do figma" />
+                <img src={InstaIcon} alt="Logo do Instagram" />
             </div>
-            <div  className="darkMode">
+            <div className="darkMode">
                 <p>Dark mode:</p>
                 <input type="checkbox" id="check"/>
                 <label htmlFor="check" className="switch">
