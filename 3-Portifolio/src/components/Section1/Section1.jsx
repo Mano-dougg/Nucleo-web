@@ -6,33 +6,36 @@ function Section1() {
     return (
         <>
         <section>
-            <article>
-                <img src={avatar} alt="" />
+            <article className={styles.articleSection1}>
+                <img className={styles.imgAvatar} src={avatar} alt="" />
                 <h1>Hello. 
                 <br/>My name is Douglas
                 </h1>
                 <hr />
             </article>
-            <article>
-                <p>
-                        I'm a Digital Product and UI Designer – creating digital experiences that are intuitive 
-                    for real people and making complex processes easy to use.
-                <br />
-                <br />
-                        Right now, I'm Design Lead at <li><a href="">Holiday Extras</a></li>, covering all our digital platforms across
-                    a whole load of brands – leading a great team across <li><a href=""> design</a></li>, UI engineering, accessibility
-                    and customer experience. I'm lucky to be part of a great team of designers, writers,
-                    engineers, PMs and data specialists – amongst others – testing, iterating and optimising our platforms and products.
-                <br />
-                <br />
-                        I've got some <li><a href=""> work on Dribbble </a></li>, some previous work at <li><a href=""> Saga </a></li> 
-                    and you can find me over on twitter and sometimes <li><a href=""> on Medium too </a></li>. I also take
-                    <li><a href=""> too many photos </a></li>.
-                </p>
-                    <div className="callOut">
-                        <img src={checkCircle} alt="" />
+            <article className={styles.articleSection1}>
+                  <div>
+                    <p>
+                            I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making
+                        <br /> complex processes easy to use.
+                    <br />
+                    <br />
+                            Right now, I'm Design Lead at <a href="">Holiday Extras</a>, covering all our digital platforms across
+                            a whole load of brands – <br /> leading a great team across <a href=""> design</a>, UI engineering, accessibility
+                        and customer experience. I'm lucky to be part of a great <br /> team of designers, writers,
+                        engineers, PMs and data specialists – amongst others – testing, iterating and optimising <br /> our platforms and products.
+                    <br />
+                    <br />
+                            I've got some <a href=""> work on Dribbble </a>, some previous work at<a href=""> Saga </a>
+                        and you can find me over on twitter and sometimes <a href=""> on
+                    <br /> Medium too </a>. I also take
+                        <a href=""> too many photos </a>.
+                    </p>
+                  </div>
+                    <div className={styles.callOut}>
+                        <img className={styles.imgCheckCircle} src={checkCircle} alt="" />
                         <p>
-                            Available for work and general design goodness – <li><a href=""> say hello </a></li> 
+                            Available for work and general design goodness – <a href=""> say hello </a>
                         </p>
                     </div>
             </article>

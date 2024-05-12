@@ -1,0 +1,38 @@
+
+.articleSection1{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 238px 0px 240px;
+}
+
+.imgAvatar{
+    width: 100px;
+    height: 100px;
+}
+
+h1{
+    color: #0065FF;
+    font-size: 70px;
+}
+
+.callOut{
+    width: 462px;
+    height: 56px ;
+    margin-top: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F9FA;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #0065FF;
+    white-space: nowrap;
+}
+
+.imgCheckCircle{
+    width: 16px;
+    height: 16px;
+}

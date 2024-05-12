@@ -7,7 +7,7 @@ function Header(){
     return(
     <>
     <header>
-        <article>
+        <article className={styles.articleHeader}>
             <h4>Douglas Aleixo</h4>
             <nav>
                 <ul>
@@ -17,7 +17,7 @@ function Header(){
                 </ul>
             </nav>
         </article>
-        <article>
+        <article className={styles.articleHeader}>
             <div className={styles.iconsHeader}>
                 <img src={twitterIcon} alt="Logo do twitter" />   
                 <img src={figmaIcon} alt="Logo do figma" />

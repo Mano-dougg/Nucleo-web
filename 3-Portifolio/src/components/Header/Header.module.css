@@ -7,7 +7,7 @@ header{
     align-items: center;
 }
 
-article{
+.articleHeader{
     display: flex;
     align-items: center;
     gap: 50px;
