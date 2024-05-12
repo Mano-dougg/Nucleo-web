@@ -1,0 +1,38 @@
+
+header{
+    padding: 0px 87px 0px 87px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+article{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a{
+    color: #0065FF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.iconsHeader{
+    display: flex;
+    gap: 30px;  
+}
+
+.darkMode{
+    display: flex;
+}
+
+
+

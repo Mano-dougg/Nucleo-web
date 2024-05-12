@@ -1,6 +1,7 @@
-import twitterIcon from './images/twitterIcon.png'
-import figmaIcon from './images/figmaIcon.png'
-import InstaIcon from './images/instagramIcon.png'
+import twitterIcon from './imagesHeader/twitterIcon.png'
+import figmaIcon from './imagesHeader/figmaIcon.png'
+import InstaIcon from './imagesHeader/instagramIcon.png'
+import styles from './Header.module.css'
 
 function Header(){
     return(
@@ -11,22 +12,18 @@ function Header(){
             <nav>
                 <ul>
                     <li><a href="">Section two</a></li>
-                </ul>
-                <ul>
                     <li><a href="">Section three</a></li>
-                </ul>
-                <ul>    
                     <li><a href="">Section four</a></li>
                 </ul>
             </nav>
         </article>
         <article>
-            <div className="iconsHeader">
+            <div className={styles.iconsHeader}>
                 <img src={twitterIcon} alt="Logo do twitter" />   
                 <img src={figmaIcon} alt="Logo do figma" />
                 <img src={InstaIcon} alt="Logo do Instagram" />
             </div>
-            <div className="darkMode">
+            <div className={styles.darkMode}>
                 <p>Dark mode:</p>
                 <input type="checkbox" id="check"/>
                 <label htmlFor="check" className="switch">
@@ -35,7 +32,6 @@ function Header(){
             </div>
         </article>
     </header>
-    
     </>
     )
 }
