@@ -1,0 +1,24 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-content: flex-start;
+    max-height: calc(100vh - 8.1rem);
+    max-width: 87rem;
+}
+
+.apresentation {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-img{
+    max-height: 10rem;
+    max-width: 15rem;
+}
+
+.avatar-img img {
+    max-width: 100%;
+    position: relative;
+    right: 40px;
+}
