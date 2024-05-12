@@ -122,7 +122,7 @@ body {
 }
 
 #share-menu {
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -136,10 +136,6 @@ body {
     transition: 0.5s;
     top: -50px;
     right: -0px;
-}
-
-#share-menu.active {
-    opacity: 1;
 }
 
 #share-menu h3 {
