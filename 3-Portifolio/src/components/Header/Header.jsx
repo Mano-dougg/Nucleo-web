@@ -25,9 +25,9 @@ function Header(){
             </div>
             <div className={styles.darkMode}>
                 <p>Dark mode:</p>
-                <input type="checkbox" id="check"/>
-                <label htmlFor="check" className="switch">
-                    <span className="slider"></span>
+                <input type="checkbox" id={styles.check}/>
+                <label htmlFor="check" className={styles.switch}>
+                    <span className={styles.slider}></span>
                 </label>
             </div>
         </article>
