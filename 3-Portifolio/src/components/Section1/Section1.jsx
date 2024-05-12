@@ -14,7 +14,7 @@ function Section1() {
                 <hr />
             </article>
             <article className={styles.articleSection1}>
-                  <div>
+                  <div className={styles.divPrgrf}>
                     <p>
                             I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making
                         <br /> complex processes easy to use.
