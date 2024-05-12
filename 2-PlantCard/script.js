@@ -1,6 +1,5 @@
-const shareButton = document.getElementById("share-btn")
 const shareMenu = document.getElementById("share-menu")
-const shareBtn = document.getElementById("share-btn")
+const shareButton = document.getElementById("share-btn")
 const menu = document.createElement("div")
 menu.id = "share-menu"
 menu.innerHTML = `
@@ -18,11 +17,9 @@ menu.innerHTML = `
 
 const toggleShare = () => {
   const activeMenu = document.getElementById("share-menu");
-  if (activeMenu) {
-    activeMenu.remove();
-  } else {
-    shareBtn.parentNode.insertBefore(menu, shareBtn.nextSibling);
-  }
+  activeMenu
+    ? activeMenu.remove()
+    : shareButton.parentNode.insertBefore(menu, shareButton.nextSibling);
 }
 
 shareButton.addEventListener("click", toggleShare)
