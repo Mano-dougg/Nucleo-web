@@ -1,11 +1,13 @@
-
+import avatar from './imagesSection1/Avatar.png'
+import checkCircle from './imagesSection1/checkCircle.png'
+import styles from './Section1.module.css'
 
 function Section1() {
     return (
         <>
         <section>
             <article>
-                <img src="" alt="" />
+                <img src={avatar} alt="" />
                 <h1>Hello. 
                 <br/>My name is Douglas
                 </h1>
@@ -27,9 +29,10 @@ function Section1() {
                     and you can find me over on twitter and sometimes <li><a href=""> on Medium too </a></li>. I also take
                     <li><a href=""> too many photos </a></li>.
                 </p>
-                    <div className={Styles.callOut}>
-                        <img src="" alt="" />
-                        <p>Available for work and general design goodness – <li><a href=""> say hello </a></li>
+                    <div className="callOut">
+                        <img src={checkCircle} alt="" />
+                        <p>
+                            Available for work and general design goodness – <li><a href=""> say hello </a></li> 
                         </p>
                     </div>
             </article>
