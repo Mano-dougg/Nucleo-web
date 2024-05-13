@@ -1,0 +1,11 @@
+:root{
+    --blue: #0065FF;
+}
+
+.big-color{
+    color: var(--blue);
+}
+
+.fill{
+    fill: var(--blue);
+}
