@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    padding: 30px 87px 30px 87px;
+    background-color:rgb(156, 149, 149);
+    width: 90%;
+
+}
+
+
+
+nav ul li{
+    display: inline-flex;
+    padding-right: 20px;
+    
+
+
+}
+
+nav ul li h1{
+    padding-right: 20px;
+}
+
+
+
