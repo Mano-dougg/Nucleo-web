@@ -24,6 +24,20 @@
     color: var(--blue_color);
     font-weight: 400;
     font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.navigation a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--blue_color);
+    transition: width 0.3s;
+}
+
+.navigation a:hover::after{
+    width: 100%;
 }
 
 .rightSide{
