@@ -1,0 +1,22 @@
+
+.section4{
+    display: flex;
+    padding: 36px 240px 80px 240px;
+    gap: 40px;
+}
+
+.imgPlaceholder{
+    width: 670px;
+    height: 370px;
+}
+
+.BtnPrimarylight{
+    margin-top: 28px;
+    width: 180px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid  #0065FF;
+    border-radius: 44.5px;
+}

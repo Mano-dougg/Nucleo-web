@@ -1,9 +1,10 @@
+import placeholder from './imagesSection4/placeholder.png'
 import styles from './Section4.module.css'
 
 function Section4() {
     return(
         <>
-        <section>
+        <section className={styles.section4}>
             <article>
                 <h4>Title</h4>
                 <p>
