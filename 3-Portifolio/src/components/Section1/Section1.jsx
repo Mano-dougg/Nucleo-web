@@ -5,7 +5,7 @@ import styles from './Section1.module.css'
 function Section1() {
     return (
         <>
-        <section>
+        <section className={styles.Section1}>
             <article className={styles.articleSection1}>
                 <img className={styles.imgAvatar} src={avatar} alt="" />
                 <h1>Hello. 
@@ -14,7 +14,7 @@ function Section1() {
                 <hr />
             </article>
             <article className={styles.articleSection1}>
-                  <div className={styles.divPrgrf}>
+                  <div>
                     <p>
                             I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making
                         <br /> complex processes easy to use.

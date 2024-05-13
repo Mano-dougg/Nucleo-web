@@ -1,17 +1,18 @@
 
+.Section1{
+    margin-top: 50px;
+    gap: 80px;
+}
+
 .articleSection1{
     display: flex;
     flex-direction: column;
-    padding: 50px 238px 80px 240px;
+    padding: 0px 238px 80px 240px;
 }
 
 .imgAvatar{
     width: 100px;
     height: 100px;
-}
-
-.divPrgrf{
-    margin-top: -50px;
 }
 
 hr{
