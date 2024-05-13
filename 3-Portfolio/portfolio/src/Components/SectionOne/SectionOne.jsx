@@ -11,14 +11,14 @@ const SectionOne = () => {
           <h2>My name is Rian.</h2>
         </div>
 
-        <hr className='sectionone title line'></hr>
+        <hr className='line'></hr>
 
         <div className="sectionone text">
-          <p> I'm a computer science student at the Federal University of Bahia, and I'm starting my studies and career in programming, learning more and more concepts in the technology field every day.
+          <p> I'm a <span>computer science student</span> at the <span>Federal University of Bahia</span>, and I'm starting my studies and career in programming, learning more and more concepts in the technology field every day.
           </p>
           <br></br>
           <p>
-          At the moment, I'm a trainee in the selection process for the Junior Company "InfoJR", which is why I've put together this portfolio. For this project, I'm using Javascripit as the main programming language, with React as a library to help build animations and features, such as implementing dark mode on the site. As a "base" for the code, of course, there's HTML and CSS.
+          Right now, <span>I'm a trainee</span> in the selection process for the <span>Junior Company "InfoJR"</span>, which is why I've put together this portfolio. For this project, I'm using <span>Javascript</span> as the <span>main programming language</span>, with <span>React</span> as a library to help build animations and features, such as implementing dark mode on the site. As a "base" for the code, of course, there's HTML and CSS.
           </p>
           <br></br>
           <p>
@@ -32,7 +32,7 @@ const SectionOne = () => {
           <p>Available for work and general design.</p><a href='' className='a-contact'>Contact Me!</a>
         </div>
 
-        <hr></hr>
+        <hr className='secondline'></hr>
       </section>
       </>
     )

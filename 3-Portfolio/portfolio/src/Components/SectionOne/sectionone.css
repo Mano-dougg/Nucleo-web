@@ -17,16 +17,27 @@
     font-size: 55px;
 }
 
-hr{
+.line{
     display: flex;
-    color: var(--font-color-emphasis);
     width: 130px;
-    height: 1px;
-    margin: 70px 0;
+    height: 2px;
+    margin: 80px 0;
 }
 
+.secondline{
+    display: flex;
+    width: 960px;
+    height: 2px;
+    margin: 80px 0;
+}
 .sectionone .text{
     padding: 0;
+}
+
+span{
+    color: var(--font-color-emphasis);
+    text-decoration: underline 1px solid var(--underline-text);
+
 }
 .sectionone .text > p{
     font-family: var(--be-font);
@@ -61,11 +72,23 @@ hr{
     text-decoration: none;
     color: var(--font-color-emphasis);
     font-weight: 300;
-    font-size: 15px;
+    font-size: 14px;
     transition: all .3s ease-in-out;
 }
 
+.a-contact::after{
+    display: block;
+    content: '';
+    width: 0px;
+    height: 1px;
+    background-color: var(--font-color-emphasis);
+    transition: all .3s ease-in-out;
+}
 .a-contact:hover{
     transform: scale(1.05);
+}
+
+.a-contact:hover:after{
+    width: 85px;
 }
 
