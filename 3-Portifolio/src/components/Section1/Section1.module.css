@@ -7,7 +7,7 @@
 .articleSection1{
     display: flex;
     flex-direction: column;
-    padding: 0px 238px 80px 240px;
+    padding: 0px 238px 0px 240px;
 }
 
 .imgAvatar{
@@ -19,6 +19,7 @@ hr{
     width: 192px;
     color:  #0065FF;
     margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .callOut{
