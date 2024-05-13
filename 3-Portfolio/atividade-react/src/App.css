@@ -6,15 +6,28 @@ body.dark-mode {
 .dark-mode a{
   color: white;
 }
-.dark-mode img{ /* ajuste */
-  color: white;
-}
+
 .dark-mode span {
   color: white;
+}
+.dark-mode .sections button{
+  background-color: var(--color-dark-claro);
+  border-color: #fff;
+  color: #fff;
 }
 .dark-mode .sections h1{
   background-color:var(--color-dark);
   color: #fff;
+}
+.dark-mode .sections h2{
+  color: #fff;
+}
+.dark-mode .hr{
+  background-color: #fff;
+}
+
+.dark-mode .hr2{
+  background-color: #fff;
 }
 
 .dark-mode .sections span{
@@ -23,3 +36,31 @@ body.dark-mode {
 .dark-mode .avaliable {
   background-color: var(--color-dark-claro);
 }
+
+
+/* modulo para os icons */
+.dark {
+  background-color: var(--color-dark-claro);
+  color: #fff;
+}
+
+.dark .itens_nav1 a {
+  color: #fff;
+}
+
+.dark .itens_dark li {
+  color: #fff;
+}
+
+.iconDark {
+  filter: invert(1) grayscale(1);
+}
+
+.iconDark{
+  background-color: #fff;
+}
+
+
+
+
+

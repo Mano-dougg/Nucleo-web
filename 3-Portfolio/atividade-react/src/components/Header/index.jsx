@@ -1,4 +1,5 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+
 import React, { useState } from 'react';
 import styles from './Header.module.css';
 
@@ -21,8 +22,8 @@ function Header() {
           <a className={styles.logo} href="#">
             Eder Natan
           </a>
-          <a href="#">Section Segund</a>
-          <a href="#">Section three</a>
+          <a href="#section1">Section Segund</a>
+          <a href="#section2">Section three</a>
           <a href="#">Section four</a>
         </div>
         <div>
@@ -30,19 +31,31 @@ function Header() {
             <div className={styles.itens_img}>
               <li>
                 <a href="#">
-                  <img src="/src/assets/img/twitter-icon.svg" alt="Twitter" />
+                  <img
+                    src="/src/assets/img/twitter-icon.svg"
+                    alt="Twitter"
+                    className={darkMode ? styles.iconDark : ''}
+                  />
                 </a>
               </li>
 
               <li>
                 <a href="#">
-                  <img src="/src/assets/img/Vector(1).svg" alt="" />
+                  <img
+                    src="/src/assets/img/Vector(1).svg"
+                    alt=""
+                    className={darkMode ? styles.iconDark : ''}
+                  />
                 </a>
               </li>
 
               <li>
                 <a href="#">
-                  <img src="/src/assets/img/instagram-icon.svg" alt="" />
+                  <img
+                    src="/src/assets/img/instagram-icon.svg"
+                    alt=""
+                    className={darkMode ? styles.iconDark : ''}
+                  />
                 </a>
               </li>
             </div>

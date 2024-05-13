@@ -127,3 +127,22 @@ li{
 .checkbox:checked + .label .ball {
     transform: translateX(24px);
 }
+
+/* modulo para os icons */
+.dark {
+    background-color: var(--color-dark-claro);
+    color: #fff;
+  }
+  
+  .dark .itens_nav1 a {
+    color: #fff;
+  }
+  
+  .dark .itens_dark li {
+    color: #fff;
+  }
+  
+  .iconDark {
+    filter: invert(1) grayscale(1);
+  }
+  
