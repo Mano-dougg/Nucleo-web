@@ -4,39 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="nav-container">
-        <div class="logo">
-            <nav>
+    <header>
+        <div class="nav-container">
+
+            <div class="logo">
                 <a href="index.html" rel="prev" target="_self">
                     <img src="data/welovedogs.svg" alt="Logo">
-                </a>    
-            </nav>
-        </div>
-        
-        <ul class="nav-items">
-                <li>
+                </a>
+            </div>
+
+            <div class="nav-items">
+                <nav>
                     <a href="Quem_Somos.html" rel="next" target="_self">
                         QUEM SOMOS
                     </a>
-                </li>
-                
-                <li>
                     <a href="Blog.html" rel="next" target="_self">
                         BLOG
                     </a>
-                </li>
-            
-                <li>
+                    <button>
                     <a href="Contato.html" rel="next" target="_self">
                         INSCREVER
                     </a>
-                </li>
-                
-            </ul>
+                    </button>
+                </nav>
+            </div>
+
         </div>
-    <p>Junte-se a comunidade apaixonada por cachorros</p>
-    <img src="data/Figure1.svg" alt="Fig1">
+    </header>
+
+    <div class="main-container">
+        <p id="txt1">Junte-se a comunidade apaixonada por cachorros</p>
+        <img id="fig1" src="data/Figure1.svg" alt="Fig1">
+        <button>
+            <a href="Contato.html" rel="next" target="_self">
+                INSCREVER
+            </a>
+        </button>
+    </div>
 </body>
 </html>
