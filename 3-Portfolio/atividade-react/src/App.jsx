@@ -1,11 +1,16 @@
 import './App.css'
 import Header from './components/Header'
+import Section1 from './components/Section1'
 function App() {
 
   return (
     <>
-    <Header />
-
+      <main>
+        <Header />
+        <div className='sections'>
+          <Section1/>
+        </div>
+      </main>
     </>
   )
 }
