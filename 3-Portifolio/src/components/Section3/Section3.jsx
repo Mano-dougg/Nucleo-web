@@ -1,9 +1,11 @@
+import placeholder from './imagesSection3/placeholder.png'
+import styles from './Section3.module.css'
 
 function Section3(){
     return(
         <>
-            <section>
-                <img src="" alt="" />
+            <section className={styles.section3}>
+                <img className={styles.imgPlaceholder} src={placeholder} alt="" />
                 <article>
                     <h4>Title</h4>
                     <p>
@@ -13,8 +15,8 @@ function Section3(){
                         <br /> for every touch-point across
                         <br /> various platforms.
                     </p>
-                    <div>
-                         <p>Button Primary Light</p>
+                    <div className={styles.BtnPrimarylight}>
+                         <h5>Button Primary Light</h5>
                     </div>
                 </article>
             </section>

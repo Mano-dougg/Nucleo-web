@@ -1,0 +1,28 @@
+
+.section3{
+    display: flex;
+    padding: 36px 240px 0px 230px;
+    gap: 40px;
+}
+
+.imgPlaceholder{
+    width: 670px;
+    height: 370px;
+}
+
+.BtnPrimarylight{
+    padding-top: 28px;
+    width: 180px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px;
+    border-radius: 44.5px;
+    border-color: #0065FF;
+}
+
+h5{
+    color: #0065FF;
+    font-size: 12px;
+}
