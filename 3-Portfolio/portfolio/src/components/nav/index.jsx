@@ -9,7 +9,7 @@ export default function Nav(){
         <>
         <nav>
           <div className="nav_links">
-            <h1>Kevin Bennett</h1>
+            <h1>Jaedson Barbosa Macedo</h1>
             <div className="nav_links-group">
                 <a href="">Section two</a> 
                 <a href="">Section three</a> 

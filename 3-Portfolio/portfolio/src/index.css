@@ -10,3 +10,9 @@
  --btn-border: rgba(60, 59, 58, 1);
  --btn-bg:rgba(229, 229, 229, 1);
 }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
