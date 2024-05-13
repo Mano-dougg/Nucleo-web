@@ -28,15 +28,16 @@
 .line{
     display: flex;
     width: 130px;
-    height: 2px;
     margin: 80px 0;
+    color: var(--font-color-emphasis);
+
 }
 
 .secondline{
     display: flex;
     width: 960px;
-    height: 2px;
     margin: 80px 0;
+    color: var(--font-color-emphasis);
 }
 .sectionone .text{
     padding: 0;
