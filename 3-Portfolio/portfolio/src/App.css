@@ -8,6 +8,7 @@
     --underline-text: #fff;
     --eb-font: 'EB Garamond';
     --be-font: 'Be Vietnam Pro';
+    --img-saturation: grayscale(0%) contrast(100%);
 }
   
 [data-theme="dark"] {
@@ -18,6 +19,7 @@
     --underline-text: #FAF4E6;
     --font-color-emphasis: #FAF4E6;
     --toggle-background: #FAF4E6;
+    --img-saturation: grayscale(100%) contrast(115%);
 }
 
 .app{

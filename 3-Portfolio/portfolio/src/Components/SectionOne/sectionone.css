@@ -3,6 +3,14 @@
     padding: 50px 200px;
 }
 
+.sectionone-logo{
+    width: 120px;
+    height: 120px;
+    border-radius: 95px;
+    object-fit: fill;
+    filter: var(--img-saturation);
+}
+
 .sectionone .title{
     display: block;
     justify-content: flex-start;

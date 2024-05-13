@@ -1,11 +1,13 @@
 import './sectionone.css'
 import { FaCheckCircle } from "react-icons/fa";
+import RianLogo from "../../assets/Rian.jpg";
 
 const SectionOne = () => {
     return (
       <>
       <section className="sectionone">
         
+        <img className='sectionone-logo' src={RianLogo}/>
         <div className="sectionone title">
           <h2>Hello.</h2>
           <h2>My name is Rian.</h2>
