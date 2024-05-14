@@ -9,6 +9,8 @@
  --btn-darkTheme:rgba(60, 59, 58, 1);
  --btn-border: rgba(60, 59, 58, 1);
  --btn-bg:rgba(229, 229, 229, 1);
+ --row-color:#0065FF;
+ --header-checkIcon-bg:rgba(248, 249, 250, 1);
 }
 
 *{

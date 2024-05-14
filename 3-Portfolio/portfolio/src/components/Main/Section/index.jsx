@@ -1,5 +1,7 @@
-export default function Main(){
+
+
+export default function Section(){
     return(
-        <main></main>
+        <section></section>
     )
 }

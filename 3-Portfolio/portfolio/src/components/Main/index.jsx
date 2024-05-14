@@ -1,5 +1,12 @@
+import './style.css'
+import Header from "./Header"
+import Section from "./Section"
+
 export default function Main(){
     return(
-        <main></main>
+        <main>
+            < Header />
+            <Section></Section>
+        </main>
     )
 }
