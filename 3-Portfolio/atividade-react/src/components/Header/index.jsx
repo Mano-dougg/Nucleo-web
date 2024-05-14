@@ -22,9 +22,12 @@ function Header() {
           <a className={styles.logo} href="#">
             Eder Natan
           </a>
-          <a href="#section1">Section Segund</a>
-          <a href="#section2">Section three</a>
-          <a href="#">Section four</a>
+          <ul className={styles.itens_nav2}> 
+          <li> <a href="#section1">Section Segund</a></li>
+          <li><a href="#section2">Section three</a></li>
+          <li> <a href="#">Section four</a></li>
+          </ul>
+          
         </div>
         <div>
           <ul className={styles.itens_nav2}>
@@ -77,6 +80,14 @@ function Header() {
             </div>
           </ul>
         </div>
+    <div className={styles.icon_navbar}>
+      <i className={this.state.clicked ? 
+        'fas da'
+      } ><box-icon name='menu'></box-icon></i>
+      <i><box-icon name='x'></box-icon></i>
+    </div>
+
+        
       </nav>
     </header>
   );
