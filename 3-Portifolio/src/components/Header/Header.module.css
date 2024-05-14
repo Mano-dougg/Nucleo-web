@@ -14,6 +14,10 @@ header{
     gap: 50px;
 }
 
+.h4SemPaddingBottom{
+    padding-bottom: 0px;
+}
+
 nav ul{
     display: flex;
     list-style: none;

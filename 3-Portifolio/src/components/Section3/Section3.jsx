@@ -19,7 +19,7 @@ function Section3(){
                 </p>
                 <div className={styles.center}>
                     <div className={styles.BtnPrimarylight}>
-                    <h5>Button Primary Light</h5>
+                        <h5>Button Primary Light</h5>
                     </div>
                 </div>
                 </article>

@@ -8,7 +8,7 @@ function Header(){
     <>
     <header>
         <article className={styles.articleHeader}>
-            <h4>Douglas Aleixo</h4>
+            <h4 className={styles.h4SemPaddingBottom}>Douglas Aleixo</h4>
             <nav>
                 <ul>
                     <li><a href="">Section two</a></li>

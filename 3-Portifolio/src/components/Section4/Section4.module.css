@@ -20,3 +20,28 @@
     border: 1px solid  #0065FF;
     border-radius: 44.5px;
 }
+
+/* RESPOSIVIDADE */
+
+@media (max-width: 376px) {
+
+    .section4{
+        flex-direction: column-reverse;
+        padding: 25px 32px 25px 33px;
+        gap: 17px;
+    }
+
+    .imgPlaceholder{
+        width: 310px;
+        height: 179px;
+    }
+
+    .center{
+        display: flex;
+        justify-content: center;
+    }
+
+    .BtnPrimarylight{
+        width: 310px;
+    }
+}

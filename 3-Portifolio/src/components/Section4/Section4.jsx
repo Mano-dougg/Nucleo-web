@@ -6,16 +6,20 @@ function Section4() {
         <>
         <section className={styles.section4}>
             <article>
-                <h4>Title</h4>
+                <div className={styles.center}>
+                    <h4>Title</h4>
+                </div>
                 <p>
                         Leading, implementing and
-                    <br /> evolving engaging customer
-                    <br /> experiences and UI foundations
-                    <br /> for every touch-point across
-                    <br /> various platforms.
+                     evolving engaging customer
+                     experiences and UI foundations
+                     for every touch-point across
+                     various platforms.
                 </p>
-                <div className={styles.BtnPrimarylight}>
-                    <h5>Button Primary Light</h5>
+                <div className={styles.center}>
+                    <div className={styles.BtnPrimarylight}>
+                        <h5>Button Primary Light</h5>
+                    </div>
                 </div>
             </article>
             <img className={styles.imgPlaceholder} src={placeholder} alt="" />
