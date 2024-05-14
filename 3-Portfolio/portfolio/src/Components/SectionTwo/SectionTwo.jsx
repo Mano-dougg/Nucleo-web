@@ -22,7 +22,7 @@ const SectionTwo = () => {
             </div>
           </div>
 
-          <div className="card">
+          <div className="card" id='second'>
             <div className="card-content">
                 <h3>PlantCard</h3>
                 <p>In this project, a card was created simulating the stimulus of decorating houses with plants, also using HTML and CSS. However, as a differential, JavaScript is used to make the hamburger menu appear when the arrow in the bottom right corner of the card is clicked.
@@ -32,7 +32,7 @@ const SectionTwo = () => {
                 <a href='http://127.0.0.1:5500/2-PlantCard/index.html' target='_blank'><button>Check it Out!</button></a>
             </div>
 
-             <img className='card-img' src={PlantCard}/>
+            <img className='card-img' id='plantcard' src={PlantCard}/>
           </div>
         </section>
       </>
