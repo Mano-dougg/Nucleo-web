@@ -1,6 +1,5 @@
 
 header{
-    max-width: 1440px;
     height: 82px;
     padding: 0px 87px 0px 87px;
     background-color: #FFFFFF;
@@ -72,6 +71,7 @@ nav a{
 /* altura do header */
     header{
         height: 72px;
+        padding: 0px 25px 0px 25px;
     }
 
 /* trocar os icones do menu */

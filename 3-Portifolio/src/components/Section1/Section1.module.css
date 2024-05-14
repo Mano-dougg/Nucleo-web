@@ -2,12 +2,17 @@
 .Section1{
     margin-top: 50px;
     gap: 80px;
+    padding: 0px 238px 0px 240px;
 }
 
-.articleSection1{
+.articleSection1High{
     display: flex;
     flex-direction: column;
-    padding: 0px 238px 0px 240px;
+}
+
+.articleSection1Low{
+    display: flex;
+    flex-direction: column;
 }
 
 .imgAvatar{
@@ -42,4 +47,24 @@ a{
 .imgCheckCircle{
     width: 16px;
     height: 16px;
+}
+
+/* RESPOSIVIDADE */
+
+@media (max-width: 376px) {
+    .Section1{
+        padding: 0px 40px 0px 25px ;
+        gap: 50px;
+    }
+
+    .articleSection1High{
+        align-items: center;
+        text-align: center;
+    }
+
+    .callOut{
+        width: 283px;
+        height: 72px;
+        gap: 50px;
+    }
 }

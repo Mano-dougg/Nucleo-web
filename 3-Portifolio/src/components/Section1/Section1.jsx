@@ -6,14 +6,14 @@ function Section1() {
     return (
         <>
         <section className={styles.Section1}>
-            <article className={styles.articleSection1}>
+            <article className={styles.articleSection1High}>
                 <img className={styles.imgAvatar} src={avatar} alt="" />
                 <h1>Hello. 
                 <br/>My name is Douglas
                 </h1>
                 <hr />
             </article>
-            <article className={styles.articleSection1}>
+            <article className={styles.articleSection1Low}>
                   <div>
                     <p>
                             I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making

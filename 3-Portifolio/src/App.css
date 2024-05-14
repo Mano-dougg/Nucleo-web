@@ -32,3 +32,13 @@ p{
     font-size: 17px;
     font-family: "Be Vietnam";
 }
+
+
+/* RESPOSIVIDADE */
+
+@media (max-width: 376px) {
+    h1 {
+        font-size: 32px;
+    }
+
+}
