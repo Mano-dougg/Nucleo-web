@@ -5,8 +5,6 @@ header {
     flex-direction: column;
     align-items: flex-start;
     gap: 80px;
-    padding: 0 25px;
-    transition: all .5s;
 }
 
 .header_img {

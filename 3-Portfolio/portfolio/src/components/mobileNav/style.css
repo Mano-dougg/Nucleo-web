@@ -4,11 +4,10 @@
     visibility: hidden;
     transition: background 0.5s;
     position: sticky;
-    top: 0px;
+    top: -1px;
 }
 
 #menu{
-    background-color: var(--primary-white);
     position: fixed;
     left: -100vw;
     transition: all 0.5s;

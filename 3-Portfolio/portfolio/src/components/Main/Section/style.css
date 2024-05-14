@@ -1,0 +1,135 @@
+@import '../../../index.css';
+
+.row {
+    width: 100%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    padding: 0 25px;
+}
+
+.section_title {
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 24px;
+    color: var(--primary-blue)
+}
+
+.section_primary-text {
+    max-width: 960px;
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 17px;
+    line-height: calc(1.5rem + 1px);
+    color: var(--primary-black);
+}
+
+.Subsection {
+    display: flex;
+    gap: 40px;
+}
+
+.Subsection_left {
+    flex-direction: row;
+}
+
+.Subsection_right {
+    flex-direction: row-reverse;
+}
+
+.Subsection_img {
+    max-width: 640px;
+    max-height: 370px;
+    border-radius: 10px;
+}
+
+.Subsection_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.Subsection_text h2 {
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 20px;
+    color: var(--primary-black);
+    margin-bottom: 10px;
+}
+
+.Subsection p {
+    max-width: 280px;
+    text-align: left;
+    font-family: "Be Vietnam", sans-serif;
+}
+
+.Subsection button {
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 12px;
+    padding: 16px 30px;
+    border-radius: 44px;
+    margin-top: 28px;
+    border: solid 1px var(--primary-blue);
+    color: var(--primary-blue);
+    background-color: transparent;
+    width: fit-content;
+}
+
+.Subsection button:hover {}
+
+@media screen and (max-width:992px) {
+    .Subsection button {
+        width: max-content;
+        padding: 16px;
+    }
+
+    section {
+        align-items: center;
+        text-align: justify;
+    }
+
+    .Subsection {
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .section_primary-text {
+        width: 100%;   
+    }
+
+    .Subsection button {
+        width: 50%;
+    }
+
+    .Subsection p {
+        max-width: 100%;
+    }
+
+    .Subsection_text {
+     align-items: center;
+    }
+
+    .Subsection_img{
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (max-width:464px) {
+    .Subsection {
+        flex-direction: column-reverse;
+    }
+
+    .Subsection_img {
+        max-width: 310px;
+        max-height: 179px;
+    }
+
+    .Subsection button {
+        width: 100%;
+    }
+
+    .Subsection p {
+        text-align: justify;
+    }
+}
