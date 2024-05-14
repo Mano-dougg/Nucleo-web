@@ -27,3 +27,29 @@ h5{
     font-size: 12px;
     font-family: "Be Vietnam";
 }
+
+
+/* RESPOSIVIDADE */
+
+@media (max-width: 376px) {
+    .section3{
+        flex-direction: column;
+        
+        padding: 25px 32px 0px 33px;
+        gap: 17px;
+    }
+
+    .imgPlaceholder{
+        width: 310px;
+        height: 179px;
+    }
+
+    .center{
+        display: flex;
+        justify-content: center;
+    }
+
+    .BtnPrimarylight{
+        width: 310px;
+    }
+}
