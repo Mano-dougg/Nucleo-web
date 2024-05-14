@@ -1,5 +1,6 @@
 
 header{
+    max-width: 1440px;
     height: 82px;
     padding: 0px 87px 0px 87px;
     background-color: #FFFFFF;
@@ -62,4 +63,23 @@ nav a{
     border-radius: 50%;
     width: 17.25px;
     height: 17.29px;
+}
+
+/* RESPOSIVIDADE */
+
+@media (max-width: 376px) {
+
+/* altura do header */
+    header{
+        height: 72px;
+    }
+
+/* trocar os icones do menu */
+    nav ul{
+        display: none;
+    }
+
+    .iconsHeader{
+        display: none;
+    }
 }
