@@ -45,7 +45,7 @@ body{
 }                       
 
 .textcontainer{
-    width: 524px;
+    /* width: 524px; */
     height: 222px;
     font-family: "Open sans", Josefin sans;
     display: flex;
@@ -85,12 +85,13 @@ h1{
 }
 
 .textos{
-    display: flex;
+    display: flex-box;
     flex-direction: column;
     padding-bottom: 75px;
     text-align: justify;
     gap: 25px;
-    width: 524px;
+    word-wrap: normal;
+
 }
 
 .rodaham{
@@ -143,7 +144,7 @@ h1{
     display: none;
 }
 
-@media(max-width: 600px){
+@media(max-width: 900px){
 
 *{
     margin:0;
@@ -187,6 +188,7 @@ h1{
     width: 290px;
     height: 368px;
     padding-bottom: 20px;
+
 }
 
 .rodape{
@@ -203,6 +205,7 @@ h1{
 .textcontainer{
     padding-top: 65px;
     justify-content: center;
+    width: max-content;
 
 }
 }
