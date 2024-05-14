@@ -55,7 +55,7 @@ function App() {
             </ul>
             
             <div className="toggle-buttom">
-              Dark mode:
+              <p> Dark mode:</p> 
               <label className='switch'>
                 <input type="checkbox" />
                 <span className='slider'/>
@@ -130,7 +130,7 @@ function App() {
         </div>
       </div>  
     </>
-  )
+  );
 }
 
 export default App
