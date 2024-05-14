@@ -67,4 +67,9 @@ a{
         height: 72px;
         gap: 50px;
     }
+
+    hr{
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
 }

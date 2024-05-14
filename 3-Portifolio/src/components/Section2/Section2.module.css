@@ -7,3 +7,15 @@
     padding-bottom: 80px;
 }
 
+/* RESPOSIVIDADE */
+
+@media (max-width: 376px) {
+    .Section2{
+        padding: 0px 32px 0px 33px;
+    }
+
+    .divTitle{
+        padding-bottom: 25px;
+        text-align: center;
+    }
+}
