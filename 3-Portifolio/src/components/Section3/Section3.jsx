@@ -4,7 +4,7 @@ import styles from './Section3.module.css'
 function Section3(){
     return(
         <>
-        <section className={styles.section3}>
+        <section id='Section3' className={styles.section3}>
             <img className={styles.imgPlaceholder} src={placeholder} alt="" />
             <article>
                 <div className={styles.center}>

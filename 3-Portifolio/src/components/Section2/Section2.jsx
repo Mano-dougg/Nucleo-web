@@ -3,7 +3,7 @@ import styles from './Section2.module.css'
 function Section2(){
     return(
         <>
-        <section className={styles.Section2}>
+        <section id='Section2' className={styles.Section2}>
             <hr className={styles.hrSection2} />       
             <div className={styles.divTitle}>
                 <h2>Title</h2>

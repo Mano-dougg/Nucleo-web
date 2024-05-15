@@ -4,7 +4,7 @@ import styles from './Section4.module.css'
 function Section4() {
     return(
         <>
-        <section className={styles.section4}>
+        <section id='Section4' className={styles.section4}>
             <article>
                 <div className={styles.center}>
                     <h4>Title</h4>

@@ -5,7 +5,7 @@ import styles from './Section1.module.css'
 function Section1() {
     return (
         <>
-        <section className={styles.Section1}>
+        <section id='Section1' className={styles.Section1}>
             <article className={styles.articleSection1High}>
                 <img className={styles.imgAvatar} src={avatar} alt="" />
                 <h1>Hello. 

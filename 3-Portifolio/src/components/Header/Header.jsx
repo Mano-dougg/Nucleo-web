@@ -8,12 +8,12 @@ function Header(){
     <>
     <header>
         <article className={styles.articleHeader}>
-            <h4 className={styles.h4SemPaddingBottom}>Douglas Aleixo</h4>
+            <h4 className={styles.h4SemPaddingBottom}> <a className={styles.linkTitulo} href="#Section1">Douglas Aleixo</a></h4>
             <nav>
                 <ul>
-                    <li><a href="">Section two</a></li>
-                    <li><a href="">Section three</a></li>
-                    <li><a href="">Section four</a></li>
+                    <li><a href="#Section2">Section two</a></li>
+                    <li><a href="#Section3">Section three</a></li>
+                    <li><a href="#Section4">Section four</a></li>
                 </ul>
             </nav>
         </article>
