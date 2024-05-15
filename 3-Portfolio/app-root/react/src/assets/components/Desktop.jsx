@@ -1,5 +1,6 @@
 import LinkSection from "./nav-items/LinkSection"
 import IconSection from "./nav-items/IconSection"
+import ToggleSwitch from "./nav-items/ToggleSwitch"
 import './../css-files/Desktop.css'
 
 export  default function Desktop () {
@@ -12,9 +13,7 @@ export  default function Desktop () {
             </div>
             <div className="right-nav">
                 <IconSection/>
-                <div>
-                    <button>Botão</button>
-                </div>
+                <ToggleSwitch/>
             </div>
         </div> 
         <div>

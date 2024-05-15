@@ -1,16 +1,20 @@
 import './../../css-files/nav-styles/IconSection.css'
+import twitter from "./../../icons/twitter-icon.png"
+import figma from "./../../icons/figma-icon.png"
+import instagram from "./../../icons/instagram-icon.png"
+
+const icon = {
+    twitter: twitter,
+    figma: figma,
+    instagram: instagram
+}
+
 export default function IconSection () {
     return(
     <div className='icons'>
-        <figure>
-            <img src="./../../icons/twitter-icon.png" />
-        </figure>
-        <figure>
-            <img src="./../../icons/figma-icon.png" />
-        </figure>
-        <figure>
-            <img src="./../../icons/instagram-icon.png"/>
-        </figure>
+        <img className= "img" src={icon.twitter} />
+        <img className= "img" src={icon.figma} />
+        <img className= "img" src={icon.instagram}/>
     </div>
     )
 }
