@@ -1,33 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Figma from './assets/Figma.svg'
+import Insta from './assets/Insta.svg'
+import Twitter from './assets/twitter.svg'
+import Check from './assets/Check.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App(props) {
+  const {nome, sobrenome} = props;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <header>
+        <div>
+          <h2>{nome} {sobrenome}</h2>
+          <ul>
+            <li>Section two</li>
+            <li>Section three</li>
+            <li>Section four</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><img src={Twitter} /></li>
+            <li><img src={Figma} /></li>
+            <li><img src={Insta} /></li>
+          </ul>
+          <button>Dark Mode:</button>
+        </div>
+      </header>
+      <main>
+        <h1>Hello.<br />My name is {nome}.</h1>
+        <div className="linhaCurta"></div>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+        I'm a Digital Product and UI Designer – creating digital experiences that
+        are intuitive for real people and making complex processes easy to use.
+        <br /><br />
+        Right now, I'm Design Lead at Holiday Extras, covering all our digital
+        platforms across a whole load of brands – leading a great team across design,
+        UI engineering, accessibility and customer experience. I'm lucky to be part
+        of a great team of designers, writers, engineers, PMs and data specialists –
+        amongst others – testing, iterating and optimising our platforms and products.
+        <br /><br />
+        I've got some work on Dribbble, some previous work at Saga and you can find me
+        over on twitter and sometimes on Medium too. I also take too many photos.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </main>
     </>
   )
 }
