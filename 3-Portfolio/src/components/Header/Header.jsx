@@ -3,33 +3,45 @@ import twitterIcon from '../../assets/twitter-icon.svg';
 import instagramIcon from '../../assets/instagram-icon.svg';
 import figmaIcon from '../../assets/figma-icon.svg';
 import { useEffect, useState } from 'react';
+import lightIcon from '../../../public/logo.png'
+import darkIcon from '../../../public/logo-dark.png'
 
 
 
 export default function Header({changeDarkMode}) {
+    const [theme, setTheme] = useState(localStorage.getItem("theme"))
 
-    const setDarkMode = () => {
-        document.querySelector("body").setAttribute("data-theme", "dark")
-        localStorage.setItem("theme", "dark")
-    }
-    
-    const setLightMode = () => {
-        document.querySelector("body").setAttribute("data-theme", "light")
-        localStorage.setItem("theme", "light")
-    }
+    useEffect(() => {
+        const setDarkMode = () => {
+            document.querySelector("body").setAttribute("data-theme", "dark")
+            localStorage.setItem("theme", "dark")
+            setTheme("dark")
+        }
+        
+        const setLightMode = () => {
+            document.querySelector("body").setAttribute("data-theme", "light")
+            localStorage.setItem("theme", "light")
+            setTheme("light")
+        }
 
-    const getTheme = localStorage.getItem("theme")
-    if(getTheme === "dark"){
-        setDarkMode()
-    }else{
-        setLightMode()
-    }
-    
+        if(theme === "dark") setDarkMode();
+        if(theme === "light") setLightMode();
+
+        // Change favicon dinamically
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+        link.href = `${theme === "dark" ? darkIcon : lightIcon}`;
+    }, [theme])
+
     const toggleTheme = (e) =>{
         if(e.target.checked){
-            setDarkMode()
+            setTheme("dark")
         }else {
-            setLightMode()
+            setTheme("light")
         }
     }
 
@@ -64,7 +76,7 @@ export default function Header({changeDarkMode}) {
                         Dark mode: 
                     </p>
                     <div className="form-check form-switch" style={{marginBottom:0}}>
-                        <input className="form-check-input" type="checkbox" defaultChecked={getTheme === "dark"} role="switch" id="flexSwitchCheckDefault" onChange={toggleTheme} />
+                        <input className="form-check-input" type="checkbox" defaultChecked={theme === "dark"} role="switch" id="flexSwitchCheckDefault" onChange={toggleTheme} />
                     </div>
                 </div>
             </div>
