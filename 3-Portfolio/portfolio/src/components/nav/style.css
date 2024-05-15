@@ -1,6 +1,6 @@
 @import '../../index.css';
 
-nav{
+nav {
     padding: 30px 87px 30px 87px;
 
     background-color: var(--primary-white);
@@ -11,48 +11,74 @@ nav{
 
     font-family: "Be Vietnam Pro", sans-serif;
 }
-.nav_links{
+
+.nav_links {
     display: flex;
     align-items: center;
     gap: 50px;
 }
 
-.nav_links h1{
+.nav_links h1 {
     font-size: 20px;
     font-weight: 700;
     color: var(--primary-black);
 }
 
-.nav_links-group{
+.nav_links-group {
     display: flex;
     gap: 20px;
-   
 }
 
-.nav_links-group a{
+.nav_links-group a {
     font-size: 14px;
     font-weight: 400;
     text-decoration: none;
     color: var(--primary-blue);
+    position: relative
 }
 
-.nav_actions{
+.nav_links-group a::after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0px;
+    left: 0px;
+    transition: width .2s;
+    background-color: var(--primary-blue);
+}
+
+.nav_links-group a:hover::after {
+    width: 100%;
+}
+
+
+
+.nav_actions {
     display: flex;
     gap: 50px;
 }
 
-.nav_actions-imgs{
+.nav_actions-imgs {
     display: flex;
     gap: 30px;
 }
 
-.nav_actions-btn{
+.nav_actions-imgs img {
+    transition: transform .2s;
+}
+
+.nav_actions-imgs img:hover {
+    transform: scale(1.3);
+}
+
+.nav_actions-btn {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.btn{
+.btn {
     min-width: 40px;
     min-height: 22px;
 
@@ -60,34 +86,34 @@ nav{
     align-items: center;
 
     border-radius: 18px;
-    border:solid 1px var(--btn-border);
-    background-color:var(--btn-bg);
+    border: solid 1px var(--btn-border);
+    background-color: var(--btn-bg);
     padding: 2px 2px;
 }
 
-.btn_circle{
+.btn_circle {
     width: 18px;
     height: 18px;
     border-radius: 50%;
     background-color: var(--btn-darkTheme);
 }
 
-@media  screen and (max-width:992px) {
+@media screen and (max-width:992px) {
+
     nav .nav_links .nav_links-group,
-    nav .nav_actions .nav_actions-imgs
-    {
+    nav .nav_actions .nav_actions-imgs {
         display: none;
     }
 
-    .navMobile{
+    .navMobile {
         visibility: initial;
         align-items: center;
         width: 100%;
     }
 }
 
-@media screen and (max-width:464px){
-    nav{
+@media screen and (max-width:464px) {
+    nav {
         padding: 25px
     }
 }

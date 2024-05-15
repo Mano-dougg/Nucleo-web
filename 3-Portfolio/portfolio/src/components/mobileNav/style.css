@@ -44,3 +44,11 @@
     justify-content: center;
     gap: 100px;
 }
+
+.navMobile_actions-imgs img {
+    transition: transform .2s;
+}
+
+.navMobile_actions-imgs img:hover {
+    transform: scale(1.5);
+}

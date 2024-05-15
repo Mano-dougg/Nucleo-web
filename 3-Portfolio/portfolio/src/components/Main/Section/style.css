@@ -73,9 +73,13 @@ section {
     color: var(--primary-blue);
     background-color: transparent;
     width: fit-content;
+    transition: background .3s, color .5s;
 }
 
-.Subsection button:hover {}
+.Subsection button:hover {
+    background-color: var(--primary-blue);
+    color: var(--primary-white);
+}
 
 @media screen and (max-width:992px) {
     .Subsection button {
