@@ -161,7 +161,13 @@ span{
     }
 
     .sectionone .title{
-        display: flex;
+        display: block;
+        gap: 2px;
+        padding-top: 20px;
+        margin-top: 5px;
+        position: relative;
+        right: 1.5%;
+        text-align: center;
     
     }
     .sectionone > h2{
