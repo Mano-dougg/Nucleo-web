@@ -3,8 +3,11 @@ import s from './HamburguerMenu.module.css';
 import twitter from '../../assets/twitter-icon.svg';
 import figma from '../../assets/figma-icon.svg';
 import instagram from '../../assets/instagram-icon.svg';
+import twitterDark from '../../assets/twitter-icon-dark.svg';
+import instagramDark from '../../assets/instagram-icon-dark.svg';
+import figmaDark from '../../assets/figma-icon-dark.svg';
 
-export default function HamburguerMenu() {
+export default function HamburguerMenu({theme}) {
     function toggleMenu() {
         let menuButton = document.querySelector(`.${s.menuButton}`);
         let menu = document.querySelector(`.${s.menu}`);
@@ -25,13 +28,13 @@ export default function HamburguerMenu() {
 
                 <div className={s.socialNav}>
                     <a href="https://twitter.com/">
-                        <img src={twitter}/>
+                        <img src={theme === 'dark'? twitterDark : twitter}/>
                     </a>
                     <a href="https://www.figma.com/">
-                        <img src={figma} alt="figma icon" />
+                        <img src={theme === 'dark'? figmaDark : figma} alt="figma icon" />
                     </a>
                     <a href="https://www.instagram.com/">
-                        <img src={instagram} alt="instagram icon" />
+                        <img src={theme === 'dark' ? instagramDark : instagram} alt="instagram icon" />
                     </a>
                 </div>
             </nav>
