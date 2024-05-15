@@ -11,7 +11,7 @@ function Section1() {
                 <h1>Hello. 
                 <br/>My name is Douglas
                 </h1>
-                <hr />
+                <hr className={styles.hrSection1} />
             </article>
             <article className={styles.articleSection1Low}>
                   <div>

@@ -7,6 +7,13 @@
     padding-bottom: 80px;
 }
 
+.hrSection2{
+    width: 960px;
+    border: 1px solid #0065FF ;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
 /* RESPOSIVIDADE */
 
 @media (max-width: 376px) {
@@ -17,5 +24,11 @@
     .divTitle{
         padding-bottom: 25px;
         text-align: center;
+    }
+
+    .hrSection2{
+        width: 310px;
+        margin-top: 50px;
+        margin-bottom: 44px;
     }
 }
