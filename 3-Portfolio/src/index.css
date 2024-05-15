@@ -5,6 +5,7 @@
   --text_color: #000;
   --blue_color: #0065FF;
   --gray: #F8F9FA;
+  --text_underline: none;
 }
 
 [data-theme="dark"] {
@@ -13,6 +14,7 @@
   --text_color: #fff;
   --blue_color: #fff;
   --gray: #3C3B3A;
+  --text_underline: underline;
 }
 
 .form-switch .form-check-input:checked {

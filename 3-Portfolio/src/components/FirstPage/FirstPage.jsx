@@ -1,8 +1,9 @@
 import profileImage from '../../assets/profileImage.jpg';
 import checkIcon from '../../assets/check-circle-solid-light.svg';
+import checkIconDark from '../../assets/check-dark.svg';
 import s from './FirstPage.module.css';
 
-export default function FirstPage() {
+export default function FirstPage({theme}) {
 
     return (
         <div className={s.container}>
@@ -35,7 +36,7 @@ export default function FirstPage() {
             </div>
 
             <div className={s.availableForWork}>
-                <img src={checkIcon} alt='check icon' />
+                <img src={theme === 'dark'? checkIconDark : checkIcon} alt='check icon' />
                 <p>Available for work and general design goodness – <span className={s.blueText}>say hello</span></p>
             </div>
         </div>

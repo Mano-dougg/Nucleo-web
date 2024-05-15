@@ -43,7 +43,7 @@ function App() {
       </section>
       <section className={s.main}>
         <HamburguerMenu theme={theme} />
-        <FirstPage />
+        <FirstPage theme={theme} />
         <SecondPage />
       </section>
     </>
