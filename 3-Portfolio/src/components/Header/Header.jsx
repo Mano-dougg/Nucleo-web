@@ -60,9 +60,11 @@ export default function Header({changeDarkMode}) {
                 </div>
 
                 <div className={s.darkMode}>
-                    DarkMode: 
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" defaultChecked={getTheme === "dark"? true: false} role="switch" id="flexSwitchCheckDefault" onChange={toggleTheme} />
+                    <p className={s.darkModeText}>
+                        Dark mode: 
+                    </p>
+                    <div className="form-check form-switch" style={{marginBottom:0}}>
+                        <input className="form-check-input" type="checkbox" defaultChecked={getTheme === "dark"} role="switch" id="flexSwitchCheckDefault" onChange={toggleTheme} />
                     </div>
                 </div>
             </div>
