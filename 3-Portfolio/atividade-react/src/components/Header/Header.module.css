@@ -154,6 +154,6 @@ li{
 
 
 .icon_navbar{
-    display: flex;
+    display: none;
     flex-direction: column;
 }
