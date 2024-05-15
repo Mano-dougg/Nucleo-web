@@ -10,14 +10,19 @@
 }
 
 .body{
-    background: linear-gradient(#F8F9FA, #7400b24b);
+
 }
 
 a {
     text-decoration: none;
     color: inherit;
 }
+h1{
+    font-family: 'EB Garamond';
+    font-weight: 700;
+    color: var(--corprincipal);
 
+}
 .main {
     display: flex;
     justify-content: center;
@@ -148,6 +153,22 @@ a {
 
 .hamdiv {
     display: none;
+}
+.linha2{
+    width: 960px;
+    height: 1px;
+    background-color: var(--corprincipal);
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+
+
 }
 
 @media(max-width: 850px) {
