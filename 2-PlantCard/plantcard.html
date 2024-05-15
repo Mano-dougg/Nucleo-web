@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlantCard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Overpass:400,500,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,500,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600" rel="stylesheet" type="text/css">
 </head>
-<body style="background-color: #BCCDD0;">
-    <section class="section"><picture><source media="(max-width: 668px)" srcset="imagens/planta-cortada.svg"><img src="imagens/planta.svg" alt="" class="planta"></picture>
+<body style="background-color: #BCCDD0; display: flex; height: 97vh; justify-content: center;">
+    <section class="section"><picture><source media="(max-width: 668px)" srcset="imagens/planta-cortada.svg"><img src="imagens/planta.svg" alt="Folhas de planta" class="planta"></picture>
         <div class="infocard">
             <div class="div-texto">
                 <h1 class="fonte-titulo">Decore sua casa com plantas!</h1>
                 <p class="fonte-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut. Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. Tristique velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, varius auctor cursus commodo. Nisi, non molestie tincidunt posuere leo etiam eu, orci. Consequat diam facilisi neque, est sit. Gravida nibh magna cursus eget eget velit cras.</p>
             </div>
                 <div class="div-perfil">
-                    <a href="https://www.youtube.com/shorts/3AGN6fOnATU" target="_blank" rel="noreferrer noopener"><img src="imagens/foto_de_perfil.svg" alt="" class="foto"></a>
+                    <a href="https://www.youtube.com/shorts/3AGN6fOnATU" target="_blank" rel="noreferrer noopener"><img src="imagens/foto_de_perfil.svg" alt="Foto de Perfil" class="foto"></a>
                     <div class="info-perfil">
                         <p class="fonte-perfil">Doguito</p>
                         <time date="2022-09-29" class="fonte-data">29/09/2022</time>
                     </div>
-                    <div class="div-share">
-                        <img src="imagens/share.svg" alt="" class="share" onclick="document.getElementById('id-dropup').style.display = 'flex'">
-                        <nav class="redes-sociais" id="id-dropup" onmouseleave="document.getElementById('id-dropup').style.display = 'none'">
-                            <h3 class="fonte-share">S H A R E</h3>
-                            <a href="https://www.youtube.com/watch?v=GIXk9QBmbE0" target="_blank" rel="noreferrer noopener"><img src="imagens/facebook.svg" alt=""></a>
-                            <a href="https://youtu.be/L9f6BwNMf6g?si=V2oOyfv3Ixbjw6PY" target="_blank" rel="noreferrer noopener"><img src="imagens/twitter.svg" alt=""></a>
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs" target="_blank" rel="noreferrer noopener"><img src="imagens/pinterest.svg" alt=""></a>
+                    <div class="div-share" script="function">
+                        <img src="imagens/share.svg" alt="" class="share" id="share">
+                        <nav class="redes-sociais" id="id-dropup">
+                            <h3 class="fonte-share">SHARE</h3>
+                            <a href="https://www.youtube.com/watch?v=GIXk9QBmbE0" target="_blank" rel="noreferrer noopener"><img src="imagens/facebook.svg" alt="Ícone Facebook"></a>
+                            <a href="https://youtu.be/L9f6BwNMf6g?si=V2oOyfv3Ixbjw6PY" target="_blank" rel="noreferrer noopener"><img src="imagens/twitter.svg" alt="Ícone Twitter"></a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUJcmljayByb2xs" target="_blank" rel="noreferrer noopener"><img src="imagens/pinterest.svg" alt="Ícone Pinterest"></a>
                         </nav>
                     </div>
                  </div>        
