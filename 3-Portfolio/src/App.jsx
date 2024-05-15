@@ -4,8 +4,6 @@ import s from './App.module.css'
 import SecondPage from './components/SecondPage/SecondPage'
 import HamburguerMenu from './components/HamburguerMenu/HamburguerMenu'
 import { useState, useEffect } from 'react'
-import lightIcon from '../public/logo.png'
-import darkIcon from '../public/logo-dark.png'
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light")
@@ -33,7 +31,7 @@ function App() {
           link.rel = 'icon';
           document.getElementsByTagName('head')[0].appendChild(link);
       }
-      link.href = `${theme === "dark" ? darkIcon : lightIcon}`;
+      link.href = `${theme === "dark" ? "logo-dark.png" : "/logo.png"}`;
   }, [theme])
 
   return (
