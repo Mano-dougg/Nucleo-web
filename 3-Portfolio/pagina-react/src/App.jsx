@@ -69,24 +69,40 @@ function App() {
         <div className="section1">
           <img src={imagemRosto} alt="imagem-do-perfil" />
         
-          <h1>Hello.My name is Samuel.</h1>
-        
-          <p>
-            I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making 
-            complex processes easy to use.
-            Right now, I'm Design Lead at <a href="#">Holiday Extras</a> , covering all our digital platforms across a whole load of brands – leading
-            a great team across <a href="#">design</a> , UI engineering, accessibility and customer experience. I'm lucky to be part of a great 
-            team of designers, writers, engineers, PMs and data specialists – amongst others – testing, iterating 
-            and optimising our platforms and products.
-            I've got some <a href="#">work on Dribbble</a>, some previous work at <a href="#">Saga</a> and you can find me over on twitter and sometimes <a href="#">on Medium too</a> 
-            . I also take <a href="#">too many photos</a>.
-          </p>
+          <h1>Hello. My name is Samuel.</h1>
+
+          <div className="nula1">
+            
+          </div>
+          
+          <div className="paragrafo1">
+            <p>
+              I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making 
+              complex processes easy to use.
+            </p>
+          </div>  
+          <div className="paragrafo2">
+            <p> 
+              Right now, I'm Design Lead at <a href="#">Holiday Extras</a> , covering all our digital platforms across a whole load of brands – leading
+              a great team across <a href="#">design</a> , UI engineering, accessibility and customer experience. I'm lucky to be part of a great 
+              team of designers, writers, engineers, PMs and data specialists – amongst others – testing, iterating 
+              and optimising our platforms and products.
+            </p> 
+            <div className="paragrafo3">
+              <p>
+                I've got some <a href="#">work on Dribbble</a>, some previous work at <a href="#">Saga</a> and you can find me over on twitter and sometimes <a href="#">on Medium too</a> 
+                .I also take <a href="#">too many photos</a>.
+              </p>
+            </div>
+          </div>  
 
           <section>
-            <label className='check'>
+            <label class="check">
               <input type="checkbox" />
             </label>
-            <p>Available for work and general design goodness – <a href="#">say hello</a> </p>
+            <div className="paragrafo4">
+              <p>Available for work and general design goodness – <a href="#">say hello</a></p>
+            </div>
           </section>
 
         </div>
