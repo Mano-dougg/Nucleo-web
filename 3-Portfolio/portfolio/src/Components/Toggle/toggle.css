@@ -44,3 +44,13 @@
 .toggle:checked + label::before {
     transform: translateX(-160%);
 }
+
+@media (max-width: 470px){
+    .toggle-container{
+        margin-right: 0px;
+    }
+
+    .toggle + label{
+        font-size: 15px;
+    }
+}

@@ -64,5 +64,20 @@ ol > li {
     .nav{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .right-aligned{
+        display: none;
+    }
+
+    .left-aligned p {
+        position: relative;
+        left: -10px;
+        font-size: 20px;
     }
 }

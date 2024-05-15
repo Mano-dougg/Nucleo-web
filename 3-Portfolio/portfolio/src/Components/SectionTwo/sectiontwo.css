@@ -83,6 +83,7 @@
 @media (max-width: 470px){
     .sectiontwo{
         display: block;
+        height: 1230px;
         padding: 0 35px 0 35px;
         flex-direction: column;
         

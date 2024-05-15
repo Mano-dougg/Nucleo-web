@@ -1,12 +1,43 @@
 import './sectionone.css'
 import { FaCheckCircle } from "react-icons/fa";
 import RianLogo from "../../assets/Rian.jpg";
+import { TfiMenu } from "react-icons/tfi";
+import { ImCross } from "react-icons/im";
+import { useState } from 'react';
+import { FaTwitter } from "react-icons/fa";
+import { IoLogoFigma } from "react-icons/io5";
+import { FaInstagram } from "react-icons/fa";
+
 
 const SectionOne = () => {
+    const [menuOpen, setMenuOpen] = useState(false)
     return (
       <>
       <section className="sectionone">
+
+        <div className="menu" onClick={() => {setMenuOpen(!menuOpen)}}>
+            {menuOpen ? <ImCross id='fimenu'/> : <TfiMenu id='fimenu'/> }
+        </div>
+        <div className={menuOpen? 'sidebar.open' : 'sidebar'}>
+      
+              <div className="nav-linksmobile"> 
+                      <ol className="nav-linkslistmobile"> 
+                          <li>Section Two</li> 
+                          <li>Section Three</li>
+                          <li>Section Four</li>
+                      </ol>
+              </div>
+
+              <div className="right-alignedmobile">
+                  <div className="social-iconsmobile">
+                      <a href=''><FaTwitter className='social-iconsiconmobile'/></a>
+                      <a href=''><IoLogoFigma className='social-iconsiconmobile'/></a>
+                      <a href=''><FaInstagram className='social-iconsiconmobile'/></a>
+                  </div>
+              </div>
+        </div>
         
+
         <img className='sectionone-logo' src={RianLogo}/>
         <div className="sectionone title">
           <h2>Hello.</h2>
@@ -29,7 +60,10 @@ const SectionOne = () => {
         </div>
 
         <div className="sectionone available">
-          <FaCheckCircle className='checkcircle'/>
+        
+            
+            <FaCheckCircle className='checkcircle'/>
+          
 
           <p>Available for work and general design.</p><a href='' className='a-contact'>Contact Me!</a>
         </div>
