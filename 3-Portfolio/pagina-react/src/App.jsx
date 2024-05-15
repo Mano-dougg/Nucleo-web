@@ -5,6 +5,7 @@ import Logoinsta from "./imagens-redes-sociais/instagram-icon.png"
 import imagemRosto from "./rosto/imagem-rosto.jpeg"
 import webDesign1 from "./imagens-design/imagem-web-design.jpg"
 import webDesign2 from "./imagens-design/imagem-web-design2.jpg"
+import Check from "./check-circles/check-image.png"
 
 function App() {
   return (
@@ -66,15 +67,14 @@ function App() {
       </div>
 
       <div className="main-container">
-        <div className="section1">
+        <div className="section1">      
           <img src={imagemRosto} alt="imagem-do-perfil" />
         
           <h1>Hello. My name is Samuel.</h1>
-
-          <div className="nula1">
+          <div className="parte1"> 
             
           </div>
-          
+         
           <div className="paragrafo1">
             <p>
               I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making 
@@ -97,9 +97,7 @@ function App() {
           </div>  
 
           <section>
-            <label class="check">
-              <input type="checkbox" />
-            </label>
+            <img src={Check} alt="check-image" />
             <div className="paragrafo4">
               <p>Available for work and general design goodness – <a href="#">say hello</a></p>
             </div>
@@ -107,14 +105,16 @@ function App() {
 
         </div>
         <div className="section2">
-          <h1>Title</h1>
-          <p>
-            Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here 
-            to decribe this section. Line of copy in here to decribe this section. 
-          </p>
-          
+          <div className="titulo-paragrafo">
+            <h1>Title</h1>
+            <p>
+              Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here 
+              to decribe this section. Line of copy in here to decribe this section. 
+            </p>
+          </div>
+
           <div className="imagem-texto1">
-            <img src={webDesign1} alt="imagem-exmplo-web" />
+            <img src={webDesign1} alt="imagem-exemplo-web" />
             <div className="minitexto">
               <h2>Title</h2>
               <p>
@@ -129,7 +129,7 @@ function App() {
           </div>
 
           <div className="imagem-texto2">
-            <img src={webDesign2} alt="imagem-exmplo-web" />
+            <img src={webDesign2} alt="imagem-exemplo-web" />
             <div className="minitexto2">
               <h3>Title</h3>
               <p>
