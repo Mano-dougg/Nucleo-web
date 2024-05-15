@@ -40,6 +40,21 @@ nav a{
     gap: 30px;  
 }
 
+.IconTwitter{
+    width: 22px;
+    height: 22px;
+}
+
+.IconFigma{
+    width: 13px;
+    height: 18px;
+}
+
+.IconInsta{
+    width: 16px;
+    height: 18px;
+}
+
 .darkMode{
     display: flex;
     align-items: center;

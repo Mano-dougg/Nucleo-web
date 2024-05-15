@@ -19,9 +19,9 @@ function Header(){
         </article>
         <article className={styles.articleHeader}>
             <div className={styles.iconsHeader}>
-                <img src={twitterIcon} alt="Logo do twitter" />   
-                <img src={figmaIcon} alt="Logo do figma" />
-                <img src={InstaIcon} alt="Logo do Instagram" />
+                <img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" />   
+                <img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" />
+                <img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" />
             </div>
             <div className={styles.darkMode}>
                 <p>Dark mode:</p>
