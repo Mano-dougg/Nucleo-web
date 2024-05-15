@@ -63,8 +63,8 @@
     color: var(--text_color);
 }
 
-.darkModeText{
-    margin-bottom: 4px;
+.darkMode p{
+    margin: 0;
 }
 
 @media screen and (max-width: 905px){
