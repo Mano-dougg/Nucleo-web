@@ -1,6 +1,7 @@
 .sectionone{
     background-color: var(--background-color);
     padding: 50px 200px;
+    overflow-x: hidden;
 }
 
 
@@ -16,8 +17,8 @@
     display: block;
     justify-content: flex-start;
     gap: 2px;
-    padding: 0;
-    margin-top: 25px;
+    padding-top: 20px;
+    margin-top: 5px;
 }
 .sectionone > h2 {
     font-family: var(--eb-font);

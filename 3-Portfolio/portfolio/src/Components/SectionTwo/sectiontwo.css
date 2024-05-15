@@ -1,6 +1,7 @@
 .sectiontwo{
     background-color: var(--background-color);
     padding: 50px 200px;
+    overflow-x: hidden;
 }
 
 .sectiontwo > h2{
