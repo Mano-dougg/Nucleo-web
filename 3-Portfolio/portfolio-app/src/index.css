@@ -1,5 +1,6 @@
 :root {
-    --main-color : #0065FF;
+    --primary-color : #0065FF;
+    --secondary-color: #00000026;
 }
 
 * {
@@ -11,6 +12,7 @@
 html {
     font-size: 62.5%;
     font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
 }
 
 h1 {
@@ -26,12 +28,12 @@ h3 {
 }
 
 p {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 a {
     text-decoration: none;
-    color: var(--main-color);
+    color: var(--primary-color);
     font-size: 1.4rem;
     font-weight: bold;
 }

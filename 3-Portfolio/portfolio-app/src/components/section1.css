@@ -3,13 +3,19 @@
     flex-direction: column;
     margin: 0 auto;
     align-content: flex-start;
-    max-height: calc(100vh - 8.1rem);
+    max-height: 100vh;
     max-width: 87rem;
 }
 
-.apresentation {
-    display: flex;
-    flex-direction: column;
+.main-content p {
+    margin-bottom: 1rem;
+}
+
+.small-line {
+    height: 0.1rem;
+    width: 20%;
+    background-color: var(--primary-color);
+    margin: 4rem 0;
 }
 
 .avatar-img{
@@ -21,4 +27,19 @@
     max-width: 100%;
     position: relative;
     right: 40px;
+}
+
+.callout {
+    display: flex;
+    align-items: center;
+    max-width: 55%;
+    border-radius: 1rem;
+    gap: 1rem;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.callout p {
+    margin: 0;
 }
