@@ -1,0 +1,249 @@
+@media(min-width:1300px){
+
+body{
+  width: 1250px;
+  height: 2100px;
+  top: -512px;
+  left: -2311px;
+  gap: 0px;
+  opacity: 0px;
+  background-color: #FFFFFF;
+}
+nav.menu{
+  width: 1179px;
+  height: 82px;
+  padding: 30px 87px 30px 87px;
+  gap: 511px;
+  opacity: 0px;
+  background: #FFFFFF;
+  box-shadow: 0px 25px 65px 0px #00000026;
+  position:relative;
+  right: 60px;
+  left: -20px;
+  top: -5px;
+}
+div.aesquerda{
+  width: 470px;
+  height: 20px;
+  gap: 50px;
+  opacity: 0px;
+}
+h4.dono{
+  width: 130px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  position:relative;
+  right: 25px;
+}
+label.dois{
+  width: 79px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  color: #0065FF;
+  position:relative;
+  left: 150px;
+  cursor: pointer;
+  transition: color 500ms;
+  transition: font-size 500ms;
+}
+label.dois:hover{
+  color: #296bcf;
+}
+label.tres{
+  width: 90px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  color: #0065FF;
+  position:relative;
+  left: 165px;
+  cursor: pointer;
+  transition: color 500ms;
+  transition: font-size 500ms;
+}
+label.tres:hover{
+  color: #296bcf;
+}
+label.quatro{
+  width: 81px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  color:#0065FF;
+  position:relative;
+  left: 180px;
+  cursor: pointer;
+  transition: color 500ms;
+  transition: font-size 500ms;
+}
+label.quatro:hover{
+  color: #296bcf;
+}
+ul{
+  display: flex;
+  align-items: center;
+  position: relative;
+  top:-42px;
+}
+div.adireita{
+  width: 285px;
+  height: 22px;
+  gap: 50px;
+  opacity: 0px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  left:73%;
+  top:-10px;
+  margin-bottom: 100px;
+}
+img.insta{
+  width: 16px;
+  height: 18px;
+  padding: 1.12px 0px 1.13px 0px;
+  gap: 0px;
+  opacity: 0px;
+  cursor:pointer;
+  position:relative;
+  top:2px;
+
+}
+img.tt{
+  width: 22px;
+  height: 22px;
+  padding: 2.07px 0px 2.07px 0px;
+  gap: 0px;
+  opacity: 0px;
+  cursor:pointer;
+}
+img.fg{
+  width: 13px;
+  height: 18px;
+  padding: 0px 0.73px 0px 0.71px;
+  gap: 0px;
+  opacity: 0px;
+  cursor:pointer;
+}
+label.dark{
+  width: 50px;
+  height: 15px;
+  left: 161px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  color: #202020;
+  white-space: nowrap;
+
+}
+.checkbox {
+  opacity: 0;
+}
+
+
+label.env {
+  width: 40px;
+  height: 14px;
+  background-color: #d3d3d3;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+  bottom:8px;
+  left:1px;
+
+}
+
+
+div.bola {
+  width: 18px;
+  height: 20px;
+  top: 2.36px;
+  left: 3px;
+  gap: 0px;
+  Opacity: 0px;
+  background-color: #3C3B3A;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 250ms linear;
+}
+
+.checkbox:checked + .env .bola {
+  transform: translateX(26px);
+}
+}
+
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
