@@ -12,7 +12,7 @@ function Galeria() {
             </p>
             <div className="galeriaItem">
             <div><img src={Foto1} /></div>
-                <div>
+                <div className='galeriaDesc'>
                     <h3>Title</h3>
                     <p>
                     Leading, implementing and evolving engaging customer experiences
@@ -23,7 +23,7 @@ function Galeria() {
             </div>
             <div className="galeriaItem" style={{flexDirection: "row-reverse"}}>
                 <div><img src={Foto2} /></div>
-                <div>
+                <div className='galeriaDesc'>
                     <h3>Title</h3>
                     <p>
                     Leading, implementing and evolving engaging customer experiences

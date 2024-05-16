@@ -44,3 +44,7 @@ main {
     border-radius: 10px;
     object-fit: cover;
 }
+
+.galeriaDesc p {
+    padding: 10px 0 25px 0;
+}
