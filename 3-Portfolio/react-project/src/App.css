@@ -1,1 +1,70 @@
+.perfil{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 25px 65px 0px #00000026;
+}
+
+.perfil img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 25px 65px 0px #00000026;
+}
+
+.part-one{
+    display: flex;
+    flex-direction: column;
+    max-width: 952px;
+    padding-top: 50px;
+    margin:auto;
+}
+
+.part-one h1{
+    color: var(--azul);
+    font-size: 70px;
+    margin-top: 40px;
+    font-family: 'EB Garamond';
+}
+
+.part-one a{
+    font-family: 'Be Vietnam Pro';
+    font-size: 17px;
+}
+
+.part-one span{
+    color: var(--azul)
+}
+
+.part-one .divisoria{
+    width: 192px;
+    height: 1px;
+    background-color: var(--azul);
+    margin-top:80px;
+    margin-bottom: 80px;
+}
+
+.callout{
+    width: 60%;
+    max-height: 56px;
+    margin-top: 46px;
+    margin-bottom: 80px;
+    padding: 20px;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: #F8F9FA;
+}
+
+.callout img{
+    margin-right: 10px;
+}
+
+.part-two{
+    border-top: 1px solid #0065FF;
+    display: flex;
+    flex-direction: column;
+    max-width: 952px;
+    padding-top: 50px;
+    margin:auto;
+}
 
