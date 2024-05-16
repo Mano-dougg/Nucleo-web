@@ -2,8 +2,14 @@ import twitterIcon from './imagesHeader/twitterIcon.png'
 import figmaIcon from './imagesHeader/figmaIcon.png'
 import InstaIcon from './imagesHeader/instagramIcon.png'
 import styles from './Header.module.css'
+import { useState } from 'react'
 
 function Header(){
+    const [active, setMode] = useState(false);
+    const ToggleMode = () => {
+        setMode(!active);
+    };
+
     return(
     <>
     <header>
@@ -36,13 +42,13 @@ function Header(){
         {/* MENU MOBILE */}
         <article className={styles.menuMobile}>
             <div>
-                <button id='styles.btn-menu'>
+                <button onClick={ToggleMode} id='styles.btn-menu'>
                     <span className={styles.linha}></span>
                     <span className={styles.linha}></span>
                     <span className={styles.linha}></span>
                 </button>
             </div>
-            <div>
+            <div className={active ? "menu menuOpen" : "menu menuClose"}>
                 <nav className={styles.navMobile}>
                     <ul>
                         <li><a href="#Section2">Section two</a></li>

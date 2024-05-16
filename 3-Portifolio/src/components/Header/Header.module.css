@@ -91,10 +91,12 @@ header{
 /* MOBILE */
 
 button{
+    display: none;
     width: 30px;
     height: 30px;
     border: 0;
     background: transparent;
+    cursor: pointer;
 }
 
 .linha{
@@ -110,7 +112,6 @@ button{
     background-color: #f4f5f5;
     top: 97px;
     width: 100%;
-    height: 100vh;
 }
 
 .navMobile ul{
@@ -155,5 +156,9 @@ button{
 
     .iconsHeaderDesktop{
         display: none;
+    }
+
+    button{
+        display: block;
     }
 }
