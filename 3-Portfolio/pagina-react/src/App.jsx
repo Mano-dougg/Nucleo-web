@@ -7,8 +7,25 @@ import imagemRosto from "./rosto/imagem-rosto.jpeg"
 import webDesign1 from "./imagens-design/imagem-web-design.jpg"
 import webDesign2 from "./imagens-design/imagem-web-design2.jpg"
 import Check from "./check-circles/check-image.png"
+import MenuOpen from "./menu/menu-open.png"
+import MenuClose from "./menu/menu-close.png"
+import { useState } from 'react'
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false)
+  
+  const toggleMenu = () => {
+    setIsOpen((open) => !open)
+  }
+
+  const [menuImage, setMenuImage] = useState(MenuOpen);
+
+  const toggleMenuImage = () => {
+    toggleMenu();
+    setMenuImage(isOpen ? MenuOpen : MenuClose);
+    
+  }
+
   return (
     <>
       <div className="nav-container">
@@ -79,50 +96,54 @@ function App() {
       </div>
 
       <div className="main-container">
-        <button id="btn-mobile">Menu</button>
-        <div className="left-align-mobile">
-          <nav>
-            <ul className='sections'>
-              <li>
-                <a href="#">Section two</a>
-              </li>
+        <button id="btn-mobile" onClick={toggleMenuImage}>
+          <img src={menuImage} alt="menu" />
+        </button>
+        <div className={`menu-hamburguer ${isOpen ? "is-Open" : ""}`}>
+          <div className="parte-de-cima-menu">
+            <nav>
+              <ul className='sections'>
+                <li>
+                  <a href="#">Section two</a>
+                </li>
 
-              <li>
-                <a href="#">Section three</a>
-              </li>
+                <li>
+                  <a href="#">Section three</a>
+                </li>
 
-              <li>
-                <a href="#">Section four</a>
-              </li>
-            </ul> 
-          </nav>
-        </div>
+                <li>
+                  <a href="#">Section four</a>
+                </li>
+              </ul> 
+            </nav>
+          </div>
 
-        <div className="right-align-mobile">
-          <nav>
-            <ul className="social-icons">
-              <li>
-                  <a href="#">
-                     <img src={Logotwitter} alt="imagem twitter" />
-                  </a>
-              </li>
+          <div className="parte-de-baixo-menu">
+            <nav>
+              <ul className="social-icons">
+                <li>
+                    <a href="#">
+                      <img src={Logotwitter} alt="imagem twitter" />
+                    </a>
+                </li>
 
-              <li>
-                  <a href="#">
-                     <img src={Logofigma} alt="imagem twitter" />
-                  </a>
-              </li>
+                <li>
+                    <a href="#">
+                      <img src={Logofigma} alt="imagem twitter" />
+                    </a>
+                </li>
 
-              <li>
-                  <a href="#">
-                     <img src={Logoinsta} alt="imagem twitter" />
-                  </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+                <li>
+                    <a href="#">
+                      <img src={Logoinsta} alt="imagem twitter" />
+                    </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>  
 
-        <div className="section1">      
+        <div className={`section1 ${isOpen ? "is-Open" : ""}`}>      
           <img src={imagemRosto} alt="imagem-do-perfil" />
         
           <h1>Hello. My name is Samuel.</h1>
@@ -159,7 +180,7 @@ function App() {
           </section>
 
         </div>
-        <div className="section2">
+        <div className={`section2 ${isOpen ? "is-Open" : ""}`}>
           <div className="titulo-paragrafo">
             <h1>Title</h1>
             <p>
