@@ -2,7 +2,7 @@ import styles from './Menu.module.css'
 
 function Menu() {
     return (
-        <section className={styles.aparecer}>111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000
+        <section className={styles.aparecer}>
 
             <button className={styles.hamburguer}></button>
 

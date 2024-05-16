@@ -28,14 +28,40 @@ function App() {
         <div class='callout'>
 
           <img src='./public/check-circle.svg' />
-          <a>Available for work and general design goodness – <span>say hello</span></a>
+          <a>Available for work and general design goodness – <span class='contato'>say hello</span></a>
 
         </div>
 
       </section>
 
       <section class='part-two'>
+        <h2>Title</h2>
+        <p>Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. </p>
+
+        <div class='project-one'>
+
+          <img src='./public/conteudo1.jpg' />
+
+          <div class="conteudo-one">
+            <h4>Title</h4>
+            <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
+            <button>Button Primary Light</button>
+          </div>
+
+        </div>
+
+        <div class='project-two'>
+
+        <div class="conteudo-two">
+            <h4>Title</h4>
+            <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
+            <button>Button Primary Light</button>
+          </div>
         
+          <img src='./public/conteudo2.jpg' />
+          
+        </div>
+
       </section>
       
     </>
