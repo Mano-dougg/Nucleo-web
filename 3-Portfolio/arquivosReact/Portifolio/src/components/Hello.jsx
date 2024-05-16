@@ -5,7 +5,7 @@ function Hello(props) {
     const{nome}=props;
     return (
         <>
-
+            <img src={Icone} className='icone' />
             <h1>Hello.<br />My name is {nome}.</h1>
             <div className="linha"></div>
             <p>

@@ -17,3 +17,9 @@
 main {
     padding: 10px 16vw;
 }
+
+.icone {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
