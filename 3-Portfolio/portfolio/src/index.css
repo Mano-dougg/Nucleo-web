@@ -1,20 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
-:root{
- --primary-black: rgba(32, 32, 32, 1);
- --primary-blue:rgba(0, 101, 255, 1);
- --primary-white:
- rgba(255, 255, 255, 1);
- --nav-shadow:rgba(0, 0, 0, 0.15);
- --btn-darkTheme:rgba(60, 59, 58, 1);
- --btn-border: rgba(60, 59, 58, 1);
- --btn-bg:rgba(229, 229, 229, 1);
- --row-color:#0065FF;
- --header-checkIcon-bg:rgba(248, 249, 250, 1);
+:root {
+    --primary-black: hsl(0, 0%, 13%);
+    --primary-blue: rgba(0, 101, 255, 1);
+    --primary-white:
+        #ffffff;
+    --nav-shadow: #00000026;
+    --nav-bg:#fff;
+    --btn-darkTheme: rgba(60, 59, 58, 1);
+    --btn-border: rgba(60, 59, 58, 1);
+    --btn-bg: #e5e5e5;
+    --row-color: #0065FF;
+    --header-checkIcon-bg: #f8f9fa;
+
+    --darkMode-white-primary: #FAF4E6;
+    --darkMode-nav-bg: #3C3B3A;
+    --darkMode-bg: #222222;
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.fullDark:not(img){
+    background-color: var(--darkMode-bg) !important;
+    color:var(--darkMode-white-primary) !important;
+
+} 
+
+ .class_gray-bg{
+    background-color: var(--darkMode-nav-bg) !important;
+    color: var(--darkMode-white-primary) !important; 
+    border-color: var(--darkMode-white-primary) !important;
+}
+
+.dark-btn-bg{
+    background-color: var(--darkMode-white-primary) !important;
+}
+
+.nav-item-after::after{
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0px;
+    left: 0px;
+    transition: width .2s;
+    background-color: var(--darkMode-white-primary) !important;
+}
+
+.nav_links-group .nav-item-after:hover::after {
+    width: 100%;
+}
+
+.subsection-btn-dark{
+    background-color: var(--darkMode-nav-bg) !important;
+    color: var(--darkMode-white-primary) !important; 
+    border-color: var(--darkMode-white-primary) !important;
+}
+
+.subsection-btn-dark:hover{
+   background-color: var(--darkMode-white-primary) !important;
+   color: var(--darkMode-bg) !important; 
 }

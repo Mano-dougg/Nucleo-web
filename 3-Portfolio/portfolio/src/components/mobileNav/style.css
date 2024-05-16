@@ -1,30 +1,32 @@
-.navMobile{
+.navMobile {
     width: 100%;
-    padding:25px;
+    padding: 25px;
     visibility: hidden;
-    transition: background 0.5s;
+    transition: background 0s;
     position: sticky;
     top: -1px;
 }
 
-#menu{
+#menu {
     position: fixed;
     left: -100vw;
-    transition: all 0.5s;
+    transition: all 0.5s, background 0s;
 }
 
-.menu-ative{
+.menu-ative {
     left: 50% !important;
     transform: translateX(-50%);
-    transition: all 0.5s;
+    transition: all 0.5s, background 0s;
 }
 
-.navMobile img{
+.navMobile img {
+    width: 30px;
+    height: 30px;
     position: sticky;
     top: 25px;
 }
 
-.navMobile_links-group{
+.navMobile_links-group {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,14 +34,14 @@
     gap: 25px;
 }
 
-.navMobile_links-group a{
+.navMobile_links-group a {
     font-size: 14px;
     font-weight: 400;
     text-decoration: none;
     color: var(--primary-blue);
 }
 
-.navMobile_actions-imgs{
+.navMobile_actions-imgs {
     display: flex;
     justify-content: center;
     gap: 100px;

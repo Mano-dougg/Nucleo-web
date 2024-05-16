@@ -3,9 +3,8 @@
 nav {
     padding: 30px 87px 30px 87px;
 
-    background-color: var(--primary-white);
+    background-color: var(--nav-bg);
     box-shadow: 0 25px 65px 0 var(--nav-shadow);
-
     display: flex;
     justify-content: space-between;
 
@@ -37,7 +36,7 @@ nav {
     position: relative
 }
 
-.nav_links-group a::after {
+.nav_links-group .nav-item::after {
     content: " ";
     position: absolute;
     width: 0;
@@ -48,10 +47,9 @@ nav {
     background-color: var(--primary-blue);
 }
 
-.nav_links-group a:hover::after {
+.nav_links-group .nav-item:hover::after {
     width: 100%;
 }
-
 
 
 .nav_actions {
@@ -80,7 +78,7 @@ nav {
 
 .btn {
     min-width: 40px;
-    min-height: 22px;
+    min-height: 23px;
 
     display: flex;
     align-items: center;
@@ -89,6 +87,12 @@ nav {
     border: solid 1px var(--btn-border);
     background-color: var(--btn-bg);
     padding: 2px 2px;
+    position: relative;
+    transition: all .5s;
+}
+
+#btn_darkMode{
+    transition: all .3s;
 }
 
 .btn_circle {
@@ -96,6 +100,11 @@ nav {
     height: 18px;
     border-radius: 50%;
     background-color: var(--btn-darkTheme);
+    position: absolute;
+}
+
+.darkBtn{
+    transform:translatex(95%);
 }
 
 @media screen and (max-width:992px) {
@@ -114,6 +123,6 @@ nav {
 
 @media screen and (max-width:464px) {
     nav {
-        padding: 25px
+        padding: 25px;
     }
 }

@@ -32,9 +32,9 @@ export default function Header() {
         <span>on Medium too</span>. I also take <span>too many photos</span>.</p>
       </p>
 
-      <div className='header_checkIcon'>
-        <img src={chekIcon} alt="" className="header_checkIcon-img"/>
-        <p className="header_text">Available for work and general design goodness – <span>say hello</span></p>
+      <div className='header_checkIcon gray-bg'>
+        <img src={chekIcon} alt="" className="header_checkIcon-img gray-bg"/>
+        <p className="header_text gray-bg">Available for work and general design goodness – <span className='gray-bg'>say hello</span></p>
       </div>
     </header>
   );

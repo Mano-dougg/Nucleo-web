@@ -13,7 +13,7 @@ export default function Section(){
                 <div className="Subsection_text">
                     <h2>Title</h2>
                     <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
-                    <button>Button Primary Light</button>
+                    <a className='gray-bg subsection-btn'>Button Primary Light</a>
                 </div>
             </div>
             <div className="Subsection_right Subsection">
@@ -21,7 +21,7 @@ export default function Section(){
                 <div className="Subsection_text">
                     <h2>Title</h2>
                     <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
-                    <button>Button Primary Light</button>
+                    <a className='gray-bg subsection-btn'>Button Primary Light</a>
                 </div>
             </div>
         </section>
