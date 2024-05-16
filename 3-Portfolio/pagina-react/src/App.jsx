@@ -1,4 +1,5 @@
 import './App.css'
+import './App_mobile.css'
 import Logotwitter from "./imagens-redes-sociais/twitter-icon.png"
 import Logofigma from "./imagens-redes-sociais/figma-icon.png"
 import Logoinsta from "./imagens-redes-sociais/instagram-icon.png"
@@ -11,13 +12,24 @@ function App() {
   return (
     <>
       <div className="nav-container">
+        <div className="autor-mobile">
+          Samuel Almeida
+        </div>
+        <div className="toggle-buttom-mobile">
+          <p> Dark mode:</p> 
+          <label className='switch'>
+            <input type="checkbox" />
+            <span className='slider'/>
+          </label>
+        </div>
+
         <div className="left-align">
           <nav>
             <div className="autor">
               Samuel Almeida
             </div>
               
-            <ul class='sections'>
+            <ul className='sections'>
               <li>
                 <a href="#">Section two</a>
               </li>
@@ -35,7 +47,7 @@ function App() {
 
         <div className="right-align">
           <nav>
-            <ul class="social-icons">
+            <ul className="social-icons">
               <li>
                   <a href="#">
                      <img src={Logotwitter} alt="imagem twitter" />
@@ -67,6 +79,49 @@ function App() {
       </div>
 
       <div className="main-container">
+        <button id="btn-mobile">Menu</button>
+        <div className="left-align-mobile">
+          <nav>
+            <ul className='sections'>
+              <li>
+                <a href="#">Section two</a>
+              </li>
+
+              <li>
+                <a href="#">Section three</a>
+              </li>
+
+              <li>
+                <a href="#">Section four</a>
+              </li>
+            </ul> 
+          </nav>
+        </div>
+
+        <div className="right-align-mobile">
+          <nav>
+            <ul className="social-icons">
+              <li>
+                  <a href="#">
+                     <img src={Logotwitter} alt="imagem twitter" />
+                  </a>
+              </li>
+
+              <li>
+                  <a href="#">
+                     <img src={Logofigma} alt="imagem twitter" />
+                  </a>
+              </li>
+
+              <li>
+                  <a href="#">
+                     <img src={Logoinsta} alt="imagem twitter" />
+                  </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
         <div className="section1">      
           <img src={imagemRosto} alt="imagem-do-perfil" />
         
