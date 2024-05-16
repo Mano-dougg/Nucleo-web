@@ -1,48 +1,44 @@
-import Figma from './assets/Figma.svg'
-import Insta from './assets/Insta.svg'
-import Twitter from './assets/twitter.svg'
-import Check from './assets/Check.svg'
 import './App.css'
+import Header from './components/Header'
+import Hello from './components/Hello';
+
 
 function App(props) {
   const {nome, sobrenome} = props;
 
   return (
     <>
-      <header>
-        <div>
-          <h2>{nome} {sobrenome}</h2>
-          <ul>
-            <li>Section two</li>
-            <li>Section three</li>
-            <li>Section four</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li><img src={Twitter} /></li>
-            <li><img src={Figma} /></li>
-            <li><img src={Insta} /></li>
-          </ul>
-          <button>Dark Mode:</button>
-        </div>
-      </header>
+      <Header nome={nome} sobrenome={sobrenome} />
       <main>
-        <h1>Hello.<br />My name is {nome}.</h1>
-        <div className="linhaCurta"></div>
+        <Hello nome={nome} />
+        <div className="linhaLonga"></div>
+        <h2>Title</h2>
         <p>
-        I'm a Digital Product and UI Designer – creating digital experiences that
-        are intuitive for real people and making complex processes easy to use.
-        <br /><br />
-        Right now, I'm Design Lead at Holiday Extras, covering all our digital
-        platforms across a whole load of brands – leading a great team across design,
-        UI engineering, accessibility and customer experience. I'm lucky to be part
-        of a great team of designers, writers, engineers, PMs and data specialists –
-        amongst others – testing, iterating and optimising our platforms and products.
-        <br /><br />
-        I've got some work on Dribbble, some previous work at Saga and you can find me
-        over on twitter and sometimes on Medium too. I also take too many photos.
+          Line of copy in here to decribe this section. Line of copy in here to decribe this section.
+          Line of copy in here to decribe this section. Line of copy in here to decribe this section.
         </p>
+        <div>
+          {/*<img src'Imagem aqui' />*/}
+          <div>
+            <h3>Title</h3>
+            <p>
+            Leading, implementing and evolving engaging customer experiences
+            and UI foundations for every touch-point across various platforms.
+            </p>
+            <button>Button Primary Light</button>
+          </div>
+        </div>
+        <div>
+          {/*<img src'Imagem aqui' />*/}
+          <div>
+            <h3>Title</h3>
+            <p>
+            Leading, implementing and evolving engaging customer experiences
+            and UI foundations for every touch-point across various platforms.
+            </p>
+            <button>Button Primary Light</button>
+          </div>
+        </div>
       </main>
     </>
   )
