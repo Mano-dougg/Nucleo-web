@@ -4,10 +4,10 @@
 // 
 function mudancaShareIcons(){
 
+    
     var iconsShare = document.getElementById("icons-share");
             if (!iconsShare) {
                 iconsShare = document.createElement("section");
-                
                 iconsShare.id = "icons-share";
 
                 //componente
@@ -19,7 +19,7 @@ function mudancaShareIcons(){
                 `;
 
                var conteudoPrincipalTexto = document.querySelector(".conteudo-principal-texto");
-              conteudoPrincipalTexto.insertBefore(iconsShare, conteudoPrincipalTexto.querySelector("footer"));
+                conteudoPrincipalTexto.insertBefore(iconsShare, conteudoPrincipalTexto.querySelector("footer"));
             } else {
                 iconsShare.style.display = (iconsShare.style.display === "none" || iconsShare.style.display === "") ? "flex" : "none";
             }

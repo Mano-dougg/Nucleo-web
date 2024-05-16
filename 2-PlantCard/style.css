@@ -69,7 +69,7 @@
 
 
 #icons-share{
-    display: block;
+    display: flex
     align-self: flex-end;
     align-items: center;
     justify-content: center;
