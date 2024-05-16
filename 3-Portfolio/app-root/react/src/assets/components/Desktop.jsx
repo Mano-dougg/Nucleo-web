@@ -1,6 +1,8 @@
 import LinkSection from "./nav-items/LinkSection"
 import IconSection from "./nav-items/IconSection"
 import ToggleSwitch from "./nav-items/ToggleSwitch"
+import Section1 from "./content-items/Section1"
+import Section2 from "./content-items/Section2"
 import './../css-files/Desktop.css'
 
 export  default function Desktop () {
@@ -16,8 +18,9 @@ export  default function Desktop () {
                 <ToggleSwitch/>
             </div>
         </div> 
-        <div>
-
+        <div className="content">
+            <Section1/>
+            <Section2/>
         </div>
     </div>
     ) 
