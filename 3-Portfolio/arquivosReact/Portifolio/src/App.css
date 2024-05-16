@@ -78,5 +78,6 @@ main {
         width: 100%;
         max-width: 640px;
         aspect-ratio: 640/370;
+        /*AINDA QUERO QUE MUDE O ASPECT RATIO CORRETAMENTE*/
     }
 }

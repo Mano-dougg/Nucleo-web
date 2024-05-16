@@ -14,7 +14,7 @@ header h2 {
     font-weight: 700;
     font-size: 20px;
 }
-nav {
+#menu {
     display: flex;
     gap: 20px;
 }
@@ -26,4 +26,17 @@ nav {
 #botoesHeader ul {
     display: flex;
     gap: 30px;
+}
+#hamburguer {
+    display: none;
+    position: relative;
+}
+
+@media (max-width: 600px){
+    #hamburguer {
+        display: block;
+    }
+    #menu {
+        display: none;
+    }
 }
