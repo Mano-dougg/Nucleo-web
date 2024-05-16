@@ -36,5 +36,11 @@ main {
 .galeriaItem {
     display: flex;
     gap: 40px;
+}
+
+.galeriaItem img {
     height: 370px;
+    width: 640px;
+    border-radius: 10px;
+    object-fit: cover;
 }
