@@ -15,11 +15,12 @@
 }
 
 main {
-    padding: 10px 16vw;
+    padding: 50px 16vw 80px 16vw;
 }
 
 .icone {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    box-shadow: 0px 25px 65px 0px #00000026;
 }
