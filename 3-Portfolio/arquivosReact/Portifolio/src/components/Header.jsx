@@ -3,6 +3,9 @@ import Insta from '../assets/Insta.svg'
 import Twitter from '../assets/twitter.svg'
 import './Header.css'
 import './app.js'
+import Abre from '../assets/burger.svg'
+import Fecha from '../assets/close.svg'
+
 
 function Header(props) {
     const{nome, sobrenome}=props;
@@ -11,7 +14,10 @@ function Header(props) {
             <div id='nomeComSeccoes'>
                 <h2>{nome} {sobrenome}</h2>
                 <nav id='nav'>
-                    <button id='hamburguer'></button>
+                    <button id='hamburguer'>
+                        <img src={Abre} id='iconAbre' />
+                        <img src={Fecha} id='iconFecha' />
+                    </button>
                     <ul id='menu'>
                         <li><a>Section two</a></li>
                         <li><a>Section three</a></li>

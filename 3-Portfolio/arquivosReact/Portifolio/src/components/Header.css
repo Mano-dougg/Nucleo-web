@@ -36,7 +36,49 @@ header h2 {
     #hamburguer {
         display: block;
     }
-    #menu {
+    #hamburguer #iconFecha {
         display: none;
     }
+    #hamburguer #iconAbre {
+        display: block;
+    }
+    
+    #menu {
+        display: flex;
+        visibility: hidden;
+        overflow-y: hidden;
+        position: absolute;
+        width: 100%;
+        top: 92px;
+        right: 0px;
+        align-items: center;
+        height: 0px;
+        transition: .6s;
+        background: white;
+        flex-direction: column;
+        gap: 25px;
+    }
+    /*#botoesHeader{
+        display: none;
+    }*/
+    #nav.ativo #menu {
+        height: 100vh;
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #nav.ativo #hamburguer #iconAbre {
+        display: none;
+    }
+    #nav.ativo #hamburguer #iconFecha {
+        display: block;
+    }
+    /*#nav.ativo #botoesHeader {
+        display: flex;
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 492px;
+        right: 0px;
+        z-index: 20;
+    }*/
 }
