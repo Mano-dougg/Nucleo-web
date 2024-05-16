@@ -1,0 +1,309 @@
+@media(min-width:1296px) and (max-width:1370px){
+
+    div.section1{
+      width: 962px;
+      height: 783px;
+      top: 132px;
+      left: 238px;
+      gap: 0px;
+      opacity: 0px;
+    }
+    figure.Icon{
+      width: 100px;
+      height: 100px;
+      top: 132px;
+      left: 238px;
+      gap: 0px;
+      border-radius: 93px 93px 93px 93px;
+      opacity: 0px;
+      background-color: #E5E5E5;
+      box-shadow: 0px 25px 65px 0px #00000026;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      left:17%;
+      top: 70px;
+    }
+    hr.l3{
+      width: 98%;
+      height: 0px;
+      top: 1px;
+      left: 1px;
+      gap: 0px;
+      border: 1px 1px 1px 1px;
+      opacity: 0px;
+      transform: rotate(-45deg);
+      border: 1px solid #0065FF;
+      position: absolute;
+      top:41px;
+    }
+    hr.l4{
+      width: 140px;
+      height: 0px;
+      top: 1px;
+      left: 1px;
+      gap: 0px;
+      border: 1px 1px 1px 1px;
+      opacity: 0px;
+      border: 1px solid #0065FF;
+      transform: rotate(45deg);
+    }
+    
+    h1.Kevin{
+      width: 517px;
+      height: 140px;
+      top: 272px;
+      left: 240px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: EB Garamond;
+      font-size: 70px;
+      font-weight: 700;
+      line-height: 70px;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color: #0065FF;
+      position: relative;
+      left:22.3%;
+      top: 100px;
+    }
+    hr.maior{
+      width:960px;
+      height: 1px;
+      top: 492px;
+      left: 240px;
+      gap: 10px;
+      opacity: 0;
+      position: relative;
+      left:21%;
+      top: 177px;
+    }
+    hr.Azul{
+      width: 192px;
+      height: 1px;
+      gap: 10px;
+      opacity: 0px;
+      background-color: #0065FF;
+      background: #0065FF;
+      position: relative;
+      left: -178px;
+      top: 165px;
+    }
+    p.text1{
+      width: 960px;
+      height: 240px;
+      top: 573px;
+      left: 240px;
+      gap: 0px;
+      opacity: 0px;
+      color: #202020;
+      font-family: Be Vietnam;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 24.84px;
+      text-align: left;
+      position: relative;
+      top:260px;
+      left:205.5px;
+    }
+    span.um{
+      color: #0065FF;
+    }
+    div.Frase{
+      width: 462px;
+      height: 35px;
+      top: 859px;
+      left: 240px;
+      padding: 20px 20px 20px 20px;
+      gap: 10px;
+      border-radius: 10px 10px 10px 10px;
+      opacity: 0px;
+      background-color: #F8F9FA;
+      position: relative;
+      top: 42%;
+      left: 21%;
+    }
+    figure.bol1{
+      width: 16px;
+      height: 16px;
+      padding: 0.25px 0.25px 0.25px 0.25px;
+      gap: 0px;
+      opacity: 0px;
+      position: relative;
+      right:40px;
+      top:-10px;
+    }
+    p.pa{
+      width: 396px;
+      height: 16px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Be Vietnam;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      text-align: left;
+      position: relative;
+      left: 10%;
+      top: -35px;
+    }
+    span.say{
+      color: #0065FF;
+    }
+}
+
+@media(min-width:1370px){
+
+    div.section1{
+      width: 962px;
+      height: 783px;
+      top: 132px;
+      left: 238px;
+      gap: 0px;
+      opacity: 0px;
+    }
+    figure.Icon{
+      width: 100px;
+      height: 100px;
+      top: 132px;
+      left: 238px;
+      gap: 0px;
+      border-radius: 93px 93px 93px 93px;
+      opacity: 0px;
+      background-color: #E5E5E5;
+      box-shadow: 0px 25px 65px 0px #00000026;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      left:17%;
+      top: 70px;
+    }
+    hr.l3{
+      width: 98%;
+      height: 0px;
+      top: 1px;
+      left: 1px;
+      gap: 0px;
+      border: 1px 1px 1px 1px;
+      opacity: 0px;
+      transform: rotate(-45deg);
+      border: 1px solid #0065FF;
+      position: absolute;
+      top:41px;
+    }
+    hr.l4{
+      width: 140px;
+      height: 0px;
+      top: 1px;
+      left: 1px;
+      gap: 0px;
+      border: 1px 1px 1px 1px;
+      opacity: 0px;
+      border: 1px solid #0065FF;
+      transform: rotate(45deg);
+    }
+    
+    h1.Kevin{
+      width: 517px;
+      height: 140px;
+      top: 272px;
+      left: 240px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: EB Garamond;
+      font-size: 70px;
+      font-weight: 700;
+      line-height: 70px;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color: #0065FF;
+      position: relative;
+      left:22.3%;
+      top: 100px;
+    }
+    hr.maior{
+      width:960px;
+      height: 1px;
+      top: 492px;
+      left: 240px;
+      gap: 10px;
+      opacity: 0;
+      position: relative;
+      left:21%;
+      top: 177px;
+    }
+    hr.Azul{
+      width: 192px;
+      height: 1px;
+      gap: 10px;
+      opacity: 0px;
+      background-color: #0065FF;
+      background: #0065FF;
+      position: relative;
+      left: -178px;
+      top: 165px;
+    }
+    p.text1{
+      width: 960px;
+      height: 240px;
+      top: 573px;
+      left: 240px;
+      gap: 0px;
+      opacity: 0px;
+      color: #202020;
+      font-family: Be Vietnam;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 24.84px;
+      text-align: left;
+      position: relative;
+      top:260px;
+      left:205.5px;
+    }
+    span.um{
+      color: #0065FF;
+    }
+    div.Frase{
+      width: 462px;
+      height: 35px;
+      top: 859px;
+      left: 240px;
+      padding: 20px 20px 20px 20px;
+      gap: 10px;
+      border-radius: 10px 10px 10px 10px;
+      opacity: 0px;
+      background-color: #F8F9FA;
+      position: relative;
+      top: 42%;
+      left: 21%;
+    }
+    figure.bol1{
+      width: 16px;
+      height: 16px;
+      padding: 0.25px 0.25px 0.25px 0.25px;
+      gap: 0px;
+      opacity: 0px;
+      position: relative;
+      right:40px;
+      top:-10px;
+    }
+    p.pa{
+      width: 396px;
+      height: 16px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Be Vietnam;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      text-align: left;
+      position: relative;
+      left: 10%;
+      top: -35px;
+    }
+    span.say{
+      color: #0065FF;
+    }
+}
