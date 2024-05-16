@@ -1,12 +1,14 @@
-import { useState } from 'react'
 import './App.css'
+import Header from './components/Header'
+import Menu from './components/Menu'
 
 function App() {
 
   return (
-    <body>
-      
-    </body>
+    <>
+      <Header></Header>
+      <Menu></Menu>
+    </>
   )
 }
 
