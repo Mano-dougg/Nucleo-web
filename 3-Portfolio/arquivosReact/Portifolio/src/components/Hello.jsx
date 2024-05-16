@@ -1,11 +1,13 @@
 import Check from '../assets/Check.svg'
+import Icone from '../assets/icone.png'
 
 function Hello(props) {
     const{nome}=props;
     return (
         <>
+
             <h1>Hello.<br />My name is {nome}.</h1>
-            <div className="linhaCurta"></div>
+            <div className="linha"></div>
             <p>
                 I'm a Digital Product and UI Designer – creating digital experiences that
                 are intuitive for real people and making complex processes easy to use.
@@ -19,9 +21,9 @@ function Hello(props) {
                 I've got some <a>work on Dribbble</a>, some previous work at <a>Saga</a> and you can find me
                 over on twitter and sometimes <a>on Medium too</a>. I also take <a>too many photos</a>.
             </p>
-            <div>
+            <div id='available'>
                 <img src={Check} />
-                <p>Available for work and general design goodness – say hello</p>
+                <p>Available for work and general design goodness – <a>say hello</a></p>
             </div>
         </>
     );

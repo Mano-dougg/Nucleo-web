@@ -4,12 +4,21 @@
   font-family: 'Be Vietnam', 'Be Vietnam Pro', sans-serif;
   font-weight: 400;
 }
-
+p{line-height: 1.4;}
 h1{
   font-family: 'EB Garamond', serif;
   font-weight: 700;
   font-size: 70px;
   color: #0065FF;
+}
+main h2{
+  font-weight: 700;
+  font-size: 24px;
+  color: #0065FF;
+}
+h3{
+  font-weight: 700;
+  font-size: 20px;
 }
 
 a{
@@ -22,8 +31,7 @@ a:hover, button:hover{
 button{
   font-weight: 700;
   color: #0065FF;
-  border-color: #0065FF;
-  border-width: 5px;
+  border: 1px #0065ff solid;
   background-color: white;
   padding: 16px 30px;
   border-radius: 45px;

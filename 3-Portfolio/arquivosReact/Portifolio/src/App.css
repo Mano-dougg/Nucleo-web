@@ -1,1 +1,19 @@
+.linha {
+    height: 1px;
+    width: 192px;
+    background-color: #0065FF;
+    margin: 80px 0px;
+}
 
+#available{
+    display: flex;
+    padding: 20px;
+    background-color: #f8f9fa;
+    gap: 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+main {
+    padding: 10px 16vw;
+}
