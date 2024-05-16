@@ -75,3 +75,44 @@ section.available p{
     font-size: 14px;
     margin: 0;
 }
+
+@media screen and (max-width: 950px){
+    section.presentation{
+        width: 310px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section.presentation h1{
+        font-size: 32px;
+        margin-bottom: 40px;
+        text-align: center;
+
+    }
+
+    section.presentation hr {
+        margin: 0 auto; 
+        margin-bottom: 44px;
+    }
+
+    section.available{
+        display: flex;
+        justify-content: center;
+        width: 283px;
+        height: 72px;
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+
+    section.available img{
+        margin-right: 10px;
+        margin-bottom: 16px;
+    }
+
+    section.available p{
+        height: 100%;
+        font-size: 12px;
+        line-height: 16px;
+        height: 32px;
+    }
+}

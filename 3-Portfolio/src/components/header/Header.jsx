@@ -9,7 +9,7 @@ import './style.css';
 function Header() {
   return (
     <header>
-      <section className="container-section">
+      <section className="container-section desktop">
         <h1>Arthur Batista</h1>
         <nav>
           <ul>
@@ -20,7 +20,7 @@ function Header() {
         </nav>
       </section>
       
-      <section className="container-socials">
+      <section className="container-socials desktop">
         <nav className="social-bar">
           <ul>
             <ListItem icon={twitterIcon} alt="Twitter" />
@@ -28,6 +28,16 @@ function Header() {
             <ListItem icon={instagramIcon} alt="Instagram" />
           </ul>          
         </nav>
+        <nav className="theme">
+          <p>Dark Mode:</p>
+          <ul>
+            <ListItem icon={toggleIcon} alt="Toggle" />
+          </ul>
+        </nav>
+      </section>
+
+      <section className="mobile">
+        <h1>Arthur Batista</h1>
         <nav className="theme">
           <p>Dark Mode:</p>
           <ul>

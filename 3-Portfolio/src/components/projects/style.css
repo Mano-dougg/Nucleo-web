@@ -33,6 +33,7 @@ section.projects p{
     font-weight: 400;
     font-size: 17px;
     margin-bottom: 36px;
+    line-height: 25px;
 }
 
 section.project-item{
@@ -86,5 +87,66 @@ section.project-text button a{
 section.project-reverse {
     display: flex;
     flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 950px){
+
+    section.projects hr{
+        width: 310px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+
+    section.projects{
+        width: 310px;
+    }
+
+    section.projects h2{
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+
+    section.projects p{
+        width: 310px;
+        font-weight: 400;
+        font-size: 17px;
+        margin-bottom: 36px;
+    }
+
+    section.project-item{
+        margin-bottom: 0;
+    }
+
+    section.project-item section{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+    
+    section.project-item img{
+        width: 310px;
+        height: 179px;
+        border-radius: 10px;
+        margin-right: 0;
+        margin-bottom: 17px;
+    }
+
+    section.project-text h4{
+        font-size: 17px;
+        text-align: center;
+        width: 310px;
+    }
+
+    section.project-text p{
+        font-size: 17px;
+        width: 310px;
+        margin-bottom: 25px;
+    }
+
+    section.project-text button{
+        width: 310px;
+    }
+
 }
   
