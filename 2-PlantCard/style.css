@@ -46,6 +46,7 @@
 .conteudo-principal-texto{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 32px;
     width: 524px;
     margin-top: 50px;
@@ -67,8 +68,8 @@
 }
 
 
-.icons-share{
-    display: none;
+#icons-share{
+    display: block;
     align-self: flex-end;
     align-items: center;
     justify-content: center;
@@ -83,7 +84,6 @@
 }
 
 .comentario{
-    margin-top: 20%;
     display: flex;
     font-family: "Overpass", sans-serif;
     gap: 11px  ;
@@ -100,3 +100,20 @@
 #share-button{
     align-self: end;
 }
+
+
+@media (max-width: 600px) {
+    
+   
+    .conteudo-principal{
+        
+        width: 350px;
+        height: 750px;
+        flex-direction: column;
+    }
+
+    #imagem-planta{
+        transform: rotate(90deg);
+    
+    }
+  }
