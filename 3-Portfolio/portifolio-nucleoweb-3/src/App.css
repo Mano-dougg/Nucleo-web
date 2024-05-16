@@ -1,17 +1,33 @@
-*{
-    margin: 0;
+.appe{
+    background-color: var(--background-color);
+    color: var(--letter-colortwo);
+    width: 100%;
+    height: 200vh;
+    transition: background-color 250ms ease-in-out;
+
 }
 
-/*----------- menu ----------*/
+.icone{
+    color: var(--letter-colorlink);
+}
+
+.appe a{
+    color: var(--letter-colorlink);
+    text-decoration: none;
+}
+
+.appe h2{
+    color: var(--letter-colorone);
+}
+
 
 nav{
     display: flex;
     justify-content: space-between;
+    background-color: var(--nav-color);
     align-items: center;
     padding: 30px 87px 30px 87px;
-    background-color:#FFFFFF;
-    width: 90%;
-    box-shadow: 5px 5px 5px 5px #cfcece7b;
+    box-shadow: 5px 5px 5px 5px var(--shadow-color);
 
 }
 
@@ -22,66 +38,96 @@ nav ul li{
     
 }
 
-nav ul li h1{
+nav ul li h2{
     padding-right: 20px;
 }
 
-body{
-    background-color: #FFFFFF;
-    transition: background 0.2s linear ;
-}
 
-body h1{
-    color: #0065FF;
-    ;
-}
-
-body a{
-    color: #0065FF;
-    text-decoration: none;
-
-}
-
-
-/*------------- dark mode switch ---------*/
-
-
-body.dark{
-    background-color: black;
-    color:#FFFFFF
-}
-
-body.dark h1{
-    color:#ffffff;
-}
-
-body a{
-    color: #FFFFFF;
-    text-decoration: underline white;
-
-}
-
-.checkbox{
-    opacity: 0;
-}
-
-.label{
-    background-color: rgb(0, 0, 0);
-    border-radius: 50px;
-    cursor:pointer;
-
+/* --------- apresentação ------------ */
+.page{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.apresentacao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+}
+.imgperfil{
+    padding-top: 50px;
+
+
+}
+.apresentacao h2{
+    font-size: 60px;
+    margin-bottom: 40px;
+    margin-top: 50px;
+}
+
+
+.quebra_de_texto_um{
+    width: 20%;
+    height: 1px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    background-color: var(--letter-colorone);
+}
+
+
+.available {
+    display: flex;
+    padding: 20px;
+    margin-top: 30px;
+    align-items: center;
+    background-color: var(--available-color);
+    width: 60%;
+    border-radius:5px;
+
+}
+
+.available p {
+    margin-left: 10px;
     align-self: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 5px;
-    position: relative;
-
-    transform: scale(1.5)
-}
- 
-.ic_switch{
-    background-color: rgb(251, 251, 251);
-
+    
 }
 
+.quebra_de_texto_dois{
+    width: 45%;
+    height: 1px;
+    margin-bottom: 70px;
+    margin-top: 50px;
+    margin-left: 70px;
+    background-color: var(--letter-colorone);
+}
+
+.titulo_projetos{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 40%;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.projeto_um{
+    display: flex;
+    width: 40%;
+    gap: 30px;
+    margin-bottom: 50px;
+
+}
+
+.projeto_dois{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 40%;
+    gap: 30px;
+}
+
+.projeto_img{
+    border: 3px solid var(--available-color);
+    border-radius: 10px;
+}

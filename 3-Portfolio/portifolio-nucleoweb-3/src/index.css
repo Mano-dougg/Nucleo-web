@@ -1,1 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: border-box;
+}
+
+:root {
+    --background-color: #FFFFFF;
+    --nav-color: #fff;
+    --letter-colorone: #0065FF;
+    --letter-colorlink:#0065FF;
+    --letter-colortwo: #000000;
+    --shadow-color:#cfcece7b;
+    --toggle-color: #E5E5E5;
+    --toggleball-color:#3C3B3A;
+    --available-color: #F8F9FA;
+}
+
+[data-theme="dark"]{
+    --background-color:#222222;
+    --nav-color: #3C3B3A;
+    --letter-colorone: #FAF4E6;
+    --letter-colorlink: #c4c0b7;
+    --letter-colortwo: #FAF4E6;
+    --shadow-color: none;
+    --available-color: rgba(0, 0, 0, 0.144);
+
+}
 
