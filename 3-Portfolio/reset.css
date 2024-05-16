@@ -53,3 +53,7 @@ button {
     outline: none; /* Remove a borda ao focar */
     /* Adicione qualquer outra propriedade que você deseja redefinir */
 }
+
+a{
+	all: unset;
+}
