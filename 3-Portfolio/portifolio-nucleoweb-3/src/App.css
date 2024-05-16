@@ -2,31 +2,86 @@
     margin: 0;
 }
 
+/*----------- menu ----------*/
 
 nav{
     display: flex;
     justify-content: space-between;
-    position: fixed;
     align-items: center;
     padding: 30px 87px 30px 87px;
-    background-color:rgb(156, 149, 149);
+    background-color:#FFFFFF;
     width: 90%;
+    box-shadow: 5px 5px 5px 5px #cfcece7b;
 
 }
-
-
 
 nav ul li{
     display: inline-flex;
     padding-right: 20px;
+    align-items: center;
     
-
-
 }
 
 nav ul li h1{
     padding-right: 20px;
 }
 
+body{
+    background-color: #FFFFFF;
+    transition: background 0.2s linear ;
+}
 
+body h1{
+    color: #0065FF;
+    ;
+}
+
+body a{
+    color: #0065FF;
+    text-decoration: none;
+
+}
+
+
+/*------------- dark mode switch ---------*/
+
+
+body.dark{
+    background-color: black;
+    color:#FFFFFF
+}
+
+body.dark h1{
+    color:#ffffff;
+}
+
+body a{
+    color: #FFFFFF;
+    text-decoration: underline white;
+
+}
+
+.checkbox{
+    opacity: 0;
+}
+
+.label{
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+    cursor:pointer;
+
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px;
+    position: relative;
+
+    transform: scale(1.5)
+}
+ 
+.ic_switch{
+    background-color: rgb(251, 251, 251);
+
+}
 
