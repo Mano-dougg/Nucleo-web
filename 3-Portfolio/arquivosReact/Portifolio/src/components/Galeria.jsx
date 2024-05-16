@@ -18,7 +18,7 @@ function Galeria() {
                     Leading, implementing and evolving engaging customer experiences
                     and UI foundations for every touch-point across various platforms.
                     </p>
-                    <button>Button Primary Light</button>
+                    <button className='ButPrimLite'>Button Primary Light</button>
                 </div>
             </div>
             <div className="galeriaItem" style={{flexDirection: "row-reverse"}}>
@@ -29,7 +29,7 @@ function Galeria() {
                     Leading, implementing and evolving engaging customer experiences
                     and UI foundations for every touch-point across various platforms.
                     </p>
-                    <button>Button Primary Light</button>
+                    <button className='ButPrimLite'>Button Primary Light</button>
                 </div>
             </div>
         </div>

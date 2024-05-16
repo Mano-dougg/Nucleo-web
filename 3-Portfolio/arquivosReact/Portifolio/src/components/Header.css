@@ -29,7 +29,13 @@ header h2 {
 }
 #hamburguer {
     display: none;
-    position: relative;
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    z-index: 69;
 }
 
 @media (max-width: 600px){
@@ -49,7 +55,7 @@ header h2 {
         overflow-y: hidden;
         position: absolute;
         width: 100%;
-        top: 92px;
+        top: 80px;
         right: 0px;
         align-items: center;
         height: 0px;
@@ -57,6 +63,7 @@ header h2 {
         background: white;
         flex-direction: column;
         gap: 25px;
+
     }
     /*#botoesHeader{
         display: none;

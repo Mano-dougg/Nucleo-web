@@ -49,6 +49,15 @@ main {
     padding: 10px 0 25px 0;
 }
 
+.ButPrimLite {
+    font-weight: 700;
+    color: #0065FF;
+    border: 1px #0065ff solid;
+    background-color: white;
+    padding: 16px 30px;
+    border-radius: 45px;
+  }
+
 @media (max-width: 1000px) {
     main {
         padding: 30px;
@@ -58,6 +67,7 @@ main {
     }
     h1 {
         text-align: center;
+        font-size: 2em;
     }
     .galeria {
         align-items: center;
