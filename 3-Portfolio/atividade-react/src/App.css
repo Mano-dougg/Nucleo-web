@@ -5,6 +5,7 @@ body.dark-mode {
 a{
   text-decoration: none;
 }
+
 .dark-mode a{
   color: white;
 }
@@ -111,8 +112,8 @@ a{
   position: relative;
   
 
-  height: 26px;
-  width: 50px;
+  height: 22px;
+  width: 40px;
 
 }
 
@@ -122,13 +123,27 @@ a{
   position: absolute;
   top: 2px;
   left: 2px;
-  height: 22px;
-  width: 22px;
+  width: 17.25px;
+  height: 17.29px;
+  top: 2.36px;
+  left: 3px;
+  gap: 0px;
+  opacity: 0px;
+
   transform: translateX(0px);
   transition: transform 0.2s linear;
 
 }
 
 .checkbox:checked + .label .ball {
-  transform: translateX(24px);
+  transform: translateX(18px);
+}
+
+
+.dark-mode .nav-list ul li a {
+  color: white;
+}
+
+.dark-mode .icons img {
+  filter: invert(1) grayscale(1);
 }

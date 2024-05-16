@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import './Navbar.css';
 
@@ -42,15 +43,20 @@ class Navbar extends Component {
             <h1>Eder Natan</h1>
           </div>
           <div className="nav-list">
-            <ul>
-              <li className="nav-item"><a href="#" className="nav-link">Section two</a></li>
+            <ul className={darkMode ? "dark-mode" : ""} >
+              <li className="nav-item"><a href="#" className="nav-link" >Section two</a></li>
               <li className="nav-item"><a href="#" className="nav-link">Section three</a></li>
               <li className="nav-item"><a href="#" className="nav-link">Section four</a></li>
             </ul>
           </div>
           <div className="dark-button">
+            <div className="icons">
+              <a href="#"><img src="/src/assets/img/instagram-icon.svg" alt="" className={darkMode ? "dark-mode" : ""} /></a>
+              <a href="#"><img src="src/assets/img/twitter-icon.svg" alt="" className={darkMode ? "dark-mode" : ""} /></a>
+              <a href="#"><img src="/src/assets/img/Vector(1).svg" alt="" className={darkMode ? "dark-mode" : ""} /></a>
+            </div>
             <div className='itens_dark'>
-              <p>Dark Mode :</p>
+              <h6>Dark Mode :</h6>
               <div className='itens_checkbox'>
                 <input type="checkbox" className='checkbox' id="chk" checked={darkMode} onChange={this.toggleDarkMode} />
                 <label className='label' htmlFor="chk">
@@ -70,6 +76,7 @@ class Navbar extends Component {
             <li className="nav-item"><a href="#" className="nav-link">Sobre</a></li>
           </ul>
           <div className="dark-button">
+           
             <button><a href="#">Dark Mode</a></button>
           </div>
         </div>
