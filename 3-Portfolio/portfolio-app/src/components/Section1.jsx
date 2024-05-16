@@ -10,7 +10,7 @@ function Section1() {
                 <div className="avatar-img">
                     <img src={avatar} alt="avatar" />
                 </div>
-                <h1>Hello. <br /> My name is Kevin.</h1>
+                <h1>Hello. <br /> My name is Breno.</h1>
                 <span className='small-line'></span>
                 <article>
                     <p>I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making complex processes easy to use.</p>

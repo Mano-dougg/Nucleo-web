@@ -1,5 +1,5 @@
 .full-line {
-    height: 0.1rem;
+    min-height: 0.1rem;
     width: 100%;
     background-color: var(--primary-color);
     margin: 5rem 0;
@@ -12,4 +12,20 @@
     align-content: flex-start;
     max-height: 100vh;
     max-width: 87rem;
+}
+
+.main-content-s2 p {
+    margin: 2rem 0;
+}
+.article-1 {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.article-2 {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row-reverse;
+    margin-bottom: 3rem;
 }

@@ -9,7 +9,7 @@ function Section2() {
                 <span className='full-line'></span>
                 <h2>Title</h2>
                 <p>Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section.</p>
-                <article>
+                <article className='article-1'>
                     <img src={imgPlaceholder} alt="imagem de " />
                     <div className='side-content'>
                         <h3>Title</h3>
@@ -17,7 +17,7 @@ function Section2() {
                         <button></button>
                     </div>
                 </article>
-                <article>
+                <article className='article-2'>
                     <img src={imgPlaceholder} alt="" />
                     <div className='side-content-2'>
                         <h3>Title</h3>
