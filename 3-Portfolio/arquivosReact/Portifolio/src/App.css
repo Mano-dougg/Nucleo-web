@@ -26,3 +26,15 @@ main {
     box-shadow: 0px 25px 65px 0px #00000026;
     margin-bottom: 40px;
 }
+
+.galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.galeriaItem {
+    display: flex;
+    gap: 40px;
+    height: 370px;
+}
