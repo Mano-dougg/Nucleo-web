@@ -279,6 +279,9 @@
     }
     
     .conteudo-one{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 0;
         padding: 0;
         text-align: justify;
@@ -291,6 +294,9 @@
     }
     
     .conteudo-two{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 0;
         margin: 0;
         text-align: justify;
