@@ -25,6 +25,7 @@ function Hello(props) {
                 <img src={Check} />
                 <p>Available for work and general design goodness – <a>say hello</a></p>
             </div>
+            <div className="linha" style={{width:"100%"}} ></div>
         </>
     );
 }

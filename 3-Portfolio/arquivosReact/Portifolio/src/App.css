@@ -12,6 +12,7 @@
     gap: 10px;
     border-radius: 10px;
     width: fit-content;
+    margin-top: 48px;
 }
 
 main {
@@ -23,4 +24,5 @@ main {
     height: 100px;
     border-radius: 50%;
     box-shadow: 0px 25px 65px 0px #00000026;
+    margin-bottom: 40px;
 }

@@ -11,7 +11,6 @@ function App(props) {
       <Header nome={nome} sobrenome={sobrenome} />
       <main>
         <Hello nome={nome} />
-        <div className="linha"></div>
         <h2>Title</h2>
         <p>
           Line of copy in here to decribe this section. Line of copy in here to decribe this section.
