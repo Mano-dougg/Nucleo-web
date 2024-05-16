@@ -1,0 +1,104 @@
+* {margin: 0; border: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none;}
+
+body {background-color: var(--bg-color); font-family: 'Be Vietnam Pro';}
+
+:root {
+  --bg-color: white;
+  --nav-bg-color: white;
+  --text-default-color: #202020;
+  --text-special-color: #0065FF;
+  --button-bg-color: #E5E5E5;
+  --button-border-color: #3C3B3A;
+}
+
+.dark {
+  --bg-color: #222222;
+  --nav-bg-color: #3C3B3A;
+  --text-default-color: #FAF4E6;
+  --text-special-color: #FAF4E6;
+  --button-bg-color: #FAF4E6;
+  --button-border-color: #FAF4E6;
+}
+
+h4 { color: var(--text-default-color); font-size: 1rem; font-weight: 700; letter-spacing: -0.02em;}
+a {color: var(--text-special-color); font-size: .7rem; font-weight: 400;}
+label {color: var(--text-default-color); font-size: .7rem; font-weight: 400;}
+
+h4:hover, a:hover, label:hover {background-color: rgba(0, 0, 0, .1);}
+
+header {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 25px 65px 0px #00000026;
+  height: 4rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#left-aligned, #right-aligned {display: flex; align-items: center;}
+
+#logo {margin: 0 2rem;}
+
+#nav-links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 1rem;
+}
+
+i {font-size: .7rem;}
+
+#social-links {
+  display: flex;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+
+#toggle {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  width: 2rem;
+  height: 1rem;
+  background-color: var(--button-bg-color);
+  border: solid 1px var(--button-border-color);
+  border-radius: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: .2s;
+  margin-left: 1rem;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  background-color: #3C3B3A;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  margin: .1rem;
+  transition: .2s;
+}
+
+input:checked + .button::before {
+  transform: translateX(1rem);
+}
+
+input {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  #nav-links, #social-links {
+    display: none;
+  }
+}
