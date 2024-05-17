@@ -36,9 +36,6 @@ a{
 .dark-mode .sections span{
   color: white;
 }
-.dark-mode .avaliable {
-  background-color: var(--color-dark-claro);
-}
 
 
 /* modulo para os icons */
@@ -88,7 +85,6 @@ a{
  display: flex;
  justify-content: center;
  align-items: center;
-
  transition: background 0.2s linear;
 }
 
@@ -147,3 +143,8 @@ a{
 .dark-mode .icons img {
   filter: invert(1) grayscale(1);
 }
+
+.dark-mode .mobile-menu.open {
+background-color: var(--color-dark);
+}
+

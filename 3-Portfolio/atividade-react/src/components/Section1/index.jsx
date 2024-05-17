@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import './Section1.css';
 
@@ -24,18 +24,16 @@ const Section1 = ({ darkMode }) => {
           <p>I've got some <span>work on Dribbble</span>, some previous work at <span>Saga</span> and you can find me over on twitter and sometimes <span>on Medium too</span>. I also take <span>too many photos.</span></p>
           <div className="espaco-p"></div>
         </div>
-      </div>
-      <div className="avaliable">
-        <div className="avaliable-conteudo">
-        <img
-  src="/src/assets/img/check-circle-solid-light.svg"
-  alt=""
-  className={`section1 ${darkMode ? 'dark-mode' : ''}`}
-/>
+        <div className="avaliable">
+          <div className="avaliable-conteudo">
+            <img
+              src="/src/assets/img/check-circle-solid-light.svg"
+              alt=""
+            />
 
-          <h2>Available for work and general design goodness – say hello</h2>
+            <h2>Available for work and general design goodness – say hello</h2>
+          </div>
         </div>
-  
       </div>
     </section>
   );

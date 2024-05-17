@@ -1,5 +1,4 @@
-
-.section2{
+.section2 {
     width: 70vw;
     height: auto;
     margin: 0 auto;
@@ -8,18 +7,20 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    padding: 0 auto;
+    padding-top: 60px;
 }
-.hr2{
-        width: 100%;
-        height: 1px;
-        margin-top: -2rem;
-        background-color: var(--h1-color);
-        padding: 0;
+
+.hr2 {
+    width: 100%;
+    height: 1px;
+    margin-top: -2rem;
+    background-color: var(--h1-color);
+    padding: 0;
 }
-.conteudo2 h2{
-   color: var(--h1-color);
-    font-family: 'Be Vietnam Pro',sans-serif;
+
+.conteudo2 h2 {
+    color: var(--h1-color);
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 24px;
     font-weight: 700;
     line-height: 24px;
@@ -27,126 +28,144 @@
     text-align: left;
     height: 3rem;
 }
-.conteudo2 p{
-    height: 6rem;
-    font-family: 'Be Vietnam Pro',sans-serif;
+
+.conteudo2 p {
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 24.84px;
     text-align: left;
-
-
 }
 
-/* conteudo 2 da segunda section*/
 .conteudo2-2{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     margin-top: 1px;
-    height: 370px;
 }
-.conteudo2-colum1{
+
+.conteudo2-3 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 1px;
+}
+
+.conteudo2-colum1 {
     width: 70%;
 }
 
-.conteudo2-colum1 img{
-    width: 200px;
+.conteudo2-colum1 img {
+    width: 100%;
 }
-.conteudo2-colum2{
+
+.conteudo2-colum2 {
     padding: 0;
     width: 25%;
 }
 
-
-
-
-
-.text{
+.text {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 20px;
 }
-.text h3{
+
+.text h3 {
     font-family: 'Be Vietnam Pro';
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: -0.02em;
     text-align: left;
-    height: 20px;
-    
 }
-.text p{
-padding: 0;
-font-family: 'Be Vietnam Pro';
-font-size: 16px;
-font-weight: 400;
-line-height: 24.84px;
-text-align: left;
-max-width: 280px;
-text-align: left;
 
+.text p {
+    padding: 0;
+    font-family: 'Be Vietnam Pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    max-width: 280px;
+    margin: 0;
 }
-.text button{
-    width: 11vw;
+
+.text button {
+    width: auto; 
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    border-radius: 44px 44px 44px 44px;
-    border: 1px 0px 0px 0px;
-    opacity: 0px;
+    border-radius: 44px;
+    border: 1px solid var(--h1-color);
+    opacity: 1; 
     cursor: pointer;
     font-family: 'Be Vietnam Pro';
-    font-size: 0.8vw;
+    font-size: 16px; 
     font-weight: 700;
     line-height: 17.53px;
-    text-align: left;
+    text-align: center; 
     color: var(--h1-color);
-    border-color: var(--h1-color);
     background-color: white;
-
 }
 
-/* 3 conteudo da segunda section*/
-.conteudo2-3{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-}
-.conteudo2-colum1{
-    width: 70%;
-}
-.conteudo2-colum2{
-    padding: 1;
-    width: 25%;
-}
-.conteudo2-3 img{
-    width: 640px;
-}
-
-.text2{
+.text2 {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 20px;
 }
-.text2 button{
-    width: 180px;
+
+.text2 button {
+    width: auto; 
     height: 50px;
-    top: 1405px;
-    left: 920px;
-    padding: 16px 30px 16px 30px;
+    padding: 0 30px; 
     gap: 10px;
-    border-radius: 44px 44px 44px 44px;
-    border: 1px 0px 0px 0px;
-    opacity: 0px;
-    border-color: var(--h2-color);
+    border-radius: 44px;
+    border: 1px solid var(--h2-color);
+    opacity: 1; 
+    cursor: pointer;
+    font-family: 'Be Vietnam Pro';
+    font-size: 16px; 
+    font-weight: 700;
+    line-height: 17.53px;
+    text-align: center; 
     color: var(--h2-color);
-
 }
+@media screen and (max-width:768px){ 
+    .section2 {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+    }
+.hr2{
+    width: 250px;
+}
+    .section2 .conteudo2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* modulo para os icons */
+    .conteudo2-2,
+    .conteudo2-3 {
+        flex-direction: column; 
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .conteudo2-colum1,
+    .conteudo2-colum2 {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .text button,
+    .text2 button {
+        width: 100%; 
+    }
+}

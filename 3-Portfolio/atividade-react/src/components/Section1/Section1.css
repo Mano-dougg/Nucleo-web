@@ -14,7 +14,7 @@
 
 .section1 h1 {
     font-family: 'EB Garamond', sans-serif;
-    font-size: 4vw;
+    font-size: 70px;
     font-weight: 700;
     line-height: 70px;
     letter-spacing: -0.02em;
@@ -32,6 +32,7 @@
 }
 
 .espaco {
+    align-items: center;
     height: 4rem;
 }
 
@@ -71,7 +72,6 @@
 .avaliable {
     width: 32vw;
     height: 5vw;
-    background-color: var(--avaliable-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +82,6 @@
 .avaliable-conteudo {
     display: flex;
     justify-content: flex-start;
-    align-items: center center;
     flex-direction: row;
 }
 
@@ -114,13 +113,78 @@
     color: white;
   }
   
-  .section1.dark-mode .avaliable {
-    background-color: var(--color-dark-claro);
-  }
-  
   .section1.dark-mode .iconDark {
     filter: invert(1) grayscale(1);
   }
 
+@media screen and (max-width:768px){
+   .section1-conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
 
+   }
+   .section1 img {
+    width: 100px;
+    height: 90px;
+}
+.section1 h1{
+    text-align: center;
+    font-family: 'EB Garamond', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    padding-top: 20px;
+}
+.section1 p{
+    font-family: 'Be Vietnam Pro';
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    height: auto;
+
+}
+.section1 .hr{
+    width: 192px;
+    height: 1px;
+    top: 396px;
+    left: 91px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+.espaco{
+    display: flex;
+    align-items: center;
+}
+.avaliable-conteudo{
+    width: 283px;
+    height: 72px;
+    top: 1006px;
+    left: 46px;
+    padding: 20px 0px 0px 0px;
+    gap: 10px;
+    border-radius: 10px 0px 0px 0px;
+    opacity: 0px;
+
+}
+.avaliable-conteudo h2 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    width: 382px;
+
+}
+.avaliable-conteudo img{
+    width: 16px;
+    height: 16px;
+
+}
+}
   
