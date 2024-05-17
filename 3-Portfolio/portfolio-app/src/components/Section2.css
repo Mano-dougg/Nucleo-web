@@ -11,21 +11,35 @@
     margin: 0 auto;
     align-content: flex-start;
     max-height: 100vh;
-    max-width: 87rem;
+    padding: 2rem;
+    max-width: 89rem;
 }
 
 .main-content-s2 p {
     margin: 2rem 0;
 }
-.article-1 {
+
+.main-content-s2 article {
     display: flex;
     gap: 2rem;
     margin-bottom: 3rem;
+    max-width: 100%;
 }
 
-.article-2 {
-    display: flex;
-    gap: 2rem;
-    flex-direction: row-reverse;
-    margin-bottom: 3rem;
+.main-content-s2 article img {
+    max-height: 50rem;
+}
+
+.article-2 {  
+    flex-direction: row-reverse; 
+}
+
+@media (max-width: 900px) {
+    .main-content-s2 {
+        align-items: center;
+    }
+ 
+    .main-content-s2 article {
+        flex-direction: column;
+    }
 }

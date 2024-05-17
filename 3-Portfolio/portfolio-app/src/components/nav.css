@@ -6,7 +6,8 @@
 .main-nav {
     display: flex;
     margin : 0 auto;
-    max-width: 120rem;
+    max-width: 122rem;
+    padding: 2rem;
     justify-content: space-between;
 }
 
@@ -40,4 +41,10 @@ li {
     max-height: 2.0rem;
     max-width: 2.5rem;
     cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .nav-left-content ul, .nav-right-content ul{
+        display: none;
+    }
 }

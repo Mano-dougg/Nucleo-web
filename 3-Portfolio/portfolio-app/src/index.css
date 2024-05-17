@@ -37,3 +37,25 @@ a {
     font-size: 1.4rem;
     font-weight: bold;
 }
+
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    a {
+        font-size: 1.2rem;
+    }
+}
