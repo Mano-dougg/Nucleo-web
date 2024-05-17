@@ -49,7 +49,7 @@ px -> rem x0,0625
 .conteudo-principal-texto{
     display: flex;
     flex-direction: column;
-    justify-content:spa;
+    justify-content: space-between;
     gap: 32px;
     width: 524px;
     margin-top: 50px;
@@ -88,7 +88,6 @@ px -> rem x0,0625
 }
 
 .comentario{
-   align-content: end;
     display: flex;
     font-family: "Overpass", sans-serif;
     gap: 11px  ;
@@ -149,6 +148,13 @@ px -> rem x0,0625
 
 
     .comentario{
+       
+        align-content: end;
         padding-bottom: 150px;
+    }
+
+    #icons-share{
+        height: 30px;
+        width: ;
     }
   }
