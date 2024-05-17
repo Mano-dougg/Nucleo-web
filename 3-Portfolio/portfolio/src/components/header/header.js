@@ -1,7 +1,7 @@
 import './header.css'
 import './switch-button.css'
 
-export default function Header(){
+export default function Header({onClick}){
     return(
         <header className="header">
             <ul className="header__left">
@@ -27,9 +27,9 @@ export default function Header(){
 </svg>
                 </li>
                 <li className="header__right__dark-mode">
-                    <span>dark mode:</span>
+                    <span className='header__right__dark-mode__text'>dark mode:</span>
                     <label className='switch'>
-                        <input type='checkbox' className='switch__checkbox'></input>
+                        <input onClick={onClick} type='checkbox' className='switch__checkbox'></input>
                         <span className='switch__slider round'></span>
                     </label>
                 </li>

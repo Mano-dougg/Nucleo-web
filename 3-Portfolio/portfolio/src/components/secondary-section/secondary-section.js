@@ -11,7 +11,7 @@ function Post({ order, imageLink, description}){
             <div className='article__content'>
                 <h3 className='article__content__title title'>Title</h3>
                 <p className='article__content__text'>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
-                <button className='article__content__button border colored'>Button Primary Light</button>
+                <button className='article__content__button border colored backgrounder'>Button Primary Light</button>
             </div>
         </article>
     )

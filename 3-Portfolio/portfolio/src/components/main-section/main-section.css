@@ -32,5 +32,24 @@
 }
 
 .main-section__assign{
+    width: 55%;
+    padding: 10px;
+    border-radius: 10px;
     margin-bottom: 30px;
 }
+
+@media screen and (max-width: 900px) {
+    .main-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-section__bar{
+        width: 60%;
+    }
+
+    .main-section__assign{
+        width: 100%;
+    }
+  }

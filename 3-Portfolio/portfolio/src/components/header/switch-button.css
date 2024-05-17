@@ -17,7 +17,7 @@
     cursor: pointer;
     width: 50px;
     height: 25px;
-    background-color: #ccc;
+    background-color: #E5E5E5;
     border-radius: 34px;
     -webkit-transition: .4s;
     transition: .4s;
@@ -30,18 +30,18 @@
     width: 20px;
     top: 3px;
     left: 4px;
-    background-color: white;
+    background-color: #3C3B3A;
     border-radius: 50%;
     -webkit-transition: .4s;
     transition: .4s;
   }
   
   .switch__checkbox:checked + .switch__slider {
-    background-color: #2196F3;
+    background-color: #FAF4E6;
   }
   
   .switch__checkbox:focus + .switch__slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #FAF4E6;
   }
   
   .switch__checkbox:checked + .switch__slider:before {
