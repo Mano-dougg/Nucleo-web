@@ -1,6 +1,6 @@
 /* Telas pequenas */
 
-@media(min-width:375px) and (max-width:1296px){
+@media(min-width:200px) and (max-width:1296px){
 
   /* Cabeçalho formatado */
 
@@ -521,6 +521,7 @@
     background-color: #FFFFFF;
     position: absolute;
     z-index:1;
+    transition: opacity 0.3s ease;
   }
   nav.menu1{
     width: 104%;
@@ -732,7 +733,7 @@
 
 body{
   width: 1250px;
-  height: 2600px;
+  height: 2580px;
   top: -512px;
   left: -2311px;
   gap: 0px;

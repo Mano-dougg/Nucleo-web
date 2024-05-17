@@ -16,12 +16,6 @@ function Header(){
     const trocar = () => {
       setmenuO(!menuO)
     }
-
-  const [black,setBlack] = useState(false)
-  const pretin = () => {
-    setBlack(!black)
-  }
-
     return(
 
         <header className={styles.header}>
