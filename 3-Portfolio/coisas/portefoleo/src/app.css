@@ -2,34 +2,38 @@
 
 :root {
     --corprincipal: #7400b2;
-    background-color: #F8F9FA;
+    --background-color: #F8F9FA;
+    --text-color: #202020;
 }
 
-.dark-mode:root{
-    --corprincipal: #ffff;
-
+.dark-mode {
+    --corprincipal: #ffffff;
+    --background-color: #202020;
+    --text-color: #ffffff;
 }
-
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.body{
-
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 a {
     text-decoration: none;
     color: inherit;
 }
-h1{
+
+h1 {
     font-family: 'EB Garamond';
     font-weight: 700;
     color: var(--corprincipal);
-
 }
+
 .main {
     display: flex;
     justify-content: center;
@@ -50,7 +54,7 @@ h1{
     font-family: 'Be Vietnam';
     font-weight: 700;
     font-size: 20px;
-    color: #202020;
+    color: var(--text-color);
 }
 
 .headerright {
@@ -115,7 +119,7 @@ h1{
     font-family: 'Be Vietnam';
     font-weight: 700;
     font-size: 17px;
-    color: #202020;
+    color: var(--text-color);
 }
 
 .bio {
@@ -130,7 +134,7 @@ h1{
     display: flex;
     width: 462px;
     height: 56px;
-    background-color: #F8F9FA;
+    background-color: var(--background-color);
     border-radius: 15px;
     align-items: center;
     justify-content: center;
@@ -141,7 +145,7 @@ h1{
 }
 
 .linha {
-    background-color: #7400b2;
+    background-color: var(--corprincipal);
     height: 1px;
     width: 192px;
     margin-top: 70px;
@@ -161,7 +165,8 @@ h1{
 .hamdiv {
     display: none;
 }
-.linha2{
+
+.linha2 {
     width: 960px;
     height: 1px;
     background-color: var(--corprincipal);
@@ -169,16 +174,13 @@ h1{
     margin-top: 60px;
 }
 
-.posts{
+.posts {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
-
-
 }
 
-@media(max-width: 850px) {
+@media (max-width: 850px) {
     .redes, .sections {
         display: none;
     }
@@ -196,7 +198,6 @@ h1{
 
     .presentation {
         height: 100%;
-        /* width: 100%; */
     }
 
     .hamburger {
@@ -233,7 +234,6 @@ h1{
     .hamdiv {
         width: 100%;
         display: flex;
-
     }
 
     .cula {
@@ -244,15 +244,14 @@ h1{
         visibility: visible;
         height: 100%;
         width: 100%;
-        padding-left: 130px;
-
+        padding-left: 70px;
     }
 
-    .linha2{
+    .linha2 {
         width: 310px;
     }
 
-    .posts{
-        width: 310px ;
+    .posts {
+        width: 310px;
     }
 }
