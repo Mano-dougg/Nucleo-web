@@ -21,9 +21,6 @@ function Header(){
   const pretin = () => {
     setBlack(!black)
   }
-  const styless = {
-    backgroundColor: black ? "white" : "black" ,
-  }
 
     return(
 
@@ -87,8 +84,8 @@ function Header(){
 
         /* Menu ativo*/
         
-          <div className="telab">
-          <header></header>
+        <div className="telab">
+        <header></header>
         <nav className="menu1">
         <div className="aesquerda">
           <h4 className="dono">David Moura</h4>
