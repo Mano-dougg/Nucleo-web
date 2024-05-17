@@ -1,0 +1,17 @@
+@media (min-width: 871px) {
+  .closeButton {
+    display: none;
+  }
+}
+
+@media (max-width: 870px) {
+  .closeButton {
+    position: absolute;
+    top: 95px;
+    left: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--blue-600);
+  }
+}
