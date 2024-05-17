@@ -29,4 +29,6 @@ body.dark {
 
 a {
   text-decoration: none;
+  color: inherit;
+  outline: none;
 }
