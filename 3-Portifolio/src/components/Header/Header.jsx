@@ -2,7 +2,7 @@ import twitterIcon from './imagesHeader/twitterIcon.png'
 import figmaIcon from './imagesHeader/figmaIcon.png'
 import InstaIcon from './imagesHeader/instagramIcon.png'
 import styles from './Header.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function Header(){
     const [active, setMode] = useState(false);
@@ -10,6 +10,11 @@ function Header(){
         setMode(!active);
     };
 
+    // Função pra quando o menu hamburger abrir, esconder tudo que estiver fora da tela
+    {active ? document.body.style.overflow = 'hidden' : 
+    document.body.style.overflow = 'visible'
+    }
+    
     return(
     <>
     <header>

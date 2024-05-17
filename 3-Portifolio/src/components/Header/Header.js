@@ -1,0 +1,7 @@
+
+function static(){
+    document.body
+
+
+
+}
