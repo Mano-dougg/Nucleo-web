@@ -23,12 +23,12 @@ function Header(){
                     <li><a href="#Section4">Section four</a></li>
                 </ul>
             </nav>
-        </article>
+        </article> 
         <article className={styles.articleHeader}>
             <div className={styles.iconsHeaderDesktop}>
-                <img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" />   
-                <img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" />
-                <img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" />
+                <a href="https://twitter.com/home?lang=pt"><img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" /></a>
+                <a href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a> 
+                <a href="https://www.instagram.com"><img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" /> </a>
             </div>
             <div className={styles.darkMode}>
                 <p>Dark mode:</p>
@@ -57,9 +57,9 @@ function Header(){
                     </ul>
                 </nav>
                 <div className={styles.iconsHeaderMobile}>
-                    <img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" />   
-                    <img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" />
-                    <img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" />
+                <a href="https://twitter.com/home?lang=pt"><img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" /></a>   
+                <a href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a>
+                <a href="https://www.instagram.com"><img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" /> </a>
                 </div>
             </div>
         </article>
