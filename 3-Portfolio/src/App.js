@@ -3,6 +3,8 @@ import { ThemeContext } from './ThemeContext';
 import NavLinks from './NavLinks';
 import SocialLinks from './SocialLinks';
 import './App.css';
+import Header from './Header'
+import Content from './Content';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -37,25 +39,11 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, [isOpen]);
   
+
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
-      <header>
-        <nav id="nav-bar">
-          <div id="left-aligned">
-            <h4 id="logo">Kevin Bennet</h4>
-            <NavLinks />
-          </div>
-          <div id="right-aligned">
-            <SocialLinks />
-            <div id="toggle">
-              <label id="mode">Dark mode:</label>
-              <input type="checkbox" id="check" onChange={toggleDarkMode} />
-              <label htmlFor="check" className="button" />
-            </div>
-          </div>
-        </nav>
-      </header>
-      <div id="menu-container">
+      <div style={{position: 'relative'}}>
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <button id="btn-mobile" className={isOpen ? 'open' : ''} onClick={toggleMenu}>
           <span id="hamburger"></span>
         </button>
@@ -64,8 +52,10 @@ function App() {
           <SocialLinks />
         </div>
       </div>
+      <Content isOpen={isOpen} />
     </ThemeContext.Provider>
   );
 }
 
 export default App;
+

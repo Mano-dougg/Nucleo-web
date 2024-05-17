@@ -4,13 +4,13 @@ function NavLinks() {
   return (
     <ul id="nav-links">
       <li>
-        <a href="#">Section two</a>
+        <a href="#section-two">Section two</a>
       </li>
       <li>
-        <a href="#">Section three</a>
+        <a href="#section-three">Section three</a>
       </li>
       <li>
-        <a href="#">Section four</a>
+        <a href="#section-four">Section four</a>
       </li>
     </ul>
   );
