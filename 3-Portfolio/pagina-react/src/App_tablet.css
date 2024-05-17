@@ -1,0 +1,165 @@
+@media screen and (min-width:769px) and (max-width: 858px) {
+    /*cabeçalho*/
+    .left-align{
+        margin-top: -5px;
+    }
+    .left-align nav{
+       margin-left: -60px;
+    }
+
+    .autor{
+       width: 30px;
+       font-size: 90%;
+       text-align: center;
+       height: 30px;
+       font-weight: bold;
+    }
+    
+    .sections{
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+    .sections li {
+        font-size: 80%;
+        margin-left: -15px;
+    }
+
+
+    .right-align{
+        margin-left: -510px;
+    }
+
+    .social-icons {
+      margin-left: 40px;
+    }
+
+    .toggle-buttom{
+        margin-left: -30px;
+    }
+    
+    .section1 {
+       margin-left: 30px;
+    }
+
+    .section1 p {
+        width: 660px;
+
+    }
+
+    .paragrafo3{
+        margin-top: -100px;
+    }
+
+    .section2 {
+        margin-left: 30px;
+        width: 660px;
+    }
+
+    .titulo-paragrafo p {
+        width: 660px;
+        margin-bottom: 40px;
+    }
+
+    .minitexto h2{
+        margin-bottom: 3px;
+    }
+
+    .minitexto p{
+        margin-bottom: 3px;
+    }
+
+    .minitexto2 h3{
+        margin-bottom: 3px;
+    }
+
+    .minitexto2 p{
+        margin-bottom: 3px;
+    }
+
+    .section2 img {
+        width: 50%;
+        height: 100%;
+    }    
+}
+
+@media screen and (min-width: 859px) and (max-width:1277px) {
+    
+    .left-align nav{
+       margin-left: 0px;
+    }
+    
+    .left-align{
+        margin-top: -5px;
+    }
+
+    .autor{
+       width: 30px;
+       font-size: 90%;
+       text-align: center;
+       height: 30px;
+       font-weight: bold;
+    }
+    
+
+    .sections{
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+    
+    .right-align{
+        margin-left: -510px;
+    }
+
+    .social-icons {
+      margin-left: 40px;
+    }
+
+    .toggle-buttom{
+        margin-left: -30px;
+    }
+    
+    .section1 {
+       margin-left: 150px;
+    }
+
+    .section1 p {
+        width: 660px;
+
+    }
+
+    .paragrafo3{
+        margin-top: -100px;
+    }
+
+    .section2 {
+        margin-left: 150px;
+        width: 660px;
+    }
+
+    .titulo-paragrafo p {
+        width: 660px;
+        margin-bottom: 40px;
+    }
+
+    .minitexto h2{
+        margin-bottom: 3px;
+    }
+
+    .minitexto p{
+        margin-bottom: 3px;
+    }
+
+    .minitexto2 h3{
+        margin-bottom: 3px;
+    }
+
+    .minitexto2 p{
+        margin-bottom: 3px;
+    }
+
+    .section2 img {
+        width: 50%;
+        height: 100%;
+    }    
+    
+}

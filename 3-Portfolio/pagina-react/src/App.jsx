@@ -1,5 +1,6 @@
 import './App.css'
 import './App_mobile.css'
+import "./App_tablet.css"
 import Logotwitter from "./imagens-redes-sociais/twitter-icon.png"
 import Logofigma from "./imagens-redes-sociais/figma-icon.png"
 import Logoinsta from "./imagens-redes-sociais/instagram-icon.png"
