@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { BsXLg,BsList,  } from "react-icons/bs";
+import { BiSolidCheckCircle } from "react-icons/bi";
 import { AiOutlineTikTok, AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
-import { BsCheckCircleFill, BsXCircle, BsList } from "react-icons/bs";
 import './app.css';
-import cutao from './assets/cutao.png';
+import cutao from './assets/cutao.png'; // Você pode remover esta linha se não estiver mais usando a imagem
 import culita from './assets/culita.png';
 import cuk from './assets/cuk.png';
 import xis from './assets/xis.png';
@@ -35,7 +36,7 @@ function App() {
       <div className="header">
         <div className="headerleft">
           <div className="homename">
-            <a href=".header">Talita Ester</a>
+            <a href=".header" className="hover-text" >Talita Ester</a>
           </div>
           <div className="sections">
             <a href="#">section two</a>
@@ -45,33 +46,33 @@ function App() {
         </div>
         <div className="headerright">
           <div className="redes">
-            <a href="#"><AiOutlineTwitter size={22} color="var(--corprincipal)" /></a>
-            <a href="#"><AiOutlineInstagram size={22} color="var(--corprincipal)" /></a>
-            <a href="#"><AiOutlineTikTok size={22} color="var(--corprincipal)" /></a>
+            <a href="#"><AiOutlineTwitter size={22} style={{ color: 'var(--corprincipal)' }} /></a>
+            <a href="#"><AiOutlineInstagram size={22} style={{ color: 'var(--corprincipal)' }} /></a>
+            <a href="#"><AiOutlineTikTok size={22} style={{ color: 'var(--corprincipal)' }} /></a>
           </div>
           <div className="darkmode">
-            <p onClick={toggleDarkMode}>Dark mode:</p>
-            <a onClick={toggleDarkMode} href="#"><img src={cutao} alt="cutao" className="cutao" width="40" height="22" /></a>
+            <p><span style={{ color: 'var(--text-color)' }}>Dark mode:</span>  </p>
+            <div onClick={toggleDarkMode} className={`toggle-button ${darkMode ? 'active' : ''}`}></div>
           </div>
         </div>
       </div>
       <div className="main">
         {!menuOpen && (
-          <a onClick={clickMenu} className="cunu" id="cunu" href="#"><BsList size={30} color="var(--corprincipal)" className="botaox" alt="menu" /></a>
+          <a onClick={clickMenu} className="cunu" id="cunu" href="#"><BsList className="botaox" size={30} style={{ color: 'var(--corprincipal)' }} alt="menu" /></a>
         )}
         {menuOpen && (
           <div className="hamdiv" id="hamdiv">
             <div className="hamburger">
-              <a onClick={clickXis} href="#" className="xis"><BsXCircle className="botaox" size={30} color="var(--corprincipal)" alt="close" /></a>
+              <a onClick={clickXis} href="#" className="xis"><BsXLg className="botaox" size={30} style={{ color: 'var(--corprincipal)' }} alt="close" /></a>
               <div className="sectionsham">
                 <a href="#">section two</a>
                 <a href="#">section three</a>
                 <a href="#">section four</a>
               </div>
               <div className="redesham">
-                <a href="#"><AiOutlineTwitter size={22} color="var(--corprincipal)" /></a>
-                <a href="#"><AiOutlineInstagram size={22} color="var(--corprincipal)" /></a>
-                <a href="#"><AiOutlineTikTok size={22} color="var(--corprincipal)" /></a>
+                <a href="#"><AiOutlineTwitter size={22} style={{ color: 'var(--corprincipal)' }} /></a>
+                <a href="#"><AiOutlineInstagram size={22} style={{ color: 'var(--corprincipal)' }} /></a>
+                <a href="#"><AiOutlineTikTok size={22} style={{ color: 'var(--corprincipal)' }} /></a>
               </div>
             </div>
           </div>
@@ -87,8 +88,8 @@ function App() {
             <p className="texto">I've got some work on Dribbble, some previous work at Saga and you can find me over on twitter and sometimes on Medium too. I also take too many photos.</p>
           </div>
           <div className="work">
-            <BsCheckCircleFill size={16} color="var(--corprincipal)"/>
-            <p className="ava"> <span style={{ color: 'var(--text-color)' }}>Available for work and general design goodness</span> <span style={{ color: 'var(--corprincipal)' }}>- say hello</span></p>
+            < BiSolidCheckCircle className="cula" size={30} color='var(--corprincipal)' alt="Available for work" />
+            <p className="ava"><span style={{ color: 'var(--text-color)' }}>Available for work and general design goodness</span> <span style={{ color: 'var(--corprincipal)' }}>- say hello</span></p>
           </div>
         </div>
         <div className='linha2'></div>
