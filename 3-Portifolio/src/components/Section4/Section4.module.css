@@ -6,7 +6,7 @@
 }
 
 .imgPlaceholder{
-    width: 670px;
+    max-width: 670px;
     height: 370px;
 }
 
@@ -23,10 +23,15 @@
 
 /* RESPOSIVIDADE */
 
+@media (max-width: 1200px) {
+    .section4{
+        flex-direction: column-reverse;
+        }
+}
+
 @media (max-width: 376px) {
 
     .section4{
-        flex-direction: column-reverse;
         padding: 25px 32px 25px 33px;
         gap: 17px;
     }

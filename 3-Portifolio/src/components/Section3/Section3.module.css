@@ -6,7 +6,7 @@
 }
 
 .imgPlaceholder{
-    width: 670px;
+    max-width: 670px;
     height: 370px;
 }
 
@@ -31,9 +31,14 @@ h5{
 
 /* RESPOSIVIDADE */
 
-@media (max-width: 376px) {
+@media (max-width: 1200px) {
     .section3{
         flex-direction: column;
+    }
+}
+
+@media (max-width: 376px) {
+    .section3{
         padding: 25px 32px 0px 33px;
         gap: 17px;
     }
