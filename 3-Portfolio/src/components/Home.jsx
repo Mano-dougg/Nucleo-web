@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import avatarPicture from '../assets/avatar.png';
 import placeholder1 from '../assets/img-1.jpg';
 import placeholder2 from '../assets/img-2.jpg';
@@ -24,8 +25,9 @@ export function Home() {
             <p>Available for work and general design goodness – say hello</p>
           </div>
         </div>
+        <div className={styles.horizontal_line2}></div>
+
       </div>
-      <div className={styles.horizontal_line2}></div>
       <div className={styles.portfolioContainer}>
         <div className={styles.portfolioContent}>
           <h2>Title</h2>
@@ -33,7 +35,9 @@ export function Home() {
         </div>
 
         <div className={styles.portfolioCard}>
-          <img src={placeholder1} alt="" />
+          <div className={styles.imgContainer}>
+            <img src={placeholder1} className={styles.imgPlaceholder} alt="" />
+          </div>
           <div className={styles.portfolioCardContent}>
             <h3>Title</h3>
             <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
@@ -44,7 +48,9 @@ export function Home() {
         </div>
 
         <div className={styles.portfolioCardReverse}>
-          <img src={placeholder2} alt="" />
+          <div className={styles.imgContainer}>
+            <img src={placeholder2} className={styles.imgPlaceholder} alt="" />
+          </div>
           <div className={styles.portfolioCardContent}>
             <h3>Title</h3>
             <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
@@ -54,7 +60,6 @@ export function Home() {
           </div>
         </div>
       </div>
-
     </main>
   );
 }
