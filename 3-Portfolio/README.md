@@ -1,48 +1,70 @@
-# Atividade de Núcleo
+# Getting Started with Create React App
 
-- **Orientadores:** Turma  [Fábio Santos Matos de Oliveira](https://gitlab.com/Fabio-Matos1303) | Turma  [Djair Maykon](https://gitlab.com/djairmaykon) | Turma  [Márcio R. Júnior m](https://gitlab.com/marciojunior2109) 
-- **Coorientadores gerais:** [Raissa Luna](https://gitlab.com/raissalunana) | [Lucas Júlio](https://gitlab.com/LucasJulio)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Descrição da atividade
+## Available Scripts
 
-### Tarefa
+In the project directory, you can run:
 
-Com base no design especificado crie esse portfolio responsivo utilizando React.
+### `npm start`
 
-- https://www.figma.com/file/m51hxPh7T2yRX58k1xbdh3/Dark-Mode-%E2%80%93-N%C3%BAcleo-Web?node-id=0%3A1
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## REQUISITOS
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Requisitos Obrigatórios:
+### `npm test`
 
-- Implementar a tela conforme figma
-- Responsividade
-- Utilizar o react
-- Criar menu hamburguer da versão mobile.
-- Substituir o nome de exemplo pelo seu nome
-- Substituir as imagens placeholder por imagens à sua escolha
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Requisitos Opcionais:
+### `npm run build`
 
-- Adicionar animações ao menu hamburguer
-- Adicionar dark mode
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## LINKS UTEIS
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Todos das atividades anteriores
+### `npm run eject`
 
-### React
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-- https://www.youtube.com/watch?v=37SwqREHRGI&ab_channel=Rocketseat
-- https://react.dev/learn
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Instruções para envio
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-1. Clone este repositório no seu computador (caso já tenha clonado pule esse passo)
-2. Crie a partir da `main` uma nova branch com seu número de turma e nome. Por exemplo: `1-jose` caso pertença a turma 1. (caso já tenha criado pule esse passo)
-3. Construa a sua atividade apenas nessa branch, e não hesite em pedir por ajuda caso tenha dificuldades
-4. Suba constantemente a sua branch para este repositório para possibilitar o acompanhamento por parte dos orientadores
-5. Para saber se finalizou a atividade, verifique cuidadosamente se todos os requisitos foram cumpridos
-6. Após finalizar a atividade, faça um merge request com o padrão de título: `[número da atividade]` - `[nome da atividade]` (por exemplo: 2 - Coffee Shop)
-7. Esteja pronto para apresentar o que você fez na próxima RN (Reunião de Núcleo)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
