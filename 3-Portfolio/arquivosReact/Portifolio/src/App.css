@@ -60,14 +60,13 @@ main {
 
 @media (max-width: 1000px) {
     main {
-        padding: 30px;
+        padding: 120px 30px 30px 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     h1 {
         text-align: center;
-        font-size: 2em;
     }
     .galeria {
         align-items: center;
@@ -86,8 +85,6 @@ main {
     }
     .galeriaItem img {
         width: 100%;
-        max-width: 640px;
         aspect-ratio: 640/370;
-        /*AINDA QUERO QUE MUDE O ASPECT RATIO CORRETAMENTE*/
     }
 }
