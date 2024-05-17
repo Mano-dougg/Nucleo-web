@@ -1,0 +1,36 @@
+.menu-hamburguer {
+    display: none;
+    padding: 2rem;
+}
+
+@media (max-width: 700px) {
+    .menu-hamburguer {
+        display: block;
+        position: sticky;
+        top: 5.9rem;
+        background-color: white;
+    }
+
+    .links-wrapper {
+        min-height: 100vh;
+    }
+    
+    .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .links ul {
+        min-width: 100%;
+    }
+    
+    .links ul:nth-child(2) {
+        display: flex;
+        justify-content: center;
+
+        gap: 5rem;
+    }
+}

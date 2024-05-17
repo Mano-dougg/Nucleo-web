@@ -1,4 +1,4 @@
-import { UlSection, UlSocialMedia } from './Uls';
+import { UlSection, UlSocialMedia } from './Uls'
 import toggleOffLight from '../assets/img/toggleOff-light.svg'
 import './nav.css'
 
@@ -22,7 +22,7 @@ function Nav() {
                         </div>
                     </div>
                 </nav>
-            </div>            
+            </div>          
         </>
     );
 }

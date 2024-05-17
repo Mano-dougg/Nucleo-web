@@ -1,13 +1,16 @@
 .nav-wrapper {
     box-shadow: 0px 25px 65px 0px var(--secondary-color);
     background-color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .main-nav {
     display: flex;
     margin : 0 auto;
     max-width: 122rem;
-    padding: 2rem;
     justify-content: space-between;
 }
 
@@ -43,7 +46,10 @@ li {
     cursor: pointer;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
+    .nav-wrapper {
+        padding: 2rem;
+    }
     .nav-left-content ul, .nav-right-content ul{
         display: none;
     }

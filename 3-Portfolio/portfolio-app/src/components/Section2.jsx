@@ -15,7 +15,7 @@ function Section2() {
                     <div className='side-content'>
                         <h3>Title</h3>
                         <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
-                        <button></button>
+                        <button>Button Primary Light</button>
                     </div>
                 </article>
                 <article className='article-2'>
@@ -23,7 +23,7 @@ function Section2() {
                     <div className='side-content-2'>
                         <h3>Title</h3>
                         <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
-                        <button></button>
+                        <button>Button Primary Light</button>
                     </div>
                 </article>
             </section>
