@@ -1,0 +1,36 @@
+.main-section{
+    margin-top: 10vh;
+}
+
+.main-section__image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px
+}
+
+.profile-image{
+    object-fit: contain;
+    width: 100%;
+}
+
+.main-section__title{
+    font-size: 2.3rem;
+    margin-bottom: 35px;
+}
+
+.main-section__bar{
+    width: 30%;
+    margin-bottom: 40px;
+}
+
+.main-section__text{
+    line-height: 19px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.main-section__assign{
+    margin-bottom: 30px;
+}

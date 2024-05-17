@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import Header from './components/header/header';
@@ -7,7 +6,7 @@ import SecondarySection from './components/secondary-section/secondary-section';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App flexer">
       <Header />
       <MainSection />
       <SecondarySection />

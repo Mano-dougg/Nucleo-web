@@ -1,0 +1,57 @@
+.secondary-section{
+    margin-bottom: 50px;
+}
+
+.secondary-section__bar{
+    margin-bottom: 40px;
+}
+
+.secondary-section__title{
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+}
+
+.secondary-section__text{
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+}
+
+/* Post component stylization */
+
+.article{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.article__image{
+    width: 55%;
+    height: 40vh;
+}
+
+.post-image{
+    object-fit: fill;
+    width: 100%;
+}
+
+.article__content{
+    width: 30%;
+}
+
+.article__content__title{
+    font-size: 1.7rem;
+}
+
+.article__content__text{
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+}
+
+.article__content__button{
+    padding: 10px;
+    border-radius: 40px;
+}
