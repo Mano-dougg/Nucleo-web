@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import Header from './componentes/Header/head'
 import './App.css'
 import bol from '/bol.svg'
+import csm from '/csm.jpg'
+import math1 from '/math.jpg'
+import eU from '/eu.jpg'
 
 function App() {
   const [menuO, setmenuO] = useState(true)
@@ -14,12 +17,6 @@ function App() {
     setBlack(!black)
   }
 
-  const styless = {
-    backgroundColor: black ? "black" : "white" ,
-    color: black ? "white" : "blue",
-    height: black ? "100%" : "100%",
-    width: black ? "100%" : "100%"
-  }
 
   return (
     <body>
@@ -27,10 +24,9 @@ function App() {
       <Header/>
       <div className="section1">
       <figure className="Icon">
-        <hr className="l3"></hr>
-        <hr className="l4"></hr>
+          <img src={eU} className="Me"/>
       </figure>
-      <h1 className="Kevin">Hello.<br></br>My name is Kevin.</h1>
+      <h1 className="Kevin">Hello.<br></br>My name is David.</h1>
       <hr className="maior"></hr>
       <hr className="Azul"></hr>
       <p className="text1">I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making complex processes easy to use.
@@ -48,8 +44,7 @@ function App() {
         <p className="leg">Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section.</p>
         <div className="cab">
         <figure className="empty">
-        <hr className="l5"></hr>
-        <hr className="l6"></hr>
+        <img src={csm} className="CM"/>
         </figure>
         <h4 className="title1">Title</h4>
         <p className="imgdesc">Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
@@ -57,8 +52,7 @@ function App() {
         </div>
         <div className="cab2">
           <figure className="empty2">
-          <hr className="l7"></hr>
-          <hr className="l8"></hr>
+          <img src={math1} className="math2"/>
           </figure>
           <h4 className="title2">Title</h4>
           <p className="imgdesc1">Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>

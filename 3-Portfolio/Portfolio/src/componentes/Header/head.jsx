@@ -17,6 +17,14 @@ function Header(){
       setmenuO(!menuO)
     }
 
+  const [black,setBlack] = useState(false)
+  const pretin = () => {
+    setBlack(!black)
+  }
+  const styless = {
+    backgroundColor: black ? "white" : "black" ,
+  }
+
     return(
 
         <header className={styles.header}>
@@ -27,7 +35,7 @@ function Header(){
         <header></header>
         <nav className="menu">
         <div className="aesquerda">
-          <h4 className="dono">Kevin Bennett</h4>
+          <h4 className="dono">David Moura</h4>
           <ul>
           <label className="dois">Section two</label>
           <label className="tres">Section three</label>
@@ -61,13 +69,13 @@ function Header(){
         <header></header>
         <nav className="menu">
         <div className="aesquerda">
-          <h4 className="dono">Kevin Bennett</h4>
+          <h4 className="dono">David Moura</h4>
         </div>
         <div className="adireita">
           <label className="dark">Dark mode:</label>
           <div className="clik">
-          <input type="checkbox" className="checkbox" id="chk"/>
-          <label className="env" for="chk">
+          <input type="checkbox" className="checkbox" id="chk1"/>
+          <label className="env" for="chk1">
           <div className="bola">
           </div>
           </label>
@@ -84,7 +92,7 @@ function Header(){
           <header></header>
         <nav className="menu1">
         <div className="aesquerda">
-          <h4 className="dono">Kevin Bennett</h4>
+          <h4 className="dono">David Moura</h4>
           <ul>
           <label className="dois">Section two</label>
           <label className="tres">Section three</label>
@@ -99,8 +107,8 @@ function Header(){
           </div>
           <label className="dark1">Dark mode:</label>
           <div>
-          <input type="checkbox" className="checkbox" id="chk" />
-          <label className="env1" for="chk">
+          <input type="checkbox" className="checkbox" id="chk3" />
+          <label className="env1" for="chk3">
           <div className="bola"></div>
           </label>
           </div>

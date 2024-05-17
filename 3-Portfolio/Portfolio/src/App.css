@@ -12,6 +12,7 @@
     gap: 0px;
     opacity: 0px;
     background-color: white;
+    transition: opacity 0.3s ease;
   }
   div.Desk{
     display:none;
@@ -153,29 +154,10 @@
     left:30%;
     top:40px;
   }
-  hr.l3{
-    width: 98%;
-    height: 0px;
-    top: 1px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(-45deg);
-    border: 1px solid #0065FF;
-    position: absolute;
-    top:41px;
-  }
-  hr.l4{
-    width: 140px;
-    height: 0px;
-    top: 1px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    border: 1px solid #0065FF;
-    transform: rotate(45deg);
+  img.Me{
+    width: 100%;
+    height:100%;
+    border-radius: 93px 93px 93px 93px;
   }
   h1.Kevin{
     width: 236px;
@@ -357,31 +339,10 @@
     top: -5%;
     left:-7%;
   }
-  hr.l5{
-    width: 112%;
-    height: 0px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(-149.97deg);
-    border: 1px solid #0065FF;
-    position:absolute;
-    top: 45%;
-    left:-20px;
-  }
-  hr.l6{
-    width: 112%;
-    height: 0px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(149.97deg);
-    border: 1px solid #0065FF;
-    position:absolute;
-    top: 45%;
-    left:-20px;
+  img.CM{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
   }
   h4.title1{
     width: 43px;
@@ -482,31 +443,10 @@
     top:1%;
     left:-7%;
   }
-  hr.l7{
-    width: 112%;
-    height: 0px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(-149.97deg);
-    border: 1px solid #0065FF;
-    position:absolute;
-    top: 45%;
-    left:-20px;
-  }
-  hr.l8{
-    width: 112%;
-    height: 0px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(149.97deg);
-    border: 1px solid #0065FF;
-    position:absolute;
-    top: 45%;
-    left:-20px;
+  img.math2{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
   }
   h4.title2{
     width: 43px;
@@ -581,6 +521,7 @@
     background-color: #FFFFFF;
     position: absolute;
     z-index:1;
+    transition: z-index 500ms ease;
   }
   nav.menu1{
     width: 104%;
@@ -786,6 +727,10 @@
 
 
 
+}
+
+.checkbox:checked + .env .bola {
+  transform: translateX(26px);
 }
 
 /* Telas intermediárias*/
@@ -1031,31 +976,11 @@ figure.Icon{
   left:17%;
   top: 70px;
 }
-hr.l3{
-  width: 98%;
-  height: 0px;
-  top: 1px;
-  left: 1px;
-  gap: 0px;
-  border: 1px 1px 1px 1px;
-  opacity: 0px;
-  transform: rotate(-45deg);
-  border: 1px solid #0065FF;
-  position: absolute;
-  top:41px;
+img.Me{
+  width: 100%;
+  height:100%;
+  border-radius: 93px 93px 93px 93px;
 }
-hr.l4{
-  width: 140px;
-  height: 0px;
-  top: 1px;
-  left: 1px;
-  gap: 0px;
-  border: 1px 1px 1px 1px;
-  opacity: 0px;
-  border: 1px solid #0065FF;
-  transform: rotate(45deg);
-}
-
 h1.Kevin{
   width: 517px;
   height: 140px;
@@ -1240,31 +1165,10 @@ figure.empty{
   top: 150%;
   left:-75px;
 }
-hr.l5{
-  width: 113.5%;
-  height: 0px;
-  left: 1px;
-  gap: 0px;
-  border: 1px 1px 1px 1px;
-  opacity: 0px;
-  transform: rotate(-149.97deg);
-  border: 1px solid #0065FF;
-  position:absolute;
-  top: 48%;
-  left:-47px;
-}
-hr.l6{
-  width: 113.75%;
-  height: 0px;
-  left: 1px;
-  gap: 0px;
-  border: 1px 1px 1px 1px;
-  opacity: 0px;
-  transform: rotate(149.97deg);
-  border: 1px solid #0065FF;
-  position:absolute;
-  top: 47.5%;
-  left:-46px;
+img.CM{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
 }
 h4.title1{
   width: 43px;
@@ -1363,31 +1267,10 @@ figure.empty2{
   top:160%;
   left:27%;
 }
-hr.l7{
-  width: 113.5%;
-  height: 0px;
-  left: 1px;
-  gap: 0px;
-  border: 1px 1px 1px 1px;
-  opacity: 0px;
-  transform: rotate(-149.97deg);
-  border: 1px solid #0065FF;
-  position:absolute;
-  top: 48%;
-  left:-47.25px;
-}
-hr.l8{
-  width: 113.75%;
-  height: 0px;
-  left: 1px;
-  gap: 0px;
-  border: 1px 1px 1px 1px;
-  opacity: 0px;
-  transform: rotate(149.97deg);
-  border: 1px solid #0065FF;
-  position:absolute;
-  top: 47.5%;
-  left:-46px;
+img.math2{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
 }
 h4.title2{
   width: 43px;
@@ -1451,7 +1334,6 @@ button.btn1:hover{
   background: #0065FF;
   height: 60px;
 }
-
 }
 
 
@@ -1697,31 +1579,11 @@ button.btn1:hover{
     left:17%;
     top: 70px;
   }
-  hr.l3{
-    width: 98%;
-    height: 0px;
-    top: 1px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(-45deg);
-    border: 1px solid #0065FF;
-    position: absolute;
-    top:41px;
+  img.Me{
+    width: 100%;
+    height:100%;
+    border-radius: 93px 93px 93px 93px;
   }
-  hr.l4{
-    width: 140px;
-    height: 0px;
-    top: 1px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    border: 1px solid #0065FF;
-    transform: rotate(45deg);
-  }
-  
   h1.Kevin{
     width: 517px;
     height: 140px;
@@ -1903,31 +1765,10 @@ button.btn1:hover{
     top: 150%;
     left:-75px;
   }
-  hr.l5{
-    width: 113.5%;
-    height: 0px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(-149.97deg);
-    border: 1px solid #0065FF;
-    position:absolute;
-    top: 48%;
-    left:-47px;
-  }
-  hr.l6{
-    width: 113.75%;
-    height: 0px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(149.97deg);
-    border: 1px solid #0065FF;
-    position:absolute;
-    top: 47.5%;
-    left:-46px;
+  img.CM{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
   }
   h4.title1{
     width: 43px;
@@ -2026,31 +1867,10 @@ button.btn1:hover{
     top:160%;
     left:27%;
   }
-  hr.l7{
-    width: 113.5%;
-    height: 0px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(-149.97deg);
-    border: 1px solid #0065FF;
-    position:absolute;
-    top: 48%;
-    left:-47.25px;
-  }
-  hr.l8{
-    width: 113.75%;
-    height: 0px;
-    left: 1px;
-    gap: 0px;
-    border: 1px 1px 1px 1px;
-    opacity: 0px;
-    transform: rotate(149.97deg);
-    border: 1px solid #0065FF;
-    position:absolute;
-    top: 47.5%;
-    left:-46px;
+  img.math2{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
   }
   h4.title2{
     width: 43px;
