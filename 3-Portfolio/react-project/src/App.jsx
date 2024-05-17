@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <Menu />
+      <Menu></Menu>
 
       <section class='part-one'>
 

@@ -1,5 +1,25 @@
-@media (min-width: 970px){
-    .aparecer{
-        display:none;
+cola{
+    border-radius: 1.2rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size:14px;
+    font-family: 'Be Vietnam Pro';
+    padding: 0px;
+
+    ul{
+       display: flex;
+       flex-direction: row;
+       gap: 0px;
+       padding-left: 0px;
+    }
+
+    li{
+        list-style-type: none;
+    }
+    a {
+        color: var(--azul);
+        justify-content: space-between;
     }
 }

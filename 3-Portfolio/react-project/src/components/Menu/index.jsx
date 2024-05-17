@@ -1,26 +1,40 @@
-import styles from './Menu.module.css'
+import { useState } from "react";
+import { Container, ContentMobile} from "./script";
 
 function Menu() {
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () =>{
+        setMenuOpen(!menuOpen);
+    }
+
     return (
-        <section className={styles.aparecer}>
+    
+        <Container>
+            <ContentMobile onClick={toggleMenu}>
+                {menuOpen ? <img src="./public/menuopen.svg" /> : <img src="./public/menuclosed.svg" />}
 
-            <button className={styles.hamburguer}></button>
+            </ContentMobile>
 
-            <div className={styles.everyMenu}>
-                <nav className={styles.navLinks}>  
-                    <a href="">Section two</a>
-                    <a href="">Section three</a>
-                    <a href="">Section four</a>
-                </nav>
+            {menuOpen ? 
+                <div>
+                    <ul>
+                        <li><a href="" >Section two</a></li>
+                        <li><a href="" >Section three</a></li>                        
+                        <li><a href="" >Section four</a></li>
+                    </ul>
 
-                <nav className = {styles.navSocial}>
-                    <a href="https://twitter.com" target="_blank"><img src="./public/twitter.svg" alt="Twitter" /></a>
-                    <a href="https://figma.com" target="_blank"><img src="./public/figma.svg" alt="Figma" /></a>
-                    <a href="https://www.instagram.com" target="_blank"><img src="./public/instagram.svg" alt="Instagram" /></a>
-                </nav>
-            </div>
-        </section>
-
+                    <div class='social'>
+                        <a href="https://twitter.com" target="_blank"><img src="./public/twitter.svg" alt="Twitter" /></a>
+                        <a href="https://figma.com" target="_blank"><img src="./public/figma.svg" alt="Figma" /></a>
+                        <a href="https://www.instagram.com" target="_blank"><img src="./public/instagram.svg" alt="Instagram" /></a>
+                    </div>
+                </div>
+            : <></>}
+  
+        </Container>
+        
     )
 }
 
