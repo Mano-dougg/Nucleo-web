@@ -1,4 +1,9 @@
+/* Telas pequenas */
+
 @media(min-width:375px) and (max-width:1296px){
+
+  /* Cabeçalho formatado */
+
   body{
     width: 100%;
     height: 2215px;
@@ -6,6 +11,7 @@
     left: -2311px;
     gap: 0px;
     opacity: 0px;
+    background-color: white;
   }
   div.Desk{
     display:none;
@@ -114,6 +120,13 @@
     gap: 0px;
     opacity: 0px;
   }
+  img.IC:hover{
+    color:black;
+  }
+
+
+  /* Primeira parte */
+
   div.section1{
     width: 310px;
     height: 926px;
@@ -263,6 +276,9 @@
   span.temp{
     white-space: nowrap;
   }
+
+  /* Segunda parte */
+
   div.section2{
     width: 310px;
     height: 174px;
@@ -555,7 +571,7 @@
     height: 60px;
   }
 
-
+  /* Tela com ativamento do menu hamburguer*/
 
   div.telab{
     width: 100%;
@@ -585,6 +601,7 @@
     position:relative;
     top:-10px;
     left:4.5px;
+    transition: transform 0.5s ease, opacity 10s ease;
   }
   img.VX{
     width: 28.13px;
@@ -771,7 +788,11 @@
 
 }
 
+/* Telas intermediárias*/
+
 @media(min-width:1296px) and (max-width:1370px){
+
+/* Cabeçalho */
 
 body{
   width: 1250px;
@@ -780,7 +801,7 @@ body{
   left: -2311px;
   gap: 0px;
   opacity: 0px;
-  background-color: #FFFFFF;
+  background-color: white;
 }
 div.Mobile{
   display:none;
@@ -950,7 +971,6 @@ label.dark{
   opacity: 0;
 }
 
-
 label.env {
   width: 40px;
   height: 14px;
@@ -983,6 +1003,9 @@ div.bola {
 .checkbox:checked + .env .bola {
   transform: translateX(26px);
 }
+
+/* Primeira parte */
+
 div.section1{
   width: 962px;
   height: 783px;
@@ -1134,6 +1157,9 @@ p.pa{
 span.say{
   color: #0065FF;
 }
+
+/* Segunda parte */
+
 div.section2{
   width: 960px;
   height: 1003px;
@@ -1428,6 +1454,9 @@ button.btn1:hover{
 
 }
 
+
+/* Esse código tem as mesmas informações do outro, com mudança apenas no Width do body e da barra de navegação*/
+
 @media(min-width:1370px){
 
   body{
@@ -1437,7 +1466,7 @@ button.btn1:hover{
     left: -2311px;
     gap: 0px;
     opacity: 0px;
-    background-color: #FFFFFF;
+    background-color: white;
   }
   div.Mobile{
     display:none;

@@ -6,13 +6,23 @@ import icon from '/icon3.svg'
 import XX from '/X.svg'
 import { useState } from "react";
 
+
+/* Função que contém o cabeçalho*/
+
 function Header(){
+    
+    /* Estados para o menu hamburguer */
     const [menuO, setmenuO] = useState(true)
     const trocar = () => {
       setmenuO(!menuO)
     }
+
     return(
+
         <header className={styles.header}>
+
+        {/* Funcionamento do cabeçalho para desktops*/}
+
         <div className="Desk">
         <header></header>
         <nav className="menu">
@@ -39,7 +49,13 @@ function Header(){
         </div>
         </nav>
         </div>
+
+        {/* Funcionamento para o Mobile */}
+
         <div className="Mobile">
+
+        {/* Menu não ativo */}
+        
         {menuO ? (
         <>
         <header></header>
@@ -61,6 +77,9 @@ function Header(){
         </nav>
         </>
         ): (
+
+        /* Menu ativo*/
+        
           <div className="telab">
           <header></header>
         <nav className="menu1">

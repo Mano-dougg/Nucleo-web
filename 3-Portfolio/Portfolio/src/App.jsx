@@ -9,6 +9,17 @@ function App() {
   const trocar = () => {
     setmenuO(!menuO)
   }
+  const [black,setBlack] = useState(false)
+  const pretin = () => {
+    setBlack(!black)
+  }
+
+  const styless = {
+    backgroundColor: black ? "black" : "white" ,
+    color: black ? "white" : "blue",
+    height: black ? "100%" : "100%",
+    width: black ? "100%" : "100%"
+  }
 
   return (
     <body>
