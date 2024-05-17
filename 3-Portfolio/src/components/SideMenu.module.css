@@ -1,0 +1,47 @@
+@media (min-width: 871px ){
+  .menuContainer {
+    display: none;
+  }
+  
+  .closeButton {
+    display: none;
+  }
+}
+
+.sideMenuClosed {
+  display: none;
+}
+
+@media (max-width: 870px) {  
+  .menuContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 55px;
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    list-style: none;
+    color: var(--blue-600);
+    font-family: 'Be Vietnam', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .socialLinks {
+    width: 100%;
+    display: flex;
+    padding: 0 62px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+    color: var(--blue-600);
+    font-size: 22px;
+  }
+}
