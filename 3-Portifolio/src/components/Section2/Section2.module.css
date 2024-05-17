@@ -20,7 +20,7 @@
 @media (max-width: 376px) {
     
     .Section2{
-        padding: 0px 32px 0px 33px;
+        padding: 0px 2.2% 0px 2.2%;
     }
 
     .divTitle{
@@ -29,7 +29,7 @@
     }
 
     .hrSection2{
-        width: 310px;
+        max-width: 310px;
         margin-top: 50px;
         margin-bottom: 44px;
     }

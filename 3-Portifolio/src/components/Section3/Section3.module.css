@@ -39,12 +39,12 @@ h5{
 
 @media (max-width: 376px) {
     .section3{
-        padding: 25px 32px 0px 33px;
+        padding: 25px 2.2% 0px 2.2%;
         gap: 17px;
     }
 
     .imgPlaceholder{
-        width: 310px;
+        max-width: 310px;
         height: 179px;
     }
 

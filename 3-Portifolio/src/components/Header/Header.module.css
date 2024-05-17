@@ -1,7 +1,7 @@
 
 header{
     height: 82px;
-    padding: 0px 87px 0px 87px;
+    padding: 0px 6% 0px 6% ;
     background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
@@ -111,7 +111,7 @@ button{
     position: absolute;
     background-color: #f4f5f5;
     top: 97px;
-    width: 340px;
+    max-width: 340px;
 }
 
 .navMobile ul{
@@ -141,23 +141,28 @@ button{
 
 /* RESPOSIVIDADE */
 
+@media (max-width: 900px) {
+   
+    .iconsHeaderDesktop{
+        display: none;
+    }
+}
+
+@media (max-width: 735px) {
+    .navDesktop ul{
+        display: none;
+    }
+}
+
 @media (max-width: 376px) {
 
 /* altura do header */
     header{
         height: 72px;
-        padding: 0px 25px 0px 25px;
+        padding: 0px 1.73% 0px 1.73%;
     }
 
 /* trocar os icones do menu */
-    .navDesktop ul{
-        display: none;
-    }
-
-    .iconsHeaderDesktop{
-        display: none;
-    }
-
     button{
         display: block;
     }

@@ -30,7 +30,7 @@
 }
 
 .callOut{
-    width: 462px;
+    max-width: 462px;
     height: 56px ;
     margin-top: 46px;
     display: flex;
@@ -38,7 +38,8 @@
     align-items: center;
     background-color: #F8F9FA;
     border-radius: 10px;
-}
+    gap: 10px;
+    }
 
 a{
     text-decoration: none;
@@ -55,9 +56,8 @@ a{
 
 @media (max-width: 376px) {
     .Section1{
-        padding: 10px 40px 0px 25px ;
-        gap: 50px;
-
+        padding: 10px 2.77% 0px 1.73% ;
+        gap: 50px;    
     }
 
     .articleSection1High{
@@ -66,9 +66,8 @@ a{
     }
 
     .callOut{
-        width: 283px;
+        max-width: 283px;
         height: 72px;
-        gap: 50px;
     }
 
     .hrSection1{
