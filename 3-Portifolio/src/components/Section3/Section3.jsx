@@ -1,4 +1,4 @@
-import placeholder from './imagesSection3/placeholder.png'
+import placeholder from './imagesSection3/imgPortifolio3.png'
 import styles from './Section3.module.css'
 
 function Section3(){

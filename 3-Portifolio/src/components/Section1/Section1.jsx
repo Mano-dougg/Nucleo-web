@@ -1,4 +1,4 @@
-import avatar from './imagesSection1/Avatar.png'
+import avatar from './imagesSection1/imgPortifolio.png'
 import checkCircle from './imagesSection1/checkCircle.png'
 import styles from './Section1.module.css'
 

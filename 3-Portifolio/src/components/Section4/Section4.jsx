@@ -1,4 +1,4 @@
-import placeholder from './imagesSection4/placeholder.png'
+import placeholder from './imagesSection4/frontend-development-tools.png'
 import styles from './Section4.module.css'
 
 function Section4() {
