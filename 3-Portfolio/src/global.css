@@ -1,0 +1,32 @@
+:root {
+  --white: #FFFFFF;
+  --gray-700: #3C3B3A;
+  --gray-800: #202020;
+  --gray-900: #222222;
+  --blue-600: #0065FF;
+  --amber-50: #FAF4E6;
+  --gray-50: #F8F9FA;
+  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--white);
+  color: var(--gray-800);
+  -webkit-font-smoothing: antialiased;
+} 
+
+body.dark {
+  background-color: var(--gray-900);
+  color: var(--amber-50); 
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
