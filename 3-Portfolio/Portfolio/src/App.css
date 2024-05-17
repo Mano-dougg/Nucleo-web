@@ -521,7 +521,6 @@
     background-color: #FFFFFF;
     position: absolute;
     z-index:1;
-    transition: z-index 500ms ease;
   }
   nav.menu1{
     width: 104%;
@@ -723,19 +722,11 @@
   .checkbox:checked + .env1 .bola {
     transform: translateX(26px);
   }
-
-
-
-
-}
-
-.checkbox:checked + .env .bola {
-  transform: translateX(26px);
 }
 
 /* Telas intermediárias*/
 
-@media(min-width:1296px) and (max-width:1370px){
+@media(min-width:1297px) and (max-width:1370px){
 
 /* Cabeçalho */
 

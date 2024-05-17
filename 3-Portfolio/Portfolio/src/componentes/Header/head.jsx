@@ -61,7 +61,6 @@ function Header(){
         {/* Funcionamento para o Mobile */}
 
         <div className="Mobile">
-
         {/* Menu não ativo */}
         
         {menuO ? (
