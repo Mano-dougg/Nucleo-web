@@ -2,19 +2,20 @@ import Figma from '../assets/Figma.svg'
 import Insta from '../assets/Insta.svg'
 import Twitter from '../assets/twitter.svg'
 import './Header.css'
-import './app.js'
 import Abre from '../assets/burger.svg'
 import Fecha from '../assets/close.svg'
+import {useState} from 'react';
 
 
 function Header(props) {
-    const{nome, sobrenome}=props;
+    const {nome, sobrenome}=props;
+    const [menuAbre, setMenuAbre] = useState(false);
     return (
         <header>
             <div id='nomeComSeccoes'>
                 <h2>{nome} {sobrenome}</h2>
-                <nav id='nav'>
-                    <button id='hamburguer'>
+                <nav id='nav' className={menuAbre ? 'ativo' : ''}>
+                    <button id='hamburguer' onClick={()=>setMenuAbre(menuAbre => !menuAbre)}>
                         <img src={Abre} id='iconAbre' />
                         <img src={Fecha} id='iconFecha' />
                     </button>
