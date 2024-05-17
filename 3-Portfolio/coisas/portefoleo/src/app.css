@@ -2,7 +2,14 @@
 
 :root {
     --corprincipal: #7400b2;
+    background-color: #F8F9FA;
 }
+
+.dark-mode:root{
+    --corprincipal: #ffff;
+
+}
+
 
 * {
     margin: 0;
@@ -198,6 +205,8 @@ h1{
         justify-content: space-between;
         width: 100%;
         height: 370px;
+        padding-left: 80px;
+        padding-right: 80px;
     }
 
     .redesham {
@@ -216,7 +225,6 @@ h1{
     .sectionsham {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         gap: 25px;
         color: var(--corprincipal);
@@ -225,6 +233,7 @@ h1{
     .hamdiv {
         width: 100%;
         display: flex;
+
     }
 
     .cula {
@@ -235,7 +244,15 @@ h1{
         visibility: visible;
         height: 100%;
         width: 100%;
-        padding-left: 60px;
+        padding-left: 130px;
 
+    }
+
+    .linha2{
+        width: 310px;
+    }
+
+    .posts{
+        width: 310px ;
     }
 }

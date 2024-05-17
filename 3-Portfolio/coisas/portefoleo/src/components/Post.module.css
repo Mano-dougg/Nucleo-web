@@ -30,3 +30,16 @@ color: #202020;
     gap: 10px;
     width: 280px;
 }
+
+@media(max-width: 850px)  {
+    .postBox{
+        width: 310px;
+        flex-direction: column;
+    }
+
+    .postimg{
+        width: 310px ;
+        height: 179px;
+    }
+    
+}

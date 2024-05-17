@@ -8,7 +8,9 @@ import culita from './assets/culita.png';
 import cuk from './assets/cuk.png';
 import xis from './assets/xis.png';
 import cunu from './assets/cunu.png';
-import Post from './components/Post'
+import Post from './components/Post';
+import webmedia from './assets/webmedia.png';
+import ufba from './assets/cufba.png';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,7 +25,18 @@ function App() {
     setMenuOpen(false);
   };
 
+  const toggleDarkMode = () => {
+    const currentColor = getComputedStyle(document.documentElement).getPropertyValue('--corprincipal').trim();
+    if (currentColor === '#7400b2') {
+      document.documentElement.style.setProperty('--corprincipal', '#ffffff');
+    } else {
+      document.documentElement.style.setProperty('--corprincipal', '#7400b2');
+    }
+  };
+
+
   return (
+    <body>
     <div className='body'>
       <div className="header">
         <div className="headerleft">
@@ -43,7 +56,7 @@ function App() {
             <a href=""><AiOutlineTikTok size={22} color="#7400b2" /></a>
           </div>
           <div className="darkmode">
-            <p>Dark mode:</p>
+            <p onClick={toggleDarkMode()} >Dark mode:</p>
             <a href=""><img src={cutao} alt="cutao" className="cutao" width="40" height="22" /></a>
           </div>
         </div>
@@ -88,16 +101,25 @@ function App() {
         <div className='posts'>
           
           <h1 style={{paddingBottom: '5px'}}>Remarkables</h1>
-          <p style={{fontSize: '17px'} }> Section to tell you about me and the thins i've done in the name of computer science!</p>
+          <p style={{fontSize: '17px'} }> Section to tell you about me and the things i've done in the name of computer science!</p>
           <Post
+          image={ufba}
           title="Getting into UFBA"
           content="I have loved technology since i was little, because of my father and my brother, but my real jouney started in 2022 when i decided to graduate in CS.
                   The University Federal of Bahia was my first option ever and i was afraid i couldn't get into it, but everything happend he right way
                   today i'm two years into my graduation and never been so happy with my choices"
           />
-        </div>
+          <Post
+          image={webmedia}
+          title="scientific research"
+          content="In my first semester at UFBA, i got into a research project where i learned an infinity of things about programming and science in general.
+          My project was about a mobility model for the objects of the internet of things, based on a already existent model: the SWIM.
+          The model was well accepted and the results of the research was publicated by the WebMedia2023"
+          />
+          </div>
       </div>
     </div>
+    </body>
   );
 }
 
