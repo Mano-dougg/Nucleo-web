@@ -12,6 +12,7 @@ import MenuOpen from "./menu/menu-open.png"
 import MenuClose from "./menu/menu-close.png"
 import { useState } from 'react'
 
+
 function App() {
   const [isOpen, setIsOpen] = useState(false)
   
@@ -26,10 +27,11 @@ function App() {
     setMenuImage(isOpen ? MenuOpen : MenuClose);
     
   }
+  
 
   return (
     <>
-      <div className="nav-container">
+      <div className="nav-container" >
         <div className="autor-mobile">
           Samuel Almeida
         </div>
@@ -96,7 +98,7 @@ function App() {
         </div>
       </div>
 
-      <div className="main-container">
+      <div className= "main-container">
         <button id="btn-mobile" onClick={toggleMenuImage}>
           <img src={menuImage} alt="menu" />
         </button>
