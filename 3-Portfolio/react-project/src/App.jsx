@@ -1,15 +1,17 @@
 import './App.css'
+import { useState } from "react";
 import Header from './components/Header'
 import Menu from './components/Menu'
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
+    <body>
       <Header />
-      <Menu></Menu>
+      <Menu setMenuOpen={setMenuOpen} menuOpen={menuOpen}/>
 
-      <section class='part-one'>
+      <section class={`part-one ${menuOpen ? 'hide' : ''}`}>
 
         <div class='perfil'>
           <img src='./public/blair.jpg' />
@@ -34,7 +36,7 @@ function App() {
 
       </section>
 
-      <section class='part-two'>
+      <section class={`part-two ${menuOpen ? 'hide' : ''}`}>
         <h2>Title</h2>
         <p>Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. </p>
 
@@ -64,7 +66,7 @@ function App() {
 
       </section>
       
-    </>
+    </body>
   )
 }
 

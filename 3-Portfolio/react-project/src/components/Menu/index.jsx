@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Container, ContentMobile} from "./script";
 
-function Menu() {
-
-    const [menuOpen, setMenuOpen] = useState(false);
+function Menu({menuOpen, setMenuOpen}) {
 
     const toggleMenu = () =>{
         setMenuOpen(!menuOpen);
@@ -18,7 +16,7 @@ function Menu() {
             </ContentMobile>
 
             {menuOpen ? 
-                <div>
+                <div class='tudo'>
                     <ul>
                         <li><a href="" >Section two</a></li>
                         <li><a href="" >Section three</a></li>                        

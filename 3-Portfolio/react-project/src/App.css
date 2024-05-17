@@ -129,6 +129,7 @@
 
 .project-two{
     margin-top: 36px;
+    margin-bottom: 36px;
     display: flex;
 }
 
@@ -136,8 +137,13 @@
     margin-right: 40px;
 }
 
-@media (max-width:870px){
-   
+@media (max-width:970px){
+
+    .part-one.hide,
+    .part-two.hide {
+        display: none!important;;
+      }
+
     .part-one{
         display: flex;
         flex-direction: column;
