@@ -49,7 +49,7 @@ function Header(){
         </div>
         <div className="adireita">
           <label className="dark">Dark mode:</label>
-          <div>
+          <div className="clik">
           <input type="checkbox" className="checkbox" id="chk"/>
           <label className="env" for="chk">
           <div className="bola">
@@ -63,7 +63,7 @@ function Header(){
         ): (
           <div className="telab">
           <header></header>
-        <nav className="menu">
+        <nav className="menu1">
         <div className="aesquerda">
           <h4 className="dono">Kevin Bennett</h4>
           <ul>
