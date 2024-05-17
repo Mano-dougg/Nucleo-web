@@ -25,19 +25,22 @@
     min-height: 100vh;
 
 }
+/*
+px -> rem x0,0625
+*/
 
-
+/* */
 
 #imagem-planta{
-    width: 291px;
+    width:18.19rem ;    /*291px */
 }
 
 .conteudo-principal{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 884px;
-    height: 492px;
+    width:   55.3rem;/* 884px;*/  
+    height: 30.8rem; /*492px;*/
     background-color: var(--white);
     border-radius: 30px;
     
@@ -46,7 +49,7 @@
 .conteudo-principal-texto{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:spa;
     gap: 32px;
     width: 524px;
     margin-top: 50px;
@@ -62,6 +65,7 @@
 }
 
 .texto{
+    
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -69,7 +73,7 @@
 
 
 #icons-share{
-    display: flex
+    display: flex;
     align-self: flex-end;
     align-items: center;
     justify-content: center;
@@ -84,6 +88,7 @@
 }
 
 .comentario{
+   align-content: end;
     display: flex;
     font-family: "Overpass", sans-serif;
     gap: 11px  ;
@@ -106,14 +111,44 @@
     
    
     .conteudo-principal{
-        
-        width: 350px;
-        height: 750px;
         flex-direction: column;
+       justify-content: space-around;
+        align-items: center;
+        width: 500px; 
+        box-sizing: border-box;
+        height: 750px;
+      
+  
+        
     }
 
     #imagem-planta{
-        transform: rotate(90deg);
-    
+  
+      object-fit: contain;
+      transform:rotate(90deg); 
+      
+
+    }
+
+    .conteudo-principal-texto{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 20px;
+        width: 400px;
+        margin-top: -50px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+
+    .texto{
+        text-align: start;
+    }
+
+
+    .comentario{
+        padding-bottom: 150px;
     }
   }
