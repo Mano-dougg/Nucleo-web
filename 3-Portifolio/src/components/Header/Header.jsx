@@ -51,9 +51,9 @@ function Header(){
             <div className={active ? "menu menuOpen" : "menu menuClose"}>
                 <nav className={styles.navMobile}>
                     <ul>
-                        <li><a href="#Section2">Section two</a></li>
-                        <li><a href="#Section3">Section three</a></li>
-                        <li><a href="#Section4">Section four</a></li>
+                        <li><a onClick={ToggleMode} href="#Section2">Section two</a></li>
+                        <li><a onClick={ToggleMode} href="#Section3">Section three</a></li>
+                        <li><a onClick={ToggleMode} href="#Section4">Section four</a></li>
                     </ul>
                 </nav>
                 <div className={styles.iconsHeaderMobile}>
