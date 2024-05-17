@@ -142,7 +142,7 @@ color: var(--h1-color);
     }
 
     .dark-button {
-        display: none;
+        display: flex;
     }
 
     .mobile-menu-icon {

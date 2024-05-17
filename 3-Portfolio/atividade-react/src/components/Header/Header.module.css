@@ -1,4 +1,3 @@
-
 :root{
     --blue: #0065FF;
 }
@@ -16,13 +15,12 @@ li{
 }
 .header{
     width: 100%;
-    height: 82px;
+    height: 72px;
     padding: 30px 87px 30px 87px;
     gap: 511px;
     opacity: 0px;
     max-width: 100%;  
     box-shadow: 0px 25px 65px 0px #00000026;
-  
 }
 .navbar{ /*organizando itens no menu */
     display: flex;
@@ -50,7 +48,6 @@ li{
     justify-content: space-around;
     gap: 50px;
 }
-
 .itens_img{
     display: flex;
     flex-direction: row;
@@ -61,20 +58,15 @@ li{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    gap: 10px;
-
+    gap: 5px;
 }
-
-.itens_dark li{
-
+.itens_dark h6{
     font-family:  'Be Vietnam Pro';
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 20.45px;
     text-align: left;
-
 }
-
 /* Css do theme dark*/
 .itens_checkbox{
    padding: 0;
@@ -82,13 +74,10 @@ li{
    display: flex;
    justify-content: center;
    align-items: center;
-
    transition: background 0.2s linear;
 }
-
 .dark {
     background-color: #232c35;
-    
 }
 .checkbox{
     opacity: 0;
@@ -98,62 +87,66 @@ li{
     background-color: #E5E5E5;
     border-radius: 50px;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0;
     position: relative;
-    
-
-    height: 26px;
-    width: 50px;
-
+    height: 22px;
+    width: 40px;
 }
-
 .label .ball {
     background-color:#3C3B3A;
     border-radius: 50px;
     position: absolute;
     top: 2px;
     left: 2px;
-    height: 22px;
-    width: 22px;
+    height: 18px;
+    width: 18px;
     transform: translateX(0px);
     transition: transform 0.2s linear;
-
 }
-
 .checkbox:checked + .label .ball {
-    transform: translateX(24px);
+    transform: translateX(21px);
 }
-
 /* modulo para os icons */
 .dark {
     background-color: var(--color-dark-claro);
     color: #fff;
-  }
-  
-  .dark .itens_nav1 a {
+}
+.dark .itens_nav1 a {
     color: #fff;
-  }
-  
-  .dark .itens_dark li {
+}
+.dark .itens_dark li {
     color: #fff;
-  }
-  
-  .iconDark {
+}
+.iconDark {
     filter: invert(1) grayscale(1);
-  }
-  
-
+}
 .navbar{
     max-width: 1280px;
 }
-
-
-
 .icon_navbar{
     display: none;
     flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+    .header{
+        width: 100%;
+        padding: 1.5rem;
+    }   
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .itens_nav1 li, 
+    .itens_nav2 li, 
+    .itens_img li, 
+    .itens_dark li {
+        display: none;
+    }
 }

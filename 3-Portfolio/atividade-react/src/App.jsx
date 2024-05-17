@@ -2,10 +2,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import './App.css';
-//import Header from './components/Header';
+import Header from './components/Header';
 import Section1 from './components/Section1';
 import Section2 from './components/Section2';
-import Navbar from './components/Navbar';
+//import Navbar from './components/Navbar';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className={darkMode ? 'dark-mode' : ''}>
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>
         <div className='sections'>
           <Section1 />

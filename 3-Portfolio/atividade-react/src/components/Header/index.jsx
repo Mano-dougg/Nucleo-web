@@ -52,7 +52,7 @@ class Header extends Component {
                 <li><a href="#"><img src="/src/assets/img/instagram-icon.svg"alt=""className={darkMode ? styles.iconDark : ''}/></a></li>
               </div>
 
-              <div className={styles.itens_dark}><li>Dark Mode :</li>
+              <div className={styles.itens_dark}><h6>Dark Mode :</h6>
                 <div className={styles.itens_checkbox}>
                   <input type="checkbox" className={styles.checkbox} id="chk"checked={darkMode}onChange={this.toggleDarkMode}/>
                   <label className={styles.label} htmlFor="chk">
