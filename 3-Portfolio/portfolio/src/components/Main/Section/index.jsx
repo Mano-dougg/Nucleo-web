@@ -4,7 +4,7 @@ import './style.css'
 
 export default function Section(){
     return(
-        <section>
+        <section id='projects'>
             <hr className="row"/>
             <h1 className="section_title">Title</h1>
             <p className="section_primary-text">Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. </p>

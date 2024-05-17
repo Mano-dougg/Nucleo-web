@@ -23,10 +23,10 @@ export default function MobileNav() {
       />
       <div id="menu">
         <div className="navMobile_links-group">
-          <a href="" id="referencia">
+          <a href="#home" id="">
             Section two
           </a>
-          <a href="">Section three</a>
+          <a href="#projects">Section three</a>
           <a href="">Section four</a>
         </div>
         <div className="navMobile_actions-imgs">

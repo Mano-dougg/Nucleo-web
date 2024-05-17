@@ -9,6 +9,8 @@ nav {
     justify-content: space-between;
 
     font-family: "Be Vietnam Pro", sans-serif;
+    position: sticky;
+    top: 0;
 }
 
 .nav_links {
@@ -108,6 +110,9 @@ nav {
 }
 
 @media screen and (max-width:992px) {
+    nav{
+        position: initial;
+    }
 
     nav .nav_links .nav_links-group,
     nav .nav_actions .nav_actions-imgs {

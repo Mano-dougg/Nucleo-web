@@ -16,14 +16,14 @@ export default function Nav() {
   return (
     <>
       
-      <nav className="gray-bg">
+      <nav className="gray-bg" id="Home">
         <div className="nav_links gray-bg">
-          <h1 className="gray-bg">Jaedson Barbosa Macedo</h1>
+          <h1 className="gray-bg">Jaedson</h1>
           <div className="nav_links-group gray-bg">
-            <a href="" className="gray-bg nav-item">
+            <a href="#home" className="gray-bg nav-item">
               Section two
             </a>
-            <a href="" className="gray-bg nav-item">
+            <a href="#projects" className="gray-bg nav-item">
               Section three
             </a>
             <a href="" className="gray-bg nav-item">
@@ -58,7 +58,7 @@ const twt = document.getElementById("twitter");
 const figmas = document.getElementById("figma");
 const insta = document.getElementById("instagram")
 
-const twtMobile = document.getElementById("darkTwitter");
+const twtMobile = document.getElementById("darkTwitter")
 const figmasMobile = document.getElementById("darkFigma");
 const instaMobile = document.getElementById("darkInstagram")
 
