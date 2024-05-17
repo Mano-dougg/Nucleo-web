@@ -1,40 +1,19 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import Header from './componentes/Header/head'
-import twitter from '/Vector.svg'
-import instagram from '/instagram-icon.svg'
-import figma from '/figma-icon.svg'
 import './App.css'
 import bol from '/bol.svg'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [menuO, setmenuO] = useState(true)
+  const trocar = () => {
+    setmenuO(!menuO)
+  }
 
   return (
     <body>
     <div>
-      <nav className="menu">
-        <div className="aesquerda">
-          <h4 className="dono">Kevin Bennett</h4>
-          <ul>
-          <label className="dois">Section two</label>
-          <label className="tres">Section three</label>
-          <label className="quatro">Section four</label>
-          </ul>
-        </div>
-        <div className="adireita">
-          <img src={twitter} className="tt"/>
-          <img src={figma} className="fg"/>
-          <img src={instagram} className="insta"/>
-          <label className="dark">Dark mode:</label>
-          <div>
-          <input type="checkbox" className="checkbox" id="chk" />
-          <label className="env" for="chk">
-          <div className="bola"></div>
-          </label>
-          </div>
-        </div>
-      </nav> 
+      <Header/>
       <div className="section1">
       <figure className="Icon">
         <hr className="l3"></hr>
@@ -49,7 +28,7 @@ function App() {
       </p>
       <div className="Frase">
         <figure className="bol1"><img src={bol} className="bl" height="25px"/></figure>
-        <p className="pa">Available for work and general design goodness – <span className="say">say hello</span></p>
+        <p className="pa"><span className="temp">Available for work and general design</span> goodness – <span className="say">say hello</span></p>
       </div>
       </div>
       <div className="section2">
@@ -75,7 +54,7 @@ function App() {
           <button className="btn1"><h1 className="nome">Button Primary Light</h1></button>
         </div>
       </div>
-    </div>
+      </div>
     </body>
   )
 }
