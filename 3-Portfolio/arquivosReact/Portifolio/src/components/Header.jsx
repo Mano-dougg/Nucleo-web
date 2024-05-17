@@ -12,27 +12,24 @@ function Header(props) {
     const [menuAbre, setMenuAbre] = useState(false);
     return (
         <header>
-            <div id='nomeComSeccoes'>
-                <h2>{nome} {sobrenome}</h2>
-                <nav id='nav' className={menuAbre ? 'ativo' : ''}>
-                    <button id='hamburguer' onClick={()=>setMenuAbre(menuAbre => !menuAbre)}>
-                        <img src={Abre} id='iconAbre' />
-                        <img src={Fecha} id='iconFecha' />
-                    </button>
-                    <ul id='menu'>
+            <h2>{nome} {sobrenome}</h2>
+            <div id='nav' className={menuAbre ? 'ativo' : ''}>
+                <button id='hamburguer' onClick={()=>setMenuAbre(menuAbre => !menuAbre)}>
+                    <img src={Abre} id='iconAbre' />
+                    <img src={Fecha} id='iconFecha' />
+                </button>
+                <div id='menu'>
+                    <ul>
                         <li><a>Section two</a></li>
                         <li><a>Section three</a></li>
                         <li><a>Section four</a></li>
                     </ul>
-                </nav>
-            </div>
-            <div id='botoesHeader'>
-                <ul>
-                    <li><a><img src={Twitter} /></a></li>
-                    <li><a><img src={Figma} /></a></li>
-                    <li><a><img src={Insta} /></a></li>
-                </ul>
-                {/*Sem Dark Mode*/}
+                    <ul id='iconesnav'>
+                        <li><a><img src={Twitter} /></a></li>
+                        <li><a><img src={Figma} /></a></li>
+                        <li><a><img src={Insta} /></a></li>
+                    </ul>
+                </div>
             </div>
         </header>
     );

@@ -1,25 +1,31 @@
 header {
     font-size: 14px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
     padding: 30px 86px;
     box-shadow: 0px 25px 65px 0px #00000026;
     position: fixed;
     width: 100%;
     background-color: white;
 }
-#nomeComSeccoes {
+/*#nomeComSeccoes {
     display: flex;
     gap: 50px;
     align-items: center;
-}
+}*/
 header h2 {
     font-weight: 700;
     font-size: 20px;
 }
 #menu {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 50vw;
+}
+#menu ul {
+    display: flex;
+    gap: 25px;
 }
 #botoesHeader {
     display: flex;
@@ -41,7 +47,7 @@ header h2 {
     z-index: 69;
 }
 
-@media (max-width: 600px){
+@media (max-width: 1000px){
     #hamburguer {
         display: block;
     }
@@ -66,29 +72,30 @@ header h2 {
         background: white;
         flex-direction: column;
         gap: 25px;
-
+        justify-content: flex-start;
     }
-    /*#botoesHeader{
-        display: none;
-    }*/
+    #menu ul {
+        flex-direction: column;
+        padding-top: 80px;
+        align-items: center;
+    }
+    #menu #iconesnav {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 50vw;
+    }
+
     #nav.ativo #menu {
         height: 100vh;
         visibility: visible;
         overflow-y: auto;
     }
+
     #nav.ativo #hamburguer #iconAbre {
         display: none;
     }
     #nav.ativo #hamburguer #iconFecha {
         display: block;
     }
-    /*#nav.ativo #botoesHeader {
-        display: flex;
-        display: none;
-        position: absolute;
-        width: 100%;
-        top: 492px;
-        right: 0px;
-        z-index: 20;
-    }*/
+
 }
