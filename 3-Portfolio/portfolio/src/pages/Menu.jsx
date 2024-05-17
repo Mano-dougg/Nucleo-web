@@ -28,10 +28,11 @@ function Menu() {
                 </ul>
             </div>
             <div className="images">
-                <img src={twitterLight} alt="Twitter Icone Light" />
-                <img src={figmaLight} alt="Figma Icone Light" />
-                <img src={instagramLight} alt="Instagram Icone Light" />
-                <img src={mode === 'light' ? toggleOff : toggleOn} alt="Botão Toggle" onClick={toggleMode} />
+                <a href="#"><img src={twitterLight} alt="Twitter Icone Light" /></a>
+                <a href="#"><img src={figmaLight} alt="Figma Icone Light" /></a>
+                <a href="#"><img src={instagramLight} alt="Instagram Icone Light" /></a>
+                <p>Dark mode:</p>
+                <a href="#"><img src={mode === 'light' ? toggleOff : toggleOn} alt="Botão Toggle" onClick={toggleMode}/></a>
             </div>
         </nav>
       </>
