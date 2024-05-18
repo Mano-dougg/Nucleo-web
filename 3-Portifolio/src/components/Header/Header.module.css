@@ -63,8 +63,10 @@ header{
 
 .darkMode{
     position: absolute;
+    display: flex;
     top: 30px;
     right: 6%;
+    gap: 7px;
 }
 
 /* BOTAO DARK MODE */

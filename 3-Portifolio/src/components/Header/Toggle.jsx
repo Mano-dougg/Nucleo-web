@@ -3,6 +3,7 @@ import styles from './Header.module.css'
 export const Toggle = ({ handleChange, isChecked}) => {
     return(
         <div className={styles.darkMode}>
+            <p>Dark mode:</p>
             <input 
                 type="checkbox"
                 id='check'
