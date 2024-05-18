@@ -8,7 +8,7 @@ function MyWork({ isMenuActive }) {
             <div className='line-wide'></div>
 
             <section id='section2'>
-                <h1>Title</h1>
+                <h1>Seção 2</h1>
                 <p>Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. 
                     Line of copy in here to decribe this section.</p>
             </section>
@@ -18,7 +18,7 @@ function MyWork({ isMenuActive }) {
                 <img className='placeholder-img' src={placeholder}/>
 
                 <div className='info'>
-                    <h1>Title</h1>
+                    <h1>Seção 3</h1>
                     <p>Leading, implementing and evolving engaging customer experiences 
                         and UI foundations for every touch-point across various platforms.</p>
                         <button className='btn'>Button Primary Light</button>
@@ -29,7 +29,7 @@ function MyWork({ isMenuActive }) {
             <section id='section4'>
 
                 <div className='info'>
-                    <h1>Title</h1>
+                    <h1>Seção 4</h1>
                     <p>Leading, implementing and evolving engaging customer experiences 
                         and UI foundations for every touch-point across various platforms.</p>
                     <button className='btn'>Button Primary Light</button>

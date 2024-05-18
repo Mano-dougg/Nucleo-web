@@ -10,7 +10,7 @@ function App() {
 
   const handleToggleMenu = () => {
     setIsMenuActive(!isMenuActive);
-    document.body.style.overflow = isMenuActive ? 'auto' : 'hidden';
+
   };
 
   return (
