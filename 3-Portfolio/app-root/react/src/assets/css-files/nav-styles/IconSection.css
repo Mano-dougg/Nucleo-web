@@ -11,3 +11,9 @@
         max-height: 16px ;
     }
 }
+
+@media screen and (max-width: 785px) {
+    .icons{
+        display: none;
+    }
+}

@@ -10,3 +10,8 @@
     text-decoration: underline;
     text-decoration-color: rgba(0, 101, 255, 1);
 }
+@media screen and (max-width: 785px) {
+    .links{
+        display: none;
+    }
+}

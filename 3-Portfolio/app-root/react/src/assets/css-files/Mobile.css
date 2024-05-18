@@ -24,7 +24,6 @@ body {
 .nav {
     display: flex;
     position: sticky;
-    top:0;
     align-self: top;
     flex-flow: row ;
     justify-items: center;
@@ -72,13 +71,12 @@ body {
     display: flex;
     flex-flow: column;
     box-sizing: border-box;
-    overflow: hidden;
+    align-self: flex-end;
+    top: 82px;
     align-items: center;
     min-width: 100%;
-    max-height: 96%;
-    height: fit-content;
     border-top: 10px;
-    padding-top: 140px;
+    margin-top: 82px;
     padding-left: 46px;
     padding-right: 46px;
     background-color: rgba(255, 255, 255, 1);
@@ -89,12 +87,20 @@ body {
     flex-flow: column;
     align-self: flex-start;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
+
     .menu-button{
         display: flex;
         align-self: flex-start;
-        width: 30px;
+        width: 60px;
+        background-color: whitesmoke;
+        border-color: white;
+        .menu-img {
+            align-self: flex-start;
+            width: 30px;
+            height: 30px;
+        }
     }
     .menu{
         display: none;
