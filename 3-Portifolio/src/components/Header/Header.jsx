@@ -34,9 +34,9 @@ function Header(){
         </article> 
         <article className={styles.articleHeaderRight}>
             <div className={styles.iconsHeaderDesktop}>
-                <a href="https://twitter.com/home?lang=pt"><img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" /></a>
-                <a href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a> 
-                <a href="https://www.instagram.com"><img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" /> </a>
+                <a target="_blank" href="https://twitter.com/home?lang=pt"><img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" /></a>
+                <a target="_blank" href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a> 
+                <a target="_blank" href="https://www.instagram.com"><img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" /> </a>
             </div>
             
         </article>
@@ -60,9 +60,9 @@ function Header(){
                 </nav>
                 
                 <div className={styles.iconsHeaderMobile}>
-                <a href="https://twitter.com/home?lang=pt"><img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" /></a>   
-                <a href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a>
-                <a href="https://www.instagram.com"><img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" /> </a>
+                <a target="_blank" href="https://twitter.com/home?lang=pt"><img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" /></a>   
+                <a target="_blank" href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a>
+                <a target="_blank" href="https://www.instagram.com"><img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" /> </a>
                 </div>
             </div>
         </article>
