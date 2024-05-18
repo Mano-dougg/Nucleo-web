@@ -44,7 +44,7 @@ function Header(){
         {/* MENU MOBILE */}
         <article className={styles.menuMobile}>
             <div>
-                <button onClick={ToggleMode} id='styles.btn-menu'>
+                <button className={active ? "btn btnOpen" : "btn btnClose"} onClick={ToggleMode} id='styles.btn-menu'>
                     <span className={styles.linha}></span>
                     <span className={styles.linha}></span>
                     <span className={styles.linha}></span>

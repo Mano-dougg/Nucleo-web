@@ -62,7 +62,7 @@ header{
 }
 
 .darkMode{
-    position: fixed;
+    position: absolute;
     top: 30px;
     right: 6%;
 }
