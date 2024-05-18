@@ -9,8 +9,17 @@ import imagem1 from '/imagem1.jpg'
 import imagem2 from '/imagem2.jpg'
 import './App.css'
 
+
+
+
 function App() {
   const [count, setCount] = useState(0)
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <>
@@ -18,8 +27,7 @@ function App() {
         <div className="cabeçalho">
           <div className="brand">Beatriz Rosa</div>
           <nav className="sections">
-            <button id="botaomenu" > menu</button>
-            <ul id="menu">
+            <ul id="menu" className={menuOpen ? 'active' : ''}>
               <li><a href="">Section 1</a></li>
               <li><a href="">Section 2</a></li>
               <li><a href="">Section 3</a></li>
@@ -28,7 +36,7 @@ function App() {
         </div>
         <div className="cabeçalho2">
           <nav className="socialmedia">
-            <ul>
+            <ul id="menu" className={menuOpen ? 'active' : ''}>
               <li><img src={twitter}/></li>
               <li><img src={figma}/></li>
               <li><img src={instagram}/></li>  
@@ -42,11 +50,12 @@ function App() {
       </header>
 
       <main>
+      <button id="botaomenu" onClick={toggleMenu} >menu</button>
         <div className="section1">
           <img id="avatar" src={avatar} alt="Avatar" />
           <div className="h1">
             <h1>Hello. </h1>
-            <h1> My name is Beatriz Rosa</h1>
+            <h1> My name is Beatriz Rosa.</h1>
           </div>
           <div className="divisao">______________________________________ </div>
           <p>I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making complex processes easy to use.</p>
