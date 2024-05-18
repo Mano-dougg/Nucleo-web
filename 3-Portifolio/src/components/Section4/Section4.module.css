@@ -1,8 +1,19 @@
+/* ANIMAÇÕES */
+@keyframes animationTextBox {
+    from {transform: translateX(-1200px);}
+    to {transform: translateX(0px);}
+}
 
 .section4{
     display: flex;
     padding: 36px 16.66% 80px 16.66%;
     gap: 40px;
+}
+
+.textAnime{
+    animation-name: animationTextBox;
+    animation-delay: 2.5s;
+    animation-duration: 4s;
 }
 
 .imgPlaceholder{

@@ -1,3 +1,8 @@
+/* ANIMAÇÕES */
+@keyframes animationTextBox {
+    from {transform: translateX(2200px);}
+    to {transform: translateX(0px);}
+}
 
 .section3{
     display: flex;
@@ -8,6 +13,12 @@
 .imgPlaceholder{
     max-width: 670px;
     height: 370px;
+}
+
+.textAnime{
+    animation-name: animationTextBox;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
 }
 
 .BtnPrimarylight{

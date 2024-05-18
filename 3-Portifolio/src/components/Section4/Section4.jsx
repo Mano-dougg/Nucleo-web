@@ -5,7 +5,7 @@ function Section4() {
     return(
         <>
         <section id='Section4' className={styles.section4}>
-            <article>
+            <article className={styles.textAnime}>
                 <div className={styles.center}>
                     <h4>Title</h4>
                 </div>

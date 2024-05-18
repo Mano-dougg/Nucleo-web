@@ -6,7 +6,7 @@ function Section3(){
         <>
         <section id='Section3' className={styles.section3}>
             <img className={styles.imgPlaceholder} src={placeholder} alt="" />
-            <article>
+            <article className={styles.textAnime}>
                 <div className={styles.center}>
                     <h4>Title</h4>
                 </div>
