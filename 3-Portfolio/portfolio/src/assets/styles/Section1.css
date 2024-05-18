@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
 .container {
   display: flex;
   align-items: center;
@@ -7,17 +9,22 @@
 
 .Center{
   width: 63%;
+  gap: 20px;
+  padding-bottom: 0px;
 }
 
 p {
   white-space: normal; 
   word-wrap: break-word; 
+  font-size: 16px;
 }
 
 .check{
+  width: 462px;
   display: flex;
   flex-direction: row;
   background: #F8F9FA;
+  justify-content: center;
 }
 
 strong{
@@ -37,4 +44,24 @@ hr{
   opacity: 0px;
   border: none;
   border-top: 1px solid #0065FF;
+}
+
+h1{
+  font-family: EB Garamond;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 70px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #0065FF;
+  margin: 0px;
+}
+
+.Center > p{
+  margin: 0px;
+  font-family: Be Vietnam;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24.84px;
+  text-align: left;
 }
