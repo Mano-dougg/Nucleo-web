@@ -12,8 +12,8 @@ const About: React.FC = () => {
       <header className={`hero-header ${mobileClassName} ${darkClassName}`}>
         <img src="/images/FernandoRoundClose.svg" alt="Fernando's picture" />
         <h1 className={`eb-garamond-bold ${darkClassName}`}>Hello.<br />My name is Fernando.</h1>
-        <hr className={`${darkClassName}`} />
       </header>
+      <hr className={`${darkClassName}`} />
       <article className={`hero-article ${darkClassName}`}>
         <p className={"be-vietnam-pro-regular "}>I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making complex processes easy to use. Right now, I'm Design Lead at <a href="#">Holiday Extras</a>, covering all our digital platforms across a whole load of brands – leading a great team across <a href="#" className={`${darkClassName}`}>design</a>, UI engineering, accessibility and customer experience. I'm lucky to be part of a great team of designers, writers, engineers, PMs and data specialists – amongst others – testing, iterating and optimising our platforms and products. I've got some <a href="#" className={`${darkClassName}`}>work on Dribbble</a>, some previous work at <a href="#" className={`${darkClassName}`}>Saga</a> and you can find me over on twitter and sometimes on <a href="#" className={`${darkClassName}`}>Medium too</a>. I also take <a href="#" className={`${darkClassName}`}>too many photos</a>.</p>
         <div className={`call-out be-vietnam-pro-regular  ${mobileClassName} ${darkClassName}`}>
@@ -29,8 +29,14 @@ const About: React.FC = () => {
           </svg>
           <p>Available for work and general design goodness – <a href="#" className={`${darkClassName}`}>say hello</a></p>
         </div>
-      <hr id="long-hr" className={`${darkClassName}`} />
       </article>
+      <hr id="long-hr" className={`${darkClassName}`} />
+      <section>
+        <header className="projects-header">
+          <h1 className={`eb-garamond-bold projects-title ${mobileClassName} ${darkClassName}`}>Projects</h1>
+          <p className="projects-description be-vietnam-pro-regular">Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section.</p>
+        </header>
+      </section>
     </section>
   )
 }
