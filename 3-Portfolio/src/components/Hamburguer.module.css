@@ -1,0 +1,47 @@
+* {padding: 0; margin: 0;}
+
+@media (max-width: 375px) {
+    .menuFechado {
+        color: transparent;
+    }
+
+    .menuAberto {
+        display:none;
+        position:fixed;
+        flex-direction: column;
+        align-items: center;
+        background-color: #b61b82c7;   
+        top: 77px; 
+        left: 0; 
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        transition: visibility 0.3s ease-in-out;
+    }
+
+    /* .menuAberto.showMenu {visibility: hidden;} */
+
+    .menuAberto>.secoesMobile>li>a {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding-bottom: 25px;
+
+        font-family: 'Be Vietnam', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        color: #0065FF;
+        text-decoration: none;
+
+    } 
+    /* .secoesMobile{list-style: none;} */
+
+    .menuAberto>.redesSociaisMobile{
+        width: 251px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .redesSociaisMobile>a {color: #0065FF;}
+}

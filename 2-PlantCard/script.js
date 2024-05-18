@@ -6,4 +6,6 @@ function mostrarMenu() {
     } else {
         menuEscondido.style.visibility = 'hidden';
     }
-}
+} 
+
+{/* <div class="menuEscondido" style="visibility: hidden;" role="Menu de redes sociais"></div> */}
