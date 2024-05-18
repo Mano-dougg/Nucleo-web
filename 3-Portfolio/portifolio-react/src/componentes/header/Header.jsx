@@ -1,14 +1,14 @@
 import './styles.css';
-import ThemeToggle from './ThemeToggle.jsx';
 import NavLinks from './NavLinks.jsx';
 import SocialIcons from './SocialIcons.jsx';
+import toggleLight from '../../assets-light-theme/ToggleOff-light.png';
+import toggleDark from '../../assets-dark-theme/ToggleOn.png';
 
-function Header() {
+function Header({isNightMode, handleToggleTheme}) {
 
-    const isNightMode=false;
 
     return (
-        <header className={isNightMode ? 'header-night' : 'header-light'}>
+        <header className={isNightMode ? 'header-night' : ''}>
 
             <div>
 
@@ -22,12 +22,16 @@ function Header() {
             <div>
 
             <nav className="social-icons">
-                <SocialIcons></SocialIcons>
+                <SocialIcons isNightMode={isNightMode}></SocialIcons>
             </nav>
             
                 <section>
+
                     <p>Dark mode: </p>
-                    <ThemeToggle></ThemeToggle>
+                    <div className="toggle-bg">
+                    <img src={isNightMode? toggleDark : toggleLight} onClick={handleToggleTheme}></img>
+                    </div>
+
                 </section>
 
             </div>

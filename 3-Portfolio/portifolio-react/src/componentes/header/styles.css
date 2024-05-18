@@ -12,6 +12,14 @@
     font-style: normal;
 }
 
+html .light-mode{
+    background-color: #FFFFFF;
+}
+
+html .night-mode{
+    background-color: #202020;
+}
+
 li{
     list-style: none;
     font-style: normal;
@@ -128,3 +136,19 @@ border-radius: 75%;
     }
  }
  
+
+.header-night{
+    background-color: #222222;
+}
+
+.header-night h1{
+    color:#FAF4E6;
+}
+
+.header-night a{
+    color: #FAF4E6;
+}
+
+.header-night p{
+    color:#FAF4E6;
+}

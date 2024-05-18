@@ -95,3 +95,14 @@ div .line{
 
 }
 
+div .line-dark{
+    background: #F8F9FA;
+}
+
+.call-out-dark p{
+    color:#F8F9FA;
+}
+
+.call-out-dark{
+    background-color:#3C3B3A;
+}

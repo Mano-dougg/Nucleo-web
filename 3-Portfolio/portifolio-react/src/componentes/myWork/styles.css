@@ -176,3 +176,44 @@ div .line-wide{
         display: none;
     }
 }
+
+.section-night{
+    background-color: #202020;
+}
+
+.section-night p{
+    color:#FAF4E6;
+}
+
+.section-night a{
+    color:#FAF4E6;
+}
+
+.section-night h1{
+    color:#FAF4E6;
+}
+
+.section-night p span {
+    color:#FAF4E6;
+    text-decoration: underline;
+}
+
+.section-night #section2 h1{
+    color: #FAF4E6;
+}
+
+.section-night #section2 p{
+    color: #FAF4E6;
+}
+
+div .line-dark{
+    background-color: #FAF4E6;
+}
+
+.btn-dark{
+
+    background-color: #202020;
+    border:1px solid #FAF4E6;
+    color:#FAF4E6;
+}
+

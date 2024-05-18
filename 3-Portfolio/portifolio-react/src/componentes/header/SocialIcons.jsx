@@ -6,8 +6,7 @@ import twitterDark from '../../assets-dark-theme/twitter-icon.png';
 import figmaDark from '../../assets-dark-theme/figma-icon.png';
 import instagramDark from '../../assets-dark-theme/instagram-icon.png';
 
-function SocialIcons (){
-    const isNightMode=false;
+function SocialIcons ({isNightMode}){
     return (
             <ul>
                 <li><img src={isNightMode ? twitterDark : twitterLight}/></li>

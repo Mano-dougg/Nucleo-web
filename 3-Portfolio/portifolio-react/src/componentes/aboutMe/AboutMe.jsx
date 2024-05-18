@@ -1,16 +1,17 @@
 import './styles.css';
 import avatar from '../../assets-light-theme/Avatar.png';
 import checkCircle  from '../../assets-light-theme/check-circle.png'
+import checkCircleDark  from '../../assets-dark-theme/check-circle.png'
 
-function AboutMe({ isMenuActive }) {
+function AboutMe({ isMenuActive , isNightMode }) {
 
     return (
-        <section className={`section1 ${isMenuActive ? 'hidden' : ''}`}>
+        <section className={`section1 ${isMenuActive ? 'hidden' : ''} ${isNightMode ? 'section-night' : ''}`}>
 
             <img className="avatar" src={avatar}/>
             <h1> Hello. <br/>My name is Beatriz. </h1>
 
-            <div className='line'></div>
+            <div className={`line ${isNightMode ? 'line-dark' : ''}`}></div>
 
             <p>I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making complex processes easy to use. 
                 <br/><br/>
@@ -21,8 +22,8 @@ function AboutMe({ isMenuActive }) {
                 Medium too.</span> I also take <span>too many photos.</span>
             </p>
 
-            <div className='call-out'>
-                <img src={checkCircle}/> 
+            <div className={`call-out ${isNightMode ? 'call-out-dark' : ''}`}>
+                <img src={isNightMode ? checkCircleDark : checkCircle}/> 
                 <p>Available for work and general design goodness – <span> say hello</span></p>
             </div>
 

@@ -6,19 +6,34 @@ import MenuMobile from './componentes/menuMobile/MenuMobile.jsx';
 import MyWork from './componentes/myWork/MyWork.jsx';
 
 function App() {
+
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isNightMode, setIsNightMode] = useState(false);
 
   const handleToggleMenu = () => {
     setIsMenuActive(!isMenuActive);
 
   };
 
+  const handleToggleTheme = () => {
+    setIsNightMode(!isNightMode);
+
+    if (!isNightMode) {
+      document.body.classList.add('night-mode');
+      document.body.classList.remove('light-mode');
+    } else {
+      document.body.classList.remove('night-mode');
+      document.body.classList.add('light-mode');
+    }
+
+  };
+
   return (
     <>
-      <Header />
-      <MenuMobile isMenuActive={isMenuActive} onToggleMenu={handleToggleMenu} />
-      <AboutMe isMenuActive={isMenuActive} />
-      <MyWork isMenuActive={isMenuActive}/>
+      <Header isNightMode={isNightMode} handleToggleTheme={handleToggleTheme}/>
+      <MenuMobile isMenuActive={isMenuActive} onToggleMenu={handleToggleMenu} isNightMode={isNightMode}/>
+      <AboutMe isMenuActive={isMenuActive} isNightMode={isNightMode} />
+      <MyWork isMenuActive={isMenuActive} isNightMode={isNightMode}/>
     </>
   );
 }
