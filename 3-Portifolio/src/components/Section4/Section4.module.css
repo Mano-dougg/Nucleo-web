@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid  #0065FF;
+    border: 1px solid  var(--colorH);
     border-radius: 44.5px;
 }
 

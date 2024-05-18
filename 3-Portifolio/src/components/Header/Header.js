@@ -1,7 +1,0 @@
-
-function static(){
-    document.body
-
-
-
-}

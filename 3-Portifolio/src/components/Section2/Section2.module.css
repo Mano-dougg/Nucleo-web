@@ -9,7 +9,7 @@
 
 .hrSection2{
     max-width: 960px;
-    border: 1px solid #0065FF ;
+    border: 1px solid var(--colorH);
     margin-top: 80px;
     margin-bottom: 80px;
 }

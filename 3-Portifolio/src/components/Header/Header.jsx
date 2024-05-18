@@ -2,7 +2,9 @@ import twitterIcon from './imagesHeader/twitterIcon.png'
 import figmaIcon from './imagesHeader/figmaIcon.png'
 import InstaIcon from './imagesHeader/instagramIcon.png'
 import styles from './Header.module.css'
+import { Toggle } from './Toggle'
 import { useEffect, useState } from 'react'
+import App from '../../App'
 
 function Header(){
     const [active, setMode] = useState(false);
@@ -17,6 +19,7 @@ function Header(){
     
     return(
     <>
+    <div className={styles.Header}>
     <header>
         {/* MENU DESKTOP */}
         <article className={styles.articleHeader}>
@@ -35,13 +38,7 @@ function Header(){
                 <a href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a> 
                 <a href="https://www.instagram.com"><img className={styles.IconInsta} src={InstaIcon} alt="Logo do Instagram" /> </a>
             </div>
-            <div className={styles.darkMode}>
-                <p>Dark mode:</p>
-                <input type="checkbox" id={styles.check}/>
-                <label htmlFor="check" className={styles.switch}>
-                    <span className={styles.slider}></span>
-                </label>
-            </div>
+            
         </article>
 
         {/* MENU MOBILE */}
@@ -61,6 +58,7 @@ function Header(){
                         <li><a onClick={ToggleMode} href="#Section4">Section four</a></li>
                     </ul>
                 </nav>
+                
                 <div className={styles.iconsHeaderMobile}>
                 <a href="https://twitter.com/home?lang=pt"><img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" /></a>   
                 <a href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a>
@@ -69,6 +67,7 @@ function Header(){
             </div>
         </article>
     </header>
+    </div>
     </>
     )
 }

@@ -1,23 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
+.App{
+    background-color: var(--colorBG);
+}
+
+:root{
+    --colorBG: #f4f5f5;
+    --colorH: #0065FF;
+    --colorP: black;
+    --colorCallOut: #F8F9FA;
+    --colorTitle: black;
+    --colorBgHeader: white;
+}
+
+[data-theme = "dark"] {
+    --colorBG: #222222;
+    --colorH: #FAF4E6;
+    --colorP: #FAF4E6;
+    --colorCallOut: #3C3B3A;
+    --colorTitle: #FAF4E6;
+    --colorBgHeader: #3C3B3A;
+}
+
 *{
     padding: 0;
     margin: 0;
 }
 
 body{
-    background-color: #f4f5f5;
+    background-color: var(--colorBG);
 }
 
 h1{
-    color: #0065FF;
+    color: var(--colorH) ;
     font-size: 70px;
     font-family: "EB Garamond";
 }
 
 h2{
-    color: #0065FF;
+    color: var(--colorH);
     font-size: 24px;
     font-family: "EB Garamond";
 }
@@ -26,11 +48,13 @@ h4{
     font-size: 20px;
     padding-bottom: 10px;
     font-family: "Be vietnam";
+    color: var(--colorTitle);
 }
 
 p{
     font-size: 17px;
     font-family: "Be Vietnam";
+    color: var(--colorP);
 }
 
 .menu.menuOpen {

@@ -1,10 +1,16 @@
 
 header{
     height: 82px;
-    padding: 0px 6% 0px 6% ;
-    background-color: #FFFFFF;
+    width: 1200px;
     display: flex;
     justify-content: space-between;
+    padding: 0px 15% 0px 6% ;
+}
+
+.Header{
+    height: 82px;
+    background-color: var(--colorBgHeader);
+    display: flex;
     align-items: center;
 }
 
@@ -32,7 +38,7 @@ header{
 }
 
 .linkTitulo{
-    color: black;
+    color: var(--colorP);
 }
 
 .iconsHeaderDesktop{
@@ -56,13 +62,13 @@ header{
 }
 
 .darkMode{
-    display: flex;
-    align-items: center;
-    gap: 7px;
+    position: fixed;
+    top: 30px;
+    right: 6%;
 }
 
 /* BOTAO DARK MODE */
-#check{
+.toggle{
     display: none;
 }
 
