@@ -20,12 +20,13 @@ function App() {
     const handleResize = () => {
         if (window.innerWidth > 875) {
           setIsFirstDivVisible(true);
+          setMode('close');
         }
       };
 
       useEffect(() => {
         window.addEventListener('resize', handleResize);
-        handleResize(); // Chama a função para definir o estado inicial
+        handleResize(); 
     
         return () => {
           window.removeEventListener('resize', handleResize);
@@ -37,7 +38,7 @@ function App() {
         <Menu />
         <div className="menu-hamburguer">
             <img
-            src={mode === 'close' ? menuHamburguer : buttonFechar}
+            src={mode === 'close' ? menuHamburguer : buttonFechar }
             alt="Botão Menu"
             onClick={menuMode}
             />
