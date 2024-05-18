@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
+import Hamburguer from './components/Hamburguer/Hamburguer';
 import Header from './components/header/header';
 import MainSection from './components/main-section/main-section';
 import SecondarySection from './components/secondary-section/secondary-section';
@@ -13,7 +14,7 @@ function App() {
     --blue: #0065FF;
 }
 
-.App{
+.App, .menu{
   background-color: white;
 }
 
@@ -32,6 +33,7 @@ function App() {
 .border{
     border: 1px solid var(--blue);
 }
+
   `
 
   const darkTheme = `
@@ -39,7 +41,7 @@ function App() {
     --dark: #FAF4E6;
 }
 
-.App{
+.App, .menu{
     color: var(--dark);
     background-color: #222222;
 }
@@ -77,6 +79,7 @@ function App() {
       </style>
       <div className="App flexer">
         <Header onClick={themeChanger} />
+        <Hamburguer />
         <MainSection />
         <SecondarySection />
       </div>

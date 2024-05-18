@@ -6,6 +6,7 @@
 
 .header{
     position: fixed;
+    z-index: 1;
     background-color: inherit;
     top: 0;
     width: 100%;
@@ -63,5 +64,23 @@
 
     .header__right__dark-mode__text{
         width: 100px;
+    }
+  }
+
+@media screen and (max-width: 500px) {
+    .header{
+        padding: 5px;
+    }
+
+    .header__left{
+        width: 60%;
+    }
+
+    .header__left__brand{
+        font-size: 1rem;
+    }
+
+    .header__right{
+        width: auto;
     }
   }

@@ -18,9 +18,17 @@
   height: 1px;
 }
 
+.show-mobile{
+  display: none;
+}
+
 @media screen and (max-width: 900px) {
   .section{
     width: 90%;
     text-align: center;
+  }
+
+  .show-mobile{
+    display: flex;
   }
 }

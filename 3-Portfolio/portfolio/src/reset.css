@@ -62,3 +62,7 @@ button, input{
   background-color: inherit;
   font-size: inherit;
 }
+
+button{
+  cursor: pointer;
+}
