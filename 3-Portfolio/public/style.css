@@ -21,7 +21,7 @@ body {background-color: var(--bg-color); font-family: 'Be Vietnam Pro';}
   --button-bg-color: #FAF4E6;
   --button-border-color: #FAF4E6;
   --callout-bg-color: #3C3B3A;
-  --hover-color: rgba(0, 0, 0, 0.5);
+  --hover-color: rgba(0, 0, 0, 0.7);
 }
 
 h1 {color: var(--text-special-color); font-family: 'EB Garamond'; font-size: 3rem; font-weight: 700; letter-spacing: -0.02em;}

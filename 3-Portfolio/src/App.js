@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeContext } from './ThemeContext';
 import NavLinks from './NavLinks';
 import SocialLinks from './SocialLinks';
 import './App.css';
-import Header from './Header'
+import Header from './Header';
 import Content from './Content';
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
       document.body.classList.remove('dark');
     }
   }, [darkMode]);
-  
+
   function toggleMenu() {
     setIsOpen(!isOpen);
   }
@@ -32,30 +31,26 @@ function App() {
         setIsOpen(false);
       }
     }
-  
+
     window.addEventListener('resize', handleResize);
-  
+
     // Clean up the event listener on component unmount
     return () => window.removeEventListener('resize', handleResize);
   }, [isOpen]);
-  
 
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
-      <div style={{position: 'relative'}}>
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <button id="btn-mobile" className={isOpen ? 'open' : ''} onClick={toggleMenu}>
-          <span id="hamburger"></span>
-        </button>
-        <div id="dropdown-menu" className={isOpen ? 'open' : ''}>
-          <NavLinks />
-          <SocialLinks />
-        </div>
+    <div style={{ position: 'relative' }}>
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <button id="btn-mobile" className={isOpen ? 'open' : ''} onClick={toggleMenu}>
+        <span id="hamburger"></span>
+      </button>
+      <div id="dropdown-menu" className={isOpen ? 'open' : ''}>
+        <NavLinks />
+        <SocialLinks />
       </div>
       <Content isOpen={isOpen} />
-    </ThemeContext.Provider>
+    </div>
   );
 }
 
 export default App;
-
