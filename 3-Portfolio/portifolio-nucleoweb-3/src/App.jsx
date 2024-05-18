@@ -1,8 +1,8 @@
 
 import './App.css'
-import React from 'react'
+import React, { useState } from 'react'
 import { FaTwitter } from "react-icons/fa";
-import { FiFigma } from "react-icons/fi";
+import { IoLogoFigma } from "react-icons/io5";
 import { FaInstagram } from "react-icons/fa";
 import { Toggle } from "./components/toggle";
 import useLocalStorage from "use-local-storage";
@@ -10,11 +10,21 @@ import fotoperfil from './img/fotoperfil.png';
 import welovedogs from './img/welovedogs.png';
 import plants from './img/plants.png'
 import { FaCheckCircle } from "react-icons/fa";
+import { IoMdMenu } from "react-icons/io";
 
 
 
 export const App = () => {
   const [isDark, setIsDark] = useLocalStorage("isDark",false);
+  function showMenu(){
+    let menuMobile = document.querySelector('.menu_mobile');
+    if (menuMobile.classList.contains('open')) {
+      menuMobile.classList.remove('open');
+    } else{
+      menuMobile.classList.add('open');
+    }
+  
+  }
 
   return (
   <>
@@ -22,36 +32,51 @@ export const App = () => {
      <header>
         <section className='menu'>
           <nav>
-            <div className="one">
-              <ul>
-                <li><h1>Kevin Bennett</h1></li>
-                <li><a href="#">Section One</a></li>
-                <li><a href="#">Section Two</a></li>
-                <li><a href="#">Section Three</a></li>
-              </ul>
+            <div className='mobile_menu_icon' onClick={showMenu}><IoMdMenu className="icon_burguer" size={'34px'} />
             </div>
-            <div className="dois">
-              <ul className="menu_itens">
-                <li><a href="" target='_blank'><FaTwitter className='icone'/></a></li>
-                <li><a href="" target='_blank'><FiFigma className='icone'/></a></li>
-                <li><a href="" target='_blank'><FaInstagram className='icone'/></a></li>
+            <li className='logo'><h1>Paloma Brito</h1></li>
+              <ul class="ul_um">
+                <li><a href="#apresentacao">About</a></li>
+                <li><a href="#projeto_um">Projeto I</a></li>
+                <li><a href="#projeto_dois">Projeto II</a></li>
+                </ul>
+              <ul class="ul_dois">
+                <li><a href="https://x.com" target='_blank'><FaTwitter className='icone'/></a></li>
+                <li><a href="https://figma.com" target='_blank'><IoLogoFigma className='icone'/></a></li>
+                <li><a href="https://www.facebook.com" target='_blank'><FaInstagram className='icone'/></a></li>
                 <li className='darkmode_name'><p>Dark Mode:</p> </li>
-                <li>
-                  <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)}/>
-                </li>
-              </ul>
-            </div>
+                </ul>
+                <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)}/>
           </nav>
+
+
+            <div className="menu_mobile">
+              <div>
+              <ul>
+                <li className='nav-item'><a href="#apresentacao">Section One</a></li>
+                <li className='nav-item'><a href="#projeto_um">Section Two</a></li>
+                <li className='nav-item'><a href="#projeto_dois">Section Three</a></li>
+              </ul>
+              </div>
+              <div className='ul_horizontal'>
+                <ul>
+                <li className='nav-item_um'><a href="https://x.com" target='_blank'><FaTwitter className='icone'/></a></li>
+                <li className='nav-item_um'><a href="https://figma.com" target='_blank'><IoLogoFigma className='icone'/></a></li>
+                <li className='nav-item_um'><a href="https://www.facebook.com" target='_blank'><FaInstagram className='icone'/></a></li>
+                </ul>
+                </div>
+              </div>
+
         </section>
       </header>
 
-    <section className='page'>
+    <section className='page' id="apresentacao">
       <section className='apresentacao' >
             <img src={fotoperfil} width="250px" className='imgperfil'>
             </img>
 
             <h2>
-              Hello. <br></br>
+              Hello! <br></br>
               My Name is Paloma :)
             </h2>
 
@@ -65,40 +90,40 @@ export const App = () => {
 
             <div className='available'>
               <FaCheckCircle className='icone'/>
-              <p>Available for work and general design goodness – <a href="#" target='_blank'>say hello</a></p>
+              <p>Available for work and general design goodness – <a href="https://github.com/" target='_blank'>say hello.</a></p>
             </div>
       </section>
 
             <div className='quebra_de_texto_dois'></div>
 
             <section className='titulo_projetos'>
-              <h2>Title</h2>
-              <h3>Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. </h3>
+              <h3>Projetos</h3>
+              <p>Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. </p>
             </section>
 
             
 
-            <section className="projeto_um">
+            <section className="projeto_um" id="projeto_um">
               <div>
                 <img className="projeto_img" src={welovedogs} width="600px"/>
               </div>
 
-              <div>
-                <h2>Titulo</h2>
+              <div className='aaaa'>
+                <h4>We Love Dogs</h4>
                 <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
-                <button></button>
+                <button className='projeto_botao'>Show Demo</button>
               </div>
             </section>
 
-            <section className='projeto_dois'>
+            <section className='projeto_dois' id="projeto_dois">
               <div>
                 <img className="projeto_img" src={plants} width="600px"/>
               </div>
 
               <div>
-                <h2>Titulo</h2>
+                <h4>Plant Card</h4>
                 <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
-                <button></button>
+                <button className='projeto_botao'>Show Demo</button>
               </div>
             </section>
 
@@ -109,6 +134,7 @@ export const App = () => {
   </>
     
   )
+  
 }
 
 export default App
