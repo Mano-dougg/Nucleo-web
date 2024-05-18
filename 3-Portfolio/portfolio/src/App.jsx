@@ -1,6 +1,10 @@
 function App() {
   return (
-    <h1>Hello, World!</h1>
+    <div className="pai">
+      <h1>Hello, World!</h1>
+      <br />
+      <p>Bem vindo a pagina</p>
+    </div>
   )
 }
 
