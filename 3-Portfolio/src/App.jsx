@@ -35,18 +35,18 @@ function App() {
         </nav>
         {mostrarMenu ? <button onClick={toggleMenu} className='botaoMenu'><Cross size={36} /></button> : <button onClick={toggleMenu} className='botaoMenu'><ThreeLineHorizontal size={36} /></button>}
       </header>
-      <main className="main">
       <nav className={mostrarMenu ? "menuAberto" : "menuFechado"} >
         <ul className="secoesMobile">
-          <li><a href='#'>Sobre</a></li>
-          <li><a href='#'>Trabalhos</a></li>
+          <a href='#' >Sobre</a>
+          <a href='#' id='linksMobile'>Trabalhos</a>
         </ul>
         <ul className="redesSociaisMobile">
-          <a href='https://twitter.com/' alt='Logo Twitter' target='_blank'><TwitterFill /></a>
-          <a href='https://figma.com/' alt='Logo Figma' target='_blank'><FigmaFill /></a>
-          <a href='https://instagram.com/' alt='Logo Instagram' target='_blank'><InstagramFill /></a>
+          <a href='https://twitter.com/' className='redesMobile' alt='Logo Twitter' target='_blank'><TwitterFill /></a>
+          <a href='https://figma.com/' className='redesMobile' alt='Logo Figma' target='_blank'><FigmaFill /></a>
+          <a href='https://instagram.com/' className='redesMobile' alt='Logo Instagram' target='_blank'><InstagramFill /></a>
         </ul>
       </nav> 
+      <main className={mostrarMenu ? "mainAlt" : "main"}>
         <section className="intro">
           <img id="foto3x4" src={foto3x4} alt="foto 3x4" />
           <h1>Olá.<br />Meu nome é Vitor Renato.</h1>
