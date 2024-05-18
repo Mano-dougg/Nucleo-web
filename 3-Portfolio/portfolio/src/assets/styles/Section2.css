@@ -18,6 +18,8 @@
 
 .sub > img{
     width: 70%;
+    height: 70%;
+    max-width: 500px;
 }
 
 .sub > div >  p{
@@ -70,3 +72,30 @@ button{
     font-size: 12px;
     color: #0065FF;
 }
+
+@media only screen and (max-width: 875px){
+    #division{
+        width: 73%;
+    }
+    .sub{
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    #reverse{
+        flex-direction: column-reverse;
+    }
+
+    .sub > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .sub > img{
+        width: 100%;
+        min-width: 375px;
+    }
+  }
+  

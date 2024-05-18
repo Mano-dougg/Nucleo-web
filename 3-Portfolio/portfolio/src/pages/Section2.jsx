@@ -1,4 +1,5 @@
-import placeHolder from '../assets/images/ImagePlaceholder-light.svg'
+import placeHolder from '../assets/images/Jeep-Grand-Cherokee-Overland-White.png'
+import placeHolder2 from '../assets/images/Jeep-Grand-Cherokee-Overland-Black.png'
 import '../assets/styles/Section2.css'
 
 function Section2() {
@@ -17,13 +18,13 @@ function Section2() {
                       <button>Buttom Primary Light</button>
                   </div>
               </section>
-              <section className='sub'>
-              <div>
+              <section className='sub' id='reverse'>
+              <div >
                   <h4>Title</h4>
                       <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
                       <button>Buttom Primary Light</button>
                   </div>
-                  <img src={placeHolder} alt="Placeholder" />
+                  <img src={placeHolder2} alt="Placeholder 2" />
               </section>
           </div>
         </section>

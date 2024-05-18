@@ -55,6 +55,7 @@ h1{
   text-align: left;
   color: #0065FF;
   margin: 0px;
+  white-space: nowrap; 
 }
 
 .Center > p{
@@ -64,4 +65,36 @@ h1{
   font-weight: 400;
   line-height: 24.84px;
   text-align: left;
+}
+
+.menu-hamburguer{
+  display: none;
+}
+
+
+@media only screen and (max-width: 875px){
+
+  .Center {
+    display: flex;
+    align-items: center;
+    width: 73%;
+  }
+  h1{
+    text-align: center;
+    font-family: EB Garamond;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+  .check{
+    width: auto;
+  }
+  .menu-hamburguer{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+
 }

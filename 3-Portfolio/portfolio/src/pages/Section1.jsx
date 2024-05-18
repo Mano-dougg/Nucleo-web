@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import avatar from '../assets/images/Avatar.png'
 import check from '../assets/images/check-circle-solid-light.svg'
 import '../assets/styles/Section1.css'
