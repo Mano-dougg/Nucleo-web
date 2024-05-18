@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.textArea{
+    width: 40%;
+    height: 20rem;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.description{
+    width: 40%;
+    margin-top: 10px;
+}
+
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .textArea{
+        width: 70%;
+    }
+    .buttonContainer{
+        flex-direction: column;
+    }
+
+    .description{
+        width: 70%;
+    }
+    
+}
