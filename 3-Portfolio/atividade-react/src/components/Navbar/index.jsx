@@ -34,8 +34,8 @@ class Navbar extends Component {
         </nav>
         <div className="mobile-menu">
           <ul>
-            <li className="nav-item"><a href="#" className="nav-link">Section One</a></li>
-            <li className="nav-item"><a href="#" className="nav-link">Section Tree</a></li>
+            <li className="nav-item"><a href="#section1" className="nav-link">Section One</a></li>
+            <li className="nav-item"><a href="#section2" className="nav-link">Section Tree</a></li>
             <li className="nav-item"><a href="#" className="nav-link">Section</a></li>
           </ul>
           <div className="icons">

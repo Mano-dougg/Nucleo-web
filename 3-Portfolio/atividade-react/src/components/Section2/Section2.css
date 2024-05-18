@@ -41,14 +41,14 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin-top: 1px;
+    margin-top: 20px;
 }
 
 .conteudo2-3 {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    margin-top: 1px;
+    margin-top: 20px;
 }
 
 .conteudo2-colum1 {

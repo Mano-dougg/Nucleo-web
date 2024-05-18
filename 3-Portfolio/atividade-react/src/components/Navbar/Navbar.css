@@ -107,7 +107,8 @@
 }
 
 .mobile-menu.open {
-  height: 480vw;
+  height:60vw;
+  /*height: 480vw;*/
   max-height: 600vw;
 }
 

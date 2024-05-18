@@ -17,11 +17,12 @@ const Section1 = ({ darkMode }) => {
           <div className="hr"></div>
         </div>
         <div className="conteudo-p">
-          <p>I'm a Digital Product and UI Designer – creating digital experiences that are intuitive for real people and making complex processes easy to use.</p>
+        <p>Tenho aproximadamente dois anos de experiência em programação e, atualmente, sou estudante do curso de <span>Ciência e Tecnologia na Universidade Federal da Bahia (UFBA)</span>. Minha paixão pela tecnologia me motiva a buscar constantemente novos conhecimentos e a aprimorar minhas habilidades nessa área. Acredito firmemente que aqueles que não lutam pelo futuro que desejam devem aceitar o futuro que vier, então estou sempre em busca de desafios e oportunidades para aplicar meus conhecimentos teóricos e práticos.</p>
           <div className="espaco-p"></div>
-          <p>Right now, I'm Design Lead at <span>Holiday Extras</span>, covering all our digital platforms across a whole load of brands – leading a great team across <span>design</span>, UI engineering, accessibility and customer experience. I'm lucky to be part of a great team of designers, writers, engineers, PMs and data specialists – amongst others – testing, iterating and optimising our platforms and products.</p>
+          <p>Tenho experiência com <span>Java e Python</span>, duas linguagens amplamente utilizadas na indústria. Em Java, trabalhei com – <span> Spring Boot e Orientação a Objetos </span>.Em Python, meu foco tem sido no desenvolvimento de aplicações web usando o framework <span>Django</span>,um pouco de machine learn em projetos pessoais , e ultimamente estou me aperfeiçoando em Web: <span>Html, css e Js</span> juntamente com seus frameworks.
+</p>
           <div className="espaco-p"></div>
-          <p>I've got some <span>work on Dribbble</span>, some previous work at <span>Saga</span> and you can find me over on twitter and sometimes <span>on Medium too</span>. I also take <span>too many photos.</span></p>
+          <p>Além disso, tenho uma sólida presença no <span>GitHub e GitLab</span>, onde compartilho meus projetos.<span>No LinkedIn</span> mantenho um perfil ativo, compartilhando insights profissionais e meu progresso.</p>
           <div className="espaco-p"></div>
         </div>
         <div className="avaliable">
@@ -31,7 +32,7 @@ const Section1 = ({ darkMode }) => {
               alt=""
             />
 
-            <h2>Available for work and general design goodness – say hello</h2>
+          <h2>Estou disponível para oportunidades de trabalho nestas áreas – <span>entre em contato</span>. Diga alô!</h2>
           </div>
         </div>
       </div>
