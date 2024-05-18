@@ -286,3 +286,10 @@
     border-radius: 45px;
   }
 }
+
+.btn_p_light:hover {
+  background-color: var(--blue-500);
+  border: none;
+  color: var(--amber-50);
+  transition: color 0.4;
+}
