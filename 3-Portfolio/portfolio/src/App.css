@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+/* Light mode styling */
+
+.NavLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3.125em;
+}
+
+.Name {
+  font-family: Be Vietnam Pro;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.25em;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.NavLeftSections {
+  display: flex;
+  font-family: Be Vietnam Pro;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  gap: 1.25em;
+  color: #0065FF;
+}
+
+.NavLeftSectionsPhone {
+  display: flex;
+  font-family: Be Vietnam Pro;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: center;
+  gap: 0;
+  color: #0065FF;
+  flex-direction: column;
+}
+
+.IconsPhone {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.Icons {
+  display: flex;
+  gap: 1.875em;
+  align-items: center;
+}
+
+.Icons img {
+  transition: .1s ease;
+}
+
+.Icons img:hover {
+  transform: scale(110%);
+}
+
+.IconsPhone a img {
+  transition: .1s ease;
+}
+
+.IconsPhone a img:hover {
+  transition: .1s ease;
+  transform: scale(110%);
+}
+
+.NavRight {
+  display: flex;
+  flex-direction: row;
+  gap: 3.125em;
+  font-family: Be Vietnam Pro;
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.25em;
+  text-align: left;
+}
+
+.DarkMode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+
+.DarkModeButton {
+  width: 40px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 15px;
+  background-color: #E5E5E5;
+  border-color: #3C3B3A;
+  padding-left: 2px;
+  padding-right: 2px;
+  cursor: pointer;
+  display: flex;
+  transition: 0.4s ease;
+}
+
+.DarkModeButtonCircle {
+  width: 17.25px;
+  height: 17.29px;
+  display: block;
+  background: black;
+  border-radius: 100%;
+  margin: 0 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #3C3B3A;
+  transition: .4s ease;
+}
+
+.Nav {
+  position: fixed;
+  z-index: 2;
+  width: 90%;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 11.9px 6% 11.9px 6%;
+  justify-content: space-between;
+  opacity: 0px;
+  box-shadow: 0px 25px 65px 0px #00000026;
+  background-color: white;
+  transition: .4s ease;
+}
+
+.Profile {
+  width: 100px;
+  transition: .4s ease;
+}
+.Hello {
+  font-family: EB Garamond;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 70px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #0065FF;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  transition: .4s ease;
+}
+
+.Section {
+  width: 67%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.SectionWithTopBorder {
+  border-top: 1px solid #0065FF;
+  margin-top: 80px;
+  width: 67%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  transition: .4s ease;
+}
+
+.HrSmall {
+  display: flex;
+  width: 192px;
+  border-top: 1px solid #0065FF;
+  float: inline-start;
+  margin: 0;
+  transition: .4s ease;
+  height: 0px;
+  border-bottom: 0;
+}
+
+.Paragraph {
+  font-family: Be Vietnam Pro;
+  font-size: 1.0625em;
+  font-weight: 400;
+  line-height: 1.5625em;
+  text-align: left;
+  transition: .4s ease;
+}
+
+.Span {
+  color: #0065FF;
+  transition: .4s ease;
+}
+
+.Callout {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-family: Be Vietnam Pro;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  margin-top: 46px;
+  margin-left: 20px;;
+  padding: 20px;
+  width: fit-content;
+  border-radius: 10px;
+  transition: .4s ease;
+}
+
+.Callout p {
+  margin: 0;
+}
+
+.ArticleTitle {
+  font-family: Be Vietnam Pro;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  margin-top: 5px;
+  transition: .4s ease;
+}
+
+.Article {
+  display: flex;
+  flex-direction: row;
+  gap: 6.25%;
+  margin-top: 36px;
+  height: max-content;
+}
+
+.Article2 {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 6.25%;
+  margin-top: 36px;
+  height: max-content;
+}
+
+.ArticleImage {
+  border-radius: 10px;
+  width: 67%;
+  height: auto;
+  object-fit:cover;
+  transition: .4s ease;
+}
+
+.ArticleImageDark {
+  border-radius: 10px;
+  width: 67%;
+  height: auto;
+  object-fit: cover;
+  margin-left: -73.25%;
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s ease;
+}
+
+.Article2ImageDark {
+  border-radius: 10px;
+  width: 67%;
+  height: auto;
+  object-fit: cover;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s ease;
+}
+
+.ArticleButton {
+  top: 1405px;
+  left: 920px;
+  padding: 16px 30px 16px 30px;
+  gap: 10px;
+  border-radius: 44.5px;
+  border: 1px solid #0065FF;
+  background-color: white;
+  font-family: Be Vietnam Pro;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17.53px;
+  color: #0065FF;
+  margin-top: 11px;
+  transition: .4s ease;
+  cursor: pointer;
+}
+
+.ArticleButton:hover {
+  background-color: #dbdcf6;
+}
+
+.Main {
+  margin-top: 82px;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+.Body {
+  background-color: #F8F9FA;
+  height: inherit;
+  position: relative;
+}
+
+.MenuContent {
+  z-index: 1;
+  position: absolute;
+  top: 72px;
+  left: -100%;
+  width: 100%;
+  height: 0;
+  background-color: #F8F9FA;
+  transition: .4s ease;
+  display: none;
+}
+
+.MenuContent.active {
+  z-index: 1;
+  left: 0;
+  position: absolute;
+  display: none;
+}
+
+.Menu {
+  z-index: 2;
+  height: 30px;
+  width: 30px;
+  margin-left: 6.7%;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  display: none;
+}
+
+.Menu span {
+  height: 5px;
+  width: 100%;
+  background-color: #0065FF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .4s ease;
+}
+
+.Menu span:nth-child(1) {
+  top: 25%
+}
+
+.Menu span:nth-child(3) {
+  top: 75%
+}
+
+.Menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.Menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.Menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Dark Mode */
+.Relativator {
+  position: relative;
+}
+
+.ProfileDark {
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: .4s ease;
+  visibility: hidden;
+}
+
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .ProfileDark {
+  visibility: visible;
+  opacity: 1;
+  transition: .4s ease;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .Profile {
+  transition: .4s ease;
+  opacity: 0;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .Paragraph {
+  transition: .4s ease;
+  color: #FAF4E6;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main {
+  background-color: #222222;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .Hello {
+  transition: .4s ease;
+  color: #FAF4E6;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .HrSmall {
+  border-top: 1px solid #FAF4E6;
+  transition: .4s ease;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .SectionWithTopBorder {
+  transition: .4s ease;
+  border-top: 1px solid #FAF4E6;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .Span {
+  color: #FAF4E6;
+  text-decoration: underline;
+  transition: .4s ease;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .Callout {
+  color: #FAF4E6;
+  background-color: #3C3B3A;
+  transition: .4s ease;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .ArticleTitle {
+  transition: .4s ease;
+  color: #FAF4E6;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .ArticleButton {
+  transition: .4s ease;
+  background-color: #3C3B3A;
+  border-color: #FAF4E6;
+  color: #FAF4E6
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .ArticleButton:hover {
+  background-color:#525252
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .ArticleImage {
+  visibility: hidden;
+  transition: .4s ease;
+  opacity: 0;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .ArticleImageDark {
+  visibility: visible;
+  transition: .4s ease;
+  opacity: 1;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .Article2ImageDark {
+  display: flex;
+  visibility: visible;
+  transition: .4s ease;
+  opacity: 1;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .MenuContent {
+  background-color: #222222;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .MenuContent p {
+  color: #FAF4E6;
+  ;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .Menu span {
+  background-color: #FAF4E6;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .Main .Callout img {
+  content:url(images/check-dark.svg)
+}
+
+.Nav:has(.DarkModeButton.focus) {
+  background-color: #3C3B3A;
+  color: #FAF4E6;
+}
+
+.Nav:has(.DarkModeButton.focus) .NavLeftSections {
+  color: #FAF4E6;
+}
+
+
+.Nav:has(.DarkModeButton.focus) a:nth-child(1) img {
+  content:url(./images/twitter-dark.svg);
+  width: 22px;
+  height: 22px;
+  align-self: center;
+
+}
+
+.Nav:has(.DarkModeButton.focus) a:nth-child(2) img {
+  content:url(./images/figma-dark.svg);
+  width: 13px;
+  height: 18px;
+  align-self: center;
+
+}
+
+.Nav:has(.DarkModeButton.focus) a:nth-child(3) img {
+  content:url(./images/instagram-dark.svg);
+  width: 16px;
+  height: 18px;
+  align-self: center;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .MenuContent .IconsPhone a:nth-child(1) img {
+  content:url(./images/twitter-dark.svg);
+  width: 22px;
+  height: 22px;
+  align-self: center;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .MenuContent .IconsPhone a:nth-child(1)img:hover  {
+  transform:scale(105%);
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .MenuContent .IconsPhone a:nth-child(2) img {
+  content:url(./images/figma-dark.svg);
+  width: 13px;
+  height: 18px;
+  align-self: center;
+}
+
+.Nav:has(.DarkModeButton.focus) ~ .MenuContent .IconsPhone a:nth-child(3) img {
+  content:url(./images/instagram-dark.svg);
+  width: 16px;
+  height: 18px;
+  align-self: center;
+}
+
+.DarkModeButton.focus {
+  background-color: white;
+}
+
+.DarkModeButton.focus .DarkModeButtonCircle {
+  transform: translate(23px);
+}
+
+/* Responsiveness */
+
+@media (max-width: 780px){
+  .MenuContent {
+    height: 95%;
+    display: flex;
+    padding-top: 80px
+  }
+
+  .MenuContent.active {
+    display: block;
+  }
+  .NavLeftSections {
+    display: none;
+    flex-direction: column;
+  }
+
+  .Nav {
+    padding: 6.9px 6% 6.9px 6%;
+  }
+
+  .Icons {
+    display: none;
+    justify-content: space-between;
+    transition: all 1s ease-in-out;
+  }
+
+  .Profile {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ProfileDark {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .ArticleTitle {
+    text-align: center;
+  }
+
+  .SectionWithTopBorder h2 {
+    text-align: center;
+  }
+
+  .Article {
+    flex-direction: column;
+  }
+
+  .Article2 {
+    flex-direction: column;
+    margin-top: 25px;
+  }
+
+  .ArticleImage {
+    width: 100%;
+    margin-bottom: 17px;
+  }
+
+  .ArticleImageDark {
+    margin-left: 0;
+    width: 100%;
+    margin-top: -60.5%;
+    margin-bottom: 17px;
+  }
+
+  .ArticleButton {
+    width: 100%;
+  }
+
+  .Section {
+    width: 83%;
+  }
+
+  .SectionWithTopBorder {
+    padding-top: 5.08px;
+    margin-top: 50px;
+    width: 83%;
+  }
+
+  .HrSmall {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 62%;
+  }
+
+  .Hello {
+    font-family: EB Garamond;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    text-align: center;    
+  }
+  .Menu {
+    display: block;
+  }
+
+  .Main {
+    margin-top: 0;
+  }
+
+  .Nav {
+    position: relative;
+  }
+}
