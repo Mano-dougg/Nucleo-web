@@ -1,0 +1,15 @@
+.header{
+  border: 1px solid red;
+}
+
+.content{
+  border: 1px solid blue;
+}
+
+h1.black {
+  color:black
+}
+
+h1.blue {
+  color:blue
+}
