@@ -1,0 +1,25 @@
+.hero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--background-color);
+  color: var(--special-text-color);
+  padding: 80px 33.33333337vw;
+  &.mobile {
+    align-items: center;
+    text-align: center;
+  }
+  h1 {
+    font-size: 70px;
+  }
+  hr {
+    height: 1px;
+    width: 192px;
+    background-color: var(--special-text-color);
+  }
+  img {
+    height: 100px;
+    width: 100px;
+    filter: drop-shadow(var(--box-shadow));
+  }
+}

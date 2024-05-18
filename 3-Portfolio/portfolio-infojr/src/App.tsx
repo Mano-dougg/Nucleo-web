@@ -1,3 +1,4 @@
+import Hero from "./components/hero/index.tsx";
 import NavBar from "./components/navBar/index.tsx";
 import ResponsiveContext from "./context/ResponsiveContext.ts";
 import ThemeContext from "./context/ThemeContext.ts";
@@ -10,8 +11,8 @@ export default function App() {
   const toggleTheme = () => {
     setTheme(!isDarkThemed);
   }
-  const toggleClassName = (darkTheme: boolean) => darkTheme ? "dark" : ""
-  const darkClassName = toggleClassName(isDarkThemed);
+  const toggleDarkClass = () => isDarkThemed ? "dark" : ""
+  const darkClassName = toggleDarkClass();
 
   const handleMediaQueryChange = (matches: boolean) => {
     // matches will be true or false based on the value for the media query
@@ -22,11 +23,14 @@ export default function App() {
     undefined,
     handleMediaQueryChange
   )
+  const toggleMobileClass = () => isMobile ? "mobile" : ""
+  const mobileClassName = toggleMobileClass();
 
   return (
     <ThemeContext.Provider value={{ isDarkThemed, toggleTheme, darkClassName }}>
-      <ResponsiveContext.Provider value={{ isMobile }}>
+      <ResponsiveContext.Provider value={{ isMobile, mobileClassName }}>
         <NavBar />
+        <Hero />
       </ResponsiveContext.Provider>
     </ThemeContext.Provider>
   )

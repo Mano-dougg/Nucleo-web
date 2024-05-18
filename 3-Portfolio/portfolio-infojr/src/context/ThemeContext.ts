@@ -3,7 +3,7 @@ import { createContext } from "react";
 type ThemeContextType = {
   isDarkThemed: boolean;
   toggleTheme: () => void;
-  darkClassName?: "dark" | "";
+  darkClassName: "dark" | "";
 };
 
 const ThemeContext = createContext({} as ThemeContextType);

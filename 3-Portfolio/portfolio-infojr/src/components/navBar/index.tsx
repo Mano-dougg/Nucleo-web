@@ -33,7 +33,7 @@ const NavBar: React.FC = () => {
     <div>
       <nav className={`${darkClassName}`}>
         <div className="left-aligned">
-          <div id="nav-brand"><span className="be-vietnam-pro-bold">Kevin Bennett</span></div>
+          <div id="nav-brand"><span className="be-vietnam-pro-bold">Fernando Costa</span></div>
           {!isMobile && (
             <ul className="nav-links be-vietnam-pro-regular">
               <NavLinks />
