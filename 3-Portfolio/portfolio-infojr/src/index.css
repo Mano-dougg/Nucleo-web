@@ -16,8 +16,11 @@
   --cta-background: var(--dark-fill);
 }
 
-.dark p a {
-  text-decoration-line: underline;
+p a {
+  color: var(--special-text-color);
+  &.dark {
+    text-decoration-line: underline !important;
+  }
 }
 
 .be-vietnam-pro-regular {
