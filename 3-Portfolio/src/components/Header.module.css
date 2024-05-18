@@ -23,6 +23,13 @@
   gap: 50px;
 }
 
+.nav_links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  color: var(--blue-600);
+}
+
 .navbar_right {
   display: flex;
   align-items: center;
@@ -30,21 +37,14 @@
   gap: 50px;
 }
 
-.nav_links {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-}
-
-
 .social_links {
   display: flex;
-  gap: 30px
+  gap: 30px;
+  color: var(--blue-600);
 }
 
-.n
-
 .theme_toggle {
+  display: none;
   font-family: 'Be Vietnam', sans-serif;
   font-weight: 400;
 }
