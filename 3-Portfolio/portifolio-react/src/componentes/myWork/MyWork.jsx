@@ -1,11 +1,10 @@
 import './styles.css';
 import placeholder from '../../assets-light-theme/placeholder.png'
-import placeholderBtn from '../../assets-light-theme/placeholderBtn.png'
 
-function MyWork() {
+function MyWork({ isMenuActive }) {
 
     return (
-        <section className='my-work'>
+        <section className={`my-work ${isMenuActive ? 'hidden' : ''}`}>
             <div className='line-wide'></div>
 
             <section id='section2'>

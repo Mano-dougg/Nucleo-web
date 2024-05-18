@@ -2,10 +2,10 @@ import './styles.css';
 import avatar from '../../assets-light-theme/Avatar.png';
 import checkCircle  from '../../assets-light-theme/check-circle.png'
 
-function AboutMe() {
+function AboutMe({ isMenuActive }) {
 
     return (
-        <section className='section1'>
+        <section className={`section1 ${isMenuActive ? 'hidden' : ''}`}>
 
             <img className="avatar" src={avatar}/>
             <h1> Hello. <br/>My name is Beatriz. </h1>

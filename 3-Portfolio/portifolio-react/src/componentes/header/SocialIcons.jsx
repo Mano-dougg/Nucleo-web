@@ -9,14 +9,11 @@ import instagramDark from '../../assets-dark-theme/instagram-icon.png';
 function SocialIcons (){
     const isNightMode=false;
     return (
-        <nav className="social-icons">
-                <ul>
-                    <li><img src={isNightMode ? twitterDark : twitterLight}/></li>
-                    <li><img src={isNightMode ? figmaDark : figmaLight}/></li>
-                    <li><img src={isNightMode ? instagramDark : instagramLight}/></li>
-                        
-                </ul>
-        </nav>
+            <ul>
+                <li><img src={isNightMode ? twitterDark : twitterLight}/></li>
+                <li><img src={isNightMode ? figmaDark : figmaLight}/></li>
+                <li><img src={isNightMode ? instagramDark : instagramLight}/></li>
+            </ul>
     );
 }
 

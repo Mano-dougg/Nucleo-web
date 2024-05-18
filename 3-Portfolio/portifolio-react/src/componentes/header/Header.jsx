@@ -14,14 +14,17 @@ function Header() {
 
                 <h1> Beatriz Espinheira </h1>
 
+                <nav className='nav-links'>
                 <NavLinks></NavLinks>
-
+                </nav>
             </div>
 
             <div>
 
+            <nav className="social-icons">
                 <SocialIcons></SocialIcons>
-
+            </nav>
+            
                 <section>
                     <p>Dark mode: </p>
                     <ThemeToggle></ThemeToggle>

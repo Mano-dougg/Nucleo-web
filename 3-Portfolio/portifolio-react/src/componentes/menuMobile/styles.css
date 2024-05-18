@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+.menu-mobile{
+    display: none;
+}
+
+.menu-icon{
+    width: 30px;
+    height: 30px;
+    margin-top: 4vh;
+    margin-left: 4vh;
+}
+
+@media (max-width: 830px) {
+    .menu-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons-mobile ul{
+        display: flex;
+        flex-direction: row;
+        gap:30vw;
+        margin-top: 8vh;
+    }
+
+    .social-icons-mobile ul img {
+        height:3vh;
+        width: auto;
+    }
+
+    .nav-links-mobile ul{
+        margin-top: 8vh;
+        display: flex;
+        flex-direction: column;
+        gap:4.5vh;
+    }
+
+    .nav-links-mobile a{
+
+        font-family: 'Be Vietnam Pro';
+        font-style: normal;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 2.1vh;
+
+        color: #0065FF;
+
+    }
+
+    .menu-mobile img{
+        align-self: flex-start;
+    }
+ }
+ 
