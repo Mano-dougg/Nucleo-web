@@ -5,7 +5,7 @@ function Content({ isOpen }) {
       <div id="content" className={isOpen ? 'open' : ''}>
         <section id="section-two">
             <div id="profile-intro">
-                <img id="avatar" src="images/kevin.png" alt="Kevin's avatar" />
+                <img id="avatar" src="images/elis.png" alt="Elis' avatar" />
                 <h1 id="introduction">Hello. <br />My name is Elis.</h1>
                 <span id="first-separation" className="separation"></span>
             </div>
