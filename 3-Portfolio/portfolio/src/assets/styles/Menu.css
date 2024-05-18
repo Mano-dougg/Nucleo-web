@@ -68,6 +68,10 @@ p{
     white-space: nowrap; 
 }
 
+#linhaUnica{
+    white-space: nowrap; 
+}
+
 .images {
     display: flex;
     align-items: center;
@@ -75,7 +79,8 @@ p{
 }
 
 img {
-    max-width: 100%; /* Garante que as imagens não causem overflow */
-    height: auto; /* Mantém a proporção das imagens */
+    height: auto;
     margin-right: 1em;
 }
+
+

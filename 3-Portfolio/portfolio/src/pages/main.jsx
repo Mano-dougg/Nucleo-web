@@ -8,7 +8,7 @@ import '../assets/styles/index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Menu />
-    <Section1 />
+    <Section1/>
     <Section2 />
   </React.StrictMode>,
 )

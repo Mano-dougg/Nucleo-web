@@ -31,7 +31,7 @@ function Menu() {
                 <a href="#"><img src={twitterLight} alt="Twitter Icone Light" /></a>
                 <a href="#"><img src={figmaLight} alt="Figma Icone Light" /></a>
                 <a href="#"><img src={instagramLight} alt="Instagram Icone Light" /></a>
-                <p>Dark mode:</p>
+                <p id='linhaUnica'>Dark mode:</p>
                 <a href="#"><img src={mode === 'light' ? toggleOff : toggleOn} alt="Botão Toggle" onClick={toggleMode}/></a>
             </div>
         </nav>

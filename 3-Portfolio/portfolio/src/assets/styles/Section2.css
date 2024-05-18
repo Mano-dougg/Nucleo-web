@@ -1,0 +1,11 @@
+#division{
+    width: 100%;
+}
+
+.sub{
+    display: flex;
+}
+
+.sub > img{
+    width: 70%;
+}

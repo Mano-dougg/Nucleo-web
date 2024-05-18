@@ -1,3 +1,40 @@
-p{
-    white-space: wrap; 
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.Center{
+  width: 63%;
+}
+
+p {
+  white-space: normal; 
+  word-wrap: break-word; 
+}
+
+.check{
+  display: flex;
+  flex-direction: row;
+  background: #F8F9FA;
+}
+
+strong{
+  color:  #0065ff;
+}
+
+#Avatar{
+  width: 100px;
+  height: 100px;
+}
+
+hr{
+  margin-left: 0;
+  width: 192px;
+  height: 1px;
+  gap: 0px;
+  opacity: 0px;
+  border: none;
+  border-top: 1px solid #0065FF;
 }
