@@ -18,6 +18,7 @@
 .placeholder-img {
     max-width: 76vh;
     height: auto;
+    border-radius: 5vh;
 }
 
 #section2{

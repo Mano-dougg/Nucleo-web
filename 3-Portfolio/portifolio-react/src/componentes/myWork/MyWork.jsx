@@ -1,5 +1,6 @@
 import './styles.css';
 import placeholder from '../../assets-light-theme/placeholder.png'
+import placeholder2 from '../../assets-light-theme/placeholder2.png'
 
 function MyWork({ isMenuActive }) {
 
@@ -15,7 +16,7 @@ function MyWork({ isMenuActive }) {
 
             <section id='section3'>
 
-                <img className='placeholder-img' src={placeholder}/>
+                <img className='placeholder-img' src={placeholder2}/>
 
                 <div className='info'>
                     <h1>Seção 3</h1>
