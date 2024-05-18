@@ -7,7 +7,7 @@ function Header({ darkMode, toggleDarkMode }) {
       <header>
         <nav id="nav-bar">
           <div id="left-aligned">
-            <h4 id="logo">Kevin Bennet</h4>
+            <h4 id="logo">Elis Oliveira</h4>
             <NavLinks />
           </div>
           <div id="right-aligned">
