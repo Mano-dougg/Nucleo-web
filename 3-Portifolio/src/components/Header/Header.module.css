@@ -1,3 +1,18 @@
+/* ANIMAÇÕES */
+@keyframes animationTextBox {
+    from {transform: translateX(-1200px);}
+    to {transform: translateX(0px);}
+}
+
+@keyframes animationTextBox2 {
+    from {transform: translateY(-1200px);}
+    to {transform: translateY(0px);}
+}
+
+@keyframes animationHeader {
+    from {width: 0%;}
+    to {width: 100%;}
+}
 
 header{
     height: 82px;
@@ -12,16 +27,44 @@ header{
     background-color: var(--colorBgHeader);
     display: flex;
     align-items: center;
+    animation-name: animationHeader;
+    animation-duration: 2s;
 }
 
-.articleHeader{
+.articleHeaderLeft{
     display: flex;
     align-items: center;
     gap: 50px;
+    animation-name: animationTextBox;
+    animation-duration: 2s;
+}
+
+.articleHeaderRight{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    animation-name: animationTextBox2;
+    animation-duration: 2s;
 }
 
 .h4SemPaddingBottom{
     padding-bottom: 0px;
+    position: relative;
+}
+
+.h4SemPaddingBottom::after{
+    content: "";
+    width: 0%;
+    height: 2.5px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.8s ease;
+}
+
+.h4SemPaddingBottom:hover::after{
+    width: 100%;
 }
 
 .navDesktop ul{
@@ -30,11 +73,27 @@ header{
     gap: 20px;
 }
 
-.navDesktop a{
+nav a{
     color: #0065FF;
     text-decoration: none;
     font-size: 14px;
     font-family: "Be Vietnam";
+    position: relative;
+}
+
+nav a::after{
+    content: "";
+    width: 0%;
+    height: 1.5px;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.8s ease;
+}
+
+.navDesktop a:hover::after {
+    width: 100%;
 }
 
 .linkTitulo{
@@ -49,17 +108,37 @@ header{
 .IconTwitter{
     width: 22px;
     height: 22px;
+    transition: all 0.5s ease;
+}
+
+.IconTwitter:hover{
+    width: 25px;
+    height: 23.5px;
 }
 
 .IconFigma{
-    width: 13px;
+    width: 14px;
     height: 18px;
+    transition: all 0.5s ease;
 }
+
+.IconFigma:hover{
+    width: 16px;
+    height: 20px;
+}
+
 
 .IconInsta{
     width: 16px;
     height: 18px;
+    transition: all 0.5s ease;
 }
+
+.IconInsta:hover{
+    width: 18px;
+    height: 20px;
+}
+
 
 .darkMode{
     position: absolute;
@@ -67,6 +146,7 @@ header{
     top: 30px;
     right: 6%;
     gap: 7px;
+   
 }
 
 /* BOTAO DARK MODE */
@@ -93,6 +173,12 @@ header{
     border-radius: 50%;
     width: 17.25px;
     height: 17.29px;
+    transition: all 0.5s ease-in-out;
+}
+
+.toggle:checked ~ .switch .slider{
+    transition: all 0.5 ease;
+    transform: translateX(20px);
 }
 
 
@@ -117,7 +203,7 @@ button{
 
 .menuMobile{
     position: absolute;
-    background-color: #f4f5f5;
+    background-color: var(--colorBG);
     top: 97px;
     width: 350px;
 }

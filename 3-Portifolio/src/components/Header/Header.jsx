@@ -22,7 +22,7 @@ function Header(){
     <div className={styles.Header}>
     <header>
         {/* MENU DESKTOP */}
-        <article className={styles.articleHeader}>
+        <article className={styles.articleHeaderLeft}>
             <h4 className={styles.h4SemPaddingBottom}> <a className={styles.linkTitulo} href="#Section1">Douglas Aleixo</a></h4>
             <nav className={styles.navDesktop}>
                 <ul>
@@ -32,7 +32,7 @@ function Header(){
                 </ul>
             </nav>
         </article> 
-        <article className={styles.articleHeader}>
+        <article className={styles.articleHeaderRight}>
             <div className={styles.iconsHeaderDesktop}>
                 <a href="https://twitter.com/home?lang=pt"><img className={styles.IconTwitter} src={twitterIcon} alt="Logo do twitter" /></a>
                 <a href="https://www.figma.com/files/recents-and-sharing/recently-viewed?fuid=1366957192187725218"><img className={styles.IconFigma} src={figmaIcon} alt="Logo do figma" /> </a> 

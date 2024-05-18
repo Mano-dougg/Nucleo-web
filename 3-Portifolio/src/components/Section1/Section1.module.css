@@ -1,3 +1,8 @@
+/* ANIMAÇÕES */
+@keyframes animationTextBox {
+    from {transform: translateX(-1200px);}
+    to {transform: translateX(0px);}
+}
 
 .Section1{
     margin-top: 50px;
@@ -13,6 +18,8 @@
 .articleSection1Low{
     display: flex;
     flex-direction: column;
+    animation-name: animationTextBox;
+    animation-duration: 2s;
 }
 
 .imgAvatar{

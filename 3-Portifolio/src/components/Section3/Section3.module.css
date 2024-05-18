@@ -19,7 +19,13 @@
     align-items: center;
     border: 1px solid var(--colorH);
     border-radius: 44.5px;
-    
+    transition: all 0.5s ease;
+}
+
+.BtnPrimarylight:hover{
+    background-color: rgba(135, 207, 235, 0.261);
+    height: 55px;
+    cursor: pointer;
 }
 
 h5{
