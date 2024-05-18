@@ -1,4 +1,4 @@
-import Hero from "./components/hero/index.tsx";
+import About from "./components/about/index.tsx";
 import NavBar from "./components/navBar/index.tsx";
 import ResponsiveContext from "./context/ResponsiveContext.ts";
 import ThemeContext from "./context/ThemeContext.ts";
@@ -30,7 +30,7 @@ export default function App() {
     <ThemeContext.Provider value={{ isDarkThemed, toggleTheme, darkClassName }}>
       <ResponsiveContext.Provider value={{ isMobile, mobileClassName }}>
         <NavBar />
-        <Hero />
+        <About />
       </ResponsiveContext.Provider>
     </ThemeContext.Provider>
   )

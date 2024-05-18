@@ -11,8 +11,7 @@
 .dark {
   --text-color: #FAF4E6;
   --special-text-color: var(--text-color);
-  --background-color: #222222;
-  --dark-fill: #3C3B3A;
+  --background-color: var(--dark-background);
   --cta-background: var(--dark-fill);
 }
 
