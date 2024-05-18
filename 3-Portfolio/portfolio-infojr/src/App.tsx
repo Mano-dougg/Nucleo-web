@@ -10,6 +10,8 @@ export default function App() {
   const toggleTheme = () => {
     setTheme(!isDarkThemed);
   }
+  const toggleClassName = (darkTheme: boolean) => darkTheme ? "dark" : ""
+  const darkClassName = toggleClassName(isDarkThemed);
 
   const handleMediaQueryChange = (matches: boolean) => {
     // matches will be true or false based on the value for the media query
@@ -22,7 +24,7 @@ export default function App() {
   )
 
   return (
-    <ThemeContext.Provider value={{ isDarkThemed, toggleTheme }}>
+    <ThemeContext.Provider value={{ isDarkThemed, toggleTheme, darkClassName }}>
       <ResponsiveContext.Provider value={{ isMobile }}>
         <NavBar />
       </ResponsiveContext.Provider>
