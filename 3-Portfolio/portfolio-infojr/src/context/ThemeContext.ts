@@ -7,5 +7,4 @@ type ThemeContextType = {
 
 const ThemeContext = createContext({} as ThemeContextType);
 
-
 export default ThemeContext;
