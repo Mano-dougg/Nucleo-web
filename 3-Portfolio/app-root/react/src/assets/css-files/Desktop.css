@@ -22,8 +22,6 @@ body {
 
 .nav {
     display: flex;
-    position: sticky;
-    top:0;
     align-self: top;
     flex-flow: row ;
     justify-items: center;
