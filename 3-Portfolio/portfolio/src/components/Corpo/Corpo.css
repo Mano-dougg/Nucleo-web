@@ -1,0 +1,28 @@
+.corpo{
+    /* margin: 2%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.itens{
+    color: #0065FF;
+    width: 962px;
+    height: 783px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: red; */
+}
+
+.linha-1{
+    background-color: #0065FF;
+    width: 192px;
+    height: 1px;
+}
+
+.itens > img{
+    width: 100px;
+    height: 100px;
+}

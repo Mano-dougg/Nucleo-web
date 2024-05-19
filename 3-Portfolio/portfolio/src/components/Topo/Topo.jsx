@@ -1,13 +1,13 @@
 import './Topo.css';
-import twitter from './imagens/twitter.png';
-import figma from './imagens/figma.png';
-import insta from './imagens/insta.png';
+import twitter from '../imagens/twitter.png';
+import figma from '../imagens/figma.png';
+import insta from '../imagens/insta.png';
 
 function Topo(){
 
     return (
 
-        <div className='corpo'>
+        <div className='conteudo'>
             <div className="nomes">
                 <h4>João Araújo</h4>
                 <div className="links">
@@ -26,7 +26,10 @@ function Topo(){
                     <img src={insta} alt="Insta"/>
                 </div>
                 <div className="seletor">
-                    <div className="indicador"></div>
+                    <p>Dark mode:</p>
+                    <div className="indicador">
+                        <div className='botao'></div>
+                    </div>
                 </div>
             </div>
         </div>
