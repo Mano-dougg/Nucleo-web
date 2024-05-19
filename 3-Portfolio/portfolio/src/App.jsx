@@ -1,20 +1,17 @@
-import { useState } from 'react'
-import twitter from '/twitter-icon.svg'
-import figma from '/figma-icon.svg'
-import instagram from '/instagram-icon.svg'
-import toggle from '/ToggleOff-light.svg'
-import avatar from '/pink.png'
-import check from '/check.svg'
-import imagem1 from '/imagem1.jpg'
-import imagem2 from '/imagem2.jpg'
-import './App.css'
-
-
-
+import { useState } from 'react';
+import Menu from './Menu.jsx';
+import twitter from '/twitter-icon.svg';
+import figma from '/figma-icon.svg';
+import instagram from '/instagram-icon.svg';
+import toggle from '/ToggleOff-light.svg';
+import avatar from '/pink.png';
+import check from '/check.svg';
+import imagem1 from '/imagem1.jpg';
+import imagem2 from '/imagem2.jpg';
+import menuburguer from '/menuburguer.svg';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -27,30 +24,34 @@ function App() {
         <div className="cabeçalho">
           <div className="brand">Beatriz Rosa</div>
           <nav className="sections">
-            <ul id="menu" className={menuOpen ? 'active' : ''}>
-              <li><a href="">Section 1</a></li>
-              <li><a href="">Section 2</a></li>
-              <li><a href="">Section 3</a></li>
+            <ul>
+              <li><a href="#section1">Section 1</a></li>
+              <li><a href="#section2">Section 2</a></li>
+              <li><a href="#section3">Section 3</a></li>
             </ul>
           </nav>
         </div>
         <div className="cabeçalho2">
           <nav className="socialmedia">
-            <ul id="menu" className={menuOpen ? 'active' : ''}>
-              <li><img src={twitter}/></li>
-              <li><img src={figma}/></li>
-              <li><img src={instagram}/></li>  
+            <ul>
+              <li><img src={twitter} alt="Twitter" /></li>
+              <li><img src={figma} alt="Figma" /></li>
+              <li><img src={instagram} alt="Instagram" /></li>
             </ul>
           </nav>
           <div className="toggle">
-            <div className="texto1">Dark mood</div>
-            <button className="botao1"><img src={toggle}/></button>
+            <div className="texto1">Dark mode</div>
+            <button className="botao1" onClick={toggleMenu}>
+              <img src={toggle} alt="Toggle" />
+            </button>
           </div>
         </div>
       </header>
 
+      <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
+
       <main>
-      <button id="botaomenu" onClick={toggleMenu} >menu</button>
+        <button id="botaomenu" onClick={toggleMenu}><img src={menuburguer} alt="" /></button>
         <div className="section1">
           <img id="avatar" src={avatar} alt="Avatar" />
           <div className="h1">
@@ -63,7 +64,7 @@ function App() {
           <p>I've got some <span className="highlight">work on Dribbble</span>, some previous work at <span className="highlight">Saga</span> and you can find me over on twitter and sometimes <span className="highlight">on Medium too</span>. I also take <span className="highlight">too many photos</span>.
           </p>
           <div className="callout">
-            <div className="check"><img src={check} alt="" /></div>
+            <div className="check"><img src={check} alt="Check" /></div>
             <div className="texto2">Available for work and general design goodness – <span className="highlight">say hello</span></div>
           </div>
         </div>
@@ -73,11 +74,11 @@ function App() {
         <div className="section2">
           <h2>Title</h2>
           <div className="texto3">
-            Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section.
+            Line of copy in here to describe this section. Line of copy in here to describe this section. Line of copy in here to describe this section. Line of copy in here to describe this section.
           </div>
 
           <div className="bloco1">
-            <img id="imagem1" src={imagem1}  alt="" />
+            <img id="imagem1" src={imagem1} alt="Imagem 1" />
             <div className="bloquinho1">
               <h4>Title</h4>
               <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
@@ -87,16 +88,16 @@ function App() {
 
           <div className="bloco2">
             <div className="bloquinho2">
-            <h4>Title</h4>
-            <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
-            <button className="botao2">Button Primary Light</button>
+              <h4>Title</h4>
+              <p>Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
+              <button className="botao2">Button Primary Light</button>
             </div>
-            <img id="imagem2" src={imagem2} alt="" />
+            <img id="imagem2" src={imagem2} alt="Imagem 2" />
           </div>
         </div>
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

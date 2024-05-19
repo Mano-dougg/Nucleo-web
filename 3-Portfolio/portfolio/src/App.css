@@ -387,6 +387,16 @@ main{
 
 }
 
+Menu{
+  display:none;
+}
+
+.sec{
+  display:none;
+}
+
+
+
 /* MOBILE */
 
 @media(max-width:400px){
@@ -404,12 +414,12 @@ main{
     gap:250px;
     padding:2%;
     margin:0%;
+    justify-content: space-around;
     }
 
 
   main{
-    width:100%;
-    
+    width:100%; 
   }
 
 
@@ -421,16 +431,82 @@ main{
   }
 
 
+
   .sections ul,.socialmedia ul {
     display: none;
   }
 
-  .sections ul.active,.socialmedia ul.active {
-    display: block;
-    width: 100%;
+  .sec.active{
+    display:flex;
     background: rgba(255, 255, 255, 1);
+    width:100%;
+    height: 100vh;
+    margin-top: 10%;
+    text-decoration: none;
+    list-style: none;
+    flex-direction: column;
+
 
   }
+
+  .sec .close-menu {
+    display: block;
+    text-align: left;
+    padding:2%;
+    margin-left:5%;
+    margin-top: 10px;
+    text-decoration: none;
+    color: rgba(0, 101, 255, 1); 
+  }
+
+  .sec3{
+    display:flex;
+    justify-content: center;
+  }
+
+  .sec3 ul{
+    text-decoration:none;
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;  
+  }
+
+  .sec3 ul li a{
+    display:flex;
+    justify-content: space-between;
+    text-decoration:none;
+    color: rgba(0, 101, 255, 1);
+  }
+
+  .socialmedia3 ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:40%;
+    margin-left:25%;
+    list-style:none;
+
+  }
+
+  
+  .section3 ul.active,.socialmedia ul.active {
+    display: flex;
+    align-items: center;
+  }
+
+
+  /* .socialmedia ul li.active{
+    display:flex;
+    flex-direction: row;
+    margin-top:5%;
+  } */
+
+  
+
+  
 
 
 
@@ -443,7 +519,7 @@ main{
     height: 100%; 
     padding:2%;
     white-space: nowrap;
-      
+    
   }
 
   #avatar{
