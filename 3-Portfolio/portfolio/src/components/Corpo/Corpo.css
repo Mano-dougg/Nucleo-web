@@ -7,22 +7,60 @@
 
 
 .itens{
-    color: #0065FF;
     width: 962px;
-    height: 783px;
+    height: 623px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* background-color: red; */
+    /* background-color: green; */
+}
+
+
+.itens > img{
+    margin-top: 2%;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.nome{
+    margin-top: -1%;
+    color: #0065FF;
+}
+
+.nome h1{
+    margin: 0px;
+}
+
+span{
+    color: #0065FF;
 }
 
 .linha-1{
+    margin-top: 2%;
     background-color: #0065FF;
     width: 192px;
     height: 1px;
 }
 
-.itens > img{
-    width: 100px;
-    height: 100px;
+.texto{
+    margin-top: 1%;
+}
+
+.work{
+    width: 462px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.work p{
+    margin: 0px;
+}
+
+.work > img{
+    width: 16px;
+    height: 16px;
 }

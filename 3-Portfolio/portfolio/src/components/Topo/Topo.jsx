@@ -11,9 +11,8 @@ function Topo(){
             <div className="nomes">
                 <h4>João Araújo</h4>
                 <div className="links">
-                    <p>Section two</p>
-                    <p>Section three</p>
-                    <p>Section four</p>
+                    <p>Sobre Mim</p>
+                    <p>Curiosidades</p>
                 </div>
             </div>
 

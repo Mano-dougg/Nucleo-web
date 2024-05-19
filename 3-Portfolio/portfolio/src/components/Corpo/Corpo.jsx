@@ -22,22 +22,21 @@ function Corpo(){
                          for real people and making complex processes easy to use.
                     </p>
 
-                    <p> Right now, I'm Design Lead at Holiday Extras, covering all our digital platforms across a 
-                    whole load of brands – leading a great team across design, UI engineering, accessibility 
+                    <p> Right now, I'm Design Lead at <span>Holiday Extras</span>, covering all our digital platforms across a 
+                    whole load of brands – leading a great team across <span>design</span>, UI engineering, accessibility 
                     and customer experience. I'm lucky to be part of a great team of designers, writers, engineers, 
                     PMs and data specialists – amongst others – testing, iterating and optimising our platforms and products.
                     </p>
 
-                    <p> I've got some work on Dribbble, some previous work at Saga and you can find me over on 
-                        twitter and sometimes on Medium too. I also take too many photos.
+                    <p> I've got some <span>work on Dribbble</span>, some previous work at <span>Saga</span> and you can find me over on 
+                        twitter and sometimes <span>on Medium too</span>. I also take <span>too many photos</span>.
                     </p>
                 </div>
 
 
                 <div className="work">
                     <img src={veri} alt="verificado"/>
-                    <p>Available for work and general design goodness – </p>
-                    <p>say hello</p>
+                    <p>Available for work and general design goodness – <span>say hello</span> </p>
                 </div>
 
             </div>
