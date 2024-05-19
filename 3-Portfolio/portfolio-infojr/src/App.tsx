@@ -4,7 +4,7 @@ import Projects from "./components/projects/index.tsx";
 import ResponsiveContext from "./context/ResponsiveContext.ts";
 import ThemeContext from "./context/ThemeContext.ts";
 import { useState } from "react";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 
 
 export default function App() {
@@ -12,24 +12,16 @@ export default function App() {
   const toggleTheme = () => {
     setTheme(!isDarkThemed);
   }
-  const toggleDarkClass = () => isDarkThemed ? "dark" : ""
-  const darkClassName = toggleDarkClass();
 
   const handleMediaQueryChange = (matches: boolean) => {
     // matches will be true or false based on the value for the media query
     matches ? !isMobile : undefined;
   }
-  const isMobile = useMediaQuery(
-    { maxWidth: 730 },
-    undefined,
-    handleMediaQueryChange
-  )
-  const toggleMobileClass = () => isMobile ? "mobile" : ""
-  const mobileClassName = toggleMobileClass();
+  const isMobile = useMediaQuery({ maxWidth: 730 }, undefined, handleMediaQueryChange);
 
   return (
-    <ThemeContext.Provider value={{ isDarkThemed, toggleTheme, darkClassName }}>
-      <ResponsiveContext.Provider value={{ isMobile, mobileClassName }}>
+    <ThemeContext.Provider value={{ isDarkThemed, toggleTheme, darkClassName: isDarkThemed ? "dark" : "" }}>
+      <ResponsiveContext.Provider value={{ isMobile, mobileClassName: isMobile ? "mobile" : "" }}>
         <NavBar />
         <About />
         <Projects />
