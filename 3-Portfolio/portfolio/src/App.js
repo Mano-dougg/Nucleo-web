@@ -16,18 +16,26 @@ function App() {
 
 .App, .menu{
   background-color: white;
+  transition: background-color .4s ease;
 }
 
 .big-color, .title, .colored{
     color: var(--blue);
+    transition: color .4s ease;
 }
 
 .fill{
     fill: var(--blue);
+    transition: fill .4s ease;
+}
+
+.hambutton-color{
+  background-color: var(--blue);
 }
 
 .break{
     background-color: var(--blue);
+    transition: background-color .4s ease;
 }
 
 .border{
@@ -44,18 +52,26 @@ function App() {
 .App, .menu{
     color: var(--dark);
     background-color: #222222;
+    transition: background-color .4s ease, color .4s ease;
 }
 
 .big-color, .title, .colored{
     color: var(--dark);
+    transition: color .4s ease;
 }
 
 .fill{
     fill: var(--dark);
+    transition: fill .4s ease;
+}
+
+.hambutton-color{
+  background-color: var(--dark);
 }
 
 .break{
     background-color: var(--dark);
+    transition: background-color .4s ease;
 }
 
 .border{
@@ -64,6 +80,7 @@ function App() {
 
 .backgrounder{
     background-color: #3C3B3A;
+    transition: background-color .4s ease;
 }`;
 
   const themeChanger = ()=>{

@@ -30,7 +30,6 @@ export default function Hamburguer(){
 
     const showMenu = ()=>{
         setShow(!show)
-        console.log(window.innerWidth)
     }
 
     return(
@@ -41,9 +40,9 @@ export default function Hamburguer(){
             }}
             `}</style>
             <button onClick={showMenu} className={show?"hambutton active show-mobile":"hambutton show-mobile"}>
-                <div className="hambutton__bar first break"></div>
-                <div className="hambutton__bar second break"></div>
-                <div className="hambutton__bar third break"></div>
+                <div className="hambutton__bar first hambutton-color"></div>
+                <div className="hambutton__bar second hambutton-color"></div>
+                <div className="hambutton__bar third hambutton-color"></div>
             </button>
             {show && (<Menu />)}
         </>
