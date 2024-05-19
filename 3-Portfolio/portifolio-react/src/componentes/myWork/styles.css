@@ -100,7 +100,7 @@ div .line-wide{
 
     box-sizing: border-box;
 
-    align-self: center;
+    align-self: flex-start;
     padding: 2vh 2vw;
     text-wrap: nowrap;
 
@@ -149,6 +149,7 @@ div .line-wide{
 
     .btn{
         width:50%;
+        align-self: center;
     }
 
 
