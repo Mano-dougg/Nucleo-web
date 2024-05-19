@@ -92,3 +92,31 @@
 }
 
 
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+
+    .conteudo{
+        justify-content: space-around;
+        align-items: center;
+        /* background-color: burlywood; */
+    }
+
+    .nomes{
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+
+    .links{
+        display: none;
+    }
+
+    .redes{
+        display: none;
+    }
+
+}
+
+

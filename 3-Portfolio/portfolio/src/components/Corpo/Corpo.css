@@ -155,11 +155,12 @@ span{
 
 
 /* Responsividade */
-/* 
+
 @media (max-width: 990px) {
     
     .itens{
         align-items: center;
+        margin-top: 25px;
         width: 481px;
         height: 311px;
     }
@@ -189,11 +190,24 @@ span{
         align-items: center;
     }
 
+    .texto-lateral-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .texto-lateral-1 h4{
         margin-top: 5%;
     }
 
+    .texto-lateral-2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .curio-2{
+        margin-top: 5%;
         flex-direction: column-reverse;
         align-items: center;
     }
@@ -208,14 +222,35 @@ span{
 
 @media (max-width: 600px) {
 
+    *{
+        /* background-color: red; */
+    }
+
     .itens{
         align-items: center;
         width: 310px;
         height: 311px;
     }
+
+    .work{
+        width: 310px;
+    }
+
+    .parte-2{
+        margin-top: 300px;
+        width: 310px; 
+    }
+
+    .linha-2{
+        width: 310px; 
+    }
+
+    .curiosity{
+        width: 310px; 
+    }
     
 }
- */
+
 
 
 
