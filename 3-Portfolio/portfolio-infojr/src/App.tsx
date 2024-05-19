@@ -1,5 +1,6 @@
 import About from "./components/about/index.tsx";
 import NavBar from "./components/navBar/index.tsx";
+import Projects from "./components/projects/index.tsx";
 import ResponsiveContext from "./context/ResponsiveContext.ts";
 import ThemeContext from "./context/ThemeContext.ts";
 import { useState } from "react";
@@ -31,6 +32,7 @@ export default function App() {
       <ResponsiveContext.Provider value={{ isMobile, mobileClassName }}>
         <NavBar />
         <About />
+        <Projects />
       </ResponsiveContext.Provider>
     </ThemeContext.Provider>
   )
