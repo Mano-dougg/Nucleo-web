@@ -1,6 +1,7 @@
 .corpo{
     /* margin: 2%; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -12,7 +13,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* background-color: green; */
 }
 
 
@@ -25,7 +25,7 @@
 
 .nome{
     margin-top: -1%;
-    color: #0065FF;
+    color: #00008B;
 }
 
 .nome h1{
@@ -33,12 +33,12 @@
 }
 
 span{
-    color: #0065FF;
+    color: #00008B;
 }
 
 .linha-1{
     margin-top: 2%;
-    background-color: #0065FF;
+    background-color: #00008B;
     width: 192px;
     height: 1px;
 }
@@ -63,4 +63,162 @@ span{
 .work > img{
     width: 16px;
     height: 16px;
+    color: #00008B;
 }
+
+
+
+/*Segunda parte do site*/
+
+
+.parte-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.linha-2{
+    margin-top: 1%;
+    width: 960px;
+    height: 1px;
+    background-color: #00008B;
+}
+
+.curiosity{
+    width: 960px;
+}
+
+.curio-1{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3%;
+}
+
+.curio-1 > img{
+    width: 320px;
+    height: 185px;
+    border-radius: 10px;
+}
+
+.texto-lateral-1 p{
+    width: 280px;
+    height: 90px;
+}
+
+.texto-lateral-1 h4{
+    margin-top: 0px;
+    color: #00008B;
+}
+
+
+.curio-2{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3%;
+}
+
+.curio-2 img{
+    width: 320px;
+    height: 185px;
+    border-radius: 10px;
+}
+
+.texto-lateral-2 p{
+    width: 280px;
+    height: 90px;
+}
+
+.texto-lateral-2 h4{
+    color: #00008B;
+}
+
+
+.botao-1{
+    margin-top: -2%;
+    width: 180px;
+    height: 50px;
+    border: 0px;
+    border-radius: 44px;
+    border: 1px solid #00008B;
+    color: #00008B;
+    cursor: pointer;
+}
+
+.botao-1:hover{
+    background-color: gainsboro;
+    transition: 5ms;
+}
+
+
+
+
+
+
+/* Responsividade */
+/* 
+@media (max-width: 990px) {
+    
+    .itens{
+        align-items: center;
+        width: 481px;
+        height: 311px;
+    }
+
+    .nome{
+        margin-top: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parte-2{
+        margin-top: 215px;
+        width: 481px; 
+    }
+
+    .linha-2{
+        width: 480px;
+    }
+
+    .curiosity{
+        width: 480px;
+    }
+
+    .curio-1{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-lateral-1 h4{
+        margin-top: 5%;
+    }
+
+    .curio-2{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .botao-1{
+        width: 310px;
+        height: 50px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .itens{
+        align-items: center;
+        width: 310px;
+        height: 311px;
+    }
+    
+}
+ */
+
+
+
+
+
+
