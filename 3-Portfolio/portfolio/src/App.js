@@ -159,8 +159,8 @@ function Article1() {
 function Article2() {
   return (
   <article className="Article2">
-        <img src={require("./images/batman.jpeg")} alt="Batman crouching in the shadows" className="ArticleImageDark"></img>
     <img src={require('./images/superman.jpeg')} alt="Superman sitting on the clouds" className="ArticleImage"></img>
+    <img src={require("./images/batman.jpeg")} alt="Batman crouching in the shadows" className="Article2ImageDark"></img>
     <div>
      <h3 className="ArticleTitle">Title</h3>
      <p className="Paragraph">Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
