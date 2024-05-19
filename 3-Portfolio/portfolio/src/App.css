@@ -5,12 +5,22 @@
   margin: 0px;
   padding: 0px;
 }
-
 :root {
+  --background-color: rgb(255, 255, 255);
   --accent-color: rgb(238, 135, 75); 
+  --text-color: rgb(0, 0, 0);
+  --secondary-color: rgb(234, 237, 240);
+  --shadow-color: rgba(0, 0, 0, 0.15);
 }
 .accent-color {
   color: var(--accent-color);
+}
+
+.dark-mode {
+  --background-color: rgb(20, 20, 20);
+  --text-color: rgb(255, 255, 255);
+  --secondary-color: rgb(34, 35, 36);
+  --shadow-color: rgba(0, 0, 0, 0.75);
 }
 
 body {
@@ -21,10 +31,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-}
-
-a {
-  text-decoration: none;
+  padding-bottom: 80px;
+  background-color: var(--background-color);
 }
 
 .main {
@@ -35,13 +43,24 @@ a {
 
 .nav {
   display: flex;
-  height: 82px;
+  height: 72px;
   padding: 0px 87px 0px 87px;
   align-items: center;
   justify-content: space-between;
 
-  box-shadow: 0px 25px 65px 0px rgba(0, 0, 0, 0.15);
-  background-color: white;
+  box-shadow: 0px 25px 65px 0px var(--shadow-color);
+  background-color: var(--background-color);
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: transform 0.15s;
+}
+
+li:active {
+  transform: scale(0.90);
 }
 
 .navleft {
@@ -51,17 +70,19 @@ a {
   align-items: center;
 }
 
-.imgbrand {
-  display: flex;
-  padding-bottom: 5px;  
-}
-
 .brand {
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.02em;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: transform 0.15s;
+}
+
+.brand:active {
+  transform: scale(0.90);
 }
 
 .labels {
@@ -93,8 +114,74 @@ a {
   list-style-type: none;
 }
 
-li.icon-item {
+.icon-item {
   cursor: pointer;
+  color: var(--accent-color);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--accent-color);
+  transition: .2s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--background-color);
+  transition: .2s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .scrollview {
@@ -110,6 +197,30 @@ li.icon-item {
   flex-direction: column;
   width: 962px;
   gap: 40px;
+}
+
+.menu-button {
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: none;
+  top: 97px;
+  left: 25px;
+}
+.menu-icon-close-hide {
+  display: none;
+  top: 97px;
+  left: 25px;
+}
+
+.menu {
+  display: none;
+}
+
+.menu-show {
+  display: flex;
 }
 
 #avatar {
@@ -150,10 +261,12 @@ h1 {
   line-height: 24.84px;
   text-align: left;
   width: 960px;
+  color: var(--text-color);
 }
 
 .highlight {
-  font-weight: 400;
+  font-weight: 600;
+  color: var(--accent-color);
 }
 
 .section2 {
@@ -169,7 +282,7 @@ h1 {
   justify-content: center;
   gap: 10px;
   padding: 20px 21px 20px 19px ;
-  background-color: rgb(234, 237, 240);
+  background-color: var(--secondary-color);
   border-radius: 10px;
   width: max-content;
 }
@@ -179,6 +292,7 @@ h1 {
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
+  color: var(--text-color);
 }
 
 .section3 {
@@ -202,6 +316,11 @@ h2 {
   gap: 40px;
 }
 
+.post-image {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 .post-content {
   display: flex;
   flex-direction: column;
@@ -214,6 +333,7 @@ h2 {
   font-weight: 400;
   line-height: 24.84px;
   text-align: left;
+  color: var(--text-color);
 
   width: 280px;
 }
@@ -231,13 +351,109 @@ h3 {
   margin-top: 18px;
   width: 180px;
   height: 50px;
-  background: white;
+  background: var(--background-color);
   border-radius: 25px;
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
   cursor: pointer;
+  transition: transform 0.3s;
 
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 12px;
   font-weight: 700;
+}
+
+.button-primary:active {
+  transform: scale(0.90);
+}
+
+@media (max-width: 1000px) {
+  * {
+  }
+  .labels, .social-icons {
+    display: none;
+  }
+  .container {
+    padding-bottom: 33px;
+  }
+  .nav {
+    padding: 0px 25px 0px 25px;
+  }
+  .menu-icon {
+    position: absolute;
+    display: flex;
+  }
+  .menu-icon-hide {
+    position: absolute;
+    display: none;
+  }
+  .menu-icon-close {
+    position: absolute;
+    display: flex;
+  }
+  .menu-icon-close.hide {
+    position: absolute;
+    display: none;
+  }
+  .menu {
+    flex-direction: column;
+    gap: 25px;
+    padding: 80px 0px 25px 0px;
+    align-items: center;
+  }
+  .menu-social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin-top: 25px;
+  }
+  .scrollview {
+    gap: 40px;
+  }
+  .section1, .section2, .section3, .dividerplaceholder, .divider-l, .button-primary {
+    width: 310px;
+    align-items: center;
+  }
+  .dividerplaceholder {
+    display: flex;
+    justify-content: center;
+  }
+  .post-description {
+    margin-top: 4px;
+  }
+  .post-description, .portfolio-description {
+    width: 310px;
+  }
+  .callout-text {
+    width: 217px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+  }
+  .section3 {
+    gap: 25px;
+  }
+  .post-image {
+    width: 310px;
+    height: 179px;
+  }
+  .post {
+    flex-direction: column;
+  }
+  .post-content {
+    gap: 10px;
+    align-items: center;
+  }
+  .button-primary {
+    margin-top: 15px;
+  }
+  #last-post {
+    flex-direction: column-reverse
+  }
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    line-height: 32px;
+  }
 }
