@@ -30,10 +30,16 @@ export default function Hamburguer(){
 
     const showMenu = ()=>{
         setShow(!show)
+        console.log(window.innerWidth)
     }
 
     return(
         <>
+            <style>{show && `
+            @media screen and (max-width: 900px){.main-section, .secondary-section{
+                display: none;
+            }}
+            `}</style>
             <button onClick={showMenu} className={show?"hambutton active show-mobile":"hambutton show-mobile"}>
                 <div className="hambutton__bar first break"></div>
                 <div className="hambutton__bar second break"></div>

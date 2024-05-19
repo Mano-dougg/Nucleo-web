@@ -66,11 +66,9 @@
 
 /*Part of the hamburguer menu style*/
 .menu{
-    z-index: 0;
-    position: sticky;
-    top: 6vh;
+    padding-top: 6vh;
     width: 100vw;
-    height: 94vh;
+    height: 100vh;
     justify-content: flex-start;
 }
 
