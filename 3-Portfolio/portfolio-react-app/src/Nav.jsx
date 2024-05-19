@@ -1,7 +1,7 @@
 import twitterLogo from './assets/twitter.svg'
 import figmaLogo from './assets/figma.svg'
 import instagramLogo from './assets/instagram.svg'
-function Nav() {
+const Nav = () => {
   return (
     <>
       <nav id="nav">
