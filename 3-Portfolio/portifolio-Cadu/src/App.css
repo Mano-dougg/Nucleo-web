@@ -1,0 +1,211 @@
+a {
+    text-decoration: none;
+}
+a:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do link em 10% */
+}
+
+.icone{
+    color: #0065FF;
+}
+button {
+    background-color: white;
+    color: #0065FF;
+    padding: 5px;
+    border-radius: 44.4px;
+    border-color:  #0065ff;
+    width: 180px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 35px 75px 0px #cfcece7b;
+    background-color: #FFFFFF;
+    align-items: center;
+    padding: 30px 87px 30px 87px;
+}
+
+nav  ul  li{
+    display: inline-flex;
+    align-items: center;
+    padding-right: 20px;
+    
+}
+
+h2{
+    padding-right: 20px;
+    color: #0065FF;
+}
+
+.sessaoPrincipal{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.ConteudodaSessao{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.MinhaFoto{
+    padding-top: 40px;
+}
+.ConteudodaSessao h2{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.Texto01{
+    width: 20%;
+    height: 1px;
+    margin-bottom: 100px;
+    background-color: #0065FF;
+}
+
+
+.say {
+    display: flex;
+    padding: 20px;
+    margin-top: 30px;
+    align-items: center;
+    background-color: #F8F9FA;
+    width: 60%;
+    border-radius:5px;
+
+}
+
+.say p {
+    margin-left: 10px;
+    font-size: 0.7rem;
+}
+    
+.LinhaSepara {
+    width: 45%;
+    height: 1px;
+    margin-bottom: 70px;
+    margin-top: 50px;
+    margin-left: 70px;
+    background-color: #0065FF;
+}
+
+.titulo0001 {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 40%;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.divimg{
+    display: flex;
+    width: 40%;
+    gap: 30px;
+    margin-bottom: 50px;
+
+}
+
+.divimgs{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 40%;
+    gap: 30px;
+}
+
+.img{
+    border: 3px solid #F8F9FA;
+    border-radius: 10px;
+}
+/*---------------PARA CELULAR------------------------------------------*/
+@media (max-width:375px){
+
+    .sessaoPrincipal{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    
+    .essaoPrincipal h2 {
+        overflow: hidden;
+        text-align: center;
+        font-size: 30px;
+        width: 18ch;
+        white-space: nowrap;
+   
+    }
+
+    .MinhaFoto {
+        width: 180px;
+        align-self: center;
+        margin-top: 30px;
+    }
+
+    .Texto01 {
+        width: 70%;
+        align-self: center;
+        margin-top: 25px
+    }
+
+    .say{
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .LinhaSepara {
+        width: 90%;
+        margin-left: 0px;
+    }
+
+    .img {
+        width: 300px;
+        flex-direction: column;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    button {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin-left: -50px;
+    }
+
+    .titulo01 {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .titulo01 .ide {
+        align-self: center;
+    }
+
+    .divimg {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%; 
+    }
+    .divimgs {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%; 
+    }
+    .section, .icon{
+        display: none;
+    }
+}
