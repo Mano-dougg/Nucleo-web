@@ -1,3 +1,8 @@
+.apagado{
+    display: none;
+    pointer-events: none;
+}
+
 .corpo{
     /* margin: 2%; */
     display: flex;
@@ -6,6 +11,41 @@
     align-items: center;
 }
 
+.normal{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.normal a{
+    text-decoration: none;
+    color: #00008B;
+}
+
+.icons{
+    width: 251px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburger{
+    display: none;
+    position: relative;
+    top: 25px;
+    left: 25px;
+}
+
+.xis{
+    display: none;
+    position: relative;
+    top: 25px;
+    left: 25px;
+}
 
 .itens{
     width: 962px;
@@ -222,9 +262,60 @@ span{
 
 @media (max-width: 600px) {
 
-    *{
-        /* background-color: red; */
+    .hamburger{
+        display: block;
+        border: none;
+        background: none;
+        border-top: 3.5px solid #00008B;
+        cursor: pointer;
+        width: 28px;
+        height: 14px;
+        transition: 0.3s;
+
     }
+
+    .hamburger::after, .hamburger::before{
+        display: block;
+        content: " ";
+        width: 28px;
+        height: 3px;
+        background: #00008B;
+        margin-top: 4px;
+        margin-left: -6px;
+        transition: 0.3s;
+    }
+
+    .xis{
+        display: block;
+        border: none;
+        background: none;
+        cursor: pointer;
+        width: 28px;
+        height: 14px;
+    }
+
+    .xis::after, .xis::before{
+        display: block;
+        content: " ";
+        width: 28px;
+        height: 3px;
+        background: #00008B;
+        margin-top: 4px;
+        margin-left: -6px;
+    }
+
+    .xis::after{
+        transform: rotate(-135deg);
+        margin-top: -2px;
+        transition: 0.3s;
+    }
+
+    .xis::before{
+        transform: rotate(135deg);
+        transition: 0.3s;
+    }
+
+
 
     .itens{
         align-items: center;

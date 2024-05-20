@@ -17,12 +17,17 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .links{
     width: 290px;
     height: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.links a{
+    text-decoration: none;
 }
 
 .nomes > h4{
@@ -45,7 +50,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: red; */
 }
 
 
@@ -54,7 +58,6 @@
     height: 22px;
     display: flex;
     justify-content: space-between;
-    /* background-color: #202020; */
 
 }
 
@@ -98,9 +101,8 @@
 @media (max-width: 600px) {
 
     .conteudo{
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        /* background-color: burlywood; */
     }
 
     .nomes{
@@ -108,13 +110,17 @@
         justify-content: space-evenly;
     }
 
-
     .links{
         display: none;
     }
 
     .redes{
         display: none;
+    }
+
+
+    .seletor{
+        margin-left: 65px;
     }
 
 }
