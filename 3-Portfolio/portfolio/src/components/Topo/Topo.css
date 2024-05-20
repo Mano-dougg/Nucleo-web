@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro');
 
+#fundo{
+    background-color: #222222;
+    color: antiquewhite;
+    transition: 0.3s;
+}
+
+.redes #fundo{
+    filter: invert(75%);
+    background-color: transparent;
+}
+
+#nada{
+    transition: 0.3s;
+}
+
 .conteudo{
     height: 82px;
     display: flex;
@@ -8,6 +23,29 @@
     align-items: center;
     box-shadow: 15px 15px 15px #00000026;
 }
+
+.conteudo-black{
+    height: 82px;
+    display: flex;
+    font-family: Be Vietnam;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 15px 15px 15px #00000026;
+
+    background-color: #222222;
+    color: antiquewhite;
+    transition: 0.3s;
+}
+
+.conteudo-dark{
+    height: 82px;
+    display: flex;
+    font-family: Be Vietnam;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 15px 15px 15px #00000026;
+}
+
 
 
 .nomes{
@@ -75,7 +113,7 @@
     margin: 0px;
 }
 
-.indicador{
+.indicador-white{
     width: 40px;
     height: 22px;
     background-color: #E5E5E5;
@@ -86,12 +124,33 @@
     cursor: pointer;
 }
 
-.botao{
+.botao-white{
     width: 17px;
     height: 17px;
     background-color: #3C3B3A;
     border-radius: 100%;
     margin-left: 5%;
+    transition: 0.3s;
+}
+
+.indicador-black{
+    width: 40px;
+    height: 22px;
+    background-color: #FAF4E6;
+    border: 1px solid #222222;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.botao-black{
+    width: 17px;
+    height: 17px;
+    background-color: #3C3B3A;
+    border-radius: 100%;
+    margin-left: 50%;
+    transition: 0.3s;
 }
 
 

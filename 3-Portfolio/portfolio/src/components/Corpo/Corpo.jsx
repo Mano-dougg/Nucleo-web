@@ -3,13 +3,11 @@ import veri from '../imagens/verificado.png';
 import perfil from '../imagens/imagem1.jpg';
 import ufba from '../imagens/imagem2.jpg';
 import cachoeira from '../imagens/imagem3.jpg';
-
 import twitter from '../imagens/twitter.png';
 import figma from '../imagens/figma.png';
 import insta from '../imagens/insta.png';
 
 import { useState } from 'react';
-
 
 function Corpo(){
 
