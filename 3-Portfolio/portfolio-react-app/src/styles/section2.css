@@ -28,6 +28,10 @@ h2{
     max-width: fit-content;
 }
 @media(width <= 805px){
+    .container2{
+        margin: 0 auto;
+        padding-inline: 15px;
+    }
     .moldura img{
         width: 400px;
         margin: 0 auto;

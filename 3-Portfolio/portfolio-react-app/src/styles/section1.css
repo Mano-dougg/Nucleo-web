@@ -43,7 +43,17 @@ h4{
     border-color: #0065FF;
 }
 @media(width <= 775px){
-    .tota h1{
-        text-align: justify;
+    .total{
+        margin: 0 auto;
+        padding-inline: 15px;
     }
+    .total h1{
+        text-align: center;
+        font-size: 32px;
+        margin: 0 auto;
+    }
+    .container1 img{
+        align-self: center;
+        margin: 0 auto;
+    }  
 }

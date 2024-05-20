@@ -11,9 +11,9 @@ const Nav = () => {
                     <li className="list-item"><a href="section-two"><span className="azul">Section two</span></a></li>
                     <li className="list-item"><a href="section-three"><span className="azul">Section three</span></a></li>
                     <li className="list-item"><a href="section-two"><span className="azul">Section four</span></a></li>
-                    <li className="list-icon"><a href="#"><img src={twitterLogo} alt="twitter" /></a></li>
-                    <li className="list-icon"><a href="#"><img src={linkedinLogo} alt="linkedin" /></a></li>
-                    <li className="list-icon"><a href="#"><img src={instagramLogo} alt="instagram" /></a></li>
+                    <li className="list-icon"><a href="https://x.com/"><img src={twitterLogo} alt="twitter" /></a></li>
+                    <li className="list-icon"><a href="https://www.linkedin.com/in/matheus-de-castro-5a6593268/"><img src={linkedinLogo} alt="linkedin" /></a></li>
+                    <li className="list-icon"><a href="https://www.instagram.com/matheussmd"><img src={instagramLogo} alt="instagram" /></a></li>
                     <li className="theme-button">
                         <div className="dark-mode">
                             <label className="switch">Dark mode:
