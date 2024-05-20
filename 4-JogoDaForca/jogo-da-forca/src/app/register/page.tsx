@@ -1,22 +1,56 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import s from './register.module.css'
-export default function Register(){
+import { useState } from 'react';
 
-    function makeRegister(e: React.FormEvent<HTMLFormElement>){
+interface errorStatus{
+    message: string
+    code: number
+}
+
+export default function Register(){
+    const [ error, setError ] = useState<errorStatus>({message:"", code:0})
+    const router = useRouter()
+
+    async function makeRegister(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault()
         const formData = new FormData(e.currentTarget);
+
+
+        if(formData.get('password') !== formData.get("confirmPassword")){
+            setError({
+                message: "As senhas não conferem!",
+                code:1
+            })
+        }
+
         const data = {
             name: formData.get('name'),
             email: formData.get('email'),
             password: formData.get('password'),
-            confirmPassword: formData.get('confirmPassword')
         }
+
+        const response = await fetch('/api/auth/register', {
+            body: JSON.stringify(data),
+            method:"post"
+        })
+
+        if(response.ok){
+            setError({message:"", code:0})
+            router.push('/api/auth/signin')
+        }
+    
     }
 
     return(
         <div className={s.container}>
             <h1>Registre-se</h1>
             <form onSubmit={(e)=>makeRegister(e)} className={s.form} autoComplete='off' >
+                {error.message !== "" &&
+                    <div className={s.error}>
+                        {error.message}
+                    </div>
+                }
                 <input
                     type="text"
                     placeholder="Nome"

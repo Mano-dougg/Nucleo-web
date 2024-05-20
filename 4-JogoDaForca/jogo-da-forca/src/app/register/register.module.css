@@ -45,3 +45,18 @@
 .button:hover{
     transform: scale(1.1);
 }
+
+.error{
+    background-color: #c94b4b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+    line-height: 1.2rem;
+    padding: .5rem 1rem;
+    text-align: left;
+}
+
+.img{
+    fill: #fff;
+}
