@@ -38,7 +38,6 @@ export default function Words(){
         let wordsToAdd = textArea.value.split('\n')
         wordsToAdd = wordsToAdd.map(x => x.trim())
 
-        console.log(JSON.stringify(wordsToAdd))
 
         const words = await fetch('/api/words/add', {
             method: 'post',

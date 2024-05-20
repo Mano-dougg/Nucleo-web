@@ -20,6 +20,4 @@ export async function GET(req: NextApiRequest, { params }: { params: { id: strin
         console.log(e)
         return NextResponse.json({error: "An error occurred"}, {status: 400})
     }
-    
-
 }
