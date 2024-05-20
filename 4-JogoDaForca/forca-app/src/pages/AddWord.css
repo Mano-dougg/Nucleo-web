@@ -1,0 +1,51 @@
+.add-word {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.add-word input {
+    padding: 2rem;
+    border: none;
+    width: 40rem;
+    font-size: 2.5rem;
+}
+
+.add-word input::placeholder {
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+}
+
+.add-word input:focus {
+    border-radius: 1rem;
+}
+
+.footer-add-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.0rem;
+}
+
+.warn-sign {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-add-page .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2.4rem;
+}
+
+.footer-add-page .buttons button:nth-child(1) {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.footer-add-page .buttons button:nth-child(2) {
+    background-color: white;
+    color: var(--dark-blue);
+}

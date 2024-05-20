@@ -1,0 +1,27 @@
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.home-buttons button {
+    cursor: pointer;
+    border: 1px solid var(--dark-blue);
+    border-radius: 2rem;
+    padding: 2rem;
+    max-width: 20rem;
+    width: 100%;
+}
+
+.home-buttons button:nth-child(1) {
+    margin-bottom: 2rem;
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.home-buttons button:nth-child(2) {
+    background-color: white;
+    color: var(--dark-blue);
+}
