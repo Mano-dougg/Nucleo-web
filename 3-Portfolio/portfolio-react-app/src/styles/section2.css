@@ -11,6 +11,9 @@ h2{
     max-width: 960px;
     margin: 0 auto; /* Centraliza o container horizontalmente */
 }
+.container2 :nth-child(4){
+    flex-direction: row-reverse;
+}
 .tabela{
     gap: 10px;
     display: flex;
@@ -23,4 +26,21 @@ h2{
     border-radius: 44px;
     border-color: #0065FF;
     max-width: fit-content;
+}
+@media(width <= 805px){
+    .moldura img{
+        width: 400px;
+        margin: 0 auto;
+    }
+    .botao-descricao{
+        padding-inline: 16px;
+        padding-block: 30px;
+        border-radius: 44px;
+    }
+    .tabela{
+        display: block;
+    }
+    .container2 :nth-child(4){
+        
+    }
 }

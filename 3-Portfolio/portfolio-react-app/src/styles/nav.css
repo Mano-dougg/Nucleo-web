@@ -6,15 +6,15 @@
 .nav-items{
     list-style-type: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: baseline;
+
 }
-.nav-icons{
-    align-items: flex-end;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
+.nav-items :nth-child(5){
+    margin-left: 200px;
+}
+.nav-items :nth-child(8){
+    padding-left: 10px;
 }
 a{
     text-decoration: none;
@@ -24,6 +24,9 @@ a{
 a:visited{
     color: #0065FF;
 
+}
+.list-icon{
+    padding-inline: 5px;
 }
 .list-item{
     text-align: center;
