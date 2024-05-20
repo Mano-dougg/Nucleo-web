@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+.total{
+    padding-inline: 240px;
+    max-width: 960px;
+}
+.container1{
+    flex-direction: row;
+    display: flex;
+    flex-flow: column wrap;
+    align-items:start;
+}
+.container1 h1{
+    font-family: "EB Garamond", serif;
+    font-size: 70px;
+    margin-top: 0;
+}
+p{
+    font-size: 17px;
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+.disclaimer{
+    background: #F8F9FA;
+    padding-right: 5px;
+    max-width: fit-content;
+    display: flex;
+    gap: 5px;
+}
+.regua{
+    color: #0065FF;
+}
+.azul{
+    color: #0065FF;
+}
+h4{
+    font-size: 20px;
+}
+.botao-descricao{
+    border-color: #0065FF;
+}

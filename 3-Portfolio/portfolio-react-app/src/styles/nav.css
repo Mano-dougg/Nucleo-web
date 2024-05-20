@@ -7,12 +7,14 @@
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
+    align-items: baseline;
 }
 .nav-icons{
-    margin-left: 80vb;
+    align-items: flex-end;
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
+    align-items: baseline;
 }
 a{
     text-decoration: none;
