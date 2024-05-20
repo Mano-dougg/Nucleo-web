@@ -52,8 +52,13 @@ const handler = NextAuth({
     theme:{
         colorScheme:'light'
     },
-    callbacks:{
-        
+    callbacks: {
+        session: async ({ session, token, user }) => {
+            if (session?.user) {
+                session.user.id = token.sub ;
+            }
+            return session;
+        },
     }
 });
 

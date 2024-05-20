@@ -17,7 +17,7 @@ export default function OptionsButton() {
             <Button
                 text="Adicionar Palavra"
                 color="#fff"
-                onClick={() => router.push("/words")}
+                onClick={() => router.push("/words/add")}
                 text_color="#0A3871"
             />
             <Button
