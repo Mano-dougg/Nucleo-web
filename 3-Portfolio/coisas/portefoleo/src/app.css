@@ -44,6 +44,10 @@ p {
     color: var(--text-color);
 }
 
+.coisas{
+    visibility: visible;
+}
+
 .headerleft {
     display: flex;
     flex-direction: row;
@@ -230,6 +234,8 @@ p {
 .hover-text:hover {
     font-size: 24px;
 }
+
+
 
 @media (max-width: 850px) {
     .redes, .sections {
