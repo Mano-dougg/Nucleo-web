@@ -9,11 +9,11 @@ h2{
     display: flex;
     flex-direction: column;
     max-width: 960px;
-    padding-inline: 240px;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
 }
 .tabela{
-    display: flex;
     gap: 10px;
+    display: flex;
     padding-bottom: 36px;
 }
 .botao-descricao{

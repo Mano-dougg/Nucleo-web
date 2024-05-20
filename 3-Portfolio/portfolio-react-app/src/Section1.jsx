@@ -7,7 +7,7 @@ const Section1 = () => {
             <div className="container1">
                 <img src={avatarFrame} alt="foto de avatar" className="Avatar"/>
                 <h1>
-                    <span className='azul'>Hello<br />My name is Kevin.</span>
+                    <span className='azul'>Hello<br />My name is Matheus.</span>
                 </h1>
             </div>
             <hr className="regua"/>

@@ -7,7 +7,7 @@ const Nav = () => {
     <>
       <nav className='nav'>
                 <ul className="nav-items">
-                    <li className="list-header"><h4>Kevin Bennet</h4></li>
+                    <li className="list-header"><h4>Matheus Dias</h4></li>
                     <li className="list-item"><a href="section-two"><span className="azul">Section two</span></a></li>
                     <li className="list-item"><a href="section-three"><span className="azul">Section three</span></a></li>
                     <li className="list-item"><a href="section-two"><span className="azul">Section four</span></a></li>
