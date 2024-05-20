@@ -4,7 +4,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    max-width: 962px;
+    max-width: 80%;
     row-gap: 5px;
 
     .avatar-fyp {
@@ -34,7 +34,7 @@
     .hr{
         display: flex;
         align-self: flex-start;
-        width: 192px;
+        width: 192;
         height: 2px;
         background-color: rgba(0, 101, 255, 1);
     }
@@ -56,12 +56,11 @@
     }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 785px) {
     .section1{
     display: flex;
     flex-flow: column;
     align-items: center;
-    max-width: 962px;
     min-width: 310px;
     row-gap: 5px;
     

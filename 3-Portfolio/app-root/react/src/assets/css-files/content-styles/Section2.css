@@ -2,7 +2,6 @@
 .section2 {
     display: flex;
     flex-flow: column;
-    max-width: 960px;
     min-width: 310px;
     min-height: fit-content;
     row-gap: 32px;
@@ -75,16 +74,16 @@
 
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 785px) {
     .section2 {
         display: flex;
         flex-flow: column;
         align-items: center;
-        max-width: 960px;
         min-width: 310px;
         min-height: fit-content;
         row-gap: 32px;
         border-top: 2px solid;
+        border-width: 100%;
         border-color: rgba(0, 101, 255, 1);
         font-family: 'Be Vietnam',sans-serif;
         h3{

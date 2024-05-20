@@ -6,29 +6,29 @@ html{
 
 body {
     width: 100%;
-    height: 100%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .container{
     display: flex;
     flex-flow: column;
-    box-sizing: border-box;
-    padding-bottom: 80px; 
+    box-sizing: border-box; 
     row-gap: 132px;
     min-width: 100%;
     min-height: 100%;
-    background-color: rgba(255, 255, 255, 1);
 }
 
 .nav {
     display: flex;
-    align-self: top;
+    justify-self: flex-start;
     flex-flow: row ;
     justify-items: center;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-height: 82px; 
+    height: max-content;
+    min-height: 82px; 
     background-color: rgba(255, 255, 255, 1);
     box-sizing: border-box;
     padding: 0px 46px;
@@ -54,7 +54,6 @@ body {
 
     .right-nav {
         display: flex;
-        justify-self: end;
         flex-flow: row;
         height: fit-content;
         justify-content: space-between;
@@ -68,29 +67,48 @@ body {
 .content{
     display: flex;
     flex-flow: column;
+    align-self: flex-end;
     box-sizing: border-box;
+    overflow-y: none;
     top: 82px;
     align-items: center;
     min-width: 100%;
-    max-height: 96%;
     height: fit-content;
     border-top: 10px;
-    margin-top: 80px;
     padding-left: 46px;
     padding-right: 46px;
+    padding-bottom: 0px;
     background-color: rgba(255, 255, 255, 1);
+}
+
+.content-off {
+    display: none;
+}
+
+.content-show {
+    display: flex;
+    flex-flow: column;
+    align-self: flex-end;
+    box-sizing: border-box;
+    overflow-y: none;
+    top: 82px;
+    align-items: center;
+    min-width: 100%;
+    height: fit-content;
 }
 
 .menu-ribbon {
     display: flex;
     flex-flow: column;
-    align-self: center;
+    align-self: flex-start;
+    box-sizing: border-box;
     align-items: center;
     justify-items: center;
     width: 100%;
     max-width: 962px;
     padding-left: 46px;
     padding-right: 46px;
+    background-color: white;
 
     .menu-button{
         display: flex;
@@ -99,20 +117,24 @@ body {
         align-items: center;
         width: 30px;
         padding: 0px;
+        background-color: whitesmoke;
     }
     .menu-img{
         display: flex;
         padding: 0px;
     }
-    .menu-show{
+    .menu-off{
         display: none;
     }
-    .menu-off{
+    .menu-show{
         display: flex;
+        flex-flow: column wrap;
+        min-width: 251px ;
+        row-gap: 25px;
     }
 }
 
-@media (max-width: 960) {
+@media screen and (min-width: 785px) {
     .menu-ribbon{
         display: none;
         .menu-img{
