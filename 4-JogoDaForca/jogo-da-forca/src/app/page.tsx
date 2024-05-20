@@ -11,6 +11,7 @@ export default function Home() {
     <main className={styles.main}>
         <Button text="Iniciar" color="#0A3871" onClick={() => router.push('/start')} text_color="#fff" />
         <Button text="Adicionar Palavra" color="#fff" onClick={() => router.push('/words')} text_color="#0A3871" />
+        <Button text="Verificar Palavras" color="#fff" onClick={() => router.push('/words/modify')} text_color="#0A3871" />
     </main>
   );
 }

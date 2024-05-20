@@ -1,0 +1,168 @@
+.container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hangmanContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.hangman {
+    position: relative;
+    width: 200px;
+    height: 300px;
+}
+
+.base {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 10px;
+    background-color: #0A3871;
+}
+
+.pole {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    width: 10px;
+    height: 290px;
+    background-color: #0A3871;
+}
+
+.beam {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 100px;
+    height: 10px;
+    background-color: #0A3871;
+}
+
+.rope {
+    position: absolute;
+    top: 10px;
+    left: 140px;
+    width: 2px;
+    height: 30px;
+    background-color: #0A3871;
+}
+
+.head {
+    position: absolute;
+    top: 40px;
+    left: 125px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #0A3871;
+}
+
+.body {
+    position: absolute;
+    top: 70px;
+    left: 140px;
+    width: 2px;
+    height: 80px;
+    background-color: #0A3871;
+}
+
+.arm1 {
+    position: absolute;
+    top: 90px;
+    left: 140px;
+    width: 50px;
+    height: 2px;
+    background-color: #0A3871;
+    transform: rotate(45deg);
+    transform-origin: left bottom;
+}
+
+.arm2 {
+    position: absolute;
+    top: 90px;
+    left: 92px;
+    width: 50px;
+    height: 2px;
+    background-color: #0A3871;
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
+}
+
+.leg1 {
+    position: absolute;
+    top: 150px;
+    left: 142px;
+    width: 50px;
+    height: 2px;
+    background-color: #0A3871;
+    transform: rotate(45deg);
+    transform-origin: left top;
+}
+
+.leg2 {
+    position: absolute;
+    top: 150px;
+    left: 89px;
+    width: 50px;
+    height: 2px;
+    background-color: #0A3871;
+    transform: rotate(-45deg);
+    transform-origin: right top;
+}
+
+.wordContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.letter {
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+.alphabetContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.message {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.newGameButton {
+    padding: 10px 20px;
+    background-color: #0A3871;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.giveUpButton {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #0A3871;
+    border: 2px solid #0A3871;
+    border-radius: 5px;
+    cursor: pointer;
+}
