@@ -39,3 +39,17 @@ a:visited{
     text-align: center;
     margin-right: 20px;
 }
+@media(width <= 805px){
+    .list-item{
+        display: none;
+    }
+    .list-icon{
+        display: none;
+    }
+    .nav{
+        justify-content: left
+    }
+    .theme-button{
+        justify-self: flex-end;
+    }
+}   
