@@ -1,4 +1,5 @@
-import placeholder from './assets/placeholder.svg'
+import plantcard from './assets/plantcard.png'
+import welovedogs from './assets/welovedogs.png'
 import './styles/section2.css'
 const Section2 = () => {
     return(
@@ -13,7 +14,7 @@ const Section2 = () => {
                     <p className='botao-descricao'><span className='azul'>Button Primary Light</span></p>
                 </div>
                 <div className="moldura">
-                    <img src={placeholder} alt="moldura para imagem"/>
+                    <img src={welovedogs} alt="welovedogs" id='lovedogs'/>
                 </div>
             </div>
             <div className="tabela">
@@ -23,7 +24,7 @@ const Section2 = () => {
                     <p className='botao-descricao'><span className='azul'>Button Primary Light</span></p>
                 </div>
                 <div className="moldura">
-                    <img src={placeholder} alt="moldura para imagem"/>
+                    <img src={plantcard} alt="moldura para imagem" id='plantcard'/>
                 </div>
             </div>
         </div>
