@@ -1,9 +1,9 @@
 import { createContext } from "react";
 
-type ThemeContextType = {
-  isDarkThemed: boolean;
+export type ThemeContextType = {
+  isDarkThemed?: boolean;
   toggleTheme: () => void;
-  darkClassName: "dark" | "";
+  theme: "dark" | "light";
 };
 
 const ThemeContext = createContext({} as ThemeContextType);
