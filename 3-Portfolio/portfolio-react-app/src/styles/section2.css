@@ -45,9 +45,9 @@ h2{
         margin: 0 auto;
     }
     .botao-descricao{
-        padding-inline: 16px;
-        padding-block: 30px;
-        border-radius: 44px;
+        padding-inline: 80px;
+        padding-block: 10px;
+        border-radius: 30px;
     }
     .tabela{
         display: block;
@@ -60,5 +60,9 @@ h2{
     .moldura{
         max-width: fit-content;
         margin: 0 auto;
+    }
+    .botao-descricao{
+        margin: 0 auto;
+        margin-bottom: 15px ;
     }
 }
