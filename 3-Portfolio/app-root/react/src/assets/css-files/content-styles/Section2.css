@@ -2,6 +2,7 @@
 .section2 {
     display: flex;
     flex-flow: column;
+    max-width: 962px;
     min-width: 310px;
     min-height: fit-content;
     row-gap: 32px;

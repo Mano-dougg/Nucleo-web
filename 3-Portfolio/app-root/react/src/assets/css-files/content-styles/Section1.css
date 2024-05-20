@@ -4,7 +4,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    max-width: 80%;
+    max-width: 962px;
     row-gap: 5px;
 
     .avatar-fyp {
