@@ -36,12 +36,20 @@ export default function OptionsButton() {
                     text_color="#0A3871"
                 />
             ) : (
-                <Button
-                    text="Login"
-                    color="#fff"
-                    onClick={() => signIn()}
-                    text_color="#0A3871"
-                />
+                <div>
+                    <Button
+                        text="Login"
+                        color="#fff"
+                        onClick={() => signIn()}
+                        text_color="#0A3871"
+                    />
+                    <Button
+                        text="Registro"
+                        color="#fff"
+                        onClick={() => router.push("/register")}
+                        text_color="#0A3871"
+                    />
+                </div>
             )}
         </>
     );

@@ -5,6 +5,15 @@ import prisma from "../../../../../lib/prisma";
 export async function POST(req: Request){
     try{
         const { name, email, password } = await req.json()
+
+        const user = await prisma.user.findUnique({
+            where:{
+                email
+            }
+        })
+        if(user){
+            return NextResponse.json({ error:"User already exists" }, {status:400})
+        }
         
         const hashedPassword = await hash(password, 10)
 

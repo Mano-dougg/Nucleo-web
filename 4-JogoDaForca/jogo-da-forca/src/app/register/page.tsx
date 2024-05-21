@@ -38,6 +38,9 @@ export default function Register(){
         if(response.ok){
             setError({message:"", code:0})
             router.push('/api/auth/signin')
+        }else{
+            const responseJson = await response.json()
+            setError({message:responseJson.error, code:response.status})
         }
     
     }

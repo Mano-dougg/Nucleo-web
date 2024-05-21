@@ -59,12 +59,13 @@ export default function Modify() {
 
     return (
         <div className={s.container}>
-            <div className="listSavedWords">
+            <h1>Palavras salvas</h1>
+            <div className={s.listSavedWords}>
                 {words &&
                     words.map((word: wordType) => {
                         if (typeof word === "string") {
                             return (
-                                <div>
+                                <div className={s.wordDiv}>
                                     {session ? word : word}
                                     <button onClick={() => deleteWord(word)}>
                                         Excluir
@@ -73,7 +74,7 @@ export default function Modify() {
                             );
                         } else {
                             return (
-                                <div key={word.id}>
+                                <div key={word.id} className={s.wordDiv}>
                                     {session ? word.word : word.word}
                                     <button
                                         onClick={() => deleteWordById(word.id)}

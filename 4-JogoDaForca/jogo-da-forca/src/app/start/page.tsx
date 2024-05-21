@@ -41,7 +41,9 @@ export default function Start(){
                     })}
                 </div>
             </div>
-            <Hangman/>
+            {
+                matches.length > 0 && <Hangman/>
+            }
         </div>
     )
 }
