@@ -1,0 +1,47 @@
+*{
+  border-style: border-box;
+  margin:0;
+  text-decoration-line: none;
+}
+
+/* Telas pequenas*/
+
+@media(min-width:200px) and (max-width:768px){
+  body{
+    width: 375px;
+    height: 667px;
+    top: 2015px;
+    left: -720px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #F3F5FC;
+  }
+}
+
+/* Telas intermediárias */
+
+@media(min-width:768px) and (max-width:1270px){
+  body{
+    width: 768px;
+    height: 1024px;
+    top: 751px;
+    left: -720px;
+    gap: 0px;
+    opacity: 0px;    
+    background-color: #F3F5FC;
+  }
+}
+
+/* Telas grandes */
+
+@media(min-width:1270px){
+  body{
+    width: 100%;
+    height: 1050px;
+    top: -513px;
+    left: -720px;
+    gap: 0px;
+    opacity: 0px;    
+    background-color: #F3F5FC;
+  }
+}
