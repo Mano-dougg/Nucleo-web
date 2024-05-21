@@ -33,6 +33,16 @@ export default function Start(){
         <div className={s.container}>
             <div className={s.history}>
                 <p>{session? "Histórico de partidas" : "Você precisa fazer login para acessar o seu histórico de partidas"}</p>
+                {session &&
+                    <>
+                        <p>Vitórias: {
+                            matches.filter((match) => match.isWinner).length
+                        }</p>
+                        <p>Derrotas: {
+                            matches.filter((match) => !match.isWinner).length
+                        }</p>
+                    </>
+                }
                 <div className={s.matches}>
                     {matches.map((match) => {
                         return(
