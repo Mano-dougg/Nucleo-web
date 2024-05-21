@@ -1,0 +1,11 @@
+{
+  "name": "4-jogodaforca",
+  "version": "1.0.0",
+  "description": "- **Orientadores:** Turma  [Fábio Santos Matos de Oliveira](https://gitlab.com/Fabio-Matos1303) | Turma  [Djair Maykon](https://gitlab.com/djairmaykon) | Turma  [Márcio R. Júnior](https://gitlab.com/marciojunior2109) \r - **Coorientadores gerais:** [Raissa Luna](https://gitlab.com/raissalunana) | [Lucas Júlio](https://gitlab.com/LucasJulio)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
