@@ -22,6 +22,7 @@ export default function Register(){
                 message: "As senhas não conferem!",
                 code:1
             })
+            return
         }
 
         const data = {
