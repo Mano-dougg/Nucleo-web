@@ -6,8 +6,6 @@ import './app.css';
 import cutao from './assets/cutao.png';
 import culita from './assets/culita.png';
 import cuk from './assets/cuk.png';
-import xis from './assets/xis.png';
-import cunu from './assets/cunu.png';
 import Post from './components/Post';
 import webmedia from './assets/webmedia.png';
 import ufba from './assets/cufba.png';
