@@ -1,0 +1,115 @@
+/* Pratica de CSS  */
+/* reset */
+* {
+    margin: 0; 
+    padding: 0; 
+    font-size: 100%;
+    font-family: "Open Sans", sans-serif; 
+    font-weight: normal; 
+    box-sizing: border-box; 
+    border: none; 
+    outline: none;
+    vertical-align: baseline;
+    list-style: none ;}
+    a {text-decoration: none;}
+
+/* welovedogs */
+/* header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 300px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+#love{
+    color: #7ed321;
+}
+
+/* Menú */
+#nav1 ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav1 li a {    
+    display: inline-flex;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 19px;
+    font-weight: 700;
+    color: black;
+}
+
+#nav2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav2 a {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+}
+
+.t1 {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 19px;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+}
+
+#nav1 ul li a .b1 {
+    background-color: #cbeda6;
+    border-radius: 30px;
+    padding: 10px 32px;
+}
+/* Fim do header */
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 55px;
+}
+.sobre {
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.sobre h6 {
+    color: black;
+    font-size: 48px;
+    font-weight: 700;
+}
+.socorro{
+    flex-direction: column;
+}
+.div_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.sobre a{
+    color: black;
+    background-color: #7ed321;
+    border-radius: 30px;
+    padding: 10px 64px;
+    font-size: 18px;
+    font-weight: 700;
+    max-width: 230px;
+    margin-top: 20px;
+}
