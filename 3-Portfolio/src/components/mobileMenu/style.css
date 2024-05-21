@@ -21,6 +21,10 @@ section.mobile-container{
         width: 30px;
     }
 
+    section.mobile-container img{
+        cursor: pointer;
+    }
+
     section.mobile-container nav.section-bar-mobile{
         height: 160px;
         display: flex;

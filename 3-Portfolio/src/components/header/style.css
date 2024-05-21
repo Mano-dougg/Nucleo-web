@@ -53,6 +53,7 @@ nav.social-bar ul li{
 
 nav.theme{
     margin-left: 50px;
+    
 }
 
 nav.theme p{
@@ -75,5 +76,17 @@ section.mobile{
     
     section.mobile{
         display: flex;
+    }
+
+    section.container-section h1, section.mobile h1{
+        margin-left: 25px;
+    }
+
+    nav.theme{
+        margin-right: 25px;
+    }
+    
+    nav.theme ul{
+        align-items: center;
     }
 }
