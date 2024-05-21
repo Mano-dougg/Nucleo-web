@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Header } from './components/Header/Header'
 import { Pag1 } from './components/Pag1/Pag1'
+import { Routes } from './components/Routes/routes.tsx'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <>
       <Header/>
       <Pag1/>
+      <Routes/>
     </>
   )
 }
