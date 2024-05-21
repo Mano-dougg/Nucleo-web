@@ -1,5 +1,5 @@
 .Header{
     display: flex;
     justify-content: flex-start;
-    padding: 40px;
+    padding: 40px 40px 0px 40px;
 }
