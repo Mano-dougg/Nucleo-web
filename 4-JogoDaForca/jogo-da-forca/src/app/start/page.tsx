@@ -32,7 +32,7 @@ export default function Start(){
     return(
         <div className={s.container}>
             <div className={s.history}>
-                <p>Histórico de partidas</p>
+                <p>{session? "Histórico de partidas" : "Você precisa fazer login para acessar o seu histórico de partidas"}</p>
                 <div className={s.matches}>
                     {matches.map((match) => {
                         return(
@@ -41,9 +41,9 @@ export default function Start(){
                     })}
                 </div>
             </div>
-            {
-                matches.length > 0 && <Hangman/>
-            }
+        
+            <Hangman/>
+        
         </div>
     )
 }

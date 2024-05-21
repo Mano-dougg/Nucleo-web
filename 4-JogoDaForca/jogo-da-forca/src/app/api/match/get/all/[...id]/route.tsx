@@ -7,7 +7,8 @@ export async function GET(req: NextApiRequest, { params }: { params: { id: strin
         
         const matches = await prisma.match.findMany({
             where:{
-                userId: id
+                userId: id,
+                isFinished: true
             },
             orderBy:{
                 createdAt: 'desc'

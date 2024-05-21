@@ -74,12 +74,12 @@ export default function Hangman() {
                 body: JSON.stringify({
                     isWinner: isGameWon,
                     matchId,
-                    word
+                    isFinished: true
                 })
             })
         }
         if(session){
-            if(isGameWon) updateMatch()
+            if(isGameWon || isGameOver) updateMatch()
             
         }
     },[isGameOver, isGameWon])
