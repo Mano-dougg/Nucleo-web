@@ -1,18 +1,60 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import s from "./Hangman.module.css";
 import Keyboard from '../Keyboard/Keyboard'
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function Hangman() {
     const [word, setWord] = useState("");
     const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
     const [wrongGuesses, setWrongGuesses] = useState(0);
+    const [matchId, setMatchId] = useState<string>('')
+    const hasRun = useRef<boolean>(false);
     const maxWrongGuesses = 6;
+    const { data: session } = useSession();
+    const router = useRouter()
 
     useEffect(() => {
-        const words = JSON.parse(localStorage.getItem("words") ?? '""');
+        if(!session){
+            const words = JSON.parse(localStorage.getItem("words") ?? '""');
         const randomWord = words[Math.floor(Math.random() * words.length)];
         setWord(randomWord);
+        }
+        
     }, []);
+
+    useEffect(() => {
+        async function getDBWords() {
+            try {
+                const response = await fetch(`/api/words/${session?.user?.id}`);
+                const responseJson = await response.json();
+                const randomWord = responseJson.message[Math.floor(Math.random() * responseJson.message.length)];
+                setWord(randomWord.word);
+                createMatch(randomWord.word);
+            } catch (e) {
+                console.log("An error occurred when fetch words", e);
+            }
+        }
+
+        async function createMatch(selectedWord: string){
+            console.log('cria word aqui', selectedWord)
+            const response = await fetch('/api/match/create',{
+                method:'post',
+                body: JSON.stringify({
+                    word: selectedWord,
+                    userId: session?.user.id
+                })
+            })
+            const data = await response.json()
+            setMatchId(data.data)
+        }
+
+        if (session && !hasRun.current) {
+            getDBWords();
+            hasRun.current = true;
+        }
+    }, []);
+
 
     const renderWord = () => {
         return word.split("").map((letter, index) => (
@@ -22,12 +64,25 @@ export default function Hangman() {
         ));
     };
 
-    
-
     const isGameOver = wrongGuesses >= maxWrongGuesses;
-    const isGameWon =
-        word &&
-        word.split("").every((letter) => guessedLetters.includes(letter));
+    const isGameWon = word && word.split("").every((letter) => guessedLetters.includes(letter));
+
+    useEffect(()=>{
+        async function updateMatch(){
+            const response = await fetch('/api/match/update',{
+                method:'post',
+                body: JSON.stringify({
+                    isWinner: isGameWon,
+                    matchId,
+                    word
+                })
+            })
+        }
+        if(session){
+            if(isGameWon) updateMatch()
+            
+        }
+    },[isGameOver, isGameWon])
 
     return (
         <div className={s.container}>
@@ -64,7 +119,7 @@ export default function Hangman() {
             <div className={s.buttonsContainer}>
                 <button
                     className={s.newGameButton}
-                    onClick={() => window.location.reload()}
+                    onClick={() => router.push('/')}
                 >
                     Novo jogo
                 </button>
