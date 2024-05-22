@@ -8,14 +8,7 @@ import TecladoForca from "./components/TecladoForca"
 const App: React.FC = () => {
   const [palavra, setPalavra] = useState("exemplo")
   const [chutes, setChutes] = useState<string[]>([])
-  const [erros, setErros] = useState(0);
-
-  const maisErro = () => {
-    setErros(errosAntes => (errosAntes < 6 ? errosAntes+1 : errosAntes));
-  }
-  const menosErro = () => {
-    setErros(errosAntes => (errosAntes > 0 ? errosAntes-1 : errosAntes));
-  }
+  const chutesErrados = chutes.filter(letra => !palavra.includes(letra))
 
   return (
     <>
@@ -23,16 +16,16 @@ const App: React.FC = () => {
       <main>
         <div className="resultado">Waow!😀☹️</div>
         <div className="desenho">
-          <DesenhoForca erros={erros} />
+          <DesenhoForca erros={chutesErrados.length < 6 ? chutesErrados.length : 6} />
         </div>
-        <PalavraForca />
+        <PalavraForca chutes={chutes} palavra={palavra} />
         <TecladoForca />
         <div className="doisBotoes">
-          <button className="botaozao botaoPrim" onClick={menosErro}>
-            Novo jogo - DEBUG: DIMINUI ERROS
+          <button className="botaozao botaoPrim">
+            Novo jogo
           </button>
-          <button className="botaozao botaoSec" onClick={maisErro}>
-            Desistir - DEBUG: AUMENTA ERROS
+          <button className="botaozao botaoSec">
+            Desistir
           </button>
         </div>
       </main>

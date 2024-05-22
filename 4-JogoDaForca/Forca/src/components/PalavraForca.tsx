@@ -1,6 +1,9 @@
-function PalavraForca() {
-    const palavra = "teste"
-    const chutes = ["t", "s", "p"]
+type PalavraProps = {
+    chutes: string[]
+    palavra: string
+}
+
+function PalavraForca({palavra, chutes}: PalavraProps) {
     return (
         <div className="palavraEscolhida">
             {palavra.split("").map((letra, index) => {
