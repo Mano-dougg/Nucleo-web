@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import Match from '../components/Match/Match';
 
 
-interface matches{
+interface match{
     id: string,
     isWinner: boolean,
     createdAt: string,
@@ -15,7 +15,7 @@ interface matches{
 
 export default function Start(){
     const { data: session } = useSession()
-    const [matches, setMatches] = useState<matches[]>([])
+    const [matches, setMatches] = useState<match[]>([])
 
     useEffect(() => {
         async function getAllMatches(){
@@ -25,21 +25,33 @@ export default function Start(){
             const data = await response.json()
             setMatches(data.message)
         }
+
+        function getAllMatchesFromLocalStorage(){
+            const data = localStorage.getItem('matches')
+            if(data){
+                let parsedData = JSON.parse(data)
+                parsedData.sort((a:match, b:match) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+                setMatches(parsedData)
+            }
+        }
+
         if(session){
             getAllMatches()
+        }else{
+            getAllMatchesFromLocalStorage()
         }
     }, [])
     return(
         <div className={s.container}>
             <div className={s.history}>
-                <p>{session? "Histórico de partidas" : "Você precisa fazer login para acessar o seu histórico de partidas"}</p>
-                {session &&
+                <p>Histórico de partidas</p>
+                {matches.length > 0 &&
                     <>
                         <p>Vitórias: {
-                            matches.filter((match) => match.isWinner).length
+                            matches?.filter((match) => match.isWinner).length
                         }</p>
                         <p>Derrotas: {
-                            matches.filter((match) => !match.isWinner).length
+                            matches?.filter((match) => !match.isWinner).length
                         }</p>
                     </>
                 }

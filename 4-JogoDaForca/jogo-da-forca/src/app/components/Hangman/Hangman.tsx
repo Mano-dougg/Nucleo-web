@@ -4,6 +4,7 @@ import Keyboard from '../Keyboard/Keyboard'
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
+
 export default function Hangman() {
     const [word, setWord] = useState("");
     const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
@@ -13,15 +14,44 @@ export default function Hangman() {
     const maxWrongGuesses = 6;
     const { data: session } = useSession();
     const router = useRouter()
+    
+    interface Match{
+        id: string,
+        isWinner: boolean,
+        createdAt: string,
+        word: string,
+    }
+
 
     useEffect(() => {
+        
         if(!session){
             const words = JSON.parse(localStorage.getItem("words") ?? '""');
-        const randomWord = words[Math.floor(Math.random() * words.length)];
-        setWord(randomWord);
+            const randomWord = words[Math.floor(Math.random() * words.length)];
+            setWord(randomWord);
         }
-        
+
     }, []);
+
+    useEffect(() => {
+        async function createMatchFromLocalStorage(){
+            let data:Match[] = await JSON.parse(localStorage.getItem('matches') ?? '[]')
+            const match = {
+                word: word,
+                createdAt: new Date().toISOString(),
+                id: Math.random().toString(36),
+                isWinner: false
+            }
+            data = [...data, match]
+            localStorage.setItem('matches', JSON.stringify(data))
+            setMatchId(match.id)
+        }
+
+        if(!session && !hasRun.current && word){
+            createMatchFromLocalStorage()
+            hasRun.current = true;
+        }
+    }, [word])
 
     useEffect(() => {
         async function getDBWords() {
@@ -37,7 +67,6 @@ export default function Hangman() {
         }
 
         async function createMatch(selectedWord: string){
-            console.log('cria word aqui', selectedWord)
             const response = await fetch('/api/match/create',{
                 method:'post',
                 body: JSON.stringify({
@@ -78,9 +107,23 @@ export default function Hangman() {
                 })
             })
         }
+
+        function updateMatchFromLocalStorage(){
+            const data:Match[] = JSON.parse(localStorage.getItem('matches') ?? '[]')
+            const response = data.map((match) => {
+                if(match.id === matchId){
+                    return {...match, isWinner: isGameWon}
+                }
+                return match
+            })
+            localStorage.setItem('matches', JSON.stringify(response))
+        }
+
         if(session){
             if(isGameWon || isGameOver) updateMatch()
             
+        }else{
+            if(isGameWon || isGameOver) updateMatchFromLocalStorage()
         }
     },[isGameOver, isGameWon])
 
