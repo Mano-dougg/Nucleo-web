@@ -1,19 +1,15 @@
 import './App.css'
-import JogoForcaDesenho from './componentes/jogoForcaDesenho'
-import JogoForcaPalavra from './componentes/jogoForcaPalavra'
-import JogoForcaTeclado from './componentes/jogoForcaTeclado'
-
+import AppRoutes from './Routes'
 
 
 function App() {
 
   return (
-      <div className='App'>
-        <JogoForcaDesenho />
-        <JogoForcaPalavra />
-        <JogoForcaTeclado />
+      <div>
+      <AppRoutes/>
+      </div> 
 
-      </div>
+
   )
 }
 
