@@ -4,6 +4,14 @@
   font-family: sans-serif;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
 button {
   border-radius: 15px;
   border: 1px solid var(--primario);
