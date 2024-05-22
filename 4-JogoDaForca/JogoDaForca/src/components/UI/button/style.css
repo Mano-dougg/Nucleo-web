@@ -8,11 +8,13 @@
         border-radius: 24px;
         font-family: inherit;
         transition: background .4s, color .4s;
+        width: 100%;
     }
 
     .primary,
     .secondary {
-        padding: 40px 100px;
+        padding: 40px 0px;
+        width: 100%;
 
         p {
             width: 100%;

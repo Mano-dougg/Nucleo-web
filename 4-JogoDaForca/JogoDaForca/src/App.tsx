@@ -1,13 +1,10 @@
-import { Button } from "./components/UI/button/button"
+import { HomeScreen } from "./components/screens/home"
 
 function App() {
 
   return (
     <>
-     <Button texto="primary" classe="primary"></Button>
-     <Button texto="secondary" classe="secondary"></Button>
-     <Button texto="secondary" classe="primary-low"></Button>
-     <Button texto="secondary" classe="secondary-low"></Button>
+<HomeScreen></HomeScreen>
     </>
   )
 }
