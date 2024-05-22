@@ -22,7 +22,9 @@ const App: React.FC = () => {
       <Header />
       <main>
         <div className="resultado">Waow!😀☹️</div>
-        <DesenhoForca erros={erros} />
+        <div className="desenho">
+          <DesenhoForca erros={erros} />
+        </div>
         <PalavraForca />
         <TecladoForca />
         <div className="doisBotoes">

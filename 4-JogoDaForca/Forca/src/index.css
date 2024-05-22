@@ -1,15 +1,29 @@
 :root {
   --primario: #0a3871;
   --secundario: white;
-  font-family: sans-serif;
+  font-family: 'Radio Canada Big', sans-serif;
 }
 
-body {
+header {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+}
+#logoAzinho {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
+  height: 100vh;
+  gap: 32px;
 }
 
 button {
@@ -29,4 +43,8 @@ button {
   background-color: var(--secundario);
   color: var(--primario);
   width: 332px;
+}
+
+.desenho {
+  width: 400px;
 }
