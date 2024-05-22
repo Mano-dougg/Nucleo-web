@@ -1,26 +1,31 @@
-import './App.css'
-import Hangman from './Components/Hangman/Hangman.tsx'
-import Header from './Components/Header/Header.tsx'
-import Word from './Components/Word/Word.tsx'
-import Placar from './Components/Placar/Placar.tsx'
+import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Gamepage from './Components/Game/Gamepage.tsx';
+import Homepage from './Components/Home/Homepage.tsx';
 
-function App() {
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/game" element={<Gamepage />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
+
+
+/*function App() {
 
   return (
     <>
-      <Header />
-      <section className='corpo'>
-        <Hangman />
-        <div className='direito'>
-          <Placar />
-          <Word />
-        </div>
-        
-        
-      </section>
+      <Gamepage />
       
     </>
   )
 }
 
-export default App
+export default App*/
