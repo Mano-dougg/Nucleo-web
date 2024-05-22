@@ -11,7 +11,7 @@ function App() {
       <div className="logo">
         <img src={Logo} alt="imagem-da-logo" />
       </div>
-      <div className="botoes">
+      <div className="botao">
         <Link to= "/App2">
           <Button 
             text='Começar a jogar'
@@ -31,24 +31,6 @@ function App() {
             opacity="0px"
           />
         </Link>  
-
-        <Button 
-          text='Adicionar nova palavra'
-          color=" #F3F5FC"
-          textColor='#0A3871'
-          width="317px"
-          height="105px"
-          padding="24px"
-          gap="8px"
-          borderRadius="24px"
-          borderColor="#0A3871"
-          borderWidth='1px'
-          borderStyle = "solid"
-          fontSize="16px"
-          fontWeight="400"
-          lineHeight="19.36px"
-          opacity="0px"
-        />
       </div>
       
     </>
