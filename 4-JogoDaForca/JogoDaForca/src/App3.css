@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Inter' ;
+    src: url("./components/Inter/static/Inter-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-color:#F3F5FC;
+}
+
+.elementos-forca{
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    gap: 2rem;
+    font-family: "Inter";
+}

@@ -1,12 +1,12 @@
 @font-face {
-    font-family: "Inter";
-    src: url("Inter/Inter-VariableFont_slnt\,wght.ttf") format("truetype");
+    font-family: 'Inter';
+    src: url("./Inter/static/Inter-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 button {
-    font-family: "Inter";
+    font-family: 'Inter';
     text-align: center;
     color: #0A3871;
     margin-top: 30px;
