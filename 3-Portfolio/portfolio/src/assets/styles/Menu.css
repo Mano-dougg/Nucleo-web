@@ -13,8 +13,8 @@ nav {
     background-color: #fff;
     padding: 10px 87px 10px 87px;
     gap: 20px; 
-    box-sizing: border-box;
     width: 100%; 
+    box-sizing: border-box;
     border-bottom: 50px solid; 
     border-image: linear-gradient(to bottom, #000, #fff) 20;
 }
@@ -121,6 +121,7 @@ img {
     nav.menu-mobile{
         display: flex;
         flex-direction: column;
+        border-bottom: 0px solid; 
     }
 
     .images{
