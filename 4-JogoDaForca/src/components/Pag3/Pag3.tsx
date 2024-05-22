@@ -6,7 +6,7 @@ export const Pag3 = () => {
     return(
         <>
         <section className={styles.Pag3}>
-            <article>
+            <article className={styles.articleForca}>
                 <HangmanDrawing/>
                 <HangmanWorld/>
             </article>
