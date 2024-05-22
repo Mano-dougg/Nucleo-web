@@ -1,0 +1,31 @@
+
+.articleButtons{
+    display: flex;
+    gap: 24px;
+}
+
+.buttonM1{
+    width: 332px;
+    height: 67px;
+    background-color: #0A3871;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.buttonM2{
+    width: 332px;
+    height: 67px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.pBranco{
+    color: #E9ECF8;
+}
