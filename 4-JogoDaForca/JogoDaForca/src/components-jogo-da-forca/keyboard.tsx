@@ -34,6 +34,16 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(7, minmax(75px, 1fr));
     gap: 0.5rem;
     width: 600px;
+
+    @media (min-width: 415px) and (max-width: 894px){
+        grid-template-columns: repeat(4, minmax(75px, 1fr));
+        width: 400px;
+    }
+
+    @media(max-width: 414px){
+        grid-template-columns: repeat(3, minmax(75px, 1fr));
+        width: 300px;
+    }
 `
 
 const Button = styled.button<{isActive: boolean}>`
@@ -60,6 +70,11 @@ const Button = styled.button<{isActive: boolean}>`
         outline: none;
         border-color: transparent;
         cursor: not-allowed;
+    }
+
+    @media (max-width: 894px){
+        height: 25px;
+        font-size: 14px;
     }
 `
 interface KeyBoardProps {

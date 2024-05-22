@@ -28,3 +28,15 @@ body{
     color: #0A3871;
     font-size: 30px;
 }
+
+@media screen and (max-width: 1010px){
+    .botoes-pag3{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .elementos-forca{
+        margin-top: 50px;
+    }
+    
+}

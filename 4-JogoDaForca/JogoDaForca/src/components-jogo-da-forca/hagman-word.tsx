@@ -9,6 +9,10 @@ const Wrapper =  styled.div`
     font-weight: bold;
     font-family: sans-serif;
     color: #0A3871;
+
+    @media (max-width:370px){
+        font-size: 2rem;
+    }
 `
 
 interface HangmanWordProps {
