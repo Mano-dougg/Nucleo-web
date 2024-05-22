@@ -1,0 +1,39 @@
+/* Telas pequenas*/
+  
+@media(min-width:200px) and (max-width:768px){
+    .div{
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        top:435px;
+    }
+  }
+  
+/* Telas intermediárias */
+  
+@media(min-width:768px) and (max-width:1270px){
+    .div{
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        top:580px;
+    }
+  }
+  
+/* Telas grandes */
+  
+@media(min-width:1270px){
+
+    .div{
+        width:99%;
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        top:420px;
+        left:13.5px;
+    }
+
+  }

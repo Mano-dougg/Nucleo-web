@@ -17,12 +17,12 @@ function Pag2() {
 {/*     <Link to={'/'}>
         <Botaos backgroundColor="#0A3871" text0="Começar a jogar"></Botaos>
         </Link> */}
-        <Link to={'/pag3'}>
+{/*         <Link to={'/pag3'}>
           <Botao2  backgroundColor="#0A3871" text0="Salvar e começar"></Botao2>
         </Link>
         <Link to={'/pag2'}>
           <Botao2  backgroundColor="white" text0="Cancelar"></Botao2>
-        </Link>
+        </Link> */}
     </>
   )
 }

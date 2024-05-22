@@ -3,6 +3,7 @@ import './App.css'
 import Botaos from '../components/Botao/botaos'
 import Icone from '../components/icone/icone'
 import { Link } from 'react-router-dom';
+import Hangman from '../components/Hangman-desen/Hangman';
 
 
 function Pag3() {
@@ -11,9 +12,10 @@ function Pag3() {
   return (
     <>
         <Icone/>
-        <Link to={'/'}>
+        <Hangman />
+{/*         <Link to={'/'}>
         <Botaos backgroundColor="#0A3871" text0="ComeAISJA"></Botaos>
-        </Link>
+        </Link> */}
     </>
   )
 }
