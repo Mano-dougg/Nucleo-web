@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { Button } from "../UI/button/button";
+import { Button, ButtonEvent } from "../UI/button/button";
 import AlertIcon from "../../assets/AlertIcon.svg";
-
+import { useRef } from "react";
 
 const media = {
   mobile: `@media (max-width: 500px)`,
 };
 
-const RegisterContainer = styled.section`
+const RegisterContainer = styled.form`
   height: 100%;
   width: 668px;
   max-width: 100%;
@@ -91,13 +91,18 @@ const WarningContainer = styled.p`
 `;
 
 export const RegisterScreen = () => {
+  const inRef = useRef<HTMLInputElement>(null);
 
+  const handleSalvarPalavra = ():void =>{
+    const valor = inRef.current?.value
+    localStorage.setItem("palavra", JSON.stringify(valor))
+  }
 
   return (
     <RegisterContainer>
       <InputContainer>
         <h1>Digite uma palavra abaixo</h1>
-        <Input maxLength={8} />
+        <Input maxLength={8} ref={inRef} required/>
       </InputContainer>
       <ActionsContainer>
         <WarningContainer>
@@ -105,8 +110,8 @@ export const RegisterScreen = () => {
           Máx. de 8 letras
         </WarningContainer>
         <ButtonsContainer>
-          <Button texto={"salvar e começar"} classe={"primary-low"} />
-          <Button texto={"Cancelar"} classe={"secondary-low"} />
+          <ButtonEvent texto={"salvar e começar"} classe={"primary-low"} evento={handleSalvarPalavra}/>
+          <Button texto={"Cancelar"} classe={"secondary-low"}/>
         </ButtonsContainer>
       </ActionsContainer>
     </RegisterContainer>
