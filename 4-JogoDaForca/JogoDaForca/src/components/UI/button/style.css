@@ -25,7 +25,10 @@
 
     .primary-low,
     .secondary-low {
-        padding: 24px 100px;
+        padding: 24px 0px;
+        flex-grow: 1;
+        flex-basis: 0;
+        flex-shrink: 2;
     }
 
 
