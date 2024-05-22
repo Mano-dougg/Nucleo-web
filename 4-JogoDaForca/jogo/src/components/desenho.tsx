@@ -99,21 +99,21 @@ const PernaE = styled.div`
     rotate: 310deg;
 `;
 
+type DesenhoProps={
+  nTentativas: number
+}
 
-export default function Desenho() {
+const BONECO = [ Head, Body, BracoD, BracoE, PernaD, PernaE]
+
+export default function Desenho({nTentativas}: DesenhoProps) {
   return (
     <div style={{
         position: 'relative',
         display:'flex',
-        flexDirection:'column',
-        
-    }}>
-      <PernaE/>  
-      <PernaD/>  
-      <BracoE/>  
-      <BracoD/>
-      <Body /> 
-      <Head />
+        flexDirection:'column',}}>
+      {BONECO.slice(0, nTentativas).map((Component, index) => (
+        <Component key={index} />
+      ))}
       <TracoTronquinho />
       <TracoTopo />
       <TracoTronco />

@@ -21,3 +21,87 @@ const ImageSwap: React.FC = () => {
 };
 
 export default ImageSwap;
+
+
+
+
+
+
+
+
+
+
+
+const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: .25rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: monospace;
+`
+
+type palavrasProps = {
+    letrasAdivinhadas: string[],
+    palavraAdivinhar: string
+
+}
+
+export default function Palavras({letrasAdivinhadas,palavraAdivinhar}: palavrasProps ) {
+    
+
+    return (
+        <Wrapper>
+            {palavraAdivinhar.split("").map((letter, index) => (
+                <span style={{ borderBottom: '0.1em solid white'}} key={index}>
+                    <span style={{visibility: letrasAdivinhadas.includes(letter) ? "visible" : "hidden"}}>{letter}</span>
+                    
+                </span>
+            ))}
+        </Wrapper>
+    );
+}
+
+
+
+
+function play(){
+
+    const [palavraAdivinhar, setPalavraAdivinhar] = useState(() => {
+        return palavras[(Math.random() * palavras.length)]
+      })
+  
+    const [letrasAdivinhadas, setletrasAdivinhadas] = useState<string[]>([])
+
+    const letrasIncorretas = [letrasAdivinhadas.filter(letter => !palavraAdivinhar.includes(letter)) ]
+
+
+
+return(
+   <div className="jogo" style={{
+    position:'relative',
+    maxWidth: "800px",
+    display: "flex",
+    flexDirection: "column",
+    gap:"2rem",
+    margin: "0 auto",
+    alignItems: "center"
+}}>
+    <h2>game</h2>
+    <Desenho nTentativas={letrasIncorretas.length}/>
+    <Palavras letrasAdivinhadas={letrasAdivinhadas} palavraAdivinhar = {palavraAdivinhar}/>
+    <div className="teclado"><Keyboard/></div>
+   </div>
+  )}
+
+
+export default play;
+
+
+
+const [palavraAdivinhar, setPalavraAdivinhar] = useState(() => {
+    return palavras[(Math.random() * palavras.length)]
+})
+
+

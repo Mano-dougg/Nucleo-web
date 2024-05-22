@@ -19,7 +19,7 @@ import { useState } from 'react'
         <div className="home">
           <h2>Bem-vindo ao jogo!</h2>
           <p>Clique no botão para começar.</p>
-          <button onClick={handleClick}>Let's play!</button>
+          <button id="botaoinicial" onClick={handleClick}>Let's play!</button>
         </div>
       )}
 

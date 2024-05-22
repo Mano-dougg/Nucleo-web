@@ -2,6 +2,8 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  height: 100%;
+ 
   
 }
 
@@ -9,36 +11,72 @@
 .home{
   display:flex;
   flex-direction:column;
+  place-items: center;
+  align-items: center;
   justify-content: space-between;
+  justify-content: center;
+  margin-top: 200px;
   
 }
 
 
-button {
+
+
+#botaoinicial {
+ 
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #ffffff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#botaoinicial:hover {
+  border-color: #000000;
 }
 
 
 
-.home{
-  z-index: 1;
+
+
+
+.teclado{
+  align-self: stretch;
 }
 
-.jogo{
-  z-index: 0;
+
+
+
+
+
+.botaozinho{
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
+
+.botaozinho.active{
+  background-color: rgb(182, 140, 198);
+  color:rgb(255, 255, 255)
+}
+
+.botaozinho.inactive{
+  opacity: 0.3;
+  
+}
+
+.botaozinho:hover:not(:disabled), .botaozinho:focus:not(:disabled){
+  background-color: rgb(182, 140, 198);
+  color:rgb(255, 255, 255)
+}
+
