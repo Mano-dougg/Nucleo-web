@@ -23,3 +23,8 @@ body{
     justify-content: space-evenly;
     gap: 2rem;
 }
+
+.placar{
+    color: #0A3871;
+    font-size: 30px;
+}

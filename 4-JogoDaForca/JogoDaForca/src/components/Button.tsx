@@ -17,6 +17,7 @@ interface ButtonProps {
     fontSize: string;
     fontWeight: string;
     lineHeight: string;
+    onClick?: () => void
   }
   
   export const Button: React.FC<ButtonProps> = ({
@@ -35,6 +36,7 @@ interface ButtonProps {
     fontSize,
     fontWeight,
     lineHeight,
+    onClick,
   }) => {
     const buttonStyle: React.CSSProperties = {
       backgroundColor: color,
@@ -54,7 +56,7 @@ interface ButtonProps {
     };
   
     return (
-      <button className="button" style={buttonStyle}>
+      <button className="button" style={buttonStyle} onClick={onClick}>
         {text}
       </button>
     );
