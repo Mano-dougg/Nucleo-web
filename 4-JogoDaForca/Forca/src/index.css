@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
 :root {
-  --primario: #0a3871;
-  --secundario: white;
+  --primario: #e8a241;
+  --secundario: #0f3e2a;
+  --atencao: #ffed92;
   font-family: 'Radio Canada Big', sans-serif;
 }
 
@@ -27,9 +28,15 @@ main {
   flex-direction: column;
   height: 100vh;
   gap: 32px;
+  background-color: var(--secundario);
 }
 
-button {
+.doisBotoes {
+  display: flex;
+  gap: 25px;
+}
+
+.botaozao {
   border-radius: 15px;
   border: 1px solid var(--primario);
   font-weight: 500;
@@ -49,15 +56,44 @@ button {
 }
 
 .desenho {
-  width: 400px;
+  width: 300px;
 }
 
 .palavraEscolhida {
   display: flex;
   gap: .25em;
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: bold;
   text-transform: uppercase;
   font-family: 'Kode Mono', monospace;
   color: var(--primario)
+}
+
+.tecladoTodo {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(3rem, 100fr));
+  gap: .5rem;
+}
+.teclas {
+  border-radius: 10%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  aspect-ratio: 1/1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.teclas:hover:not(:disabled),
+.teclas:focus:not(:disabled) {
+  background-color: var(--atencao);
+}
+
+.teclas.correto {
+  background-color: #04b704;
+  color: white;
+  cursor: default;
+}
+
+.teclas.incorreto {
+  opacity: .3;
+  cursor: default;
 }

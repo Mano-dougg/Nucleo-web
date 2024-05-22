@@ -28,10 +28,10 @@ const App: React.FC = () => {
         <PalavraForca />
         <TecladoForca />
         <div className="doisBotoes">
-          <button className="botaoPrim" onClick={menosErro}>
+          <button className="botaozao botaoPrim" onClick={menosErro}>
             Novo jogo - DEBUG: DIMINUI ERROS
           </button>
-          <button className="botaoSec" onClick={maisErro}>
+          <button className="botaozao botaoSec" onClick={maisErro}>
             Desistir - DEBUG: AUMENTA ERROS
           </button>
         </div>

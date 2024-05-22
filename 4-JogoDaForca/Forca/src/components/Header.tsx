@@ -4,7 +4,7 @@ function Header() {
     return (
         <header>
             <div id='logoAzinho'>
-                <img src={Imagem} />
+                <img src={Imagem} style={{fill: 'var(--primario)'}} />
             </div>
         </header>
     );
