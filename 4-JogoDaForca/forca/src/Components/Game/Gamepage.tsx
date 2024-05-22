@@ -2,6 +2,7 @@ import Header from "../Header/Header.tsx";
 import Hangman from "../Hangman/Hangman.tsx";
 import Placar from "../Placar/Placar.tsx";
 import Word from "../Word/Word.tsx";
+import Teclado from "../Teclado/Teclado.tsx"
 import { Page } from './gamepage.ts';
 
 const Gamepage: React.FC = () => {
@@ -11,11 +12,15 @@ const Gamepage: React.FC = () => {
         <Header />
 
         <section className='corpo'>
-          <Hangman />
+
+        <div className='esquerdo'>
+            <Hangman />
+            <Word />
+          </div>
           
           <div className='direito'>
             <Placar />
-            <Word />
+            <Teclado />
           </div>
 
         </section>

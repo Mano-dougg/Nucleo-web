@@ -3,12 +3,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Gamepage from './Components/Game/Gamepage.tsx';
 import Homepage from './Components/Home/Homepage.tsx';
+import Placar from './Components/Placar/Placar.tsx';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/placar/:player1Name/:player2Name" element={<Placar />} />
         <Route path="/game" element={<Gamepage />} />
       </Routes>
     </Router>

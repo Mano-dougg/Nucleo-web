@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { Home } from './homepage.ts';
 
 const Homepage: React.FC = () => {
-  const navigate = useNavigate(); // Use navigate diretamente, sem atribuir a uma variável chamada history
+  const navigate = useNavigate();
   const [isTwoPlayers, setIsTwoPlayers] = useState(false);
   const [player1Name, setPlayer1Name] = useState('');
   const [player2Name, setPlayer2Name] = useState('');
 
   const handleStartGame = () => {
-    navigate('/game', { state: { isTwoPlayers, player1Name, player2Name } }); // Use navigate para navegar para '/game'
+    navigate('/game', { state: { isTwoPlayers, player1Name, player2Name } });
   };
 
   return (

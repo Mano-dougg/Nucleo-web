@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border 3px solid black;
+    justify-content: space-around;
+    magin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
     border-radius:15px;
-    width: 50px;
-    height:50px;
-
-    h3{
-        
-        align-itens:center;
-        background-color: var(--primary);
-    }
+    border: 1px solid black;
+    width: 80%;
+    height:100%;
 `;
