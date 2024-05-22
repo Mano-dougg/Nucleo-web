@@ -1,11 +1,12 @@
 import styles from './Pag3.module.css'
+import { HangmanDrawing } from './HangmanDrawing/HangmanDrawing'
 
 export const Pag3 = () => {
     return(
         <>
         <section className={styles.Pag3}>
             <article>
-
+                <HangmanDrawing/>
 
             </article>
             <article className={styles.articleButtons}>

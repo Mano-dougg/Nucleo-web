@@ -1,0 +1,108 @@
+
+.sectionHangman{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horizontalLine{
+    background-color: #0A3871;
+    width: 177.75px;
+    height: 4.5px;
+    border-radius: 8px;
+    margin-left: 177.75px;
+}
+
+.verticalLine{
+    display: flex;
+}
+
+.verticalBigLine{
+    background-color: #0A3871;
+    width: 4.5px;
+    height: 360px;
+    border-radius: 8px;
+}
+
+.verticalSmallLine{
+    background-color: #0A3871;
+    width: 4.5px;
+    height: 49.5px;
+    border-radius: 8px;
+    position: absolute;
+    margin-left: 177.5px;
+}
+
+.headMan{
+    width: 63px;
+    height: 63px;
+    border: 4.5px solid #0A3871;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 144.5px;
+    margin-top: 48px;
+}
+
+.bodyMan{
+    background-color: #0A3871;
+    width: 4.5px;
+    height: 135px;
+    border-radius: 8px;
+    position: absolute;
+    margin-top: 118.5px;
+    margin-left: 177.5px;
+}
+
+.rightArm{
+        background-color: #0A3871;
+        width: 4.5px;
+        height: 72px;
+        border-radius: 8px;
+        position: absolute;
+        margin-top: 113.5px;
+        margin-left: 196.5px;
+        rotate: 150deg;
+}
+
+.leftArm{
+    background-color: #0A3871;
+    width: 4.5px;
+    height: 72px;
+    border-radius: 8px;
+    position: absolute;
+    margin-top: 113.5px;
+    margin-left: 158.5px;
+    rotate: 30deg;
+}
+
+.rightLeg{
+    background-color: #0A3871;
+    width: 4.5px;
+    height: 72px;
+    border-radius: 8px;
+    position: absolute;
+    margin-top: 245.5px;
+    margin-left: 194.5px;
+    rotate: 150deg;
+}
+
+.leftLeg{
+    background-color: #0A3871;
+    width: 4.5px;
+    height: 72px;
+    border-radius: 8px;
+    position: absolute;
+    margin-top: 245.5px;
+    margin-left: 160.5px;
+    rotate: 30deg;
+}
+
+
+.base{
+    background-color: #0A3871;
+    width: 294px;
+    height: 5px;
+    border-radius: 8px;
+    margin-left: 80.67px;
+}
