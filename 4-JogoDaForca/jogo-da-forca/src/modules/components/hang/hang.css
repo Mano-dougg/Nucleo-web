@@ -1,0 +1,45 @@
+.hang-container{
+    position: relative;
+    height: 50vh;
+    width: 80%;
+    margin-bottom: -15%;
+}
+
+.hang-item{
+    position: relative;
+    background-color: white;
+}
+
+.hang-upper{
+    left: 18%;
+    top: 0;
+    width: 40%;
+    height: 0.5%;
+}
+
+.hang-pole{
+    left: 18%;
+    width: 2px;
+    height: 70%;
+}
+
+.hang-rope{
+    bottom: 70%;
+    left: 58%;
+    width: 2px;
+    height: 15%;
+}
+
+.hang-base{
+    bottom: 15%;
+    width: 70%;
+    height: 0.5%;
+}
+
+.hang-body{
+    width: 30%;
+    height: 50%;
+    bottom: 71%;
+    left: 43%;
+    background-color: transparent;
+}

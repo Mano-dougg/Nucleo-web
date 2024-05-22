@@ -1,0 +1,54 @@
+.body-part{
+    position: relative;
+    background-color: white;
+}
+
+.body-head{
+    left: 25%;
+    width: 50%;
+    height: 30%;
+    border-radius: 50%;
+}
+
+.body-torso{
+    top: -1%;
+    left: 50%;
+    width: 3%;
+    height: 50%;
+}
+
+.body-left-arm{
+    bottom: 50%;
+    left: 50%;
+    width: 3%;
+    height: 30%;
+    transform-origin: top center;
+    transform: rotate(45deg);
+}
+
+.body-right-arm{
+    bottom: 80%;
+    left: 50%;
+    width: 3%;
+    height: 30%;
+    transform-origin: top center;
+    transform: rotate(-45deg); 
+}
+
+.body-left-leg{
+    bottom: 62%;
+    left: 50%;
+    width: 3%;
+    height: 25%;
+    transform-origin: top center;
+    transform: rotate(40deg);
+}
+
+.body-right-leg{
+    bottom: 87%;
+    left: 49.5%;
+    width: 3%;
+    height: 25%;
+    transform-origin: top center;
+    transform: rotate(-40deg);
+}
