@@ -8,7 +8,7 @@ import Forca6 from '../assets/forca6.svg'
 import React  from 'react'
 
 type DesenhoProps = {
-    erros: 0|1|2|3|4|5|6;
+    erros: number;
 }
 
 const DesenhoForca: React.FC<DesenhoProps> = ({erros}) => {
