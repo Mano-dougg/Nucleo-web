@@ -1,16 +1,21 @@
 import HangmanDrawn from "../components/HangmanDrawn"
 import HangmanWord from "../components/HangmanWord"
-import Keyboard from "../components/Keyboard";
+import Keyboard from "../components/Keyboard"
+import './Game.css'
 
 function Game() {
 
     return (
         <>
-            <div className="game-content" style={{display: 'flex', maxWidth: '80rem', minHeight: '100vh', margin: '0 auto', flexDirection:'column', alignItems: 'center', justifyContent: 'center', gap: '2rem'}}>
+            <div className="game-content">
                 <HangmanDrawn />
                 <HangmanWord />
                 <div style={{alignSelf: 'stretch'}}>
                     <Keyboard />
+                </div>
+                <div className="game-page-btns">
+                    <button>Novo jogo</button>
+                    <button>Desistir</button>
                 </div>
             </div>
         </>
