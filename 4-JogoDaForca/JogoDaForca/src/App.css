@@ -7,11 +7,13 @@ body{
   height: 48px;
   margin-top: 30px;
   margin-left: 50px;
+  animation: transitionIn 0.7s;
 }
 
 .logo img{
   width: 31.09px;
   height: 48px;
+  animation: transitionIn 0.7s;
 }
 
 .botao {
@@ -21,5 +23,17 @@ body{
   align-items: center;
   justify-items: center;
   margin-top: 150px;
+  animation: transitionIn 0.7s;
 }
 
+@keyframes transitionIn{
+  from{
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  
+  to{
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}

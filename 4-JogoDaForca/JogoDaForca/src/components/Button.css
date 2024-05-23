@@ -10,4 +10,13 @@ button {
     text-align: center;
     color: #0A3871;
     margin-top: 30px;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    
+}
+
+button:hover {
+    transform: translateY(-10px);
 }

@@ -16,6 +16,7 @@ body{
   justify-items: left;
   display: flex;
   flex-direction: column;
+  animation: transitionIn 0.7s;
 }
 
 .regras li{
@@ -23,11 +24,13 @@ body{
   font-size: 20px;
   width: 900px;
   color: #0A3871;
+  animation: transitionIn 0.7s;
 }
 
 .regras h1{
   margin-bottom: 100px;
   color: #0A3871;
+  animation: transitionIn 0.7s;
 }
 
 .botoes-pagina-2 {
@@ -37,7 +40,22 @@ body{
   justify-content: space-evenly;
   margin-left: 280px;
   margin-right: 300px;
+  animation: transitionIn 0.7s;
 }
+
+@keyframes transitionIn{
+  from{
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  
+  to{
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+
 
 @media screen and (min-width:918px) and (max-width:1074px) {
   .botoes-pagina-2{
