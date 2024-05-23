@@ -46,6 +46,8 @@ const hangmanImages = [
 const Game: React.FC = () => {
   const initialScore = loadScore();
   const initialHistory = loadHistory();
+  const [showHistory, setShowHistory] = useState(true);
+  const [showKeyboard, setShowKeyboard] = useState(true);
   const [gameState, setGameState] = useState<GameState>('playing');
   const [guesses, setGuesses] = useState<string[]>([]);
   const [word, setWord] = useState<string>(getRandomWord());
@@ -115,18 +117,26 @@ const Game: React.FC = () => {
 
   return (
     <div className="game-container" onKeyDown={handleKeyDown} tabIndex={0}>
-      <div className="game-history-container">
-        <GameHistory history={history} />
-      </div>
+      {showHistory && (
+        <div className="game-history-container">
+          <GameHistory history={history} />
+        </div>
+      )}
       <div className="container">
         <h1>Jogo da Forca</h1>
+        <button onClick={() => setShowHistory(!showHistory)}>
+          {showHistory ? 'Ocultar Histórico' : 'Mostrar Histórico'}
+        </button>
+        <button onClick={() => setShowKeyboard(!showKeyboard)}>
+          {showKeyboard ? 'Ocultar Teclado' : 'Mostrar Teclado'}
+        </button>
         <div className="scoreboard">
           <p>Vitórias: {wins}</p>
           <p>Derrotas: {losses}</p>
         </div>
         <img src={hangmanImages[errors]} alt={`Hangman stage ${errors}`} />
         <Word word={word} guesses={guesses} />
-        <Keyboard onGuess={handleGuess} guesses={guesses} />
+        {showKeyboard && <Keyboard onGuess={handleGuess} guesses={guesses} />}
         {gameState === 'lost' && <p>Você perdeu! A palavra era: {word}</p>}
         {gameState === 'won' && <p>Parabéns! Você ganhou!</p>}
         {incorrectGuesses.length > 0 && (
