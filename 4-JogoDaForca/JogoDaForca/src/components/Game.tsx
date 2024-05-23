@@ -32,6 +32,12 @@ const Game: React.FC = () => {
     }
     }, [guesses, errors, word]);
 
+    const resetGame = () => {
+      setWord(getRandomWord());
+      setGuesses([]);
+      setGameState('playing');
+    };
+
     return (
         <div>
             <h1>Jogo da Forca</h1>
@@ -43,6 +49,9 @@ const Game: React.FC = () => {
               <h2>Letras Erradas:</h2>
               <p>{incorrectGuesses.join(', ')}</p>
             </div>
+            {(gameState === 'lost' || gameState === 'won') && (
+              <button onClick={resetGame}>Reiniciar Partida</button>
+            )}
         </div>
     );
 };
