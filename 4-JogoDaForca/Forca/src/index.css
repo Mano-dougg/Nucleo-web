@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
 :root {
-  --primario: #e8a241;
-  --secundario: #0f3e2a;
+  --primario: #ffc97e;
+  --secundario: #3d564b;
   --corBotao: #03311c;
   --atencao: #708403;
   --corTexto: white;
@@ -32,6 +32,13 @@ main {
   height: 100vh;
   gap: 32px;
   background-color: var(--secundario);
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Kode Mono', sans-serif;
+  color: var(--primario);
+  font-weight: bold;
 }
 
 .doisBotoes {
@@ -101,4 +108,12 @@ main {
 .teclas.incorreto {
   opacity: .3;
   cursor: default;
+}
+
+.input {
+  width: 25vw;
+  background-color: var(--corBotao);
+  color: var(--primario);
+  text-align: center;
+  font-size: 2em;
 }
