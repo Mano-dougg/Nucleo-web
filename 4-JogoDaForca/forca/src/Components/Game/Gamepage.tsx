@@ -55,7 +55,7 @@ const Gamepage: React.FC = () => {
         <section className='corpo'>
 
         <div className='esquerdo'>
-            <Hangman numeroDeTentativas={letrasErradas.length}/>
+            <Hangman letrasErradas={letrasErradas}/>
           </div>
           
           <div className='direito'>

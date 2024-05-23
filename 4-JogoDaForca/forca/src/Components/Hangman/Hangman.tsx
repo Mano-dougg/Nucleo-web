@@ -3,10 +3,14 @@ import {Base, BracoDireito, BracoEsquerdo, Corpo, Forca, Haste, Head, PernaDirei
 const partesCorpo = [Head, Corpo, BracoDireito, BracoEsquerdo, PernaDireita, PernaEsquerda ]
 
 interface HangmanProps{
-    numeroDeTentativas: number
+    letrasErradas: string[];
 }
 
-function Hangman({numeroDeTentativas} : HangmanProps){
+function Hangman({letrasErradas} : HangmanProps){
+
+    const letrasUnicas = new Set(letrasErradas);
+    const numeroDeTentativas = letrasUnicas.size;
+
     return (
         <div style={{
             position: 'relative',
