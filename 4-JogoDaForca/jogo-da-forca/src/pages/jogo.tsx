@@ -90,6 +90,15 @@ function Jogo() {
   return (
     <div id="jogo">
       <img src={desenho} alt="Imagem de uma forca" />
+      <h1>{renderPalavra()}</h1>
+
+      <p>
+          Erros: {erros} <br/>
+          Máximo: {6} 
+      </p>
+
+      {perdeu && <h3>Não foi dessa vez...</h3>}
+      {venceu && <h3>Parabéns, você acertou!</h3>}
 
       <div>
         <button className='button' onClick={novoJogo}>Novo jogo</button>
