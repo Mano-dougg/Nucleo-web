@@ -42,11 +42,24 @@ function Jogo() {
     if (!palavra.includes(letra)) setErros(erros + 1);
     setPalpites((x) => [...x, letra]);
   };
-  
+
   // -Aperto de teclas
   function teclaApertada(event: KeyboardEvent) {
     const letra = event.key.toUpperCase();
     if (/^[A-Z]$/.test(letra)) tentativa(letra);
+  };
+
+  // -Botão "novo jogo"
+  function novoJogo() {
+    setPalpites([]);
+    setErros(0);
+    navegar('/escolha');
+  };
+  // -Botão "desistir"
+  function desistir() {
+    const letrasFaltantes: string[] = palavraArray.filter((letra: string) => !palpites.includes(letra));
+    setPalpites(palpites.concat(letrasFaltantes));
+    setPerdeu(true);
   };
 
 
