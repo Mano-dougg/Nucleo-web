@@ -24,6 +24,15 @@ const saveScore = (wins: number, losses: number) => {
   localStorage.setItem('losses', losses.toString());
 };
 
+const loadHistory = () => {
+  const savedHistory = localStorage.getItem('history');
+  return savedHistory ? JSON.parse(savedHistory) : [];
+};
+
+const saveHistory = (history: { result: string; word: string }[]) => {
+  localStorage.setItem('history', JSON.stringify(history));
+};
+
 const hangmanImages = [
   '/images/hangman0.png',
   '/images/hangman1.png',
@@ -36,12 +45,13 @@ const hangmanImages = [
 
 const Game: React.FC = () => {
   const initialScore = loadScore();
+  const initialHistory = loadHistory();
   const [gameState, setGameState] = useState<GameState>('playing');
   const [guesses, setGuesses] = useState<string[]>([]);
   const [word, setWord] = useState<string>(getRandomWord());
   const [wins, setWins] = useState<number>(initialScore.wins);
   const [losses, setLosses] = useState<number>(initialScore.losses);
-  const [history, setHistory] = useState<{ result: string; word: string }[]>([]);
+  const [history, setHistory] = useState<{ result: string; word: string }[]>(initialHistory);
   const maxErrors = 6;
 
   const incorrectGuesses = guesses.filter(letter => !word.includes(letter));
@@ -62,6 +72,10 @@ const Game: React.FC = () => {
   useEffect(() => {
     saveScore(wins, losses);
   }, [wins, losses]);
+
+  useEffect(() => {
+    saveHistory(history);
+  }, [history]);
 
   const handleGuess = (letter: string) => {
       if (!guesses.includes(letter) && gameState === 'playing') {
@@ -91,11 +105,12 @@ const Game: React.FC = () => {
     }
   };
   
-
   const resetScoreboard = () => {
     setWins(0);
     setLosses(0);
     resetGame();
+    setHistory([]);
+    saveHistory([]);
   };
 
   return (
@@ -121,7 +136,7 @@ const Game: React.FC = () => {
           </div>
         )}
         {(gameState === 'lost' || gameState === 'won') && (
-          <button onClick={resetGame}>Reiniciar Jogo</button>
+          <button onClick={resetGame}>Nova Partida</button>
         )}
         {gameState === 'playing' && (
           <button onClick={giveUp}>Desistir</button>
