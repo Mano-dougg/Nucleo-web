@@ -3,6 +3,7 @@ import { Button, ButtonEvent } from "../UI/button/button";
 import { ButtonsContainer } from "./register";
 import { useState, useEffect, useRef } from "react";
 import { Boneco } from "../UI/button/boneco/boneco";
+import { Link } from "react-router-dom";
 
 const media = {
   mobile: `@media (max-width: 500px)`,
@@ -71,6 +72,16 @@ const LetterContainer = styled.div`
   }
 `;
 
+const palavrasVetor: string[] = localStorage.getItem("palavra")?.split("-") || [
+  "",
+];
+
+const palavra: string = palavrasVetor[
+  Math.floor(Math.random() * palavrasVetor.length)
+].replace(/"/g, "");
+
+const palavraTamanho: number = palavra.length;
+
 export const GameScreen = () => {
   const [texto, setTexto] = useState("");
   const [valor, setValor] = useState("");
@@ -79,12 +90,6 @@ export const GameScreen = () => {
   const [condicao, setCondicao] = useState(false);
   const [partida, setPartida] = useState("");
   const inRef = useRef<HTMLInputElement>(null);
-
-  const palavra: string = JSON.parse(
-    localStorage.getItem("palavra")?.toUpperCase() || ""
-  );
-
-  const palavraTamanho: number = palavra.length;
 
   useEffect(() => {
     inRef.current?.focus();
@@ -98,7 +103,7 @@ export const GameScreen = () => {
     if (quantidadeErros == 6) {
       setCondicao(true);
       setTexto(palavra.toString().toUpperCase());
-      setPartida(`VOCÊ PERDEU! A PALAVRA ERA: ${palavra}`);
+      setPartida(`VOCÊ PERDEU!`);
     }
   }, [quantidadeErros]);
 
@@ -107,17 +112,17 @@ export const GameScreen = () => {
     setValor(novoValor);
     console.log(valor);
 
-    const textoSeparado: string[] = texto.toUpperCase().split("");
+    const textoSeparado: string[] = texto.split("");
     const palavraSeparada: string[] = palavra.split("");
 
     for (let i = 0; i < palavraTamanho; i++) {
-      if (valor === palavraSeparada[i]) {
+      if (valor.toLowerCase() === palavraSeparada[i].toLowerCase()) {
         textoSeparado[i] = palavraSeparada[i];
         setTexto(textoSeparado.join("").toUpperCase());
       }
     }
 
-    if (!palavra.includes(valor)) {
+    if (!palavra.toLowerCase().includes(valor.toLowerCase())) {
       setQuantidadeErros((e) => e + 1);
     }
 
@@ -151,8 +156,14 @@ export const GameScreen = () => {
         />
       </LetterContainer>
       <ButtonsContainer>
-        <Button texto={"Novo jogo"} classe={"primary-low"} />
-        <ButtonEvent texto={"Desistir"} classe={"secondary-low"} evento={() => setPartida(`VOCÊ PERDEU! A PALAVRA ERA: ${palavra}`)}/>
+        <Link to={"/"} style={{ flexGrow: "1" }}>
+          <Button texto={"Novo jogo"} classe={"primary-low"} />
+        </Link>
+        <ButtonEvent
+          texto={"Desistir"}
+          classe={"secondary-low"}
+          evento={() => setPartida(`VOCÊ PERDEU! A PALAVRA ERA: ${palavra}`)}
+        />
       </ButtonsContainer>
     </MainContainer>
   );

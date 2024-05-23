@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Button, ButtonEvent } from "../UI/button/button";
 import AlertIcon from "../../assets/AlertIcon.svg";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const media = {
   mobile: `@media (max-width: 500px)`,
@@ -91,18 +92,46 @@ const WarningContainer = styled.p`
 `;
 
 export const RegisterScreen = () => {
+  const [rota, setRota] = useState("");
   const inRef = useRef<HTMLInputElement>(null);
+
+  const handlerVerificarRota = () => {
+    if (inRef.current?.value.length == 0 || inRef.current?.value == " ") {
+      alert("Digita alguma palavra!");
+      return;
+    } else {
+      setRota("/Game");
+    }
+  };
 
   const handleSalvarPalavra = (): void => {
     const valor = inRef.current?.value.toUpperCase();
-    localStorage.setItem("palavra", JSON.stringify(valor));
+    if (inRef.current?.value.length == 0 || inRef.current?.value == " ") {
+      alert("Digita alguma palavra!");
+      return;
+    }
+
+    if (localStorage.getItem("palavra")) {
+      const antigaPalavra =
+        JSON.parse(localStorage.getItem("palavra") || "") + "-" + valor;
+      const salvar = JSON.stringify(antigaPalavra);
+      localStorage.setItem("palavra", salvar);
+    } else {
+      const palavra = JSON.stringify(valor);
+      localStorage.setItem("palavra", palavra);
+    }
   };
 
   return (
     <RegisterContainer onSubmit={(e) => e.preventDefault()}>
       <InputContainer>
         <h1>Digite uma palavra abaixo</h1>
-        <Input maxLength={8} ref={inRef} required />
+        <Input
+          maxLength={8}
+          ref={inRef}
+          required
+          onChange={handlerVerificarRota}
+        />
       </InputContainer>
       <ActionsContainer>
         <WarningContainer>
@@ -110,12 +139,17 @@ export const RegisterScreen = () => {
           Máx. de 8 letras
         </WarningContainer>
         <ButtonsContainer>
-          <ButtonEvent
-            texto={"salvar e começar"}
-            classe={"primary-low"}
-            evento={handleSalvarPalavra}
-          />
-          <Button texto={"Cancelar"} classe={"secondary-low"} />
+          <Link to={rota} style={{ width: "100%" }}>
+            <ButtonEvent
+              texto={"salvar e começar"}
+              classe={"primary-low"}
+              evento={handleSalvarPalavra}
+            />
+          </Link>
+
+          <Link to={"/"} style={{ width: "100%" }}>
+            <Button texto={"Cancelar"} classe={"secondary-low"} />
+          </Link>
         </ButtonsContainer>
       </ActionsContainer>
     </RegisterContainer>
