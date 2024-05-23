@@ -15,10 +15,22 @@ import forca6 from '../assets/forca_fim.png';
 
 // --FUNCTION
 function Jogo() {
+  // -Geral
+  const palavra: string = localStorage.getItem('palavraForca') || '';
+  const palavraArray: string[] = palavra.split('');
+  const desenhoForca: string[] = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
+  const navegar = useNavigate();
+  // -States
+  const [palpites, setPalpites] = useState<string[]>([]);
+  const [erros, setErros] = useState<number>(0);
+  const [desenho, setDesenho] = useState<string>(desenhoForca[0]);
+  const [perdeu, setPerdeu] = useState<boolean>(false);
+  const [venceu, setVenceu] = useState<boolean>(false);
 
+  // -Return
   return (
     <div id="jogo">
-      <img src={forca0} alt="Imagem de uma forca" />
+      <img src={desenho} alt="Imagem de uma forca" />
 
       <div>
         <button className='button' onClick={novoJogo}>Novo jogo</button>
