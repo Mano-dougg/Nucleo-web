@@ -5,6 +5,8 @@
     width: 100%;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
+    background-color: azure;
+    height: 100vh;
 }
 
 .textArea{
@@ -17,6 +19,7 @@
 .description{
     width: 40%;
     margin-top: 10px;
+    color: gray;
 }
 
 .buttonContainer{

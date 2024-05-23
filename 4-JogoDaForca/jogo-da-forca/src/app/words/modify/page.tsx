@@ -97,6 +97,7 @@ export default function Modify() {
                     </div>
                 )}
             </div>
+            <Button text="Voltar" color="#0A3871" text_color="#fff" onClick={() => router.push('/')} />
         </div>
     );
 }

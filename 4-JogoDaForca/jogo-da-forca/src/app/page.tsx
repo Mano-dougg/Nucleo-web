@@ -7,11 +7,12 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <h1>
-        Olá{session? ", " + session.user?.name:""}
-      </h1>
-        <OptionsButton />
-          
+      <div className={styles.mainCardOptions}>
+        <h1>
+          Olá{session? ", " + session.user?.name:", visitante"}
+        </h1>
+          <OptionsButton />
+      </div>
     </main>
   );
 }

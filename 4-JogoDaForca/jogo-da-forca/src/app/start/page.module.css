@@ -6,8 +6,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #f0f2f5;
+    background-color: azure;
     font-family: 'Roboto', sans-serif;
+    gap: 3rem;
 }
 
 .history{

@@ -5,6 +5,7 @@
   align-items: center;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
+  background-color: azure;
 }
 
 .description {
@@ -103,6 +104,65 @@
   position: absolute;
   filter: blur(45px);
   transform: translateZ(0);
+}
+
+.mainCardOptions{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  border-top: 3px solid #0A3871 ;
+  background-color: #fff;
+  animation: rainbow-bg 3.5s linear;
+	animation-iteration-count: infinite;
+}
+
+.mainCardOptions h1{
+  color: #0A3871;
+}
+
+@keyframes rainbow-bg{
+  100%,0%{
+    border-top: 3px solid rgb(255,0,0);
+  }
+  8%{
+    border-top: 3px solid rgb(255,127,0);
+  }
+  16%{
+    border-top: 3px solid rgb(255,255,0);
+  }
+  25%{
+    border-top: 3px solid rgb(127,255,0);
+  }
+  33%{
+    border-top: 3px solid rgb(0,255,0);
+  }
+  41%{
+    border-top: 3px solid rgb(0,255,127);
+  }
+  50%{
+    border-top: 3px solid rgb(0,255,255);
+  }
+  58%{
+    border-top: 3px solid rgb(0,127,255);
+  }
+  66%{
+    border-top: 3px solid rgb(0,0,255);
+  }
+  75%{
+    border-top: 3px solid rgb(127,0,255);
+  }
+  83%{
+    border-top: 3px solid rgb(255,0,255);
+  }
+  91%{
+    border-top: 3px solid rgb(255,0,127);
+  }
 }
 
 .logo {

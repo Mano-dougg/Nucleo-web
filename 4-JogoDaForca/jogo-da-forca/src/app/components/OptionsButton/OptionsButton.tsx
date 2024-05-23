@@ -2,6 +2,7 @@
 import Button from "../Button/Button";
 import { useRouter } from "next/navigation";
 import { signIn, signOut, useSession } from "next-auth/react";
+import s from './OptionsButton.module.css'
 
 export default function OptionsButton() {
     const router = useRouter();
@@ -36,7 +37,7 @@ export default function OptionsButton() {
                     text_color="#0A3871"
                 />
             ) : (
-                <div>
+                <div className={s.authButtons}>
                     <Button
                         text="Login"
                         color="#fff"
