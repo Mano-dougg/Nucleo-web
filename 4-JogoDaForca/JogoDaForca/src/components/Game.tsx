@@ -3,6 +3,8 @@ import GameHistory from './GameHistory.tsx';
 import Keyboard from './Keyboard.tsx';
 import Word from './Word.tsx';
 import { GameState } from '../types.ts';
+import buttonOff from '../../public/images/ToggleOff-light.svg'
+import buttonOn from '../../public/images/ToggleOn-dark.svg'
 
 const words = ['nuvem', 'pinturas', 'ingredientes', 'pista'];
 
@@ -124,12 +126,20 @@ const Game: React.FC = () => {
       )}
       <div className="container">
         <h1>Jogo da Forca</h1>
-        <button onClick={() => setShowHistory(!showHistory)}>
-          {showHistory ? 'Ocultar Histórico' : 'Mostrar Histórico'}
-        </button>
-        <button onClick={() => setShowKeyboard(!showKeyboard)}>
-          {showKeyboard ? 'Ocultar Teclado' : 'Mostrar Teclado'}
-        </button>
+        <p>Histórico: </p>
+        <img
+          src={showHistory ? buttonOn : buttonOff}
+          alt="Histórico"
+          onClick={() => setShowHistory(!showHistory)}
+          style={{ cursor: 'pointer' }}
+        />
+        <p>Teclado:</p>
+        <img
+          src={showKeyboard ? buttonOn : buttonOff}
+          alt="Teclado"
+          onClick={() => setShowKeyboard(!showKeyboard)}
+          style={{ cursor: 'pointer' }}
+        />
         <div className="scoreboard">
           <p>Vitórias: {wins}</p>
           <p>Derrotas: {losses}</p>
