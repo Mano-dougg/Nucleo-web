@@ -1,0 +1,40 @@
+#add-section {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+
+#add-section input {
+  background-color: var(--white-color);
+  border-radius: 6px;
+  color: var(--black-color);
+  padding: 0.5rem;
+  width: 100%;
+}
+
+#add-section svg {
+  fill: var(--white-color);
+  width: 1rem;
+}
+
+#add-section p {
+  font-size: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+  margin-block: 1rem;
+}
+
+#add-section p.invalid,
+#add-section p.invalid svg {
+  fill: var(--red-color);
+  color: var(--red-color);
+  transition: fill 0.5s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+#add-section .buttons-container {
+  display: flex;
+  flex-direction: column;
+}
