@@ -7,7 +7,6 @@ import Game from './pages/Game'
 import './App.css'
 
 function App() {
-  const [word, setWord] = useState<string>('');
 
   return (
     <>

@@ -1,0 +1,29 @@
+.side-bar {
+    width: 0.5rem;
+    height: 3rem;
+    background-color: var(--dark-blue);
+    position: absolute;
+    top: 0;
+    right: 1.6rem;
+}
+
+.up-bar{
+    width: 12rem;
+    height: 0.5rem;
+    background-color: var(--dark-blue);
+    margin-left: 6rem;
+}
+
+.vertical-bar {
+    width: 0.5rem;
+    height: 26rem;
+    background-color: var(--dark-blue);
+    margin-left: 6rem;
+}
+
+.down-bar {
+    width: 20rem;
+    height: 0.5rem;
+    background-color: var(--dark-blue);
+    position:relative;
+}

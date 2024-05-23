@@ -1,3 +1,5 @@
+import './HangmanDrawn.css';
+
 const Head = (
     <div style={{ width: '4rem', height: '4rem', position: 'absolute', border: '0.5rem solid var(--dark-blue)', borderRadius: '100%', top: '3rem', right: '-0.1rem'}} />
 )
@@ -33,13 +35,13 @@ function HangmanDrawn() {
             {rightLeg}
             {leftLeg} 
 
-            <div style={{width: '0.5rem', height: '3rem', backgroundColor: 'var(--dark-blue)', position: 'absolute', top: '0', right: '1.6rem'}} />
+            <div className="side-bar"></div>
 
-            <div style={{width: '12rem', height: '0.5rem', backgroundColor: 'var(--dark-blue)', marginLeft: '6rem'}} />
+            <div className="up-bar"></div>
 
-            <div style={{width: '0.5rem', height: '26rem', backgroundColor: 'var(--dark-blue)', marginLeft: '6rem'}} />
+            <div className="vertical-bar"></div>
 
-            <div style={{width: '20rem', height: '0.5rem', backgroundColor: 'var(--dark-blue)', position:'relative'}} />
+            <div className="down-bar"></div>
         </div>
     )
 }
