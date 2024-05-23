@@ -94,7 +94,7 @@ export const RegisterScreen = () => {
   const inRef = useRef<HTMLInputElement>(null);
 
   const handleSalvarPalavra = (): void => {
-    const valor = inRef.current?.value;
+    const valor = inRef.current?.value.toUpperCase();
     localStorage.setItem("palavra", JSON.stringify(valor));
   };
 
