@@ -3,6 +3,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import GameWord from './Components/game-word';
 import { Link } from 'react-router-dom';
 import { HangmanDrawing } from './hangmandrawing';
+import Alura from '../src/assets/alura.png';
+import './Second.css';
 
 const words = ['amor', 'boca', 'sorriso', 'escola', 'caneta'];
 
@@ -75,27 +77,35 @@ const Second: React.FC = () => {
     }
   }, [isWinner, isLoser, wordToGuess]);
 
+  const clearGameHistory = () => {
+    localStorage.removeItem('gameHistory');
+    setGameHistory([]);
+  };
+
   return (
-    <div>
-      <header>
-        <div id="logo">Alura</div>
+    <div className='pagetwo'>
+      <header className='header'>
+        <img className='logo'src={Alura} />
       </header>
       <main>
         <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
         <GameWord reveal={isLoser} wordToGuess={wordToGuess} guessedLetters={guessedLetters} />
 
         <div>
-          <h3>Letras Incorretas:</h3>
-          <div style={{ display: 'flex', gap: '10px' }}>
+          <div  style={{ display: 'flex', marginTop:'25px',gap: '40px',  marginBottom:'25px' }}>
             {incorrectLetters.map((letter, index) => (
-              <span key={index} style={{ color: 'red' }}>
+              <span key={index} style={{ color: '#495057', fontSize:'25px', opacity:'0.7' }}>
                 {letter}
               </span>
             ))}
           </div>
         </div>
-        <div>
-          <button onClick={() => {
+
+        {isLoser && <div className='result'>Você perdeu!</div>}
+        {isWinner && <div className='result'>Você ganhou!</div>}
+        
+        <div className='button-segunda-container'>
+          <button className='button-segunda' onClick={() => {
             setWordToGuess(pickRandomWord().toUpperCase());
 
             setGuessedLetters([]);
@@ -103,17 +113,16 @@ const Second: React.FC = () => {
           }}>Novo Jogo
           </button>
           <Link to='/'>
-            <button onClick={() => {
+            <button className='button-segunda' id='btnseg'onClick={() => {
               setGameOver(true);
-              setWordToGuess(pickRandomWord());
+              setWordToGuess(pickRandomWord().toUpperCase());
             }}>Desistir</button>
           </Link>
         </div>
-        {isLoser && <div>Você perdeu!</div>}
-        {isWinner && <div>Você ganhou!</div>}
+        
 
         {/* Histórico de Partidas */}
-        <div>
+        <div className='historico-wrap'>
           <h3>Histórico de Partidas:</h3>
           <ul>
             {gameHistory.map((game, index) => (
@@ -121,6 +130,13 @@ const Second: React.FC = () => {
                 {game.date} - {game.word} - {game.result}
               </li>
             ))}
+
+            
+            <button className='btn-hist' onClick={() => {
+              clearGameHistory();
+            }}> Limpar Histórico
+
+            </button>
           </ul>
         </div>
       </main>

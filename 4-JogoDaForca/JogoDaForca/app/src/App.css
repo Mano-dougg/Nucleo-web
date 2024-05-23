@@ -36,5 +36,4 @@
 
 #add-section .buttons-container {
   display: flex;
-  flex-direction: column;
 }

@@ -1,0 +1,109 @@
+
+
+.pagetwo{
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-blue);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: block;
+    padding-top: 45px;
+    margin: 0;
+}
+
+.logo{
+    width: 32px;
+    height: 45px;
+    padding-left: 85px;
+}
+main{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.span{
+    display: flex;
+   align-items: end;
+}
+
+.button-segunda{
+    width: 330px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.button-segunda-container{
+    display: flex;
+    gap: 25px;
+}
+
+#btnseg{
+    background-color: var(--light-blue);
+    border: 1px solid var(--dark-blue);
+    color: var(--dark-blue);
+}
+
+.btn-hist{
+    background-color: var(--gray);
+    border: none;
+    height: 30px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.historico-wrap{
+    position: absolute;
+    right: 5%;
+    bottom: 50%;
+}
+
+.historico-wrap > h3{
+    font-size: 14px;
+    font-family: var(--inter);
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+li{
+    font-size: 14px;
+    font-family: var(--inter);
+    color: var(--dark-blue);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+
+.boneco{
+    position: relative;
+    left: -5%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.result{
+    font-family: var(--inter);
+    font-size: 25px;
+    color: var(--dark-blue);
+    font-weight: 500;
+    margin-bottom: 15px;
+}

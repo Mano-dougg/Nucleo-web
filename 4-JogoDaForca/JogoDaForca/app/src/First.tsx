@@ -1,19 +1,31 @@
-// PrimeiraPagina.tsx
+
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Alura from '../src/assets/alura.png';
+import './First.css';
 
 const First: React.FC = () => {
   return (
-    <div>
-      <h1>Página Inicial</h1>
-      <Link to="/segunda">
-        <button>Ir para a Segunda Página</button>
-      </Link>
+    <>
+    <section className="pageone">
+      <header className='header'>
+        <img className='logo'src={Alura} />
+      </header>
+      <div className="button-wrap">
+        <h1>Jogo da Forca</h1>
+        <div className='button-container'>
+          
+          <Link to="/segunda" className='button'>
+            <button>Começar a Jogar</button>
+          </Link>
 
-      <Link to="/terceira">
-        <button id='add-btn'>Adicionar nova palavra</button>
-      </Link>
-    </div>
+          <Link to="/terceira"  className='button'>
+            <button id='add-btn'>Adicionar nova palavra</button>
+          </Link>
+        </div>
+        </div>
+    </section>
+    </>
   );
 };
 
