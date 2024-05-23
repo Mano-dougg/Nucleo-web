@@ -1,0 +1,133 @@
+.hangman {
+    width: 294px;
+    height: 360px;
+    position: relative;
+
+}
+
+.head {
+    width: 63px;
+    height: 63px;
+    border: 5px solid #0A3871;
+    border-radius: 50%;
+    position: absolute;
+    left: 258.42px; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    top: 49px; /* Position relative to hangman container */
+}
+
+.left-arm {
+    position: absolute;
+    width: 4.5px;
+    height: 72px;
+    background: #0A3871;
+    border-radius: 8px;
+    transform: rotate(30deg);
+
+    /* Center horizontally below the head */
+    left: calc(258.42px - 18.15px); /* Center horizontally */
+    top: calc(49px + 63px); /* Below the head (head's top position + head's height) */
+}
+
+.right-arm{
+    position: absolute;
+    width: 4.5px;
+    height: 72px;
+    background: #0A3871;
+    border-radius: 8px;
+    transform: rotate(-30deg);
+
+    /* Center horizontally below the head */
+    left: calc(258.42px + 18.15px); /* Center horizontally */
+    top: calc(49px + 63px);
+}
+
+.left-leg{
+
+    position: absolute;
+    width: 4.5px;
+    height: 72px;
+    left: calc(258.42px + 18.15px);
+    top: 239.62px;
+
+    /* Dark blue/dark-blue-300 */
+    background: #0A3871;
+    border-radius: 8px;
+    transform: matrix(-0.87, 0.5, 0.5, 0.87, 0, 0);
+
+}
+
+.right-leg{
+
+    position: absolute;
+    width: 4.5px;
+    height: 72px;
+    left: calc(258.42px - 18.15px);
+    top: 239.62px;
+
+    background: #0A3871;
+    border-radius: 8px;
+    transform: rotate(30deg);
+
+}
+
+.body{
+
+    position: absolute;
+    width: 5px;
+    height: 126px;
+    left: 258.42px;
+    top: 122px;
+    background: #0A3871;
+}
+
+.top{
+
+    position: absolute;
+    width: 177.75px;
+    height: 4.5px;
+    left: 80.67px;
+    top: 0px;
+
+    /* Dark blue/dark-blue-300 */
+    background: #0A3871;
+    border-radius: 8px;
+}
+
+.rope{
+
+position: absolute;
+width: 5px;
+height: 49.5px;
+left: 256px;
+top: 0px;
+background: #0A3871;
+border-radius: 8px;
+
+}
+
+.bar{
+
+    position: absolute;
+    width: 5px;
+    height: 360px;
+    left: 80.67px;
+    top: 0px;
+
+    background: #0A3871;
+    border-radius: 20px;
+
+}
+
+.bottom{
+
+    position: absolute;
+    width: 294px;
+    height: 5px;
+    left: 20px;
+    top: 355px;
+
+    background: #0A3871;
+    border-radius: 8px;
+
+}
