@@ -84,6 +84,12 @@ const Game: React.FC = () => {
     resetGame();
   };
 
+  const resetScoreboard = () => {
+    setWins(0);
+    setLosses(0);
+    resetGame();
+  };
+
   return (
     <div onKeyDown={handleKeyDown} tabIndex={0}>
       <h1>Jogo da Forca</h1>
@@ -108,6 +114,7 @@ const Game: React.FC = () => {
       {gameState === 'playing' && (
         <button onClick={giveUp}>Desistir</button>
       )}
+      <button onClick={resetScoreboard}>Novo Jogo</button>
     </div>
   );
 };
