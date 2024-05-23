@@ -6,6 +6,7 @@ import Controle from "../Controle/Controle.tsx"
 import Erradas from "../Word/LetrasErradas.tsx";
 import { Page } from './gamepage.ts';
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 /*Se não houver dois jogadores, vai entrar esta lista*/
 /*Acho que dá para fazer esse sistema de lista, nesta parte do codigo (deus queira que sim) */
@@ -13,11 +14,15 @@ const words = ["javascript", "python", "java", "c", "c++", "c#", "ruby", "swift"
 
 
 const Gamepage: React.FC = () => {
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [wordGuess, setWordGuess] = useState (() => {
     return words[Math.floor(Math.random() * words.length)]
   })
 
-  const [guessedLetters, setGuessedLetters] = useState<string[]>([])
+  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [letrasDigitadas, setLetrasDigitadas] = useState<string[]>([]);
   const letrasErradas = guessedLetters.filter(
     (letter) => !wordGuess.includes(letter)
@@ -66,7 +71,7 @@ const Gamepage: React.FC = () => {
 
         </section>
 
-        <Controle />
+        <Controle navigate={navigate}/>
 
       </Page>
     );

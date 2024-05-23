@@ -10,7 +10,8 @@ export const Container = styled.section`
     justify-content: center;
     margin-top: 30px;
 
-    button {
+    .encerrar,
+    .novarodada {
         width: 200px;
         height: 50px;
         cursor: pointer;
@@ -23,7 +24,8 @@ export const Container = styled.section`
         font-weight: bold;
     }
 
-    button:hover {
+    .encerrar:hover,
+    .novarodada:hover {
         background-color: white;
         border: 3px solid var(--primary);
     }

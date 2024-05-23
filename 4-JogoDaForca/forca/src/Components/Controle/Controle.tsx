@@ -1,12 +1,20 @@
 import React from 'react';
 import {Container} from "./controle.ts";
-import { useLocation } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 
 
-const Controle: React.FC = () => {
+interface ControleProps {
+    navigate: any;
+  }
+
+const Controle: React.FC<ControleProps> = ({ navigate }) => {
 
     const location = useLocation();
     const { isTwoPlayers } = location.state;
+
+    const handleGoBack = () => {
+        navigate(-1);
+    };
 
   return (
     <Container>
@@ -19,7 +27,7 @@ const Controle: React.FC = () => {
         }
 
         <div className='acabar'>
-            <button className='encerrar'>Encerrar jogo</button>
+            <button className='encerrar' onClick={handleGoBack}>Encerrar jogo</button>
         </div>
 
     </Container>
