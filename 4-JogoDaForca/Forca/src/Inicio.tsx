@@ -7,6 +7,7 @@ const Inicio: React.FC = () => {
         <>
             <Header />
             <main>
+                <h1>Forca</h1>
                 <div className="doisBotoes DB-home">
                     <Link to="/jogo">
                         <button className="botaozao botaoPrim">

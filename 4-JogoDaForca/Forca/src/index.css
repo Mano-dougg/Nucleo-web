@@ -8,7 +8,8 @@
   --atencao: #708403;
   --corTexto: white;
   font-family: 'Radio Canada Big', sans-serif;
-  color: var(--corTexto)
+  color: var(--corTexto);
+  text-align: center;
 }
 
 header {
@@ -117,5 +118,6 @@ h1 {
   background-color: var(--corBotao);
   color: var(--primario);
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
+  font-family: 'Radio Canada Big', sans-serif;
 }
