@@ -13,6 +13,8 @@ const Game: React.FC = () => {
     const [gameState, setGameState] = useState<GameState>('playing');
     const [guesses, setGuesses] = useState<string[]>([]);
     const [word, setWord] = useState<string>(getRandomWord());
+    const [wins, setWins] = useState<number>(0);
+    const [losses, setLosses] = useState<number>(0);
     const maxErrors = 6;
 
     const incorrectGuesses = guesses.filter(letter => !word.includes(letter));
@@ -25,11 +27,13 @@ const Game: React.FC = () => {
       };
 
     useEffect(() => {
-    if (errors >= maxErrors) {
+      if (errors >= maxErrors) {
         setGameState('lost');
-    } else if (word.split('').every(letter => guesses.includes(letter))) {
+        setLosses(losses + 1);
+      } else if (word.split('').every(letter => guesses.includes(letter))) {
         setGameState('won');
-    }
+        setWins(wins + 1);
+      }
     }, [guesses, errors, word]);
 
     const resetGame = () => {
@@ -41,6 +45,10 @@ const Game: React.FC = () => {
     return (
         <div>
             <h1>Jogo da Forca</h1>
+            <div>
+              <p>Vitórias: {wins}</p>
+              <p>Derrotas: {losses}</p>
+            </div>
             <Word word={word} guesses={guesses} />
             <Keyboard onGuess={handleGuess} guesses={guesses} />
             {gameState === 'won' && <p>Parabéns! Você ganhou!</p>}
