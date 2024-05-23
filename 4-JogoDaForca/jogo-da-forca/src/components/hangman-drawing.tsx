@@ -89,16 +89,19 @@ const LeftLeg = styled.div`
     rotate:-60deg;
 `;
 
-export default function HangmanDrawing() {
+const PartesDoBoneco = [Head,Body,RightArm,LeftArm, RightLeg,LeftLeg]
+
+interface HangmanDrawingProps {
+    numberOfGuesses:number;
+}
+
+export default function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
     return (
         <div style={{ position: 'relative',
          }}>
-            <LeftLeg/>
-            <RightLeg/>
-            <LeftArm/>
-            <RightArm/>
-            <Body/>
-            <Head/>
+             {PartesDoBoneco.slice(0, numberOfGuesses).map((ParteDoBoneco, index) => {
+                return <ParteDoBoneco key={index} />;
+            })}
             <Small/>
             <HorizontalLine/>
             <VerticalLine/>

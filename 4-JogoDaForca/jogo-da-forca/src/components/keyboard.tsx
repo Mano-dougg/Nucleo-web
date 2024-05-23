@@ -52,7 +52,7 @@ export default function Keyboard() {
   return (
     <Wrapper>
       {Keys.map((letter) => (
-        <Button isActive={true} key={letter} disabled>
+        <Button isActive={true} key={letter}>
             {letter.toUpperCase()}
         
         </Button>
