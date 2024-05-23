@@ -1,9 +1,12 @@
 import {Palavra} from './word.ts'
 
-function Word(){
-    const word = 'priscila'
-    const guessedLetters = ['s', 'i', 'h']
+interface WordProps {
+    word: string
+    guessedLetters: string[]
+}
 
+function Word({word, guessedLetters}: WordProps){
+    
     return(
         <Palavra>
             {word.split('').map((letter, index) => (

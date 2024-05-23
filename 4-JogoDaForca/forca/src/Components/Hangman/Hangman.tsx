@@ -1,6 +1,12 @@
 import {Base, BracoDireito, BracoEsquerdo, Corpo, Forca, Haste, Head, PernaDireita, PernaEsquerda, Topo } from "./script.ts"
 
-function Hangman(){
+const partesCorpo = [Head, Corpo, BracoDireito, BracoEsquerdo, PernaDireita, PernaEsquerda ]
+
+interface HangmanProps{
+    numeroDeTentativas: number
+}
+
+function Hangman({numeroDeTentativas} : HangmanProps){
     return (
         <div style={{
             position: 'relative',
@@ -9,12 +15,9 @@ function Hangman(){
             alignItems: 'center',
             padding: '60px',
         }}>
-            <Head />
-            <Corpo />
-            <BracoEsquerdo />
-            <BracoDireito />
-            <PernaDireita />
-            <PernaEsquerda />
+            {partesCorpo.slice(0, numeroDeTentativas).map((ParteCorpo, index) => {
+                return <ParteCorpo key={index}/>
+            })}
             
             <Forca />
             <Topo />
