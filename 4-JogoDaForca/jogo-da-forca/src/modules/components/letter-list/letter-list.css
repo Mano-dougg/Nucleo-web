@@ -1,0 +1,12 @@
+.letter-button-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.letter-button{
+    padding: 5%;
+    margin: 5px;
+    color: black;
+    background-color: beige;
+}

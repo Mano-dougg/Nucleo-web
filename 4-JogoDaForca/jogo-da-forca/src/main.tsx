@@ -10,19 +10,34 @@ import Playtime from './modules/routes/playtime/playtime';
 import './reset.css'
 import './index.css';
 import './theme.css'
+import PlaySettings from './modules/routes/play-settings/play-setting';
+import App from './App';
+import ScorePage from './modules/routes/score/score';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
-  },
-  {
-    path: "/play",
-    element: <Playtime />
-  },
-  {
-    path: "/score"
+    element: <App />,
+    children:[
+      {
+        path:'',
+        element:<Home />
+      },
+      {
+          path: "play",
+          element: <PlaySettings />
+        },
+        {
+          path: "play-game",
+          element: <Playtime />
+        },
+        {
+          path: "score",
+          element: <ScorePage />
+        }
+    ]
   }
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

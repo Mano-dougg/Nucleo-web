@@ -1,8 +1,8 @@
 .hang-container{
-    position: relative;
-    height: 50vh;
+    position: sticky;
+    top: 0;
+    min-height: 50vh;
     width: 80%;
-    margin-bottom: -15%;
 }
 
 .hang-item{

@@ -1,27 +1,27 @@
 import { Link } from 'react-router-dom'
 import './button.css'
 
-function LinkType({ color, Click, content }:{color:string, Click:string, content:string}){
+function LinkType({ color, Click, content, clickable }:{color:string, Click:string, content:string, clickable:boolean}){
     return(
-        <Link className={'button ' + color} to={Click}>{content}</Link>
+        <Link className={'button ' + color} to={clickable?Click:''}>{content}</Link>
     )
 }
 
-function ButtonType({ color, Click, content }:{color:string, Click:()=>void, content:string}){
+function ButtonType({ color, Click, content, clickable }:{color:string, Click:()=>void, content:string, clickable:boolean}){
     return(
-        <button className={'button ' + color} onClick={Click}>
+        <button className={'button ' + color} onClick={clickable?Click:(()=>{})}>
             {content}
         </button>
     )    
 }
 
 
-export default function Button({ behavior, color, Click=()=>{}, routeCoordinates='/', content }:{behavior:'link'|'button', color:string, Click?:(()=>void), routeCoordinates?:string, content:string}){
+export default function Button({ behavior, color, Click=()=>{}, routeCoordinates='/', content, clickable }:{behavior:'link'|'button', color:string, Click?:(()=>void), routeCoordinates?:string, content:string, clickable:boolean}){
     return(
         <>
             {behavior==='link'?
-                <LinkType color={color} Click={routeCoordinates} content={content} />
-                :<ButtonType color={color} Click={Click} content={content} />
+                <LinkType color={color} Click={routeCoordinates} content={content} clickable={clickable} />
+                :<ButtonType color={color} Click={Click} content={content} clickable={clickable} />
             }
         </>
     )

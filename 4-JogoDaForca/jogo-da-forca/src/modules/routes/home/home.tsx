@@ -15,13 +15,15 @@ export default function HomePage(){
                 behavior='link'
                 routeCoordinates='/play'
                 color='main-button'
-                content='JOGAR' />
+                content='JOGAR'
+                clickable={true} />
 
                 <Button
                 behavior='link'
                 routeCoordinates='/score'
                 color='secondary-button'
-                content='PLACAR' />
+                content='PLACAR'
+                clickable={true} />
             </nav>
         </div>
     )
