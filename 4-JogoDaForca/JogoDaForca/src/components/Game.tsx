@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, KeyboardEvent } from 'react';
 import Keyboard from './Keyboard.tsx';
 import Word from './Word.tsx';
 import { GameState } from '../types.ts';
@@ -20,21 +20,28 @@ const Game: React.FC = () => {
     const incorrectGuesses = guesses.filter(letter => !word.includes(letter));
     const errors = incorrectGuesses.length;
 
+    useEffect(() => {
+      if (errors >= maxErrors) {
+        setGameState('lost');
+        setLosses((prevLosses) => prevLosses + 1);
+      } else if (word.split('').every(letter => guesses.includes(letter))) {
+        setGameState('won');
+        setWins((prevWins) => prevWins + 1);
+      }
+    }, [guesses, errors, word]);
+
     const handleGuess = (letter: string) => {
         if (!guesses.includes(letter) && gameState === 'playing') {
           setGuesses([...guesses, letter]);
         }
       };
 
-    useEffect(() => {
-      if (errors >= maxErrors) {
-        setGameState('lost');
-        setLosses(losses + 1);
-      } else if (word.split('').every(letter => guesses.includes(letter))) {
-        setGameState('won');
-        setWins(wins + 1);
+    const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+      const letter = event.key.toLowerCase();
+      if (/[a-z]/.test(letter) && gameState === 'playing') {
+        handleGuess(letter);
       }
-    }, [guesses, errors, word]);
+    };
 
     const resetGame = () => {
       setWord(getRandomWord());
@@ -43,7 +50,7 @@ const Game: React.FC = () => {
     };
 
     return (
-        <div>
+        <div onKeyDown={handleKeyDown} tabIndex={0}>
             <h1>Jogo da Forca</h1>
             <div>
               <p>Vitórias: {wins}</p>
