@@ -1,0 +1,105 @@
+.hangmanDrawContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18.375rem;
+  height: 22.5rem;
+}
+
+.base {
+  width: 18.375rem;
+  height: 5px;
+  background: var(--dark-blue-300);
+  position: absolute;
+  bottom: 0; 
+}
+
+.verticalLine1 {
+  width: 4.5px;
+  height: 22.5rem;
+  background: var(--dark-blue-300);
+  position: absolute;
+  left: 80.65px;
+}
+
+.horizontalLine {
+  position: absolute;
+  width: 11rem;
+  height: 4.5px;
+  background: var(--dark-blue-300);
+  position: absolute;
+  right: 35px;
+  top: 0;
+}
+
+.verticalLine2 {
+  height: 3rem;
+  width: 4.5px;
+  background: var(--dark-blue-300);
+  position: absolute;
+  right: 35px;
+}
+
+.stickHead {
+  width: 63px;
+  height: 63px;
+  border: 4.5px solid var(--dark-blue-300);
+  border-radius: 50%;
+  position: absolute;
+  top: 3rem;
+  right: 2px;
+}
+
+.stickBody {
+  height: 8rem;
+  width: 4.5px;
+  background: var(--dark-blue-300);
+  position: absolute;
+  top: calc(3rem + 67.5px);
+  right: 35px;
+}
+
+.stickLeftArm {
+  height: 4.5rem;
+  width: 4.5px;
+  background: var(--dark-blue-300);
+  position: absolute;
+  border-radius: 8px;
+  top: calc(3rem + 67.5px);
+  right: 53.5px;
+  rotate: 30deg;
+}
+
+.stickRightArm {
+  height: 4.5rem;
+  width: 4.5px;
+  background: var(--dark-blue-300);
+  position: absolute;
+  border-radius: 8px;
+  top: calc(3rem + 67.5px);
+  right: 16.5px;
+  rotate: -30deg;
+}
+
+.stickLeftLeg {
+  height: 4.5rem;
+  width: 4.5px;
+  background: var(--dark-blue-300);
+  position: absolute;
+  border-radius: 8px;
+  top: calc(11rem + 62px);
+  right: 53.5px;
+  rotate: 30deg;
+}
+
+.stickRightLeg {
+  height: 4.5rem;
+  width: 4.5px;
+  background: var(--dark-blue-300);
+  position: absolute;
+  border-radius: 8px;
+  top: calc(11rem + 62px);
+  right: 16.5px;
+  rotate: -30deg;
+}
