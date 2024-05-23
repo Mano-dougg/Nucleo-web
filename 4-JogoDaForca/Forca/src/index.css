@@ -4,8 +4,11 @@
 :root {
   --primario: #e8a241;
   --secundario: #0f3e2a;
-  --atencao: #ffed92;
+  --corBotao: #03311c;
+  --atencao: #708403;
+  --corTexto: white;
   font-family: 'Radio Canada Big', sans-serif;
+  color: var(--corTexto)
 }
 
 header {
@@ -50,7 +53,7 @@ main {
   width: 332px;
 }
 .botaoSec {
-  background-color: var(--secundario);
+  background-color: var(--corBotao);
   color: var(--primario);
   width: 332px;
 }
@@ -80,11 +83,13 @@ main {
   font-weight: bold;
   aspect-ratio: 1/1;
   text-transform: uppercase;
-  cursor: pointer;
+  background-color: var(--corBotao);
+  color: var(--corTexto);
 }
 .teclas:hover:not(:disabled),
 .teclas:focus:not(:disabled) {
   background-color: var(--atencao);
+  cursor: pointer;
 }
 
 .teclas.correto {
