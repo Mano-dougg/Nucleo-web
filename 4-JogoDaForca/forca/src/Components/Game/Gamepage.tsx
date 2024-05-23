@@ -2,7 +2,7 @@ import Header from "../Header/Header.tsx";
 import Hangman from "../Hangman/Hangman.tsx";
 import Placar from "../Placar/Placar.tsx";
 import Word from "../Word/Word.tsx";
-import Teclado from "../Teclado/Teclado.tsx"
+import Controle from "../Controle/Controle.tsx"
 import { Page } from './gamepage.ts';
 
 
@@ -17,15 +17,16 @@ const Gamepage: React.FC = () => {
 
         <div className='esquerdo'>
             <Hangman />
-            <Word />
           </div>
           
           <div className='direito'>
             <Placar />
-            <Teclado />
+            <Word />
           </div>
 
         </section>
+
+        <Controle />
 
       </Page>
     );

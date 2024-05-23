@@ -14,8 +14,12 @@ export const Page = styled.section`
     }
 
     .direito{
+        display: flex;
+        flex-direction: column;
+        align-itens: center;
+        justify-content: space-between;
         width: 40%;
-        padding: 30px;
+        height: 200px;
     }
 
     .esquerdo{

@@ -10,6 +10,5 @@ export const Container = styled.div`
     padding: 10px;
     border-radius:15px;
     border: 1px solid black;
-    width: 80%;
-    height:100%;
+    width: 100%;
 `;
