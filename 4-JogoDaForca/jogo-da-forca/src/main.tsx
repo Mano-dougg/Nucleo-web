@@ -2,12 +2,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// --CSS
+import '../src/styles/index.scss'
 // --COMPONENTS
 import Principal from './pages/principal.tsx';
 import Escolha from './pages/escolha.tsx';
 import Jogo from './pages/jogo.tsx';
-// --CSS
-import '../src/styles/index.scss'
 
 
 // --REACT-DOM

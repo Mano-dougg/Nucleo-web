@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // --CSS
 import '../styles/index.scss';
 
+
 // -- FUNCTION
 function Principal() {
   const navegar = useNavigate();
