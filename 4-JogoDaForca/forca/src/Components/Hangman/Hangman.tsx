@@ -1,4 +1,4 @@
-import {Base, BracoDireito, BracoEsquerdo, Corpo, Forca, Haste, Head, PernaDireita, PernaEsquerda, Topo } from "./script.ts"
+import {Base, BracoDireito, BracoEsquerdo, Corpo, Forca, Haste, Head, PernaDireita, PernaEsquerda, Topo, Perdeu } from "./hangman.ts"
 
 const partesCorpo = [Head, Corpo, BracoDireito, BracoEsquerdo, PernaDireita, PernaEsquerda ]
 
@@ -20,7 +20,16 @@ function Hangman({letrasErradas} : HangmanProps){
             padding: '60px',
         }}>
             {partesCorpo.slice(0, numeroDeTentativas).map((ParteCorpo, index) => {
-                return <ParteCorpo key={index}/>
+                if (numeroDeTentativas > 6){
+                    return(
+                        <Perdeu>
+                            <h3>Você perdeu!</h3>
+                        </Perdeu>
+                    )
+                }
+                else{
+                    return <ParteCorpo key={index}/>
+                }   
             })}
             
             <Forca />
