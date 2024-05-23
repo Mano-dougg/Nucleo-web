@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import {useNavigate}  from 'react-router-dom';
 import Alura from '../src/assets/alura.png';
 import './Third.css';
+import { useWords } from './WordsContext';
 
 
 const Third: React.FC = () => {
   let navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const [newWord, setNewWord] = useState('');
-  const [, setWords] = useState<string[]>(['amor', 'boca', 'sorriso', 'escola', 'caneta'])
+  const { addWord } = useWords(); // Usa a função addWord do contexto
 
   const toggleAddSection = () => {
     setIsVisible(!isVisible);
@@ -17,11 +18,10 @@ const Third: React.FC = () => {
   const addNewWord = () => {
     if (newWord.length >= 4 && newWord.length <= 8) {
       console.log('Word added:', newWord);
-      setWords(prevWords => [...prevWords, newWord]); // Adiciona a nova palavra à lista
+      addWord(newWord); // Adiciona a nova palavra ao contexto
       setNewWord('');
 
-      // Se a função addNewWord for verdadeira, redireciona para a página './segunda'
-      navigate("/segunda");
+      navigate("/segunda"); // Redireciona para a página './segunda'
     } else {
       console.log('Invalid word input');
     }

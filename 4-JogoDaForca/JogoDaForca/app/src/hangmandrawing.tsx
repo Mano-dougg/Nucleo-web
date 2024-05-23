@@ -29,7 +29,7 @@ const HASTEDIREITA =(
 )
 
 const HASTEBAIXO = (
-    <div
+    <div className="hastebaixo"
           style={{
             height: "360px",
             width: "5px",

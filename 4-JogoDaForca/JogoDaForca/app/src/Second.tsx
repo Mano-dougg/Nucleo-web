@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 import { HangmanDrawing } from './hangmandrawing';
 import Alura from '../src/assets/alura.png';
 import './Second.css';
+import { useWords } from './WordsContext';
 
-const words = ['amor', 'boca', 'sorriso', 'escola', 'caneta'];
 
-function pickRandomWord() {
-  return words[Math.floor(Math.random() * words.length)];
-}
+
+
 
 type GameHistory = {
   word: string;
@@ -19,6 +18,11 @@ type GameHistory = {
 };
 
 const Second: React.FC = () => {
+  const { words } = useWords();
+
+  function pickRandomWord() {
+    return words[Math.floor(Math.random() * words.length)];
+  }
   const [wordToGuess, setWordToGuess] = useState(pickRandomWord().toUpperCase());
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [gameOver, setGameOver] = useState(false);
@@ -91,10 +95,10 @@ const Second: React.FC = () => {
         <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
         <GameWord reveal={isLoser} wordToGuess={wordToGuess} guessedLetters={guessedLetters} />
 
-        <div>
-          <div  style={{ display: 'flex', marginTop:'25px',gap: '40px',  marginBottom:'25px' }}>
+        <div className='erradas'>
+          <div id='erradas-span' style={{ display: 'flex', marginTop:'25px', width:'40%', gap: '40px',  marginBottom:'25px' }}>
             {incorrectLetters.map((letter, index) => (
-              <span key={index} style={{ color: '#495057', fontSize:'25px', opacity:'0.7' }}>
+              <span  key={index} style={{ color: '#495057', fontSize:'20px', flexWrap:'wrap',opacity:'0.7' }}>
                 {letter}
               </span>
             ))}
