@@ -35,6 +35,10 @@ function Jogo() {
       </span>
     ));
   };
+  // -Desenho da Forca
+  useEffect(() => {
+    setDesenho(desenhoForca[(erros)]);
+  }, [erros]);
 
   // -Tentativas
   function tentativa(letra: string) {
@@ -42,12 +46,31 @@ function Jogo() {
     if (!palavra.includes(letra)) setErros(erros + 1);
     setPalpites((x) => [...x, letra]);
   };
+  useEffect(() => {
+    if (erros >= 6) return;
+    window.addEventListener('keypress', teclaApertada);
+    return () => {
+      window.removeEventListener('keypress', teclaApertada);
+    };
+  }, [palpites, erros]);
 
   // -Aperto de teclas
   function teclaApertada(event: KeyboardEvent) {
     const letra = event.key.toUpperCase();
     if (/^[A-Z]$/.test(letra)) tentativa(letra);
   };
+
+  // -Vitória e Derrota
+  useEffect(() => {
+    if (erros>= 6) {
+      setPerdeu(true);
+      return;
+    };
+    if (palavraArray.every((letra) => palpites.includes(letra)) && perdeu!=true) {
+      setVenceu(true);
+      return;
+    };
+  }, []);
 
   // -Botão "novo jogo"
   function novoJogo() {
