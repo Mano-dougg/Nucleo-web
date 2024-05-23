@@ -16,6 +16,11 @@
     opacity: 0px;
     background-color: #F3F5FC;
   }
+  div.botao{
+    position: relative;
+    top:190px;
+    left:15px;
+  }
 }
 
 /* Telas intermediárias */
@@ -30,6 +35,10 @@
     opacity: 0px;    
     background-color: #F3F5FC;
   }
+  div.botao{
+    position: relative;
+    top:400px;
+  }
 }
 
 /* Telas grandes */
@@ -43,5 +52,12 @@
     gap: 0px;
     opacity: 0px;    
     background-color: #F3F5FC;
+  }
+  div.botao{
+    width: 0;
+    position:relative;
+    top: 450px;
+    left:50px;
+
   }
 }

@@ -12,8 +12,8 @@ const Base = styled.div`
     opacity: 0px;
     background: #0A3871;
     position:absolute;
-    left:45px;
-    top:-1px;
+    left:57px;
+    top:-160px;
 }
 @media screen and (min-width: 768px) and (max-width:1270px){
     width: 294px;
@@ -39,14 +39,14 @@ const Base = styled.div`
     background: #0A3871;
     position:absolute;
     top:-1px;
-    left:41.5%;
+    left:42%;
 }
 `;
 
 const Haste = styled.div`
 @media screen and (min-width: 200px) and (max-width:768px){
     width: 4.5px;
-    height: 360px;
+    height: 200px;
     top: 88px;
     left: 200px;
     gap: 0px;
@@ -170,8 +170,8 @@ const Corda = styled.div`
 `
 const Head =  styled.div`
 @media screen and (min-width: 200px) and (max-width:768px){
-    width: 63px;
-    height: 63px;
+    width: 33px;
+    height: 37px;
     top: 133px;
     left: 797.67px;
     gap: 0px;
@@ -179,8 +179,8 @@ const Head =  styled.div`
     border-radius:50%;
     border:5px solid #0A3871;
     position:absolute;
-    top:-310.8px;
-    left:68.9%;
+    top:-311.8px;
+    left:72.9%;
 }
 @media screen and (min-width: 768px) and (max-width:1270px){
     width: 63px;
@@ -213,15 +213,15 @@ const Head =  styled.div`
 const Body = styled.div`
 @media screen and (min-width: 200px) and (max-width:768px){
     width: 4.5px;
-    height: 135px;
+    height: 70px;
     top: 196px;
     left: 826.92px;
     gap: 0px;
     opacity: 0px;
     position:absolute;
     background: #0A3871;
-    top:-240.40px;
-    left:77.8%;
+    top:-270.40px;
+    left:78%;
 }
 @media screen and (min-width: 768px) and (max-width:1270px){
     width: 4.5px;
@@ -252,7 +252,7 @@ const Body = styled.div`
 const Bracodireito = styled.div`
 @media screen and (min-width: 200px) and (max-width:768px){
     width: 4.5px;
-    height: 72px;
+    height: 35px;
     top: 194.88px;
     left: 827.75px;
     gap: 0px;
@@ -261,8 +261,8 @@ const Bracodireito = styled.div`
     rotate: 30deg;
     position:absolute;
     background: #0A3871;
-    top:-238px;
-    left:72.85%;
+    top:-258px;
+    left:75.6%;
 }
 @media screen and (min-width: 768px) and (max-width:1270px){
     width: 4.5px;
@@ -296,7 +296,7 @@ const Bracodireito = styled.div`
 const Bracoesquerdo = styled.div`
 @media screen and (min-width: 200px) and (max-width:768px){
     width: 4.5px;
-    height: 72px;
+    height: 35px;
     top: 194.88px;
     left: 827.75px;
     gap: 0px;
@@ -305,8 +305,8 @@ const Bracoesquerdo = styled.div`
     rotate: -30deg;
     position:absolute;
     background: #0A3871;
-    top:-238px;
-    left:83%;
+    top:-258px;
+    left:80.3%;
 }
 @media screen and (min-width: 768px) and (max-width:1270px){
     width: 4.5px;
@@ -341,7 +341,7 @@ const Bracoesquerdo = styled.div`
 const Pernadireita = styled.div`
 @media screen and (min-width: 200px) and (max-width:768px){
     width: 4.5px;
-    height: 72px;
+    height: 35px;
     top: 327.62px;
     left: 827.75px;
     gap: 0px;
@@ -350,8 +350,8 @@ const Pernadireita = styled.div`
     rotate: 30deg;
     position:absolute;
     background: #0A3871;
-    top:-112px;
-    left:73%;
+    top:-206.2px;
+    left:75.6%;
 }
 @media screen and (min-width: 768px) and (max-width:1270px){
     width: 4.5px;
@@ -385,7 +385,7 @@ const Pernadireita = styled.div`
 const Pernaesquerda = styled.div`
 @media screen and (min-width: 200px) and (max-width:768px){
     width: 4.5px;
-    height: 72px;
+    height: 35px;
     top: 327.62px;
     left: 827.75px;
     gap: 0px;
@@ -394,8 +394,8 @@ const Pernaesquerda = styled.div`
     rotate: -30deg;
     position:absolute;
     background: #0A3871;
-    top:-112px;
-    left:82.7%;
+    top:-206.2px;
+    left:80.3%;
 }
 @media screen and (min-width: 768px) and (max-width:1270px){
     width: 4.5px;
