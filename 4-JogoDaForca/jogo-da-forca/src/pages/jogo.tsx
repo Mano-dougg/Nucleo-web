@@ -27,6 +27,29 @@ function Jogo() {
   const [perdeu, setPerdeu] = useState<boolean>(false);
   const [venceu, setVenceu] = useState<boolean>(false);
 
+  // -Renderização da palavra secreta
+  function renderPalavra(): JSX.Element[] {
+    return palavraArray.map((letra, index) => (
+      <span key={index} className="letra">
+        {palpites.includes(letra) ? letra : ' __ '}
+      </span>
+    ));
+  };
+
+  // -Tentativas
+  function tentativa(letra: string) {
+    if (palpites.includes(letra)) return;
+    if (!palavra.includes(letra)) setErros(erros + 1);
+    setPalpites((x) => [...x, letra]);
+  };
+  
+  // -Aperto de teclas
+  function teclaApertada(event: KeyboardEvent) {
+    const letra = event.key.toUpperCase();
+    if (/^[A-Z]$/.test(letra)) tentativa(letra);
+  };
+
+
   // -Return
   return (
     <div id="jogo">
