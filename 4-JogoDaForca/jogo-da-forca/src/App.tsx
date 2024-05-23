@@ -28,8 +28,7 @@ function App() {
 
 
   
-  const [guessedLetters, setGuessedLetters] = useState([])
-
+  const [guessedLetters, setGuessedLetters] = useState <string []>([])
   const incorrectGuesses = guessedLetters.filter(
     letter => !wordToGuess.includes(letter)
   )
@@ -39,7 +38,7 @@ function App() {
       <HangmanPart>
         <h2>Jogo da Forca</h2>
         <HangmanDrawing numberOfGuesses={incorrectGuesses.length} />
-        <HangmanWord word={wordToGuess}/>
+        <HangmanWord guessedLetters={guessedLetters} word={wordToGuess}/>
       </HangmanPart>
       <Keyboard/>
     </Wrapper>
