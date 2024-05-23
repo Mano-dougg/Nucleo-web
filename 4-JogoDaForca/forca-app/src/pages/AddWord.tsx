@@ -14,7 +14,7 @@ function AddWord() {
                     <span>Máx. de 8 letras</span>
                 </div>
                 <div className="buttons">
-                    <button onClick={()=>{navigate('/jogar')}}>Salvar e começar</button>
+                    <button onClick={()=>{navigate('/game')}}>Salvar e começar</button>
                     <button onClick={()=>{navigate('/home')}}>Cancelar</button>
                 </div>
             </div>

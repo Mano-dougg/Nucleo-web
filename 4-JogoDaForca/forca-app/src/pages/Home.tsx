@@ -7,7 +7,7 @@ function HomePage() {
     return (
         <>
             <div className="home-buttons">
-                <button onClick={() => {navigate('/jogar')}}>Começar a jogar</button>
+                <button onClick={() => {navigate('/game')}}>Começar a jogar</button>
                 <button onClick={() => {navigate('/add')}}>Adicionar nova palavra</button>
             </div>
         </>
