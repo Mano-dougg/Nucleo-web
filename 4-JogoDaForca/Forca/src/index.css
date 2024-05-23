@@ -114,7 +114,7 @@ h1 {
 }
 
 .input {
-  width: 25vw;
+  width: 600px;
   background-color: var(--corBotao);
   color: var(--primario);
   text-align: center;

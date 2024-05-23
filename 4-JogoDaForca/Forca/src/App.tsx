@@ -5,8 +5,11 @@ import DesenhoForca from "./components/DesenhoForca"
 import PalavraForca from "./components/PalavraForca"
 import TecladoForca from "./components/TecladoForca"
 
-const App: React.FC = () => {
-  const [palavra, setPalavra] = useState("exemplo")
+type AppProps = {
+  palavra: string;
+}
+
+const App: React.FC<AppProps> = ({palavra}) => {
   const [chutes, setChutes] = useState<string[]>([])
   const chutesErrados = chutes.filter(letra => !palavra.includes(letra))
   
