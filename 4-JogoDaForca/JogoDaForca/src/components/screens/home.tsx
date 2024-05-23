@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   justify-content: center;
 `;
 
-const ButtonContainer = styled.div`
+export const ButtonContainer = styled.div`
   width: 400px;
   max-width: 100%;
   display: flex;

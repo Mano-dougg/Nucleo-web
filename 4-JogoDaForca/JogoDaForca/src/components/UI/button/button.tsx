@@ -17,8 +17,6 @@ export const Button:React.FC <ButtonProps> = ({ texto, classe}) => {
 
 export const ButtonEvent:React.FC <ButtonProps> = ({ texto, classe, evento}) => {
   return (
-    <input className={classe} onClick={evento} type="submit" value={texto}>
-      
-    </input>
+    <input className={classe} onClick={evento} type="submit" value={texto} />
   );
 };

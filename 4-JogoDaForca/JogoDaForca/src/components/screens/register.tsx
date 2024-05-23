@@ -69,7 +69,7 @@ const ActionsContainer = styled.div`
   gap: 25px;
 `;
 
-const ButtonsContainer = styled.div`
+export const ButtonsContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
@@ -93,16 +93,16 @@ const WarningContainer = styled.p`
 export const RegisterScreen = () => {
   const inRef = useRef<HTMLInputElement>(null);
 
-  const handleSalvarPalavra = ():void =>{
-    const valor = inRef.current?.value
-    localStorage.setItem("palavra", JSON.stringify(valor))
-  }
+  const handleSalvarPalavra = (): void => {
+    const valor = inRef.current?.value;
+    localStorage.setItem("palavra", JSON.stringify(valor));
+  };
 
   return (
-    <RegisterContainer>
+    <RegisterContainer onSubmit={(e) => e.preventDefault()}>
       <InputContainer>
         <h1>Digite uma palavra abaixo</h1>
-        <Input maxLength={8} ref={inRef} required/>
+        <Input maxLength={8} ref={inRef} required />
       </InputContainer>
       <ActionsContainer>
         <WarningContainer>
@@ -110,8 +110,12 @@ export const RegisterScreen = () => {
           Máx. de 8 letras
         </WarningContainer>
         <ButtonsContainer>
-          <ButtonEvent texto={"salvar e começar"} classe={"primary-low"} evento={handleSalvarPalavra}/>
-          <Button texto={"Cancelar"} classe={"secondary-low"}/>
+          <ButtonEvent
+            texto={"salvar e começar"}
+            classe={"primary-low"}
+            evento={handleSalvarPalavra}
+          />
+          <Button texto={"Cancelar"} classe={"secondary-low"} />
         </ButtonsContainer>
       </ActionsContainer>
     </RegisterContainer>
