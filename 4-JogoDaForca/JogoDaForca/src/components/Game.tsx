@@ -23,6 +23,16 @@ const saveScore = (wins: number, losses: number) => {
   localStorage.setItem('losses', losses.toString());
 };
 
+const hangmanImages = [
+  '/images/hangman0.png',
+  '/images/hangman1.png',
+  '/images/hangman2.png',
+  '/images/hangman3.png',
+  '/images/hangman4.png',
+  '/images/hangman5.png',
+  '/images/hangman6.png',
+];
+
 const Game: React.FC = () => {
   const initialScore = loadScore();
   const [gameState, setGameState] = useState<GameState>('playing');
@@ -75,14 +85,17 @@ const Game: React.FC = () => {
         <p>Vitórias: {wins}</p>
         <p>Derrotas: {losses}</p>
       </div>
+      <img src={hangmanImages[errors]} alt={`Hangman stage ${errors}`} />
       <Word word={word} guesses={guesses} />
       <Keyboard onGuess={handleGuess} guesses={guesses} />
       {gameState === 'won' && <p>Parabéns! Você ganhou!</p>}
       {gameState === 'lost' && <p>Você perdeu! A palavra era: {word}</p>}
-      <div>
-        <h2>Letras Erradas:</h2>
-        <p>{incorrectGuesses.join(', ')}</p>
-      </div>
+      {incorrectGuesses.length > 0 && (
+        <div>
+          <h2>Letras Erradas:</h2>
+          <p>{incorrectGuesses.join(', ')}</p>
+        </div>
+      )}
       {(gameState === 'lost' || gameState === 'won') && (
         <button onClick={resetGame}>Reiniciar Partida</button>
       )}
