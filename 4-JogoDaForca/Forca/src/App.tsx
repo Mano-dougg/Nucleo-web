@@ -31,13 +31,19 @@ const App: React.FC = () => {
     }
   }, [chutes])
 
+  const desiste = () => {
+    const valoresLixo = ["@", "#", "$", "%", "*", "?"]
+    valoresLixo.forEach(lixo => adicionaChute(lixo))
+  }
+
   return (
     <>
       <Header />
       <main>
         <div className="resultado">
           {ganhou && "Muito bem! Você acertou 😀"
-          || perdeu && `Fim do jogo ☹️ A palavra era ${palavra.toUpperCase()}`}
+          || perdeu && `Fim do jogo ☹️ A palavra era ${palavra.toUpperCase()}`
+          || "ㅤ"}
         </div>
         <div className="desenho">
           <DesenhoForca erros={chutesErrados.length < 6 ? chutesErrados.length : 6} />
@@ -53,7 +59,7 @@ const App: React.FC = () => {
           <button className="botaozao botaoPrim">
             Novo jogo
           </button>
-          <button className="botaozao botaoSec">
+          <button className="botaozao botaoSec" onClick={desiste}>
             Desistir
           </button>
         </div>

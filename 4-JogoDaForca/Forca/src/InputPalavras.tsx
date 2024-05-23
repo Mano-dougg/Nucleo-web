@@ -1,6 +1,7 @@
 import { useState } from "react"
 import React from "react"
 import Header from "./components/Header"
+import {Link} from "react-router-dom"
 
 const InputPalavras: React.FC = () => {
     return (
@@ -15,9 +16,11 @@ const InputPalavras: React.FC = () => {
                     <button className="botaozao botaoPrim">
                         Salvar e começar
                     </button>
-                    <button className="botaozao botaoSec">
-                        Cancelar
-                    </button>
+                    <Link to="/">
+                        <button className="botaozao botaoSec">
+                            Cancelar
+                        </button>
+                    </Link>
                 </div>
             </main>
         </>

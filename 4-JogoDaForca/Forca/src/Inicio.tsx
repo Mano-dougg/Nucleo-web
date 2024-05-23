@@ -1,6 +1,6 @@
-import { useState } from "react"
 import React from "react"
 import Header from "./components/Header"
+import {Link} from 'react-router-dom'
 
 const Inicio: React.FC = () => {
     return (
@@ -8,12 +8,16 @@ const Inicio: React.FC = () => {
             <Header />
             <main>
                 <div className="doisBotoes DB-home">
-                    <button className="botaozao botaoPrim">
-                        Começar a jogar
-                    </button>
-                    <button className="botaozao botaoSec">
-                        Adicionar nova palavra
-                    </button>
+                    <Link to="/jogo">
+                        <button className="botaozao botaoPrim">
+                            Começar a jogar
+                        </button>
+                    </Link>
+                    <Link to="/adicionar-palavras">
+                        <button className="botaozao botaoSec">
+                            Adicionar novas palavras
+                        </button>
+                    </Link>
                 </div>
             </main>
         </>
