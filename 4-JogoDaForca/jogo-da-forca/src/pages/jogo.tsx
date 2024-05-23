@@ -85,6 +85,9 @@ function Jogo() {
     setPerdeu(true);
   };
 
+  // -Palpites Errados
+  const palpitesErrados: string[] = palpites.filter((letra: string) => (!palavra.includes(letra)))
+
 
   // -Return
   return (
@@ -92,6 +95,7 @@ function Jogo() {
       <img src={desenho} alt="Imagem de uma forca" />
       <h1>{renderPalavra()}</h1>
 
+      <h3> {palpitesErrados} </h3>
       <p>
           Erros: {erros} <br/>
           Máximo: {6} 
