@@ -14,7 +14,7 @@ const VerticalLine = styled.div`
 `;
 const HorizontalLine = styled.div`
     height: 2px;  
-    width: 140px;
+    width: 165px;
     background:white;
     position: absolute;
     right: 60px;
