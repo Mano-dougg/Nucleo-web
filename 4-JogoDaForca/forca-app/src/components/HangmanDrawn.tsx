@@ -1,4 +1,5 @@
-import './HangmanDrawn.css';
+import {GameProps} from '../pages/Game'
+import './HangmanDrawn.css'
 
 const Head = (
     <div style={{ width: '4rem', height: '4rem', position: 'absolute', border: '0.5rem solid var(--dark-blue)', borderRadius: '100%', top: '3rem', right: '-0.1rem'}} />
@@ -24,16 +25,19 @@ const leftLeg = (
     <div style={{width: '0.5rem', height: '4rem', backgroundColor: 'var(--dark-blue)', position: 'absolute', top: '16.6rem', right: '0.3rem', rotate: '-35deg'}} />
 )
 
-function HangmanDrawn() {
+const bodyParts = [Head, Body, rightArmy, leftArmy, rightLeg, leftLeg]
+
+type HangmanDrawnProps = {
+    numberOfGuesses: number;
+
+}
+
+
+function HangmanDrawn({numberOfGuesses}: HangmanDrawnProps) {
 
     return (
         <div style={{position: 'relative'}}>
-            {Head}
-            {Body}
-            {rightArmy}
-            {leftArmy}
-            {rightLeg}
-            {leftLeg} 
+            {bodyParts.slice(0, numberOfGuesses)}
 
             <div className="side-bar"></div>
 

@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: row;
     gap: 2.4rem;
+    padding: 1rem;
 }
 
 .game-page-btns button {
