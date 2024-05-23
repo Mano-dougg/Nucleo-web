@@ -1,4 +1,5 @@
 import React, { useState, useEffect, KeyboardEvent } from 'react';
+import GameHistory from './GameHistory.tsx';
 import Keyboard from './Keyboard.tsx';
 import Word from './Word.tsx';
 import { GameState } from '../types.ts';
@@ -40,6 +41,7 @@ const Game: React.FC = () => {
   const [word, setWord] = useState<string>(getRandomWord());
   const [wins, setWins] = useState<number>(initialScore.wins);
   const [losses, setLosses] = useState<number>(initialScore.losses);
+  const [history, setHistory] = useState<{ result: string; word: string }[]>([]);
   const maxErrors = 6;
 
   const incorrectGuesses = guesses.filter(letter => !word.includes(letter));
@@ -48,10 +50,12 @@ const Game: React.FC = () => {
   useEffect(() => {
     if (errors >= maxErrors) {
       setGameState('lost');
-      setLosses((prevLosses) => prevLosses + 1);
+      setLosses(prevLosses => prevLosses + 1);
+      setHistory(prevHistory => [...prevHistory, { result: 'Perdeu', word }]);
     } else if (word.split('').every(letter => guesses.includes(letter))) {
       setGameState('won');
-      setWins((prevWins) => prevWins + 1);
+      setWins(prevWins => prevWins + 1);
+      setHistory(prevHistory => [...prevHistory, { result: 'Ganhou', word }]);
     }
   }, [guesses, errors, word]);
 
@@ -79,10 +83,14 @@ const Game: React.FC = () => {
   };
 
   const giveUp = () => {
-    setLosses(prevLosses => prevLosses + 1);
-    setGameState('lost');
-    resetGame();
+    if (guesses.length > 0) {
+      setLosses(prevLosses => prevLosses + 1);
+      setGameState('lost');
+      setHistory(prevHistory => [...prevHistory, { result: 'Desistiu', word }]);
+      resetGame();
+    }
   };
+  
 
   const resetScoreboard = () => {
     setWins(0);
@@ -91,30 +99,35 @@ const Game: React.FC = () => {
   };
 
   return (
-    <div onKeyDown={handleKeyDown} tabIndex={0}>
-      <h1>Jogo da Forca</h1>
-      <div>
-        <p>Vitórias: {wins}</p>
-        <p>Derrotas: {losses}</p>
+    <div className="game-container" onKeyDown={handleKeyDown} tabIndex={0}>
+      <div className="game-history-container">
+        <GameHistory history={history} />
       </div>
-      <img src={hangmanImages[errors]} alt={`Hangman stage ${errors}`} />
-      <Word word={word} guesses={guesses} />
-      <Keyboard onGuess={handleGuess} guesses={guesses} />
-      {gameState === 'won' && <p>Parabéns! Você ganhou!</p>}
-      {gameState === 'lost' && <p>Você perdeu! A palavra era: {word}</p>}
-      {incorrectGuesses.length > 0 && (
-        <div>
-          <h2>Letras Erradas:</h2>
-          <p>{incorrectGuesses.join(', ')}</p>
+      <div className="container">
+        <h1>Jogo da Forca</h1>
+        <div className="scoreboard">
+          <p>Vitórias: {wins}</p>
+          <p>Derrotas: {losses}</p>
         </div>
-      )}
-      {(gameState === 'lost' || gameState === 'won') && (
-        <button onClick={resetGame}>Reiniciar Partida</button>
-      )}
-      {gameState === 'playing' && (
-        <button onClick={giveUp}>Desistir</button>
-      )}
-      <button onClick={resetScoreboard}>Novo Jogo</button>
+        <img src={hangmanImages[errors]} alt={`Hangman stage ${errors}`} />
+        <Word word={word} guesses={guesses} />
+        <Keyboard onGuess={handleGuess} guesses={guesses} />
+        {gameState === 'lost' && <p>Você perdeu! A palavra era: {word}</p>}
+        {gameState === 'won' && <p>Parabéns! Você ganhou!</p>}
+        {incorrectGuesses.length > 0 && (
+          <div>
+            <h2>Letras Erradas:</h2>
+            <p>{incorrectGuesses.join(', ')}</p>
+          </div>
+        )}
+        {(gameState === 'lost' || gameState === 'won') && (
+          <button onClick={resetGame}>Reiniciar Jogo</button>
+        )}
+        {gameState === 'playing' && (
+          <button onClick={giveUp}>Desistir</button>
+        )}
+        <button onClick={resetScoreboard}>Novo Jogo</button>
+      </div>
     </div>
   );
 };
