@@ -5,6 +5,8 @@ import Word from "../Word/Word.tsx";
 import Teclado from "../Teclado/Teclado.tsx"
 import { Page } from './gamepage.ts';
 
+
+
 const Gamepage: React.FC = () => {
     return (
       <Page>

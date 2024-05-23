@@ -1,29 +1,31 @@
 import {Container} from "./placar.ts"
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-function Placar() {
-  const { player1Name, player2Name } = useParams();
+const Placar = () => {
+    const location = useLocation();
+    const { isTwoPlayers, player1Name, player2Name } = location.state;
 
     return (
         <>
             <Container>
-                <div className="jogadorum">
-                    <h6>Player1</h6>
-                    <p>Win: 2{player1Name}</p>
-                    <p>Lose: 10{player2Name}</p>
-                </div>
 
-                <div className="jogadordois">
-                    <h6>Player2</h6>
-                    <p>Win: 10{player1Name}</p>
-                    <p>Lose: 2{player2Name}</p>
+                <div className="jogadorum">
+                    <h6>{player1Name}</h6>
+                    <p>Win: 2</p>
+                    <p>Lose: 10</p>
                 </div>
+                
+                {isTwoPlayers &&
+
+                    <div className="jogadordois">
+                        <h6>{player2Name}</h6>
+                        <p>Win: 10</p>
+                        <p>Lose: 2</p>
+                    </div>
+                }
 
             </Container>
-
         </>
-        
-
     )
 }
 
