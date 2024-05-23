@@ -1,7 +1,9 @@
+import AppRoutes from "./AppRoutes"
+
 function App() {
   return (
     <>
-      <h1>Olá mundo</h1>
+      <AppRoutes></AppRoutes>
     </>
   )
 }
