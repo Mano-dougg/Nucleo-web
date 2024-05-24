@@ -23,7 +23,7 @@ export default function HangmanWord( {word, guessedLetters } : HangmanWordProps 
         {word.split("").map((letter, index) => (
             <span
                 style={{ borderBottom: '0.1em solid white',
-                    height: '50px' ,
+                    height: '80px' ,
                     minWidth: '50px', 
                  }}
                 key={index}>

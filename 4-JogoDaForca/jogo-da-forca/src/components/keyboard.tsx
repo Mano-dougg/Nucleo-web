@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const Keys = [
   'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
@@ -10,53 +11,48 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
   gap: 0.5rem;
   margin-top: 2rem;
-  width:600px;
+  width: 600px;
+
+  @media (max-width: 768px) {
+    width: 70%;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  }
 `;
 
-const KeyButton = styled.button`
+const Button = styled.button<{ isActive: boolean }>`
   padding: 0.5rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: ${({ isActive }) => (isActive ? 'pointer' : 'not-allowed')};
   border: 1px solid #ccc;
   border-radius: 5px;
+  opacity: ${({ isActive }) => (isActive ? '1' : '0.3')};
   &:hover {
-    background-color: #e0e0e0;
+    background-color: ${({ isActive }) => (isActive ? '#e0e0e0' : '')};
   }
 `;
 
+interface KeyboardProps {
+  letrasAtivas: string[];
+  letrasInativas: string[];
+  addGuessedLetter: (letter: string) => void;
+}
 
-const Button = styled.button<{isActive: boolean} >`
-  opacity: ${p => p.isActive ? 'null': '0.3'};
+export default function Keyboard({ letrasAtivas, letrasInativas, addGuessedLetter }: KeyboardProps) {
+  const handleClick = (letter: string) => {
+    addGuessedLetter(letter);
+  };
 
-  &: focus: disabled {
-    outline:none;
-    border-color:transparent;
-    cursor:not-allowed;
-  }
-
-  &:focus-visiable:disabled {
-    outline:none;
-    border-color:transparent;
-    cursor: not-allowed;
-  }
-
-  &:hover:disabled{
-    outline: none;
-    border-color:transparent;
-    cursor: not-allowed;
-  }
-`
-
-export default function Keyboard() {
   return (
     <Wrapper>
-      {Keys.map((letter) => (
-        <Button isActive={true} key={letter}>
+      {Keys.map((letter) => {
+        const isActive = !letrasAtivas.includes(letter) && !letrasInativas.includes(letter);
+        return (
+          <Button key={letter} isActive={isActive} onClick={() => handleClick(letter)} disabled={!isActive}>
             {letter.toUpperCase()}
-        
-        </Button>
-      ))}
+          </Button>
+        );
+      })}
     </Wrapper>
   );
 }
