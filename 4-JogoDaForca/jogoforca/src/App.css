@@ -1,42 +1,146 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --corprincipal: #4F1964;
+  --corsecundaria: #FAD02C;
+  --background-color: #F8F9D7;
+  --text-color: #202020;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+*{
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes logo-spin {
+link{
+
+
+}
+
+body{
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.homescreen{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:200px;
+}
+
+
+.logoimg{
+  
+  height: auto;
+  animation: fadeIn 3s forwards;
+  padding-bottom: 80px;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+      opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+      opacity: 1;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.1);
+      opacity: 1;
   }
 }
+.jogar {
+  width: 230px;
+  height: 70px;
+  margin: 0.5em;
+  background: var(--corprincipal);
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 600px;
+  z-index: 1;
+  overflow: hidden;
+  animation: pulse 2s infinite ease-in-out;
 
-.card {
-  padding: 2em;
+  
+ }
+
+ .nomedojogo{
+  background-color: #202020;
+  width: 1000px;
+  height: 150px;
+ }
+
+ /* .novapalavra {
+  width: 230px;
+  height: 70px;
+  margin: 0.5em;
+  background: var(--corprincipal);
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 700px;
+  z-index: 1;
+  overflow: hidden;
+  
+ } */
+ 
+ button:hover {
+  color: black;
+ }
+ 
+ button:after {
+  content: "";
+  background:var(--corsecundaria);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+ }
+ 
+ button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+ }
+
+ nav{
+  color: #202020;
+  position: absolute;
+  top: 25px;
+  left: 30px;
 }
 
-.read-the-docs {
-  color: #888;
-}
+  .homebutton{
+    background-color: #4F1964;
+    font-weight: 700;
+  }
+
+  .homebutton:hover{
+    width: 120px;
+    height: 50px;
+    transition: transform 0.3s ease;
+    color: #F8F9D7;
+    border: #4F1964;
+  }
