@@ -24,6 +24,31 @@ export default ImageSwap;
 
 
 
+  const confettiCount = 100; // Quantidade de confetes
+
+  for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement('div'); // Cria um elemento div para cada confete
+      const size = Math.random() * 10 + 5; // Tamanho aleatório entre 5 e 15 pixels
+      const color = colors[Math.floor(Math.random() * colors.length)]; // Escolhe uma cor aleatória
+
+      confetti.style.position = 'absolute';
+      confetti.style.width = size + 'px';
+      confetti.style.height = size + 'px';
+      confetti.style.backgroundColor = color;
+      confetti.style.opacity = '0.8';
+      confetti.style.borderRadius = '50%';
+      confetti.style.transform = `rotate(${Math.random() * 360}deg)`; // Rotaciona aleatoriamente o confete
+      confetti.style.left = Math.random() * 100 + '%'; // Posição horizontal aleatória
+      confetti.style.animation = 'fall 3s linear infinite'; // Adiciona uma animação de queda
+
+      container.appendChild(confetti); // Adiciona o confete ao contêiner
+  }
+
+  document.body.appendChild(container); // Adiciona o contêiner ao corpo da página
+
+
+
+
 
 
 

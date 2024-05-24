@@ -11,12 +11,28 @@ const Teclado = styled.div`
     gap: .5rem;
 `;
 
-export default function Keyboard() {
+type KeyboardProps ={
+    disabled?: boolean
+    letraAtiva: string[]
+    letrasInativas: string[]
+    addletraAdivinhada: (letter: string) => void
+
+}
+
+export default function Keyboard({letraAtiva, letrasInativas, addletraAdivinhada, disabled=false}: KeyboardProps) {
+
     return (
         <Teclado>
-            {KEYS.map(key => (
-                <button className="botaozinho" key={key}>{key}</button>
-            ))}
+            {KEYS.map(key => {
+                const ativo = letraAtiva.includes(key);
+                const inativo = letrasInativas.includes(key);
+
+                return(
+                <button onClick={() => addletraAdivinhada(key)} 
+                className={`botaozinho ${ativo ? 'ativo' : ''} ${inativo ? 'inativo' : ''}`}
+                disabled = {inativo || ativo || disabled }
+                key={key}>{key}</button>
+            )})}
         </Teclado>
     );
 }
