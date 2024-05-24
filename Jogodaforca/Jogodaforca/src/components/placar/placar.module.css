@@ -25,15 +25,33 @@
         display:none;
     }
     .div button{
-        border-radius: 500px;
-        padding:10px;
+        background-color: rgb(4, 48, 4);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.3s;
         position: relative;
-        left:85px;
-        top:-35px;
-        color: white;
-        font-size: 2px;
-
+        left:168px;
+        top:-30px;
+        font-size: 0px;
+        z-index: 1;
     }
+    .div h3{
+        font-size: 24px;  
+        font-weight: bold;  
+        color: #f7f6f6;
+        position: relative;
+        top:0px;
+        left:-50px;
+        margin-left: 100px;
+    }
+
 }
   
 /* Telas intermediárias */
@@ -117,6 +135,9 @@
         color: rgb(5, 105, 5);
         height:55px;
         font-size: 20px;
+    }
+    .div h3{
+        display: none;
     }
 }
   
@@ -205,6 +226,8 @@
     height:71px;
     font-size: 20px;
 }
-
+.div h3{
+    display: none;
+}
 
 }

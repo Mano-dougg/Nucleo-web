@@ -1,6 +1,7 @@
 import styless from './placar.module.css'
 import baixados from '/baixados.jpg'
 import { useState } from 'react'
+import res from '/res.png'
 
 interface needs{
     vencer : number
@@ -26,7 +27,7 @@ function Placar({vencer,perder}:needs){
     <h2>SCORE</h2>
     <p>Vitórias: {vencer || 0}</p>
     <span className='um'>Derrotas: {perder || 0}</span>
-    <button onClick={trocar}>Reset</button>
+    <button onClick={Resetar}>Reset<h3>R</h3></button>
     </figure>
     </div>
     )
