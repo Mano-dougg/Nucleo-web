@@ -8,8 +8,15 @@
     gap: 363px;
 }   
 
-input{
-    width: 413px;
+.Input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+textarea{
+    max-width: 420px;
+    width: 90%;
     height: 48px;
     border: 0;
     background-color: unset;
@@ -77,9 +84,8 @@ input{
     }
 }
 
-@media (max-width: 410px) {
-    input{
-        width: 343px;
-        height: 96px;
+@media (max-width: 460px) {
+    textarea{
+        height: 90px;
         }
 }

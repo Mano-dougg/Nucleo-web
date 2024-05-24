@@ -6,8 +6,8 @@ export const Pag2 = () => {
     return(
         <>
         <section className={styles.pag2}>
-            <article>
-                <input type="text" name = "Frase" placeholder = "Digite uma palavra ou frase"  id = 'Frase' required/>
+            <article className={styles.Input}>
+                <textarea name = "Frase" placeholder = "Digite uma palavra ou frase"  id = 'Frase' required/>
             </article>
             <article className={styles.articleButtons}>
                 <aside className={styles.asideExclamation} >
