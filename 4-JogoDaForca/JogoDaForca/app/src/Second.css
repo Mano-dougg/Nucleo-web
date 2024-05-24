@@ -70,12 +70,46 @@ main{
     margin-top: 15px;
 }
 
+.btn-reset{
+    background-color: var(--gray);
+    border: none;
+    height: 30px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
 .historico-wrap{
     position: absolute;
     right: 5%;
     bottom: 50%;
 }
 
+.scoreboard{
+    position: absolute;
+    right: 13%;
+    bottom: 25%;
+}
+
+.scoreboard > h3{
+    font-size: 14px;
+    font-family: var(--inter);
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.scoreboard > p{
+    font-size: 14px;
+    font-family: var(--inter);
+    color: var(--dark-blue);
+    font-weight: 500;
+}
 .historico-wrap > h3{
     font-size: 14px;
     font-family: var(--inter);
@@ -137,10 +171,18 @@ li{
     .historico-wrap{
         width: 33%;
         flex-wrap: wrap;
+        top:15%;
     }
 
+    .scoreboard{
+        width: 33%;
+        flex-wrap: wrap;
+        top:35%;
+        right: 5%;
+        background: none;
+    }
     .historico-wrap > h3{
-        text-align: right;
+        text-align: left;
     }
     .button-segunda-container{
         margin-top: 50px;
@@ -163,7 +205,19 @@ li{
         width: 100%;
         flex-wrap: wrap;
         top: 10%;
-        margin-left: 6%;
+        margin-left: 8%;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: none;
+    }
+
+    .scoreboard{
+        width: 100%;
+        flex-wrap: wrap;
+        top: 10%;
+        margin-left: 25%;
         position: relative;
         justify-content: center;
         align-items: center;
@@ -228,8 +282,12 @@ li{
     }
 
     .btn-hist{
-        width: 90%;
+        width: 100%;
        
+    }
+
+    .btn-reset{
+        width: 100%;
     }
 
     #add-section p{
