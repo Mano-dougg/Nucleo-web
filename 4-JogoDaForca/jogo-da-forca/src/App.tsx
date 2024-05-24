@@ -10,8 +10,12 @@ import { useCallback, useEffect, useState } from 'react';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content:center;
   align-items: center;
   gap: 2rem;
+  @media (max-width: 768px) {
+    margin-left: -60px ;
+  }
 `;
 
 const HangmanPart = styled.div`
@@ -94,14 +98,12 @@ function App() {
         </Message>
       )}
 
-      <HangmanPart>
+      <HangmanPart className='div-boneco'>
         <Placar vitórias={wins} derrotas={losses} />
-        
         <h2>Jogo da Forca</h2>
         <HangmanDrawing numberOfGuesses={incorrectGuesses.length} />
         <HangmanWord revelar={derrota} guessedLetters={guessedLetters} word={wordToGuess} />
       </HangmanPart>
-
       <Keyboard letrasAtivas={correctGuesses} disabled={vitoria || derrota} letrasInativas={incorrectGuesses} addGuessedLetter={addGuessedLetter} />
     </Wrapper>
   );

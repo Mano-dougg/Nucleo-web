@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   width: 400px;
 
   @media (max-width: 768px) {
-    width: 70%;
+    width: 60%;
     grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
   }
 `;
@@ -33,7 +33,7 @@ const Button = styled.button<{ isActive: boolean }>`
 `;
 
 interface KeyboardProps {
-  disabled?: boolean; // tornando a propriedade opcional
+  disabled?: boolean;
   letrasAtivas: string[];
   letrasInativas: string[];
   addGuessedLetter: (letter: string) => void;
@@ -56,7 +56,7 @@ export default function Keyboard({
         return (
           <Button
             key={letter}
-            isActive={isActive || disabled} // adicionando disabled aqui
+            isActive={isActive || disabled} 
             onClick={() => handleClick(letter)}
             disabled={!isActive}
           >
