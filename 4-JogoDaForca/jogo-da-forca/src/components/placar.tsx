@@ -1,111 +1,51 @@
-// App.tsx
-
-import './App.css';
-import HangmanDrawing from './components/hangman-drawing';
-import Keyboard from './components/keyboard';
-import HangmanWord from './components/hangmanword';
-import Message from './components/win-lose';
-import Placar from './components/Placar'; // Importando o componente Placar
+import React from 'react';
 import styled from 'styled-components';
-import { useCallback, useEffect, useState } from 'react';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+const Scoreboard = styled.div`
+  background-color: #grey;
+  padding: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-family: 'Arial', sans-serif;
+  height: 60px;
 `;
 
-const HangmanPart = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 375px;
+const PlacarItem = styled.p`
+font-size: 14px; 
+margin: 3px 0; 
+  color: #333;
 `;
 
-const words = ['python', 'java', 'javascript'];
+const PlacarItens = styled.div`
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+  border: 1px solid white;
+`;
 
-function App() {
-  const [wordToGuess, setWordToGuess] = useState(() => words[Math.floor(Math.random() * words.length)]);
-  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
-  const [showMessage, setShowMessage] = useState(false);
-  const [gameStatus, setGameStatus] = useState<'playing' | 'won' | 'lost'>('playing');
-  const [wins, setWins] = useState(0);
-  const [losses, setLosses] = useState(0);
+const Vitória = styled(PlacarItem)`
+  color: #008000; /* Cor verde para vitórias */
+`;
 
-  const addGuessedLetter = useCallback((letter: string) => {
-    if (!guessedLetters.includes(letter) && gameStatus === 'playing') {
-      setGuessedLetters((currentLetters) => [...currentLetters, letter]);
-    }
-  }, [guessedLetters, gameStatus]);
+const Derrota = styled(PlacarItem)`
+  color: #FF0000; /* Cor vermelha para derrotas */
+`;
 
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      const key = e.key.toLowerCase();
-      if (!key.match(/^[a-z]$/)) return;
-      e.preventDefault();
-      addGuessedLetter(key);
-    };
-
-    document.addEventListener('keypress', handleKeyPress);
-    return () => {
-      document.removeEventListener('keypress', handleKeyPress);
-    };
-  }, [addGuessedLetter]);
-
-  const incorrectGuesses = guessedLetters.filter((letter) => !wordToGuess.includes(letter));
-  const correctGuesses = guessedLetters.filter((letter) => wordToGuess.includes(letter));
-
-  const derrota = incorrectGuesses.length >= 6;
-  const vitoria = wordToGuess.split('').every((letter) => guessedLetters.includes(letter));
-
-  useEffect(() => {
-    if (derrota) {
-      setGameStatus('lost');
-      setShowMessage(true);
-      setLosses((prevLosses) => prevLosses += 1);
-    } else if (vitoria) {
-      setGameStatus('won');
-      setShowMessage(true);
-      setWins((prevWins) => prevWins += 1);
-    }
-  }, [derrota, vitoria]);
-
-  const resetGame = () => {
-    setWordToGuess(words[Math.floor(Math.random() * words.length)]);
-    setGuessedLetters([]);
-    setGameStatus('playing');
-    setShowMessage(false);
-  };
-
-  return (
-    <Wrapper>
-      {showMessage && (
-        <Message onClose={resetGame}>
-          {vitoria ? (
-            <>
-              <h2 style={{ color: 'black' }}>Você venceu!</h2>
-              <p>Parabéns! Você acertou a palavra.</p>
-            </>
-          ) : (
-            <>
-              <h2>Você perdeu!</h2>
-              <p>Infelizmente não foi dessa vez. Tente novamente.</p>
-            </>
-          )}
-        </Message>
-      )}
-
-      <HangmanPart>
-        <Placar vitórias={wins} derrotas={losses} />
-        <h2>Jogo da Forca</h2>
-        <HangmanDrawing numberOfGuesses={incorrectGuesses.length} />
-        <HangmanWord revelar={derrota} guessedLetters={guessedLetters} word={wordToGuess} />
-      </HangmanPart>
-
-      <Keyboard letrasAtivas={correctGuesses} disabled={vitoria || derrota} letrasInativas={incorrectGuesses} addGuessedLetter={addGuessedLetter} />
-    </Wrapper>
-  );
+interface PlacarProps {
+    vitórias: number;
+    derrotas: number;
 }
 
-export default App;
+const Placar: React.FC<PlacarProps> = ({ vitórias, derrotas }) => {
+    return (
+        <Scoreboard>
+            <h3>Placar</h3>
+            <PlacarItens>
+                <Vitória>Vitórias: {vitórias}</Vitória>
+                <Derrota>Derrotas: {derrotas}</Derrota>
+            </PlacarItens>
+        </Scoreboard>
+    );
+}
+
+export default Placar;
