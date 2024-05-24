@@ -1,4 +1,4 @@
-import {Container} from "./script.ts";
+import {Container} from "./header.ts";
 
 function Header() {
     return (
@@ -7,10 +7,6 @@ function Header() {
                 <div className='logo'>
                     <h2>Hang<span>man</span></h2>
                 </div>
-
-                <nav className='historico'>
-                    <button className='botaobar'>Histórico</button>
-                </nav>
             </div>
         </Container>
     )

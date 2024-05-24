@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 
 const Letra = styled.div`
-    display:flex;  
-    flex-direction:row;
+    display:grid;  
+    grid-template-columns: repeat(13, 1fr);
     text-transform: uppercase;
     gap: 10px;
 

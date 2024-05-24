@@ -97,5 +97,42 @@ export const Home = styled.div`
         transform: scale(1.05);
     }
       
+    @media (max-width: 550px){
+        margin: 10px;
+
+        h2{
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .bplayer{
+            display:flex;
+            flex-direction: column;
+            align-itens:center;
+            justify-content:center;
+            width:100%;
+            gap:1rem;
+        }
+
+        .bplayer button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin: auto;
+            width: 50%;
+            height: 30px;
+        }
+
+        .players{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: 0px;
+            margin: 0;
+        }
+    }
 
 `;
