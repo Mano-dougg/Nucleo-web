@@ -1,6 +1,6 @@
 .body-part{
     position: relative;
-    background-color: white;
+    background-color: var(--other-color);
 }
 
 .body-head{

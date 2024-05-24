@@ -2,11 +2,23 @@
     display: flex;
     flex-wrap: wrap;
     width: 90%;
+    
 }
 
 .letter-button{
+    font-size: 1.5rem;
+    max-width: 12%;
+    padding: 3% 5%;
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--background);
+    background-color: var(--color);
+}
+
+.filler{
     padding: 5%;
     margin: 5px;
-    color: black;
-    background-color: beige;
 }

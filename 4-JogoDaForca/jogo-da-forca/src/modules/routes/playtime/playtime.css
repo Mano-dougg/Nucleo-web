@@ -1,8 +1,38 @@
 .game-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100vw;
+}
+
+.post-game-screen{
+    position: fixed;
+    bottom: 0;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 60vh;
+    background-color: var(--background);
+}
+
+.error-post-game-screen{
+    height: 100vh;
+    text-align: center;
+}
+
+.post-game-screen__title{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.post-game-screen__text{
+    font-size: 1.8rem;
+    color: var(--other-color); 
+}
+
+.error-post-game-screen__text{
+    width: 90%;
+    font-size: 1.2rem;
+}
+
+.playtime-filler{
+    height: 50vh;
 }

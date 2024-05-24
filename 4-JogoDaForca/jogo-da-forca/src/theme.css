@@ -1,4 +1,7 @@
 :root{
+    --background: #242424;
     --button1: darkblue;
     --button2: gray;
+    --color: rgba(255, 255, 255, 0.87);
+    --other-color: rgba(216, 216, 186, 0.815);
 }
