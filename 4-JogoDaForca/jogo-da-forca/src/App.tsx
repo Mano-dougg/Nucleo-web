@@ -1,14 +1,68 @@
-import React, { useState } from 'react';
-import WordForm from './components/addWord/WordForm';
-import GameDisplay from './components/game/GameDisplay';
+import React, { useState, useEffect } from 'react';
+import WordForm from './components/addWord/WordForm.tsx';
+import GameDisplay from './components/game/GameDisplay.tsx';
+import InitialMenu from './components/menus/InitialMenu.tsx';
 
 const App: React.FC = () => {
-  const [lista, setLista] = useState<string[]>(['banana', 'casa']);
+  const [lista, setLista] = useState<string[]>(['BANANA', 'CASA']);
+
+  const [isMenuActive, setIsMenuActive] = useState<boolean>(true);
+  const [isAddWordActive, setIsAddWordActive] = useState<boolean>(false);
+  const [isGameActive, setIsGameActive] = useState<boolean>(false);
+
+  const [randomWord, setRandomWord] = useState<string>('');
+  const [correctLetters, setCorrectLetters] = useState<string[]>([]);
+  const [wrongLetters, setWrongLetters] = useState<string[]>([]);
+
+  const getRandomWord = () => {
+    const randomIndex = Math.floor(Math.random() * lista.length);
+    return lista[randomIndex];
+  };
+
+  const startNewGame = () => {
+    setRandomWord(getRandomWord());
+    setCorrectLetters([]);
+    setWrongLetters([]);
+  };
+
+  useEffect(() => {
+    startNewGame();
+  }, [lista]);
+
 
   return (
     <div>
-      <WordForm lista={lista} setLista={setLista} />
-      <GameDisplay lista={lista}></GameDisplay>
+      <InitialMenu 
+      isMenuActive={isMenuActive} 
+      setIsMenuActive={setIsMenuActive}
+      setIsAddWordActive={setIsAddWordActive}
+      setIsGameActive={setIsGameActive}
+      startNewGame={startNewGame}
+
+      ></InitialMenu>
+
+      <WordForm 
+      lista={lista} 
+      setLista={setLista} 
+      isAddWordActive={isAddWordActive} 
+      setIsAddWordActive={setIsAddWordActive}
+      setIsGameActive={setIsGameActive}
+      startNewGame={startNewGame}
+      ></WordForm>
+
+      <GameDisplay 
+      lista={lista}
+      isGameActive={isGameActive}
+      setIsGameActive={setIsGameActive}
+      setIsMenuActive={setIsMenuActive}
+
+      randomWord={randomWord}
+      correctLetters={correctLetters}
+      setCorrectLetters={setCorrectLetters}
+      wrongLetters={wrongLetters}
+      setWrongLetters={setWrongLetters}
+      startNewGame={startNewGame}
+      ></GameDisplay>
     </div>
   );
 };

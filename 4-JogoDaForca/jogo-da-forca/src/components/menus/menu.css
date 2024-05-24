@@ -1,0 +1,8 @@
+.hidden{
+    display: none;
+}
+
+.menu{
+    z-index: 1000;
+    position: absolute;
+}
