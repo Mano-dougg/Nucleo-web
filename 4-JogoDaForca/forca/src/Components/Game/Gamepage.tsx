@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 /*Se não houver dois jogadores, vai entrar esta lista*/
 /*Acho que dá para fazer esse sistema de lista, nesta parte do codigo (deus queira que sim) */
-const words = ["javascript", "python", "java", "c", "c++", "c#", "ruby", "swift", "kotlin", "go", "rust", "php", "typescript", "html", "css", "sql", "perl", "assembly", "scala", "dart", "lua", "r", "matlab", "haskell", "groovy", "shell", "julia", "clojure", "erlang"];
+const words = ["javascript", "python", "java", "c", "ruby", "swift", "kotlin", "go", "rust", "php", "typescript", "html", "css", "sql", "perl", "assembly", "scala", "dart", "lua", "r", "matlab", "haskell", "groovy", "shell", "julia", "clojure", "erlang"];
 
 const Gamepage: React.FC = () => {
 
