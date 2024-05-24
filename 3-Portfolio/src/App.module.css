@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    align-items: center;
+    z-index: 2000;
+    position: relative;
+    justify-content: space-between;
+    box-shadow: 0px 25px 65px 0px #00000026;
+    padding: 0px 87px 0px 87px;
+    height: 82px;
+    background-color: var(--background_header);
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background-color: var(--background_color);
+}
+
+@media screen and (max-width: 905px){
+    .header{
+        padding: 0px 20px 0px 20px;
+    }
+}

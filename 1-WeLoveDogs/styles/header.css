@@ -1,0 +1,81 @@
+.headerHome{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.navHome{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.backToHome{
+    text-decoration: none;
+    color: #000000;
+}
+
+.headerTitle{
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+    display: flex;
+
+}
+
+.navHome a{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: left;
+    color: #000000;
+}
+
+.navHome a::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #7ED321;
+    transition: width 0.3s;
+}
+
+.navHome a:hover::after{
+    width: 100%;
+}
+
+#greenText{
+    color: #7ED321;
+}
+
+.subscribeHeaderButton{
+    width: 151px;
+    height: 40px;
+    border-radius: 15px;
+    opacity: 0px;   
+    border:none;
+    transition: 0.3s ease-out;
+    background: linear-gradient(to left, #7ED32166 50%, #7ED321 50%) right;
+    background-size: 200%;
+}
+
+.subscribeHeaderButton a{
+    color:  #1C4701;
+}
+
+.subscribeHeaderButton:hover{
+    transform: scale(1.1); 
+    background-position: left;
+}
+
+@media only screen and (max-width: 768px){
+	.headerHome{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .navHome{
+        max-width: 98%;
+    }
+}

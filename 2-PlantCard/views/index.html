@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantCard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="shortcut icon" href="../images/image.ico" type="image/x-icon">
+</head>
+<body>
+    <section class="mainContent">
+        <div class="card">
+            <div class="mainCardImage" >
+                
+            </div>
+            <div class="rightSide">
+                <div class="text">
+                    <h1>Decore sua casa com plantas!</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut. 
+                        Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. 
+                        Tristique velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, 
+                        varius auctor cursus commodo. Nisi, non molestie tincidunt posuere leo etiam eu, orci. 
+                        Consequat diam facilisi neque, est sit. Gravida nibh magna cursus eget eget velit cras.
+                    </p>
+                </div>
+                <div class="bottomCard">
+                    <div class="userInfos">
+                        <img src="../images/Frame 3.svg" alt="dog">
+                        <div class="userText">
+                            <h3>Doguito</h3>
+                            <p>29/09/2022</p>
+                        </div>
+                    </div>
+                    <div class="share">
+                        <div class="shareMenu">
+                            <p class="logo">SHARE</p>
+                            <img class="logo" src="../images/akar-icons_facebook-fill.svg" alt="facebook logo">
+                            <img class="logo" src="../images/Vector.svg" alt="x/twitter logo">
+                            <img class="logo" src="../images/akar-icons_pinterest-fill.svg" alt="pinterest logo">
+                        </div>
+                        <button class="shareButton" onclick="openShareMenu()">
+                            <img src="../images/share.svg" alt="share button" class="buttonImage">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const mainContent = document.querySelector('.mainContent');
+        const shareMenu = document.querySelector('.shareMenu');
+        const buttonImage = document.querySelector('.buttonImage');
+
+        window.onclick = function(event) {
+                if (event.target !== shareMenu && event.target !== buttonImage && event.target.className !== "logo") {
+                    shareMenu.style.display = 'none';
+                    buttonImage.style.transform = 'rotate(0deg)';
+                }
+            }
+
+        function openShareMenu() {
+            if (shareMenu.style.display === 'flex') {
+                shareMenu.style.display = 'none';
+                buttonImage.style.transform = 'rotate(0deg)';
+            } else {
+                shareMenu.style.display = 'flex';
+                buttonImage.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+</html>

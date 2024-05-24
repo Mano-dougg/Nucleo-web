@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/subscription.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>WeLoveDogs</title>
+</head>
+<body>
+    <header class="headerHome">
+        <a href="./index.html" class="backToHome">
+            <h1 class="headerTitle">we<div id="greenText">love</div>dogs</h1>
+        </a>
+        <nav class="navHome">
+            <a href="./about.html">QUEM SOMOS</a>
+            <a href="./blog.html">BLOG</a>
+            <button class="subscribeHeaderButton">
+                <a href="./subscription.html">INSCREVER</a>
+            </button>
+        </nav>
+    </header>
+
+    <section class="subscriptionMainSection">
+        <h1 class="titleSubscription">
+            Inscrição
+        </h1>
+    
+        <div class="formHandler">
+            <form action="/send/infos" method="POST" class="form">
+                <div class="labelHandler">
+                    <label for="inputName">Nome</label>
+                    <input type="text" name="name" id="inputName" placeholder="Seu nome">
+                </div>
+
+                <div class="labelHandler">
+                    <label for="inputAge">Idade</label>
+                    <input type="text" name="age" id="inputAge" placeholder="18">
+                </div>
+                <div class="labelHandler">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" name="email" id="inputEmail" placeholder="exemplo@exemplo">
+                </div>
+
+                <div class="labelHandler">
+                    <label for="loveDogs">Ama cachorros?</label>
+                    <textarea type="text" name="loveDogs" id="loveDogs" placeholder="Mensagem" class="largeInputText"></textarea>
+                </div>
+
+                <button type="submit" class="submitButton">Enviar</button>
+            </form>
+            <img src="../imgs/Figure5.svg" alt="person pointing to heart">
+        </div>
+        
+    </section>
+    
+</body>
+</html>

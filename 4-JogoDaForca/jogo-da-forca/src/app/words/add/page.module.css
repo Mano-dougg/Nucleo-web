@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: azure;
+    height: 100vh;
+}
+
+.textArea{
+    width: 40%;
+    height: 20rem;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.description{
+    width: 40%;
+    margin-top: 10px;
+    color: gray;
+}
+
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .textArea{
+        width: 70%;
+    }
+    .buttonContainer{
+        flex-direction: column;
+    }
+
+    .description{
+        width: 70%;
+    }
+    
+}

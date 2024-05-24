@@ -1,0 +1,117 @@
+.subscriptionMainSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: end;
+}
+
+.formHandler{
+    display: flex;
+    align-items: center;
+    margin-top: 37px;
+}
+
+.labelHandler{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.51px;
+    text-align: center;
+    display: flex;
+    gap: 14px;
+    justify-content: space-around;
+}
+
+.titleSubscription{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.subscribeHeaderButton{
+    background-color: #7ED321;
+}
+
+.form input{
+    
+    width: 419px;
+    height: 43px;
+    border-radius: 7px;
+    border: 1px solid #9F9F9F;
+    outline: none;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+::placeholder{
+    color: #9F9F9F;
+}
+
+.form div label{
+    width: 124px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.51px;
+    text-align: center;
+
+}
+
+.largeInputText{
+    width: 418px;
+    height: 160px ;
+    border-radius: 7px;
+    border: 1px solid #9F9F9F;
+    outline: none;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.submitButton{
+    width: 141px;
+    height: 42px;
+    border-radius: 10px;
+    border: none;
+    background-color: #7ED321;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submitButton:hover { 
+    transform: scale(1.1); 
+}
+
+@media only screen and (max-width: 1000px){
+	.formHandler{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .labelHandler{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .form{
+        align-items: center;
+    }
+    .form img{
+        max-width: 20rem;
+    }
+
+    .form input{
+        width: 21rem;
+    }
+    .largeInputText{
+        width: 21rem;
+    }
+}
