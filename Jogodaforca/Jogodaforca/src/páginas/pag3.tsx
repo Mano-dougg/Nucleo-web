@@ -9,11 +9,13 @@ import PalavraESCRITA from '../components/palavra/palavra';
 import Placar from '../components/placar/placar';
 
 const bu = localStorage.getItem('textoSalvo')
-var palavra = ['su']
-if (typeof bu==='string') {
-  var palavra1 = palavra.push(bu); 
+var palavra = ['dlc']
+if (typeof bu === 'string') {
+  palavra.push(bu);
+  palavra = palavra.filter(function(item) {
+    return item !== 'dlc';
+  });
 }
-
 const vencidos = Number(localStorage.getItem('Venci')) 
 const perdidos = Number(localStorage.getItem('Perdi')) 
 
@@ -22,6 +24,7 @@ function Pag3() {
 
   const [plvra, setPlvra] = useState(() => {
       return palavra[Math.floor(Math.random() * palavra.length)]
+      console.log(palavra)
   })
   const[acertos,setAcertos] = useState<string[]>([])
 

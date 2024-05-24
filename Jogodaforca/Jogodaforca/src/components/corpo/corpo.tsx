@@ -15,7 +15,8 @@ function Corpo(){
   const btn = () => {
     if (nome.length<=8){
     console.log('Textarea value:', nome);
-    localStorage.setItem('textoSalvo', nome)
+    const nomemenor = nome.toLowerCase()
+    localStorage.setItem('textoSalvo', nomemenor)
     }
     else{
         alert(`Insira novamente`)
@@ -43,3 +44,7 @@ function Corpo(){
 }
 
 export default Corpo
+
+function toLowerCase(nome: string): string {
+    throw new Error('Function not implemented.');
+}
