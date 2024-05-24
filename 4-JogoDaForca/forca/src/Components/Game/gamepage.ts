@@ -29,6 +29,12 @@ export const Page = styled.section`
         justify-content: center;
     }
 
+    p {
+        display:flex;
+        flex-direction: column;
+        margin-bottom:20px;
+    }
+
     @media (max-width: 680px){
         .corpo {
             display: flex;

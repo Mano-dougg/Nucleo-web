@@ -1,4 +1,4 @@
-import {Base, BracoDireito, BracoEsquerdo, Corpo, Forca, Haste, Head, PernaDireita, PernaEsquerda, Topo, Perdeu } from "./hangman.ts"
+import {Base, BracoDireito, BracoEsquerdo, Corpo, Forca, Haste, Head, PernaDireita, PernaEsquerda, Topo} from "./hangman.ts"
 
 const partesCorpo = [Head, Corpo, BracoDireito, BracoEsquerdo, PernaDireita, PernaEsquerda ]
 
@@ -6,18 +6,10 @@ interface HangmanProps{
     letrasErradas: string[];
 }
 
-let lost = 0;
-
-export const incrementLost = () => {
-    lost += 1;
-};
-
 function Hangman({letrasErradas} : HangmanProps){
 
     const letrasUnicas = new Set(letrasErradas);
     const numeroDeTentativas = letrasUnicas.size;
-    if (numeroDeTentativas > 6){
-        incrementLost();}
 
     return (
         <div style={{
@@ -28,18 +20,9 @@ function Hangman({letrasErradas} : HangmanProps){
             padding: '60px',
         }}>
             {partesCorpo.slice(0, numeroDeTentativas).map((ParteCorpo, index) => {
-                if (numeroDeTentativas > 6){
-                    incrementLost();
-                    return(
-                        <Perdeu >
-                            <h3>Você perdeu!</h3>
-                        </Perdeu>
-                    )
-                    
-                }
-                else{
-                    return <ParteCorpo key={index}/>
-                }  
+                
+                return <ParteCorpo key={index}/>
+                
             })}
 
             <Forca />
@@ -51,4 +34,3 @@ function Hangman({letrasErradas} : HangmanProps){
 }
 
 export default Hangman;
-export { lost };

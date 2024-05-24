@@ -96,9 +96,3 @@ export const PernaDireita = styled.div`
     background-color: var(--primary);
     border-radius:15px;
 `;
-
-export const Perdeu = styled.div`
-    position: absolute;
-    margin-top: 300px;
-    margin-left: 10px;
-`;
