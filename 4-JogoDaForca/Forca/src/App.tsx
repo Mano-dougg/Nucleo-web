@@ -4,16 +4,13 @@ import Header from "./components/Header"
 import DesenhoForca from "./components/DesenhoForca"
 import PalavraForca from "./components/PalavraForca"
 import TecladoForca from "./components/TecladoForca"
+import { usaApp } from "./components/context"
+import { Link } from "react-router-dom"
 
-type AppProps = {
-  palavra: string;
-  vitorias?: number;
-  derrotas?: number;
-}
-
-const App: React.FC<AppProps> = ({palavra, vitorias=0, derrotas=0}) => {
-  const [chutes, setChutes] = useState<string[]>([])
-  const chutesErrados = chutes.filter(letra => !palavra.includes(letra))
+const App: React.FC = () => {
+  const {palavra, vitorias, setVitorias, derrotas, setDerrotas} = usaApp();
+  const [chutes, setChutes] = useState<string[]>([" "])
+  const chutesErrados = chutes.filter(letra => !palavra.includes(letra) && letra !== " ")
   
   const perdeu = chutesErrados.length >= 6
   const ganhou = palavra.split("").every(letra => chutes.includes(letra))
@@ -40,6 +37,11 @@ const App: React.FC<AppProps> = ({palavra, vitorias=0, derrotas=0}) => {
     const valoresLixo = ["@", "#", "$", "%", "*", "?"]
     valoresLixo.forEach(lixo => adicionaChute(lixo))
   }
+
+  useEffect(()=>{
+    if (ganhou) setVitorias(antes => antes + 1)
+    if (perdeu) setDerrotas(antes => antes + 1)
+  }, [ganhou, perdeu, setVitorias, setDerrotas])
 
   return (
     <>
@@ -69,9 +71,11 @@ const App: React.FC<AppProps> = ({palavra, vitorias=0, derrotas=0}) => {
           adicionaChute={adicionaChute}
         />
         <div className="doisBotoes">
-          <button className="botaozao botaoPrim">
-            Novo jogo
-          </button>
+          <Link to="/adicionar-palavras">
+            <button className="botaozao botaoPrim">
+              Novo jogo
+            </button>
+          </Link>
           <button className="botaozao botaoSec" onClick={desiste}>
             Desistir
           </button>

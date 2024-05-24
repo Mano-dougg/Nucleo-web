@@ -7,6 +7,7 @@ import Inicio from './Inicio.tsx'
 import Err404 from './Err404.tsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Provedor } from './components/context.tsx'
 
 
 
@@ -22,12 +23,14 @@ const roteador = createBrowserRouter([
   },
   {
     path: '/jogo',
-    element: <App palavra='exemplando' />
+    element: <App />
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={roteador} />
+    <Provedor>
+      <RouterProvider router={roteador} />
+    </Provedor>
   </React.StrictMode>
 )

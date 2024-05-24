@@ -120,7 +120,9 @@ h2 {
 .input {
   width: 600px;
   background-color: var(--corBotao);
-  color: var(--primario);
+  color: transparent;
+  text-shadow: var(--corBotao);
+  caret-color: #000;
   align-self: center;
   text-align: center;
   font-size: 1.5em;
