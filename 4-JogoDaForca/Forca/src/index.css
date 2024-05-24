@@ -120,7 +120,7 @@ h2 {
 .input {
   width: 600px;
   background-color: var(--corBotao);
-  color: transparent;
+  color: var(--secundario);
   text-shadow: var(--corBotao);
   caret-color: #000;
   align-self: center;
@@ -135,6 +135,7 @@ h2 {
   main {
     justify-content: space-between;
     padding: 20px;
+    gap: 24px;
   }
   .doisBotoes {
     gap: 10px;

@@ -14,11 +14,11 @@ const InputPalavras: React.FC = () => {
     const {setPalavra} = usaApp()
     const [valorInput, setValorInput] = useState("")
     const navegar = useNavigate()
-
+    const caracteresPermitidos = /^[a-zç ]*$/;
     const mudarInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         const valorBruto = e.target.value
         const valorPadronizado = removeAcentos(valorBruto).toLowerCase()
-        setValorInput(valorPadronizado)
+        if (caracteresPermitidos.test(valorPadronizado)) setValorInput(valorPadronizado)
     }
 
     const salvar = () => {
