@@ -2,6 +2,7 @@ import styles from './Pag3.module.css'
 import { Link } from 'react-router-dom'
 import { HangmanDrawing } from './HangmanDrawing/HangmanDrawing'
 import { HangmanWorld } from './HangmanWord/HangmanWord'
+import { Keyboard } from './Keyboard/Keyboard'
 
 export const Pag3 = () => {
     return(
@@ -10,6 +11,7 @@ export const Pag3 = () => {
             <article className={styles.articleForca}>
                 <HangmanDrawing/>
                 <HangmanWorld/>
+                <Keyboard/>
             </article>
             <article className={styles.articleButtons}>
                     <Link to='/pag1'>
