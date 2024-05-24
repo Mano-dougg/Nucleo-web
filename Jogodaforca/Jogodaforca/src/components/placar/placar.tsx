@@ -1,7 +1,5 @@
 import styless from './placar.module.css'
 import baixados from '/baixados.jpg'
-import { useState } from 'react'
-import res from '/res.png'
 
 interface needs{
     vencer : number
@@ -16,10 +14,6 @@ function Resetar(){
       
 
 function Placar({vencer,perder}:needs){
-    const [menuO, setmenuO] = useState(true)
-    const trocar = () => {
-      setmenuO(!menuO)
-    }
     return(
     <div className={styless.div}>
     <figure>
