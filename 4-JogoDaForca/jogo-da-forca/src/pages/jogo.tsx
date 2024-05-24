@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 // --CSS
-import '../styles/index.scss';
+import '../styles/index.css';
 // --ASSETS
 import forca0 from '../assets/forca_inicio.png';
 import forca1 from '../assets/forca_1.png';
@@ -20,6 +20,7 @@ function Jogo() {
   const palavraArray: string[] = palavra.split('');
   const desenhoForca: string[] = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
   const navegar = useNavigate();
+  type letra = string;
   // -States
   const [palpites, setPalpites] = useState<string[]>([]);
   const [erros, setErros] = useState<number>(0);
@@ -41,7 +42,7 @@ function Jogo() {
   }, [erros]);
 
   // -Tentativas
-  function tentativa(letra: string) {
+  function tentativa(letra) {
     if (palpites.includes(letra)) return;
     if (!palavra.includes(letra)) setErros(erros + 1);
     setPalpites((x) => [...x, letra]);
@@ -52,7 +53,7 @@ function Jogo() {
     return () => {
       window.removeEventListener('keypress', teclaApertada);
     };
-  }, [palpites, erros]);
+  }, [palpites]);
 
   // -Aperto de teclas
   function teclaApertada(event: KeyboardEvent) {
@@ -62,7 +63,7 @@ function Jogo() {
 
   // -Vitória e Derrota
   useEffect(() => {
-    if (erros>= 6) {
+    if (erros >= 6) {
       setPerdeu(true);
       return;
     };
@@ -70,7 +71,7 @@ function Jogo() {
       setVenceu(true);
       return;
     };
-  }, []);
+  }, [palpites]);
 
   // -Botão "novo jogo"
   function novoJogo() {
@@ -80,34 +81,32 @@ function Jogo() {
   };
   // -Botão "desistir"
   function desistir() {
-    const letrasFaltantes: string[] = palavraArray.filter((letra: string) => !palpites.includes(letra));
+    const letrasFaltantes: string[] = palavraArray.filter((letra) => !palpites.includes(letra));
     setPalpites(palpites.concat(letrasFaltantes));
     setPerdeu(true);
   };
 
-  // -Palpites Errados
-  const palpitesErrados: string[] = palpites.filter((letra: string) => (!palavra.includes(letra)))
-
+  // -Palpites errados
+  const palpitesErrados: string[] = palpites.filter((letra) => (!palavra.includes(letra)))
 
   // -Return
   return (
     <div id="jogo">
-      <img src={desenho} alt="Imagem de uma forca" />
-      <h1>{renderPalavra()}</h1>
 
+      <img src={desenho} alt="Imagem de uma forca" />
+
+      <section>
+      <h1>{renderPalavra()}</h1>
       <h3> {palpitesErrados} </h3>
-      <p>
-          Erros: {erros} <br/>
-          Máximo: {6} 
-      </p>
+      </section>
 
       {perdeu && <h3>Não foi dessa vez...</h3>}
       {venceu && <h3>Parabéns, você acertou!</h3>}
 
-      <div>
+      <section className='row-column' >
         <button className='button' onClick={novoJogo}>Novo jogo</button>
         <button className='button claro' onClick={desistir}>Desistir</button>
-      </div>
+      </section>
       
     </div>
   );

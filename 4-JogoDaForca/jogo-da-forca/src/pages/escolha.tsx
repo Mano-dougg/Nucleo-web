@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 // --CSS
-import '../styles/index.scss';
+import '../styles/index.css';
 // -- ASSETS
 import exclamacao from '../assets/icone-exclamacao.svg';
 
@@ -36,7 +36,6 @@ function Escolha() {
     navegar('/');
   };
 
-
   // -Return
   return (
     <div id="escolha">
@@ -46,17 +45,17 @@ function Escolha() {
         <input
           type="text"
           value={palavra}
-          onChange={(e) => setPalavra(e.target.value)}
+          onChange={(x) => setPalavra(x.target.value)}
           required
         />
       </form>
 
-      <div>
-        <img src={exclamacao} alt='icone de exclamação'/>
+      <div className='row'>
+        <img className='icone' src={exclamacao} alt='icone de exclamação'/>
         <p>Máx. de 8 letras</p>
       </div>
       
-      <div>
+      <div className='row-column' >
         <button className='button' onClick={salvarComecar}>Salvar e começar</button>
         <button className='button claro' onClick={cancelar}>Cancelar</button>
       </div>

@@ -1,0 +1,108 @@
+/* --GERAL-- */
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: Inter;
+  font-size: 16px;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: hsla(210, 9%, 31%, 1);
+}
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  display: flex;
+  place-items: center;
+}
+
+/* --TEXTO-- */
+h1, h2, span, #escolha input {
+  color: hsla(213, 84%, 24%, 1);
+}
+h1, h3, span, #escolha input {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  text-align: center;
+}
+h2{
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+/* --BUTTONS-- */
+.button {
+  width: 20.75rem;
+  height: 4.25rem;
+  border: 1px solid transparent;
+  border-radius: 1.5rem;
+  background-color: hsla(213, 84%, 24%, 1);
+  
+  cursor: pointer;
+  color: #f3f5fc;
+
+  &.grande {
+    width: 19.75rem;
+    height: 6.5rem;
+  };
+  &.claro {
+    border-color: hsla(213, 84%, 24%, 1);
+    background-color: hsla(227, 60%, 97%, 1);
+    color: hsla(213, 84%, 24%, 1);
+  };
+}
+
+/* --IMAGENS-- */
+.icones {
+  width: 1rem;
+}
+#img-forca {
+  width: 18.125rem;
+  height: 22.125rem;
+}
+
+/* --OUTROS-- */
+#escolha input {
+  border-color: transparent;
+  background-color: transparent;
+}
+.row, .row-column {
+  display: flex;
+  flex-direction: row;
+}
+
+/* --SECTIONS-- */
+div, section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+}
+#principal, #escolha, #jogo {
+  place-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(227, 60%, 97%, 1);
+
+  div {
+    display: flex;
+    flex-direction: row
+  }
+}
+
+/* --RESPONSIVIDADE-- */
+@media (min-width: 375px) {
+  h1, span, #escolha input {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+  .row-column {
+    flex-direction: column;
+  }
+}

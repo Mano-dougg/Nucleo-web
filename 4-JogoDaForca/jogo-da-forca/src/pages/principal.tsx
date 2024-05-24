@@ -1,20 +1,24 @@
 // --REACT
 import { useNavigate } from 'react-router-dom';
 // --CSS
-import '../styles/index.scss';
+import '../styles/index.css';
 
 
 // -- FUNCTION
 function Principal() {
+
   const navegar = useNavigate();
 
+  // -Botão "começar novo jogo"
   function escolha() {
     navegar('/escolha');
   };
+  // -Botão "adicionar nova palavra"
   function jogo() {
     navegar('/jogo');
   };
   
+  // -Return
   return (
     <div id='principal'>
 
