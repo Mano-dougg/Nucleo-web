@@ -125,22 +125,21 @@ h2{
     border: 3px solid #F8F9FA;
     border-radius: 10px;
 }
-/*---------------PARA CELULAR------------------------------------------*/
-@media (max-width:375px){
-
-    .sessaoPrincipal{
+/* Estilos para dispositivos móveis (até 375px de largura) */
+@media (max-width: 375px) {
+    .sessaoPrincipal {
         display: flex;
         flex-direction: column;
         width: 80%;
+        /* Adicione outras regras de estilo conforme necessário */
     }
-    
-    .essaoPrincipal h2 {
+
+    .sessaoPrincipal h2 {
         overflow: hidden;
         text-align: center;
         font-size: 30px;
         width: 18ch;
         white-space: nowrap;
-   
     }
 
     .MinhaFoto {
@@ -152,22 +151,18 @@ h2{
     .Texto01 {
         width: 70%;
         align-self: center;
-        margin-top: 25px
+        margin-top: 25px;
     }
 
-    .say{
+    .say {
         width: 90%;
         font-size: 14px;
     }
 
     .LinhaSepara {
         width: 90%;
-        margin-left: 0px;
-    }
-
-    .img {
-        width: 300px;
-        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     h2 {
@@ -177,7 +172,7 @@ h2{
 
     button {
         width: 100%;
-        flex-direction: column;
+        /* Outras regras de estilo para o botão */
     }
 
     h1 {
@@ -192,20 +187,16 @@ h2{
     .titulo01 .ide {
         align-self: center;
     }
-
-    .divimg {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 80%; 
-    }
+}
+@media (max-width: 375px) {
+    .divimg,
     .divimgs {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 80%; 
+        flex-direction: column; /* Empilhar os elementos verticalmente */
+        align-items: center; /* Centralizar os elementos horizontalmente */
     }
-    .section, .icon{
-        display: none;
+
+    .divimg img,
+    .divimgs img {
+        width: 100%; /* A imagem ocupará toda a largura */
     }
 }
