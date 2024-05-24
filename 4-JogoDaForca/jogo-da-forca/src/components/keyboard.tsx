@@ -8,10 +8,10 @@ const Keys = [
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   gap: 0.5rem;
   margin-top: 2rem;
-  width: 600px;
+  width: 700px;
 
   @media (max-width: 768px) {
     width: 70%;
@@ -33,12 +33,18 @@ const Button = styled.button<{ isActive: boolean }>`
 `;
 
 interface KeyboardProps {
+  disabled?: boolean; // tornando a propriedade opcional
   letrasAtivas: string[];
   letrasInativas: string[];
   addGuessedLetter: (letter: string) => void;
 }
 
-export default function Keyboard({ letrasAtivas, letrasInativas, addGuessedLetter }: KeyboardProps) {
+export default function Keyboard({
+  disabled = false, 
+  letrasAtivas,
+  letrasInativas,
+  addGuessedLetter,
+}: KeyboardProps) {
   const handleClick = (letter: string) => {
     addGuessedLetter(letter);
   };
@@ -48,7 +54,12 @@ export default function Keyboard({ letrasAtivas, letrasInativas, addGuessedLette
       {Keys.map((letter) => {
         const isActive = !letrasAtivas.includes(letter) && !letrasInativas.includes(letter);
         return (
-          <Button key={letter} isActive={isActive} onClick={() => handleClick(letter)} disabled={!isActive}>
+          <Button
+            key={letter}
+            isActive={isActive || disabled} // adicionando disabled aqui
+            onClick={() => handleClick(letter)}
+            disabled={!isActive}
+          >
             {letter.toUpperCase()}
           </Button>
         );
