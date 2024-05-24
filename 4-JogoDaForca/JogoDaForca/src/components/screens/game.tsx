@@ -4,6 +4,7 @@ import { ButtonsContainer } from "./register";
 import { useState, useEffect, useRef } from "react";
 import { Boneco } from "../UI/boneco/boneco";
 import { Link } from "react-router-dom";
+
 const media = {
   mobile: `@media (max-width: 500px)`,
 };
@@ -31,13 +32,19 @@ const LetterContainer = styled.div`
   gap: 30px;
   position: relative;
 
-  p {
+  p,
+  .letrasContainer {
     width: 100%;
     font-size: 48px;
     color: var(--color-btn-secondary);
-    letter-spacing: 40px;
     text-align: center;
-    text-decoration: underline;
+
+    .letra {
+      font-size: 48px;
+      color: var(--color-btn-secondary);
+      letter-spacing: 40px;
+      text-align: center;
+    }
 
     ${media.mobile} {
       letter-spacing: 10px;
@@ -63,7 +70,6 @@ const LetterContainer = styled.div`
     position: absolute;
     bottom: -30px;
     margin: 0;
-    
   }
 
   input {
@@ -87,9 +93,29 @@ const quantidadeDerrotas = () => {
   }
 };
 
+const setarHistorico = ({resultadoPartida, palavraDaPartida}: {resultadoPartida: string, palavraDaPartida: string}) => {
+  const date = new Date();
+  const data = date.getDate() + "/" + date.getDay() + "/" + date.getFullYear();
+
+  const hora = date.getHours().toString().padStart(2, "0");
+  const minutos = date.getMinutes().toString().padStart(2, "0");
+
+  const tempo = hora + ":" + minutos;
+
+  const salvarHistorico = `Resultado: ${resultadoPartida}, Palavra: ${palavraDaPartida}, Data: ${data}, Hora: ${tempo}`
+  if (localStorage.getItem("historico")) {
+    const historico: string =
+      localStorage.getItem("historico") + ";" + salvarHistorico;
+    localStorage.setItem("historico", historico);
+  } else {
+    localStorage.setItem("historico", salvarHistorico);
+  }
+};
+
 const palavra: string = palavrasVetor[
   Math.floor(Math.random() * palavrasVetor.length)
 ].replace(/"/g, "");
+
 
 const palavraTamanho: number = palavra.length;
 
@@ -107,7 +133,7 @@ export const GameScreen = () => {
   });
 
   useEffect(() => {
-    setTexto("\u00a0".repeat(palavraTamanho));
+   
   }, []);
 
   useEffect(() => {
@@ -116,6 +142,7 @@ export const GameScreen = () => {
       setTexto(palavra.toString().toUpperCase());
       setPartida(`VOCÊ PERDEU!`);
       quantidadeDerrotas();
+      setarHistorico({resultadoPartida:"DERROTA", palavraDaPartida:palavra})
     }
   }, [quantidadeErros]);
 
@@ -134,7 +161,10 @@ export const GameScreen = () => {
       }
     }
 
-    if (!palavra.toLowerCase().includes(valor.toLowerCase()) || erro.toLowerCase().includes(valor.toLowerCase())) {
+    if (
+      !palavra.toLowerCase().includes(valor.toLowerCase()) ||
+      erro.toLowerCase().includes(valor.toLowerCase())
+    ) {
       setQuantidadeErros((e) => e + 1);
     }
 
@@ -143,6 +173,7 @@ export const GameScreen = () => {
       palavraSeparada.join("").toLowerCase()
     ) {
       setPartida("VOCÊ GANHOU!!!");
+      setarHistorico({resultadoPartida:"VITÓRIA", palavraDaPartida:palavra})
       if (localStorage.getItem("vitoria")) {
         const vitoria = "1";
         const partidaVencida: string =
@@ -158,11 +189,26 @@ export const GameScreen = () => {
   }
 
   return (
-    
     <MainContainer>
       <Boneco numeroDeErros={quantidadeErros}></Boneco>
       <LetterContainer onClick={() => inRef.current?.focus()}>
-        <p id="campo">{texto}</p>
+        <p id="campo">
+          {palavra.split("").map((e, i) => (
+            <span
+              style={{ borderBottom: ".1em solid black" }}
+              className="letrasContainer"
+            >
+              <span
+                className="letra"
+                style={{
+                  visibility: texto.includes(palavra[i]) ? "visible" : "hidden",
+                }}
+              >
+                {palavra[i]}
+              </span>
+            </span>
+          ))}
+        </p>
 
         <span>{erro}</span>
         <span className="resultadoPartida">{partida}</span>
@@ -189,7 +235,7 @@ export const GameScreen = () => {
           <ButtonEvent
             texto={"Desistir"}
             classe={"secondary-low"}
-            evento={() =>  setPartida(`A PALAVRA ERA: ${palavra}`) }
+            evento={() => setPartida(`A PALAVRA ERA: ${palavra}`)}
           />
         </Link>
       </ButtonsContainer>

@@ -23,13 +23,16 @@ export const ButtonContainer = styled.div`
 export const HomeScreen = () => {
   return (
     <HeaderContainer>
-      <Placar/>
+      <Placar />
       <ButtonContainer>
         <Link to={"/Game"}>
           <Button texto={"Comece a jogar"} classe={"primary"} />
         </Link>
         <Link to={"/Registro"}>
           <Button texto={"Adicionar nova palavra"} classe={"secondary"} />
+        </Link>
+        <Link to={"/historico"}>
+          <Button texto={"Ver historico"} classe={"primary"} />
         </Link>
       </ButtonContainer>
     </HeaderContainer>

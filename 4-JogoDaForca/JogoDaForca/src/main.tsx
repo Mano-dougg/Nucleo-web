@@ -4,8 +4,8 @@ import './global.css'
 import { HomeScreen } from "./components/screens/home"
  import { RegisterScreen } from "./components/screens/register"; 
  import { GameScreen } from "./components/screens/game";
- import { Digitador } from './components/UI/teste/digitando';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { HistoricoDePartidas } from './components/screens/historico';
 
 const router = createBrowserRouter([
   {
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
     element:<GameScreen />
   },
   {
-    path:"/teste",
-    element:<Digitador></Digitador>
+    path:"/historico",
+    element:<HistoricoDePartidas />
   }
 ])
 
