@@ -1,6 +1,6 @@
 /* Telas pequenas*/
 
-@media(min-width:200px) and (max-width:768px){
+@media(min-width:200px) and (max-width:766px){
     .div{
         font-family: Inter;
         font-size: 21px;
@@ -11,38 +11,113 @@
         color: #0A3871;
         position: relative;
         top:-150px;
+        margin-left: 180px;
     }
     .div span{
         position: absolute;
         top: 22px;
-        left:37%;
+        left:24.8%;
     } 
+    .div img{
+        display:none;
+    }
+    .div h2{
+        display:none;
+    }
+    .div button{
+        border-radius: 500px;
+        padding:10px;
+        position: relative;
+        left:85px;
+        top:-35px;
+        color: white;
+        font-size: 2px;
+
+    }
 }
   
 /* Telas intermediárias */
   
 @media(min-width:768px) and (max-width:1270px){
+    .div figure{
+        position: relative;
+        left:565px;
+        top:30px;
+        background-color: gray;
+        height: 200px;
+        width: 180px;
+        border-radius: 40px;
+    }
+    .div img{
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        opacity: 0.5;
+    }
     .div{
         font-family: Inter;
-        font-size: 28px;
+        font-size: 18px;
         border-radius: 50px;
         line-height: 36px;
         text-align: center;
-        color: #0A3871;
+        color: rgb(214, 212, 212);
         position: relative;
-        top:-100px;
-        margin-left:550px;
+        top:-220px;
         transition: color 600ms;
     }
     .div:hover{
         color: salmon;
         cursor: pointer;
     }
+    .div h2{
+        position: relative;
+        top:-200px;
+        left:4px;
+    
+    }
+    .div p{
+        position: absolute;
+        top: 55px;
+        left:17%;
+    }
     .div span{
         position: absolute;
-        top: 56px;
-        left:20%;
+        top: 95px;
+        left:17%;
     } 
+    .div button{
+        width: 120px;
+        height: 45px;
+        top: 281px;
+        left: 29px;
+        padding: 24px 24px 24px 24px;
+        Gap: 8px;
+        border-radius: 24px 24px 24px 24px;
+        border: 2px solid black;
+        opacity: 0px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        transition: background-color 600ms, color 600ms, height 600ms, font-size 600ms;
+        font-family: Inter;
+        color: white;
+        background-color: rgb(5, 105, 5);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        margin-bottom: -100px;
+        position: absolute;
+        top:140px;
+        left:16%;
+    }
+    .div button:hover{
+        background-color: white;
+        color: rgb(5, 105, 5);
+        height:55px;
+        font-size: 20px;
+    }
 }
   
 
@@ -50,15 +125,31 @@
   
 @media(min-width:1270px){
 
+
+.div figure{
+    position: relative;
+    left:20%;
+    top:-100px;
+    background-color: gray;
+    height: 270px;
+    width: 250px;
+    border-radius: 40px;
+}
+.div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    opacity: 0.5;
+}
 .div{
     font-family: Inter;
-    font-size: 36px;
+    font-size: 30px;
     border-radius: 50px;
     line-height: 36px;
     text-align: center;
-    color: #0A3871;
+    color: rgb(214, 212, 212);
     position: relative;
-    top:-200px;
+    top:-220px;
     margin-left:1000px;
     transition: color 600ms;
 }
@@ -66,9 +157,54 @@
     color: salmon;
     cursor: pointer;
 }
-.div span{
+.div h2{
+    position: relative;
+    top:-270px;
+    left:4px;
+
+}
+.div p{
     position: absolute;
     top: 70px;
-    left:26.5%;
+    left:17%;
+}
+.div span{
+    position: absolute;
+    top: 120px;
+    left:17%;
 } 
+.div button{
+    width: 180px;
+    height: 67px;
+    top: 281px;
+    left: 29px;
+    padding: 24px 24px 24px 24px;
+    Gap: 8px;
+    border-radius: 24px 24px 24px 24px;
+    border: 2px solid black;
+    opacity: 0px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    transition: background-color 600ms, color 600ms, height 600ms, font-size 600ms;
+    font-family: Inter;
+    color: white;
+    background-color: rgb(5, 105, 5);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    margin-bottom: -100px;
+    position: absolute;
+    top:185px;
+    left:16%;
+}
+.div button:hover{
+    background-color: white;
+    color: rgb(5, 105, 5);
+    height:71px;
+    font-size: 20px;
+}
+
+
 }
