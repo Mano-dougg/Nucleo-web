@@ -1,6 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 #root {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
+    /* padding: 2rem; */
     text-align: center;
   }
+
+.final{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: inter;
+  gap: 5rem;
+}
+
+.teclado{
+  align-self: stretch;
+}

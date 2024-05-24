@@ -21,7 +21,7 @@
 }
 
 .topo{
-    width: 177px;
+    width: 178px;
     height: 4.5px;
     border-radius: 8px;
     background-color: purple;
@@ -45,7 +45,7 @@
     /* background-color: skyblue; */
 }
 
-.esc{
+.esquerda{
     display: flex;
     flex-direction: column;
 }
@@ -65,7 +65,7 @@
     background-color: purple;
     margin-left: 170px;
     margin-top: -1px;
-    /* opacity: 50%; */
+    /* opacity: 20%; */
 }
 
 .braco-esq{
@@ -83,8 +83,8 @@
     height: 72px;
     border-radius: 8px;
     background-color: purple;
-    margin-left: 187px;
-    margin-top: -72px;
+    margin-left: 186.5px;
+    margin-top: -71.6px;
     rotate: -30deg;
 }
 

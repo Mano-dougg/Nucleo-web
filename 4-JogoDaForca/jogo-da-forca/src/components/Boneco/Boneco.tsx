@@ -9,7 +9,7 @@ function Boneco(){
             <div className='topo'></div>
             <div className='mid'>
                 <div className='meio1'></div>
-                <div className='esc'>
+                <div className='esquerdo'>
                     <div className='meio2'></div>
                     <div className='cabeca'></div>
                     <div className='corpo'></div>

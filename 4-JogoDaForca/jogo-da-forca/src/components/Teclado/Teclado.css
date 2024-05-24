@@ -1,0 +1,21 @@
+.mae{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 0.5rem;
+}
+
+#teclas{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: purple;
+    border-radius: 8px;
+    border: 0px;
+    background-color: rgb(235, 225, 245);
+    /* aspect-ratio: 1 / 1; */
+}
+
+#teclas:hover{
+    background-color: blueviolet;
+    color: white;
+    transition: 10ms;
+}
