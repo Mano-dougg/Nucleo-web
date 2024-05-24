@@ -3,6 +3,7 @@ import HangmanDrawn from "../components/HangmanDrawn"
 import HangmanWord from "../components/HangmanWord"
 import Keyboard from "../components/Keyboard"
 import ScoreBoard from "../components/ScoreBoard"
+import SideImg from "../components/SideImg";
 import './Game.css'
 
 
@@ -75,7 +76,9 @@ function Game({wordList, scoreBoard, setScoreBoard}: GameProps) {
 
     return (
         <>
+            <SideImg/>
             <div className="game-content">
+
                 <ScoreBoard scoreBoard={scoreBoard}/>
 
                 <HangmanDrawn numberOfGuesses={incorrectLetters.length}/>

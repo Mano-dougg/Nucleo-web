@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .game-page-btns {
@@ -32,4 +32,15 @@
 .game-page-btns button:nth-child(2) {
     background-color: white;
     color: var(--dark-blue);
+}
+
+@media (max-width: 480px) {
+    .game-page-btns {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .hangman-word {
+        font-size: 3.5rem;
+    }
 }

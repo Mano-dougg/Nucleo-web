@@ -13,7 +13,7 @@ function HangmanWord({wordToGuess, guessedLetters, incorrectLetters, reveal}: Ha
             <div style={{display: 'flex', gap: '1rem', fontSize: '5rem', textTransform: 'uppercase', color:'var(--dark-blue)', textAlign: 'center'}}>
 
                 {wordToGuess.split('').map((letter, index) => {
-                    return <span style={{borderBottom: '0.5rem solid var(--dark-blue)', width: '5rem'}} key={index}>
+                    return <span className="hangman-word" style={{borderBottom: '0.5rem solid var(--dark-blue)', width: '5rem'}} key={index}>
                         <span style={{visibility: guessedLetters.includes(letter) || reveal ? 'visible' : 'hidden', color: !guessedLetters.includes(letter) && reveal ? 'red' : 'var(--dark-blue)'}}>
                             {letter}
                         </span>

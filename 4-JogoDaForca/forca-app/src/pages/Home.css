@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .home-buttons button {
@@ -24,4 +24,10 @@
 .home-buttons button:nth-child(2) {
     background-color: white;
     color: var(--dark-blue);
+}
+
+@media (max-width: 768px) {
+    .home-buttons button:nth-child(1) {
+        padding: 3rem;
+    }
 }

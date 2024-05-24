@@ -3,13 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .add-word input {
     padding: 2rem;
     border: none;
-    width: 40rem;
     font-size: 2.5rem;
 }
 
@@ -56,4 +55,10 @@
 .footer-add-page .buttons button:nth-child(2) {
     background-color: white;
     color: var(--dark-blue);
+}
+
+@media (max-width: 480px) {
+    .footer-add-page .buttons {
+        flex-direction: column;
+    }
 }

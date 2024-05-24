@@ -1,4 +1,3 @@
-import {GameProps} from '../pages/Game'
 import './HangmanDrawn.css'
 
 const Head = (
