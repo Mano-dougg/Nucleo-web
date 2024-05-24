@@ -1,0 +1,66 @@
+.multiplayer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.multiplayer-container .game-header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 10vh;
+}
+  
+.multiplayer-container .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 88vh;
+  }
+  
+.multiplayer-container .forca-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+.multiplayer-container .player-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.multiplayer-container .word-container {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+.multiplayer-container .letter-box {
+    width: 2rem;
+    height: 2rem;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+  
+.multiplayer-container .resultado-final {
+    margin-top: 1rem;
+  }
+  
+.multiplayer-container .imagem-forca {
+    width: 150px;
+    height: auto;
+}
+
+@media screen and (max-width: 950px){
+
+    .multiplayer-container .forca-container{
+        flex-direction: column;
+    }
+
+}
+  

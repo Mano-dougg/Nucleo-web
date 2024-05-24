@@ -82,8 +82,7 @@ function Jogo() {
   return (
     <div className="jogo-container">
       <header className="game-header">
-        <img src={homeIcon} alt="Ícone de casa" onClick={handleGoToHomeClick}/>
-        <h1>Jogo da Forca</h1>
+        <h1 onClick={handleGoToHomeClick} >Jogo da Forca</h1>
         <div className="placar">
           <p>Vitórias: {partidasGanhas}</p>
           <p>Derrotas: {partidasPerdidas}</p>

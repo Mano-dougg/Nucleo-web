@@ -6,11 +6,11 @@ function Home() {
   const navigate = useNavigate();
 
   const handleSinglePlayerClick = () => {
-    navigate('/jogo');
+    navigate('/SinglePlayer');
   };
 
   const handleMultiPlayerClick = () => {
-    navigate('/multi-player');
+    navigate('/MultiPlayer');
   };
 
   return (

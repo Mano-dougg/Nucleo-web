@@ -1,4 +1,3 @@
-import React from 'react';
 import './style.css'; // Importando o arquivo CSS para estilização
 
 interface TecladoProps {
@@ -6,7 +5,7 @@ interface TecladoProps {
   letrasAdivinhadas: string[];
 }
 
-const Teclado: React.FC<TecladoProps> = ({ onLetraClicada, letrasAdivinhadas }) => {
+const TecladoMultiplayer: React.FC<TecladoProps> = ({ onLetraClicada, letrasAdivinhadas }) => {
   const alfabeto = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
   return (
@@ -14,9 +13,8 @@ const Teclado: React.FC<TecladoProps> = ({ onLetraClicada, letrasAdivinhadas }) 
       {alfabeto.map((letra) => (
         <button
           key={letra}
-          className="key"
+          className={`key ${letrasAdivinhadas.includes(letra) ? 'guessed' : ''}`}
           onClick={() => onLetraClicada(letra)}
-          disabled={letrasAdivinhadas.includes(letra)}
         >
           {letra}
         </button>
@@ -25,4 +23,4 @@ const Teclado: React.FC<TecladoProps> = ({ onLetraClicada, letrasAdivinhadas }) 
   );
 }
 
-export default Teclado;
+export default TecladoMultiplayer;
