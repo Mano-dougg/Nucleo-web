@@ -11,22 +11,26 @@ function App() {
   const { getItem, setItem } = useLocalStorage();
 
   const storedWordList = getItem('wordList');
+  const storedBoard = getItem('scoreBoard');
 
-  const initialWordList = storedWordList ? storedWordList : ['navio'];
+  const [scoreBoard, setScoreBoard] = useState<string[]>(storedBoard ? storedBoard : ['0', '0' ]);
 
-  const [wordList, setWordList] = useState<string[]>(initialWordList);
+  const [wordList, setWordList] = useState<string[]>(storedWordList ? storedWordList : ['navio']);
 
   // Somente utilizado para criar a lista de palavras na primeira vez que o usuário acessa o site
   useEffect(() => {
     if(!storedWordList) {
-      setItem('wordList', initialWordList);
+      setItem('wordList', wordList);
+    } else if(!storedBoard) {
+      setItem('scoreBoard', scoreBoard);
     }
   })
 
   // Atualiza a lista de palavras no localStorage toda vez que a lista de palavras do useState é alterada
   useEffect(() => {
     setItem('wordList', wordList);
-  }, [wordList, setItem]);
+    setItem('scoreBoard', scoreBoard);
+  }, [wordList, setItem, scoreBoard]);
 
   return (
     <>
@@ -35,7 +39,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/add" element={<AddWord wordList={wordList} setWordList={setWordList}/>} />
-          <Route path="/game" element={<Game wordList={wordList} />} />
+          <Route path="/game" element={<Game wordList={wordList} scoreBoard = {scoreBoard} setScoreBoard={setScoreBoard}/>} />
         </Routes>
       </Router>
     </>
