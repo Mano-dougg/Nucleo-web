@@ -7,7 +7,7 @@ const Err404: React.FC = () => {
         <>
             <Header />
             <main>
-                <h1>⚠️ ERRO 404 ⚠️</h1>
+                <h1>⚠️ERRO 404⚠️</h1>
                 <p>Parabéns! Você encontrou o ✨<em>Easter Egg</em>✨</p>
                 <img
                     src="https://c.tenor.com/n5KDHq4VCYcAAAAC/tenor.gif"

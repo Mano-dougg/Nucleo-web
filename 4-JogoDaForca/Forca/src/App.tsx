@@ -7,9 +7,11 @@ import TecladoForca from "./components/TecladoForca"
 
 type AppProps = {
   palavra: string;
+  vitorias?: number;
+  derrotas?: number;
 }
 
-const App: React.FC<AppProps> = ({palavra}) => {
+const App: React.FC<AppProps> = ({palavra, vitorias=0, derrotas=0}) => {
   const [chutes, setChutes] = useState<string[]>([])
   const chutesErrados = chutes.filter(letra => !palavra.includes(letra))
   
@@ -43,15 +45,23 @@ const App: React.FC<AppProps> = ({palavra}) => {
     <>
       <Header />
       <main>
+        <div style={{display:"flex",flexDirection:"column", gap: "20px"}}>
+          Placar:
+          <h2>
+            <span style={{color:'#04b704'}}>{vitorias}</span>
+            /
+            <span style={{color:"red"}}>{derrotas}</span>
+          </h2>
+        </div>
         <div className="resultado">
           {ganhou && "Muito bem! Você acertou 😀"
-          || perdeu && `Fim do jogo ☹️ A palavra era ${palavra.toUpperCase()}`
+          || perdeu && `Fim do jogo ☹️ Você perdeu`
           || "ㅤ"}
         </div>
         <div className="desenho">
           <DesenhoForca erros={chutesErrados.length < 6 ? chutesErrados.length : 6} />
         </div>
-        <PalavraForca chutes={chutes} palavra={palavra} />
+        <PalavraForca chutes={chutes} palavra={palavra} perdeu={perdeu} />
         <TecladoForca
           desativa={ganhou||perdeu}
           letrasCorretas={chutes.filter(l => palavra.includes(l))}

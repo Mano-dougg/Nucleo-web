@@ -22,7 +22,7 @@ const roteador = createBrowserRouter([
   },
   {
     path: '/jogo',
-    element: <App palavra='exemplo' />
+    element: <App palavra='exemplando' />
   }
 ])
 
