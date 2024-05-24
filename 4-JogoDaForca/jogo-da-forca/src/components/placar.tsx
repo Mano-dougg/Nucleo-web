@@ -1,8 +1,11 @@
+// App.tsx
+
 import './App.css';
 import HangmanDrawing from './components/hangman-drawing';
 import Keyboard from './components/keyboard';
 import HangmanWord from './components/hangmanword';
 import Message from './components/win-lose';
+import Placar from './components/Placar'; // Importando o componente Placar
 import styled from 'styled-components';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -94,20 +97,13 @@ function App() {
       )}
 
       <HangmanPart>
-      <div className='placar'>
-        <h3>Placar</h3>
-        <p>Vitórias: {wins}</p>
-        <p>Derrotas: {losses}</p>
-      </div>
+        <Placar vitórias={wins} derrotas={losses} />
         <h2>Jogo da Forca</h2>
         <HangmanDrawing numberOfGuesses={incorrectGuesses.length} />
-        
         <HangmanWord revelar={derrota} guessedLetters={guessedLetters} word={wordToGuess} />
       </HangmanPart>
 
       <Keyboard letrasAtivas={correctGuesses} disabled={vitoria || derrota} letrasInativas={incorrectGuesses} addGuessedLetter={addGuessedLetter} />
-
-  
     </Wrapper>
   );
 }

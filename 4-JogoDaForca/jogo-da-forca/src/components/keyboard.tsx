@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
   gap: 0.5rem;
   margin-top: 2rem;
-  width: 700px;
+  width: 400px;
 
   @media (max-width: 768px) {
     width: 70%;
