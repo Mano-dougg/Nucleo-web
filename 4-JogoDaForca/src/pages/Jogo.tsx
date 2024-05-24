@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import palavras from '../palavras.json';
 import Teclado from '../components/Teclado';
 import ButtonHome from '../components/ButtonHome';
+import homeIcon from '../assets/home.svg';
 import forcaImg from '../assets/forca-img.png';
 import forcaCabecaImg from '../assets/forca-cabeca.png';
 import forcaCabecaCorpoImg from '../assets/forca-cabeca-corpo.png';
@@ -21,6 +23,12 @@ function Jogo() {
   const [mensagemFinal, setMensagemFinal] = useState<string>('');
   const [partidasGanhas, setPartidasGanhas] = useState<number>(0);
   const [partidasPerdidas, setPartidasPerdidas] = useState<number>(0);
+
+  const navigate = useNavigate()
+
+  const handleGoToHomeClick = () => {
+    navigate('/');
+  };
 
   const letrasDaPalavra = palavraAdivinhar.split('');
 
@@ -73,11 +81,14 @@ function Jogo() {
 
   return (
     <div className="jogo-container">
-      <h1>Jogo da Forca</h1>
-      <div className="placar">
-        <p>Partidas ganhas: {partidasGanhas}</p>
-        <p>Partidas perdidas: {partidasPerdidas}</p>
-      </div>
+      <header className="game-header">
+        <img src={homeIcon} alt="Ícone de casa" onClick={handleGoToHomeClick}/>
+        <h1>Jogo da Forca</h1>
+        <div className="placar">
+          <p>Vitórias: {partidasGanhas}</p>
+          <p>Derrotas: {partidasPerdidas}</p>
+        </div>
+      </header>
       <div className="main-content">
         <div className="forca-container">
           <img src={getImagemForca()} alt="Forca" className="imagem-forca" />
