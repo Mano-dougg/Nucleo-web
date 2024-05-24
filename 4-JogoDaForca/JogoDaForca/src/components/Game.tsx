@@ -6,7 +6,7 @@ import { GameState } from '../types.ts';
 import buttonOff from '../../public/images/ToggleOff-light.svg'
 import buttonOn from '../../public/images/ToggleOn-dark.svg'
 
-const words = ['nuvem', 'pinturas', 'ingredientes', 'pista'];
+const words = ['NUVEM', 'PINTURAS', 'INGREDIENTES', 'PISTA'];
 
 const getRandomWord = () => {
   return words[Math.floor(Math.random() * words.length)];
@@ -56,6 +56,7 @@ const Game: React.FC = () => {
   const [wins, setWins] = useState<number>(initialScore.wins);
   const [losses, setLosses] = useState<number>(initialScore.losses);
   const [history, setHistory] = useState<{ result: string; word: string }[]>(initialHistory);
+  
   const maxErrors = 6;
 
   const incorrectGuesses = guesses.filter(letter => !word.includes(letter));
@@ -82,17 +83,18 @@ const Game: React.FC = () => {
   }, [history]);
 
   const handleGuess = (letter: string) => {
+    letter = letter.toUpperCase();
       if (!guesses.includes(letter) && gameState === 'playing') {
         setGuesses([...guesses, letter]);
       }
     };
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    const letter = event.key.toLowerCase();
-    if (/[a-z]/.test(letter) && gameState === 'playing') {
-      handleGuess(letter);
-    }
-  };
+    const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+      const letter = event.key.toUpperCase();
+      if (/^[A-Z]$/.test(letter) && gameState === 'playing') {
+        handleGuess(letter);
+      }
+    };
 
   const resetGame = () => {
     setWord(getRandomWord());
@@ -119,50 +121,62 @@ const Game: React.FC = () => {
 
   return (
     <div className="game-container" onKeyDown={handleKeyDown} tabIndex={0}>
-      {showHistory && (
-        <div className="game-history-container">
-          <GameHistory history={history} />
-        </div>
-      )}
-      <div className="container">
-        <h1>Jogo da Forca</h1>
-        <p>Histórico: </p>
-        <img
-          src={showHistory ? buttonOn : buttonOff}
-          alt="Histórico"
-          onClick={() => setShowHistory(!showHistory)}
-          style={{ cursor: 'pointer' }}
-        />
-        <p>Teclado:</p>
-        <img
-          src={showKeyboard ? buttonOn : buttonOff}
-          alt="Teclado"
-          onClick={() => setShowKeyboard(!showKeyboard)}
-          style={{ cursor: 'pointer' }}
-        />
-        <div className="scoreboard">
-          <p>Vitórias: {wins}</p>
-          <p>Derrotas: {losses}</p>
-        </div>
-        <img src={hangmanImages[errors]} alt={`Hangman stage ${errors}`} />
-        <Word word={word} guesses={guesses} />
-        {showKeyboard && <Keyboard onGuess={handleGuess} guesses={guesses} />}
-        {gameState === 'lost' && <p>Você perdeu! A palavra era: {word}</p>}
-        {gameState === 'won' && <p>Parabéns! Você ganhou!</p>}
-        {incorrectGuesses.length > 0 && (
+      <h1>Jogo da Forca</h1>
+      <div className='container'>
+        <div className="menu-container">
           <div>
-            <h2>Letras Erradas:</h2>
-            <p>{incorrectGuesses.join(', ')}</p>
+            <div className='setShow'>
+              <p>Histórico: </p>
+              <img className='button-toggle'
+                src={showHistory ? buttonOn : buttonOff}
+                alt="Histórico"
+                onClick={() => setShowHistory(!showHistory)}
+                style={{ cursor: 'pointer' }}
+              />
+            </div>
+            <div className='setShow'>
+              <p>Teclado:</p>
+              <img className='button-toggle'
+                src={showKeyboard ? buttonOn : buttonOff}
+                alt="Teclado"
+                onClick={() => setShowKeyboard(!showKeyboard)}
+                style={{ cursor: 'pointer' }}
+              />
+            </div>
           </div>
-        )}
-        {(gameState === 'lost' || gameState === 'won') && (
-          <button onClick={resetGame}>Nova Partida</button>
-        )}
-        {gameState === 'playing' && (
-          <button onClick={giveUp}>Desistir</button>
-        )}
-        <button onClick={resetScoreboard}>Novo Jogo</button>
+          <div className="scoreboard">
+            <p>Vitórias: {wins}</p>
+            <p>Derrotas: {losses}</p>
+          </div>
+        </div>
+        <div className='image-hangman'>
+          <img id='hangman' src={hangmanImages[errors]} alt={`Hangman stage ${errors}`}/>
+        </div>
+        {showHistory && (<GameHistory history={history} />)}
       </div>
+      <div className='game'> 
+          <Word word={word} guesses={guesses} />
+          {incorrectGuesses.length > 0 && (
+            <div className='incorrectGuesse'>
+              <p>{incorrectGuesses.join('  ')}</p>
+            </div>
+          )}
+          <div className='result'>
+            {gameState === 'lost' && <p>Você perdeu! A palavra era: {word}</p>}
+            {gameState === 'won' && <p>Parabéns! Você ganhou!</p>}
+          </div>
+          
+          <div className='buttons'>
+            <button id='Reset' onClick={resetScoreboard}>Novo Jogo</button>
+            {(gameState === 'lost' || gameState === 'won') && (
+              <button className='NewMatch' onClick={resetGame}>Nova Partida</button>
+            )}
+            {(gameState === 'playing') && (
+              <button className='NewMatch' onClick={giveUp} disabled={guesses.length === 0}>Desistir</button>
+            )}
+          </div>
+        </div>
+      {showKeyboard && <Keyboard onGuess={handleGuess} guesses={guesses} />}
     </div>
   );
 };

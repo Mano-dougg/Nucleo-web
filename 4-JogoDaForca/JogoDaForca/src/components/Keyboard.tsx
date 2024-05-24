@@ -1,6 +1,11 @@
+// Keyboard.tsx
 import React from 'react';
 
-const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+const keys = [
+  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+  ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+];
 
 interface KeyboardProps {
   onGuess: (letter: string) => void;
@@ -9,15 +14,19 @@ interface KeyboardProps {
 
 const Keyboard: React.FC<KeyboardProps> = ({ onGuess, guesses }) => {
   return (
-    <div>
-      {letters.map((letter) => (
-        <button
-          key={letter}
-          onClick={() => onGuess(letter)}
-          disabled={guesses.includes(letter)}
-        >
-          {letter}
-        </button>
+    <div className="keyboard">
+      {keys.map((row, rowIndex) => (
+        <div key={rowIndex} className="keyboard-row">
+          {row.map((key) => (
+            <button
+              key={key}
+              onClick={() => onGuess(key)}
+              disabled={guesses.includes(key)}
+            >
+              {key}
+            </button>
+          ))}
+        </div>
       ))}
     </div>
   );

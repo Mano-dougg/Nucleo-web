@@ -7,7 +7,7 @@ interface WordProps {
 
 const Word: React.FC<WordProps> = ({ word, guesses }) => {
   return (
-    <div>
+    <div className='word'>
       {word.split('').map((letter, index) => (
         <span key={index}>
           {guesses.includes(letter) ? letter : '_'}
