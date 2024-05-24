@@ -1,0 +1,110 @@
+.total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.base{
+    height: 5px;
+    width: 294px;
+    border-radius: 8px;
+    background-color: purple;
+}
+
+.meio1{
+    width: 4.5px;
+    height: 360px;
+    border-radius: 8px;
+    background-color:purple;
+}
+
+.topo{
+    width: 177px;
+    height: 4.5px;
+    border-radius: 8px;
+    background-color: purple;
+    margin-left: -33px;
+}
+
+.meio2{
+    width: 4.5px;
+    height: 49.5px;
+    border-radius: 8px;
+    background-color: purple;
+    justify-self: flex-start;
+
+    margin-left: 170px;
+}
+
+.mid{
+    display: flex;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    /* background-color: skyblue; */
+}
+
+.esc{
+    display: flex;
+    flex-direction: column;
+}
+
+.cabeca{
+    height: 63px;
+    width: 63px;
+    border-radius: 50%;
+    border: 5px solid purple;
+    margin-left: 135px;
+    margin-top: -1px;
+}
+
+.corpo{
+    height: 135px;
+    width: 4.5px;
+    background-color: purple;
+    margin-left: 170px;
+    margin-top: -1px;
+    /* opacity: 50%; */
+}
+
+.braco-esq{
+    width: 4.5px;
+    height: 72px;
+    border-radius: 8px;
+    background-color: purple;
+    margin-left: 153px;
+    margin-top: -130px;
+    rotate: 30deg;
+}
+
+.braco-dir{
+    width: 4.5px;
+    height: 72px;
+    border-radius: 8px;
+    background-color: purple;
+    margin-left: 187px;
+    margin-top: -72px;
+    rotate: -30deg;
+}
+
+.perna-esq{
+    width: 4.5px;
+    height: 72px;
+    border-radius: 8px;
+    background-color: purple;
+    margin-left: 153.1px;
+    margin-top: 50px;
+    rotate: 30deg;
+    /* opacity: 10%; */
+}
+
+.perna-dir{
+    width: 4.5px;
+    height: 72px;
+    border-radius: 8px;
+    background-color: purple;
+    margin-left: 187px;
+    margin-top: -72px;
+    rotate: -30deg;
+}
