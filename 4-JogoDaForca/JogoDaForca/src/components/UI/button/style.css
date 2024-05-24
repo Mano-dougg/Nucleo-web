@@ -31,6 +31,17 @@
         flex-shrink: 2;
     }
 
+@media screen and (max-width:500px){
+    .primary,
+    .secondary {
+        padding: 30px 0px;
+    }
+
+    .primary-low,
+    .secondary-low {
+        padding: 18px 0px;
+}
+}
 
     .primary {
         color: var(--color-btn-primary);
@@ -57,6 +68,7 @@
 
     .primary,
     .primary-low {
+        border: solid 1px transparent;
         &:hover {
             background-color: transparent;
             border: solid 1px var(--color-btn-secondary);

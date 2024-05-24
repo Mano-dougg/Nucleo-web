@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button } from "../UI/button/button";
 import { Link } from "react-router-dom";
+import { Placar } from "../UI/placarPartidas/placar";
 
 const HeaderContainer = styled.header`
   height: 100%;
@@ -22,6 +23,7 @@ export const ButtonContainer = styled.div`
 export const HomeScreen = () => {
   return (
     <HeaderContainer>
+      <Placar/>
       <ButtonContainer>
         <Link to={"/Game"}>
           <Button texto={"Comece a jogar"} classe={"primary"} />

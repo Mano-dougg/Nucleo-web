@@ -2,9 +2,8 @@ import styled from "styled-components";
 import { Button, ButtonEvent } from "../UI/button/button";
 import { ButtonsContainer } from "./register";
 import { useState, useEffect, useRef } from "react";
-import { Boneco } from "../UI/button/boneco/boneco";
+import { Boneco } from "../UI/boneco/boneco";
 import { Link } from "react-router-dom";
-
 const media = {
   mobile: `@media (max-width: 500px)`,
 };
@@ -21,7 +20,7 @@ const MainContainer = styled.main`
   overflow-x: hidden;
 
   ${media.mobile} {
-    gap: 30px;
+    gap: 20px;
   }
 `;
 
@@ -56,14 +55,15 @@ const LetterContainer = styled.div`
   }
 
   .resultadoPartida {
-    width: 100%;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: bold;
     text-align: center;
     letter-spacing: normal;
     color: var(--color-btn-secondary);
     position: absolute;
     bottom: -30px;
+    margin: 0;
+    
   }
 
   input {
@@ -75,6 +75,17 @@ const LetterContainer = styled.div`
 const palavrasVetor: string[] = localStorage.getItem("palavra")?.split("-") || [
   "",
 ];
+
+const quantidadeDerrotas = () => {
+  if (localStorage.getItem("derrotas")) {
+    const derrota = "1";
+    const partidaPerdida: string =
+      localStorage.getItem("derrotas") + ";" + derrota;
+    localStorage.setItem("derrotas", partidaPerdida);
+  } else {
+    localStorage.setItem("derrotas", "1");
+  }
+};
 
 const palavra: string = palavrasVetor[
   Math.floor(Math.random() * palavrasVetor.length)
@@ -104,6 +115,7 @@ export const GameScreen = () => {
       setCondicao(true);
       setTexto(palavra.toString().toUpperCase());
       setPartida(`VOCÊ PERDEU!`);
+      quantidadeDerrotas();
     }
   }, [quantidadeErros]);
 
@@ -122,7 +134,7 @@ export const GameScreen = () => {
       }
     }
 
-    if (!palavra.toLowerCase().includes(valor.toLowerCase())) {
+    if (!palavra.toLowerCase().includes(valor.toLowerCase()) || erro.toLowerCase().includes(valor.toLowerCase())) {
       setQuantidadeErros((e) => e + 1);
     }
 
@@ -131,6 +143,14 @@ export const GameScreen = () => {
       palavraSeparada.join("").toLowerCase()
     ) {
       setPartida("VOCÊ GANHOU!!!");
+      if (localStorage.getItem("vitoria")) {
+        const vitoria = "1";
+        const partidaVencida: string =
+          localStorage.getItem("vitoria") + ";" + vitoria;
+        localStorage.setItem("vitoria", partidaVencida);
+      } else {
+        localStorage.setItem("vitoria", "1");
+      }
     }
 
     setErro((e) => (e + valor).toUpperCase());
@@ -138,6 +158,7 @@ export const GameScreen = () => {
   }
 
   return (
+    
     <MainContainer>
       <Boneco numeroDeErros={quantidadeErros}></Boneco>
       <LetterContainer onClick={() => inRef.current?.focus()}>
@@ -156,14 +177,21 @@ export const GameScreen = () => {
         />
       </LetterContainer>
       <ButtonsContainer>
-        <Link to={"/"} style={{ flexGrow: "1" }}>
+        <Link
+          to={"/"}
+          style={{
+            width: "100%",
+          }}
+        >
           <Button texto={"Novo jogo"} classe={"primary-low"} />
         </Link>
-        <ButtonEvent
-          texto={"Desistir"}
-          classe={"secondary-low"}
-          evento={() => setPartida(`VOCÊ PERDEU! A PALAVRA ERA: ${palavra}`)}
-        />
+        <Link to={""} style={{ width: "100%" }}>
+          <ButtonEvent
+            texto={"Desistir"}
+            classe={"secondary-low"}
+            evento={() =>  setPartida(`A PALAVRA ERA: ${palavra}`) }
+          />
+        </Link>
       </ButtonsContainer>
     </MainContainer>
   );

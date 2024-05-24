@@ -3,6 +3,7 @@ import { Button, ButtonEvent } from "../UI/button/button";
 import AlertIcon from "../../assets/AlertIcon.svg";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Placar } from "../UI/placarPartidas/placar";
 
 const media = {
   mobile: `@media (max-width: 500px)`,
@@ -19,7 +20,8 @@ const RegisterContainer = styled.form`
   gap: 363px;
 
   ${media.mobile} {
-    gap: 300px;
+    gap: 170px;
+    margin-top: 100px;
   }
 `;
 
@@ -76,6 +78,7 @@ export const ButtonsContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 25px;
+  margin-top: 20px;
 
   ${media.mobile} {
     flex-direction: column;
@@ -124,6 +127,7 @@ export const RegisterScreen = () => {
 
   return (
     <RegisterContainer onSubmit={(e) => e.preventDefault()}>
+      <Placar />
       <InputContainer>
         <h1>Digite uma palavra abaixo</h1>
         <Input

@@ -8,17 +8,17 @@ const Cabeca =(
     border: "10px solid #0a3871",
     position: "absolute",
     top: "40px",
-    right: "45px"
+    right: "105px"
    }}/>
 )
 const Corpo =(
    <div style={{
     width: "13px",
-    height:" 163px",
+    height:" 140px",
     background:"#0a3871",
     position: "absolute",
     top: "100px",
-    right: "70px"
+    right: "130px"
    }}/>
 )
 
@@ -29,7 +29,7 @@ const Braco1 =(
      background:"#0a3871",
      position: "absolute",
      top: "150px",
-     right: "60px",
+     right: "120px",
      rotate: "-30deg",
      transformOrigin:"left bottom"
     }}/>
@@ -41,7 +41,7 @@ const Braco2 =(
      background:"#0a3871",
      position: "absolute",
      top: "150px",
-     right: "0px",
+     right: "60px",
      rotate: "30deg",
      transformOrigin:"right bottom"
     }}/>
@@ -53,8 +53,8 @@ const Perna1 =(
      height:" 10px",
      background:"#0a3871",
      position: "absolute",
-     top: "250px",
-     right: "-22px",
+     top: "230px",
+     right: "38px",
      rotate: "60deg",
      transformOrigin:"left bottom"
     }}/>
@@ -65,8 +65,8 @@ const Perna2 =(
      height:" 10px",
      background:"#0a3871",
      position: "absolute",
-     top: "250px",
-     right: "75px",
+     top: "230px",
+     right: "135px",
      rotate: "-60deg",
      transformOrigin:"right bottom"
     }}/>
@@ -89,16 +89,16 @@ export const Boneco:React.FC<bonecoProps> = ({numeroDeErros}) => {
              marginLeft:"120px",
              position:"absolute",
              top:0,
-             right:"70px"
+             right:"130px"
         }}/>
         <div style={{
              height:"10px",
-             width:"200px",
+             width:"150px",
              background:"#0a3871",
              marginLeft:"120px"
         }}/>
         <div style={{
-            height:"400px",
+            height:"300px",
             width:"10px",
             background:"#0a3871",
             marginLeft:"120px"
