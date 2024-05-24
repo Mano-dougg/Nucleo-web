@@ -9,14 +9,9 @@ const Inicio: React.FC = () => {
             <main>
                 <h1>Forca</h1>
                 <div className="doisBotoes DB-home">
-                    <Link to="/jogo">
-                        <button className="botaozao botaoPrim">
-                            Começar a jogar
-                        </button>
-                    </Link>
                     <Link to="/adicionar-palavras">
-                        <button className="botaozao botaoSec">
-                            Adicionar novas palavras
+                        <button className="botaozao botaoPrim">
+                            Começar jogo
                         </button>
                     </Link>
                 </div>
