@@ -12,8 +12,11 @@ const Controle: React.FC<ControleProps> = ({ navigate }) => {
     const location = useLocation();
     const { isTwoPlayers } = location.state;
 
-    const handleGoBack = () => {
-        navigate(-1);
+    const handleClick = () => {
+      localStorage.removeItem("loser");
+      localStorage.removeItem("winner");
+      // Redirecionar para a página desejada após encerrar
+      navigate(-1);
     };
 
   return (
@@ -27,7 +30,7 @@ const Controle: React.FC<ControleProps> = ({ navigate }) => {
         }
 
         <div className='acabar'>
-            <button className='encerrar' onClick={handleGoBack}>Encerrar jogo</button>
+            <button onClick={handleClick} className='encerrar'>Encerrar jogo</button>
         </div>
 
     </Container>
