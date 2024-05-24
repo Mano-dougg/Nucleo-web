@@ -1,0 +1,49 @@
+.buttonContainer {
+  width: 317px;
+  height: 665px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+
+.startButton {
+  width: 100%;
+  height: 105px;
+  background-color: var(--dark-blue-300);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.startButton:hover {
+  background-color: var(--dark-blue-200);
+}
+
+.addWordButton {
+  width: 100%;
+  height: 105px;
+  background-color: transparent;
+  color: var(--dark-blue-300);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  border: 1px solid var(--dark-blue-300);
+  border-radius: 24px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2;
+}
+
+.addWordButton:hover {
+  background-color: var(--dark-blue-200);
+  color: var(--white);
+  border: none;
+}
