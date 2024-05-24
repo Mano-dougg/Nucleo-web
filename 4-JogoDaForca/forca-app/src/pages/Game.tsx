@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react"
 import HangmanDrawn from "../components/HangmanDrawn"
 import HangmanWord from "../components/HangmanWord"
 import Keyboard from "../components/Keyboard"
+import ScoreBoard from "../components/ScoreBoard"
 import './Game.css'
 
 
@@ -61,6 +62,7 @@ function Game({wordList}: GameProps) {
     return (
         <>
             <div className="game-content">
+                <ScoreBoard />
                 <HangmanDrawn numberOfGuesses={incorrectLetters.length}/>
                 <HangmanWord wordToGuess={wordToGuess} guessedLetters={guessedLetters} incorrectLetters={incorrectLetters} reveal={reveal}/>
                 <div style={{alignSelf: 'stretch'}}>
