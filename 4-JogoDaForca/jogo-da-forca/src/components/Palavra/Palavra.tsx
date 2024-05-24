@@ -1,7 +1,7 @@
 import './Palavra.css'
 
 function Palavra(){
-    const palavra = "teste"
+    const palavra = "olamundo"
 
     const mostrarLetra = ['']
 

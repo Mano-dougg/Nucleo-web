@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .titulo{
@@ -19,9 +19,13 @@
 .aviso{
     display: flex;
     align-items: center;
+}
+
+.aviso p{
     font-family: inter;
     font-size: 12px;
     font-weight: 400;
+    color: #495057;
 }
 .aviso img{
     width: 16px;
@@ -64,4 +68,10 @@
 
 .botao-adc2:hover{
     background-color: #d0d0d0;
+}
+
+#area-texto{
+    width: 500px;
+    height: 50px;
+    resize: none;
 }
