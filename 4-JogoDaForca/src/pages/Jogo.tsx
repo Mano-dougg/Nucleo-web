@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import palavras from '../palavras.json';
 import Teclado from '../components/Teclado';
 import ButtonHome from '../components/ButtonHome';
-import homeIcon from '../assets/home.svg';
 import forcaImg from '../assets/forca-img.png';
 import forcaCabecaImg from '../assets/forca-cabeca.png';
 import forcaCabecaCorpoImg from '../assets/forca-cabeca-corpo.png';
