@@ -10,6 +10,7 @@ const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 `;
 
 const MessageContent = styled.div`
@@ -17,7 +18,6 @@ const MessageContent = styled.div`
   padding: 2rem;
   border-radius: 5px;
   z-index: 1;
-  height: 250px;
 `;
 
 const Message = ({ onClose, children }) => {

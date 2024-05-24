@@ -17,7 +17,11 @@ interface HangmanWordProps {
 
 }
 
-export default function HangmanWord( {word, guessedLetters } : HangmanWordProps ) {
+export default function HangmanWord( {
+    revelar,
+    word,
+     guessedLetters,
+     } : HangmanWordProps ) {
 
     return <Wrapper>
         {word.split("").map((letter, index) => (
@@ -27,7 +31,11 @@ export default function HangmanWord( {word, guessedLetters } : HangmanWordProps 
                     minWidth: '50px', 
                  }}
                 key={index}>
-                <span style={{ visibility: guessedLetters.includes(letter) ? 'visible' : 'hidden' }}>{letter}</span>
+                <span style={{ visibility: guessedLetters.includes(letter) || revelar
+                     ? 'visible'
+                      : 'hidden',
+                      color:!guessedLetters.includes(letter) && 'red'
+                      }}>{letter}</span>
             </span>
         ))}
     </Wrapper>

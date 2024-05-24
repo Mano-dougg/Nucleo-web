@@ -75,7 +75,7 @@ function App() {
       <HangmanPart>
         <h2>Jogo da Forca</h2>
         <HangmanDrawing numberOfGuesses={incorrectGuesses.length} />
-        <HangmanWord guessedLetters={guessedLetters} word={wordToGuess} />
+        <HangmanWord revelar={derrota} guessedLetters={guessedLetters} word={wordToGuess} />
       </HangmanPart>
 
       <Keyboard letrasAtivas={correctGuesses} disabled={vitoria || derrota} letrasInativas={incorrectGuesses} addGuessedLetter={addGuessedLetter} />
