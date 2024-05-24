@@ -18,7 +18,6 @@ const MainContainer = styled.main`
   justify-content: center;
   align-items: center;
   gap: 60px;
-  
 
   ${media.mobile} {
     gap: 20px;
@@ -42,7 +41,7 @@ const LetterContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
 
-    .letrasContainer{
+    .letrasContainer {
       width: fit-content;
     }
 
@@ -122,7 +121,16 @@ const setarHistorico = ({
   }
 };
 
+const palavrasVetor: string[] = localStorage.getItem("palavra")?.split("-") || [
+  "",
+];
+
+const palavra: string = palavrasVetor[
+  Math.floor(Math.random() * palavrasVetor.length)
+].replace(/"/g, "");
+
 export const GameScreen = () => {
+  const [textoSeparado] = useState<string[]>(new Array(7));
   const [texto, setTexto] = useState("");
   const [valor, setValor] = useState("");
   const [erro, setErro] = useState("\u00a0");
@@ -131,21 +139,15 @@ export const GameScreen = () => {
   const [partida, setPartida] = useState("");
   const inRef = useRef<HTMLInputElement>(null);
 
-  const palavrasVetor: string[] = localStorage
-    .getItem("palavra")
-    ?.split("-") || [""];
-
-  const palavra: string = palavrasVetor[
-    Math.floor(Math.random() * palavrasVetor.length)
-  ].replace(/"/g, "");
-
   const palavraTamanho: number = palavra.length;
 
   useEffect(() => {
     inRef.current?.focus();
   });
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(texto);
+  }, [texto]);
 
   useEffect(() => {
     if (quantidadeErros == 6) {
@@ -165,7 +167,6 @@ export const GameScreen = () => {
     setValor(novoValor);
     console.log(valor);
 
-    const textoSeparado: string[] = texto.split("");
     const palavraSeparada: string[] = palavra.split("");
 
     for (let i = 0; i < palavraTamanho; i++) {
@@ -174,12 +175,13 @@ export const GameScreen = () => {
         setTexto(textoSeparado.join("").toUpperCase());
       }
     }
+    console.log(textoSeparado);
 
     if (
       !palavra.toLowerCase().includes(valor.toLowerCase()) ||
       erro.toLowerCase().includes(valor.toLowerCase())
     ) {
-      setQuantidadeErros((e) => e + 1);
+      setQuantidadeErros((e: number) => e + 1);
     }
 
     if (
@@ -204,15 +206,14 @@ export const GameScreen = () => {
     setErro((e) => (e + valor).toUpperCase());
     setValor("");
   }
-
   return (
     <MainContainer>
       <Boneco numeroDeErros={quantidadeErros}></Boneco>
       <LetterContainer onClick={() => inRef.current?.focus()}>
         <p id="campo">
-          {palavra.split("").map((e, i) => (
+          {palavra.split("").map((_e, i: number) => (
             <span
-              style={{ borderBottom: ".1em solid black" }}
+              style={{ borderBottom: ".1em solid" }}
               className="letrasContainer"
             >
               <span

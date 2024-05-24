@@ -34,7 +34,7 @@ export const HistoricoDePartidas = () => {
           <Button texto={"Voltar para home"} classe={"secondary-low"} />
         </Link>
       </ButtonContainer>
-      {historico.map((e, i) => (
+      {historico.map((_e, i:number) => (
         <p>{historico[i]}</p>
       ))}
     </Historico>
