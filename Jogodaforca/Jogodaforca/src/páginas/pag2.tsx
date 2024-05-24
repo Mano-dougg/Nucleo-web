@@ -9,6 +9,7 @@ import Botao2 from '../components/Botao2/botao2';
 
 function Pag2() {
   const [count, setCount] = useState(0)
+  
 
   return (
     <>

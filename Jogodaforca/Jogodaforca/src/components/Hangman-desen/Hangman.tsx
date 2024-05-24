@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import styles4 from './Hangman.module.css'
 
+
 const Base = styled.div`
 @media screen and (min-width: 200px) and (max-width:768px){
     width: 294px;
@@ -9,7 +10,6 @@ const Base = styled.div`
     left: 573px;
     gap: 0px;
     border-radius: 8px;
-    opacity: 0px;
     background: #0A3871;
     position:absolute;
     left:57px;
@@ -22,7 +22,6 @@ const Base = styled.div`
     left: 573px;
     gap: 0px;
     border-radius: 8px;
-    opacity: 0px;
     background: #0A3871;
     position:absolute;
     left:260px;
@@ -35,11 +34,10 @@ const Base = styled.div`
     left: 573px;
     gap: 0px;
     border-radius: 8px;
-    opacity: 0px;
     background: #0A3871;
     position:absolute;
     top:-1px;
-    left:42%;
+    left:40%;
 }
 `;
 
@@ -427,15 +425,15 @@ const Pernaesquerda = styled.div`
 }
 `
 
-function Hangman(){
+const HANG = [Head, Body, Bracodireito, Bracoesquerdo, Pernadireita, Pernaesquerda]
+interface Chutes{
+    tentativas : number
+}
+
+function Hangman({tentativas,}:Chutes){
     return(
     <div className={styles4.div}>
-        <Pernaesquerda/>
-        <Pernadireita/>
-        <Bracoesquerdo />
-        <Bracodireito/>
-        <Body />
-        <Head/>
+        {HANG.slice(0,tentativas).map((Bpart,index)=>{return <Bpart key={index}/>})}
         <Corda/>
         <Barra/>
         <Haste/>

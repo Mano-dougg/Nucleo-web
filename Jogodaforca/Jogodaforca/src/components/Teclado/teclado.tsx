@@ -73,11 +73,17 @@ const Button = styled.button`
 }
 `;
 
-function Escrever(){
+interface Teclados{
+    escreva: (word:string ) => void
+/*     vencer: boolean
+    perder: boolean */
+}
+
+function Escrever({escreva}:Teclados){
     return(
         <WRAP>
             {Keys.map((letter)=>(
-                <Button key={letter}>{letter}</Button>
+                <Button onClick={()=>escreva(letter)} key={letter}>{letter}</Button>
             ))}
         </WRAP>
     )

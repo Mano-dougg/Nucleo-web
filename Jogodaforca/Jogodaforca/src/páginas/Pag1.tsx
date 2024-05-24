@@ -8,6 +8,8 @@ import Icone from '../components/icone/icone'
 
 function Pag1() {
   const [count, setCount] = useState(0)
+  var passou = "corta"
+  localStorage.setItem("fluxo", passou)
 
   return (
     <>

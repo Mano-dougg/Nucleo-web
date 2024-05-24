@@ -9,7 +9,7 @@ const Palavra = styled.div`
     left: 256px;
     gap: 0px;
     opacity: 0px;    
-    letter-spacing:20px;
+    letter-spacing:17px;
     border-radius: 8px;
     font-family: Inter;
     font-size: 24px;
@@ -19,14 +19,15 @@ const Palavra = styled.div`
     color: #0A3871;
     position: relative;
     top:250px;
-    left:32%;
+    left:10%;
     text-transform: uppercase; 
+    white-space:nowrap;
 }
 @media screen and (min-width: 768px) and (max-width:1270px){
     width: 80px;
     height: 72px;
     left: 384px;
-    letter-spacing:50px;
+    letter-spacing:35px;
     border-radius: 8px;
     font-family: Inter;
     font-size: 48px;
@@ -36,7 +37,7 @@ const Palavra = styled.div`
     color: #0A3871;
     position: relative;
     top:560px;
-    left:28.6%;
+    left:20%;
     text-transform: uppercase; 
 }
 @media screen and (min-width: 1270px) {
@@ -52,24 +53,32 @@ const Palavra = styled.div`
     text-align: center;
     color: #0A3871;
     position: relative;
-    top:465px;
-    left:37.6%;
+    top:450px;
+    left:30.6%;
     text-transform: uppercase; 
 }
 `
 
-function Teclado(){
-    const valor = 'oruan'
-    const tentar = ['o', 'r','y', 'u','a','n']
-    return(
-    <Palavra>
-        {valor.split('').map((letter,index)=>(
-            <span key={index} style={{ visibility: tentar.includes(letter) ? 'visible' : 'hidden'}}>
-            {letter}
-            </span>
-        ))}
-    </Palavra>
-    )
+interface EscondidaProps{
+    valor : string
+    letras : string[]
 }
 
-export default Teclado
+function PalavraESCRITA({ valor, letras }: EscondidaProps) {
+    return (
+      <Palavra>
+        {valor.split('').map((letter, index) => (
+          <span
+            key={index}
+            className={styles5.span}
+          >
+            <span style={{ visibility: letras.includes(letter) ? 'visible' : 'hidden' }}>
+              {letter}
+            </span>
+          </span>
+        ))}
+      </Palavra>
+    );
+  }
+
+export default PalavraESCRITA

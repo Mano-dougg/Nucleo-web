@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 function Corpo(){
-  const [nome, setnome] = useState<string>('');
+  const [nome, setnome] = useState<string>(localStorage.getItem('textoSalvo') || '');
 
   const mudando = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setnome(event.target.value);
@@ -15,7 +15,7 @@ function Corpo(){
   const btn = () => {
     if (nome.length<=8){
     console.log('Textarea value:', nome);
-    alert(`Textarea value: ${nome}`);
+    localStorage.setItem('textoSalvo', nome)
     }
     else{
         alert(`Insira novamente`)
