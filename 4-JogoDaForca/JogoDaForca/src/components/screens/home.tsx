@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Placar } from "../UI/placarPartidas/placar";
 
 const HeaderContainer = styled.header`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -10,7 +10,7 @@ const media = {
 };
 
 const MainContainer = styled.main`
-  height: 100%;
+  height: 100vh;
   width: 668px;
   max-width: 100%;
   display: flex;
@@ -18,10 +18,11 @@ const MainContainer = styled.main`
   justify-content: center;
   align-items: center;
   gap: 60px;
-  overflow-x: hidden;
+  
 
   ${media.mobile} {
     gap: 20px;
+    height: 100%;
   }
 `;
 
@@ -35,15 +36,22 @@ const LetterContainer = styled.div`
   p,
   .letrasContainer {
     width: 100%;
-    font-size: 48px;
+    font-size: 40px;
     color: var(--color-btn-secondary);
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    .letrasContainer{
+      width: fit-content;
+    }
 
     .letra {
       font-size: 48px;
       color: var(--color-btn-secondary);
       letter-spacing: 40px;
       text-align: center;
+      width: fit-content;
     }
 
     ${media.mobile} {
@@ -78,10 +86,6 @@ const LetterContainer = styled.div`
   }
 `;
 
-const palavrasVetor: string[] = localStorage.getItem("palavra")?.split("-") || [
-  "",
-];
-
 const quantidadeDerrotas = () => {
   if (localStorage.getItem("derrotas")) {
     const derrota = "1";
@@ -93,7 +97,13 @@ const quantidadeDerrotas = () => {
   }
 };
 
-const setarHistorico = ({resultadoPartida, palavraDaPartida}: {resultadoPartida: string, palavraDaPartida: string}) => {
+const setarHistorico = ({
+  resultadoPartida,
+  palavraDaPartida,
+}: {
+  resultadoPartida: string;
+  palavraDaPartida: string;
+}) => {
   const date = new Date();
   const data = date.getDate() + "/" + date.getDay() + "/" + date.getFullYear();
 
@@ -102,7 +112,7 @@ const setarHistorico = ({resultadoPartida, palavraDaPartida}: {resultadoPartida:
 
   const tempo = hora + ":" + minutos;
 
-  const salvarHistorico = `Resultado: ${resultadoPartida}, Palavra: ${palavraDaPartida}, Data: ${data}, Hora: ${tempo}`
+  const salvarHistorico = `Resultado: ${resultadoPartida}, Palavra: ${palavraDaPartida}, Data: ${data}, Hora: ${tempo}`;
   if (localStorage.getItem("historico")) {
     const historico: string =
       localStorage.getItem("historico") + ";" + salvarHistorico;
@@ -111,13 +121,6 @@ const setarHistorico = ({resultadoPartida, palavraDaPartida}: {resultadoPartida:
     localStorage.setItem("historico", salvarHistorico);
   }
 };
-
-const palavra: string = palavrasVetor[
-  Math.floor(Math.random() * palavrasVetor.length)
-].replace(/"/g, "");
-
-
-const palavraTamanho: number = palavra.length;
 
 export const GameScreen = () => {
   const [texto, setTexto] = useState("");
@@ -128,13 +131,21 @@ export const GameScreen = () => {
   const [partida, setPartida] = useState("");
   const inRef = useRef<HTMLInputElement>(null);
 
+  const palavrasVetor: string[] = localStorage
+    .getItem("palavra")
+    ?.split("-") || [""];
+
+  const palavra: string = palavrasVetor[
+    Math.floor(Math.random() * palavrasVetor.length)
+  ].replace(/"/g, "");
+
+  const palavraTamanho: number = palavra.length;
+
   useEffect(() => {
     inRef.current?.focus();
   });
 
-  useEffect(() => {
-   
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     if (quantidadeErros == 6) {
@@ -142,7 +153,10 @@ export const GameScreen = () => {
       setTexto(palavra.toString().toUpperCase());
       setPartida(`VOCÊ PERDEU!`);
       quantidadeDerrotas();
-      setarHistorico({resultadoPartida:"DERROTA", palavraDaPartida:palavra})
+      setarHistorico({
+        resultadoPartida: "DERROTA",
+        palavraDaPartida: palavra,
+      });
     }
   }, [quantidadeErros]);
 
@@ -173,7 +187,10 @@ export const GameScreen = () => {
       palavraSeparada.join("").toLowerCase()
     ) {
       setPartida("VOCÊ GANHOU!!!");
-      setarHistorico({resultadoPartida:"VITÓRIA", palavraDaPartida:palavra})
+      setarHistorico({
+        resultadoPartida: "VITÓRIA",
+        palavraDaPartida: palavra,
+      });
       if (localStorage.getItem("vitoria")) {
         const vitoria = "1";
         const partidaVencida: string =

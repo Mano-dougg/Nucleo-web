@@ -20,7 +20,7 @@
 html,
 body,
 #root {
-    height: 100vh;
+    height: auto;
     width: 100vw;
     font-family: "Inter", sans-serif;
     background-color: var(--bg-primary);
@@ -29,7 +29,6 @@ body,
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 #root {

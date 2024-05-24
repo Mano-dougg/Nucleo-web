@@ -10,7 +10,7 @@ const media = {
 };
 
 const RegisterContainer = styled.form`
-  height: 100%;
+  height: 100vh;
   width: 668px;
   max-width: 100%;
   display: flex;
