@@ -37,6 +37,7 @@
   border: 5px solid ;
   background-color: rgba(255, 255, 255, 0.176);
   font-size: 20px ;
+  text-transform: none;
 }
 
 .div_texto{
@@ -76,4 +77,41 @@
   border: 5px solid ;
   background-color: rgba(158, 205, 245, 0.862);
   font-size: 20px ;
+}
+
+.respostas{
+  font-size: 16px;
+  text-align: center;
+  text-transform: none;
+  padding: 20px;
+  color: rgb(142, 186, 236);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.respostas h4{
+    width: 100ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s steps(100), blinking 0.50s infinite step-end alternate;
+}
+
+.go_home{
+  margin-top: 10px;
+}
+
+
+
+/*-----------*/
+@keyframes typing{
+  from {
+      width: 0;
+  }
+}
+
+@keyframes blinking{
+  50%{
+      border-color: transparent;
+  }
 }

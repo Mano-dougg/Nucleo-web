@@ -1,19 +1,35 @@
 import './jogoForcaDesenho.css'
 
 
-export default function JogoForcaDesenho() {
+interface JogoForcaDesenhoProps{
+    numberOfGuesses: number
+}
+
+
+export default function JogoForcaDesenho({
+    numberOfGuesses, 
+} : JogoForcaDesenhoProps) {
+
+    // Lista de partes do corpo
+    const bodyParts = [
+        'cabeca',
+        'corpo',
+        'braco_esquerdo',
+        'braco_direito',
+        'perna_esquerda',
+        'perna_direita',
+    ];
+
     return(
         <div className="out">
-            <div className='perna_esquerda'></div>
-            <div className='perna_direita'></div>
-            <div className='braco_esquerdo'></div>
-            <div className='braco_direito'></div>
-            <div className='cabeca'></div>
-            <div className='corpo'></div>
-            <div className='vertical_menor'></div>
-            <div className='vertical'></div>
-            <div className='horizontal'></div>
-            <div className='base'></div>
+            {bodyParts.slice(0, numberOfGuesses).map((BodyParty, index) => (
+                <div key={index} className={BodyParty}></div>
+            ))}
+
+            <div className="vertical_menor"></div>
+            <div className="vertical"></div>
+            <div className="horizontal"></div>
+            <div className="base"></div>
         </div>
 
     )
