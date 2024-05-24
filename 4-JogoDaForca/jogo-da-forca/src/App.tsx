@@ -1,20 +1,12 @@
-// import { useState } from 'react'
 import './App.css'
-import Boneco from "./components/Boneco/Boneco"
-import Palavra from './components/Palavra/Palavra'
-import Teclado from './components/Teclado/Teclado'
-
+import { Link } from 'react-router-dom'
 
 function App() {
 
   return (
-    <div className='final'>
-      <Boneco />
-      <Palavra />
-      <div className='teclado'>
-        <Teclado />
-      </div>
-      
+    <div className='inicio'>
+      <Link to="/Jogo" ><button className='jogo'>Começar a jogar</button></Link>
+      <Link to="/Adicao"><button className='adicao'>Adicionar nova palavra</button></Link>
     </div>
   )
 }

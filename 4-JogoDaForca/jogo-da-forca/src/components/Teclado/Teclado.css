@@ -14,8 +14,9 @@
     /* aspect-ratio: 1 / 1; */
 }
 
-#teclas:hover{
+#teclas:hover:not(:disabled){
     background-color: blueviolet;
     color: white;
+    cursor: pointer;
     transition: 10ms;
 }

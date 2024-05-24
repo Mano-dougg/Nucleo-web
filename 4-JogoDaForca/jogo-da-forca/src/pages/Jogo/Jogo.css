@@ -1,0 +1,13 @@
+.final{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: inter;
+    gap: 5rem;
+  }
+  
+  .teclado{
+    align-self: stretch;
+  }

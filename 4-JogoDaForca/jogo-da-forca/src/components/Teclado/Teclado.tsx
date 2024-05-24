@@ -9,7 +9,7 @@ function Teclado(){
         <div className='mae'>
 
             {teclas.map((letra) => (
-
+                
                 <button id='teclas' key={letra}> {letra} </button>
             ))}
 
