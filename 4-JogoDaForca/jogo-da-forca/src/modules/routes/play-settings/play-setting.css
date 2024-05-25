@@ -24,3 +24,17 @@
 .random-choice-select{
     width: 90%;
 }
+
+.player-button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.add-button{
+    background-color: var(--button1);
+}
+
+.remove-button{
+    background-color: red;
+}

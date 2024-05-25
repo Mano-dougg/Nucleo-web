@@ -34,16 +34,18 @@ export const trackerContext = createContext(new gameTracker(()=>[{result:'',past
 //player list
 
 export class playerList{
-    constructor(getter:()=>string[], setter:(str:string)=>void){
+    constructor(getter:()=>string[], setter:(str:string)=>void, remover:(str:string)=>void){
         this.getter = getter;
         this.setter = setter;
+        this.remover = remover;
     }
 
     getter:()=>string[]
     setter:(str:string)=>void
+    remover:(str:string)=>void
 }
 
-export const playerListContext = createContext(new playerList(()=>[''], (str:string)=>{str}))
+export const playerListContext = createContext(new playerList(()=>[''], (str:string)=>{str}, (str:string)=>{str}))
 
 //word list
 

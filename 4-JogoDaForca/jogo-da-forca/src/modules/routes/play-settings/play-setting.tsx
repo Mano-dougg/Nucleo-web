@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import Button from "../../components/button/button";
-import { gameWord, wordContext, wordList } from "../../../constants";
+import { gameWord, playerList, wordContext, playerListContext, wordList } from "../../../constants";
 import './play-setting.css'
 
 function ChooseModeMode({ setMode }:{setMode:(num:number)=>void}){
@@ -39,6 +39,36 @@ function ChooseModeMode({ setMode }:{setMode:(num:number)=>void}){
     )
 }
 
+function PlayerAdder(){
+    const playerListOBJ: playerList = useContext(playerListContext)
+    const playerListLIs = playerListOBJ.getter()
+        .map((name)=>{
+            const removePlayer = ()=>{playerListOBJ.remover(name)}
+            return(<li>
+                <form action="">
+                    <label htmlFor="">{name}</label>
+                    <input className="remove-button player-button" type="button" value="" onClick={removePlayer} />
+                </form>
+            </li>)
+        })
+
+
+    return(
+        <ol>
+            <li>
+                <form action="">
+                    <label htmlFor="player-name"></label>
+                    <input type="text" name="player-name" placeholder="Nome do jogador" />
+                    <input className="add-button player-button" type="button" value="" 
+                    onClick={//@ts-expect-error code will assure that this value exists
+                        (e)=>{playerListOBJ.setter(e.currentTarget.previousSibling.value)}} />
+                </form>
+            </li>
+            {playerListLIs}
+        </ol>
+    )
+}
+
 function ChooseWordMode({ clickable, onChange }:{clickable:boolean, onChange:(formText:string)=>void}){
     return(
         <div className="play-setting">
@@ -58,6 +88,7 @@ function ChooseWordMode({ clickable, onChange }:{clickable:boolean, onChange:(fo
                 placeholder="Palavra para ser adivinhada"
                 onChange={(e) => onChange(e.target.value)}></input>
             </form>
+            <PlayerAdder />
             <Button 
             behavior='link' 
             color='main-button'
@@ -72,6 +103,7 @@ function RandomWordMode({ randomWordPicker }:{randomWordPicker:(prop:string)=>vo
 
     const optionList:JSX.Element[] = Object.keys(wordList)
                        .map((theme:string)=><option value={theme}>{theme}</option>)
+    randomWordPicker('animais')
 
     return(
         <div className="play-setting">
@@ -87,10 +119,10 @@ function RandomWordMode({ randomWordPicker }:{randomWordPicker:(prop:string)=>vo
                 <select 
                 className="random-choice-select"
                 onChange={(e)=>{randomWordPicker(e.target.value)}}>
-                    <option></option>
                     {optionList}
                 </select>
             </form>
+            <PlayerAdder />
             <Button 
             behavior='link' 
             color='main-button'

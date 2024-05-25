@@ -10,7 +10,11 @@ export default function App(){
     
     const wordToGuessSetter = new gameWord(()=>wordToGuess, setWordToGuess)
     const trackerSetter = new gameTracker(()=>tracker, (newTrack:singleTrack)=>{setTracker(tracker.concat(newTrack))})
-    const playerListSetter = new playerList(()=>players, (str:string)=>{setPlayers(players.concat(str))})
+    const playerListSetter = new playerList(
+        ()=>players,
+        (str:string)=>{setPlayers(players.concat(str))},
+        (str:string)=>{setPlayers(players
+            .reduce((keep:string[], elem:string, i:number)=>(str===elem && keep.length===i)?keep:keep.concat(elem),[]))})
 
     return(
         <trackerContext.Provider value={trackerSetter}>

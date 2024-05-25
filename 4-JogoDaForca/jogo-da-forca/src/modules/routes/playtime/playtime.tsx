@@ -65,12 +65,19 @@ export default function Playtime(){
 
     const players:string[] = useContext(playerListContext).getter()
     const [player, setPlayer] = useState(players[0])
+    const [playerIndex, setPlayerIndex] = useState(0)
 
     const updateTracker = useContext(trackerContext).trackerSetter
 
     const failed = ():void=>{
         setFails(fails+1)
         if(fails>=5)finisher(2)
+        else {
+            const i = playerIndex+1
+            setPlayer(players[players.length===i?0:i])
+            console.log('a')
+            setPlayerIndex(players.length===i?0:i)
+        }
     }
 
     const addGuess = (guess:string):void=>{
@@ -82,8 +89,10 @@ export default function Playtime(){
             && result===0)finisher(1)
         else if(!word.includes(guess))failed()
         else {
-            const i = players.indexOf(player)+1
+            const i = playerIndex+1
             setPlayer(players[players.length===i?0:i])
+            console.log('a')
+            setPlayerIndex(players.length===i?0:i)
         }
     }
 
