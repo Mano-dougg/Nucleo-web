@@ -15,7 +15,7 @@ function Principal(): JSX.Element {
   };
   // -Botão "adicionar nova palavra"
   const jogo = (): void => {
-    navegar('/jogo');
+    navegar('/escolha');
   };
   
   // -Return
