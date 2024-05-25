@@ -80,15 +80,20 @@ const right_leg = (
   />
 );
 
-export function Drawing() {
+const body_parts = [head, body, left_arm, right_arm, left_leg, right_leg];
+
+type DrawingProps = {
+  numberOfGuesses: number;
+};
+
+export function Drawing({ numberOfGuesses }: DrawingProps) {
   return (
-    <div style={{ position: "relative", transform: "scale(.75)" }}>
-      {head}
-      {body}
-      {right_arm}
-      {left_arm}
-      {right_leg}
-      {left_leg}
+    <div
+      style={{
+        position: "relative",
+      }}
+    >
+      {body_parts.slice(0, numberOfGuesses)}
       <div
         style={{
           height: "50px",

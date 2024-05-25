@@ -1,6 +1,14 @@
-export function Word() {
-  const word = "test";
-  const guessedLetters = ["t", "e", "g"];
+type WordProps = {
+  guessedLetters: string[];
+  wordToGuess: string;
+  reveal?: boolean;
+};
+
+export function Word({
+  guessedLetters,
+  wordToGuess,
+  reveal = false,
+}: WordProps) {
   return (
     <div
       style={{
@@ -12,7 +20,7 @@ export function Word() {
         fontFamily: "monospace",
       }}
     >
-      {word.split("").map((letter, index) => (
+      {wordToGuess.split("").map((letter, index) => (
         <span
           style={{
             borderBottom: "0.1em solid black",
@@ -21,9 +29,12 @@ export function Word() {
         >
           <span
             style={{
-              visibility: guessedLetters.includes(letter)
-                ? "visible"
-                : "hidden",
+              visibility:
+                guessedLetters.includes(letter) || reveal
+                  ? "visible"
+                  : "hidden",
+              color:
+                !guessedLetters.includes(letter) && reveal ? "red" : "black",
             }}
           >
             {letter}
