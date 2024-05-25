@@ -4,7 +4,7 @@ import GameDisplay from './components/game/GameDisplay.tsx';
 import InitialMenu from './components/menus/InitialMenu.tsx';
 
 const App: React.FC = () => {
-  const [lista, setLista] = useState<string[]>(['BANANA', 'CASA']);
+  const [lista, setLista] = useState<string[]>(['BANANA']);
 
   const [isMenuActive, setIsMenuActive] = useState<boolean>(true);
   const [isAddWordActive, setIsAddWordActive] = useState<boolean>(false);
@@ -13,6 +13,9 @@ const App: React.FC = () => {
   const [randomWord, setRandomWord] = useState<string>('');
   const [correctLetters, setCorrectLetters] = useState<string[]>([]);
   const [wrongLetters, setWrongLetters] = useState<string[]>([]);
+
+  const [gameWins, setGameWins] = useState<number>(0);
+  const [gameLosses, setGameLosses] =useState<number>(0);
 
   const getRandomWord = () => {
     const randomIndex = Math.floor(Math.random() * lista.length);
@@ -62,6 +65,11 @@ const App: React.FC = () => {
       wrongLetters={wrongLetters}
       setWrongLetters={setWrongLetters}
       startNewGame={startNewGame}
+
+      setGameWins={setGameWins}
+      gameWins={gameWins}
+      setGameLosses={setGameLosses}
+      gameLosses={gameLosses}
       ></GameDisplay>
     </div>
   );

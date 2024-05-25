@@ -24,8 +24,14 @@ const InitialMenu: React.FC<InitialMenuProps> = ({ isMenuActive, setIsMenuActive
 
   return (
     <div className={isMenuActive ? "menu" : "hidden"}>
-      <button onClick={handleAddWordActive}> Adicionar Palavra </button>
-      <button onClick={handleGameActive}> Iniciar Jogo </button>
+      <div className="title">
+        <h1>Hangman Game</h1>
+      </div>
+
+      <div className={isMenuActive ? "buttons" : "hidden"}>
+        <button className="add-word-btn" onClick={handleAddWordActive}> Adicionar Palavra </button>
+        <button className="game-btn" onClick={handleGameActive}> Jogar </button>
+      </div>  
     </div>
   );
 };

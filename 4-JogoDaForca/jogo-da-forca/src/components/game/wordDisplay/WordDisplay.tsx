@@ -1,4 +1,5 @@
 import React from 'react';
+import './WordDisplay.css'
 
 interface WordDisplayProps {
   palavra: string;
@@ -8,9 +9,9 @@ interface WordDisplayProps {
 const WordDisplay: React.FC<WordDisplayProps> = ({ palavra, correctLetters }) => {
   const letras = palavra.split('');
   return (
-    <div>
+    <div className='word-display'>
       {letras.map((letra, index) => (
-        <div key={index} style={{ border: '1px solid black', margin: '5px', padding: '10px' }}>
+        <div className='letter' key={index} >
           {correctLetters.includes(letra) ? letra : ''}
         </div>
       ))}

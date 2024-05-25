@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hangman.css'
+import FaceAnimation from './FaceAnimation';
 
 interface GameDisplayProps {
     wrongLetters: string[];
@@ -8,7 +9,7 @@ interface GameDisplayProps {
 const Hangman: React.FC <GameDisplayProps>= ({wrongLetters}) => {
   return (
     <div className='hangman'>
-        <div className={(wrongLetters.length>=5)?'head':''}> </div>
+        <FaceAnimation wrongLetters={wrongLetters}></FaceAnimation>
         <div className={(wrongLetters.length>=7)?'left-arm':''}> </div>
         <div className={(wrongLetters.length>=8)?'right-arm':''}> </div>
         <div className={(wrongLetters.length>=9)?'left-leg':''}> </div>

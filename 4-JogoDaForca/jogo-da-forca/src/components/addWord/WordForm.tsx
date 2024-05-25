@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './WordForm.css'
 
 interface WordFormProps {
   lista: string[];
@@ -31,25 +32,22 @@ const WordForm: React.FC<WordFormProps> = ({ lista, setLista, isAddWordActive, s
   }
 
   return (
-    <div className={isAddWordActive? 'word-form' : 'hidden'}>
-      <h1>Minha Lista</h1>
-      <ul>
-        {lista.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-      <form onSubmit={adicionarItem}>
-        <input
-          type="text"
-          value={novoItem}
-          onChange={(e) => setNovoItem(e.target.value)}
-          placeholder="Digite um novo item"
-        />
-        <button type="submit">Adicionar Item</button>
-      </form>
 
-      <button onClick={handleGameActive}> Jogar </button>
+    <div className={isAddWordActive? 'word-form' : 'hidden'}>
+        <h1> Adicione uma palavra <br/>ao nosso banco de palavras! </h1>
+        <form className={isAddWordActive? 'formulario' : 'hidden'} onSubmit={adicionarItem} >
+            <input
+              type="text"
+              value={novoItem}
+              onChange={(e) => setNovoItem(e.target.value)}
+              placeholder="Digite uma nova palavra"
+            />
+            <button className="add-btn" type="submit">Adicionar</button>
+        </form>
+
+        <button className="start-game-btn" onClick={handleGameActive}> Jogar </button>
     </div>
+
   );
 };
 
