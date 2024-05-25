@@ -9,13 +9,18 @@ import PalavraESCRITA from '../components/palavra/palavra';
 import Placar from '../components/placar/placar';
 
 const bu = localStorage.getItem('textoSalvo')
-var palavra = ['dlc']
-if (typeof bu === 'string') {
-  palavra.push(bu);
-  palavra = palavra.filter(function(item) {
-    return item !== 'dlc';
-  });
+const palavra = [
+  'banana', 'abacaxi', 'laranja', 'lima', 'pera', 'uva', 'morte', 'morango', 'melancia', 'melao',
+  'cachorro', 'gato', 'fortran', 'coelho', 'tartaruga', 'peixe', 'naruto', 'porco', 'cavalo', 'vaca',
+  'mesa', 'cadeira', 'python', 'cama', 'forca', 'estante', 'escrever', 'prato', 'compra', 'banqueta',
+  'carro', 'moto', 'php', 'dinheiro', 'joelho', 'java', 'barco', 'trem', 'react', 'trator',
+  'azul', 'vermelho', 'amarelo', 'verde', 'roxo', 'laranja', 'preto', 'branco', 'cinza', 'marrom'
+]
+if (typeof bu==='string') {
+  palavra.push(bu); 
 }
+
+
 const vencidos = Number(localStorage.getItem('Venci')) 
 const perdidos = Number(localStorage.getItem('Perdi')) 
 
@@ -24,8 +29,8 @@ function Pag3() {
 
   const [plvra, setPlvra] = useState(() => {
       return palavra[Math.floor(Math.random() * palavra.length)]
-      console.log(palavra)
   })
+  console.log(palavra)
   const[acertos,setAcertos] = useState<string[]>([])
 
   const erros = acertos.filter((word) => !plvra.includes(word))

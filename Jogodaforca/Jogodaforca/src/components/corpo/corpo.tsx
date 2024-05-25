@@ -15,7 +15,7 @@ function Corpo(){
   const btn = () => {
     if (nome.length<=8){
     console.log('Textarea value:', nome);
-    const nomemenor = nome.toLowerCase()
+    var nomemenor = nome.toLowerCase()
     localStorage.setItem('textoSalvo', nomemenor)
     }
     else{
