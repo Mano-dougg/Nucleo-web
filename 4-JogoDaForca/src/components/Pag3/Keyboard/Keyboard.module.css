@@ -6,6 +6,7 @@
 .keyboard{
     display: grid;
     width: 550px;
+    padding: 5px;
     grid-template-columns: repeat(auto-fit, minmax(42px, 1fr));
     gap: 10px ;
 }

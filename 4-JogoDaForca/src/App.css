@@ -9,6 +9,12 @@ body{
   background-color: #F3F5FC;
 }
 
+h1{
+  font-family: "Inter";
+  font-size: 20px;
+  color: #0A3871;
+}
+
 p{
   font-family: "Inter";
   color: #0A3871;

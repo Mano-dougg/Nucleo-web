@@ -12,4 +12,5 @@
 
 .lineLetter{
     border-bottom: 4px solid #0A3871;
+    min-width: 50px;
 }

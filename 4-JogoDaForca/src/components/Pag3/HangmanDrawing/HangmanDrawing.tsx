@@ -1,7 +1,19 @@
+import styles from './HangmanDraw.module.css';
 
-import styles from './HangmanDraw.module.css'
+interface HangmanDrawingProps{
+    numberOfGuesses: number
+}
 
-export const HangmanDrawing = () => {
+const HeadMan = () => <div className={styles.headMan}></div>;
+const BodyMan = () => <div className={styles.bodyMan}></div>;
+const LeftArm = () => <div className={styles.leftArm}></div>;
+const RightArm = () => <div className={styles.rightArm}></div>;
+const LeftLeg = () => <div className={styles.leftLeg}></div>;
+const RightLeg = () => <div className={styles.rightLeg}></div>;
+
+const bodyParts = [HeadMan, BodyMan, LeftArm, RightArm, LeftLeg, RightLeg];
+
+export const HangmanDrawing = ({numberOfGuesses}: HangmanDrawingProps) => {
     return(
         <>
         <section className={styles.sectionHangman}>
@@ -9,12 +21,9 @@ export const HangmanDrawing = () => {
             <article className={styles.verticalLine}>
                 <div className={styles.verticalBigLine}></div>  
                 <div className={styles.verticalSmallLine}></div>
-                <div className={styles.headMan}></div>
-                <div className={styles.bodyMan}></div>
-                <div className={styles.rightArm}></div>
-                <div className={styles.leftArm}></div>
-                <div className={styles.rightLeg}></div>
-                <div className={styles.leftLeg}></div>
+            {bodyParts.slice(0, numberOfGuesses).map((BodyPart, index) => {
+                return <BodyPart key={index} />;
+            })}
             </article>
             <div className={styles.base}></div>
         </section>    

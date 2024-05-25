@@ -1,12 +1,13 @@
 import styles from './HangmanWord.module.css'
 
-type Word = {
+interface HangmanWordProps
+{
     word: string;
+    guessedLetters: string[];
 }
 
-export const HangmanWorld = () => {
-    const word = 'teste'
-    const guessedLetters = ['s', 't']
+export const HangmanWorld = ({word, guessedLetters}: HangmanWordProps) => {
+    
     return(
         <>
         <section className={styles.wrapper}>
