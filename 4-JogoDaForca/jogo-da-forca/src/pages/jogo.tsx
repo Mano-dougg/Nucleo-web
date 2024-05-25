@@ -64,7 +64,7 @@ function Jogo(): JSX.Element {
   }, [tentativa, venceu, perdeu]);
 
   // -Vitória e Derrota
-  useEffect(() => {
+  useEffect((): void => {
     if (erros >= 6 && venceu!=true) {
       setPerdeu(true);
     } else if (palavraArray.every((letra) => palpites.includes(letra)) && perdeu!=true) {
