@@ -5,7 +5,7 @@ interface Props {
   guessedLetters: string[];
 }
 
-const Word: React.FC<Props> = ({ word, guessedLetters }) => {
+export function Word({word, guessedLetters}: Props) {
   return (
     <div className={styles.wrapper}>
       {word.split('').map((char, index) => (
@@ -15,7 +15,5 @@ const Word: React.FC<Props> = ({ word, guessedLetters }) => {
         </div>
       ))}
     </div>
-  );
-};
-
-export default Word;
+  )
+}
