@@ -1,6 +1,8 @@
-function App() {
+import Home from './Home.tsx'
+const App = () => {
   return (
     <>
+    <Home></Home>
     </>
   )
 }
