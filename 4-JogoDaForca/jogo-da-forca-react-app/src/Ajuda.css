@@ -1,0 +1,40 @@
+.ajuda-overlay{
+    justify-content: center;
+    font-family: "Bebas Neue",sans-serif;
+    border: 5px solid;
+    border-radius: 30px;
+    margin-inline: 25%;
+    padding-bottom: 20px;
+    padding-inline: 20px;
+    position: absolute;
+}
+.ajuda-content{
+    text-align: left;
+}
+.ajuda-content li{
+    list-style: none;
+    text-align: left;
+    font-size: 30px;
+    margin-left: 0;
+}
+.atencao{
+    color: red;
+}
+.ajuda-content h2{
+    font-size: 40px;
+    align-self: center;
+}
+.ajuda-content p{
+    font-size: 35px;
+}
+.ajuda-content button{
+    margin-top: 5px;
+    border: 1px solid;
+    background-color: white;
+    font-family: "Monospace",sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.joia{
+    color: green;
+}

@@ -6,6 +6,9 @@ a{
     text-decoration: none;
     color: gray;
 }
+.normal{
+    color: black;
+}
 .bloco-texto{
     text-align: center;
     font-family: "Bebas Neue",sans-serif;
@@ -34,4 +37,6 @@ a{
     font-family: "Bebas Neue",sans-serif;
     font-size: 70px;
     margin-top: 0px;
+}
+Ajuda{
 }
