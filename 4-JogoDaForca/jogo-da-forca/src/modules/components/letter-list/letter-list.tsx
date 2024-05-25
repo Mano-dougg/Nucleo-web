@@ -1,8 +1,8 @@
 import './letter-list.css'
 
-function LetterButton({ character, addGuess }:{character:string, addGuess:(guess:string)=>void}){
+function LetterButton({ character, addGuess, player }:{character:string, addGuess:(guess:string, guesser:string)=>void, player:string}){
     const makeGuess = ():void=>{
-        addGuess(character)
+        addGuess(character, player)
     }
 
     return(
@@ -10,12 +10,12 @@ function LetterButton({ character, addGuess }:{character:string, addGuess:(guess
     )
 }
 
-export default function LetterList({ guesses, addGuess, result }:
-    { guesses:string[], addGuess:(guess:string)=>void, result:number}){
+export default function LetterList({ guesses, addGuess, result, player }:
+    { guesses:string[], addGuess:(guess:string, guesser:string)=>void, result:number, player:string}){
     const buttonList: JSX.Element[] = 'abcdefghijklmnopqrstuvwxyz'.split('')
                                       .map((letter:string, i:number):JSX.Element=>guesses.includes(letter)?
                                       <span className='filler' key={i}> </span>
-                                      :<LetterButton character={letter} addGuess={!result?addGuess:()=>{}} />)
+                                      :<LetterButton character={letter} addGuess={!result?addGuess:()=>{}} player={player} />)
 
     return(
         <div className='letter-button-list'>

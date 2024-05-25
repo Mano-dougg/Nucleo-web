@@ -5,10 +5,10 @@ import GameInterface from "../../components/game-interface/game-interface"
 import { wordContext, trackerContext, playerListContext, singleTrack } from "../../../constants"
 import Button from "../../components/button/button"
 
-function WinScreen({word}:{word:string}){
+function WinScreen({word, player}:{word:string, player:string}){
     return(
         <div className="post-game-screen flexer">
-            <h1 className="post-game-screen__title">Yiipiieee!<br/>Voce acertou!</h1>
+            <h1 className="post-game-screen__title">Yiipiieee!<br/>Voce acertou {player}!</h1>
             <span className="post-game-screen__text">A palavra era:<br/>{word}</span>
             <Button 
             behavior="link"
@@ -71,7 +71,7 @@ export default function Playtime(){
 
     const failed = ():void=>{
         setFails(fails+1)
-        if(fails>=5)finisher(2)
+        if(fails>=5)finisher(2, '')
         else {
             const i = playerIndex+1
             setPlayer(players[players.length===i?0:i])
@@ -80,13 +80,13 @@ export default function Playtime(){
         }
     }
 
-    const addGuess = (guess:string):void=>{
+    const addGuess = (guess:string, possibleWinner:string):void=>{
         setGuesses(guesses.concat(guess))
         if(word.split('')
             .every((letter:string)=>guesses
                     .concat(guess)
                     .includes(letter))
-            && result===0)finisher(1)
+            && result===0)finisher(1, possibleWinner)
         else if(!word.includes(guess))failed()
         else {
             const i = playerIndex+1
@@ -96,9 +96,9 @@ export default function Playtime(){
         }
     }
 
-    const finisher = (end:number)=>{
+    const finisher = (end:number, possibleWinner:string)=>{
         setResult(end)
-        const newTrack:singleTrack = {result:end===1?'GANHOU':'PERDEU', pastWord:word}
+        const newTrack:singleTrack = {result:end===1?`${possibleWinner} ganhou`:'todos perderam', pastWord:word}
         updateTracker(newTrack)
         const pastTrack = JSON.parse(localStorage.getItem('globalTracker') || '[]')
         localStorage.setItem('globalTracker', JSON.stringify(pastTrack.concat(newTrack)))
@@ -112,10 +112,10 @@ export default function Playtime(){
             <Hang fails={fails}/>
             <h2>Vez de: {player}</h2>
             {(result===0 && word.length)?
-             <GameInterface word={word} guesses={guesses} failed={failed} addGuess={addGuess} result={result}/>
+             <GameInterface word={word} guesses={guesses} failed={failed} addGuess={addGuess} result={result} player={player}/>
              :<div className="playtime-filler"></div>}
             {word.length===0 && <ErrorScreen />}
-            {result===1 && <WinScreen word={word}/>}
+            {result===1 && <WinScreen word={word} player={player}/>}
             {result===2 && <LoseScreen word={word}/>}
         </div>
     )
