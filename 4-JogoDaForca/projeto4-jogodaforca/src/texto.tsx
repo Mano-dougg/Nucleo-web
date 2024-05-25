@@ -16,7 +16,7 @@ const Texto = () => {
     }
 
     // Separar as palavras
-    const palavras = texto.split(" ");
+    const palavras = texto.split(" ").filter(palavra => palavra.length >= 3);
 
     // Escolher um índice aleatório
     const index = Math.floor(Math.random() * palavras.length);

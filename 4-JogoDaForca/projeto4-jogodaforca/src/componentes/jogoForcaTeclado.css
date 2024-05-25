@@ -17,3 +17,36 @@
     background-color: rgba(242, 242, 242, 0.197);
     color: white;
 }
+
+@media (max-width:768px){
+    .botao_teclado{
+       height: 50px; 
+       width: 50px;
+    }
+
+
+}
+
+@media (max-width:375px){
+    .teclado{
+        display: none;
+    }
+
+    .btn_home{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 40px;
+        padding-right: 50px;
+        font-size: 18px;
+        align-self: center;
+      }
+
+    .go_home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }  
+
+}

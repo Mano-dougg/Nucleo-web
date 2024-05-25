@@ -95,3 +95,122 @@
     right: 260px;
     rotate: 60deg;
 }
+
+@media (max-width:768px){
+    .vertical{
+        height: 350px;
+    }
+
+    .horizontal{
+
+        right: 30px;
+      }
+  
+    .vertical_menor{
+        right: 30px;
+      }
+  
+    
+    .cabeca{
+       
+        top: 39px;
+        right: 0px;
+    }
+
+    .corpo{
+  
+        top: 110px;
+        right: 35px;
+
+    }
+    .braco_direito{
+       
+        top: 150px;
+        right: 25px;
+        rotate:-60deg;
+    }
+
+    .braco_esquerdo{
+       
+        top: 150px;
+        right: -5px;
+        rotate: 60deg;
+    }
+
+    .perna_direita{
+       
+        top: 280px;
+        right: 25px;
+        rotate:-60deg;
+    }
+
+    .perna_esquerda{
+        top: 280px;
+        right: -5px;
+        rotate: 60deg;
+    }
+
+}
+
+@media (max-width:375px){
+    .out{
+        width: 50%;
+    }
+    .vertical{
+        height: 350px;
+        
+    }
+
+    .horizontal{
+        width: 110px;
+        right: 40px;
+      }
+  
+    .vertical_menor{
+        right: 30px;
+        
+      }
+  
+    .cabeca{
+       
+        top: 39px;
+        right: 0px;
+    }
+
+    .corpo{
+        top: 110px;
+        right: 35px;
+
+    }
+    .braco_direito{
+       
+        top: 150px;
+        right: 25px;
+        rotate:-60deg;
+    }
+
+    .braco_esquerdo{
+       
+        top: 150px;
+        right: -5px;
+        rotate: 60deg;
+    }
+
+    .perna_direita{
+       
+        top: 280px;
+        right: 25px;
+        rotate:-60deg;
+    }
+
+    .perna_esquerda{
+        top: 280px;
+        right: -5px;
+        rotate: 60deg;
+    }
+
+
+
+
+
+}

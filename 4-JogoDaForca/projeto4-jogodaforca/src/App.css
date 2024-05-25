@@ -6,6 +6,7 @@
 }
 
 .App{
+  margin-top: -200px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -32,12 +33,28 @@
   padding-left: 100px;
   padding-right: 100px;
   border-radius: 15px;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
   border: 5px solid ;
   background-color: rgba(255, 255, 255, 0.176);
   font-size: 20px ;
   text-transform: none;
+  
+}
+
+.btn_desistir{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 130px;
+  padding-right: 130px;
+  border-radius: 15px;
+  color:rgb(0, 136, 255);
+  text-align: center;
+  border: 5px solid ;
+  background-color: rgba(255, 255, 255, 0.176);
+  font-size: 20px ;
+  text-transform: none;
+  margin-left: 10px;
 }
 
 .div_texto{
@@ -75,33 +92,71 @@
   color: white;
   text-align: center;
   border: 5px solid ;
-  background-color: rgba(158, 205, 245, 0.862);
+  background-color: rgb(158, 204, 245);
   font-size: 20px ;
 }
 
 .respostas{
-  font-size: 16px;
+  font-size: 25px;
   text-align: center;
   text-transform: none;
   padding: 20px;
-  color: rgb(142, 186, 236);
+  color: rgb(0, 136, 255);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .respostas h4{
-    width: 100ch;
+    width: 180ch;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 5s steps(100), blinking 0.50s infinite step-end alternate;
+    animation: typing 5s steps(180), blinking 0.50s infinite step-end alternate;
 }
 
 .go_home{
   margin-top: 10px;
 }
 
+.placar{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  position: sticky;
+  top: 300px;
+  margin-left: -50px;
+  text-transform: none;
+  border: 5px solid white;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 25PX;
+  width: 20%;
 
+ 
+}
+
+.placar p{
+  margin-bottom: 0px;
+  text-align: left;
+  margin-top: 10px;
+}
+.placar h4{
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.Win{
+  color: rgb(120, 245, 155);
+}
+
+.Loss{
+  color: rgb(242, 82, 82);
+  
+}
 
 /*-----------*/
 @keyframes typing{
@@ -115,3 +170,148 @@
       border-color: transparent;
   }
 }
+
+
+/*--------*/
+
+@media (max-width:768px){
+    
+    .texto_sorteio{
+      width: 200px;
+        
+    }
+
+    .texto_sorteio::placeholder{
+      font-size: 16px;
+      width: 600px;
+    }
+
+    .teclado{
+      width: 90%;
+    }
+
+    .placar{
+      font-size: 18px;
+      margin-left: -10px;
+      margin-left: -500px;
+      }
+
+    .App{
+     width: 700px;
+     align-items: center;
+    }
+
+    .go_home{
+      display: flex;
+    }
+
+    .btn_home{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .respostas h4{
+      font-size: 16px;
+      width: 100%;
+      white-space: none;
+      overflow: none;
+      animation: none;
+  }
+    
+
+}
+
+@media (max-width:375px){
+
+  .btn_home{
+    width: 30%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+     padding-right: 50px;
+     font-size: 18px;
+  }
+
+
+  .main{
+    font-size: 12px;
+  }
+
+  .texto_sorteio{
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 60px;
+    padding-bottom: 300px;
+    
+  }
+
+
+  .texto_sorteio::placeholder{
+    font-size: 12px;
+    margin-top: -10px;
+  }
+
+  .buttons{
+  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  .btn_home{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+  }
+
+  .btn_sortear{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+  }
+
+  
+  .btn_desistir{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 15px;
+}
+
+  .placar{
+      position: absolute;
+      font-size: 12px;
+      right: 280px;
+      padding-right: 1px;
+      padding-left: 5px;
+      width: 20%;
+      top: 200px;
+  }
+
+  .respostas h4{
+    width:260px;
+    font-size: 10px;
+    white-space: none;
+    overflow: none;
+    animation: none;
+  }
+
+  .App{
+    margin-top: 0px;
+    width: 100%;
+  }
+
+  }
+
+
+
+
+
+
