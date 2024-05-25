@@ -1,0 +1,24 @@
+.partida{
+    text-decoration: none;
+    color: black;
+}
+.bloco{
+    text-align: center;
+    
+}
+.bloco{
+    font-size: 40px;
+    border: 5px solid;
+    margin-inline: 30%;
+    border-radius: 20px;
+    font-family: "Bebas Neue",sans-serif;
+}
+.retorno {
+    margin-top: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: white;
+    font-family: "Monospace",sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
