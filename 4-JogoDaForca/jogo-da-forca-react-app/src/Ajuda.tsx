@@ -1,9 +1,17 @@
-import './Ajuda.css'; // Arquivo de estilos para o modal
-const Ajuda = () => {
+import './Ajuda.css';
+
+interface AjudaProps {
+  show: boolean;
+  onClose: () => void;
+}
+
+const Ajuda: React.FC<AjudaProps> = ({ show, onClose }) => {
+  if (!show) return null;
+
   return (
     <div className="ajuda-overlay">
       <div className="ajuda-content">
-        <button className="close-button">X</button>
+        <button className="close-button" onClick={onClose}>X</button>
         <h2>Como Jogar HANGMAN:</h2>
         <p>As <span className='atencao'>regras</span> do jogo da forca são <span className='joia'>simples</span>:</p>
         <ul>
