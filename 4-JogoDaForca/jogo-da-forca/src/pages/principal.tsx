@@ -5,16 +5,16 @@ import '../styles/index.css';
 
 
 // -- FUNCTION
-function Principal() {
-
+function Principal(): JSX.Element {
+  // -Geral
   const navegar = useNavigate();
 
   // -Botão "começar novo jogo"
-  function escolha() {
+  const escolha = (): void => {
     navegar('/escolha');
   };
   // -Botão "adicionar nova palavra"
-  function jogo() {
+  const jogo = (): void => {
     navegar('/jogo');
   };
   

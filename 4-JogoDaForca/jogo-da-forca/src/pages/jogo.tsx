@@ -1,5 +1,5 @@
 // --REACT
-import { useState, useEffect } from 'react';
+import { useMemo, useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 // --CSS
 import '../styles/index.css';
@@ -14,14 +14,14 @@ import forca6 from '../assets/forca_fim.png';
 
 
 // --FUNCTION
-function Jogo() {
+function Jogo(): JSX.Element {
   // -Geral
   const palavra: string = localStorage.getItem('palavraForca') || '';
-  const palavraArray: string[] = palavra.split('');
-  const desenhoForca: string[] = [forca0, forca1, forca2, forca3, forca4, forca5, forca6];
+  const palavraArray: string[] = useMemo(() => palavra.split(''), [palavra]);
+  const desenhoForca: string[] = useMemo(() => [forca0, forca1, forca2, forca3, forca4, forca5, forca6], []);
   const navegar = useNavigate();
-  type letra = string;
-  // -States
+
+  // -Estados
   const [palpites, setPalpites] = useState<string[]>([]);
   const [erros, setErros] = useState<number>(0);
   const [desenho, setDesenho] = useState<string>(desenhoForca[0]);
@@ -29,65 +29,64 @@ function Jogo() {
   const [venceu, setVenceu] = useState<boolean>(false);
 
   // -Renderização da palavra secreta
-  function renderPalavra(): JSX.Element[] {
-    return palavraArray.map((letra, index) => (
+  const renderPalavra = (): JSX.Element[] => {
+    return palavraArray.map((letra: string, index: number) => (
       <span key={index} className="letra">
         {palpites.includes(letra) ? letra : ' __ '}
       </span>
     ));
   };
   // -Desenho da Forca
-  useEffect(() => {
-    setDesenho(desenhoForca[(erros)]);
-  }, [erros]);
+  useEffect((): void => {
+    setDesenho(desenhoForca[erros]);
+  }, [desenhoForca, erros]);
 
   // -Tentativas
-  function tentativa(letra) {
-    if (palpites.includes(letra)) return;
-    if (!palavra.includes(letra)) setErros(erros + 1);
-    setPalpites((x) => [...x, letra]);
-  };
-  useEffect(() => {
-    if (erros >= 6) return;
-    window.addEventListener('keypress', teclaApertada);
-    return () => {
-      window.removeEventListener('keypress', teclaApertada);
-    };
-  }, [palpites]);
+  const tentativa = useCallback((letra: string): void => {
+    if (!palpites.includes(letra)) {
+      setPalpites((prev) => [...prev, letra]);
+      if (!palavra.includes(letra)) setErros((prev) => prev + 1);
+    }
+  }, [palavra, palpites]);
 
   // -Aperto de teclas
-  function teclaApertada(event: KeyboardEvent) {
-    const letra = event.key.toUpperCase();
-    if (/^[A-Z]$/.test(letra)) tentativa(letra);
-  };
+  useEffect(() => {
+    const teclaApertada = (event: KeyboardEvent): void => {
+      const letra: string = event.key.toUpperCase();
+      if (/^[A-Z]$/.test(letra)) tentativa(letra);
+    };
+    if (venceu!=true && perdeu!=true) {
+      window.addEventListener('keypress', teclaApertada);
+      return () => {
+        window.removeEventListener('keypress', teclaApertada);
+      };
+    }
+  }, [tentativa, venceu, perdeu]);
 
   // -Vitória e Derrota
   useEffect(() => {
-    if (erros >= 6) {
+    if (erros >= 6 && venceu!=true) {
       setPerdeu(true);
-      return;
-    };
-    if (palavraArray.every((letra) => palpites.includes(letra)) && perdeu!=true) {
+    } else if (palavraArray.every((letra) => palpites.includes(letra)) && perdeu!=true) {
       setVenceu(true);
-      return;
     };
-  }, [palpites]);
+  }, [erros, venceu, palavraArray, palpites, perdeu]);
 
   // -Botão "novo jogo"
-  function novoJogo() {
+  const novoJogo = (): void => {
     setPalpites([]);
     setErros(0);
     navegar('/escolha');
   };
   // -Botão "desistir"
-  function desistir() {
+  const desistir = (): void => {
     const letrasFaltantes: string[] = palavraArray.filter((letra) => !palpites.includes(letra));
-    setPalpites(palpites.concat(letrasFaltantes));
-    setPerdeu(true);
+    setPalpites((prev) => prev.concat(letrasFaltantes));
+    if (venceu!=true) setPerdeu(true);
   };
 
   // -Palpites errados
-  const palpitesErrados: string[] = palpites.filter((letra) => (!palavra.includes(letra)))
+  const palpitesErrados: string[] = palpites.filter((letra) => !palavra.includes(letra))
 
   // -Return
   return (

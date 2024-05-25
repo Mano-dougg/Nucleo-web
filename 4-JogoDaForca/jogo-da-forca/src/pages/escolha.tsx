@@ -1,5 +1,5 @@
 // --REACT
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 // --CSS
 import '../styles/index.css';
@@ -8,33 +8,33 @@ import exclamacao from '../assets/icone-exclamacao.svg';
 
 
 // --FUNCTION COMPONENT
-function Escolha() {
+function Escolha(): JSX.Element {
   // -Geral
   const navegar = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
-  // -States
+
+  // -Estados
   const [palavra, setPalavra] = useState<string>('');
 
   // -Preparação da palavra secreta para o jogo
-  function enviar(event: React.FormEvent) { 
+  const enviar = useCallback((event: React.FormEvent): void => { 
     event.preventDefault();
-    if (palavra.trim()) {
-      localStorage.setItem('palavraForca', palavra.trim().toUpperCase());
-      navegar('/jogo');
-    }
-  };
+    const palavraTrim: string = palavra.trim();
+    localStorage.setItem('palavraForca', palavraTrim.toUpperCase());
+    navegar('/jogo');
+  }, [palavra, navegar]);
 
   // -Botão "salvar e começar"
-  function salvarComecar() {
+  const salvarComecar = useCallback((): void => {
     if (formRef.current) {
       formRef.current.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
     }
-  };
+  }, []);
   // -Botão "cancelar"
-  function cancelar() {
+  const cancelar = useCallback((): void => {
     setPalavra('');
     navegar('/');
-  };
+  }, [navegar]);
 
   // -Return
   return (
