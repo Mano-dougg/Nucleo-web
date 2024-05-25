@@ -20,6 +20,7 @@ const Tecla = styled.button<{ clicada: boolean; disabled: boolean }>`
   color: #000;
   display: flex;
   justify-content: center;
+  align-items: center;
   border: 1px solid #000;
   font-size: 1.2em;
   text-transform: uppercase;

@@ -8,7 +8,7 @@ import Palavra from './components/palavra';
 import Teclado from './components/teclado';
 import styled from 'styled-components';
 
-const palavras = ['abacate', 'mitski', 'jaca'];
+const palavras = ['caderno', 'lapis', 'caneta', 'borracha', 'mochila', 'apontador', 'papel', 'pasta'];
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
