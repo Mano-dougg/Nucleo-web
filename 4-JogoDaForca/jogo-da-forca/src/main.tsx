@@ -7,9 +7,8 @@ import {
 
 import Home from './modules/routes/home/home'
 import Playtime from './modules/routes/playtime/playtime';
-import './reset.css'
+import './reset.css';
 import './index.css';
-import './theme.css'
 import PlaySettings from './modules/routes/play-settings/play-setting';
 import App from './App';
 import ScorePage from './modules/routes/score/score';

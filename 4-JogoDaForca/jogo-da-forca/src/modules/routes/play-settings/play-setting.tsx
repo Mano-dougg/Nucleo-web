@@ -13,12 +13,12 @@ function ChooseModeMode({ setMode }:{setMode:(num:number)=>void}){
     }
 
     return(
-        <>
+        <div className="choose-mode-container flexer">
             <Button 
             behavior="link"
-            color="main-button"
+            color="secondary-button"
             routeCoordinates="/"
-            content="VOLTAR"
+            content="<= VOLTAR"
             clickable={true}
             />
             <Button 
@@ -35,33 +35,41 @@ function ChooseModeMode({ setMode }:{setMode:(num:number)=>void}){
             content="PALAVRA ALEATÓRIA"
             clickable={true}
             />
-        </>
+        </div>
     )
 }
 
 function PlayerAdder(){
+    const [nameContent, setNameContent] = useState('')
+
     const playerListOBJ: playerList = useContext(playerListContext)
     const playerListLIs = playerListOBJ.getter()
         .map((name)=>{
             const removePlayer = ()=>{playerListOBJ.remover(name)}
-            return(<li>
-                <form action="">
+            return(<li className="player-list__item">
+                <form className="player-list__item__form player-entry" action="">
                     <label htmlFor="">{name}</label>
-                    <input className="remove-button player-button" type="button" value="" onClick={removePlayer} />
+                    <input className="remove-button player-button" type="button" value="X" onClick={removePlayer} />
                 </form>
             </li>)
         })
-
+        
+        const playerAdderClick = (str:string)=>{
+            playerListOBJ.setter(str)
+            setNameContent('')
+        }
 
     return(
-        <ol>
-            <li>
-                <form action="">
-                    <label htmlFor="player-name"></label>
-                    <input type="text" name="player-name" placeholder="Nome do jogador" />
-                    <input className="add-button player-button" type="button" value="" 
-                    onClick={//@ts-expect-error code will assure that this value exists
-                        (e)=>{playerListOBJ.setter(e.currentTarget.previousSibling.value)}} />
+        <ol className="player-list flexer">
+            <li className="player-list__item">
+                <form className="player-list__item__form player-adder">
+                    <label className="player-adder__title">Adicione os jogadores</label>
+                    <input className="player-name-input" type="text" name="player-name"
+                     id="player-name" placeholder="Nome do jogador" value={nameContent}
+                     onChange={(e)=>{setNameContent(e.target.value)}}/>
+                    <input className="add-button player-button" type="button" value="+" 
+                     onClick={//@ts-expect-error code will assure that this value exists
+                        (e)=>{playerAdderClick(e.currentTarget.previousSibling.value)}} />
                 </form>
             </li>
             {playerListLIs}
@@ -69,14 +77,16 @@ function PlayerAdder(){
     )
 }
 
-function ChooseWordMode({ clickable, onChange }:{clickable:boolean, onChange:(formText:string)=>void}){
+function ChooseWordMode({ setMode, clickable, onChange }:{setMode:(num:number)=>void, clickable:boolean, onChange:(formText:string)=>void}){
+    const goBack = ():void=>{setMode(0)}
+    
     return(
-        <div className="play-setting">
+        <>
             <Button 
-            behavior="link"
-            color="main-button"
-            routeCoordinates="/"
-            content="VOLTAR"
+            behavior="button"
+            color="secondary-button"
+            Click={goBack}
+            content="<= VOLTAR"
             clickable={true}
             />
             <form className="play-setting__form">
@@ -95,27 +105,29 @@ function ChooseWordMode({ clickable, onChange }:{clickable:boolean, onChange:(fo
             routeCoordinates="/play-game" 
             clickable={clickable}
             content="IR PARA O JOGO =>" />
-        </div>
+        </>
     )
 }
 
-function RandomWordMode({ randomWordPicker }:{randomWordPicker:(prop:string)=>void}){
+function RandomWordMode({ setMode, clickable, randomWordPicker }:{setMode:(num:number)=>void, clickable:boolean, randomWordPicker:(prop:string)=>void}){
 
+    const goBack = ():void=>{setMode(0)}
+    
     const optionList:JSX.Element[] = Object.keys(wordList)
                        .map((theme:string)=><option value={theme}>{theme}</option>)
-    randomWordPicker('animais')
-
+    if(!clickable)randomWordPicker('animais')
+    
     return(
-        <div className="play-setting">
+        <>
             <Button 
-            behavior="link"
-            color="main-button"
-            routeCoordinates="/"
-            content="VOLTAR"
+            behavior="button"
+            color="secondary-button"
+            Click={goBack}
+            content="<= VOLTAR"
             clickable={true}
             />
             <form className="play-setting__form">
-                <label>Escreva o tema da palavra</label>
+                <label>Escolha o tema da palavra</label>
                 <select 
                 className="random-choice-select"
                 onChange={(e)=>{randomWordPicker(e.target.value)}}>
@@ -129,7 +141,7 @@ function RandomWordMode({ randomWordPicker }:{randomWordPicker:(prop:string)=>vo
             routeCoordinates="/play-game" 
             clickable={true}
             content="IR PARA O JOGO =>" />
-        </div>
+        </>
     )
 }
 
@@ -148,7 +160,7 @@ export default function PlaySettings(){
     };
 
     const chooseWord = (formText:string):void=>{
-        setClickable(formText.length>=3?true:false);
+        setClickable((formText.length || 0)>=3?true:false);
         defineWord(formText)
     };
 
@@ -164,10 +176,10 @@ export default function PlaySettings(){
     }
 
     return(
-        <>
+        <div className="play-setting">
             {mode==0 && <ChooseModeMode setMode={setMode} />}
-            {mode==1 && <ChooseWordMode clickable={clickable} onChange={chooseWord} />}
-            {mode==2 && <RandomWordMode randomWordPicker={randomWordPicker}/>}
-        </>
+            {mode==1 && <ChooseWordMode setMode={setMode} clickable={clickable} onChange={chooseWord} />}
+            {mode==2 && <RandomWordMode setMode={setMode} clickable={clickable} randomWordPicker={randomWordPicker}/>}
+        </div>
     )
 }

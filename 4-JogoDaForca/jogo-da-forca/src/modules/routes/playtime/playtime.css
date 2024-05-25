@@ -26,6 +26,7 @@
 .post-game-screen__text{
     font-size: 1.8rem;
     color: var(--other-color); 
+    text-align: center;
 }
 
 .error-post-game-screen__text{

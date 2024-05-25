@@ -1,8 +1,7 @@
 .letter-button-list{
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
-    
+    width: 90%; 
 }
 
 .letter-button{
@@ -21,4 +20,20 @@
 .filler{
     padding: 5%;
     margin: 5px;
+}
+
+@media screen and (min-width: 800px) {
+    .letter-button-list{
+        justify-content: center;
+    }
+
+    .letter-button{
+        max-width: 6%;
+        padding: 2%;
+    }
+
+    .filler{
+        padding: 2%;
+    }
+    
 }

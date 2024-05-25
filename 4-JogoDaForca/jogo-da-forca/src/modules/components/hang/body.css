@@ -6,7 +6,7 @@
 .body-head{
     left: 25%;
     width: 50%;
-    height: 30%;
+    height: 12vw;
     border-radius: 50%;
 }
 
@@ -51,4 +51,17 @@
     height: 25%;
     transform-origin: top center;
     transform: rotate(-40deg);
+}
+
+@media screen and (min-width: 800px) {
+    .body-head{
+        height: 8vw;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .body-head{
+        height: 6vh;
+    }
+    
 }

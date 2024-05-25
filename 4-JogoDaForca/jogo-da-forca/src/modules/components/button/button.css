@@ -4,6 +4,7 @@
     border-radius: 50px;
     margin-bottom: 20px;
     text-align: center;
+    color: var(--color2);
 }
 
 .main-button{

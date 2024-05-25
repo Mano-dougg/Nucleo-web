@@ -20,16 +20,18 @@ export type singleTrack = {
 }
 
 export class gameTracker{
-    constructor(initialTracker:()=>singleTrack[], setter:(track:singleTrack)=>void){
+    constructor(initialTracker:()=>singleTrack[], setter:(track:singleTrack)=>void, eraser:()=>void){
         this.trackerGetter = initialTracker;
         this.trackerSetter = setter;
+        this.trackerEraser = eraser;
     }
 
     trackerGetter:()=>singleTrack[];
     trackerSetter:(track:singleTrack)=>void;
+    trackerEraser:()=>void;
 }
 
-export const trackerContext = createContext(new gameTracker(()=>[{result:'',pastWord:''}], ({result,pastWord}:singleTrack)=>{result+pastWord}))
+export const trackerContext = createContext(new gameTracker(()=>[{result:'',pastWord:''}], ({result,pastWord}:singleTrack)=>{result+pastWord}, ()=>{}))
 
 //player list
 

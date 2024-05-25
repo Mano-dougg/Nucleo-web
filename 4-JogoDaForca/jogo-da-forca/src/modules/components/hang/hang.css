@@ -42,3 +42,39 @@
     left: 43%;
     background-color: transparent;
 }
+
+@media screen and (min-width: 500px) {
+    .hang-container{
+        min-height: 60vh;
+        width: 60%;
+        margin-top: 20vh;
+    }
+    
+}
+
+@media screen and (min-width: 800px) {
+    .hang-container{
+        min-height: 50vh;
+        width: 50%;
+        margin-top: 0;
+        margin-bottom: -10%;
+    }
+    
+}
+
+@media screen and (min-width: 950px) {
+    .hang-container{
+        min-height: 60vh;
+        width: 40%;
+    }
+    
+}
+
+@media screen and (min-width: 1150px) {
+    .hang-container{
+        min-height: 40vh;
+        width: 30%;
+        margin-bottom: -5vh;
+    }
+    
+}

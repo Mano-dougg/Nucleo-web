@@ -3,8 +3,8 @@
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 0 10% 5% 10%;
-    background-color: aquamarine;
+    padding: 0 10% 1% 10%;
+    background-color: var(--background2);
     color: var(--background);
     opacity: .45;
     height: 30vh;
@@ -19,8 +19,8 @@
 }
 
 .mistery-character{
-    width: 15%;
-    font-size: 3rem;
+    width: 10%;
+    font-size: 2rem;
 }
 
 .mistery-characters__guesses{
@@ -28,4 +28,17 @@
     justify-content: center;
     font-size: 1.2rem;
     position: relative;
+}
+
+@media screen and (min-width: 800px) {
+    .mistery-characters{
+        position: relative;
+        justify-content: space-evenly;
+        height: 20vh;
+    }
+
+    .mistery-character{
+        width: 5%;
+    }
+    
 }
