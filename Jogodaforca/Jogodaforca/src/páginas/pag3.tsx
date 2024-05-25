@@ -8,6 +8,9 @@ import Botao2 from '../components/Botao2/botao2';
 import PalavraESCRITA from '../components/palavra/palavra';
 import Placar from '../components/placar/placar';
 
+
+/* Buscando o store */
+
 const bu = localStorage.getItem('textoSalvo')
 const palavra = [
   'banana', 'abacaxi', 'laranja', 'lima', 'pera', 'uva', 'morte', 'morango', 'melancia', 'melao',
@@ -21,6 +24,8 @@ if (typeof bu==='string') {
 }
 
 
+/* Funções para o placar */
+
 const vencidos = Number(localStorage.getItem('Venci')) 
 const perdidos = Number(localStorage.getItem('Perdi')) 
 
@@ -33,6 +38,7 @@ function Pag3() {
   console.log(palavra)
   const[acertos,setAcertos] = useState<string[]>([])
 
+  /* Funções usadas nos componentes */
   const erros = acertos.filter((word) => !plvra.includes(word))
 
   const mostra = [acertos.filter((word) => !plvra.includes(word))]
@@ -50,6 +56,8 @@ function Pag3() {
     localStorage.setItem('Perdi', newDefeatCount.toString());
   }
   
+  /* Função do teclado */
+
   function comteclado(speak: string){
     if (acertos.includes(speak)) return
     setAcertos((acertos)=>[...acertos, speak])

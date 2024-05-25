@@ -5,6 +5,8 @@ import excl from '/excl.svg'
 import { useState } from 'react';
 
 
+/* Função que define muito da página dois */
+
 function Corpo(){
   const [nome, setnome] = useState<string>(localStorage.getItem('textoSalvo') || '');
 
@@ -44,7 +46,3 @@ function Corpo(){
 }
 
 export default Corpo
-
-function toLowerCase(nome: string): string {
-    throw new Error('Function not implemented.');
-}
