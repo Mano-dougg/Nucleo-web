@@ -1,0 +1,30 @@
+.about {
+  position: relative;
+  top: 3.125rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: left; */
+  /* align-items: flex-start; */
+}
+
+.avatar {
+  background-color: rgb(1, 1, 1);
+  border-radius: 50%;
+  flex-grow: 1;
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.about-line {
+  width: 12rem;
+}
+
+.card-work {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.checkIcon {
+  width: 1rem;
+}

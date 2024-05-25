@@ -1,0 +1,29 @@
+:root {
+  --primary-background-color: 255, 255, 255;
+  --secondary-background-color: 248, 249, 250;
+  /* maybe terciary, this "secondary" and "terciary" are for dark mode, in light mode will be a single color */ 
+  --box-shadow-header: 0, 0, 0, 0.15;
+  --font-color: 0, 101, 255;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; /* alterar para 'EB Garamond' -> titulo e 'Be Vietnam' -> texto*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
