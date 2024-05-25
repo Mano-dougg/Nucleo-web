@@ -11,6 +11,7 @@ const Partida: React.FC<PartidaProps> = ({ show, onClose }) => {
     const toggleJogo = () => {
         setTemporario(!showTemporario);
     }
+    if (!show) return null;
     return(
             <>
             <button className="retorno" onClick={onClose}>X</button>
