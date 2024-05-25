@@ -11,19 +11,32 @@ const Mae =  styled.div`
     color: #4F1964;
     padding-top: 30px;
 
+    
+    @media (max-width: 1100px){
+        .tracos{
+            width: 30px;
+            gap: 10px;
+        }
+
+  
+      }
+
 `
 const Tracos = styled.div`
     border-bottom: 5px solid black;
     border-color: #4F1964;
+    width: 50px;
 `
+interface palavraargs {
+    palavra: string
+    chute: string[]
+}
 
-export default function Palavra(){
-    const palavra = 'teste'
-    const chutes = ['t']
+export default function Palavra({palavra, chute}: palavraargs){
     return(
         <Mae>{palavra.split('').map((letra, id)  => (
-                <Tracos><span key={id}>
-                     <span style={{visibility: chutes.includes(letra) ? 'visible' : 'hidden'}}>{letra}</span>
+                <Tracos className="tracos"><span key={id}>
+                     <span style={{visibility: chute.includes(letra) ? 'visible' : 'hidden'}}>{letra}</span>
                      </span></Tracos>
         ) )}
 
