@@ -21,7 +21,8 @@
     padding: 10px;
     border: 1px solid white;
     border-radius: 50px;
-    background-color: var(--background3);
+    color: var(--color);
+    background-color: var(--button2);
 }
 
 .choose-mode-container{
@@ -63,7 +64,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     text-align: center;
-    color: black;
+    color: var(--color);
     padding: 0 5%;
 }
 
@@ -80,9 +81,14 @@
 .player-name-input{
     width: 80%;
     padding-left: 10px;
-    background-color: bisque;
+    background-color: var(--button2);
+    color: var(--color);
     border-radius: 10px;
 
+}
+
+input::placeholder{
+    color: var(--lesser-color);
 }
 
 .player-entry{
@@ -95,13 +101,13 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: var(--background3);
+    background-color: inherit;
 }
 
 .add-button{
-    color: lightblue;
+    color: var(--color);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
 }
 

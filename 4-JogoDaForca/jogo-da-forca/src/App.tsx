@@ -22,19 +22,21 @@ export default function App(){
         --background: #242424;
         --background2: aquamarine;
         --button1: darkblue;
-        --button2: gray;
+        --button2: #2f2f2f;
         --color: rgba(255, 255, 255, 0.87);
         --other-color: crimson;
+        --lesser-color: #6A7575;
     }`
     const lightStyle:string = `:root{
         --background: beige;
         --background2: darkblue;
         --background3: bisque;
         --button1: green;
-        --button2: #242424;
+        --button2: gray;
         --color: black;
         --color2: white;
         --other-color: darkred;
+        --lesser-color: #4a5555;
     }`
 
     return(
