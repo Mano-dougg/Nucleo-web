@@ -8,16 +8,20 @@ interface PartidaProps {
 
 const Partida: React.FC<PartidaProps> = ({ show, onClose }) => {
     const[showTemporario,setTemporario] = useState(false);
+    const[showPartida,setPartida] = useState(true);
     const toggleJogo = () => {
         setTemporario(!showTemporario);
+        setPartida(!showPartida);
     }
     if (!show) return null;
     return(
             <>
-            <button className="retorno" onClick={onClose}>X</button>
-            <div className="escolha">
-                <h1 className="bloco"><a className='partida' onClick={toggleJogo}>Partida com palavra temporária</a></h1>
-                <h1 className="bloco"><a className='partida'>Partida usando banco de palavras</a></h1>
+            <div className="total-partida" style={{display: showPartida ? 'block' : 'none'}}>
+                <button className="retorno" onClick={onClose}>X</button>
+                <div className="escolha">
+                    <h1 className="bloco"><a className='partida' onClick={toggleJogo}>Partida com palavra temporária</a></h1>
+                    <h1 className="bloco"><a className='partida'>Partida usando banco de palavras</a></h1>
+                </div>
             </div>
             <JogoTemp show={showTemporario} onClose={toggleJogo}></JogoTemp>
             </>
