@@ -44,11 +44,13 @@ export function Keyboard({
 }: KeyboardProps) {
   return (
     <div
+      className="keyboard"
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
         gap: ".5rem",
         justifyContent: "center",
+        margin: "0px 30px 30px 30px",
       }}
     >
       {keys.map((key) => {

@@ -4,7 +4,7 @@ const head = (
       width: "50px",
       height: "50px",
       borderRadius: "100%",
-      border: "10px solid black",
+      border: "10px solid #DF1153",
       position: "absolute",
       top: "50px",
       right: "-30px",
@@ -16,7 +16,7 @@ const body = (
     style={{
       width: "10px",
       height: "100px",
-      background: "black",
+      background: "#DF1153",
       position: "absolute",
       top: "120px",
       right: "0",
@@ -28,7 +28,7 @@ const right_arm = (
     style={{
       height: "10px",
       width: "90px",
-      background: "black",
+      background: "#DF1153",
       position: "absolute",
       top: "130px",
       right: "0",
@@ -41,7 +41,7 @@ const left_arm = (
     style={{
       height: "10px",
       width: "90px",
-      background: "black",
+      background: "#DF1153",
       position: "absolute",
       top: "130px",
       right: "-80px",
@@ -54,7 +54,7 @@ const left_leg = (
     style={{
       height: "10px",
       width: "100px",
-      background: "black",
+      background: "#DF1153",
       position: "absolute",
       top: "210px",
       right: "-1px",
@@ -69,7 +69,7 @@ const right_leg = (
     style={{
       height: "10px",
       width: "100px",
-      background: "black",
+      background: "#DF1153",
       position: "absolute",
       top: "210px",
       right: "-89px",
@@ -91,9 +91,10 @@ export function Drawing({ numberOfGuesses }: DrawingProps) {
     <div
       style={{
         position: "relative",
+        marginTop: "30px",
       }}
     >
-      {body_parts.slice(0, numberOfGuesses)}
+      <div className="human">{body_parts.slice(0, numberOfGuesses)}</div>
       <div
         style={{
           height: "50px",
@@ -125,6 +126,7 @@ export function Drawing({ numberOfGuesses }: DrawingProps) {
           height: "10px",
           width: "250px",
           background: "black",
+          borderRadius: "5px",
           position: "absolute",
           left: 0,
           bottom: 0,
