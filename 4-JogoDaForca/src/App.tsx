@@ -1,33 +1,23 @@
-import { useEffect, useState } from 'react';
-import styles from './App.module.css';
-import { HangmanDraw } from './components/hangman/HangmanDraw';
-import Word from './components/word/Word';
+import { useState } from 'react';
+import { BrowserRouter ,Routes, Route } from 'react-router-dom';
+import { Home } from './pages/home/Home';
+import { AddWord } from './pages/addWord/AddWord';
+import { Game } from './pages/game/Game';
 
 function App() {
-  const [word] = useState<string>('MAD');
-  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const { key } = event;
-      if (key.match(/[a-zA-Z]/) && guessedLetters.indexOf(key.toUpperCase()) === -1) {
-        setGuessedLetters([...guessedLetters, key.toUpperCase()]);
-        console.log(key);
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [guessedLetters]);
-
+  const words = ['CARRO', 'BOLA', 'CASA', 'COMPUTADOR', 'CELULAR', 'GATO', 'CACHORRO', 'MESA', 'CADEIRA', 'FONE']; 
+  const [word, setWord] = useState<string>(() => {
+    return words[Math.floor(Math.random() * words.length)];
+  });
+  
   return (
-    <div className={styles.container}>
-      <HangmanDraw />
-      <Word word={word} guessedLetters={guessedLetters} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={<Home />} />
+        <Route path="/game" element={<Game word={word} setWord={setWord} wordList={words}/>} />
+        <Route path="/add-word" element={<AddWord wordList={words} />} />
+      </Routes>
+    </BrowserRouter>      
   );
 }
 
