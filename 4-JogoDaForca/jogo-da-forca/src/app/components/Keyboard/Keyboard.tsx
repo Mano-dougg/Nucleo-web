@@ -27,9 +27,7 @@ export default function Keyboard ({ guessedLetters, word, setGuessedLetters, set
             onClick={() => handleGuess(letter)}
             disabled={
                 guessedLetters.includes(letter) ||
-                word
-                    .split("")
-                    .every((letter) => guessedLetters.includes(letter))
+                word?.split("").every((letter) => guessedLetters.includes(letter))
             }
             className={s.letterButton}
         >

@@ -86,7 +86,7 @@ export default function Hangman() {
 
 
     const renderWord = () => {
-        return word.split("").map((letter, index) => (
+        return word?.split("").map((letter, index) => (
             <span key={index} className={s.letter}>
                 {guessedLetters.includes(letter) ? letter.toUpperCase() : "_"}
             </span>
