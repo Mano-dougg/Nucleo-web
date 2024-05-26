@@ -6,8 +6,19 @@ interface JogoTempProps {
 }
 
 const JogoTemp: React.FC<JogoTempProps> = ({ show, onClose }) => {
-    const[placar,setPlacar] = useState(0);
-    const[input,setInput] = useState(String);
+    const [input, setInput] = useState('');
+    const [enviado, setEnviado] = useState(false);
+
+    const handleKey = (event : React.KeyboardEvent<HTMLTextAreaElement>) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        setEnviado(true);
+      }
+    };
+
+    const handleChange = (event : React.ChangeEvent<HTMLTextAreaElement>) => {
+      setInput(event.target.value);
+    };
 
     if (!show) return null;
 
@@ -16,7 +27,15 @@ const JogoTemp: React.FC<JogoTempProps> = ({ show, onClose }) => {
               <button className="retorno" onClick={onClose}>X</button>
               <div className="pergunta">
                 <p>Digite a palavra escolhida abaixo:</p>
-                <input type="textarea" className="entrada-palavra"/>
+                {!enviado ? (
+                  <textarea
+                    className="entrada-palavra"
+                    value={input}
+                    onChange={handleChange}
+                    onKeyDown={handleKey}
+                  />) : (
+                  <p>Você digitou: {input}</p>
+                    )}
               </div>
             </div>
         )
