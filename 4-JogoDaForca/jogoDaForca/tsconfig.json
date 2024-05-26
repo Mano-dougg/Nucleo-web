@@ -28,6 +28,6 @@
       ]
     }
   },
-  "include": ["src", "wip/context"],
+  "include": ["src", "wip/context", "wip/pages/NotFound.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

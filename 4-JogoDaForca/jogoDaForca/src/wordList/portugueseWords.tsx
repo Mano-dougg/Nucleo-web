@@ -245365,6 +245365,6 @@ const words: string[] = [
   "zurro",
   "zurros",
   "zurrou"
-]
+];
 
 export default words;

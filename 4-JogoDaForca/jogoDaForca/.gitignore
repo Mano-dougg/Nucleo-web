@@ -26,8 +26,5 @@ dist-ssr
 # Project org
 *.org
 
-# SVG avatars
-public/avatars/*
-
 # Experiments
 wip/*
