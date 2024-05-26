@@ -12,6 +12,8 @@ const JogoTemp: React.FC<JogoTempProps> = ({ show, onClose }) => {
   const [execucao, setExecucao] = useState(false);
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [incorrectGuesses, setIncorrectGuesses] = useState(0);
+  const [vitorias,setVitorias] = useState(0);
+  const [derrotas,setDerrotas] = useState(0);
   const maxErrors = 7;
 
   const handleKey = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -28,6 +30,14 @@ const JogoTemp: React.FC<JogoTempProps> = ({ show, onClose }) => {
   const ligarJogo = () => {
     setExecucao(true);
   };
+
+  const novoJogo = () => {
+    setExecucao(false);
+    setEnviado(false);
+    setInput('');
+    setIncorrectGuesses(0);
+    setGuessedLetters([]);
+  }
 
   const handleGuess = (letter: string) => {
     if (guessedLetters.includes(letter) || incorrectGuesses >= maxErrors) {
@@ -46,6 +56,13 @@ const JogoTemp: React.FC<JogoTempProps> = ({ show, onClose }) => {
       guessedLetters.includes(letter) ? letter : '_'
     ).join(' ');
   };
+
+  const addVitoria = () => {
+    setVitorias(vitorias + 1);
+  }
+  const addDerrota = () => {
+    setDerrotas(derrotas + 1);
+  }
 
   if (!show) return null;
 
@@ -77,7 +94,7 @@ const JogoTemp: React.FC<JogoTempProps> = ({ show, onClose }) => {
 
       {execucao && (
         <div className="em-jogo">
-          <h1>Jogo da Forca</h1>
+          <h1>Hangman</h1>
           <p id="palavra">Palavra: {renderInput()}</p>
           <p>Erros: {incorrectGuesses} de {maxErrors}</p>
           <div className="jogo">
@@ -92,12 +109,22 @@ const JogoTemp: React.FC<JogoTempProps> = ({ show, onClose }) => {
                 </button>
               ))
             ) : (
+              <>
+              {addDerrota}
+              <p> Vitorias {vitorias} Derrotas {derrotas} </p>
               <p>Você perdeu! A palavra era: {input}</p>
+              </> 
             )}
           </div>
           {input.split('').every(letter => guessedLetters.includes(letter)) && (
-            <p>Parabéns! Você adivinhou a palavra! <br />F5 para voltar à pagina inicial</p>
+            <>
+            {addVitoria}
+            <p> Vitorias {vitorias} Derrotas {derrotas} </p>
+            <p>Parabéns! Você adivinhou a palavra!</p>
+            <p>F5 para voltar à pagina inicial</p>
+            </>
           )}
+          <button className="replay" onClick={novoJogo}>Jogar novamente</button>
         </div>
       )}
     </div>
