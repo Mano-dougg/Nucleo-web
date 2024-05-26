@@ -23,7 +23,11 @@ export function Word({
       {wordToGuess.split("").map((letter, index) => (
         <span
           style={{
+            display: "flex",
+            width: "50px",
             borderBottom: "0.1em solid black",
+            alignItems: "center",
+            justifyContent: "center",
           }}
           key={index}
         >
@@ -34,7 +38,9 @@ export function Word({
                   ? "visible"
                   : "hidden",
               color:
-                !guessedLetters.includes(letter) && reveal ? "red" : "black",
+                !guessedLetters.includes(letter) && reveal
+                  ? "#DF1153"
+                  : "black",
             }}
           >
             {letter}

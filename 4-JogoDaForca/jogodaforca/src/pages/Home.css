@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Pixelify+Sans:wght@400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Jacquard 12";
+  font-size: 6rem;
+  color: #BF0F1E;
+  text-shadow: 0px 4px 0px #F266C1;
+  display: inline-block;
+  transform-origin: center center;
+  animation: pivot 2s infinite;
+}
+
+@keyframes pivot {
+  0% {
+      transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(5deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+  75% {
+      transform: rotate(-10deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+.link {
+  margin-top: 140px;
+  font-size: 1rem;
+  letter-spacing: 1.25px;
+  display: inline-block;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  background-color: #7F1FBF;
+  height: 70px;
+  width: 240px;
+  text-align: center;
+  line-height: 70px;
+  box-shadow: 8px 8px 0px #BD0E46;
+  transform-origin: center center;
+  animation: pivot-contrary 2s infinite;
+}
+
+@keyframes pivot-contrary {
+  0% {
+      transform: rotate(0deg);
+  }
+  25% {
+      transform: rotate(-10deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+  75% {
+      transform: rotate(5deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
