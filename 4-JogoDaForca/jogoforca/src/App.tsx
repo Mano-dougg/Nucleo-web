@@ -7,48 +7,46 @@ import Boneco from './components/boneco';
 import Palavra from './components/palavra';
 import Teclado from './components/teclado';
 import styled from 'styled-components';
+import Confetti from "react-confetti";
+import { useWindowSize } from 'react-use';
 
 const palavras = ['caderno', 'lapis', 'caneta', 'borracha', 'mochila', 'apontador', 'papel', 'pasta'];
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [palavraEscolhida, escolherPlavra] = useState(() => {
-    return palavras[Math.floor(Math.random() * palavras.length)]
-  })
+    return palavras[Math.floor(Math.random() * palavras.length)];
+  });
   const [vitorias, setVitorias] = useState(0);
   const [derrotas, setDerrotas] = useState(0);
 
-  const [chutes, setchutes] = useState<string[]>([])
+  const [chutes, setchutes] = useState<string[]>([]);
   const erros = chutes.filter(
     (letra) => !palavraEscolhida.includes(letra)
-  )
+  );
 
+  function adicionarChutes(letra: string) {
+    if (chutes.includes(letra) || perdeu || ganhou) return;
 
-
-  function adicionarChutes(letra: string){
-    if(chutes.includes(letra) || perdeu || ganhou) return 
-
-    setchutes((chutes) => [...chutes, letra])
-
-
+    setchutes((chutes) => [...chutes, letra]);
   }
 
-  const perdeu = erros.length >= 6 
-  const ganhou =  palavraEscolhida.split('').every((letra)=> chutes.includes(letra))
+  const perdeu = erros.length >= 6;
+  const ganhou = palavraEscolhida.split('').every((letra) => chutes.includes(letra));
 
   useEffect(() => {
-    const handler = ((e: KeyboardEvent) =>{
-      const key = e.key
-      if(!key.match(/^[a-z]$/)) return
+    const handler = ((e: KeyboardEvent) => {
+      const key = e.key;
+      if (!key.match(/^[a-z]$/)) return;
 
-      e.preventDefault()
-      adicionarChutes(key)
-    }) as unknown as EventListener
-    document.addEventListener('keypress', handler)
+      e.preventDefault();
+      adicionarChutes(key);
+    }) as unknown as EventListener;
+    document.addEventListener('keypress', handler);
     return () => {
-      document.removeEventListener('keypress', handler)
-    }
-  },[chutes])
+      document.removeEventListener('keypress', handler);
+    };
+  }, [chutes]);
 
   useEffect(() => {
     if (ganhou) {
@@ -58,7 +56,6 @@ function App() {
       setDerrotas((derrotas) => derrotas + 1);
     }
   }, [ganhou, perdeu]);
-
 
   const handlePlayClick = () => {
     setIsPlaying(true);
@@ -70,10 +67,8 @@ function App() {
 
   const jogarnovamente = () => {
     escolherPlavra(palavras[Math.floor(Math.random() * palavras.length)]);
-    setchutes([])
-
-  }
-
+    setchutes([]);
+  };
 
   const GameScreen = styled.div`
     display: flex;
@@ -82,12 +77,9 @@ function App() {
     justify-content: center;
 
     @media (max-width: 1100px){
-
-      .titulo, .caixaresultado, {
+      .titulo, .caixaresultado {
         width:400px;
       }
-
-
     }
   `;
 
@@ -107,9 +99,10 @@ function App() {
     top: 700px;
     gap: 10px;
     width: 280px;
-
     margin-top: 20px;
   `;
+
+  const { width, height } = useWindowSize();
 
   return (
     <div>
@@ -117,27 +110,25 @@ function App() {
         <button className='homebutton' onClick={handleHomeClick}>Home</button>
       </nav>
       {isPlaying ? (
-        <GameScreen >
+        <GameScreen>
           <Jogost>
+            {ganhou && <Confetti width={width} height={height} />}
             <img className='titulo' src='./src/assets/titulo.png' alt="Título" />
-            {perdeu && <div className='caixaresultado' >
+            {perdeu && <div className='caixaresultado'>
               <button className='jogarnovamente' onClick={jogarnovamente}>Jogar novamente</button>
-               <p style={{color:'var(--corprincipal)', fontSize:'30px', fontWeight:'600'}}>Perdeu!</p></div>}
+              <p style={{color:'var(--corprincipal)', fontSize:'30px', fontWeight:'600'}}>Perdeu!</p></div>}
             {ganhou && <div className='caixaresultado'> 
-            <button className='jogarnovamente' onClick={jogarnovamente}>Jogar novamente</button>
-             <p style={{color:'var(--corprincipal)', fontSize:'30px', fontWeight:'600'}}>parabéns campeão</p></div>}
-            <Boneco  tentativas={erros.length}/>
-            <Palavra chute={chutes} palavra={palavraEscolhida}/>
+              <button className='jogarnovamente' onClick={jogarnovamente}>Jogar novamente</button>
+              <p style={{color:'var(--corprincipal)', fontSize:'30px', fontWeight:'600'}}>Parabéns campeão!</p></div>}
+            <Boneco tentativas={erros.length} />
+            <Palavra chute={chutes} palavra={palavraEscolhida} />
           </Jogost>
-          <Teclado adicionarChutes={adicionarChutes} 
-          chutelist={chutes}
-          disable={ganhou||perdeu }/>
+          <Teclado adicionarChutes={adicionarChutes} chutelist={chutes} disable={ganhou || perdeu} />
           <div className='placar'>
-          <p>Vitórias: {vitorias}</p>
-          <p>Derrotas: {derrotas}</p>
-        </div>
+            <p>Vitórias: {vitorias}</p>
+            <p>Derrotas: {derrotas}</p>
+          </div>
         </GameScreen>
-        // adicionarChutes={adicionarChutes}
       ) : (
         <div className='homescreen'>
           <img className='logoimg' src={logo} width={800} alt="Logo" />
@@ -145,7 +136,7 @@ function App() {
           <FormWrapper>
             <button className='novapalavra'>Adicionar palavra</button>
             <textarea
-               style={{ width: '300px', backgroundColor: 'white', color: 'black', borderWidth: '5px' }}
+              style={{ width: '300px', backgroundColor: 'white', color: 'black', borderWidth: '5px' }}
               placeholder="Adicionar nova palavra"
             />
           </FormWrapper>
