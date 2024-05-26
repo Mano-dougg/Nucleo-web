@@ -42,7 +42,7 @@ const JogoTemp: React.FC<JogoTempProps> = ({ show, onClose }) => {
   };
 
   const renderInput = () => {
-    return input.split('').map((letter, index) =>
+    return input.split('').map((letter) =>
       guessedLetters.includes(letter) ? letter : '_'
     ).join(' ');
   };
