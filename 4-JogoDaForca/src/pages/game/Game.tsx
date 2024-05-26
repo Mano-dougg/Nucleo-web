@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { HangmanDraw } from "../../components/hangman/HangmanDraw";
 import { Word } from "../../components/word/Word";
 import styles from './Game.module.css';
+import { useNavigate } from "react-router";
 
 interface GameProps {
   word: string;
@@ -16,6 +17,7 @@ export function Game({ word, setWord, wordList }: GameProps) {
 
   const isLoser = incorrectGuesses >= 6;
   const isWinner = word.split('').every((letter) => guessedLetters.indexOf(letter) !== -1);
+  const navigate = useNavigate();
     
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -37,7 +39,7 @@ export function Game({ word, setWord, wordList }: GameProps) {
     setWord(newWord);
     setGuessedLetters([]);
   };
-
+  
   useEffect(() => {
     if (isLoser) {
       setScore((prevScore) => ({ ...prevScore, losses: prevScore.losses + 1 }));
@@ -47,13 +49,17 @@ export function Game({ word, setWord, wordList }: GameProps) {
     }
   }, [setScore, isLoser, isWinner, setWord, word]);
   
+  const handleCancelClick = () => {
+    navigate('/');
+  };
+  
   return (
     <div className={styles.gameContainer}>
       <HangmanDraw incorrectGuesses={incorrectGuesses} />
       <Word word={word} guessedLetters={guessedLetters} isLoser={isLoser} />
       <div className={styles.buttonContainer}>
         <button className={styles.newGameButton} onClick={handleNewGameClick}>Novo jogo</button>
-        <button className={`${styles.cancellButton} ${isLoser ? styles.cancellButtonDisabled : ''}`}>Desistir</button>
+        <button onClick={handleCancelClick} className={`${styles.cancellButton} ${isLoser ? styles.cancellButtonDisabled : ''}`}>Cancelar</button>
       </div>
       <div className={styles.scoreContainer}>
         <p>Vitórias: {score.wins}</p>
