@@ -1,0 +1,54 @@
+.gameContainer {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonContainer {
+  width: 690px;
+  height: 70px;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.newGameButton {
+  width: 332px;
+  height: 100%;
+  background-color: var(--dark-blue-300);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.newGameButton:hover {
+  background-color: var(--dark-blue-200);
+}
+
+.cancellButton {
+  width: 332px;
+  height: 100%;
+  background-color: transparent;
+  color: var(--dark-blue-300);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  border: 1px solid var(--dark-blue-300);
+  border-radius: 24px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2;
+}
+
+.cancellButton:hover {
+  background-color: var(--dark-red-200);
+  color: var(--white);
+  border: none;
+}
