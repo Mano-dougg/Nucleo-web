@@ -1,0 +1,25 @@
+:root {
+  --white: #FFFFFF;
+  --light-blue-100: ##F3F5FC;
+  --dark-red-200: #A93535;
+  --dark-blue-200: #356EA9;
+  --dark-blue-300: #0A3871;
+  --gray-400: #495057;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: var(--light-blue-100);
+}
