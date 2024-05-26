@@ -130,10 +130,10 @@
     line-height: 2.5vw;
 
     text-align: center;
-    letter-spacing: 0.02em; /* Aumentar o espaçamento entre letras */
+    letter-spacing: 0.02em; 
 
     color: #000000;
-    transform: rotate(-2deg); /* Reduzir o ângulo de rotação */
+    transform: rotate(-2deg); 
 
     text-shadow: 
         0.2vw 0.2vw 0 #ffffff, 
@@ -144,7 +144,7 @@
         0 0.2vw 0 #ffffff, 
         -0.2vw 0 0 #ffffff,  
         0 -0.2vw 0 #ffffff,
-        0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.1); /* Sombra adicional para contraste */
+        0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 1220px) {

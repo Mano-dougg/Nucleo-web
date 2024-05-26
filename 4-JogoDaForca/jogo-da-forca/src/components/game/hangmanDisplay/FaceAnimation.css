@@ -67,24 +67,24 @@
 }
 .eyebrow-left {
     position: absolute;
-    top: 10px; /* Posição vertical das sobrancelhas */
-    left: 13%; /* Coloca as sobrancelhas no centro horizontal da face */
-    transform: rotate(-30deg); /* Move as sobrancelhas para a esquerda metade de sua largura */
-    width: 15px; /* Largura das sobrancelhas */
-    height: 2px; /* Altura das sobrancelhas */
+    top: 10px; 
+    left: 13%; 
+    transform: rotate(-30deg); 
+    width: 15px;
+    height: 2px; 
     background: #894302;
-    border-radius: 2px; /* Bordas arredondadas das sobrancelhas */
+    border-radius: 2px; 
 }
 
 .eyebrow-right {
     position: absolute;
-    top: 10px; /* Posição vertical das sobrancelhas */
-    left: 63%; /* Coloca as sobrancelhas no centro horizontal da face */
-    transform: rotate(30deg); /* Move as sobrancelhas para a esquerda metade de sua largura */
-    width: 15px; /* Largura das sobrancelhas */
-    height: 2px; /* Altura das sobrancelhas */
+    top: 10px; 
+    left: 63%; 
+    transform: rotate(30deg); 
+    width: 15px; 
+    height: 2px; 
     background: #894302;
-    border-radius: 2px; /* Bordas arredondadas das sobrancelhas */
+    border-radius: 2px; 
 }
 
 
@@ -103,8 +103,8 @@
         position: absolute;
         left: 66.2%;
         top: 13.61%;
-        width: 20vw; /* 20% da largura da viewport */
-        height: 20vw; /* 20% da altura da viewport */
+        width: 20vw; 
+        height: 20vw; 
         border-radius: 50%;
         background: #ffcd00;
         display: flex;
@@ -115,19 +115,19 @@
     .face::before {
         content: '';
         position: absolute;
-        top: calc(60%); /* 50% da altura da face + 9.45vw */
-        width: calc(9.45vw); /* 9.45vw */
-        height: calc(4.41vw); /* 4.41vw */
+        top: calc(60%); 
+        width: calc(9.45vw);
+        height: calc(4.41vw); 
         background: #b57700;
-        border-bottom-left-radius: calc(4.41vw); /* 4.41vw */
-        border-bottom-right-radius: calc(4.41vw); /* 4.41vw */
+        border-bottom-left-radius: calc(4.41vw); 
+        border-bottom-right-radius: calc(4.41vw); 
         transition: 0.5s;
     }
     
     .face:hover::before {
-        top: calc(65%); /* 50% da altura da face + 11.025vw */
-        width: calc(9.45vw); /* 9.45vw */
-        height: calc(1.26vw); /* 1.26vw */
+        top: calc(65%); 
+        width: calc(9.45vw); 
+        height: calc(1.26vw); 
         background: #b57700;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -135,17 +135,17 @@
     
     .eyes {
         position: relative;
-        top: -3.2vw; /* -4.2vw */
+        top: -3.2vw; 
         display: flex;
     }
     
     .eyes .eye {
         position: relative;
-        width: calc(5.2vw); /* 4.2vw */
-        height: calc(5.2vw); /* 4.2vw */
+        width: calc(5.2vw); 
+        height: calc(5.2vw); 
         display: block;
         background: #fff;
-        margin: 0 calc(0.7875vw); /* 0 0.7875vw */
+        margin: 0 calc(0.7875vw); 
         border-radius: 50%;
     }
     
@@ -153,10 +153,10 @@
         content: '';
         position: absolute;
         top: 50%;
-        left: calc(1.3125vw); /* 1.3125vw */
+        left: calc(1.3125vw); 
         transform: translate(-50%, -50%);
-        width: calc(2.1vw); /* 2.1vw */
-        height: calc(2.1vw); /* 2.1vw */
+        width: calc(2.1vw); 
+        height: calc(2.1vw); 
         background: #000;
         border-radius: 50%;
     }
