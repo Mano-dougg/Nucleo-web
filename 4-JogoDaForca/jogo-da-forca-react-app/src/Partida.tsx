@@ -19,7 +19,7 @@ const Partida: React.FC<PartidaProps> = ({ show, onClose }) => {
             <div className="total-partida" style={{display: showPartida ? 'block' : 'none'}}>
                 <button className="retorno" onClick={onClose}>X</button>
                 <div className="escolha">
-                    <h1 className="bloco"><a className='partida' onClick={toggleJogo}>Partida com palavra temporária</a></h1>
+                    <h1 className="bloco"><a className='partida' onClick={toggleJogo}>Partida simples</a></h1>
                     <h1 className="bloco"><a className='partida'>Partida usando banco de palavras</a></h1>
                 </div>
             </div>

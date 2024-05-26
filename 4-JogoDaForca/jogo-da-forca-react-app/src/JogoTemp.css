@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap');
 .pergunta{
     margin-top: 10px;
     margin-inline: 30%;
@@ -35,4 +35,44 @@
     border: 5px solid;
     border-radius: 10px;
     cursor: pointer;
+}
+.em-jogo{
+    font-family: "Bebas Neue",sans-serif;
+    font-size: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    border: 5px solid;
+    margin-inline: 30%;
+    border-radius: 20px;
+}
+.em-jogo h1{
+    margin-bottom: 0px;
+}
+#palavra{
+    margin-bottom: 0px;
+}
+.letras-botao{
+    font-family: "Open sans",sans-serif; 
+}
+@media (max-width:610){
+    .pergunta{
+        margin-top: 10px;
+        margin-inline: 20%;
+        border-radius: 30px;
+        border: 5px solid;
+        text-align: center;
+        font-family: "Bebas Neue",sans-serif;
+        font-size: 30px;
+    }
+    .entrada-palavra{
+        height: 30px;
+        width: 120px;
+        margin-bottom: 20px;
+        border: 5px solid;
+        border-radius: 15px;
+        font-family: "Open sans",sans-serif;
+        text-align: center;
+    }
 }

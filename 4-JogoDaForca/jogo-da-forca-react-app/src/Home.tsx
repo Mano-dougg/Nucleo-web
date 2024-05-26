@@ -29,10 +29,10 @@ const Home: React.FC = () => {
                 <h1><a className='normal' onClick={togglePartida}>Nova partida</a></h1>
             </div>
             <div className="bloco-texto">
-                <h1><a href="#" className='normal'>Banco de palavras</a></h1>
+                <h1><a className='normal'>Banco de palavras</a></h1>
             </div>
             <div className="bloco-texto">
-                <h1><a href="#" className='normal'>Histórico de partidas</a></h1>
+                <h1><a className='normal'>Histórico de partidas</a></h1>
             </div>
             <p className='sobre'><a onClick={toggleAjuda}>Como jogar</a></p>
         </div>
