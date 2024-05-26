@@ -6,8 +6,8 @@ import { useContext } from "react"
 function ScoreSection({result, pastWord}:singleTrack){
     return(
         <article className="score-section">
-            <h2>{result}</h2>
-            <h3>{pastWord}</h3>
+            <h2 className="score-section__result">{result}</h2>
+            <h3 className="score-section__word">palavra: {pastWord}</h3>
         </article>
     )
 }

@@ -7,7 +7,7 @@
     background-color: var(--background2);
     color: var(--background);
     opacity: .45;
-    height: 30vh;
+    min-height: 15vh;
     text-align: center;
 }
 

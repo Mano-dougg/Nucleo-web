@@ -16,3 +16,13 @@
     background-color: darkcyan;
     border-radius: 10px;
 }
+
+.score-section__result{
+    width: 50%;
+    text-align: center;
+}
+
+.score-section__word{
+    width: 50%;
+    text-align: left;
+}

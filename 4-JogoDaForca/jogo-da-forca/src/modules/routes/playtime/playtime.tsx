@@ -75,7 +75,6 @@ export default function Playtime(){
         else {
             const i = playerIndex+1
             setPlayer(players[players.length===i?0:i])
-            console.log('a')
             setPlayerIndex(players.length===i?0:i)
         }
     }
@@ -91,7 +90,6 @@ export default function Playtime(){
         else {
             const i = playerIndex+1
             setPlayer(players[players.length===i?0:i])
-            console.log('a')
             setPlayerIndex(players.length===i?0:i)
         }
     }

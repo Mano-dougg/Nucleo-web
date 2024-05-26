@@ -84,7 +84,6 @@
     background-color: var(--button2);
     color: var(--color);
     border-radius: 10px;
-
 }
 
 input::placeholder{

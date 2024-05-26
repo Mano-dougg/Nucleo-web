@@ -14,7 +14,7 @@
 
 .switch__slider {
     position: fixed;
-    right: 10px;
+    right: 30px;
     top: 8vh;
     display: inline-flex;
     cursor: pointer;

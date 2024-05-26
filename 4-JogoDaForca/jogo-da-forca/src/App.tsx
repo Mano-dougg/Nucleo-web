@@ -26,6 +26,7 @@ export default function App(){
         --color: rgba(255, 255, 255, 0.87);
         --other-color: crimson;
         --lesser-color: #6A7575;
+        transition: color 0.5s ease, background-color 0.5s ease;
     }`
     const lightStyle:string = `:root{
         --background: beige;
@@ -37,6 +38,7 @@ export default function App(){
         --color2: white;
         --other-color: darkred;
         --lesser-color: #4a5555;
+        transition: color 0.5s ease, background-color 0.5s ease;
     }`
 
     return(
