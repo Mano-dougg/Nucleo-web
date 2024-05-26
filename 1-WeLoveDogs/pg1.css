@@ -62,11 +62,13 @@
  /*painel*/
 
  .painel1-texto {
-   display: flex;
-   align-items: center;
    background-color: #ffffff;
    height: calc(100vh - 120px);
  }
+ .caixa1 { 
+   width: 1440px; 
+   margin: 0 auto;
+}
  header{
    display: flex;
    align-items: center;
@@ -74,7 +76,7 @@
    margin-left: 200px
  }
  header h1 {
-   font-size: 48px;
+   font-size: 3em;
    font-weight: 700;
    line-height: 65.37px;
    text-align: left; 
