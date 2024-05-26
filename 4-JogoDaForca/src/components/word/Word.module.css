@@ -40,3 +40,9 @@
   color: var(--gray-400);
   gap: 2rem;
 }
+
+.redLetter {
+  visibility: visible;
+  color: var(--dark-red-200);
+
+}

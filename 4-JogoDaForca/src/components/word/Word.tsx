@@ -3,9 +3,10 @@ import styles from './Word.module.css';
 interface Props {
   word: string;
   guessedLetters: string[];
+  isLoser: boolean;
 }
 
-export function Word({ word, guessedLetters }: Props) {
+export function Word({ word, guessedLetters, isLoser }: Props) {
   const incorrectLetters = guessedLetters.filter((letter) => word.indexOf(letter) === -1);
   
   return (
@@ -13,7 +14,7 @@ export function Word({ word, guessedLetters }: Props) {
       <div className={styles.wrapper}>
         {word.split('').map((char, index) => (
           <div className={styles.letterContainer} key={index}>
-            <span className={guessedLetters.includes(char) ? styles.letter : styles.letterHidden}>{char}</span>
+            <span className={ `${guessedLetters.includes(char) ? styles.letter : styles.letterHidden} ${isLoser ? styles.redLetter : ''}`}>{char}</span>
             <div className={styles.letterRectangle} />
           </div>
         ))}

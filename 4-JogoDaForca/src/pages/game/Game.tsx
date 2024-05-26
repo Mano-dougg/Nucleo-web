@@ -50,7 +50,7 @@ export function Game({ word, setWord, wordList }: GameProps) {
   return (
     <div className={styles.gameContainer}>
       <HangmanDraw incorrectGuesses={incorrectGuesses} />
-      <Word word={word} guessedLetters={guessedLetters} />
+      <Word word={word} guessedLetters={guessedLetters} isLoser={isLoser} />
       <div className={styles.buttonContainer}>
         <button className={styles.newGameButton} onClick={handleNewGameClick}>Novo jogo</button>
         <button className={`${styles.cancellButton} ${isLoser ? styles.cancellButtonDisabled : ''}`}>Desistir</button>
