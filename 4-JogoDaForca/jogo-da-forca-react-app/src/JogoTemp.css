@@ -18,3 +18,21 @@
     font-family: "Open sans",sans-serif;
     text-align: center;
 }
+.aviso{
+    margin-top: 10px;
+    margin-inline: 30%;
+    border-radius: 30px;
+    border: 5px solid;
+    text-align: center;
+    font-family: "Bebas Neue",sans-serif;
+    font-size: 30px;
+}
+.botao{
+    margin-block: 10px;
+    font-family: "Bebas Neue",sans-serif;
+    font-size: 30px;
+    background: white;
+    border: 5px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
