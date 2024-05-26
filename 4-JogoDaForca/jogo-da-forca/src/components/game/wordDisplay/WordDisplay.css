@@ -17,3 +17,28 @@
     font-size: 2vw;
     border-bottom: 4px solid black;
 }
+
+@media(max-width:800px){
+    .word-display{
+        width: 45vw;
+    }
+    
+    .letter{
+        width: 5vw;
+        line-height: 0vw;
+        font-size: 3vw;
+    }
+}
+
+@media(max-width:500px){
+    .word-display{
+        width: 70vw;
+        height:2vh;
+    }
+    
+    .letter{
+        width: 6vw;
+        font-size: 15px;
+        border-bottom: 1vw solid black;
+    }
+}

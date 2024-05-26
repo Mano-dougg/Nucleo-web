@@ -4,7 +4,7 @@ import GameDisplay from './components/game/GameDisplay.tsx';
 import InitialMenu from './components/menus/InitialMenu.tsx';
 
 const App: React.FC = () => {
-  const [lista, setLista] = useState<string[]>(['BANANA']);
+  const [lista, setLista] = useState<string[]>(["ABACATE", "CASA", "BANANA", "CARRO", "DADO", "ELEFANTE", "FADA", "GATO",  "IGLU", "JANELA", "KIWI", "LAGARTO", "MACACO", "NAVIO", "OLHO", "PATO", "QUEIJO", "RATO", "SAPO", "TATU", "URSO", "VELA", "XADREZ", "ZEBRA"]);
 
   const [isMenuActive, setIsMenuActive] = useState<boolean>(true);
   const [isAddWordActive, setIsAddWordActive] = useState<boolean>(false);

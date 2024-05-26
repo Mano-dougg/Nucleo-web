@@ -141,7 +141,7 @@ const GameDisplay: React.FC<GameDisplayProps> = ({
       <div className='game-buttons'>
         <button className="new-word-btn" onClick={startNewGame}>Nova palavra</button>
         <button className="back-menu-btn" onClick={handleMenuActive}>Voltar ao menu</button>
-        <button className="finish-btn" onClick={resetGame}> Finalizar Jogo </button>
+        <button className="finish-btn" onClick={resetGame}> Resultado Jogo </button>
       </div>
     </div>
   );
