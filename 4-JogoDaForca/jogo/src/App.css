@@ -99,6 +99,18 @@
 
 }
 
+.placar{
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2em;
+  font-weight: bold;
+
+}
+
+#derrotas{
+  margin-left: 2.0em;
+ 
+}
 
 .botaozinho {
   text-transform: uppercase;

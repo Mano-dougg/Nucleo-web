@@ -20,6 +20,10 @@ import JogoDaForcaLogo2 from '/public/JogoDaForcaLogo2.png';
       setLogoSrc(JogoDaForcaLogo);
     };
     
+    window.onload = function() {
+      
+      
+  }
 
   
     return (

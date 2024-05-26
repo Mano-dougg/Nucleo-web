@@ -7,6 +7,8 @@ import Palavras from './components/palavras'
 import Keyboard from './components/keyboard'
 
 
+/*  FUNÇÃO CONFETE */
+
 function createConfetti() {
   const colors = ['#9932CC', '#FFC0CB', '#8B008B']; // Cores dos confetes
   const container = document.createElement('div'); // Cria um elemento div para conter os confetes
@@ -42,6 +44,7 @@ function createConfetti() {
 }
 
 
+
 function play(){
 
 const [palavraAdivinhar, setPalavraAdivinhar] = useState(() => {
@@ -63,12 +66,46 @@ const [palavraAdivinhar, setPalavraAdivinhar] = useState(() => {
 
   }, [letrasAdivinhadas])
 
- 
+
+
+  function inicializarLocalStorage() {
+    if (localStorage.getItem('vitorias') === null) {
+        localStorage.setItem('vitorias', '0');
+    }
+    if (localStorage.getItem('derrotas') === null) {
+        localStorage.setItem('derrotas', '0');
+    }
+  }
+  
+  function atualizarExibicao() {
+    const vitoriasElement = document.getElementById('vitorias');
+    const derrotasElement = document.getElementById('derrotas');
+    if (vitoriasElement) vitoriasElement.textContent = 'Vitórias: ' + (localStorage.getItem('vitorias') || '0');
+    if (derrotasElement) derrotasElement.textContent = 'Derrotas: ' + (localStorage.getItem('derrotas') || '0');
+  }
+
+
   useEffect(() => {
     if (winner) {
+      let vitorias = parseInt(localStorage.getItem('vitorias') ?? '0');
+      vitorias += 1;
+      localStorage.setItem('vitorias', vitorias.toString());
+      atualizarExibicao();
       createConfetti();
+    } else if (loser) {
+      let derrotas = parseInt(localStorage.getItem('derrotas') ?? '0');
+      derrotas += 1;
+      localStorage.setItem('derrotas', derrotas.toString());
+      atualizarExibicao();
     }
-  }, [winner]);
+  }, [winner, loser]); 
+
+
+  useEffect(() => {
+    inicializarLocalStorage();
+    atualizarExibicao();
+  }, []);
+
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -102,7 +139,13 @@ return(
   <Desenho nTentativas={letrasIncorretas.length}/>
   <Palavras letrasAdivinhadas={letrasAdivinhadas} palavraAdivinhar = {palavraAdivinhar}/>
   <div className="teclado"><Keyboard disabled={winner || loser} letraAtiva={letrasAdivinhadas.filter(letter => palavraAdivinhar.includes(letter))} letrasInativas={letrasIncorretas} addletraAdivinhada={addletraAdivinhada}/></div>
+    <div className="placar">
+      <div id="vitorias"></div>
+      <div id="derrotas"></div>
+    </div>  
+      
  </div>
+
 )}
 
 
