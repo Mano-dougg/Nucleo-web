@@ -1,9 +1,11 @@
 import './Palavra.css'
 
-function Palavra(){
-    const palavra = "olamundo"
+interface PalavraProps {
+    palavra: string
+    mostrarLetra: string[]
+}
 
-    const mostrarLetra = ['']
+function Palavra({palavra, mostrarLetra}: PalavraProps){
 
     return(
         <div className="centro">

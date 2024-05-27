@@ -1,5 +1,3 @@
-
-
 .centro{
     display: flex;
     text-transform: uppercase;
@@ -13,4 +11,29 @@
     font-size: 48px;
     font-weight: 400;
     color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* responsividade */
+
+@media (max-width:515px) {
+
+    .item{
+        display: flex;
+        width: 50px;
+        font-size: 28px;
+        align-items: center;
+        justify-content: center;
+    }
+    .item span{
+        align-self: center;
+    }
+    .centro{
+        display: flex;
+        text-transform: uppercase;
+        gap: 1.5rem;
+    }
+    
 }

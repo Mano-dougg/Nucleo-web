@@ -51,6 +51,7 @@
 }
 
 .cabeca{
+    visibility: visible;
     height: 63px;
     width: 63px;
     border-radius: 50%;
@@ -107,4 +108,85 @@
     margin-left: 187px;
     margin-top: -72px;
     rotate: -30deg;
+}
+
+
+/* responsividade */
+
+
+@media (max-width:515px) {
+
+    
+.base{
+    height: 5px;
+    width: 250px;
+}
+
+.meio1{
+    width: 4.5px;
+    height: 318px;
+}
+
+.topo{
+    width: 152px;
+    height: 4.5px;
+    margin-left: -30px;
+}
+
+.meio2{
+    width: 4.5px;
+    height: 40.5px;
+    justify-self: flex-start;
+    margin-left: 146px;
+}
+
+.cabeca{
+    height: 54px;
+    width: 54px;
+    margin-left: 117px;
+    margin-top: -2px;
+}
+
+.corpo{
+    height: 105px;
+    width: 4.5px;
+    margin-left: 147px;
+    margin-top: -1px;
+    /* opacity: 10%; */
+}
+
+.braco-esq{
+    width: 4.5px;
+    height: 62px;
+    margin-left: 132px;
+    margin-top: -90px;
+    rotate: 30deg;
+}
+
+.braco-dir{
+    width: 4.5px;
+    height: 62px;
+    margin-left: 162px;
+    margin-top: -62px;
+    rotate: -30deg;
+}
+
+.perna-esq{
+    width: 4.5px;
+    height: 62px;
+    margin-left: 132px;
+    margin-top: 22px;
+    rotate: 30deg;
+}
+
+.perna-dir{
+    width: 4.5px;
+    height: 62px;
+    margin-left: 162px;
+    margin-top: -62.5px;
+    rotate: -30deg;
+}
+
+
+    
 }

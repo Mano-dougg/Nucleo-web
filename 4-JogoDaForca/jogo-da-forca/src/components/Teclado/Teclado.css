@@ -4,19 +4,13 @@
     gap: 0.5rem;
 }
 
-#teclas{
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: purple;
-    border-radius: 8px;
-    border: 0px;
-    background-color: rgb(235, 225, 245);
-    /* aspect-ratio: 1 / 1; */
-}
+/* responsividade */
 
-#teclas:hover:not(:disabled){
-    background-color: blueviolet;
-    color: white;
-    cursor: pointer;
-    transition: 10ms;
+
+@media (max-width:515px) {
+    .mae{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+        gap: 0.5rem;
+    }
 }
