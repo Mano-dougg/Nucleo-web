@@ -46,3 +46,32 @@
   color: var(--dark-red-200);
 
 }
+
+@media screen and (max-width: 960px) {
+  .lettersContainer {
+    width: 100%;
+  }
+  
+  .wrapper {
+    display: flex;
+    font-size: 24px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lettersContainer {
+    
+  }
+
+  .letterContainer {
+    width: 3rem;
+    height: 3.75rem;
+    max-width: 80%;
+  }
+
+  .incorrectLettersContainer {
+    font-size: 1rem;
+  }
+  
+}

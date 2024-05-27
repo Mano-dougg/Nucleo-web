@@ -103,3 +103,10 @@
   right: 16.5px;
   rotate: -30deg;
 }
+
+@media screen and (max-width: 960px){
+  .hangmanDrawContainer {
+    width: 295px;
+    height: 360px;
+  }
+}
