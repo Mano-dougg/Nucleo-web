@@ -9,22 +9,22 @@ const palavras = ['info', 'jr']
 
 function Jogo(){
 
-    const adc = localStorage.getItem('palavrinha')
+  const adc = localStorage.getItem('palavrinha')
 
-    if (adc?.trim() && adc?.length <= 8){
-      palavras.push(adc)
-      localStorage.setItem('palavrinha', '')
-    }
+  if (adc?.trim() && adc?.length <= 8){
+    palavras.push(adc)
+    localStorage.setItem('palavrinha', '')
+  }
 
-   const [word, pegarWord] = useState(() => {
+  const [word, pegarWord] = useState(() => {
     return( 
       palavras[Math.floor(Math.random() * palavras.length)] )
-   })
+  })
 
-   const [Certas, pegarCertas] = useState<string[]>([])
+  const [Certas, pegarCertas] = useState<string[]>([])
 
 
-   const letrasIncorretas = Certas.filter((letra) => !word.includes(letra))
+  const letrasIncorretas = Certas.filter((letra) => !word.includes(letra))
 
 
   //  teclado
@@ -58,7 +58,16 @@ function Jogo(){
 
   }, [Certas])
 
+  var resu = true, ativador = false;
 
+  if(letrasIncorretas.length >= 6){
+    resu = false
+    ativador = true
+  } else if(word.split('').every((letr) => Certas.includes(letr))) {
+    resu = true
+    ativador = true
+  }
+  
 
 
 
@@ -73,7 +82,7 @@ function Jogo(){
           </div>
 
 
-          <Placar ativo={true}></Placar>
+          <Placar ativo={ativador} resultado={resu}></Placar>
         
         </div>
     )

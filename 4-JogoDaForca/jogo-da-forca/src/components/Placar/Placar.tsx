@@ -3,10 +3,19 @@ import { Link } from 'react-router-dom'
 
 interface ativoProps{
     ativo: boolean
-}
+    resultado: boolean
+} 
 
 
-function Placar({ativo} : ativoProps){
+function Placar({ativo, resultado} : ativoProps){
+
+    var olhar = ""
+
+    if(resultado){
+        olhar= "ganhou"
+    } else{
+        olhar = "perdeu"
+    }
 
     const win = localStorage.getItem('ContW')
     const lose = localStorage.getItem('ContL')
@@ -14,11 +23,15 @@ function Placar({ativo} : ativoProps){
     return (ativo) ? (
         <div className='grande'>
 
+            <div className='anuncio'>
+                <p>Você {olhar}</p>
+            </div>
+
             <div className='pequena'>
 
                 <div className='placa'>
-                    <p>Ganhou: {win}</p>
-                    <p>Perdeu: {lose}</p>
+                    <p>Jogos ganhos: {win}</p>
+                    <p>Jogos perdidos: {lose}</p>
                 </div>
 
                 <div className='botes'>
