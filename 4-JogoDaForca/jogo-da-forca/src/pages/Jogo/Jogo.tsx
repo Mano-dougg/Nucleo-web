@@ -5,7 +5,7 @@ import Teclado from "../../components/Teclado/Teclado"
 import { useEffect, useState } from 'react'
 import Placar from '../../components/Placar/Placar'
 
-const palavras = ['info', 'jr']
+const palavras = ['info', 'jr', 'time']
 
 function Jogo(){
 
@@ -63,12 +63,19 @@ function Jogo(){
   if(letrasIncorretas.length >= 6){
     resu = false
     ativador = true
+    var perdeu = Number(localStorage.getItem('contL'))
+    localStorage.setItem('antContL', perdeu.toString())
+    perdeu += 1
+    localStorage.setItem('contL', perdeu.toString())
   } else if(word.split('').every((letr) => Certas.includes(letr))) {
     resu = true
     ativador = true
+    var venceu = Number(localStorage.getItem('contW'))
+    localStorage.setItem('antContW', venceu.toString())
+    venceu += 1
+    localStorage.setItem('contW', venceu.toString())
   }
   
-
 
 
     return(

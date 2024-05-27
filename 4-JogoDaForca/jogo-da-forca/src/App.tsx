@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 
 function App() {
 
+  localStorage.setItem('contW', '0')
+  localStorage.setItem('contL', '0')
+
   return (
     <div className='inicio'>
       <Link to="/Jogo" ><button className='jogo'>Começar a jogar</button></Link>
