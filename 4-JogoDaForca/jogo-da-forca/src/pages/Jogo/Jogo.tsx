@@ -5,7 +5,7 @@ import Teclado from "../../components/Teclado/Teclado"
 import { useEffect, useState } from 'react'
 import Placar from '../../components/Placar/Placar'
 
-const palavras = ['info', 'jr', 'time']
+const palavras = ['info', 'jr', 'time', 'empresa', 'mej', 'brasil']
 
 function Jogo(){
 
@@ -89,7 +89,7 @@ function Jogo(){
           </div>
 
 
-          <Placar ativo={ativador} resultado={resu}></Placar>
+          <Placar ativo={ativador} resultado={resu} word={word}></Placar>
         
         </div>
     )

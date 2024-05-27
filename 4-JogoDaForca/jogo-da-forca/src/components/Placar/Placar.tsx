@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 interface ativoProps{
     ativo: boolean
     resultado: boolean
+    word: string
 } 
 
 
-function Placar({ativo, resultado} : ativoProps){
+function Placar({ativo, resultado, word} : ativoProps){
 
     var olhar = ""
 
@@ -36,7 +37,8 @@ function Placar({ativo, resultado} : ativoProps){
         <div className='grande'>
 
             <div className='anuncio'>
-                <p>Você {olhar}</p>
+                <p>Você {olhar}!</p>
+                <p>A palavra era: {word}</p>
             </div>
 
             <div className='pequena'>
