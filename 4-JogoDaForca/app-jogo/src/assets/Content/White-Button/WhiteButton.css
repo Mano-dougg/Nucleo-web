@@ -16,6 +16,8 @@
         max-width: 300px;
         height: 67px;
         padding: 5px; 
+        align-self: center;
+        justify-self: center;
     }
 }
 
@@ -24,6 +26,8 @@
         max-width: 293px;
         height: 67px;
         padding: 3px;
+        align-self: center;
+        justify-self: center;
     }
 }
 
@@ -32,5 +36,7 @@
         max-width: 293px;
         height: 67px;
         padding: 3px;
+        align-self: center;
+        justify-self: center;
     }
 }

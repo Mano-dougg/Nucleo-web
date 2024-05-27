@@ -10,53 +10,74 @@ import icon from './../public/exclamation-sign.png'
 function App() {
   // Stuff to track
   const [words_to_guess,setWTG] = useState<string>('Digite uma Palavra - apenas minusculas')
-  const [guessedLetters, setGLT] = useState<string[]>([])
-  const incorrectGuesses:string[] = guessedLetters.filter(letter => !words_to_guess.includes(letter)) 
+  const [guessedLetters, setGLT] = useState<string[]>([]) 
+  const [incorrectGuesses, setIG] = useState<string[]>([])
   const [wincount,setWC] = useState<number>(0)
   const [losecount,setLC] = useState<number>(0)
   const [loadInput,setLI] = useState<boolean>(false)
   const [loadGame,setLG] = useState<boolean>(false)
-  const isLoser:boolean = (incorrectGuesses.length >= 6) && (loadGame == true) && (loadInput == false)
-  const isWin:boolean = (words_to_guess.split('').every(letter => guessedLetters.includes(letter))) && (loadGame == true) && (loadInput == false)
+  const [isLoser,setILoser] = useState<boolean>(false)
+  const [isWin,setIWin] = useState<boolean>(false)
+
   // Function to handle Game
   function handleGame() {
       if(loadGame == false){
-        return setLG(true), setLI(false)
+        return setLG(true), setLI(false),setILoser(false), setIWin(false)
       }
         return setLG(false),setWTG('')
   }
   // Function to handle the Input
   function handleInput() {
       if(loadInput == false){
-        return setLG(false), setLI(true)
+        return setLG(false), setLI(true),setIG([])
       }
         return setLI(false),setWTG('')
   }
+  // Function to handle losses - or win
 
   // Parents Logic - Add Guess Letter
   const addGuessLetter = useCallback((letter:string)=> {
+
     function trackCounters() {
       if(isLoser == true && isWin == false) {
-        const newvalue = losecount + 1
+        const newvalue:number = losecount + 1
         return setLC(newvalue)
       }if (isWin == true && isLoser == false) {
-        const newwinner = wincount + 1
+        const newwinner:number = wincount + 1
         return setWC(newwinner)
       } else {
         return 
       }
     }
-    if((guessedLetters.includes(letter) || isWin || isLoser) && (loadGame == true && (!isWin || !isLoser))) return trackCounters()
-    setGLT(currentLetters => [...currentLetters,letter])}, 
-  [guessedLetters,isWin,isLoser,losecount,wincount,loadGame])
+    if((guessedLetters.includes(letter) || isWin || isLoser) && (loadGame == true)) return trackCounters()
+    setGLT(currentLetters => [...currentLetters,letter])
+  },[guessedLetters,isWin,isLoser,losecount,wincount,loadGame])
   // Taking the event of a Keyboard press.   
   useEffect(()=>{
     const handler = (l:KeyboardEvent) => {
+      function trackIncorrect(letter:string){
+        if(guessedLetters.filter(letter => !words_to_guess.includes(letter))){
+          return setIG(cletters => [...cletters,letter])
+        }
+          return setIG([])
+      }
+
+      function hasWon(){
+        if ((incorrectGuesses.length >= 5) && (loadGame == true) && (loadInput == false)) {
+          return setILoser(true),setGLT([])
+        }if (((words_to_guess.split('').every(letter => guessedLetters.includes(letter))) && (loadGame == true) && (loadInput == false))) {
+          return setIWin(true)
+        }else{
+          return
+        } 
+      }
       const key = l.key
-      if(!key.match(/^[a-z]$/) || loadInput == true) return
+      if(!key.match(/^[a-z]$/) || loadInput == true) return 
 
       l.preventDefault()
+      trackIncorrect(key)
       addGuessLetter(key)
+      hasWon()
     }
 
     document.addEventListener('keypress',handler)
@@ -64,7 +85,8 @@ function App() {
     return(()=>{
       document.removeEventListener('keypress',handler)
     })
-  },[guessedLetters,addGuessLetter,loadInput])
+
+  },[guessedLetters,addGuessLetter,loadInput,words_to_guess,incorrectGuesses,loadGame])
 
   // Childs Components and Proprerties passing :) 
   return (
@@ -111,7 +133,6 @@ function App() {
       <input type="text"  value={words_to_guess} onChange={(e) => {if(loadInput == true && loadGame == false) {
         return setWTG(e.target.value)
       } else {
-        e.preventDefault()
         return 
       }}} style={{
         color:"darkblue",

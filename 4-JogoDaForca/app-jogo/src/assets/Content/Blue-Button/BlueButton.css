@@ -14,5 +14,7 @@
         max-width: 293px;
         height: 67px;
         padding: 3px;
+        align-self: center;
+        justify-self: center;
     }
 }
