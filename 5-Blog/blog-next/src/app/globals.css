@@ -1,5 +1,10 @@
 :root {
  --body-color:#E2DFDF;
+ --header-color: #1F3519; ;
+  --logo-color1: #588E22;
+  --logo-color2: write;
+  --search-color:#D9D9D9 ;
+  --text-dark: #000000;
 }
 
 *{
