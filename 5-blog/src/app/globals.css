@@ -9,8 +9,9 @@
     --bgColorSearchBar: #E3E5E2;
     --h1Color: #003720;
     --h2Color: #003720;
-    --h3Color: #000000;
+    --h3Color: #003720;
     --pColor: #404540;
+    --paragPost: #067546;
 }
 
 @media (:window-inactive) {
@@ -37,6 +38,10 @@ h2{
 
 h3{
   color: var(--h3Color);
+}
+
+h5{
+  color: var(--h1Color);
 }
 
 p{

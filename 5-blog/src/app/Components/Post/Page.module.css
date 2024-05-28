@@ -1,0 +1,42 @@
+.post{
+    background-color: #EDFFF7;
+    width: 302px;
+    height: 370px;
+    padding: 34px 25px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.mainPost{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.textPost{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.paragPost{
+    color: var(--paragPost);
+}
+
+.articleFulano{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.asideFulano{
+    display: flex;
+}
+
+.divFulano{
+   display: flex;
+   gap: 9px;
+}

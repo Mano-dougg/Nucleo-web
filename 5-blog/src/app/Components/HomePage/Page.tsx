@@ -1,6 +1,7 @@
 import astrounaut from './imgHome/Astronaut.png'
 import Image from 'next/image'
 import styles from './Page.module.css'
+import Post from '../Post/Page'
 
 export default function HomePage(){
     return(
@@ -39,6 +40,9 @@ export default function HomePage(){
             </article>
             <article>
                 <h1>Últimas postagens</h1>
+            </article>
+            <article>
+                <Post/>
             </article>
         </section>
         </>
