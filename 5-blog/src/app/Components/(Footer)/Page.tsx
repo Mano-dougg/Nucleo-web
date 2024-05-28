@@ -1,13 +1,13 @@
 import instaLogo from './imgFooter/instaLogo.png'
 import linkedinLogo from './imgFooter/linkedinLogo.png'
 import Image from "next/image"
-
+import styles from './Page.module.css'
 
 export default function Footer() {
     return(
         <>
-        <footer>
-            <section>
+        <footer className={styles.Footer}>
+            <section className={styles.meet}>
                 <h2>Conheça nossas redes sociais</h2>
                 <Image
                 src={instaLogo}
@@ -23,7 +23,7 @@ export default function Footer() {
                 />
             </section>
             <section>
-                <h4>Copyright © 2024 | AITODAY </h4>
+                <h5>Copyright © 2024 | AITODAY </h5>
             </section>
         </footer>
         </>
