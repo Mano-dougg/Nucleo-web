@@ -1,5 +1,14 @@
+import { Metadata } from 'next';
 import Link from 'next/link'
 
+
+export const metadata: Metadata = {
+    title: "Autor",
+    icons: {
+      icon: "/favicon.png",
+    },
+  };
+  
 function Autor(){
     return(
         <>

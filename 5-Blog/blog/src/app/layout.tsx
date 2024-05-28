@@ -5,9 +5,12 @@ import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "AKAME",
-};
+/* export const metadata: Metadata = {
+  title: "Home",
+  icons: {
+    icon: "/favicon.png",
+  },
+}; */
 
 export default function RootLayout({
   children,
@@ -16,10 +19,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <title>AKAM</title>
-        <link rel="icon" href="/ft.png" />
-      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );
