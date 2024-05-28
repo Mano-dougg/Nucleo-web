@@ -4,8 +4,20 @@
 export default function Header() {
     return (
       <>
-      <h1>Header</h1>
-      <h2>footer</h2>
+      <header>
+          <section>
+            <h1> <span>AI</span>TODAY</h1>
+          </section>
+          <section>
+            <article className={SearchBar}>
+              <h2>Pesquisar</h2>
+              <img src="" alt="" />
+            </article>
+            <article>
+              <img src="" alt="" />
+            </article>
+          </section>
+      </header>
       </>
     );
 }
