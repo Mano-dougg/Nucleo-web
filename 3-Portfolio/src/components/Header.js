@@ -8,13 +8,13 @@ function Header() {
   return (
     <header className="header-bar">
       <div className="logo-sections">
-        <h1>Kevin Bennett</h1>
+        <h1 className="logo">Kevin Bennett</h1>
 
         <nav className="nav-sections">
           <ul className="sections">
-            <li><a href="">Section two</a></li>
-            <li><a href="">Section three</a></li>
-            <li><a href="">Section four</a></li>
+            <li className="section-item"><a href="">Section two</a></li>
+            <li className="section-item"><a href="">Section three</a></li>
+            <li className="section-item"><a href="">Section four</a></li>
           </ul>
         </nav>
       </div>
@@ -22,13 +22,13 @@ function Header() {
       <div className="social-darkmode">
         <nav className="nav-socialmedia">
           <ul className="socialmedia">
-            <li>
+            <li className="socialmedia-item">
               <a href="#"><img src={Twitter} alt="Twitter" /></a>
             </li>
-            <li>
+            <li className="socialmedia-item">
               <a href="#"><img src={Figma} alt="Figma" /></a>
             </li>
-            <li>
+            <li className="socialmedia-item">
               <a href="#"><img src={Instagram} alt="Instagram" /></a>
             </li>
           </ul>

@@ -6,7 +6,15 @@
  
 }
 
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+
 .header-bar {
+  height: 5.125rem;
   padding-left: 5.44rem;
   padding-right: 5.44rem;
   box-shadow: 0 1.563rem 4.063rem rgba(var(--box-shadow-header));
@@ -18,6 +26,16 @@
 
 .sections {
   gap: 1.25rem;
+}
+
+.section-item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+}
+
+.section-item a {
+  color: rgb(var(--blue));
 }
 
 .socialmedia {
