@@ -1,19 +1,21 @@
-import Sun from './imgHeader/Sun.png'
-import Search from './imgHeader/Search.png'
+import sun from './imgHeader/Sun.png'
+import search from './imgHeader/Search.png'
 import Image from 'next/image';
+import styles from './Page.module.css'
+import { Italianno } from 'next/font/google';
 
 export default function Header() {
     return (
       <>
-      <header>
+      <header className={styles.header}>
           <section>
-            <h1> <span>AI</span>TODAY</h1>
+            <h1><strong>AI</strong><i>TODAY</i></h1>
           </section>
-          <section>
-            <article>
-              <h2>Pesquisar</h2>
+          <section className={styles.sectionBar}>
+            <article className={styles.searchBar}>
+              <input className={styles.inputSearchBar} type="search" placeholder='Pesquisar'/>
               <Image
-                src={Search}
+                src={search}
                 width={32}
                 height={32}
                 alt="Search Bar icon"
@@ -21,9 +23,9 @@ export default function Header() {
             </article>
             <article>
             <Image
-                src={Sun}
-                width={32}
-                height={32}
+                src={sun}
+                width={40}
+                height={40}
                 alt="Picture of a Sun"
               />
             </article>

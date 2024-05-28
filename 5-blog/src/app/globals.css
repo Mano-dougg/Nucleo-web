@@ -1,19 +1,42 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
 :root {
     --bgColorMain: #FFFFFF; 
     --bgColorHeader: #078D55;
     --bgColorSearchBar: #E3E5E2;
     --h1Color: #003720;
     --h2Color: #003720;
+    --h3Color: #000000;
     --pColor: #067546;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (:window-inactive) {
   :root {
     --bgColorMain: #161616;
     --bgColorHeader: #078D55;
     --bgColorSearchBar: #282A26;
     --h1Color: #F6F7F6;
     --h2Color: #F6F7F6;
+    --h3Color: #FFFFFF;
     --pColor: #078D55;
   }
+}
+
+h1{
+  color: var(--h1Color);
+}
+
+h2{
+  color: var(--h2Color);
+}
+
+h3{
+  color: var(--h3Color);
+}
+
+p{
+  color: var(--pColor);
 }

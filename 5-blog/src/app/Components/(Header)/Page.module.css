@@ -1,0 +1,43 @@
+.header{
+    background-color: var(--bgColorHeader);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 106px;
+    padding: 0px 160px 0px 160px;
+}
+
+.sectionBar{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.searchBar{
+    background-color: var(--bgColorSearchBar);
+    width: 429px;
+    padding: 0px 18px 0px 18px;
+    height: 46px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputSearchBar{
+    height: 32px;
+    border: 0;
+    background: unset;
+}
+
+.inputSearchBar::before{
+    border: 0;
+    background: unset;
+}
+
+.inputSearchBar::placeholder{
+    font-size: 24px;
+    color: #000000;
+}
+
+
