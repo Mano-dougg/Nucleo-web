@@ -9,7 +9,7 @@ export default function Header() {
       <>
       <header className={styles.header}>
           <section>
-            <h1><strong>AI</strong><i>TODAY</i></h1>
+            <h1 className={styles.h1Header}><strong>AI</strong><i>TODAY</i></h1>
           </section>
           <section className={styles.sectionBar}>
             <article className={styles.searchBar}>

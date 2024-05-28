@@ -9,6 +9,11 @@
     align-items: center;
 }
 
+.h2Footer{
+    font-size: 24px;
+    color: var(--h2FooterColor);
+}
+
 .meet{
     display: flex;
     gap: 16px;

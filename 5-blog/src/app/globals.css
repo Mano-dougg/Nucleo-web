@@ -8,6 +8,8 @@
     --bgColorHeader: #078D55;
     --bgColorSearchBar: #E3E5E2;
     --h1Color: #003720;
+    --h1HeaderColor: #FFFFFF;
+    --h2FooterColor: #F6F7F6;
     --h2Color: #003720;
     --h3Color: #003720;
     --pColor: #404540;
@@ -20,6 +22,8 @@
     --bgColorHeader: #078D55;
     --bgColorSearchBar: #282A26;
     --h1Color: #F6F7F6;
+    --h1HeaderColor: #0D0D0D;
+    --h2FooterColor: #151515;
     --h2Color: #F6F7F6;
     --h3Color: #FFFFFF;
     --pColor: #078D55;
@@ -40,8 +44,12 @@ h3{
   color: var(--h3Color);
 }
 
-h5{
+h4{
   color: var(--h1Color);
+}
+
+h5{
+  color: var(--h2FooterColor)
 }
 
 p{

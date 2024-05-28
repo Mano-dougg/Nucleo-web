@@ -8,7 +8,7 @@ export default function Footer() {
         <>
         <footer className={styles.Footer}>
             <section className={styles.meet}>
-                <h2>Conheça nossas redes sociais</h2>
+                <h2 className={styles.h2Footer}>Conheça nossas redes sociais</h2>
                 <Image
                 src={instaLogo}
                 width={32}

@@ -7,6 +7,11 @@
     padding: 0px 11.11% 0px 11.11%;
 }
 
+.h1Header{
+    font-size: 40px;
+    color: var(--h1HeaderColor);
+}
+
 .sectionBar{
     display: flex;
     align-items: center;
