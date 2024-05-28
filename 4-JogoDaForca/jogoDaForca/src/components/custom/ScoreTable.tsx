@@ -1,4 +1,4 @@
-import { getStoredUsers, parseStoredUsers } from "@/utils/useLocalStorage";
+import { parseStoredUsers } from "@/utils/useLocalStorage";
 
 import {
   Table,
@@ -12,9 +12,7 @@ import {
 } from "../ui/table";
 
 function ScoreTable() {
-  const storedUsers = getStoredUsers();
-  const parsedUsers = parseStoredUsers(storedUsers);
-  const allUsers = Object.entries(parsedUsers)
+  const allUsers = parseStoredUsers();
   const allPlayers = allUsers.length;
   const initialScore = {
     allGames: 0,
@@ -24,10 +22,10 @@ function ScoreTable() {
   }
   const score = allUsers.reduce(
     (accumulator, user) => {
-      accumulator.allGames += user[ 1 ].totalGames || 0
-      accumulator.allWins += user[ 1 ].gamesWon || 0
-      accumulator.allLosses += user[ 1 ].gamesLost || 0
-      accumulator.allPrecision += user[ 1 ].precision || 0
+      accumulator.allGames += user.totalGames || 0
+      accumulator.allWins += user.gamesWon || 0
+      accumulator.allLosses += user.gamesLost || 0
+      accumulator.allPrecision += user.precision || 0
       return accumulator;
     }, initialScore,
   );
@@ -48,11 +46,11 @@ function ScoreTable() {
       <TableBody>
         {allUsers && allUsers.map((user) =>
           <TableRow key={crypto.randomUUID()}>
-            <TableCell>{user[ 0 ]}</TableCell>
-            <TableCell>{user[ 1 ].totalGames}</TableCell>
-            <TableCell>{user[ 1 ].gamesWon}</TableCell>
-            <TableCell>{user[ 1 ].gamesLost}</TableCell>
-            <TableCell>{`${user[ 1 ].precision?.toFixed(2)}%`}</TableCell>
+            <TableCell>{user.username}</TableCell>
+            <TableCell>{user.totalGames}</TableCell>
+            <TableCell>{user.gamesWon}</TableCell>
+            <TableCell>{user.gamesLost}</TableCell>
+            <TableCell>{`${user.precision?.toFixed(2)}%`}</TableCell>
           </TableRow>
         )}
       </TableBody>
