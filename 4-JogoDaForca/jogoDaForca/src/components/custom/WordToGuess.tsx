@@ -13,7 +13,7 @@ function Word({ currentWord, guessedLetters, showWord }: Props) {
       {currentWord.split('').map((letter: string, index: number) =>
         <div
           key={`${letter}-${index}`}
-          className="w-8 md:w-12 border-b-4 border-primary flex items-center justify-center"
+          className="w-8 md:w-12 border-b-4 border-black dark:border-white flex items-center justify-center"
         >
           <span
             className={

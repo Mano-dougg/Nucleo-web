@@ -18,7 +18,7 @@ function EndingMessage({ winMessage, newGame }: EndingMessageProps) {
           {winMessage ? "Parabéns! Você venceu!" : "Boa tentativa!"}
         </h1>
         <Button onClick={newGame}>Jogar novamente</Button>
-        <Link to="/" className={buttonVariants({ variant: "secondary" })}>Voltar ao menu</Link>
+        <Link to="/" className={buttonVariants({ variant: "outline" })}>Voltar ao menu</Link>
       </div>
     </div>
   );

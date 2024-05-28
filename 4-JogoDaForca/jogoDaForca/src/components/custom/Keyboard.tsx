@@ -45,13 +45,13 @@ function Keyboard({
   return (
     <div
       className={
-        `grid grid-cols-[repeat(auto-fit,minmax(75px,1fr))] gap-1 self-stretch border md:border-none`
+        `grid grid-cols-[repeat(auto-fit,minmax(75px,1fr))] gap-1 self-stretch border md:border-none md:self-center md:max-w-[730px]`
       }
     >
       {KEYS.map((key) => {
         const isActive = activeLetters.includes(key)
         const isInactive = inactiveLetters.includes(key)
-        const buttonVariant = isInactive ? "destructive" : (isActive ? "default" : "secondary")
+        const buttonVariant = isInactive ? "destructive" : (isActive ? "default" : "outline")
         return (
           <Button
             variant={buttonVariant}

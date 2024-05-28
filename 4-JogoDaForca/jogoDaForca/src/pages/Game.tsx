@@ -6,8 +6,8 @@ import portugueseWords from "../../src/wordList/portugueseWords";
 import EndingMessage from "@/components/custom/EndingMessage";
 
 function Game() {
-  const newWord: string = portugueseWords[ Math.floor(Math.random() * portugueseWords.length) ]
-  const [ currentWord, setCurrentWord ] = useState<string>(newWord)
+  const newWord: string = portugueseWords[ Math.floor(Math.random() * portugueseWords.length) ];
+  const [ currentWord, setCurrentWord ] = useState<string>(newWord);
   const [ guessedLetters, setGuessedLetters ] = useState<string[]>([]);
 
   // Current game state
@@ -18,8 +18,8 @@ function Game() {
   // Prevents rerendering when input changes
   const addGuess = useCallback(
     (letter: string) => {
-      if (guessedLetters.includes(letter) || gameLost || gameWon) return
-      setGuessedLetters(guessedLetters => [ ...guessedLetters, letter ])
+      if (guessedLetters.includes(letter) || gameLost || gameWon) return;
+      setGuessedLetters(guessedLetters => [ ...guessedLetters, letter ]);
     },
     [ gameLost, gameWon, guessedLetters ]
   );

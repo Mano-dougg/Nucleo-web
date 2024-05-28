@@ -14,18 +14,20 @@ import {
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 
 function UserSheet() {
   const importedAvatars = import.meta.glob("/public/avatars/svg/*", { eager: true, query: { type: 'url' } });
   const adjustedAvatarURLs = Object.keys(importedAvatars).map((avatarURL) => avatarURL.replace("/public", ""));
   const avatars = adjustedAvatarURLs;
+  const avatarDescription = (index: number) => `Avatar ${index + 1}`;
 
   return (
     <Sheet>
       <SheetTrigger asChild>
         <Button variant="default">Selecionar jogador</Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="bg-white dark:bg-black">
         <SheetHeader>
           <SheetTitle>Editar jogador</SheetTitle>
           <SheetDescription>
@@ -34,18 +36,19 @@ function UserSheet() {
         </SheetHeader>
         <br />
         <ScrollArea className="w-full h-1/3 border">
-          <div className="flex gap-2 flex-wrap">
+          <RadioGroup className="flex gap-2 flex-wrap" defaultValue={"/avatars/svg/avatar-04.svg"}>
             {avatars.map((avatar, index) => (
-              <div key={index} className="shrink-0">
-                <div className="">
+              <div key={index} className="">
+                <RadioGroupItem className="border" value={avatar}>
                   <Avatar>
-                    <AvatarImage src={avatar} alt={`Avatar ${index}`} />
-                    <AvatarFallback>{index}</AvatarFallback>
+                    <AvatarImage src={avatar} alt={avatarDescription(index)} />
+                    <AvatarFallback>{index + 1}</AvatarFallback>
+                    <span className="sr-only">{avatarDescription(index)}</span>
                   </Avatar>
-                </div>
+                </RadioGroupItem>
               </div>
             ))}
-          </div>
+          </RadioGroup>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
         <div className="grid gap-4 py-4">
@@ -53,18 +56,18 @@ function UserSheet() {
             <Label htmlFor="name" className="text-right">
               Nome
             </Label>
-            <Input id="name" value="Fulano Beltrano" className="col-span-3" readOnly />
+            <Input id="name" placeholder="Fulano Beltrano" value={``} className="col-span-3" readOnly />
           </div>
         </div>
         <SheetFooter>
           <SheetClose asChild>
-            <Link className={buttonVariants({ variant: "default" })} to="game">Jogar</Link>
           </SheetClose>
+          <Link className={buttonVariants({ variant: "default" })} to="game">Jogar</Link>
           <Link className={buttonVariants({ variant: "secondary" })} to="game">Jogar como convidado</Link>
         </SheetFooter>
       </SheetContent>
     </Sheet>
-  )
+  );
 }
 
 export default UserSheet;

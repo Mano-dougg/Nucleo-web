@@ -7,7 +7,7 @@ function Hangman({ badGuesses }: HangmanProps) {
   const head = (
     <div
       key={1}
-      className="w-12 h-12 rounded-full border-4 border-primary absolute top-10 md:top-16 right-[-20px] md:right-[-14px]"
+      className="w-12 h-12 rounded-full border-4 border-black dark:border-white absolute top-10 md:top-16 right-[-20px] md:right-[-14px]"
     />
   )
 
