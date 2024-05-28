@@ -95,6 +95,3 @@
    display: inline-block;
    transition: 200ms;
  }
- header a:hover {
-   transform: translateX(8px);
- }
