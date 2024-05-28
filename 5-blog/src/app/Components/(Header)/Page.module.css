@@ -4,13 +4,13 @@
     justify-content: space-between;
     align-items: center;
     height: 106px;
-    padding: 0px 160px 0px 160px;
+    padding: 0px 11.11% 0px 11.11%;
 }
 
 .sectionBar{
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 3.33%;
 }
 
 .searchBar{
