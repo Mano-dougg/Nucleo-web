@@ -10,7 +10,7 @@
     --h1Color: #003720;
     --h2Color: #003720;
     --h3Color: #000000;
-    --pColor: #067546;
+    --pColor: #404540;
 }
 
 @media (:window-inactive) {
@@ -26,10 +26,12 @@
 }
 
 h1{
+  font-size: 50px;
   color: var(--h1Color);
 }
 
 h2{
+  font-size: 36px;
   color: var(--h2Color);
 }
 
@@ -38,5 +40,7 @@ h3{
 }
 
 p{
+  font-size: 18px;
+  font-weight: bold;
   color: var(--pColor);
 }
