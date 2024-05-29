@@ -13,6 +13,8 @@ export const NavContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
 
+  box-shadow: 0 4px 70px 0 var(--nav-shadow);
+
   h3 {
     font-size: 1.8rem;
     font-weight: bold;
@@ -53,6 +55,8 @@ export const NavLinks = styled.div`
   align-items: center;
   gap: 30px;
   transition: all 0.4s;
+  background-color: var(--bg-primary);
+  padding:0 30px;
 
   a {
     font-size: 1.2rem;
@@ -67,7 +71,6 @@ export const NavLinks = styled.div`
  }
 
   ${media.mobile} {
-    width: 100%;
     height: 100%;
 
     flex-direction: column;
@@ -80,5 +83,9 @@ export const NavLinks = styled.div`
     
     z-index: 2;
     overflow-x: none;
+
+    a{
+      font-size:1.4rem;
+    }
   }
 `;

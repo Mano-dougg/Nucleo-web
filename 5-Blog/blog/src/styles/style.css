@@ -12,6 +12,7 @@
   --logo-color: #1E2834;
   --card-data-color: #667085;
   --title-color: linear-gradient(90deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);
+  --nav-shadow:rgba(30, 40, 52, 8%);
 }
 
 /* @media (prefers-color-scheme: dark) {
