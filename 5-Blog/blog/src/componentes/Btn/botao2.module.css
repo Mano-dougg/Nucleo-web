@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+.div {
+    text-decoration-line: none;
+    cursor: default;
+
+}
+
+
+/* Telas pequenas*/
+
+@media(min-width:200px) and (max-width:768px){
+    
+  .div button {
+    width:80px;
+    height:45px;
+    top: 394px;
+    left: 562px;
+    padding: 24px 24px 24px 24px;
+    Gap: 8px;
+    border-radius: 30px 30px 30px 30px;
+    opacity: 0px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    transition: background-color 600ms, color 600ms, height 700ms;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    position: relative;
+    top:10px;
+
+}
+
+.div h1{
+    width: 100px;
+    height: 57px;
+    gap: 0px;
+    opacity: 0px;
+/*     font-family: Inter; */
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19.36px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top:32%;
+    left: -15%;
+}
+
+.div .button.az {
+    background-color: #1D70A2;
+    color: white;
+    border: 1px solid #1D70A2;
+    position: relative;
+    left: 208px;
+    top:15px;
+  }
+
+.div .button.az:hover {
+    background-color: white;
+    color: #1D70A2;
+    border: 1px solid #1D70A2; 
+    height:64px;
+  }
+  
+.div .button.br {
+    background-color: white;
+    color: #1D70A2;
+    border: 1px solid #1D70A2;
+    position: relative;
+    left: 295px;
+    top: -65px;
+  }
+  
+.div .button.br:hover {
+    background-color: #1D70A2;
+    color: white;
+    height:64px;
+  }
+}
+/* Telas intermediárias */
+
+@media(min-width:768px) and (max-width:1270px){
+
+  .div button {
+    width:80px;
+    height:45px;
+    top: 394px;
+    left: 562px;
+    padding: 24px 24px 24px 24px;
+    Gap: 8px;
+    border-radius: 30px 30px 30px 30px;
+    opacity: 0px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    transition: background-color 600ms, color 600ms, height 700ms;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    position: relative;
+    top:-10px;
+
+}
+
+.div h1{
+    width: 100px;
+    height: 57px;
+    gap: 0px;
+    opacity: 0px;
+/*     font-family: Inter; */
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19.36px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top:32%;
+    left: -15%;
+}
+
+.div .button.az {
+    background-color: #1D70A2;
+    color: white;
+    border: 1px solid #1D70A2;
+    position: relative;
+    left: 563px;
+    top:5px;
+  }
+
+.div .button.az:hover {
+    background-color: white;
+    color: #1D70A2;
+    border: 1px solid #1D70A2; 
+    height:64px;
+  }
+  
+.div .button.br {
+    background-color: white;
+    color: #1D70A2;
+    border: 1px solid #1D70A2;
+    position: relative;
+    left: 650px;
+    top: -76px;
+  }
+  
+.div .button.br:hover {
+    background-color: #1D70A2;
+    color: white;
+    height:64px;
+  }
+}
+    
+
+/* Telas grandes */
+
+@media(min-width:1270px){
+.div button {
+    width:150px;
+    height:60px;
+    top: 394px;
+    left: 562px;
+    padding: 24px 24px 24px 24px;
+    Gap: 8px;
+    border-radius: 30px 30px 30px 30px;
+    opacity: 0px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    transition: background-color 600ms, color 600ms, height 700ms;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    position: relative;
+    top:10px;
+
+}
+
+.div h1{
+    width: 200px;
+    height: 57px;
+    gap: 0px;
+    opacity: 0px;
+/*     font-family: Inter; */
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 19.36px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top:35%;
+    left: -19%;
+}
+
+.div .button.az {
+    background-color: #1D70A2;
+    color: white;
+    border: none;
+    position: relative;
+    left:970px;
+  }
+
+.div .button.az:hover {
+    background-color: white;
+    color: #1D70A2;
+    border: 1px solid #1D70A2; 
+    height:64px;
+  }
+  
+.div .button.br {
+    background-color: white;
+    color: #1D70A2;
+    border: 1px solid #1D70A2;
+    position: relative;
+    left: 85.5%;
+    top: -80px;
+  }
+  
+.div .button.br:hover {
+    background-color: #1D70A2;
+    color: white;
+    height:64px;
+  }
+
+}

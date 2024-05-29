@@ -1,3 +1,61 @@
-.div {
-    font-size: 72px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+/* Telas pequenas*/
+  
+@media(min-width:200px) and (max-width:768px){
+
+    .header nav{
+        width: 102.18%;
+        height:80px;
+        gap:100px;
+        background: #A657AE;
+        box-shadow: 10px 25px 70px 0px #333333; 
+    }
+    .header h1{
+        font-family:'Black Ops One';
+        font-size:23px;
+        color:#333333;
+        position: absolute;
+        top:25px;
+        left:20px;
+    }
+  }
+  
+  /* Telas intermediárias */
+  
+@media(min-width:768px) and (max-width:1270px){
+    .header nav {
+        width: 100%;
+        height: 60px; /* Reduzindo a altura para telas intermediárias */
+        background: #A657AE;
+        box-shadow: 5px 10px 40px 0px #333333; /* Ajustando a sombra para uma tela menor */
+      }
+      .header h1 {
+        font-family: 'Black Ops One';
+        font-size: 32px; /* Reduzindo o tamanho da fonte para telas intermediárias */
+        color: #333333;
+        position: absolute;
+        top: 10px; /* Ajustando a posição do título para uma tela menor */
+        left: 50px;
+      }
+    }
+  
+/* Telas grandes */
+  
+@media(min-width:1270px){
+    .header nav{
+        width: 100%;
+        height:80px;
+        gap:100px;
+        background: #A657AE;
+        box-shadow: 10px 25px 70px 0px #333333; 
+    }
+    .header h1{
+        font-family:'Black Ops One';
+        font-size:40px;
+        color:#333333;
+        position: absolute;
+        top:15px;
+        left:50px;
+    }
+  }
