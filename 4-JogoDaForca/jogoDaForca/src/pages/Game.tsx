@@ -1,19 +1,31 @@
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import Hangman from "@/components/custom/Hangman";
 import Keyboard from "@/components/custom/Keyboard";
 import WordToGuess from "@/components/custom/WordToGuess";
 import portugueseWords from "../../src/wordList/portugueseWords";
 import EndingMessage from "@/components/custom/EndingMessage";
+import { UserContext } from "@/context/UserContext";
+import { updateUserContext } from "@/utils/dataManipulation";
 
 function Game() {
   const newWord: string = portugueseWords[ Math.floor(Math.random() * portugueseWords.length) ];
   const [ currentWord, setCurrentWord ] = useState<string>(newWord);
   const [ guessedLetters, setGuessedLetters ] = useState<string[]>([]);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
 
   // Current game state
   const badGuesses = guessedLetters.filter((letter) => !currentWord.includes(letter));
   const gameWon = currentWord.split("").every((letter) => guessedLetters.includes(letter));
   const gameLost = badGuesses.length >= 6;
+  const currentPrecision = (guessedLetters?.length - badGuesses?.length) / guessedLetters?.length * 100
+
+  useEffect(() => {
+    function handleGameEnd(isGameWon: boolean): void {
+      updateUserContext(currentUser.username, isGameWon, currentPrecision, setCurrentUser);
+    }
+    if (gameLost) handleGameEnd(false);
+    if (gameWon) handleGameEnd(true);
+  }, [currentPrecision, currentUser.username, gameLost, gameWon, setCurrentUser])
 
   // Prevents rerendering when input changes
   const addGuess = useCallback(

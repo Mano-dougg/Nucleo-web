@@ -49,8 +49,9 @@ export function updateStoredUser(newUserData: UserType): void {
   }
 }
 
-export function getStoredUser(username: string): UserType | undefined {
+export function getStoredUser(username: string): UserType {
   const storedUsers = parseStoredUsers();
-  const storedUser = storedUsers?.find((user) => user.username === username);
+  const storedUser = storedUsers.find((user) => user.username === username);
+  if (!storedUser) throw new Error(`User ${username} not found in localStorage`);
   return storedUser;
 }

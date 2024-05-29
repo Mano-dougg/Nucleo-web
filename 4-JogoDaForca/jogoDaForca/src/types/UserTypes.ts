@@ -1,10 +1,10 @@
 export type UserType = {
   username: string;
   avatar?: string;
-  gamesWon?: number;
-  gamesLost?: number;
-  totalGames?: number;
-  precision?: number;
+  gamesWon: number;
+  gamesLost: number;
+  totalGames: number;
+  precision: number[];
 };
 
 export type UserContextType = {
@@ -18,5 +18,5 @@ export const DEFAULT_USER = {
   gamesWon: 0,
   gamesLost: 0,
   totalGames: 0,
-  precision: 0,
+  precision: [],
 }
