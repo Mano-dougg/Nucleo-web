@@ -9,7 +9,7 @@ export function initializeUsers(): void {
   const storedUsers = getStoredUsers();
   if (!storedUsers) {
     const initialUser = DEFAULT_USER;
-    setStoredUsers([initialUser]);
+    setStoredUsers([ initialUser ]);
   }
 }
 
@@ -34,15 +34,16 @@ export function isUserStored(username: string): boolean {
   return allUsers.includes(username);
 }
 
-export function setNewUser(username: string, avatar: string, allUsers: UserType[]): void {
-  if (isUserStored(username)) {
-    const previousUserData = allUsers.find((user) => user.username === username);
+export function updateStoredUser(newUserData: UserType): void {
+  const allUsers = parseStoredUsers();
+  if (isUserStored(newUserData.username)) {
+    const previousUserData = allUsers.find((user) => user.username === newUserData.username);
     const newUsers = allUsers.map((user) =>
-      user.avatar === avatar ? user : { ...previousUserData, avatar, username }
+      user.username === newUserData.username ? { ...previousUserData, ...newUserData } : user
     );
     setStoredUsers(newUsers);
   } else {
-    const newUser = { ...DEFAULT_USER, avatar, username };
+    const newUser = { ...DEFAULT_USER, ...newUserData };
     allUsers.push(newUser);
     setStoredUsers(allUsers);
   }

@@ -1,5 +1,5 @@
 export type UserType = {
-  username?: string;
+  username: string;
   avatar?: string;
   gamesWon?: number;
   gamesLost?: number;

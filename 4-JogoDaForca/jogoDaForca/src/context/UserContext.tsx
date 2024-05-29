@@ -1,18 +1,22 @@
 import { DEFAULT_USER, UserContextType, UserType } from "@/types/UserTypes";
-import { initializeUsers } from "@/utils/useLocalStorage";
+import { getStoredUser, initializeUsers } from "@/utils/useLocalStorage";
 import React, { createContext, useState } from "react";
 
-const INITIAL_STATE = {
-  currentUser: DEFAULT_USER,
-  setCurrentUser: () => { },
-};
+function getInitialState() {
+  initializeUsers();
+  const guestUser = getStoredUser("Visitante");
+  return {
+    currentUser: guestUser ? guestUser : DEFAULT_USER,
+    setCurrentUser: () => { },
+  }
+}
 
-const UserContext = createContext<UserContextType>(INITIAL_STATE);
+const initialState = getInitialState();
+
+const UserContext = createContext<UserContextType>(initialState);
 
 const UserContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  initializeUsers();
-
-  const [ currentUser, setCurrentUser ] = useState<UserType>(INITIAL_STATE.currentUser);
+  const [ currentUser, setCurrentUser ] = useState<UserType>(initialState.currentUser);
 
   return (
     <UserContext.Provider value={{ currentUser, setCurrentUser }}>

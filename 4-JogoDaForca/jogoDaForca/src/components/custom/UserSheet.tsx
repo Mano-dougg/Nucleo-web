@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { useContext, useState } from "react";
 import { UserContext } from "@/context/UserContext";
-import { getStoredUser, parseStoredUsers, setNewUser } from "@/utils/useLocalStorage";
+import { getStoredUser, updateStoredUser } from "@/utils/useLocalStorage";
 import { DEFAULT_USER } from "@/types/UserTypes";
 
 function UserSheet() {
@@ -28,15 +28,13 @@ function UserSheet() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const [ username, setUsername ] = useState(currentUser.username);
   const [ selectedAvatar, setSelectedAvatar ] = useState(currentUser.avatar);
-  const allUsers = parseStoredUsers();
 
   const handleClick = () => {
     const avatarToSet = selectedAvatar ? selectedAvatar : DEFAULT_USER.avatar;
     const nameToSet = username ? username : DEFAULT_USER.username;
-    if (username) {
-      setNewUser(nameToSet, avatarToSet, allUsers);
-      setCurrentUser({...currentUser, username, avatar: selectedAvatar });
-    }
+    const newUserData = {username: nameToSet, avatar: avatarToSet};
+    updateStoredUser(newUserData);
+    setCurrentUser({...currentUser, ...newUserData});
   }
 
   const handleGuestClick = () => {
