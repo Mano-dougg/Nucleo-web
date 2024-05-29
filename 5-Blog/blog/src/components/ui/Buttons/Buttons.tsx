@@ -3,7 +3,7 @@ import {ButtonContainer} from './button';
 
 interface ButtonsProps{
     PlaceHolder:string;
-    classes:any;
+    classes:string;
 }
 
 
