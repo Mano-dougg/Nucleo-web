@@ -38,7 +38,7 @@ export function setNewUser(username: string, avatar: string, allUsers: UserType[
   if (isUserStored(username)) {
     const previousUserData = allUsers.find((user) => user.username === username);
     const newUsers = allUsers.map((user) =>
-      user.avatar === avatar ? { ...previousUserData, avatar, username } : user
+      user.avatar === avatar ? user : { ...previousUserData, avatar, username }
     );
     setStoredUsers(newUsers);
   } else {
@@ -46,4 +46,10 @@ export function setNewUser(username: string, avatar: string, allUsers: UserType[
     allUsers.push(newUser);
     setStoredUsers(allUsers);
   }
+}
+
+export function getStoredUser(username: string): UserType | undefined {
+  const storedUsers = parseStoredUsers();
+  const storedUser = storedUsers?.find((user) => user.username === username);
+  return storedUser;
 }

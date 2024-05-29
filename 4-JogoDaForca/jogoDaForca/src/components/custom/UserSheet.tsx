@@ -15,12 +15,34 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { useContext, useState } from "react";
+import { UserContext } from "@/context/UserContext";
+import { getStoredUser, parseStoredUsers, setNewUser } from "@/utils/useLocalStorage";
+import { DEFAULT_USER } from "@/types/UserTypes";
 
 function UserSheet() {
   const importedAvatars = import.meta.glob("/public/avatars/svg/*", { eager: true, query: { type: 'url' } });
   const adjustedAvatarURLs = Object.keys(importedAvatars).map((avatarURL) => avatarURL.replace("/public", ""));
   const avatars = adjustedAvatarURLs;
   const avatarDescription = (index: number) => `Avatar ${index + 1}`;
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const [ username, setUsername ] = useState(currentUser.username);
+  const [ selectedAvatar, setSelectedAvatar ] = useState(currentUser.avatar);
+  const allUsers = parseStoredUsers();
+
+  const handleClick = () => {
+    const avatarToSet = selectedAvatar ? selectedAvatar : DEFAULT_USER.avatar;
+    const nameToSet = username ? username : DEFAULT_USER.username;
+    if (username) {
+      setNewUser(nameToSet, avatarToSet, allUsers);
+      setCurrentUser({...currentUser, username, avatar: selectedAvatar });
+    }
+  }
+
+  const handleGuestClick = () => {
+    const guestUser = getStoredUser(DEFAULT_USER.username);
+    guestUser ? setCurrentUser(guestUser) : setCurrentUser(DEFAULT_USER);
+  }
 
   return (
     <Sheet>
@@ -36,7 +58,11 @@ function UserSheet() {
         </SheetHeader>
         <br />
         <ScrollArea className="w-full h-1/3 border">
-          <RadioGroup className="flex gap-2 flex-wrap" defaultValue={"/avatars/svg/avatar-04.svg"}>
+          <RadioGroup
+            className="flex gap-2 flex-wrap"
+            defaultValue={currentUser.avatar}
+            onValueChange={(event) => setSelectedAvatar(event)}
+          >
             {avatars.map((avatar, index) => (
               <div key={index} className="">
                 <RadioGroupItem className="border" value={avatar}>
@@ -56,14 +82,21 @@ function UserSheet() {
             <Label htmlFor="name" className="text-right">
               Nome
             </Label>
-            <Input id="name" placeholder="Fulano Beltrano" value={``} className="col-span-3" readOnly />
+            <Input
+              id="name"
+              placeholder="Visitante"
+              value={username}
+              className="col-span-3"
+              onChange={({ target }) => setUsername(target.value)}
+              minLength={2}
+            />
           </div>
         </div>
         <SheetFooter>
           <SheetClose asChild>
           </SheetClose>
-          <Link className={buttonVariants({ variant: "default" })} to="game">Jogar</Link>
-          <Link className={buttonVariants({ variant: "secondary" })} to="game">Jogar como convidado</Link>
+          <Link className={buttonVariants({ variant: "default" })} to="game" onClick={handleClick}>Jogar</Link>
+          <Link className={buttonVariants({ variant: "secondary" })} to="game" onClick={handleGuestClick}>Jogar como convidado</Link>
         </SheetFooter>
       </SheetContent>
     </Sheet>
