@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./postitem.css";
-import { AllDocumentTypes } from "../../../prismicio-types";
+import { AllDocumentTypes } from "../../../../prismicio-types";
 import { asDate, asImagePixelDensitySrcSet, asImageSrc, asImageWidthSrcSet, asLink, asLinkAttrs, asText } from "@prismicio/client";
 import dayjs from "dayjs";
 

@@ -1,8 +1,9 @@
-
 import { createClient } from "@/prismicio";
 import Header from "@/Components/Header/Header";
-import { PostItem } from "@/Components/PostItem/PostItem";
+import { PostItem } from "@/Components/PostsRecentes/PostItem/PostItem";
 import Footer from "@/Components/Footer/Footer";
+import { Postdiario } from "@/Components/Postdiario/Postdiario";
+import PostsRecentes from "@/Components/PostsRecentes/PostsRecentes";
 
 export default async function Component() {
 	const prismicClient = createClient();
@@ -15,11 +16,7 @@ export default async function Component() {
 		<>
       <Header />
 
-			<div className="postagem">
-        {posts.map(post => (
-					<PostItem key={post.id} post={post} />
-				))}
-      </div>
+			<PostsRecentes />
 
       <Footer />
 
