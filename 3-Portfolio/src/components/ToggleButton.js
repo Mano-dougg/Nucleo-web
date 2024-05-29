@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+import './ToggleButton.css';
 
 const ToggleButton = () => {
-  const [isToggled, setToggle] = useState(false);
-
-  const handleToggle = () => {
-    setToggle(!isToggled);
-  };
+  const [toggled, setToggled] = useState(false);
 
   return (
-    <button onClick={handleToggle}>
-      {isToggled ? 'ON' : 'OFF'}
-    </button>
+    <div className="darkmode-button"
+      onClick={() => setToggled(!toggled)}
+    >
+      <span className="darkmode-text">Dark mode:</span>
+      <button
+        className={`toggle-darkmode ${toggled ? "toggled" : ""}`}
+      >
+        <div className='thumb'></div>
+      </button>
+    </div>
   );
 };
 

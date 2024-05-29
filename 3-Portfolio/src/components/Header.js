@@ -6,7 +6,7 @@ import Instagram from '../assets/instagram-icon.svg';
 
 function Header() {
   return (
-    <header className="header-bar">
+    <header className="header-bar" data-theme="dark">
       <div className="logo-sections">
         <h1 className="logo">Kevin Bennett</h1>
 
@@ -34,10 +34,8 @@ function Header() {
           </ul>
         </nav>
 
-        <div className="darkmode-button">
-          <span className="darkmode-text">Dark mode:</span>
+        
           <ToggleButton />
-        </div>
       </div>
     </header>
   );

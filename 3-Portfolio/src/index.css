@@ -1,8 +1,7 @@
 :root {
   --primary-background-color: 255, 255, 255;
   --secondary-background-color: 248, 249, 250;
-  /* maybe terciary, this "secondary" and "terciary" are for dark mode, in light mode will be a single color */ 
-
+  --image-background-color: 229, 229, 229;
   --black: 32, 32, 32;
   --blue: 0, 101, 255;
   --box-shadow-header: 0, 0, 0, 0.15;
@@ -32,4 +31,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+[data-theme="dark"] {
+  --primary-background-color: 60, 59, 58;
+  --secondary-background-color: 34, 34, 34;
+  --image-background-color: 250, 244, 230;
+  /* --black: 250, 244, 230; */
+  --blue: 250, 244, 230;
+  --font-color: 0, 101, 255;
 }

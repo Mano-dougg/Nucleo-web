@@ -7,7 +7,7 @@
 }
 
 .avatar {
-  background-color: rgb(229, 229, 229);
+  background-color: rgb(var(--image-background-color));
   border-radius: 50%;
   flex-grow: 1;
   width: 6.25rem;

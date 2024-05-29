@@ -1,4 +1,9 @@
-.header-bar, .logo-sections, .sections, .social-darkmode, .socialmedia, .darkmode-button {
+.header-bar,
+.logo-sections,
+.sections,
+.social-darkmode,
+.socialmedia,
+.darkmode-button {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,7 +25,8 @@
   box-shadow: 0 1.563rem 4.063rem rgba(var(--box-shadow-header));
 }
 
-.logo-sections, .social-darkmode {
+.logo-sections,
+.social-darkmode {
   gap: 3.125rem;
 }
 
@@ -45,7 +51,3 @@
 .darkmode-button {
   gap: 0.438rem;
 }
-
-/* .header {
-  box-shadow: 0 1.563rem 65px rgba(0,0,0,0.15);
-} */
