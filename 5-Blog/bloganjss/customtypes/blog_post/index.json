@@ -21,6 +21,15 @@
           "multi": "heading1"
         }
       },
+      "subtitulo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Subtitulo",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
       "banner": {
         "type": "Image",
         "config": {

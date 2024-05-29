@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background-card: #EDFFF7;
+  --titulo-autor: #003720;
+  --preview-data: #067546;
+  font-family: 'Rubik';
+}

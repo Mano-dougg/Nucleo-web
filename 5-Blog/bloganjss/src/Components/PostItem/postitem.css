@@ -1,0 +1,60 @@
+.cardpost{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 352px;
+    height: 439px;
+    background-color: var(--background-card);
+    border-radius: 30px;
+
+    padding-top: 34px;
+    padding-bottom: 34px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.titulopost{
+    color: var(--titulo-autor);
+    font-size: 33px;
+    line-height: 118%;
+}
+
+.subtitulopost {
+    font-size: 14px;
+    color: var(--preview-data);
+}
+
+.info {
+    display: flex;
+    gap: 9px;
+}
+
+.perfil{
+    width: 44px;
+    height: 44px;
+}
+
+.perfil img{
+    border-radius: 50%;
+}
+
+.whopost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.autor{
+    font-size: 14px;
+    color:var(--titulo-autor);
+}
+
+.data{
+    font-size: 12px;
+    color: var(--preview-data);
+}
+
+.foto img{
+    border-radius: 30px;
+}
