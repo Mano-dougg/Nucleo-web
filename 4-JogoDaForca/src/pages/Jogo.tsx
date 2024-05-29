@@ -29,6 +29,8 @@ function Jogo() {
     navigate('/');
   };
 
+  console.log(palavraAdivinhar);
+
   const letrasDaPalavra = palavraAdivinhar.split('');
 
   const handleLetraClicada = (letra: string) => {
