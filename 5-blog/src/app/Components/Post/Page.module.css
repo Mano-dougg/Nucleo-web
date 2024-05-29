@@ -1,11 +1,7 @@
 .post{
     background-color: #EDFFF7;
-    width: 302px;
-    height: 370px;
-    padding: 34px 25px;
     border-radius: 30px;
     display: flex;
-    flex-direction: column;
     gap: 8px;
 
 }

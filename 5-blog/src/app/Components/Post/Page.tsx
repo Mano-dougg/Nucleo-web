@@ -3,11 +3,21 @@ import miniRobot from './ImgPost/MiniRobot.png'
 import share from './ImgPost/Share.png'
 import Image from 'next/image'
 import styles from './Page.module.css'
+import { Hedvig_Letters_Sans } from 'next/font/google'
 
-export default function Post() {
+interface PostProps {
+    widthPost: number,
+    heightPost: number,
+    flexPost: string,
+    padding: number[],
+    widthImg: number,
+    heightImg: number,
+}
+
+export default function Post({widthPost, heightPost, flexPost, padding, widthImg, heightImg}: PostProps) {
     return(
         <>
-        <section className={styles.post}>
+        <section className={styles.post} style={{width: widthPost, height: heightPost, flexDirection: flexPost,  padding: `${padding}px` }}>
             <section className={styles.mainPost}>
                 <article className={styles.textPost}>
                     <h2>Notícia muito importante </h2>
@@ -45,8 +55,8 @@ export default function Post() {
             <section>
                 <Image
                 src={robot}
-                width={302}
-                height={156}
+                width={widthImg}
+                height={heightImg}
                 alt="Image of an small robot"
                 />
             </section>

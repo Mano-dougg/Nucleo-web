@@ -14,13 +14,16 @@
 
 .sectionBar{
     display: flex;
+    width: 50%;
     align-items: center;
     gap: 3.33%;
 }
 
 .searchBar{
     background-color: var(--bgColorSearchBar);
-    width: 429px;
+   
+   
+    width: 100%;
     padding: 0px 18px 0px 18px;
     height: 46px;
     border-radius: 30px;
