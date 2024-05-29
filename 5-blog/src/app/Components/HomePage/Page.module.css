@@ -17,3 +17,13 @@
     flex-direction: column;
     gap: 26px;
 }
+
+.lastPosts{
+    display: flex;
+    gap: 32px;
+}
+
+.mostVisitedPosts{
+    display: flex;
+    gap: 32px;
+}

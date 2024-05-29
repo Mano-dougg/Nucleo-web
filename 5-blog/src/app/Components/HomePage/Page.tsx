@@ -39,14 +39,19 @@ export default function HomePage(){
                 </div>
             </article>
             <article>
-                <h1>Últimas postagens</h1>
+                <h1> Últimas postagens </h1>
             </article>
-            <article>
+            <article className={styles.lastPosts}>
                 <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
-                
+                <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
             </article>
-            <article>
-                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={205} padding={[0, 0]} />
+            <article style={{padding: 12, marginTop: 20}}>
+                <h1> Mais Acessadas </h1>
+            </article>
+            <article className={styles.mostVisitedPosts}>
+                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[0, 0]} />
+                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[0, 0]} />
             </article>
         </section>
         </>
