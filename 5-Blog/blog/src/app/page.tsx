@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import { createClient } from "../../prismicio";
 import { asHTML } from "@prismicio/client";
 import Corpo from "@/componentes/corpo/corpo";
+import Pe from "@/componentes/Rodapé/pé";
 
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default async function Home() {
 {/*     <div dangerouslySetInnerHTML={{__html:title}}></div> 
     <img src={imageUrl} /> */}
     <Corpo/>
+    <Pe/>
     </>
   );
 }

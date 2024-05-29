@@ -51,6 +51,39 @@ interface BaseDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   cotent: prismic.RichTextField;
+
+  /**
+   * insta field in *Base*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.insta
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  insta: prismic.LinkField;
+
+  /**
+   * twitter field in *Base*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.twitter
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  twitter: prismic.LinkField;
+
+  /**
+   * myanimelist field in *Base*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.myanimelist
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  myanimelist: prismic.LinkField;
 }
 
 /**

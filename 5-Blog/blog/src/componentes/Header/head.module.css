@@ -5,7 +5,7 @@
 @media(min-width:200px) and (max-width:767px){
 
     .header nav{
-        width: 384.5px;
+        width: 105%;
         height:80px;
         gap:100px;
         background: #A657AE;
@@ -25,7 +25,7 @@
   
 @media(min-width:768px) and (max-width:1270px){
     .header nav {
-        width: 102%;
+        width: 105%;
         height: 60px; /* Reduzindo a altura para telas intermediárias */
         background: #A657AE;
         box-shadow: 5px 10px 40px 0px #333333; /* Ajustando a sombra para uma tela menor */

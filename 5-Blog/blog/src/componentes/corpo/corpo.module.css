@@ -17,7 +17,7 @@
         font-size: 15px;
         position: relative;
         top:50px;
-        left:6px;
+        left:7px;
     }
     .div figure{
         width: 350px;
@@ -27,7 +27,7 @@
         background-color: #E5E5E5;
         position: relative;
         bottom:-120px;
-        left:18px; 
+        left:19px; 
     }
     .div img{
         width: 100%;
@@ -47,7 +47,7 @@
         position: relative;
         margin-top: 140px;
         top:50%;
-        left:12px;
+        left:15px;
     }
     .div span{
         font-family: 'Inter';
@@ -74,7 +74,7 @@
         font-size: 20px;
         position: relative;
         top:50px;
-        left:11px;
+        left:25px;
     }
     .div figure{
         width: 570px;
@@ -84,7 +84,7 @@
         background-color: #E5E5E5;
         position: relative;
         bottom:-120px;
-        left:116px; 
+        left:125px; 
     }
     .div img{
         width: 100%;
@@ -104,7 +104,7 @@
         position: relative;
         margin-top: 140px;
         top:50%;
-        left:40px;
+        left:52px;
     }
     .div span{
         font-family: 'Inter';
@@ -114,6 +114,7 @@
         font-size: 15px;
         position: relative;
         top:60px;
+        left:20px;
     }
     
   }
@@ -159,7 +160,7 @@
         line-height: 1.5;
         text-align: justify;
         position: relative;
-        margin-top: -180px;
+        margin-top: -175px;
         top:-210%;
         left:15px;
     }

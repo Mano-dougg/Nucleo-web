@@ -100,7 +100,6 @@
     justify-content: center;
     transition: background-color 600ms, color 600ms, height 700ms;
     margin-bottom: 30px;
-    margin-right: 20px;
     position: relative;
     top:-10px;
 
@@ -128,7 +127,7 @@
     color: white;
     border: 1px solid #1D70A2;
     position: relative;
-    left: 563px;
+    left: 613px;
     top:5px;
   }
 
@@ -144,8 +143,8 @@
     color: #1D70A2;
     border: 1px solid #1D70A2;
     position: relative;
-    left: 650px;
-    top: -76px;
+    left: 700px;
+    top: -75px;
   }
   
 .div .button.br:hover {

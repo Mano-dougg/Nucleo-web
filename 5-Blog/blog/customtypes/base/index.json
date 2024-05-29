@@ -47,6 +47,31 @@
           "allowTargetBlank": true,
           "multi": "paragraph"
         }
+      },
+      "insta": {
+        "type": "Link",
+        "config": {
+          "label": "insta",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "twitter": {
+        "type": "Link",
+        "config": {
+          "label": "twitter",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "myanimelist": {
+        "type": "Link",
+        "config": {
+          "label": "myanimelist",
+          "placeholder": "",
+          "select": null
+        }
       }
     }
   }
