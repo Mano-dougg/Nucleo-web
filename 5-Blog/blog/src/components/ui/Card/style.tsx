@@ -18,6 +18,8 @@ export const Carde = styled.div`
   align-items: center;
   gap: 20px;
 
+  background-color: var(--bg-primary);
+
   transition: border-color 0.2s;
 
   &:hover {
@@ -61,6 +63,8 @@ export const CardTextContent = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+
+  overflow: hidden;
 
   span {
     width: 100%;

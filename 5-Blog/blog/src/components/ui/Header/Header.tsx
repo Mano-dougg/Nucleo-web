@@ -1,14 +1,18 @@
 import { HeaderContainer, HeaderContent } from "./headerStyle";
+interface HeaderProsp {
+  TituloPrincipal: string;
+  HeaderDescricao: string;
+}
 
-const Header = () => {
+const Header: React.FC<HeaderProsp> = ({
+  TituloPrincipal,
+  HeaderDescricao,
+}) => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <h1>Minimal blog template for creative expressions</h1>
-        <h3>
-          100% customisable and SEO-friendly blog template for personal and
-          commercial purposes.
-        </h3>
+        <h1>{TituloPrincipal}</h1>
+        <h3>{HeaderDescricao}</h3>
       </HeaderContent>
     </HeaderContainer>
   );

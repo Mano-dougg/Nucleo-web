@@ -1,25 +1,31 @@
 import Link from "next/link";
-import Image from 'next/image'
-import { Carde, Text, CardTextContent} from "./style";
+import Image from "next/image";
+import { Carde, Text, CardTextContent } from "./style";
 
-const Card = () => {
+interface CardProps {
+  CardTitulo: string;
+  CardDescricao: string;
+  CardImage: string;
+  CardLink:string;
+}
+
+const Card: React.FC<CardProps> = ({
+  CardTitulo,
+  CardDescricao,
+  CardImage,
+  CardLink
+}) => {
   return (
-    <Link href={""}>
+    <Link href={CardLink}>
       <Carde>
         <CardTextContent>
-          <span>AUGust 13, 2021 </span>
+          <span>AUGust 13, 2021</span>
           <Text>
-            <h3>
-              10 Hilarious Cartoons That Depict Real-Life Problems of
-              Programmers
-            </h3>
-            <p>
-              Redefined the user acquisition and redesigned the onboarding
-              experience, all within 3 working weeks.
-            </p>
+            <h3>{CardTitulo}</h3>
+            <p>{CardDescricao}</p>
           </Text>
         </CardTextContent>
-           <img src="/ArticleThumbnail.svg" alt="" />
+        <img src={CardImage} alt="" />
       </Carde>
     </Link>
   );
