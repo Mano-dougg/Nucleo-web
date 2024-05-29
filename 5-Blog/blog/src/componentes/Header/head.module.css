@@ -2,14 +2,14 @@
 
 /* Telas pequenas*/
   
-@media(min-width:200px) and (max-width:768px){
+@media(min-width:200px) and (max-width:767px){
 
     .header nav{
-        width: 102.18%;
+        width: 384.5px;
         height:80px;
         gap:100px;
         background: #A657AE;
-        box-shadow: 10px 25px 70px 0px #333333; 
+        box-shadow: 0px 25px 70px 0px #333333; 
     }
     .header h1{
         font-family:'Black Ops One';
@@ -25,7 +25,7 @@
   
 @media(min-width:768px) and (max-width:1270px){
     .header nav {
-        width: 100%;
+        width: 102%;
         height: 60px; /* Reduzindo a altura para telas intermediárias */
         background: #A657AE;
         box-shadow: 5px 10px 40px 0px #333333; /* Ajustando a sombra para uma tela menor */

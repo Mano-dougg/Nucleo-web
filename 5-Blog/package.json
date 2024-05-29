@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@prismicio/react": "^2.7.4"
+  }
+}

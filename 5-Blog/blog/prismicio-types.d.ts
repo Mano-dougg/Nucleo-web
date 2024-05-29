@@ -40,6 +40,17 @@ interface BaseDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   imagem: prismic.ImageField<never>;
+
+  /**
+   * cotent field in *Base*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.cotent
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  cotent: prismic.RichTextField;
 }
 
 /**

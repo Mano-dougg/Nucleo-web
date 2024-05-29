@@ -38,6 +38,15 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "cotent": {
+        "type": "StructuredText",
+        "config": {
+          "label": "cotent",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
       }
     }
   }

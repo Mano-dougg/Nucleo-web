@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+  
+/* Telas pequenas*/
+  
+@media(min-width:200px) and (max-width:767px){
+    .div{
+        position: relative;
+    }
+    .div div{
+        font-family: 'Black Ops One';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        position: relative;
+        top:50px;
+        left:6px;
+    }
+    .div figure{
+        width: 350px;
+        height: 200px;
+        left: 240px;
+        border-radius: 10px 10px 10px 10px;
+        background-color: #E5E5E5;
+        position: relative;
+        bottom:-120px;
+        left:18px; 
+    }
+    .div img{
+        width: 100%;
+        height:100%;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .div footer{
+        width: 360px;
+        height: 185px;
+        top: 67px;
+        left: 304px;
+        font-family: 'Inter';
+        font-size: 17px;
+        font-weight: 100;
+        line-height: 1.5;
+        text-align: justify;
+        position: relative;
+        margin-top: 140px;
+        top:50%;
+        left:12px;
+    }
+    .div span{
+        font-family: 'Inter';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        position: relative;
+        top:60px;
+    }
+  }
+  
+/* Telas intermediárias */
+  
+@media(min-width:768px) and (max-width:1270px){
+    .div{
+        position: relative;
+    }
+    .div div{
+        font-family: 'Black Ops One';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        position: relative;
+        top:50px;
+        left:11px;
+    }
+    .div figure{
+        width: 570px;
+        height: 350px;
+        left: 240px;
+        border-radius: 10px 10px 10px 10px;
+        background-color: #E5E5E5;
+        position: relative;
+        bottom:-120px;
+        left:116px; 
+    }
+    .div img{
+        width: 100%;
+        height:100%;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .div footer{
+        width: 700px;
+        height: 185px;
+        top: 67px;
+        left: 304px;
+        font-family: 'Inter';
+        font-size: 21.3px;
+        font-weight: 100;
+        line-height: 1.5;
+        text-align: justify;
+        position: relative;
+        margin-top: 140px;
+        top:50%;
+        left:40px;
+    }
+    .div span{
+        font-family: 'Inter';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        position: relative;
+        top:60px;
+    }
+    
+  }
+  
+/* Telas grandes */
+  
+@media(min-width:1270px){
+    .div{
+        position: relative;
+    }
+    .div div{
+        font-family: 'Black Ops One';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        position: relative;
+        top:50px;
+    }
+    .div figure{
+        width: 570px;
+        height: 350px;
+        left: 240px;
+        border-radius: 10px 10px 10px 10px;
+        background-color: #E5E5E5;
+        position: relative;
+        bottom:-170px;
+        left:740px; 
+    }
+    .div img{
+        width: 100%;
+        height:100%;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .div footer{
+        width: 700px;
+        height: 185px;
+        top: 67px;
+        left: 304px;
+        font-family: 'Inter';
+        font-size: 21.3px;
+        font-weight: 100;
+        line-height: 1.5;
+        text-align: justify;
+        position: relative;
+        margin-top: -180px;
+        top:-210%;
+        left:15px;
+    }
+    .div span{
+        font-family: 'Inter';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        position: relative;
+        top:60px;
+    }
+  }
+  
+/* 
+
+  width: 308px;
+  height: 179px;
+  top: 1353px;
+  left: 32px;
+  gap: 0px;
+  border-radius: 10px 10px 10px 10px;
+  opacity: 0px;
+  background-color: #E5E5E5;
+  position: relative;
+  top: -5%;
+  left:-7%; */
+  
+
+  
