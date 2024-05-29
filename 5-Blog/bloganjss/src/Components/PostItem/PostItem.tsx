@@ -43,7 +43,7 @@ export function PostItem({ post }: PostItemProps) {
 			</section>
 
 			<p className="foto">
-				<img src={asImageSrc(post.data.banner)} alt="Banner" />
+				{<img src={asImageSrc(post.data.banner)} alt="Banner" />}
 			</p>
 
 

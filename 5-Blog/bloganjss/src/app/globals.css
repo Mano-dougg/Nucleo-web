@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background-card: #EDFFF7;
-  --titulo-autor: #003720;
-  --preview-data: #067546;
-  font-family: 'Rubik';
+  --background-card: #dc97ff;
+  --background-header: #5a108f;
+  --titulo-autor: #5a108f;
+  --preview-data: #8b2fc9;
+  font-family: "Nunito", sans-serif;
 }
