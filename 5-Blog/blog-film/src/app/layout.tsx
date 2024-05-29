@@ -2,7 +2,7 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import "../app/css/globals.css";
-
+//Fontes
 import { Inter, Montserrat} from 'next/font/google'
  
 export const inter = Inter({
