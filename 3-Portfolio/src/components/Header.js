@@ -1,5 +1,6 @@
 import './Header.css';
 import ToggleButton from './ToggleButton';
+import HamburgerMenu from './HamburgerMenu';
 import Twitter from '../assets/twitter-icon.svg';
 import Figma from '../assets/figma-icon.svg';
 import Instagram from '../assets/instagram-icon.svg';
@@ -33,10 +34,11 @@ function Header() {
             </li>
           </ul>
         </nav>
-
         
-          <ToggleButton />
+        <ToggleButton />
       </div>
+
+      <HamburgerMenu />
     </header>
   );
 }

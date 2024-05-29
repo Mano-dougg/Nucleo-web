@@ -12,14 +12,15 @@
   flex-grow: 1;
   width: 6.25rem;
   height: 6.25rem;
+  box-shadow: 0 1.563rem 4.063rem rgba(var(--box-shadow-header));
 }
 
-.about h1 {
+.about-title {
   font-family: "EB Garamond";
   color: rgb(var(--blue));
-  font-size: 70px;
+  font-size: 4.375rem;
   font-weight: 700;
-  line-height: 70px;
+  line-height: 4.375rem;
   letter-spacing: -0.02em;
   margin-top: 2.5rem;
   margin-bottom: 0;
@@ -75,4 +76,26 @@
 
 .blue-text {
   color: rgb(var(--blue));
+}
+
+@media (max-width: 1366px) {
+  .about {
+    margin-top: 5rem;
+    align-items: center;
+  }
+
+  .about-title {
+    text-align: center;
+  }
+
+  .about-line {
+    width: 51vw;
+  }
+}
+
+@media (max-width: 834px) {
+  .about-title {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }

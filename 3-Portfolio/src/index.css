@@ -33,11 +33,13 @@ code {
     monospace;
 }
 
+/*
 [data-theme="dark"] {
   --primary-background-color: 60, 59, 58;
   --secondary-background-color: 34, 34, 34;
   --image-background-color: 250, 244, 230;
-  /* --black: 250, 244, 230; */
+  
   --blue: 250, 244, 230;
   --font-color: 0, 101, 255;
 }
+*/

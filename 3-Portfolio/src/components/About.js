@@ -7,7 +7,7 @@ function About() {
     <section className="about">
       <div className="avatar"></div>
 
-      <h1>Hello.<br />My name is Kevin.</h1>
+      <h1 className="about-title">Hello.<br />My name is Kevin.</h1>
 
       <div className="about-line"></div>
 

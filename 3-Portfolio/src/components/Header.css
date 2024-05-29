@@ -11,13 +11,6 @@
  
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 20px;
-  letter-spacing: -0.02em;
-}
-
 .header-bar {
   height: 5.125rem;
   padding-left: 5.44rem;
@@ -30,14 +23,21 @@
   gap: 3.125rem;
 }
 
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
 .sections {
   gap: 1.25rem;
 }
 
 .section-item {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 20.45px;
+  line-height: 1.278rem;
 }
 
 .section-item a {
@@ -50,4 +50,18 @@
 
 .darkmode-button {
   gap: 0.438rem;
+}
+
+@media (max-width: 1024px) {
+  .nav-sections, .nav-socialmedia {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-bar {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
 }
