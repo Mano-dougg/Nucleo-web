@@ -1,0 +1,41 @@
+{
+  "format": "custom",
+  "id": "post",
+  "label": "Post",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titulodopost": {
+        "type": "Text",
+        "config": {
+          "label": "titulodopost",
+          "placeholder": ""
+        }
+      },
+      "imagemparaopost": {
+        "type": "Image",
+        "config": {
+          "label": "imagemparaopost",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "conteudodopost": {
+        "type": "StructuredText",
+        "config": {
+          "label": "conteudodopost",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}
