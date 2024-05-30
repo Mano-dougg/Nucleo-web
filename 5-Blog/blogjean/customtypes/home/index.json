@@ -1,0 +1,77 @@
+{
+  "format": "custom",
+  "id": "home",
+  "label": "home",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "aitoday": {
+        "type": "Image",
+        "config": {
+          "label": "aitoday",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "cosmonauta": {
+        "type": "Image",
+        "config": {
+          "label": "cosmonauta",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "textpostimg": {
+        "type": "Text",
+        "config": {
+          "label": "textPostImg",
+          "placeholder": ""
+        }
+      },
+      "titulosecundario": {
+        "type": "StructuredText",
+        "config": {
+          "label": "titulosecundario",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "titulomaisacessadas": {
+        "type": "StructuredText",
+        "config": {
+          "label": "tituloMaisAcessadas",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "titulohomeprincipal": {
+        "type": "StructuredText",
+        "config": {
+          "label": "tituloHomePrincipal",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "titulotextinghome": {
+        "type": "StructuredText",
+        "config": {
+          "label": "titulotextinghome",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}
