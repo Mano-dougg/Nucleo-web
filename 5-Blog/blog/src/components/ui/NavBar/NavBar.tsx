@@ -3,7 +3,14 @@ import Buttons from "../Buttons/Buttons";
 import { NavActions, NavContainer, NavLinks } from "./navStyle";
 export { NavActions, NavContainer, NavLinks } from "./navStyle";
 
-const NavBar = () => {
+interface LinksDaNav{
+  tag1:string;
+  tag2:string;
+  tag3:string;
+  linkBtn:string;
+}
+
+const NavBar:React.FC<LinksDaNav> = ({linkBtn, tag1, tag2, tag3}) => {
   return (
     <NavContainer>
       <Link className="GoHome" href={"/"}>Personally</Link>
@@ -13,11 +20,11 @@ const NavBar = () => {
           <img src="/menu.svg" alt="" />
         </label>
         <NavLinks className="evento">
-          <a href="">Dailly Digest</a>
-          <a href="">Design Tools</a>
-          <a href="">Tutorials</a>
+          <a href={tag1}>Computer</a>
+          <a href={tag2}>Frutas</a>
+          <a href={tag3}>Tutorials</a>
         </NavLinks>
-        <Buttons PlaceHolder={"Subscribe"} classes={"subscribe"} />
+        <Buttons PlaceHolder={"Me conheça"} classes={"subscribe"} link={linkBtn} />
       </NavActions>
     </NavContainer>
   );

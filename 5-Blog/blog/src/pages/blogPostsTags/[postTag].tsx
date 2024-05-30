@@ -14,37 +14,52 @@ import { AllDocumentTypes } from "../../../prismicio-types";
 
 const inter = Inter({ subsets: ["latin"] });
 
-
-export default function postTagElement({page}: {page:any}){
+export default function postTagElement({ page }: { page: any }) {
   return (
     <>
       <HomeScreen>
-        <Header TituloPrincipal={(page?.results[0].tags[0])} HeaderDescricao={""}></Header>
+        <NavBar tag1={""} tag2={""} tag3={""} linkBtn={""}></NavBar>
+        <Header
+          TituloPrincipal={page?.results[0].tags[0]}
+          HeaderDescricao={""}
+        ></Header>
 
-        <ContentSec secNome={(page?.results[0].tags[0])} btnLink={`/blogPostsTags/$`}>
-          {page?.results?.map((post: { data: { titulo: { text: string; }[]; descricao: { text: string; }[]; cardimagem: { url: string; }; }; id: Key | null | undefined; }) => {
-            return (
-              <Card
-                CardTitulo={post.data.titulo[0].text}
-                CardDescricao={post.data.descricao[0].text}
-                CardImage={post.data.cardimagem.url}
-                key={post.id}
-                CardLink={`/postes/${post.id}`}
-              />
-            );
-          })}
+        <ContentSec
+          secNome={page?.results[0].tags[0]}
+          btnLink={`/blogPostsTags/$`}
+        >
+          {page?.results?.map(
+            (post: {
+              data: {
+                titulo: { text: string }[];
+                descricao: { text: string }[];
+                cardimagem: { url: string };
+              };
+              id: Key | null | undefined;
+            }) => {
+              return (
+                <Card
+                  CardTitulo={post.data.titulo[0].text}
+                  CardDescricao={post.data.descricao[0].text}
+                  CardImage={post.data.cardimagem.url}
+                  key={post.id}
+                  CardLink={`/postes/${post.id}`}
+                />
+              );
+            }
+          )}
         </ContentSec>
       </HomeScreen>
     </>
   );
 }
 
-export async function getStaticProps({ params }:{params:any}) {
+export async function getStaticProps({ params }: { params: any }) {
   const { postTag } = params;
   const client = createClient({});
 
   const page = await client.getByTag(postTag);
-  console.log((page.results[0].tags[0]).toUpperCase);
+  console.log(page.results[0].tags[0].toUpperCase);
   return {
     props: { page },
   };

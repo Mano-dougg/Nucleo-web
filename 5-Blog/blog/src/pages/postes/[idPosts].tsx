@@ -5,18 +5,20 @@ import { createClient, Query } from "@prismicio/client";
 import { AllDocumentTypes, PageDocument } from "../../../prismicio-types";
 import ContentSec from "@/components/ui/ContentSec/ContentSec";
 import Card from "@/components/ui/Card/Card";
-import { Key } from "react";
+import { Key, useEffect } from "react";
+import NavBar from "@/components/ui/NavBar/NavBar";
 
- interface IdpostsProps{
-    post: any,
-    recomendados:any
+interface IdpostsProps {
+  post: any;
+  recomendados: any;
 }
 
-const idPosts:React.FC<IdpostsProps> = ({ post, recomendados }) => {
-const maximoRecomendacoes = recomendados.results.slice(0, 3)
+const idPosts: React.FC<IdpostsProps> = ({ post, recomendados }) => {
+  const maximoRecomendacoes = recomendados.results.slice(0, 3);
 
   return (
     <Posts>
+      <NavBar tag1={""} tag2={""} tag3={""} linkBtn={""}></NavBar>
       <Header
         TituloPrincipal={post.data.titulo[0].text}
         HeaderDescricao={post.data.descricao[0].text}
@@ -32,22 +34,38 @@ const maximoRecomendacoes = recomendados.results.slice(0, 3)
         </PostText>
       </PostContent>
       <ContentSec secNome={"Recomendados"} btnLink={``}>
-      {maximoRecomendacoes.map((post: { data: { titulo: { text: string; }[]; descricao: { text: string; }[]; cardimagem: { url: string; }; }; id: Key | null | undefined; }, i:number) => {
-        if(i == 4){return}
+        {maximoRecomendacoes.map(
+          (
+            post: {
+              data: {
+                titulo: { text: string }[];
+                descricao: { text: string }[];
+                cardimagem: { url: string };
+              };
+              id: Key | null | undefined;
+            },
+            i: number
+          ) => {
+            if (i == 4) {
+              return;
+            }
             return (
               <Card
                 CardTitulo={post.data.titulo[0].text}
                 CardDescricao={post.data.descricao[0].text}
                 CardImage={post.data.cardimagem.url}
-                key={post.id} CardLink={`/postes/${post.id}`}/>
+                key={post.id}
+                CardLink={`/postes/${post.id}`}
+              />
             );
-          })}
+          }
+        )}
       </ContentSec>
     </Posts>
   );
 };
 
-export async function getStaticProps(context: { params: { idPosts: any; }; }) {
+export async function getStaticProps(context: { params: { idPosts: any } }) {
   const { idPosts } = context.params;
   const client = createClient("JaedsonBlog");
 
