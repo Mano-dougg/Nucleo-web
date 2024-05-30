@@ -14,11 +14,24 @@ import { AllDocumentTypes } from "../../../prismicio-types";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function postTagElement({ page }: { page: any }) {
+export default function postTagElement({
+  page,
+  computer,
+  frutas,
+}: {
+  page: any;
+  computer: Query<AllDocumentTypes>;
+  frutas: Query<AllDocumentTypes>;
+}) {
   return (
     <>
       <HomeScreen>
-        <NavBar tag1={""} tag2={""} tag3={""} linkBtn={""}></NavBar>
+        <NavBar
+          tag1={`${computer?.results[0].tags[0]}`}
+          tag2={`${frutas?.results[0].tags[0]}`}
+          tag3={""}
+          linkBtn={""}
+        ></NavBar>
         <Header
           TituloPrincipal={page?.results[0].tags[0]}
           HeaderDescricao={""}
@@ -59,18 +72,22 @@ export async function getStaticProps({ params }: { params: any }) {
   const client = createClient({});
 
   const page = await client.getByTag(postTag);
-  console.log(page.results[0].tags[0].toUpperCase);
+  const computer = await client.getByTag("computer");
+
+  const frutas = await client.getByTag("fruta");
+
+  console.log(page.results[0].tags[0]);
   return {
-    props: { page },
+    props: { page, computer, frutas },
   };
 }
 
 export async function getStaticPaths() {
   const client = createClient({});
-  const page = await client.getAllByTag("page");
+  const page = await client.getAllByTag("1");
 
   const paths = page.map((page) => ({
-    params: { postTag: page.tags },
+    params: { postTag: page.tags, resultados: page },
   }));
   return {
     paths,

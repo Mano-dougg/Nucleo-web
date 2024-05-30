@@ -11,14 +11,21 @@ import NavBar from "@/components/ui/NavBar/NavBar";
 interface IdpostsProps {
   post: any;
   recomendados: any;
+  computer:any;
+  frutas:any
 }
 
-const idPosts: React.FC<IdpostsProps> = ({ post, recomendados }) => {
+const idPosts: React.FC<IdpostsProps> = ({ post, recomendados, computer, frutas }) => {
   const maximoRecomendacoes = recomendados.results.slice(0, 3);
 
   return (
     <Posts>
-      <NavBar tag1={""} tag2={""} tag3={""} linkBtn={""}></NavBar>
+         <NavBar
+          tag1={`/blogPostsTags/${computer?.results[0].tags[0]}`}
+          tag2={`/blogPostsTags/${frutas?.results[0].tags[0]}`}
+          tag3={""}
+          linkBtn={""}
+        ></NavBar>
       <Header
         TituloPrincipal={post.data.titulo[0].text}
         HeaderDescricao={post.data.descricao[0].text}
@@ -71,10 +78,13 @@ export async function getStaticProps(context: { params: { idPosts: any } }) {
 
   const post = await client.getByID(idPosts);
   const recomendados = await client.getByTag(post.tags[0]);
+  const computer = await client.getByTag("computer");
+
+  const frutas = await client.getByTag("fruta");
   console.log(post.tags);
 
   return {
-    props: { post, recomendados },
+    props: { post, recomendados, computer, frutas },
   };
 }
 

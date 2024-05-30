@@ -10,9 +10,36 @@ import { createClient } from "../../jaedsonblog/src/prismicio";
 import ContentSec from "@/components/ui/ContentSec/ContentSec";
 import { Key } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home({ page, computer, frutas }) {
+export default function Home({
+  page,
+  computer,
+  frutas,
+}: {
+  page: {
+    data: {
+      titulo: { text: string }[];
+      descricao: { text: string }[];
+      cardimagem: { url: string }[];
+      title: { text: string }[];
+    };
+  };
+  computer: {
+    data: {
+      titulo: { text: string }[];
+      descricao: { text: string }[];
+      cardimagem: { url: string };
+    };
+    results: { tags: string }[];
+  };
+  frutas: {
+    data: {
+      titulo: { text: string }[];
+      descricao: { text: string }[];
+      cardimagem: { url: string };
+    };
+    results: { tags: string }[];
+  };
+}) {
   const maximoDeCards = computer.results.slice(0, 3);
   const maximoDeCards2 = frutas.results.slice(0, 3);
 
@@ -34,63 +61,39 @@ export default function Home({ page, computer, frutas }) {
           secNome={"Computers"}
           btnLink={`/blogPostsTags/${computer.results[0].tags}`}
         >
-          {maximoDeCards.map(
-            (
-              post: {
-                data: {
-                  titulo: { text: string }[];
-                  descricao: { text: string }[];
-                  cardimagem: { url: string };
-                };
-                id: Key | null | undefined;
-              },
-              i: number
-            ) => {
-              if (i == 3) {
-                return;
-              }
-              return (
-                <Card
-                  CardTitulo={post.data.titulo[0].text}
-                  CardDescricao={post.data.descricao[0].text}
-                  CardImage={post.data.cardimagem.url}
-                  key={post.id}
-                  CardLink={`/postes/${post.id}`}
-                />
-              );
+          {maximoDeCards.map((post: any, i: number) => {
+            if (i == 3) {
+              return;
             }
-          )}
+            return (
+              <Card
+                CardTitulo={post.data.titulo[0].text}
+                CardDescricao={post.data.descricao[0].text}
+                CardImage={post.data.cardimagem.url}
+                key={post.id}
+                CardLink={`/postes/${post.id}`}
+              />
+            );
+          })}
         </ContentSec>
         <ContentSec
           secNome={"Frutas"}
           btnLink={`/blogPostsTags/${frutas.results[0].tags}`}
         >
-          {maximoDeCards2.map(
-            (
-              post: {
-                data: {
-                  titulo: { text: string }[];
-                  descricao: { text: string }[];
-                  cardimagem: { url: string };
-                };
-                id: Key | null | undefined;
-              },
-              i: number
-            ) => {
-              if (i == 3) {
-                return;
-              }
-              return (
-                <Card
-                  CardTitulo={post.data.titulo[0].text}
-                  CardDescricao={post.data.descricao[0].text}
-                  CardImage={post.data.cardimagem.url}
-                  key={post.id}
-                  CardLink={`/postes/${post.id}`}
-                />
-              );
+          {maximoDeCards2.map((post: any, i: number) => {
+            if (i == 3) {
+              return;
             }
-          )}
+            return (
+              <Card
+                CardTitulo={post.data.titulo[0].text}
+                CardDescricao={post.data.descricao[0].text}
+                CardImage={post.data.cardimagem.url}
+                key={post.id}
+                CardLink={`/postes/${post.id}`}
+              />
+            );
+          })}
         </ContentSec>
       </HomeScreen>
     </>
@@ -104,6 +107,7 @@ export async function getStaticProps() {
   const computer = await client.getByTag("computer");
 
   const frutas = await client.getByTag("fruta");
+  console.log(frutas.results[0])
 
   return {
     props: { page, computer, frutas },
