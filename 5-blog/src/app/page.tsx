@@ -4,6 +4,7 @@ import Header from "./Components/(Header)/Page";
 import Footer from "./Components/(Footer)/Page";
 import HomePage from "./Components/HomePage/Page";
 import PostPage from "./Components/PostPage/Page";
+import AutorPage from "./Components/AutorPage/Page";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
     <HomePage/>
     <Footer/>
     <PostPage/>
+    <AutorPage/>
     </>
   );
 }
