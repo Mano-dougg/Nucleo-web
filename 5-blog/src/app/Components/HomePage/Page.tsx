@@ -1,4 +1,6 @@
 import astrounaut from './imgHome/Astronaut.png'
+import arrowLeft from '../Post/ImgPost/ArrowLeft.png'
+import arrowRight from '../Post/ImgPost/ArrowRight.png'
 import Image from 'next/image'
 import styles from './Page.module.css'
 import Post from '../Post/Page'
@@ -42,16 +44,40 @@ export default function HomePage(){
                 <h1> Últimas postagens </h1>
             </article>
             <article className={styles.lastPosts}>
+                <Image
+                    src={arrowLeft}
+                    width={30}
+                    height={60}
+                    alt="Image of an arrow"
+                    />
                 <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
                 <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
                 <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                <Image
+                    src={arrowRight}
+                    width={30}
+                    height={60}
+                    alt="Image of an arrow"
+                    />
             </article>
             <article style={{padding: 12, marginTop: 20}}>
                 <h1> Mais Acessadas </h1>
             </article>
             <article className={styles.mostVisitedPosts}>
-                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[0, 0]} />
-                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[0, 0]} />
+                <Image
+                    src={arrowLeft}
+                    width={30}
+                    height={60}
+                    alt="Image of an arrow"
+                    />
+                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[25, 20]} />
+                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[25, 20]} />
+                <Image
+                    src={arrowRight}
+                    width={30}
+                    height={60}
+                    alt="Image of an arrow"
+                    />
             </article>
         </section>
         </>

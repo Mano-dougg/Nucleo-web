@@ -34,7 +34,7 @@ export default function Post({widthPost, heightPost, flexPost, padding, widthImg
                             src={miniRobot}
                             width={44}
                             height={44}
-                            alt="Image of an small robot"
+                            alt="Image of a small robot"
                             />
                             <div>
                                 <h4>Fulano das IAs</h4>
@@ -47,7 +47,7 @@ export default function Post({widthPost, heightPost, flexPost, padding, widthImg
                         src={share}
                         width={32}
                         height={32}
-                        alt="Image of an small robot"
+                        alt="Image of a share button"
                         />
                     </aside>
                 </article>
@@ -57,7 +57,7 @@ export default function Post({widthPost, heightPost, flexPost, padding, widthImg
                 src={robot}
                 width={widthImg}
                 height={heightImg}
-                alt="Image of an small robot"
+                alt="Image of a robot"
                 />
             </section>
         </section>

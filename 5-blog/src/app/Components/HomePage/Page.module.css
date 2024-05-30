@@ -20,10 +20,12 @@
 
 .lastPosts{
     display: flex;
+    align-items: center;
     gap: 32px;
 }
 
 .mostVisitedPosts{
     display: flex;
+    align-items: center;
     gap: 32px;
 }

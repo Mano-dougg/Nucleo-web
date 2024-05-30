@@ -2,6 +2,8 @@ import BigMiniRobot from './imgAutor/BigMiniRobot.png'
 import instaIconBlack from './imgAutor/InstaIconBlack.png'
 import linkdinIconBlack from './imgAutor/LinkedinIconBlack.png'
 import githubIconBlack from './imgAutor/GithubIconBlack.png'
+import arrowLeft from '../Post/ImgPost/ArrowLeft.png'
+import arrowRight from '../Post/ImgPost/ArrowRight.png'
 import Image from 'next/image'
 import Post from '../Post/Page'
 
@@ -17,7 +19,7 @@ export default function AutorPage() {
                 src={BigMiniRobot}
                 width={352}
                 height={350}
-                alt="Picture of a Sun"
+                alt="Picture of a BigMiniRobot"
                 />
             </article>
             <article style={{display: 'flex', flexDirection: 'column', gap: '32px'}}>
@@ -41,19 +43,19 @@ export default function AutorPage() {
                         src={instaIconBlack}
                         width={50}
                         height={50}
-                        alt="Picture of a Sun"
+                        alt="Picture of an instaIconBlack"
                         />
                      <Image
                         src={linkdinIconBlack}
                         width={50}
                         height={50}
-                        alt="Picture of a Sun"
+                        alt="Picture of a linkdinIconBlack"
                         />
                     <Image
                         src={githubIconBlack}
                         width={50}
                         height={50}
-                        alt="Picture of a Sun"
+                        alt="Picture of a githubIconBlack"
                         />
                 </div>
             </article>
@@ -83,9 +85,21 @@ export default function AutorPage() {
         <section>
             <h1> Mais do Autor </h1>    
         </section>        
-        <section style={{display: 'flex', gap: '32px'}}>
+        <section style={{display: 'flex', alignItems: 'center',gap: '32px'}}>
+                <Image
+                    src={arrowLeft}
+                    width={30}
+                    height={60}
+                    alt="Image of an arrow"
+                    />
             <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[25, 20]} />
             <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[25, 20]} />
+                <Image
+                    src={arrowRight}
+                    width={30}
+                    height={60}
+                    alt="Image of an arrow"
+                    />
         </section>
         </article>
     )
