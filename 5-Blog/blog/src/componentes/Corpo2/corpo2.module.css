@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 
   
@@ -15,10 +14,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 15px;
+        font-size: 14px;
         position: relative;
         top:50px;
-        left:7px;
+        left:5px;
     }
     .div figure{
         width: 350px;
@@ -100,7 +99,7 @@
         font-family: 'Inter';
         font-size: 21.3px;
         font-weight: 100;
-        line-height: 1.5;
+        line-height: 1.7;
         text-align: justify;
         position: relative;
         margin-top: 140px;
@@ -134,7 +133,7 @@
         font-size: 20px;
         position: relative;
         top:50px;
-        margin-left: 20px;
+        margin-left: 35px;
     }
     .div figure{
         width: 570px;
@@ -156,13 +155,13 @@
         height: 185px;
         top: 67px;
         left: 304px;
-        font-family: 'Inter';
-        font-size: 21.7px;
+        font-family: Inter;
+        font-size: 25px;
         font-weight: 100;
-        line-height: 1.55;
+        line-height: 1.7;
         text-align: justify;
         position: relative;
-        margin-top: -175px;
+        margin-top: -151px;
         top:-210%;
         left:15px;
     }
@@ -176,8 +175,3 @@
         top:60px;
     }
   }
-  
-
-  
-
-  

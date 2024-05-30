@@ -7,7 +7,7 @@ async function Corpo(){
     const prismic = createClient()
     const bases = await prismic.getByUID('base','base')
     const title = asHTML(bases.data.title)
-    const content: RichTextField = bases.data.cotent
+    const content10: RichTextField = bases.data.cotent
     const subtitle : RichTextField = bases.data.subtitle
     const img1 = bases.data.imagem.url
     const imageUrl = typeof img1 === 'string' ? img1 : '';
@@ -19,7 +19,7 @@ async function Corpo(){
         <figure>
         <img src={imageUrl}/>
         </figure>
-        <footer><PrismicRichText field={content} /></footer>
+        <footer><PrismicRichText field={content10} /></footer>
         </div>
         </>
     )

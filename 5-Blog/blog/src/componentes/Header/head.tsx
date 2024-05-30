@@ -10,6 +10,11 @@ function Header(){
     <Link href="/Autor"><Botao backgroundColor='#1D70A2' text0='Autor'/></Link>
     <Link href="/Post"><Botao backgroundColor='white' text0='Post'/></Link> 
     </nav>
+    <Link href="/">
+    <figure>
+        <img src="/Home.png"/>
+    </figure>
+    </Link>
     </header>
     )
 }

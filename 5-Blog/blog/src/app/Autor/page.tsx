@@ -1,3 +1,6 @@
+import Header from '@/componentes/Header/head';
+import ParteSuperior from '@/componentes/ParteSuperior3/partesuperior';
+import Pe from '@/componentes/Rodapé/pé';
 import { Metadata } from 'next';
 import Link from 'next/link'
 
@@ -12,8 +15,9 @@ export const metadata: Metadata = {
 function Autor(){
     return(
         <>
-        <h1>CHRIS PRINCE</h1>
-        <Link href="/">Volta</Link>
+        <Header/>
+        <ParteSuperior/>
+        <Pe/>
         </>
     )
 }

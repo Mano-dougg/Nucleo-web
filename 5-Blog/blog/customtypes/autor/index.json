@@ -1,0 +1,84 @@
+{
+  "format": "custom",
+  "id": "autor",
+  "label": "autor",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "athor",
+          "placeholder": ""
+        }
+      },
+      "title3": {
+        "type": "StructuredText",
+        "config": {
+          "label": "title3",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "icon": {
+        "type": "Image",
+        "config": {
+          "label": "icon",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "resumo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "resumo",
+          "placeholder": "Recomendo texto minimamente grande",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "foto1": {
+        "type": "Image",
+        "config": {
+          "label": "foto1",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "foto2": {
+        "type": "Image",
+        "config": {
+          "label": "foto2",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "foto3": {
+        "type": "Image",
+        "config": {
+          "label": "foto3",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "foto_4": {
+        "type": "Image",
+        "config": {
+          "label": "foto 4",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "foto5": {
+        "type": "Image",
+        "config": {
+          "label": "foto5",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

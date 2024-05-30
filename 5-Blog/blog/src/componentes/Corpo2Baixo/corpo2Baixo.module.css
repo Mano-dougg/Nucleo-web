@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 
   
@@ -15,10 +14,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 15px;
+        font-size: 13px;
         position: relative;
         top:50px;
-        left:7px;
+        left:8px;
     }
     .div figure{
         width: 350px;
@@ -27,8 +26,8 @@
         border-radius: 10px 10px 10px 10px;
         background-color: #E5E5E5;
         position: relative;
-        bottom:-120px;
-        left:19px; 
+        bottom:-106px;
+        left:21px; 
     }
     .div img{
         width: 100%;
@@ -43,22 +42,14 @@
         font-family: 'Inter';
         font-size: 17px;
         font-weight: 100;
-        line-height: 1.5;
+        line-height: 1.6;
         text-align: justify;
         position: relative;
-        margin-top: 140px;
-        top:50%;
+        margin-top: 135px;
+        top:90%;
         left:15px;
     }
-    .div span{
-        font-family: 'Inter';
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        position: relative;
-        top:60px;
-    }
+
   }
   
 /* Telas intermediárias */
@@ -100,10 +91,10 @@
         font-family: 'Inter';
         font-size: 21.3px;
         font-weight: 100;
-        line-height: 1.5;
+        line-height: 1.7;
         text-align: justify;
         position: relative;
-        margin-top: 140px;
+        margin-top: 170px;
         top:50%;
         left:52px;
     }
@@ -131,20 +122,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
+        font-size: 17px;
         position: relative;
-        top:50px;
-        margin-left: 20px;
+        top:250px;
+        margin-left: 30px;
     }
     .div figure{
-        width: 570px;
-        height: 350px;
+        width: 590px;
+        height: 400px;
         left: 240px;
         border-radius: 10px 10px 10px 10px;
         background-color: #E5E5E5;
         position: relative;
-        bottom:-170px;
-        left:740px; 
+        bottom:-386px;
+        left:737px; 
     }
     .div img{
         width: 100%;
@@ -157,27 +148,14 @@
         top: 67px;
         left: 304px;
         font-family: 'Inter';
-        font-size: 21.7px;
+        font-size: 21.3px;
         font-weight: 100;
-        line-height: 1.55;
+        line-height: 1.7;
         text-align: justify;
         position: relative;
-        margin-top: -175px;
+        margin-top: 20px;
         top:-210%;
         left:15px;
     }
-    .div span{
-        font-family: 'Inter';
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 15px;
-        position: relative;
-        top:60px;
-    }
+
   }
-  
-
-  
-
-  
