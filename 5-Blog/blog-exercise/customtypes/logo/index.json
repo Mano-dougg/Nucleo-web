@@ -1,0 +1,100 @@
+{
+  "format": "custom",
+  "id": "logo",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "social_networks": {
+        "type": "Group",
+        "config": {
+          "label": "Social networks",
+          "repeat": true,
+          "fields": {
+            "url_to_network": {
+              "type": "Link",
+              "config": {
+                "label": "URL to network",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null
+              }
+            },
+            "social_media_icon": {
+              "type": "Image",
+              "config": {
+                "label": "Social media icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta description",
+          "placeholder": ""
+        }
+      },
+      "call_to_networks": {
+        "type": "Text",
+        "config": {
+          "label": "Call to networks",
+          "placeholder": ""
+        }
+      },
+      "copywright_info": {
+        "type": "Text",
+        "config": {
+          "label": "Copywright info",
+          "placeholder": ""
+        }
+      },
+      "theme_toggle": {
+        "type": "Image",
+        "config": {
+          "label": "Theme toggle",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "site_title": {
+        "type": "Text",
+        "config": {
+          "label": "Site title",
+          "placeholder": ""
+        }
+      },
+      "blog_image": {
+        "type": "Image",
+        "config": {
+          "label": "Blog image",
+          "constraint": {},
+          "thumbnails": [
+            {
+              "name": "desktop",
+              "width": 544,
+              "height": 374
+            },
+            {
+              "name": "mobile",
+              "width": 328,
+              "height": 225
+            }
+          ]
+        }
+      }
+    }
+  }
+}
