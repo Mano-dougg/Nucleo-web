@@ -1,0 +1,83 @@
+{
+  "format": "custom",
+  "id": "Postme",
+  "label": "Post",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "title_post": {
+        "type": "Text",
+        "config": {
+          "label": "title post",
+          "placeholder": ""
+        }
+      },
+      "title_presentation_content": {
+        "type": "Text",
+        "config": {
+          "label": "title presentation content",
+          "placeholder": ""
+        }
+      },
+      "text_presentation_content": {
+        "type": "StructuredText",
+        "config": {
+          "label": "text presentation content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "image_presentation_content": {
+        "type": "Image",
+        "config": {
+          "label": "image presentation content",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "high_content_post": {
+        "type": "StructuredText",
+        "config": {
+          "label": "high content post ",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "left_image_post": {
+        "type": "Image",
+        "config": {
+          "label": "left image post",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "right_image_post": {
+        "type": "Image",
+        "config": {
+          "label": "right image post",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "low_content_post": {
+        "type": "StructuredText",
+        "config": {
+          "label": "low content post ",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}
