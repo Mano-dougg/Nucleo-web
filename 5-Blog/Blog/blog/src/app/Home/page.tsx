@@ -1,11 +1,10 @@
 import { asHTML } from "@prismicio/client";
 import { createClient } from "../../prismicio";
 import Header from "../Components/Header";
-import Card1 from "../Components/card1";
-import Card2 from "../Components/card2";
 import Footer from "../Components/footer";
 import Image from "next/image";
-import "./page.css"
+import "./home.css";
+import Pages from "../Components/pageslinks";
 
 export default async function Home() {
  
@@ -13,15 +12,16 @@ export default async function Home() {
   const noticia = await prismic.getByUID("noticia", "noticiaia")
 
 
-  const content = asHTML(noticia.data.content)
-  const titulo = asHTML(noticia.data.titulo)
-  const subtitulo = asHTML(noticia.data.subtitulo)
-  const imagem = noticia.data.imagem
+  const content = noticia.data.content ? asHTML(noticia.data.content) : "";
+  const titulo = noticia.data.titulo ? asHTML(noticia.data.titulo) : "";
+  const subtitulo = noticia.data.subtitulo ? asHTML(noticia.data.subtitulo) : "";
+  const imagem = noticia.data.imagem || {};
 
  
   return (
     <main>
       <Header/>
+      <Pages />
       <div className="home-content">
         <h1 dangerouslySetInnerHTML={{__html: titulo}}/>
         <div className="main-news">
@@ -37,10 +37,7 @@ export default async function Home() {
               height={imagem.dimensions.height}
             />
           )}
-        </div>
-        
-        <Card1 />
-        <Card2 />
+        </div> 
       </div>
       <Footer/>
     </main>
