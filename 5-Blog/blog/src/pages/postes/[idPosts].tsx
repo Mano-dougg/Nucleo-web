@@ -23,8 +23,8 @@ const idPosts: React.FC<IdpostsProps> = ({ post, recomendados, computer, frutas 
          <NavBar
           tag1={`/blogPostsTags/${computer?.results[0].tags[0]}`}
           tag2={`/blogPostsTags/${frutas?.results[0].tags[0]}`}
-          tag3={""}
-          linkBtn={""}
+          tag3={"/aboutMe/AboutMe"}
+          linkBtn={"/aboutMe/AboutMe"}
         ></NavBar>
       <Header
         TituloPrincipal={post.data.titulo[0].text}
@@ -81,7 +81,6 @@ export async function getStaticProps(context: { params: { idPosts: any } }) {
   const computer = await client.getByTag("computer");
 
   const frutas = await client.getByTag("fruta");
-  console.log(post.tags);
 
   return {
     props: { post, recomendados, computer, frutas },

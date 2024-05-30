@@ -24,7 +24,7 @@ const NavBar:React.FC<LinksDaNav> = ({linkBtn, tag1, tag2, tag3}) => {
           <a href={tag2}>Frutas</a>
           <a href={tag3}>Tutorials</a>
         </NavLinks>
-        <Buttons PlaceHolder={"Me conheça"} classes={"subscribe"} link={linkBtn} />
+        <Buttons PlaceHolder={"About me"} classes={"subscribe"} link={linkBtn} />
       </NavActions>
     </NavContainer>
   );

@@ -29,8 +29,8 @@ export default function postTagElement({
         <NavBar
           tag1={`${computer?.results[0].tags[0]}`}
           tag2={`${frutas?.results[0].tags[0]}`}
-          tag3={""}
-          linkBtn={""}
+          tag3={"/aboutMe/AboutMe"}
+          linkBtn={"/aboutMe/AboutMe"}
         ></NavBar>
         <Header
           TituloPrincipal={page?.results[0].tags[0]}

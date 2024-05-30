@@ -50,7 +50,7 @@ export default function Home({
           tag1={`/blogPostsTags/${computer.results[0].tags}`}
           tag2={`/blogPostsTags/${frutas.results[0].tags}`}
           tag3={""}
-          linkBtn={""}
+          linkBtn={"/aboutMe/AboutMe"}
         ></NavBar>
         <Header
           TituloPrincipal={page.data.title[0].text}
