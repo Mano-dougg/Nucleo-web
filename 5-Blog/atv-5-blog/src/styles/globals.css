@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      #588E22 10%,
+      #588E22 13rem,
+      #E2DFDF 13rem,
+      #E2DFDF 90%,
+      rgb(var(--background-end-rgb))
+  );
+  @media (min-width: 768px) {
+    background: linear-gradient(
+        to bottom,
+        #588E22 10%,
+        #588E22 30rem,
+        #E2DFDF 30rem,
+        #E2DFDF 90%,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
