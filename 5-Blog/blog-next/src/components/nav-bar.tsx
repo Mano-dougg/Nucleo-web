@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import styled from 'styled-components';
+import { Card1 } from './Card1';
 
 interface NavBarProps {}
 
@@ -59,7 +60,7 @@ export function NavBar(props: NavBarProps) {
                 <NavItem><NavLink href="#link3">Filmes</NavLink></NavItem>
                 <NavItem><NavLink href="#link4">Series</NavLink></NavItem>
             </NavList>
-            
+            <Card1/>
         </NavBarContainer>
     );
 }
