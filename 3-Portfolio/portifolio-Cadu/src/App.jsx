@@ -68,7 +68,7 @@ export const App = () => {
 
             <section className="divimg">
               <div>
-                <img className="img" src={walpper} width="300px"/>
+                <img className="img" src={walpper} width="450px"/>
               </div>
 
               <div>
@@ -81,7 +81,7 @@ export const App = () => {
 
             <section className='divimgs'>
               <div>
-                <img className="img" src={walpper} width="300px"/>
+                <img className="img" src={walpper} width="450px"/>
               </div>
 
               <div>

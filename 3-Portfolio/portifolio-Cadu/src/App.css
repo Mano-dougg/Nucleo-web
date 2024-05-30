@@ -74,18 +74,18 @@ h2{
 
 .say {
     display: flex;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 40px;
+    margin-top: 50px;
     align-items: center;
     background-color: #F8F9FA;
-    width: 60%;
+    width: 80%;
     border-radius:5px;
 
 }
 
 .say p {
     margin-left: 10px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
     
 .LinhaSepara {
