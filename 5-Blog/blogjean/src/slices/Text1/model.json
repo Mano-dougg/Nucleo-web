@@ -1,0 +1,27 @@
+{
+  "id": "text1",
+  "type": "SharedSlice",
+  "name": "Text1",
+  "description": "Text1",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "img_aitoday": {
+          "type": "Image",
+          "config": {
+            "label": "Img_AiToDay",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
