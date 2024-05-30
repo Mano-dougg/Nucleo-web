@@ -1,6 +1,5 @@
 import './About.css';
-import Avatar from '../assets/avatar.svg';
-import CheckIcon from '../assets/check-circle-solid-blue.svg';
+import CheckIcon from '../assets/check-circle-solid-light.svg';
 
 function About() {
   return (

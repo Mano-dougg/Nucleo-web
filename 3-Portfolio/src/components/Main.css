@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5.125rem;
   margin-left: auto;
   margin-right: auto;
   width: 66vw;
 }
 
-/* @media (max-width: 375px) { */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .main-content {
     width: 82.66vw;
   }

@@ -1,14 +1,23 @@
+// import React, { useState } from 'react';
 import './HamburgerMenu.css';
-import HamburgerMenuLight from '../assets/hamburger-light.svg';
-// import HamburgerMenuDark from '../assets/hamburger-dark.svg';
+import HamburgerMenuIcon from '../assets/hamburger-menu-light.svg';
+import CloseMenu from '../assets/close-menu-light.svg';
 
-function HamburgerMenu() {
+const HamburgerMenu = ({ isOpen, openMenu }) => {
+  
+  const displayHamburguerMenu = () => {
+    openMenu(!isOpen);
+  }
+
   return (
-    <img className="hamburger-menu"
-      src={HamburgerMenuLight}
-      alt="menu hamburguer"
-    />
+    <div className={`hamburger-menu ${isOpen ? "toggled" : ""}`}>
+      <img className="hamburger-menu-icon"
+        src={ !isOpen ? HamburgerMenuIcon : CloseMenu }
+        alt="menu hamburguer"
+        onClick={ displayHamburguerMenu }
+      />
+    </div>
   );
-}
+};
 
 export default HamburgerMenu;

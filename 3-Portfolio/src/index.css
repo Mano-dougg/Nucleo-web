@@ -1,6 +1,7 @@
 :root {
   --primary-background-color: 255, 255, 255;
   --secondary-background-color: 248, 249, 250;
+  --header-background-color: 255, 255, 255;
   --image-background-color: 229, 229, 229;
   --highlight: 0, 101, 255;
   --font-color: 32, 32, 32;
@@ -35,8 +36,9 @@ code {
 
 
 [data-theme="dark"] { 
-  --primary-background-color: 34, 34, 34  ;
+  --primary-background-color: 34, 34, 34;
   --secondary-background-color: 60, 59, 58;
+  --header-background-color: 60, 59, 58;
   --image-background-color: 60, 59, 58;
   --highlight: 250, 244, 230;
   --font-color: 250, 244, 230;
