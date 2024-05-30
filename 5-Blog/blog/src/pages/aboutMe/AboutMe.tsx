@@ -76,11 +76,8 @@ const AboutMe = ({ computer, frutas }: { computer: any; frutas: any }) => {
                 width={100}
                 height={100}
               />
-
               <Image src={"/sass.svg"} alt={""} width={100} height={100} />
-
               <Image src={"/bootstrap.svg"} alt={""} width={100} height={100} />
-
               <Image src={"/react.svg"} alt={""} width={100} height={100} />
             </div>
           </AboutLinks>
