@@ -13,13 +13,16 @@ async function ParteSuperior(){
     const fot1 = autor.data.foto1.url
     const fot2 = autor.data.foto2.url
     const fot3 = autor.data.foto3.url
+    const image = typeof fot1 === 'string' ? fot1 : '';
     return(
         <>
         <div className={styles10.div}> 
         <div><PrismicRichText field={titulo}/> </div> 
         <figure>
             <img src={imageUrl}/>
+            <figcaption><PrismicRichText field={resumo}/></figcaption>
         </figure>
+        <h2>Top 3 fotos da galeria</h2>
         </div>
         </>
     )

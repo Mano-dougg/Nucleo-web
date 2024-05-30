@@ -9,7 +9,7 @@
   @media(min-width:200px) and (max-width:768px){
     body{
       width: 375px;
-      height: 850px;
+      height: 900px;
       top: 2015px;
       left: -720px;
       gap: 0px;
@@ -38,7 +38,7 @@
   @media(min-width:1270px){
     body{
       width: 100%;
-      height: 750px;
+      height: 775px;
       top: -513px;
       left: -720px;
       gap: 0px;

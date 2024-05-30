@@ -1,4 +1,5 @@
 import Header from '@/componentes/Header/head';
+import Imagens from '@/componentes/ParteInferior3/inferior';
 import ParteSuperior from '@/componentes/ParteSuperior3/partesuperior';
 import Pe from '@/componentes/Rodapé/pé';
 import { Metadata } from 'next';
@@ -18,6 +19,7 @@ function Autor(){
         <Header/>
         <ParteSuperior/>
         <Pe/>
+        <Imagens/>
         </>
     )
 }
