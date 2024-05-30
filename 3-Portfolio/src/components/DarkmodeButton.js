@@ -10,6 +10,9 @@ const DarkmodeButton = () => {
 
   useEffect(() => {
     document.body.setAttribute('data-theme', isDark ? 'dark' : '');
+
+    const postButtons = document.querySelector(".post-button");
+    isDark ? postButtons.textContent = "Button Primary Dark" : postButtons.textContent = "Button Primary Light" ; 
   }, [isDark]);
 
   return (

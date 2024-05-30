@@ -7,12 +7,12 @@
   left: 5.44rem;
 }
 
-.hamburger-menu-icon {
-  /* content:url("../assets/hamburger-menu-dark.svg"); */
+[data-theme="dark"] .hamburger-menu-icon {
+  content: url("../assets/hamburger-menu-dark.svg");
 }
 
-.hamburger-menu-icon.toggled {
-  content:url("../assets/close-menu-dark.svg");
+[data-theme="dark"] .hamburger-menu.toggled .hamburger-menu-icon {
+  content: url("../assets/close-menu-dark.svg");
 }
 
 @media (max-width: 1024px) {

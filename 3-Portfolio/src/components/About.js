@@ -6,7 +6,7 @@ function About() {
     <section className="about">
       <div className="avatar"></div>
 
-      <h1 className="about-title">Hello.<br />My name is Kevin.</h1>
+      <h1 className="about-title">Hello.<br />My name is Alexandre.</h1>
 
       <div className="about-line"></div>
 
@@ -22,7 +22,7 @@ function About() {
         </p>
       </div>
 
-      <div className="card-work">
+      <div id="about-card-work" className="card-work">
         <img className="checkIcon" src={CheckIcon} alt="ícone de validação" />
         <p className="card-work-text">Available for work and general design goodness – <span className="highlight-text">say hello</span></p>
       </div>

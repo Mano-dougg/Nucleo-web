@@ -115,3 +115,15 @@
   padding-left: 32.95vw;
   padding-right: 32.95vw;
 }
+
+[data-theme="dark"] .twitter-icon {
+  content: url("../assets/twitter-icon-dark.svg");
+}
+
+[data-theme="dark"] .figma-icon {
+  content: url("../assets/figma-icon-dark.svg");
+}
+
+[data-theme="dark"] .instagram-icon {
+  content: url("../assets/instagram-icon-dark.svg");
+}

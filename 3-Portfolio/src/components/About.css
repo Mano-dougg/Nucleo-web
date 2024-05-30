@@ -66,6 +66,7 @@
   width: 1rem;
 }
 
+
 .card-work-text {
   width: auto;
   font-size: 14px;
@@ -97,4 +98,8 @@
     font-size: 2rem;
     line-height: 2rem;
   }
+}
+
+[data-theme="dark"] .highlight-text {
+  text-decoration: underline;
 }

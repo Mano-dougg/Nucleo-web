@@ -24,7 +24,7 @@ function Header() {
       </div>
 
       <div className="social-darkmode">
-        <nav className="nav-socialmedia">
+        <nav id="socialmedia-bar" className="nav-socialmedia">
           <ul className="socialmedia">
             <li className="socialmedia-item">
               <a href="./"><img className="twitter-icon" src={Twitter} alt="Twitter" /></a>
@@ -51,7 +51,7 @@ function Header() {
           </ul>
         </nav>
 
-        <nav className="nav-socialmedia">
+        <nav id="socialmedia-hamburguer" className="nav-socialmedia">
           <ul className="socialmedia">
             <li className="socialmedia-item">
               <a href="./"><img className="twitter-icon" src={Twitter} alt="Twitter" /></a>
