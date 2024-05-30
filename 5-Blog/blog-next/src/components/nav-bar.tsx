@@ -6,11 +6,13 @@ import { Card1 } from './Card1';
 interface NavBarProps {}
 
 const NavBarContainer = styled.div`
+
     background-color: var(--green);
     width: 100%;
     height: 400px;
     top: 65px;
     display: flex;
+    aling-itens:center;
     flex-direction: column;
 `;
 
