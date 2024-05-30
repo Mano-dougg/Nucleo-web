@@ -4,6 +4,8 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type _1DocumentDataSlicesSlice = PostagemSlice;
+
 /**
  * Content for Card documents
  */
@@ -40,6 +42,17 @@ interface _1DocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   cardimagem: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *Card*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: 1.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<_1DocumentDataSlicesSlice>;
 }
 
 /**
@@ -139,6 +152,91 @@ export type PageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = _1Document | PageDocument;
 
+/**
+ * Primary content in *Postagem → Default → Primary*
+ */
+export interface PostagemSliceDefaultPrimary {
+  /**
+   * articleinicio field in *Postagem → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.default.primary.articleinicio
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  articleinicio: prismic.RichTextField;
+
+  /**
+   * articleimagem2 field in *Postagem → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.default.primary.articleimagem2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  articleimagem2: prismic.ImageField<never>;
+
+  /**
+   * articlemeio field in *Postagem → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.default.primary.articlemeio
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  articlemeio: prismic.RichTextField;
+
+  /**
+   * articletitulo2 field in *Postagem → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.default.primary.articletitulo2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  articletitulo2: prismic.RichTextField;
+
+  /**
+   * articlefinal field in *Postagem → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.default.primary.articlefinal
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  articlefinal: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Postagem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PostagemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PostagemSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Postagem*
+ */
+type PostagemSliceVariation = PostagemSliceDefault;
+
+/**
+ * Postagem Shared Slice
+ *
+ * - **API ID**: `postagem`
+ * - **Description**: Postagem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PostagemSlice = prismic.SharedSlice<
+  "postagem",
+  PostagemSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -151,10 +249,15 @@ declare module "@prismicio/client" {
     export type {
       _1Document,
       _1DocumentData,
+      _1DocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      PostagemSlice,
+      PostagemSliceDefaultPrimary,
+      PostagemSliceVariation,
+      PostagemSliceDefault,
     };
   }
 }

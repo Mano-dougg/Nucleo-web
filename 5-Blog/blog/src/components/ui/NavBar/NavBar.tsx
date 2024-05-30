@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Buttons from "../Buttons/Buttons";
 import { NavActions, NavContainer, NavLinks } from "./navStyle";
 export { NavActions, NavContainer, NavLinks } from "./navStyle";
@@ -5,7 +6,7 @@ export { NavActions, NavContainer, NavLinks } from "./navStyle";
 const NavBar = () => {
   return (
     <NavContainer>
-      <h3>Personally</h3>
+      <Link className="GoHome" href={"/"}>Personally</Link>
       <NavActions>
         <input type="checkbox" id="chec" />
         <label htmlFor="chec">

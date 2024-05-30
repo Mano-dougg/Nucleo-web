@@ -15,7 +15,7 @@ export const NavContainer = styled.nav`
 
   box-shadow: 0 4px 70px 0 var(--nav-shadow);
 
-  h3 {
+  .GoHome {
     font-size: 1.8rem;
     font-weight: bold;
     font-family: "Lato", sans-serif;
@@ -28,7 +28,8 @@ export const NavActions = styled.div`
   align-items: center;
   gap: 100px;
 
-  input, img {
+  input,
+  img {
     display: none;
   }
 
@@ -56,7 +57,7 @@ export const NavLinks = styled.div`
   gap: 30px;
   transition: all 0.4s;
   background-color: var(--bg-primary);
-  padding:0 30px;
+  padding: 0 30px;
 
   a {
     font-size: 1.2rem;
@@ -64,11 +65,11 @@ export const NavLinks = styled.div`
     color: var(--primary-text-color);
   }
 
- a:hover{
-  background: var(--title-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
- }
+  a:hover {
+    background: var(--title-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   ${media.mobile} {
     height: 100%;
@@ -80,12 +81,12 @@ export const NavLinks = styled.div`
     top: 15%;
 
     font-size: 1.375rem;
-    
+
     z-index: 2;
     overflow-x: none;
 
-    a{
-      font-size:1.4rem;
+    a {
+      font-size: 1.4rem;
     }
   }
 `;
