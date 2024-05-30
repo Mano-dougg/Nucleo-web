@@ -4,6 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+<<<<<<< HEAD
 /**
  * Content for home documents
  */
@@ -91,6 +92,62 @@ interface HomeDocumentData {
  *
  * - **API ID**: `home`
  * - **Repeatable**: `false`
+=======
+type HomeDocumentDataSlicesSlice = Text1Slice;
+
+/**
+ * Content for Home documents
+ */
+interface HomeDocumentData {
+  /**
+   * Slice Zone field in *Home*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
+   * Meta Description field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Home document from Prismic
+ *
+ * - **API ID**: `home`
+ * - **Repeatable**: `true`
+>>>>>>> e0ba08a6cdbb6d748b1ceed9c96c39fee7748415
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
@@ -100,6 +157,51 @@ export type HomeDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomeDocument;
 
+<<<<<<< HEAD
+=======
+/**
+ * Primary content in *Text1 → Default → Primary*
+ */
+export interface Text1SliceDefaultPrimary {
+  /**
+   * Img_AiToDay field in *Text1 → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text1.default.primary.img_aitoday
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  img_aitoday: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Text1 Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type Text1SliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<Text1SliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Text1*
+ */
+type Text1SliceVariation = Text1SliceDefault;
+
+/**
+ * Text1 Shared Slice
+ *
+ * - **API ID**: `text1`
+ * - **Description**: Text1
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type Text1Slice = prismic.SharedSlice<"text1", Text1SliceVariation>;
+
+>>>>>>> e0ba08a6cdbb6d748b1ceed9c96c39fee7748415
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -109,6 +211,19 @@ declare module "@prismicio/client" {
   }
 
   namespace Content {
+<<<<<<< HEAD
     export type { HomeDocument, HomeDocumentData, AllDocumentTypes };
+=======
+    export type {
+      HomeDocument,
+      HomeDocumentData,
+      HomeDocumentDataSlicesSlice,
+      AllDocumentTypes,
+      Text1Slice,
+      Text1SliceDefaultPrimary,
+      Text1SliceVariation,
+      Text1SliceDefault,
+    };
+>>>>>>> e0ba08a6cdbb6d748b1ceed9c96c39fee7748415
   }
 }

@@ -2,4 +2,10 @@
 
 import dynamic from "next/dynamic";
 
+<<<<<<< HEAD
 export const components = {};
+=======
+export const components = {
+  text1: dynamic(() => import("./Text1")),
+};
+>>>>>>> e0ba08a6cdbb6d748b1ceed9c96c39fee7748415
