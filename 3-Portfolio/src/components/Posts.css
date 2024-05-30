@@ -53,6 +53,18 @@
   border-radius: 10px;
 }
 
+#image1 {
+  background-image: url("../assets/ror2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#image2 {
+  background-image: url("../assets/nms.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .post-info {
   flex-grow: 1;
   width: auto;

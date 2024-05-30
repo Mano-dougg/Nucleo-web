@@ -11,7 +11,7 @@ function Posts() {
         <p className="posts-section-paragraph">Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. Line of copy in here to decribe this section. </p>
 
         <section className="post-item">
-          <div className="post-image"></div>
+          <div id="image1" className="post-image"></div>
           <div className="post-info">
             <h3 className="post-title">Title</h3>
             <p className="post-paragraph">Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>
@@ -20,7 +20,7 @@ function Posts() {
         </section>
 
         <section className="post-item">
-          <div className="post-image"></div>
+          <div id="image2" className="post-image"></div>
           <div className="post-info">
             <h3 className="post-title">Title</h3>
             <p className="post-paragraph">Leading, implementing and evolving engaging customer experiences and UI foundations for every touch-point across various platforms.</p>

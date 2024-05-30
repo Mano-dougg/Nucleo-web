@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className="header-bar">
       <div className="logo-sections">
-        <h1 className="logo">Kevin Bennett</h1>
+        <h1 className="logo">Alexandre Coelho</h1>
 
         <nav className="nav-sections">
           <ul className="sections">
