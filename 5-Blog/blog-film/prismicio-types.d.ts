@@ -105,6 +105,74 @@ export type ConfigDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Footer → Navigation*
+ */
+export interface FooterDocumentDataNavigationItem {
+  /**
+   * Link field in *Footer → Navigation*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.navigation[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Label field in *Footer → Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.navigation[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * bckgrnd field in *Footer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.bckgrnd
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  bckgrnd: prismic.ImageField<never>;
+
+  /**
+   * Navigation field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.navigation[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  navigation: prismic.GroupField<Simplify<FooterDocumentDataNavigationItem>>;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice = RichTextSlice;
 
 /**
@@ -177,7 +245,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = ConfigDocument | PageDocument;
+export type AllDocumentTypes = ConfigDocument | FooterDocument | PageDocument;
 
 /**
  * Primary content in *RichText → Primary*
@@ -237,6 +305,9 @@ declare module "@prismicio/client" {
       ConfigDocument,
       ConfigDocumentData,
       ConfigDocumentDataNavigationItem,
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataNavigationItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
