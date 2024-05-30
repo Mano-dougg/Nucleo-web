@@ -16,7 +16,7 @@
       "title": {
         "type": "StructuredText",
         "config": {
-          "label": "oi",
+          "label": "Title",
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "heading1"

@@ -2,11 +2,13 @@ import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
 import sm from "../slicemachine.config.json";
 
+
 /**
  * The project's Prismic repository name.
  */
 export const repositoryName =
   process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || sm.repositoryName;
+
 
 /**
  * The project's Prismic Route Resolvers. This list determines a Prismic document's URL.
@@ -38,7 +40,11 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
     ...config,
   });
 
+
   prismicNext.enableAutoPreviews({ client });
+
 
   return client;
 };
+
+

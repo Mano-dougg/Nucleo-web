@@ -14,13 +14,11 @@
         "content": {
           "type": "StructuredText",
           "config": {
-            "label": "Oi seres",
+            "label": "Content",
             "placeholder": "Lorem ipsum...",
             "allowTargetBlank": true,
-            "multi": "heading2",
-            "labels": [
-              "codespan"
-            ]
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,embed,list-item",
+            "labels": ["codespan"]
           }
         }
       },
