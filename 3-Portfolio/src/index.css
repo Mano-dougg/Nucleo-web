@@ -2,10 +2,9 @@
   --primary-background-color: 255, 255, 255;
   --secondary-background-color: 248, 249, 250;
   --image-background-color: 229, 229, 229;
-  --black: 32, 32, 32;
-  --blue: 0, 101, 255;
+  --highlight: 0, 101, 255;
+  --font-color: 32, 32, 32;
   --box-shadow-header: 0, 0, 0, 0.15;
-  --font-color: 0, 101, 255;
 }
 
 @font-face {
@@ -19,13 +18,14 @@
 
 * {
   font-family: "Be Vietnam";
-  color: rgb(var(--black));
+  color: rgb(var(--font-color));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
+  background-color: rgb(var(--primary-background-color));
 }
 
 code {
@@ -33,13 +33,15 @@ code {
     monospace;
 }
 
-/*
-[data-theme="dark"] {
-  --primary-background-color: 60, 59, 58;
-  --secondary-background-color: 34, 34, 34;
-  --image-background-color: 250, 244, 230;
-  
-  --blue: 250, 244, 230;
-  --font-color: 0, 101, 255;
+
+[data-theme="dark"] { 
+  --primary-background-color: 34, 34, 34  ;
+  --secondary-background-color: 60, 59, 58;
+  --image-background-color: 60, 59, 58;
+  --highlight: 250, 244, 230;
+  --font-color: 250, 244, 230;
 }
-*/
+
+.highlight-text {
+  text-decoration: dashed;
+}

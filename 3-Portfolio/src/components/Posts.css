@@ -13,13 +13,13 @@
 .posts-section-line {
   height: 1px;
   width: 100%;
-  background-color: rgb(var(--blue));
+  background-color: rgb(var(--highlight));
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
 .posts-section-title {
-  color: rgb(var(--blue));
+  color: rgb(var(--highlight));
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
@@ -79,10 +79,10 @@
   width: 12rem;
   height: 3.125rem;
   border-radius: 44.5px;
-  border: 1px solid rgb(var(--blue));
+  border: 1px solid rgb(var(--highlight));
   background-color: rgb(var(--primary-background-color));
   padding: 16px 30px 16px 30px ;
-  color: rgb(var(--blue));
+  color: rgb(var(--highlight));
   font-size: 12px;
   font-weight: 700;
   line-height: 17.53px;
@@ -120,7 +120,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .post-image {
     min-height: 11.25rem;
   }

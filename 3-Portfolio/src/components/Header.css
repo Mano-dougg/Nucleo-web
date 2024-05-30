@@ -15,6 +15,7 @@
   height: 5.125rem;
   padding-left: 5.44rem;
   padding-right: 5.44rem;
+  background-color: rgb(var(--secondary-background-color));
   box-shadow: 0 1.563rem 4.063rem rgba(var(--box-shadow-header));
 }
 
@@ -41,7 +42,7 @@
 }
 
 .section-item a {
-  color: rgb(var(--blue));
+  color: rgb(var(--highlight));
 }
 
 .socialmedia {

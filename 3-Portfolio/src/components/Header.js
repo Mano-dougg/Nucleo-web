@@ -1,5 +1,5 @@
 import './Header.css';
-import ToggleButton from './ToggleButton';
+import DarkmodeButton from './DarkmodeButton';
 import HamburgerMenu from './HamburgerMenu';
 import Twitter from '../assets/twitter-icon.svg';
 import Figma from '../assets/figma-icon.svg';
@@ -7,15 +7,15 @@ import Instagram from '../assets/instagram-icon.svg';
 
 function Header() {
   return (
-    <header className="header-bar" data-theme="dark">
+    <header className="header-bar">
       <div className="logo-sections">
         <h1 className="logo">Kevin Bennett</h1>
 
         <nav className="nav-sections">
           <ul className="sections">
-            <li className="section-item"><a href="">Section two</a></li>
-            <li className="section-item"><a href="">Section three</a></li>
-            <li className="section-item"><a href="">Section four</a></li>
+            <li className="section-item"><a href="./">Section two</a></li>
+            <li className="section-item"><a href="./">Section three</a></li>
+            <li className="section-item"><a href="./">Section four</a></li>
           </ul>
         </nav>
       </div>
@@ -24,18 +24,18 @@ function Header() {
         <nav className="nav-socialmedia">
           <ul className="socialmedia">
             <li className="socialmedia-item">
-              <a href="#"><img src={Twitter} alt="Twitter" /></a>
+              <a href="./"><img src={Twitter} alt="Twitter" /></a>
             </li>
             <li className="socialmedia-item">
-              <a href="#"><img src={Figma} alt="Figma" /></a>
+              <a href="./"><img src={Figma} alt="Figma" /></a>
             </li>
             <li className="socialmedia-item">
-              <a href="#"><img src={Instagram} alt="Instagram" /></a>
+              <a href="./"><img src={Instagram} alt="Instagram" /></a>
             </li>
           </ul>
         </nav>
         
-        <ToggleButton />
+        <DarkmodeButton />
       </div>
 
       <HamburgerMenu />
