@@ -1,0 +1,39 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background-color: #1F3519;
+    align-items: center;
+}
+
+nav h1{
+    color:#73FEB3;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+span{
+    color:white;
+    font-weight: 100;
+}
+
+.navBar{
+    display: flex;
+}
+
+.searchBar{
+    padding: 10px 8px 10px 8px;
+    border-radius: 15px;
+
+}
+
+.navImg{
+    margin-left: -30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+   
+    
+}
