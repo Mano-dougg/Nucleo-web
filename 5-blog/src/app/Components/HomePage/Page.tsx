@@ -1,11 +1,20 @@
+"use client"
 import astrounaut from './imgHome/Astronaut.png'
 import arrowLeft from '../Post/ImgPost/ArrowLeft.png'
 import arrowRight from '../Post/ImgPost/ArrowRight.png'
 import Image from 'next/image'
 import styles from './Page.module.css'
 import Post from '../Post/Page'
+import { SwiperSlide } from 'swiper/react'
+import Slider from '../CaroulselSwiper/Slider'
 
 export default function HomePage(){
+
+    const settings = {
+        slidesPerView: 3,
+        spaceBetween: 68.7, 
+    };
+
     return(
         <>
         <section className={styles.homePage}>
@@ -78,6 +87,40 @@ export default function HomePage(){
                     height={60}
                     alt="Image of an arrow"
                     />
+            </article>
+            <article style={{width: '1043px', display:'flex', justifyContent: 'center' }}>
+                <Slider settings={settings}> 
+                    <SwiperSlide>
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide >
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide >
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
+                    </SwiperSlide>
+                </Slider>
             </article>
         </section>
         </>
