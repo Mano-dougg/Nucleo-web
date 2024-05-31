@@ -15,7 +15,7 @@ export default async function PostPage() {
             <article>
                <h1> {post.data.title_post} </h1>
             </article>
-            <article className={styles.Poosss}>
+            <article className={styles.presentationContent}>
                <div>
                   <h2> {post.data.title_presentation_content} </h2>
                   <PrismicRichText field={post.data.text_presentation_content} />
