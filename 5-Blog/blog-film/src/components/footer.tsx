@@ -14,7 +14,7 @@ export default async function Footer() {
 
 
     return (
-        <footer className="font-inter w-full flex flex-col gap-6 items-center justify-between h-16  mt-10 mb-0">
+        <footer className="font-inter w-full flex flex-col gap-6 items-end justify-between h-16  mt-10 mb-0">
             
             <nav className="font-inter w-full flex flex-col md:flex-row items-center justify-center h-16 px-6 mt-10">
                 <h3 className="font-inter font-semibold text-white">Discover my social networks!</h3>
@@ -31,7 +31,7 @@ export default async function Footer() {
                 </div>
             </nav>
             <div className="w-full flex flex-col gap-6 md:flex-row items-center justify-center h-16 px-28 -mt-8">
-                <h4 className="font-inter font-regular text-white">Copyright © 2024 | </h4>
+                <h4 className="font-inter font-regular text-white text-sm">Copyright © 2024 | </h4>
                 <Link href='/' className="flex h-full w-auto items-center">
                     <div className="flex h-full items-center">
                         <Image src={WatchRian} alt="Logo" className="h-full w-auto" />

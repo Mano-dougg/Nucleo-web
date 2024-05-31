@@ -5,6 +5,104 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *CardSlicer → Card*
+ */
+export interface CardslicerDocumentDataCardItem {
+  /**
+   * Image field in *CardSlicer → Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cardslicer.card[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *CardSlicer → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cardslicer.card[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *CardSlicer → Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cardslicer.card[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * CardButton field in *CardSlicer → Card*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cardslicer.card[].cardbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cardbutton: prismic.LinkField;
+
+  /**
+   * Label field in *CardSlicer → Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cardslicer.card[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * highlight field in *CardSlicer → Card*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: cardslicer.card[].highlight
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  highlight: prismic.BooleanField;
+}
+
+/**
+ * Content for CardSlicer documents
+ */
+interface CardslicerDocumentData {
+  /**
+   * Card field in *CardSlicer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cardslicer.card[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  card: prismic.GroupField<Simplify<CardslicerDocumentDataCardItem>>;
+}
+
+/**
+ * CardSlicer document from Prismic
+ *
+ * - **API ID**: `cardslicer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CardslicerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CardslicerDocumentData>,
+    "cardslicer",
+    Lang
+  >;
+
+/**
  * Item in *Settings → Navigation*
  */
 export interface ConfigDocumentDataNavigationItem {
@@ -173,7 +271,7 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice = CardSlicerSlice | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -245,7 +343,11 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = ConfigDocument | FooterDocument | PageDocument;
+export type AllDocumentTypes =
+  | CardslicerDocument
+  | ConfigDocument
+  | FooterDocument
+  | PageDocument;
 
 /**
  * Primary content in *RichText → Primary*
@@ -302,6 +404,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      CardslicerDocument,
+      CardslicerDocumentData,
+      CardslicerDocumentDataCardItem,
       ConfigDocument,
       ConfigDocumentData,
       ConfigDocumentDataNavigationItem,
