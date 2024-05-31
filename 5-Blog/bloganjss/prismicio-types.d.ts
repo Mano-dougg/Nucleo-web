@@ -78,6 +78,17 @@ interface BlogPostDocumentData {
   subtitulo: prismic.RichTextField;
 
   /**
+   * sinopse field in *Blog Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.sinopse
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sinopse: prismic.RichTextField;
+
+  /**
    * Banner field in *Blog Post*
    *
    * - **Field Type**: Image

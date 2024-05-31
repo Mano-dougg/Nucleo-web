@@ -15,15 +15,15 @@ export const repositoryName =
  */
 // TODO: Update the routes array to match your project's route structure.
 const routes: prismic.ClientConfig["routes"] = [
-  // Examples:
-  // {
-  // 	type: "homepage",
-  // 	path: "/",
-  // },
-  // {
-  // 	type: "page",
-  // 	path: "/:uid",
-  // },
+  {
+    type: "blog_post", // Tipo do documento no Prismic
+    uid: "homepage", // Identificador único para a rota da homepage
+    path: "/", // Caminho da URL para a homepage
+  },
+  {
+    type: "blog_post", // Tipo do documento para postagens do blog
+    path: "/:uid", // Caminho dinâmico da URL para cada postagem, baseado em seu UID
+  },
 ];
 
 /**
@@ -50,3 +50,6 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 
   return client;
 };
+
+
+

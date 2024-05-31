@@ -1,6 +1,7 @@
+
+import { PostItem } from '../PostItem/PostItem';
 import './postsrecentes.css'
 import { createClient } from "@/prismicio";
-import { PostItem } from "@/Components/PostsRecentes/PostItem/PostItem";
 
 async function PostsRecentes() {
 

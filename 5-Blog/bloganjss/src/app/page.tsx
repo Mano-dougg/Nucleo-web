@@ -1,9 +1,9 @@
 import { createClient } from "@/prismicio";
-import Header from "@/Components/Header/Header";
-import { PostItem } from "@/Components/PostsRecentes/PostItem/PostItem";
-import Footer from "@/Components/Footer/Footer";
-import { Postdiario } from "@/Components/Postdiario/Postdiario";
-import PostsRecentes from "@/Components/PostsRecentes/PostsRecentes";
+import Header from "./Header/Header";
+import PostsRecentes from "./PostsRecentes/PostsRecentes";
+import Footer from "./Footer/Footer";
+
+
 
 export default async function Component() {
 	const prismicClient = createClient();
@@ -14,11 +14,11 @@ export default async function Component() {
 
   return (
 		<>
-      <Header />
+			<Header />
 
-			<PostsRecentes />
+				<PostsRecentes />
 
-      <Footer />
+			<Footer />
 
 		</>
 	);

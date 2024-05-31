@@ -1,8 +1,8 @@
 import Link from "next/link";
 import "./postitem.css";
-import { AllDocumentTypes } from "../../../../prismicio-types";
-import { asDate, asImagePixelDensitySrcSet, asImageSrc, asImageWidthSrcSet, asLink, asLinkAttrs, asText } from "@prismicio/client";
 import dayjs from "dayjs";
+import { asImageSrc, asText } from "@prismicio/client";
+import { AllDocumentTypes } from "../../../prismicio-types";
 
 
 interface PostItemProps {
@@ -10,6 +10,7 @@ interface PostItemProps {
 }
 
 export function PostItem({ post }: PostItemProps) {
+
 	return (
 		<section className="cardpost">
 			<Link className="linkedpost" href={post.uid}>
@@ -31,9 +32,7 @@ export function PostItem({ post }: PostItemProps) {
 
 				<p className="whopost">
 
-					<Link className="autor" href="#">
-						{post.data.autor}
-					</Link>
+					<Link className="autor" href="#">{post.data.autor}</Link>
 
 					<time dateTime="2023-10-10" className="data">
 						{dayjs(post.first_publication_date).format("DD/MM/YYYY")}
@@ -45,7 +44,6 @@ export function PostItem({ post }: PostItemProps) {
 			<p className="foto">
 				{<img src={asImageSrc(post.data.banner)} alt="Banner" />}
 			</p>
-
 
 		</section>
 	);

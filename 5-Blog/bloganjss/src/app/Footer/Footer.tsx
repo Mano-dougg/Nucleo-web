@@ -12,7 +12,7 @@ function Footer() {
             </div>
 
             <div className='copyright'>
-                <p>Copyright © 2024 | BOOKLOV </p>
+                <p>Copyright © 2024 | BOOKLOVERS </p>
             </div>
 
         </section>
