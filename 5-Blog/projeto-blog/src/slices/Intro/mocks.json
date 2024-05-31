@@ -1,0 +1,67 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Sua dose diária de informação",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Veniam irure nulla non fugiat laboris laborum irure amet ut laborum. Sit voluptate fugiat consequat proident et dolor sint non mollit mollit Lorem cupidatat adipisicing. Nulla id enim laboris sunt pariatur do occaecat adipisicing ad laborum ullamco sint."
+						}
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Stems"
+						}
+					}
+				]
+			},
+			"image": {
+				"url": "https://images.unsplash.com/photo-1582789760972-c8916cebe649?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxN3x8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE3MDIwMjg0fDA&ixlib=rb-4.0.3&q=85",
+				"alt": "orange fruit in water with water",
+				"origin": {
+					"id": "uYM_PQJ8VvY",
+					"url": "https://images.unsplash.com/photo-1582789760972-c8916cebe649?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxN3x8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzE3MDIwMjg0fDA&ixlib=rb-4.0.3&q=85",
+					"width": 4380,
+					"height": 2901
+				},
+				"width": 4380,
+				"height": 2901,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = IntroSlice;
 
 /**
  * Content for Homepage documents
@@ -82,6 +82,78 @@ export type HomepageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomepageDocument;
 
+/**
+ * Primary content in *Intro → Default → Primary*
+ */
+export interface IntroSliceDefaultPrimary {
+  /**
+   * Heading field in *Intro → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Title field in *Intro → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Body field in *Intro → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Image field in *Intro → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: intro.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Intro Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IntroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Intro*
+ */
+type IntroSliceVariation = IntroSliceDefault;
+
+/**
+ * Intro Shared Slice
+ *
+ * - **API ID**: `intro`
+ * - **Description**: Intro
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroSlice = prismic.SharedSlice<"intro", IntroSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -96,6 +168,10 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      IntroSlice,
+      IntroSliceDefaultPrimary,
+      IntroSliceVariation,
+      IntroSliceDefault,
     };
   }
 }
