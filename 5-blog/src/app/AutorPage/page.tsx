@@ -92,8 +92,8 @@ export default function AutorPage() {
                     height={60}
                     alt="Image of an arrow"
                     />
-            <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[25, 20]} />
-            <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding={[25, 20]} />
+            <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding= 'small' />
+            <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding= 'small' />
                 <Image
                     src={arrowRight}
                     width={30}
