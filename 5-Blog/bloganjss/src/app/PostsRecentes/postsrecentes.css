@@ -25,4 +25,8 @@
     .container{
         width: 100%;
     }  
+
+    .postagens h1{
+        font-size: 28px;
+    }
 }

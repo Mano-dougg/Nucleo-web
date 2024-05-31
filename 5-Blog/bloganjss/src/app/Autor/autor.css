@@ -59,3 +59,38 @@ to {
     transform: scale(1); 
 }
 }
+
+@media (max-width:730px){
+    .secao{
+        flex-direction: column;
+    }
+
+    .direito img{
+        width: 300px;
+        border-radius: 50%;
+    }
+
+    .esquerdo {
+        width: 80%;
+    }
+
+    .esquerdo h1{
+        text-align: center;
+        font-size: 28px;
+    }
+    
+    .esquerdo h2{
+        text-align: center;
+        font-size: 32px;
+    }
+    
+    .esquerdo h3{
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    .esquerdo p{
+        font-size: 14px;
+    }
+
+}
