@@ -1,23 +1,17 @@
+import Link from 'next/link'
 import './header.css'
 
+
 function Header() {
+
     return (
         <header className="headerblog">
+           
 
             <section className='blogname'>
-                <h1><span>Book</span>Lovers</h1>
-            </section>
-
-            <section className='direito'>
-
-                <div className='pesquisa'>
-                    <p>Pesquisar</p>
-                </div>
-
-                <div className='darkmode'>
-                    
-                </div>
-
+                <Link href='..'> 
+                    <img src='https://media.giphy.com/media/3hoLIVAJYkz6T0Ichp/giphy.gif'></img>
+                </Link>
             </section>
 
         </header>

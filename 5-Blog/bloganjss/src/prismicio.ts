@@ -24,6 +24,7 @@ const routes: prismic.ClientConfig["routes"] = [
     type: "blog_post", // Tipo do documento para postagens do blog
     path: "/:uid", // Caminho dinâmico da URL para cada postagem, baseado em seu UID
   },
+
 ];
 
 /**
