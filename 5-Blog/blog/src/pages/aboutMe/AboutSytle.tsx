@@ -5,7 +5,7 @@ const media = {
   tablet: `@media (max-width:995px)`,
 };
 
-export const AboutMeContainer = styled.section`
+export  const AboutMeContainer = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
@@ -155,3 +155,5 @@ export const Buttons = styled.div`
     }
   }
 `;
+
+export default AboutMeContainer

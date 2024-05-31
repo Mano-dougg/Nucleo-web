@@ -68,3 +68,5 @@ export const PostText = styled.div`
     color: var(--primary-text-color);
   }
 `;
+
+export default Posts

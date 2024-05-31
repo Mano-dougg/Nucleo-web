@@ -84,11 +84,16 @@ export async function getStaticProps({ params }: { params: any }) {
 
 export async function getStaticPaths() {
   const client = createClient({});
-  const page = await client.getAllByTag("1");
+  const pages = await client.getAllByType("1");
 
-  const paths = page.map((page) => ({
-    params: { postTag: page.tags, resultados: page },
-  }));
+  const paths = pages.flatMap((page) =>
+    page.tags.map((tag) => ({
+      params: { postTag: tag },
+    }))
+  );
+
+  console.log(paths);
+
   return {
     paths,
     fallback: false,
