@@ -7,6 +7,8 @@ import { createClient } from "../../prismicio";
 import { asHTML } from "@prismicio/client";
 import Corpo from "@/componentes/corpo/corpo";
 import Pe from "@/componentes/Rodapé/pé";
+import Placar from "@/componentes/placar/placar";
+import Numeros from "@/componentes/numeros/numeros";
 
 
 export const metadata: Metadata = {
@@ -30,6 +32,8 @@ export default async function Home() {
     <img src={imageUrl} /> */}
     <Corpo/>
     <Pe/>
+    <Placar/>
+    <Numeros/>
     </>
   );
 }

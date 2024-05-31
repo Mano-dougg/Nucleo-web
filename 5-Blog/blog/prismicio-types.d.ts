@@ -158,6 +158,105 @@ interface BaseDocumentData {
   cotent: prismic.RichTextField;
 
   /**
+   * animeatual field in *Base*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.animeatual
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  animeatual: prismic.ImageField<never>;
+
+  /**
+   * animename field in *Base*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Nome do anime
+   * - **API ID Path**: base.animename
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  animename: prismic.RichTextField;
+
+  /**
+   * legenda field in *Base*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.legenda
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  legenda: prismic.RichTextField;
+
+  /**
+   * persfav field in *Base*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.persfav
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  persfav: prismic.ImageField<never>;
+
+  /**
+   * personame field in *Base*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Nome e anime do personagem
+   * - **API ID Path**: base.personame
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  personame: prismic.RichTextField;
+
+  /**
+   * animefav field in *Base*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.animefav
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  animefav: prismic.RichTextField;
+
+  /**
+   * qtdanimes field in *Base*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Insira um número de preferência
+   * - **API ID Path**: base.qtdanimes
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  qtdanimes: prismic.RichTextField;
+
+  /**
+   * qtdeps field in *Base*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Insira um número de preferência
+   * - **API ID Path**: base.qtdeps
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  qtdeps: prismic.RichTextField;
+
+  /**
+   * genfav field in *Base*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: base.genfav
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  genfav: prismic.RichTextField;
+
+  /**
    * insta field in *Base*
    *
    * - **Field Type**: Link
