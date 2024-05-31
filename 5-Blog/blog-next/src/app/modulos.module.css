@@ -1,0 +1,27 @@
+.card{
+    width: 302px;
+    height: 370px;
+    border: 1px solid;
+    border-radius: 30px;    
+    background-color: #EDFFF7;
+    padding: 34px 25px 25px 34px;
+    margin-left: 10px;
+}
+.card p{
+    font-size: 12px;
+    text-align: left;
+    color: #067546;
+}
+.card button{
+    border: none;
+    background-color: #EDFFF7;
+    cursor: pointer;
+}
+.pessoal{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.descricao{
+    margin-right: 60px;
+}
