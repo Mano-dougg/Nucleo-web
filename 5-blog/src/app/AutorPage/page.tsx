@@ -2,10 +2,10 @@ import BigMiniRobot from './imgAutor/BigMiniRobot.png'
 import instaIconBlack from './imgAutor/InstaIconBlack.png'
 import linkdinIconBlack from './imgAutor/LinkedinIconBlack.png'
 import githubIconBlack from './imgAutor/GithubIconBlack.png'
-import arrowLeft from '../Post/ImgPost/ArrowLeft.png'
-import arrowRight from '../Post/ImgPost/ArrowRight.png'
+import arrowLeft from '../../Components/Post/ImgPost/ArrowLeft.png'
+import arrowRight from '../../Components/Post/ImgPost/ArrowRight.png'
 import Image from 'next/image'
-import Post from '../Post/Page'
+import Post from '../../Components/Post/Page'
 
 export default function AutorPage() {
     return(

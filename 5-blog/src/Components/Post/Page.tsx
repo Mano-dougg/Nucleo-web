@@ -9,15 +9,16 @@ interface PostProps {
     widthPost: number,
     heightPost: number,
     flexPost: string,
-    padding: number[],
+    padding?: 'small' | 'default',
     widthImg: number,
     heightImg: number,
 }
 
-export default function Post({widthPost, heightPost, flexPost, padding, widthImg, heightImg}: PostProps) {
+export default function Post({widthPost, heightPost, flexPost, padding = 'default', widthImg, heightImg}: PostProps) {
     return(
         <>
-        <section className={styles.post} style={{width: widthPost, height: heightPost, flexDirection: flexPost,  padding: `${padding}px` }}>
+        <section className={styles.post} style={{width: widthPost, height: heightPost, flexDirection: flexPost,  
+            padding: ` ${padding==='default' ? '34px 25px': '25px 20px'}` }}>
             <section className={styles.mainPost}>
                 <article className={styles.textPost}>
                     <h2>Notícia muito importante </h2>

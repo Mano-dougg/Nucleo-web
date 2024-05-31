@@ -1,19 +1,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Header from "./Components/(Header)/Page";
-import Footer from "./Components/(Footer)/Page";
-import HomePage from "./Components/HomePage/Page";
-import PostPage from "./Components/PostPage/Page";
-import AutorPage from "./Components/AutorPage/Page";
-import Carousel from "./Components/CaroulselSwiper/Slider";
+import Header from "../Components/(Header)/Page";
+import Footer from "../Components/(Footer)/Page";
+import HomePage from "./HomePage/page";
+import PostPage from "./PostPage/page";
+import AutorPage from "./AutorPage/page";
 
 export default function Home() {
   return (
     <>
-    <Header/>
-    
-    <PostPage/>
-   
+    <HomePage/>
     </>
   );
 }
