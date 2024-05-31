@@ -1,4 +1,5 @@
 import { createClient } from "@/prismicio";
+import React, { createContext } from 'react';
 import Header from "./Header/Header";
 import PostsRecentes from "./PostsRecentes/PostsRecentes";
 import Footer from "./Footer/Footer";

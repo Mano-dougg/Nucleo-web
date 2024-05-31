@@ -1,4 +1,7 @@
+'use client'
+
 import Link from "next/link";
+import React, { createContext } from 'react';
 import "./postitem.css";
 import dayjs from "dayjs";
 import { asImageSrc, asText } from "@prismicio/client";

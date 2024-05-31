@@ -6,6 +6,9 @@
   --background-card: #dc97ff;
   --background-header: #5a108f;
   --titulo-autor: #5a108f;
-  --preview-data: #8b2fc9;
+  --preview-data: #;
   font-family: "Nunito", sans-serif;
+  --swiper-navigation-color: #8b2fc9;
+  --swiper-pagination-color: #8b2fc9;
+
 }
