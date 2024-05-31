@@ -1,6 +1,11 @@
 import { createClient } from '@/prismicio';
 import { PrismicNextLink } from '@prismicio/next';
 import Link from "next/link"
+import Image from 'next/image'
+import Logo from "../assets/logo.png";
+import Sun from "../assets/sun.png";
+import Search from "../assets/search.png";
+import './Header.css'
 
 // export default async function Header (){
 export default function Header (){
@@ -21,13 +26,15 @@ export default function Header (){
 
     return (
     <header>
-        <Link href="/"><span>AI</span>TODAY</Link>
-        <div>
-            <div>
+        <Link href="/"><Image
+      src={Logo}
+      alt="Logo" className='logo'/></Link>
+        <div className='header-left'>
+            <div className='pesquisa'>
                 <p>Pesquisar</p>
-                <img/>
+                <Image src={Search} alt="Search icon" className='search-img'/>
             </div>
-            <img/>
+            <Image src={Sun} alt="Sun" className="sun-img"/>
         </div>
     </header> );
 }

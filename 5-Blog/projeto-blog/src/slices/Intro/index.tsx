@@ -11,7 +11,6 @@ const components: JSXMapSerializer ={
 
 export type IntroProps = SliceComponentProps<Content.IntroSlice>;
 
-
 const Intro = ({ slice }: IntroProps): JSX.Element => {
   return (
     <section

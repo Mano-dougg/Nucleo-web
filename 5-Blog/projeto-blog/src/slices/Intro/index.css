@@ -21,7 +21,8 @@ body{
     padding-left: 10vw;
     padding-right: 10vw;
     /* max-width: 1119px; */
-    padding-top:5vh;
+    padding-top:30px;
+    padding-bottom: 30px;
     gap: 30px;
 }
 
@@ -79,24 +80,41 @@ body{
 
 
 
-/* position: relative;
-width: 360px;
-height: 1380px;
+@media(max-width: 1180px){
 
-background: #FFFFFF; */
+    .intro-body{
+        flex-direction: column;
+    }
+    .home-intro{
+        gap:20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .home-intro h1{
+        font-size: clamp(33px,9.17vw,65px);
+    }
+    .intro-img{
+        order: 0;
+        width:80%;
+        height:auto;
+    }
 
-/* Frame 4 */
+    .intro-body section{
+        max-width: 100%;
+        order:1;
+        gap:15px;
+    }
 
-/* Auto layout
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-gap: 32px;
+    .intro-body h2{
+        font-size: clamp(20px,5.5vw,40px);
+        line-height: auto;
+    }
+    .intro-body p{
+        font-size: clamp(12px,3.3vw,20px);
+        line-height: normal;
+    }
 
-position: absolute;
-width: 1119px;
-height: 374px;
-left: 160.5px;
-top: 109px; */
+}
+
+
 
