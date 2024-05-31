@@ -59,8 +59,9 @@ p{
 }
 
 .swiper {
-  width: 100%;
-  height: auto;
+  width: 1043px;
+  height: 452px;
+  overflow: visible;
 }
 
 .swiper-slide {
@@ -68,4 +69,20 @@ p{
   justify-content: center;
   align-items: center;
   width: auto !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background-color: var(--h1Color) ;
+}
+
+.swiper-pagination-bullet{
+  background-color: var(--paragPost) ;
+}
+
+.swiper-button-prev::after {
+  color: var(--h1Color)
+}
+
+.swiper-button-next::after {
+  color: var(--h1Color)
 }

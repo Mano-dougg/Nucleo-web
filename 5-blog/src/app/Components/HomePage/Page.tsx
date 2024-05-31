@@ -5,14 +5,20 @@ import arrowRight from '../Post/ImgPost/ArrowRight.png'
 import Image from 'next/image'
 import styles from './Page.module.css'
 import Post from '../Post/Page'
-import { SwiperSlide } from 'swiper/react'
+import { SwiperProps, SwiperSlide } from 'swiper/react'
 import Slider from '../CaroulselSwiper/Slider'
 
 export default function HomePage(){
 
-    const settings = {
+    const settings: SwiperProps = {
         slidesPerView: 3,
         spaceBetween: 68.7, 
+        navigation: true,
+        pagination: {
+            clickable: true,
+        
+        },
+        loop: true,
     };
 
     return(
@@ -88,7 +94,8 @@ export default function HomePage(){
                     alt="Image of an arrow"
                     />
             </article>
-            <article style={{width: '1043px', display:'flex', justifyContent: 'center' }}>
+            <article style={{ display:'flex', justifyContent: 'center',}}>
+                <div className='swiper-button-prev'></div>
                 <Slider settings={settings}> 
                     <SwiperSlide>
                         <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} padding ={[34, 25]} />
