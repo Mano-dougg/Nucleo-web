@@ -84,3 +84,33 @@
     line-height: 1.5;
     word-wrap: break-word;
 }
+
+@media (max-width:900px){
+    .voltar{
+        width: 80%;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .conteudo{
+        width: 80%;
+    }
+    
+    .titulo{
+        font-size: 30px;
+    }
+    .sinopse{
+        font-size: 14px;
+    }
+
+    .corpo{
+        font-size: 16px;
+    }
+    .topico{
+        font-size: 24px;
+    }
+}
+
+

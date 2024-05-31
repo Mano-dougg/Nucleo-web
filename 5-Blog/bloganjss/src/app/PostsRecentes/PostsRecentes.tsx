@@ -36,7 +36,7 @@ async function PostsRecentes() {
                         1440: {
                           slidesPerView: 3,
                         },
-                        1020: {
+                        870: {
                             slidesPerView: 2,
                           },
                       }}   

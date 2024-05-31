@@ -32,6 +32,14 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
             <section className="container">
 
+				<div className="capa">
+                    {post.data.conteudo.map((item, index) => (
+                        <section key={index}>
+                            <PrismicImage field={item.foto} />
+                        </section>
+                    ))}
+                </div>
+
                 <div className="general">
                     <h1 className="titulo">{asText(post.data.titulo)}</h1>
                     <h2 className="subtitulo">{asText(post.data.subtitulo)}</h2>
@@ -43,13 +51,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     </div>
                 </div>
 
-                <div className="capa">
-                    {post.data.conteudo.map((item, index) => (
-                        <section key={index}>
-                            <PrismicImage field={item.foto} />
-                        </section>
-                    ))}
-                </div>
+               
                 
             </section>
 
