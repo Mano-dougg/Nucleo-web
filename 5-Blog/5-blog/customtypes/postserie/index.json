@@ -1,92 +1,92 @@
 {
   "format": "custom",
-  "id": "page",
-  "label": "Page",
+  "id": "postserie",
+  "label": "postSerie",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
       "uid": {
         "config": {
-          "label": "uid",
-          "placeholder": ""
+          "label": "UID"
         },
         "type": "UID"
       },
-      "imgpaginaprincipal": {
-        "type": "Image",
-        "config": {
-          "label": "ImgPaginaPrincipal",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "title": {
+      "titulopost2": {
         "type": "StructuredText",
         "config": {
-          "label": "Title",
+          "label": "titulopostserie",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "heading1"
         }
       },
-      "subtitulo": {
+      "imgpostserie": {
+        "type": "Image",
+        "config": {
+          "label": "imgPostSerie",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "tituloserie": {
         "type": "StructuredText",
         "config": {
-          "label": "Subtitulo",
+          "label": "TituloSerie",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "heading2"
         }
       },
-      "texto": {
+      "textoserie": {
         "type": "StructuredText",
         "config": {
-          "label": "Texto",
+          "label": "textoSerie",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph"
         }
       },
-      "fotoautor": {
+      "textoserie2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "textoSerie2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "tituloserie2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "TituloSerie2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "fotoautorserie": {
         "type": "Image",
         "config": {
-          "label": "fotoautor",
-          "constraint": {
-            "width": 32,
-            "height": 32
-          },
+          "label": "fotoautorserie",
+          "constraint": {},
           "thumbnails": []
         }
       },
-      "nomeautor": {
+      "nomeautorserie": {
         "type": "StructuredText",
         "config": {
-          "label": "nomeautor",
+          "label": "nomeautorserie",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "heading5"
         }
       },
-      "datapublicada": {
+      "dataautorserie": {
         "type": "Date",
         "config": {
-          "label": "datapublicada",
+          "label": "dataautorserie",
           "placeholder": ""
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "image": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            }
-          }
         }
       }
     }

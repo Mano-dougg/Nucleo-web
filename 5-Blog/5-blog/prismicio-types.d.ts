@@ -72,6 +72,17 @@ type PageDocumentDataSlicesSlice = ImageSlice | TextSlice;
  */
 interface PageDocumentData {
   /**
+   * ImgPaginaPrincipal field in *Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.imgpaginaprincipal
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imgpaginaprincipal: prismic.ImageField<never>;
+
+  /**
    * Title field in *Page*
    *
    * - **Field Type**: Rich Text
@@ -83,26 +94,59 @@ interface PageDocumentData {
   title: prismic.RichTextField;
 
   /**
+   * Subtitulo field in *Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.subtitulo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitulo: prismic.RichTextField;
+
+  /**
    * Texto field in *Page*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: page.texto
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  texto: prismic.KeyTextField;
+  texto: prismic.RichTextField;
 
   /**
-   * ImgPaginaPrincipal field in *Page*
+   * fotoautor field in *Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.imgpaginaprincipal
+   * - **API ID Path**: page.fotoautor
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  imgpaginaprincipal: prismic.ImageField<never>;
+  fotoautor: prismic.ImageField<never>;
+
+  /**
+   * nomeautor field in *Page*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.nomeautor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  nomeautor: prismic.RichTextField;
+
+  /**
+   * datapublicada field in *Page*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.datapublicada
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  datapublicada: prismic.DateField;
 
   /**
    * Slice Zone field in *Page*
@@ -156,7 +200,230 @@ interface PostDocumentData {
 export type PostDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
 
-export type AllDocumentTypes = HomeDocument | PageDocument | PostDocument;
+/**
+ * Content for PostDue documents
+ */
+interface PostdueDocumentData {
+  /**
+   * ImageDois field in *PostDue*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postdue.imagedois
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagedois: prismic.ImageField<never>;
+
+  /**
+   * TituloDois field in *PostDue*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postdue.titulodois
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titulodois: prismic.RichTextField;
+
+  /**
+   * subtitulodois field in *PostDue*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postdue.subtitulodois
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitulodois: prismic.RichTextField;
+
+  /**
+   * TextoDois field in *PostDue*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postdue.textodois
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textodois: prismic.RichTextField;
+
+  /**
+   * imgautordois field in *PostDue*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postdue.imgautordois
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imgautordois: prismic.ImageField<never>;
+
+  /**
+   * nomeautordois field in *PostDue*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postdue.nomeautordois
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  nomeautordois: prismic.RichTextField;
+
+  /**
+   * datapublicadadois field in *PostDue*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postdue.datapublicadadois
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  datapublicadadois: prismic.DateField;
+}
+
+/**
+ * PostDue document from Prismic
+ *
+ * - **API ID**: `postdue`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostdueDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PostdueDocumentData>,
+    "postdue",
+    Lang
+  >;
+
+/**
+ * Content for postSerie documents
+ */
+interface PostserieDocumentData {
+  /**
+   * titulopostserie field in *postSerie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.titulopost2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titulopost2: prismic.RichTextField;
+
+  /**
+   * imgPostSerie field in *postSerie*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.imgpostserie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imgpostserie: prismic.ImageField<never>;
+
+  /**
+   * TituloSerie field in *postSerie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.tituloserie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tituloserie: prismic.RichTextField;
+
+  /**
+   * textoSerie field in *postSerie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.textoserie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textoserie: prismic.RichTextField;
+
+  /**
+   * textoSerie2 field in *postSerie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.textoserie2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textoserie2: prismic.RichTextField;
+
+  /**
+   * TituloSerie2 field in *postSerie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.tituloserie2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  tituloserie2: prismic.RichTextField;
+
+  /**
+   * fotoautorserie field in *postSerie*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.fotoautorserie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  fotoautorserie: prismic.ImageField<never>;
+
+  /**
+   * nomeautorserie field in *postSerie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.nomeautorserie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  nomeautorserie: prismic.RichTextField;
+
+  /**
+   * dataautorserie field in *postSerie*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postserie.dataautorserie
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  dataautorserie: prismic.DateField;
+}
+
+/**
+ * postSerie document from Prismic
+ *
+ * - **API ID**: `postserie`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostserieDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PostserieDocumentData>,
+    "postserie",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomeDocument
+  | PageDocument
+  | PostDocument
+  | PostdueDocument
+  | PostserieDocument;
 
 /**
  * Primary content in *Image → Default → Primary*
@@ -270,6 +537,10 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PostDocument,
       PostDocumentData,
+      PostdueDocument,
+      PostdueDocumentData,
+      PostserieDocument,
+      PostserieDocumentData,
       AllDocumentTypes,
       ImageSlice,
       ImageSliceDefaultPrimary,

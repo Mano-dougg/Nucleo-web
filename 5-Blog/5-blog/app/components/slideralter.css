@@ -1,0 +1,89 @@
+.cardSlider{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+
+}
+
+
+
+.card1{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-image: url('./imgslide1.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    margin: 20px;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+.card1:hover{
+    scale: 1.1;
+}
+.card2{
+    background-image: url('./imgslide2.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    margin: 20px;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+.card2:hover{
+    scale: 1.1;
+}
+
+
+.card3{
+    background-image: url('./imgslide3.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    margin: 20px;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.card3:hover{
+    scale: 1.1;
+
+}
+
+
+.card1 h1{
+    padding: 0px 0px 10px 10px;
+    font-size: 18px;
+}
+.card1 p{
+    padding: 0px 0px 10px 10px;
+    font-size: 12px;
+}
+
+
+.card2 h1{
+    padding: 0px 0px 10px 10px;
+    font-size: 18px;
+}
+.card2 p{
+    padding: 0px 0px 10px 10px;
+    font-size: 12px;
+}
+
+
+.card3 h1{
+    padding: 0px 0px 10px 10px;
+    font-size: 18px;
+}
+.card3 p{
+    padding: 0px 0px 10px 10px;
+    font-size: 12px;
+}

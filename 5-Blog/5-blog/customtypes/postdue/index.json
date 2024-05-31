@@ -1,57 +1,57 @@
 {
   "format": "custom",
-  "id": "page",
-  "label": "Page",
+  "id": "postdue",
+  "label": "PostDue",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
       "uid": {
         "config": {
-          "label": "uid",
+          "label": "UID",
           "placeholder": ""
         },
         "type": "UID"
       },
-      "imgpaginaprincipal": {
+      "imagedois": {
         "type": "Image",
         "config": {
-          "label": "ImgPaginaPrincipal",
+          "label": "ImageDois",
           "constraint": {},
           "thumbnails": []
         }
       },
-      "title": {
+      "titulodois": {
         "type": "StructuredText",
         "config": {
-          "label": "Title",
+          "label": "TituloDois",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "heading1"
         }
       },
-      "subtitulo": {
+      "subtitulodois": {
         "type": "StructuredText",
         "config": {
-          "label": "Subtitulo",
+          "label": "subtitulodois",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "heading2"
         }
       },
-      "texto": {
+      "textodois": {
         "type": "StructuredText",
         "config": {
-          "label": "Texto",
+          "label": "TextoDois",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph"
         }
       },
-      "fotoautor": {
+      "imgautordois": {
         "type": "Image",
         "config": {
-          "label": "fotoautor",
+          "label": "imgautordois",
           "constraint": {
             "width": 32,
             "height": 32
@@ -59,34 +59,20 @@
           "thumbnails": []
         }
       },
-      "nomeautor": {
+      "nomeautordois": {
         "type": "StructuredText",
         "config": {
-          "label": "nomeautor",
+          "label": "nomeautordois",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "heading5"
         }
       },
-      "datapublicada": {
+      "datapublicadadois": {
         "type": "Date",
         "config": {
-          "label": "datapublicada",
+          "label": "datapublicadadois",
           "placeholder": ""
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "image": {
-              "type": "SharedSlice"
-            },
-            "text": {
-              "type": "SharedSlice"
-            }
-          }
         }
       }
     }

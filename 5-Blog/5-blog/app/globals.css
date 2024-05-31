@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -12,15 +9,245 @@
 
 body {
   background-color: #E2DFDF;
+  width: 100%;
+
 }
 
 .destaque{
   background-color: #588E22;
   width: 100%;
   height: 400px;
+  
+
+}
+
+.links{
+  display: flex;
+  align-items: center;
+  padding: 50px 40px 0px 40px;
+  justify-content: center;
+
+
+}
+
+.acessa_blog{
+  text-decoration: none;
+  color:white ;
+  background-color: #588E22;
+  padding: 10px;
+  border-radius: 15px;
+  margin-left: 15px;
+  font-size: 12px;
+}
+
+.links h2{
+  padding: 5px 50px 0px 50px;
+  color: white;
+  font-weight: bolder;
+}
+
+.h2_1{
+text-decoration: underline 5px red;
+cursor: pointer;
+padding: 5px;
+}
+
+.h2_2{
+  text-decoration: underline 5px #34B3FB;
+  cursor: pointer;
+  padding: 5px;
+  
+}
+
+.h2_3{
+  text-decoration: underline 5px #C6C146;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.h2_4{
+  text-decoration: underline 5px #DF34FB;
+  cursor: pointer;
+  padding: 5px;
+  
+}
+
+.novidades{
+  display: flex;
+
+  align-items: center;
+  margin-top: 300px;
+  margin-left: 370px;
+  margin-bottom: 0px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.posts{
+  padding: 10px 0px 100px 0px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100vh;
+  margin-top: -150px;
+  
+}
+
+.PostOne, .PostDois{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  justify-content: center;
+  background-color: white;
+  width: 385px;
+  height: 557px;
+  padding: 20px 10px 20px 10px;
+  margin: 20px 10px 20px 10px;
+  border-radius: 10px;
+
+
+}
+.slideralter{
+  display: none;
+}
+
+.PostOne img, .PostDois img{
+  width: 90%;
+  align-self: center;
+  border-radius: 15px;
+}
+
+.PostOne h1, .PostDois h1{
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 20px;
 }
 
 
-.mainh1{
-  color: blue;
+.PostOne h2, .PostDois h2{
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.PostOne p, .PostDois p{
+  font-size: 15px;
+  margin-left: 20px;
+
+}
+
+.series{
+  background-color: #DF34FB;
+  color: white;
+  padding: 5px 0px 5px 10px;
+  width: 15%;
+  border-radius: 16px;
+  font-size: 10px;
+  margin-left: 15px;
+  
+}
+
+.jogos{
+  background-color: #34B3FB;
+  color: white;
+  padding: 5px 0px 5px 11px;
+  width: 15%;
+  border-radius: 16px;
+  font-size: 10px;
+  margin-left: 15px;
+  
+}
+.autorNews {
+  padding-top: 60px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 15px;
+  
+}
+
+.autorNews h5{
+  margin-right: 80px;
+  margin-left: 5px;
+
+}
+.autorNews img{
+  width: 32px;
+  height: 32px;
+  margin-left: 20px;
+}
+
+
+
+@media(max-width:768px){
+
+  .novidades{
+    display: flex;
+  
+    align-items: center;
+    margin-top: 250px;
+    margin-left: 5px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
+
+
+@media(max-width:360px){
+  
+.links{
+  display: flex;
+  align-items: center;
+  padding: 10px 40px 0px 40px;
+  justify-content: space-between;
+
+}
+
+
+.links h2{
+  padding: 0px 10px 0px 0px;
+  font-size: 20px;
+
+}
+
+.h2_1{
+  display: none;
+}
+
+.slideralter{
+  display: none;
+}
+
+.novidades{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 150px;
+ 
+}
+
+.posts{
+  flex-direction: column;
+  margin-bottom: 500px;
+}
+
+.PostOne, .PostDois{
+  width: 80%;
+}
+
+
+.slideralter{
+  display: flex;
+  flex-direction: column;
+}
+
+.series, .jogos{
+  width: 20%;
+}
+
+
+
 }
