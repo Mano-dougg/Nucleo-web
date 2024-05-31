@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+/* Para evitar clique desnecessário */
 
 .div {
     text-decoration-line: none;
