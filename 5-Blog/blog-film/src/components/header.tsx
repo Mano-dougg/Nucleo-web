@@ -3,6 +3,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import Image from 'next/image';
 import WatchRian from '../app/assets/watch-rian.png';
 import Link from "next/link";
+import Search from '../app/assets/search.png';
 
 
 export default async function Header() {
@@ -11,6 +12,7 @@ export default async function Header() {
 
 
     return (
+        <>
         <header className="bg-[#262b38] w-full flex flex-col md:flex-row gap-6 items-center justify-between h-16 px-28 ">
             <Link href='/' className="flex z-10 h-full w-auto items-center">
                 <div className="flex h-full items-center">
@@ -26,9 +28,14 @@ export default async function Header() {
                             </PrismicNextLink>
                         </li>
                     ))}
-                </ul>
+
+                    <input className="ml-8 text-sm rounded" type="text" placeholder="Search" />
+                    <Image src={Search} alt=""/>
+
+               </ul>
             </nav>
-        </header>
+            </header> 
+        </>
     )
 }
 

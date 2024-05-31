@@ -8,6 +8,7 @@ import CardSlicer from "@/components/cardslicer";
 import MoviesList from "@/components/terror";
 
 
+
  
 export const inter = Inter({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt_BR" className={`${inter.variable} ${montserrat.variable} `}>
+      
       <body className="bg-[#283044] flex flex-col min-h-screen">
         <Header/>
         

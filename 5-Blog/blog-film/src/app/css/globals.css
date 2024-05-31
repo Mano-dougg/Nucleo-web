@@ -38,6 +38,5 @@
 }
 
 .main-bg{
-  background: rgb(40,48,68);
-  background: linear-gradient(90deg, rgba(40,48,68,1) 25%, rgba(16,22,36,1) 73%);
+  background: rgb(16,22,36);
 }
