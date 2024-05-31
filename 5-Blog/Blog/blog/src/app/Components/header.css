@@ -43,3 +43,19 @@
 .search label {
     height: 20px;
 }
+
+@media screen and (max-width:1262px){
+    .search{
+        width: auto;
+        margin-right: auto;
+        justify-content: space-evenly;
+        margin: auto;
+        gap: 10px;
+    }
+
+    .cabecalho{
+        width: auto;
+    }
+
+   
+}

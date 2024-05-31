@@ -16,7 +16,7 @@ export default function Autor(){
             <div className="texto-autor">
                 <h1>Fulano das IAs</h1>
                 <div className="autor-text">
-                    <Image src={Robo2} alt="imagem-perfil-autor"/>
+                    <Image src={Robo2} alt="imagem-perfil-autor" className="autor"/>
                     <section>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, turpis 

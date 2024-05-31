@@ -18,7 +18,7 @@ export default function Header() {
                 <Image src={Lupa} alt="lupa" />
             </div>
             <div className="darkmode">
-                <Image src={Sol} alt="sol"/>
+                <Image src={Sol} alt="sol" className="sol"/>
             </div>
         </div>
     )

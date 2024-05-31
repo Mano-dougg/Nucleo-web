@@ -33,8 +33,10 @@ export default async function Home() {
             <Image 
               src={imagem.url}
               alt={imagem.alt || 'Imagem'}
+              layout="responsive"
               width={imagem.dimensions.width}
               height={imagem.dimensions.height}
+              className="imagem-ia"
             />
           )}
         </div> 

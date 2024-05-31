@@ -38,3 +38,27 @@
     font-weight: 600;
     color: var(--text-news-color);
 }
+
+.imagem-ia{
+    max-width: 544px;
+    height: 374;
+}
+
+@media screen and (max-width:1026px){
+    .main-news{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+    .main-news section{
+        margin-top: 50px;
+    }
+
+    .imagem-ia{
+        width: auto;
+        height: auto;
+    }
+
+}

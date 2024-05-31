@@ -34,7 +34,7 @@ export default function Post(){
                             malesuada ex luctus accumsan maximus.
                         </p>
                     </section>
-                    <Image src={Robo} alt="imagem-robo"/>
+                    <Image src={Robo} alt="imagem-robo" className="robo-ia"/>
                 </div> 
             </div>
 
@@ -60,8 +60,8 @@ export default function Post(){
             </div>
 
             <div className="imagens">
-                <Image src={Robo} alt="imagem-robo"/>
-                <Image src={Robo} alt="imagem-robo"/>
+                <Image src={Robo} alt="imagem-robo" className="robo-ia-2"/>
+                <Image src={Robo} alt="imagem-robo"className="robo-ia-3"/>
             </div>
 
             <div className="main-post3">

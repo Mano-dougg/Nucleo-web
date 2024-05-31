@@ -23,7 +23,7 @@
 
 
 .autor-text section p{
-    width: 750px;
+    max-width: 750px;
     color: var(--text-autor-color);
 }
 
@@ -47,4 +47,37 @@
 .paragrafo p {
     width: 1120px;
     color: var(--text-autor-color);
+}
+
+@media screen and (max-width:1294px){
+    .autor-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .autor-text section p {
+        width: auto;
+    }
+
+    .autor{
+        width: auto;
+        height: auto;
+    }
+
+    .social-images{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        margin-top: 50px;
+    }
+    
+    .paragrafo p{
+        max-width:850px;
+    }
+
+    
 }

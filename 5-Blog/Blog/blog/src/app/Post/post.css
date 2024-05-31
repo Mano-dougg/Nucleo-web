@@ -92,3 +92,51 @@
     color: var(--h2-color);
     font-size: 12px;
 }
+
+@media screen and (max-width:1091px) {
+    .imagem-texto{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        width: auto;
+    }
+
+    .imagem-texto section h2{
+        display: none;
+    }
+
+    .imagem-texto section{
+        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .main-post2 p {
+        width: auto;
+        margin:auto;
+    }
+
+    
+    .imagens{
+        gap: 10px;
+    }
+
+    .robo-ia-2{
+        width: auto;
+        height: auto;
+    }
+
+    .robo-ia-3{
+        width: auto;
+        height: auto;
+    }
+
+    .robo-ia{
+        width: auto;
+        height: auto;
+    }
+    
+}
