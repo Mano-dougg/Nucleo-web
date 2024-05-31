@@ -1,0 +1,36 @@
+main {
+    /* height: 1200px; */
+    background: linear-gradient(to bottom, #588E22 400px, #588E22 400px, #E2DFDF 400px, #E2DFDF 100%);
+}
+
+h1.destaque{
+    margin-top: 38px;
+    margin-bottom: 5px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.destaqueContainer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.destaqueText{
+    position: absolute;
+    left: 35%;
+    bottom: 50%;
+}
+
+h1.tituloNoticiaDestaque{
+    font-weight: 600;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+h2.subNoticiaDestaque{
+    font-weight: 400;
+    font-size: 24px;
+    color: #DDDBDB;
+}

@@ -1,0 +1,20 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav.categorias ul{
+    width: 659px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 21px;
+}
+
+nav.categorias ul li{
+    font-weight: 700;
+    font-size: 20px;
+    color: #FFF;
+    border-bottom: 5px solid #34B3FB;
+
+}

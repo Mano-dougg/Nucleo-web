@@ -1,0 +1,31 @@
+footer{
+    width: 100vw;
+    height: 216px;
+    background-color: #1F3519;
+    bottom: 0;
+    color: #FFFFFF;
+
+}
+
+footer .footerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 41px;
+    margin-right: 41px;
+    padding-top: 13px;
+}
+
+footer .socialContainer{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer .logoFooter{
+    width: 273px;
+    height: 78px;
+    margin-left: 41px;
+    margin-top: 69px;
+}
