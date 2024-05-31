@@ -1,4 +1,3 @@
-"use client"
 import astrounaut from './imgHome/Astronaut.png'
 import arrowLeft from '../../Components/Post/ImgPost/ArrowLeft.png'
 import arrowRight from '../../Components/Post/ImgPost/ArrowRight.png'
@@ -7,19 +6,9 @@ import styles from './Page.module.css'
 import Post from '../../Components/Post/Page'
 import { SwiperProps, SwiperSlide } from 'swiper/react'
 import Slider from '../../Components/CaroulselSwiper/Slider'
+import { CaroulselRow, CarouselCollumn } from '@/Components/CaroulselSwiper/Page'
 
 export default function HomePage(){
-
-    const settings: SwiperProps = {
-        slidesPerView: 3,
-        spaceBetween: 68.7, 
-        navigation: true,
-        pagination: {
-            clickable: true,
-        
-        },
-        loop: true,
-    };
 
     return(
         <>
@@ -59,74 +48,13 @@ export default function HomePage(){
                 <h1> Últimas postagens </h1>
             </article>
             <article className={styles.lastPosts}>
-                <Image
-                    src={arrowLeft}
-                    width={30}
-                    height={60}
-                    alt="Image of an arrow"
-                    />
-                <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                <Post widthPost={302} heightPost={420} flexPost={'column'} widthImg={302} heightImg={156} />
-                <Image
-                    src={arrowRight}
-                    width={30}
-                    height={60}
-                    alt="Image of an arrow"
-                    />
+                <CarouselCollumn/>
             </article>
             <article style={{padding: 12, marginTop: 20}}>
                 <h1> Mais Acessadas </h1>
             </article>
             <article className={styles.mostVisitedPosts}>
-                <Image
-                    src={arrowLeft}
-                    width={30}
-                    height={60}
-                    alt="Image of an arrow"
-                    />
-                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding='small' />
-                <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding='small' />
-                <Image
-                    src={arrowRight}
-                    width={30}
-                    height={60}
-                    alt="Image of an arrow"
-                    />
-            </article>
-            <article style={{ display:'flex', justifyContent: 'center',}}>
-                <Slider settings={settings}> 
-                    <SwiperSlide>
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide >
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide >
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Post widthPost={302} heightPost={370} flexPost={'column'} widthImg={302} heightImg={156} />
-                    </SwiperSlide>
-                </Slider>
+               <CaroulselRow/>
             </article>
         </section>
         </>

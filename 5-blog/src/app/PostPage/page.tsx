@@ -3,6 +3,7 @@ import { createClient } from "../../prismicio";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import styles from './Page.module.css'
+import { CaroulselRow } from "@/Components/CaroulselSwiper/Page";
 
 export default async function PostPage() {
      const prismic = createClient()
@@ -32,6 +33,12 @@ export default async function PostPage() {
             </article>
             <article>
                <PrismicRichText field={post.data.low_content_post} />
+            </article>
+            <article>
+               <h1> Mais do Autor </h1>    
+            </article>
+            <article>
+               <CaroulselRow/>
             </article>
             </section>
         </>

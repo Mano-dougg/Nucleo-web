@@ -6,10 +6,11 @@ import arrowLeft from '../../Components/Post/ImgPost/ArrowLeft.png'
 import arrowRight from '../../Components/Post/ImgPost/ArrowRight.png'
 import Image from 'next/image'
 import Post from '../../Components/Post/Page'
+import { CaroulselRow } from '@/Components/CaroulselSwiper/Page'
 
 export default function AutorPage() {
     return(
-        <article style={{display:'flex', flexDirection: 'column', alignItems:'center', gap: '32px', padding: '0px 11.11% 0px 11.11%'}}>
+        <article style={{ marginTop: '36px', display:'flex', flexDirection: 'column', alignItems:'center', gap: '32px', padding: '0px 11.11% 0px 11.11%'}}>
         <section>
             <h1> Fulano das IAs </h1>
         </section>
@@ -24,7 +25,7 @@ export default function AutorPage() {
             </article>
             <article style={{display: 'flex', flexDirection: 'column', gap: '32px'}}>
                 <div>
-                <p>
+                <p style={{maxWidth: '675px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, turpis
                     cursus elementum commodo, lorem leo dignissim mi, eget tempus elit metus
                     vel libero. Quisque finibus, tellus nec tempor cursus, nisi lorem vulputate quam,
@@ -61,7 +62,7 @@ export default function AutorPage() {
             </article>
         </section>
         <section>
-            <p>
+            <p style={{maxWidth: '1120px'}}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, turpis cursus elementum commodo, lorem leo
                 dignissim mi, eget tempus elit metus vel libero. Quisque finibus, tellus nec tempor cursus, nisi lorem vulputate quam, eu
                 sodales orci ligula et metus. Ut eget posuere metus. Mauris porttitor consequat eros, nec porttitor libero egestas sed.
@@ -86,20 +87,7 @@ export default function AutorPage() {
             <h1> Mais do Autor </h1>    
         </section>        
         <section style={{display: 'flex', alignItems: 'center',gap: '32px'}}>
-                <Image
-                    src={arrowLeft}
-                    width={30}
-                    height={60}
-                    alt="Image of an arrow"
-                    />
-            <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding= 'small' />
-            <Post widthPost={543} heightPost={245} flexPost={'row-reverse'} widthImg={186} heightImg={245} padding= 'small' />
-                <Image
-                    src={arrowRight}
-                    width={30}
-                    height={60}
-                    alt="Image of an arrow"
-                    />
+              <CaroulselRow/>
         </section>
         </article>
     )

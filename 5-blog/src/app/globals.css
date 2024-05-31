@@ -59,16 +59,14 @@ p{
 }
 
 .swiper {
-  width: 1043px;
-  height: 452px;
-  overflow: visible;
+  max-width: 1200px;
+  min-height: 330px;
 }
 
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto !important;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active{
