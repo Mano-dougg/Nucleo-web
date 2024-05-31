@@ -30,6 +30,7 @@
 
 .asideFulano{
     display: flex;
+    align-items: center;
 }
 
 .divFulano{

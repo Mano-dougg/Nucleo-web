@@ -9,3 +9,18 @@
 .presentationContent {
     display: flex;
 }
+
+.articleFulano{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.asideFulano{
+    display: flex;
+}
+
+.divFulano{
+   display: flex;
+   gap: 9px;
+}

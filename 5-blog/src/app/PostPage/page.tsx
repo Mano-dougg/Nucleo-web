@@ -1,4 +1,6 @@
-import { asHTML } from "@prismicio/client";
+import bigMiniRobot from '../AutorPage/imgAutor/BigMiniRobot.png'
+import share from '../../Components/Post/ImgPost/Share.png'
+import Image from 'next/image';
 import { createClient } from "../../prismicio";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
@@ -34,6 +36,22 @@ export default async function PostPage() {
             <article>
                <PrismicRichText field={post.data.low_content_post} />
             </article>
+            <article className={styles.articleFulano}>
+                    <aside className={styles.asideFulano}>
+                        <div className={styles.divFulano}>
+                            <Image
+                            src={bigMiniRobot}
+                            width={100}
+                            height={100}
+                            alt="Image of a small robot"
+                            />
+                            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                                <h2>Fulano das IAs</h2>
+                                <p> 01/01/2024 </p>
+                            </div>
+                        </div>
+                    </aside>
+                </article>
             <article>
                <h1> Mais do Autor </h1>    
             </article>
