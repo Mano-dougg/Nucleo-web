@@ -7,6 +7,7 @@ import "@/app/styles/navigation.css"
 import "@/app/styles/page.css"
 import "@/app/styles/card.css"
 import "@/app/styles/tag.css"
+import "@/app/styles/article.css"
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
@@ -26,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={montSerrat.className}>
       <body >
-        <Header/>
-        {children}
-        <Footer/>
+        <main>
+          <Header/>
+          {children}
+          <Footer/>
+        </main>
       </body>
     </html>
   );

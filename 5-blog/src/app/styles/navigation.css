@@ -16,5 +16,11 @@ nav.categorias ul li{
     font-size: 20px;
     color: #FFF;
     border-bottom: 5px solid #34B3FB;
+    cursor: pointer;
+    transition: all 0.5s;
 
+}
+
+nav.categorias ul li:hover{
+    color: #34B3FB;
 }

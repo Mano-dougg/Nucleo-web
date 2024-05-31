@@ -1,0 +1,16 @@
+{
+  "id": "noticia_princiapl",
+  "type": "SharedSlice",
+  "name": "NoticiaPrinciapl",
+  "description": "NoticiaPrinciapl",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
