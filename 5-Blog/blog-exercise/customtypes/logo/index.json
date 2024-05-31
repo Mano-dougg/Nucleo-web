@@ -6,14 +6,6 @@
   "status": true,
   "json": {
     "Main": {
-      "logo": {
-        "type": "Image",
-        "config": {
-          "label": "Logo",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
       "social_networks": {
         "type": "Group",
         "config": {
@@ -66,7 +58,18 @@
         "config": {
           "label": "Theme toggle",
           "constraint": {},
-          "thumbnails": []
+          "thumbnails": [
+            {
+              "name": "mobile",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "name": "desktop",
+              "width": 40,
+              "height": 40
+            }
+          ]
         }
       },
       "site_title": {
@@ -91,6 +94,20 @@
               "name": "mobile",
               "width": 328,
               "height": 225
+            }
+          ]
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": [
+            {
+              "name": "mobile",
+              "width": 105,
+              "height": 30
             }
           ]
         }

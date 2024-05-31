@@ -99,17 +99,6 @@ export interface LogoDocumentDataSocialNetworksItem {
  */
 interface LogoDocumentData {
   /**
-   * Logo field in *Settings*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: logo.logo
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo: prismic.ImageField<never>;
-
-  /**
    * Social networks field in *Settings*
    *
    * - **Field Type**: Group
@@ -164,7 +153,7 @@ interface LogoDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  theme_toggle: prismic.ImageField<never>;
+  theme_toggle: prismic.ImageField<"mobile" | "desktop">;
 
   /**
    * Site title field in *Settings*
@@ -187,6 +176,17 @@ interface LogoDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   blog_image: prismic.ImageField<"desktop" | "mobile">;
+
+  /**
+   * Logo field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<"mobile">;
 }
 
 /**
