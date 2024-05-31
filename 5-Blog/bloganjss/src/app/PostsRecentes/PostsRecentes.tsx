@@ -26,7 +26,7 @@ async function PostsRecentes() {
     return (
         <div className="postagens">
             
-            <h1>Ultimas postagens</h1>
+            <h1>ULTIMAS RESENHAS</h1>
             <div className='container'>
                 <Swiper
                     slidesPerView={1}

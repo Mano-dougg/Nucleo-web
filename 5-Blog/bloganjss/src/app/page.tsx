@@ -3,7 +3,8 @@ import React, { createContext } from 'react';
 import Header from "./Header/Header";
 import PostsRecentes from "./PostsRecentes/PostsRecentes";
 import Footer from "./Footer/Footer";
-import Home from "./Home/home";
+import Autor from "./Autor/autor";
+import Quotes from "./Quotes/quotes";
 
 export default async function Component() {
 	const prismicClient = createClient();
@@ -15,9 +16,9 @@ export default async function Component() {
   return (
 		<>
 			<Header />
-			<Home />
 			<PostsRecentes />
-
+			<Autor />
+			<Quotes />
 			<Footer />
 
 		</>
