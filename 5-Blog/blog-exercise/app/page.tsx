@@ -1,9 +1,24 @@
-import Image from "next/image";
+import { Metadata } from "next";
+import { SliceZone } from "@prismicio/react";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl font-bold">Welcome to my blog</h1>
-    </main>
-  );
+import { createClient } from "@/prismicio";
+// import { components } from "@/slices";
+
+export default async function Page() {
+  const client = createClient();
+  const page = await client.getSingle("homepage");
+
+  return <main className="pt-[73px] sm:pt-[91px] text-red">{page.data.title}</main>;
+
+  // return <SliceZone slices={page.data.slices} components={components} />;
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+  const page = await client.getSingle("homepage");
+
+  return {
+    title: page.data.meta_title,
+    description: page.data.meta_description,
+  };
 }
