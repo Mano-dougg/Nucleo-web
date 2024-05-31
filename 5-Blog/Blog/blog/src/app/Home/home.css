@@ -23,7 +23,7 @@
 }
 
 .main-news section {
-    width: 450px;
+    max-width: 450px;
     margin-top: -10px;
     margin-right: 30px;
 }
@@ -54,6 +54,7 @@
     }
     .main-news section{
         margin-top: 50px;
+        width: auto;
     }
 
     .imagem-ia{
