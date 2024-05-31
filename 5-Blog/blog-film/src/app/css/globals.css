@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bborder{
+
+  box-shadow: 0 0 10px rgba(94,101,125, 0.9), 0 0 20px rgba(94,101,125, 0.9);
+
+}
+
+.movie{
+  transition: all .5s ease-in-out;
+}
+
+.movie:hover{
+  transform: scale(1.08);
+}
+
+.movied{
+  font-size: 11px;
+}
+
+.saturate{
+  filter: saturate(10%)
+}
+
+.saturate:hover{
+  filter: saturate(100%)
+}
+
+
+.hit{
+  height: 120%;
+}
+
+.z{
+  z-index: 2;
+}
+
+.main-bg{
+  background: rgb(40,48,68);
+  background: linear-gradient(90deg, rgba(40,48,68,1) 25%, rgba(16,22,36,1) 73%);
+}

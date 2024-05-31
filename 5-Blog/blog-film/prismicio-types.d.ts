@@ -271,7 +271,94 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = CardSlicerSlice | RichTextSlice;
+/**
+ * Item in *MoviesList → Movie*
+ */
+export interface MovieslistDocumentDataMovieItem {
+  /**
+   * MovieBG field in *MoviesList → Movie*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: movieslist.movie[].moviebg
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  moviebg: prismic.ImageField<never>;
+
+  /**
+   * Title field in *MoviesList → Movie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: movieslist.movie[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Year field in *MoviesList → Movie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: movieslist.movie[].year
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  year: prismic.RichTextField;
+
+  /**
+   * Description field in *MoviesList → Movie*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: movieslist.movie[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Link field in *MoviesList → Movie*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: movieslist.movie[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for MoviesList documents
+ */
+interface MovieslistDocumentData {
+  /**
+   * Movie field in *MoviesList*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: movieslist.movie[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  movie: prismic.GroupField<Simplify<MovieslistDocumentDataMovieItem>>;
+}
+
+/**
+ * MoviesList document from Prismic
+ *
+ * - **API ID**: `movieslist`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MovieslistDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<MovieslistDocumentData>,
+    "movieslist",
+    Lang
+  >;
+
+type PageDocumentDataSlicesSlice = RichTextSlice;
 
 /**
  * Content for Page documents
@@ -347,6 +434,7 @@ export type AllDocumentTypes =
   | CardslicerDocument
   | ConfigDocument
   | FooterDocument
+  | MovieslistDocument
   | PageDocument;
 
 /**
@@ -413,6 +501,9 @@ declare module "@prismicio/client" {
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataNavigationItem,
+      MovieslistDocument,
+      MovieslistDocumentData,
+      MovieslistDocumentDataMovieItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

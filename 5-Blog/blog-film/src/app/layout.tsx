@@ -5,6 +5,8 @@ import { Inter, Montserrat} from 'next/font/google'
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import CardSlicer from "@/components/cardslicer";
+import MoviesList from "@/components/terror";
+
 
  
 export const inter = Inter({
@@ -29,9 +31,10 @@ export default function RootLayout({
       <body className="bg-[#283044] flex flex-col min-h-screen">
         <Header/>
         
-        <main className="flex-grow">
+        <main className="flex-grow main-bg z h-1/3">
           <CardSlicer/>
         </main>
+        <MoviesList/>
         <Footer/>
 
         

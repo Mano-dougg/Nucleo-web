@@ -1,6 +1,7 @@
 import { createClient } from "@/prismicio";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import '../app/css/globals.css';
 
 // #f5f295 - amarelo
 // #283044 - azul
@@ -17,12 +18,12 @@ export default async function CardSlicer() {
         {cardslicer.data.card.map((item) => (
         <>  
         
-          <div className={`relative w-full p-0 items-center justify-center ${ item.highlight ? 'md:w-1/3' : 'md:w-1/5'}`}>
+          <div className={`relative w-full p-0  hit items-center justify-center ${ item.highlight ? 'md:w-1/3' : 'md:w-1/5'}`}>
            
 
             <div className="relative h-64 ">
-                <PrismicNextImage field={item.image} className={'absolute inset-0 w-full h-full object-cover'}/>
-                <div className="relative z-10  flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-50">
+                <PrismicNextImage field={item.image} className={'absolute inset-0 w-full hit z-20 object-cover'}/>
+                <div className="relative z-50  hit flex flex-col items-center justify-center text-center text-white bg-black bg-opacity-50">
                   <h1 className="text-1xl font-bold mb-2">
                    <PrismicRichText field={item.title}/>
                   </h1>
@@ -30,7 +31,7 @@ export default async function CardSlicer() {
                     <PrismicRichText field={item.description} />
                   </h2>
                   <PrismicNextLink field={item.cardbutton}>
-                    <button className="px-4 py-2 bg-[#283044] text-white rounded hover:bg-blue-600">
+                    <button className="px-4 py-2 bg-[#283044] bborder text-white rounded">
                       {item.label}
                     </button>
                   </PrismicNextLink>

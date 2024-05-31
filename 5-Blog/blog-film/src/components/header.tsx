@@ -11,8 +11,8 @@ export default async function Header() {
 
 
     return (
-        <header className="w-full flex flex-col md:flex-row gap-6 items-center justify-between h-16 px-28 mt-10">
-            <Link href='/' className="flex h-full w-auto items-center">
+        <header className="bg-[#262b38] w-full flex flex-col md:flex-row gap-6 items-center justify-between h-16 px-28 ">
+            <Link href='/' className="flex z-10 h-full w-auto items-center">
                 <div className="flex h-full items-center">
                     <Image src={WatchRian} alt="Logo" className="h-full w-auto" />
                 </div>
