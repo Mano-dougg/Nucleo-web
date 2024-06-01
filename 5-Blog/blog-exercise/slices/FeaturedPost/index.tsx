@@ -15,41 +15,21 @@ const FeaturedPost = ({ slice }: FeaturedPostProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={`
-        flex flex-col gap-y-4
-        sm:gap-y-6
-        md:flex 
-        md:flex-row
-        md:gap-x-8
-      `}
+      className={`flex flex-col gap-y-4 sm:gap-y-6 md:flex md:flex-row md:gap-x-8`}
     >
       <PrismicNextImage
         field={slice.primary.postimage}
-        className={`
-          order-1 md:order-2
-          rounded-3xl self-center
-          md:size-full
-          md:max-h-auto
-          md:max-w-[30vw]
-        `}
+        className={`order-1 md:order-2 rounded-3xl self-center md:size-full md:max-h-auto md:max-w-[30vw]`}
       />
       <div
-        className={`
-          order-2 md:order-1
-          flex flex-col gap-2 sm:gap-6
-          md:gap-8
-          md:w-[70vw]
-        `}
+        className={`order-2 md:order-1 flex flex-col gap-2 sm:gap-6 md:gap-8 md:w-[70vw]`}
       >
         <PrismicRichText
           field={slice.primary.posttitle}
           components={{
             heading2: ({ children }) => (
               <h2
-                className={`
-                text-xl sm:text-[40px] text-center font-semibold
-              text-green-950 dark:text-foreground
-              `}
+                className={`text-xl sm:text-[40px] text-center font-semibold text-green-950 dark:text-foreground`}
               >
                 {children}
               </h2>
@@ -60,12 +40,7 @@ const FeaturedPost = ({ slice }: FeaturedPostProps): JSX.Element => {
           field={slice.primary.postdescription}
           components={{
             paragraph: ({ children }) => (
-              <p
-                className={`
-                text-foreground
-                text-xs sm:text-base md:text-xl
-            `}
-              >
+              <p className={`text-foreground text-xs sm:text-base md:text-xl`}>
                 {children}
               </p>
             ),

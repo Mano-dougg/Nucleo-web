@@ -10,22 +10,14 @@ export default async function Page() {
 
   return (
     <main
-      className={`
-        p-[100px_16px_103px] sm:p-[141px_32px_148px]
-        flex flex-col gap-y-4 md:gap-x-8
-        items-center
-      `}
+      className={`p-[100px_16px_103px] sm:p-[141px_32px_148px] flex flex-col gap-y-4 md:gap-x-8 items-center`}
     >
       <PrismicRichText
         field={page.data.main_section_header}
         components={{
           heading1: ({ children }) => (
             <h1
-              className={`
-                text-center font-bold mb-8
-                text-4xl sm:text-6xl
-              text-green-950 dark:text-foreground
-              `}
+              className={`text-center font-bold mb-8 text-4xl sm:text-6xl text-green-950 dark:text-foreground`}
             >
               {children}
             </h1>

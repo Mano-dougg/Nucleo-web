@@ -9,9 +9,7 @@ const Footer = async (props: Props) => {
   const settings = await client.getSingle("logo");
 
   return (
-    <footer className={
-      `bg-green-900 md:bg-green-800 text-white font-medium flex flex-col gap-y-1.5 py-5 items-center justify-center fixed bottom-0 z-50 w-full`
-    }>
+    <footer className={`bg-green-900 md:bg-green-800 text-white font-medium flex flex-col gap-y-1.5 py-5 items-center justify-center fixed bottom-0 z-50 w-full`}>
       <div className="flex items-center text-sm text-center sm:text-[26px] gap-x-4">
         {settings.data.call_to_networks}
         <ul className="flex items-center gap-x-4">
