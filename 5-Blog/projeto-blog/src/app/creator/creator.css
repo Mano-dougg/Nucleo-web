@@ -12,6 +12,7 @@
     align-items: center;
     padding-left: 10vw;
     padding-right: 10vw;
+    width: 95%; 
 }
 .creator h1{
 
@@ -59,8 +60,31 @@
     max-width: 1119px;
 }
 
+/* Cards */
+
+.cards-section{
+    display: flex;
+    flex-direction: row;
+    max-width: 1300px;
+    gap:30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+      
+}
+
 
 @media(max-width: 1050px){
+    /* .cards-section{
+        padding-left: 7.5vw;
+        padding-right: 7.5vw;
+      } */
+
+    /* .text{
+        margin-left: 5vw;
+        margin-right: 7.5vw;
+    } */
 
     .intro-body{
         flex-direction: column;
@@ -109,3 +133,17 @@
     }
 
 }
+
+@media (max-width:490px){
+    .cards-section{
+      gap:5vw;
+      /* padding-left: 7.5vw;
+      padding-right: 7.5vw; */
+
+    }
+/* 
+    .text{
+        padding-left: 7.5vw;
+        padding-right: 7.5vw;
+    } */
+  }

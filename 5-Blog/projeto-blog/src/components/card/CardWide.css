@@ -1,0 +1,135 @@
+.card-wide{
+    display: flex;
+    flex-direction: row;
+    gap:5%;
+    align-items: center;
+
+    background: #EDFFF7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    gap:14px;
+}
+
+.robot-wide{
+    max-width: 186px;
+    object-fit:cover;
+    height: 90%;
+    border-radius: 30px;
+    order: 0;
+}
+
+.text-area{
+    order: 1;
+    width: 50%;
+}
+
+.card-wide h1{
+
+    font-weight: 500;
+    font-size: clamp(15px,1.8vw,25px);
+    /* font-size: 25px; */
+    text-align: left;
+    line-height: 25px;
+    letter-spacing: -0.02em;
+    padding-bottom: 3%;
+
+    color: #003720;
+
+}
+
+.card-wide p{
+
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: auto;
+    letter-spacing: -0.02em;
+    padding-bottom: 3%;
+    color: #067546;
+
+}
+
+.creator-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-img-wide{
+    max-height: 35px;
+    width:auto;
+    padding-right: 8px;
+}
+
+.share-img-wide{
+    max-height: 30px;
+    width: auto;
+}
+
+@media (max-width:1000px){
+    .card-wide{
+        flex-direction: column;
+        gap:5%;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        min-width: 156px;
+        min-height: 258px;
+    }
+
+    .robot-wide{
+        max-width: 100%;
+        object-fit: inherit;
+        height: auto;
+        border-radius: 0;
+        order: 1;
+    }
+    .text-area{
+        width: 100%;
+    }
+
+    .card-wide h1{
+        font-size: clamp(15px,3.3vw,25px);
+        line-height: 20px;
+        min-width: 30vw;
+    }
+
+    .card-wide p{
+        font-size: clamp(8px,2vw,12px);
+    }
+
+    .profile-img-wide{
+        width: clamp(20px,5.5vw,35px);
+        height: auto;
+    }
+
+    .share-img-wide{
+        height: clamp(20px,5vw,25px);
+        width: auto; 
+    }
+
+    .autor-info h2{
+        font-size: clamp(8px,2.5vw,14px);
+    }
+
+    .autor-info p{
+        font-size: clamp(8px,2vw,12px);
+    }
+}
+
+
+@media(max-width:480px){
+    .card-wide{
+        min-width: auto;
+        min-height: auto;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+}
