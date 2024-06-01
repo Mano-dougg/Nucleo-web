@@ -4,7 +4,7 @@ const Card2 = ({tema}) => {
     const cardClassName = `${styles.card2}-${[tema]}`;
     const containerClassName =`${styles.container}-${[tema]}`;
     const pessoalClassName = `${styles.pessoal}-${[tema]}`;
-    const descricaoClassName = `${styles.descricao}-${[tema]}`;
+    const descricaoClassName = `${styles.descricao2}-${[tema]}`;
 
     return(
         <div className={cardClassName}>

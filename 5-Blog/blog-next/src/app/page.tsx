@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import themes from "./modulos.module.css";
+import styles from "./modulos.module.css";
 import PageFooter from "./footer";
 import Card1 from "./cards1";
 import Card2 from "./cards2";

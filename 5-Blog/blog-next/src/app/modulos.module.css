@@ -1,6 +1,11 @@
 /** Card 1 Claro */
 .card1-claro{
     background-color: #EDFFF7;
+    width: 302px;
+    height: 370px;
+    padding: 34px 25px 25px 34px;
+    border: 1px solid;
+    border-radius: 30px;
 }
 .card1-claro h2{
     font-size: 33px;
@@ -34,7 +39,7 @@
 .card1-escuro p{
     font-size: 12px;
     text-align: left;
-    color: #067546;
+    color: #754106;
 }
 .descricao1-escuro{
     margin-top: 5px;
