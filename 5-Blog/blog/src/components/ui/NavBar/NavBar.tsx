@@ -22,7 +22,7 @@ const NavBar:React.FC<LinksDaNav> = ({linkBtn, tag1, tag2, tag3}) => {
         <NavLinks className="evento">
           <a href={tag1}>Computer</a>
           <a href={tag2}>Frutas</a>
-          <a href={tag3}>Tutorials</a>
+          <a href={tag3}>Euzinho</a>
         </NavLinks>
         <Buttons PlaceHolder={"About me"} classes={"subscribe"} link={linkBtn} />
       </NavActions>

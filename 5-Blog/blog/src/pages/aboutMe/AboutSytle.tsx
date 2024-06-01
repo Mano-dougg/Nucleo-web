@@ -7,12 +7,12 @@ const media = {
 
 export  const AboutMeContainer = styled.section`
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 50px;
-  padding: 100px 0;
+  padding: 40px 0;
 
   .eu {
     border-radius: 50%;

@@ -66,6 +66,7 @@ export const PostText = styled.div`
   h1{
     font-size: 2rem;
     color: var(--primary-text-color);
+    text-align: center;
   }
 `;
 

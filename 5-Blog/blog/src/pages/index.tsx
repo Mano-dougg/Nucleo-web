@@ -49,7 +49,7 @@ export default function Home({
         <NavBar
           tag1={`/blogPostsTags/${computer.results[0].tags}`}
           tag2={`/blogPostsTags/${frutas.results[0].tags}`}
-          tag3={""}
+          tag3={"/aboutMe/AboutMe"}
           linkBtn={"/aboutMe/AboutMe"}
         ></NavBar>
         <Header

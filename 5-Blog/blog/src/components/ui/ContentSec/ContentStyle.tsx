@@ -8,8 +8,8 @@ export const Content = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 100px;
-  padding: 80px 10px;
+  gap: 80px;
+  padding: 40px 10px;
 
   background-color: var(--bg-posts);
 `;
