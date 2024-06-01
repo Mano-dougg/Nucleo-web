@@ -80,3 +80,30 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 1350px){
+
+    .card{
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .cardSection .cardContainer{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 620px){
+
+    .card .cardImage img{
+        width: 90%;
+        height: 90%;
+    }
+
+    .cardSection .cardContainer{
+        flex-direction: column;
+    }
+
+    .card .cardText h1, .card .cardText p{
+        width: 100%;
+    }
+}

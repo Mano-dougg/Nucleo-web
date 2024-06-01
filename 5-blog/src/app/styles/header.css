@@ -44,6 +44,16 @@ header .searchContainer input::placeholder {
     font-weight: 300;
     font-size: 15px;
     margin-left: 8px;
-    opacity: 1; /* Para garantir que o placeholder não fique transparente */
+    opacity: 1; 
+}
+
+@media screen and (max-width: 650px){
+    header .searchContainer{
+        display: none;
+    }
+
+    header .logoContainer{
+        margin: 0 auto;
+    }
 }
 

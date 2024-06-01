@@ -34,3 +34,46 @@ h2.subNoticiaDestaque{
     font-size: 24px;
     color: #DDDBDB;
 }
+
+@media screen and (max-width: 1350px) {
+    .destaqueContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .destaqueContainer a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .destaqueContainer img{
+        width: 70%;
+        height: 90%;
+    }
+
+    .destaqueText {
+        position: static; 
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        left: auto; 
+        bottom: auto; 
+        }
+
+    h1.tituloNoticiaDestaque{
+        font-weight: 600;
+        font-size: 30px;
+        color: #000;
+        text-align: center;
+    }
+    h2.subNoticiaDestaque{
+        font-weight: 400;
+        font-size: 24px;
+        color: #0000008f;
+        text-align: center;
+    }
+}

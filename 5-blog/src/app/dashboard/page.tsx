@@ -13,12 +13,15 @@ async function NoticiaPrincipal() {
         <section className="article">
             <div className="articleContainer">
                 <h1>{page.data.titulonoticia || ""}</h1>
-                <img className="movieImage"
-                    src={page.data.imagemnoticia.url || ""}
-                    width={751}
-                    height={377}
-                    alt={page.data.imagemnoticia.alt || ""}
-                />
+                <div className="movieImageContainer">
+                    <img className="movieImage"
+                        src={page.data.imagemnoticia.url || ""}
+                        width={751}
+                        height={377}
+                        alt={page.data.imagemnoticia.alt || ""}
+                    />
+                </div>
+                
                 <h2>{page.data.subtitulonoticia}</h2>
                 <div>
                     <PrismicRichText field={page.data.artigonoticia} />
