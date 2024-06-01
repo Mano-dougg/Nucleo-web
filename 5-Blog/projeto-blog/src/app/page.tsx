@@ -22,7 +22,7 @@ export default async function Page() {
           <div><Card></Card></div>
           <div className="third-card"><Card></Card></div>
         </section>
-      </section>    
+      </section> 
   </main>
   );
 }

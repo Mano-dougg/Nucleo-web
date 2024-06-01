@@ -13,7 +13,7 @@ export default function Card (){
             <h1>Notícia muito importante</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, turpis cursus elementum commodo, lorem leo dignissim mi, eget tempus elit metus vel libero.</p>
                 <div>
-                    <Link href="\" className="autor-info">
+                    <Link href="\creator" className="autor-info">
                         <Image src={ProfilePic} alt="" className="profile-img"></Image>
                         <section>
                             <h2>Fulano das IAs</h2>
