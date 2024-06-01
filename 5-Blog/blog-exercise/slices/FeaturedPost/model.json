@@ -1,0 +1,56 @@
+{
+  "id": "featured_post",
+  "type": "SharedSlice",
+  "name": "FeaturedPost",
+  "description": "FeaturedPost",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "posttitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "postTitle",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "heading2"
+          }
+        },
+        "postdescription": {
+          "type": "StructuredText",
+          "config": {
+            "label": "postDescription",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "single": "paragraph,em,strong"
+          }
+        },
+        "postimage": {
+          "type": "Image",
+          "config": {
+            "label": "postImage",
+            "constraint": {},
+            "thumbnails": [
+              {
+                "name": "mobile",
+                "width": 328,
+                "height": 225
+              },
+              {
+                "name": "desktop",
+                "width": 544,
+                "height": 374
+              }
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

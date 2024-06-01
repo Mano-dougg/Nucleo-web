@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = FeaturedPostSlice;
 
 /**
  * Content for Homepage documents
@@ -20,6 +20,17 @@ interface HomepageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
+
+  /**
+   * Main section header field in *Homepage*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Main section header
+   * - **API ID Path**: homepage.main_section_header
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  main_section_header: prismic.TitleField;
 
   /**
    * Slice Zone field in *Homepage*
@@ -214,6 +225,71 @@ export type LogoDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomepageDocument | LogoDocument;
 
+/**
+ * Primary content in *FeaturedPost → Default → Primary*
+ */
+export interface FeaturedPostSliceDefaultPrimary {
+  /**
+   * postTitle field in *FeaturedPost → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_post.default.primary.posttitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  posttitle: prismic.TitleField;
+
+  /**
+   * postDescription field in *FeaturedPost → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_post.default.primary.postdescription
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  postdescription: prismic.RichTextField;
+
+  /**
+   * postImage field in *FeaturedPost → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_post.default.primary.postimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  postimage: prismic.ImageField<"mobile" | "desktop">;
+}
+
+/**
+ * Default variation for FeaturedPost Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedPostSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturedPostSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FeaturedPost*
+ */
+type FeaturedPostSliceVariation = FeaturedPostSliceDefault;
+
+/**
+ * FeaturedPost Shared Slice
+ *
+ * - **API ID**: `featured_post`
+ * - **Description**: FeaturedPost
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedPostSlice = prismic.SharedSlice<
+  "featured_post",
+  FeaturedPostSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -231,6 +307,10 @@ declare module "@prismicio/client" {
       LogoDocumentData,
       LogoDocumentDataSocialNetworksItem,
       AllDocumentTypes,
+      FeaturedPostSlice,
+      FeaturedPostSliceDefaultPrimary,
+      FeaturedPostSliceVariation,
+      FeaturedPostSliceDefault,
     };
   }
 }

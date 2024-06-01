@@ -13,11 +13,24 @@
           "placeholder": ""
         }
       },
+      "main_section_header": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Main section header",
+          "placeholder": "Main section header",
+          "allowTargetBlank": false,
+          "single": "heading1"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "featured_post": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },
