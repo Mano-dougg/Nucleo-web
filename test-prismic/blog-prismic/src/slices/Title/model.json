@@ -1,0 +1,35 @@
+{
+  "id": "title",
+  "type": "SharedSlice",
+  "name": "Title",
+  "description": "Title",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "jogos": {
+          "type": "Link",
+          "config": {
+            "label": "jogos",
+            "placeholder": "",
+            "select": "media"
+          }
+        },
+        "img": {
+          "type": "Image",
+          "config": {
+            "label": "img",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
