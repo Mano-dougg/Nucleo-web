@@ -21,8 +21,6 @@
 
 .searchBar{
     background-color: var(--bgColorSearchBar);
-   
-   
     width: 100%;
     padding: 0px 18px 0px 18px;
     height: 46px;
@@ -36,6 +34,7 @@
     height: 32px;
     border: 0;
     background: unset;
+    outline: none;
 }
 
 .inputSearchBar::before{
