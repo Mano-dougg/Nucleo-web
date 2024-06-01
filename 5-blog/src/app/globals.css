@@ -60,6 +60,10 @@ p{
   color: var(--pColor);
 }
 
+a:link{
+  text-decoration: none;
+}
+
 .swiper {
   max-width: 1200px;
   min-height: 330px;

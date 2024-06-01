@@ -7,6 +7,7 @@ import arrowRight from '../../Components/Post/ImgPost/ArrowRight.png'
 import Image from 'next/image'
 import Post from '../../Components/Post/Page'
 import { CaroulselRow } from '@/Components/CaroulselSwiper/Page'
+import Link from 'next/link'
 
 export default function AutorPage() {
     return(
@@ -40,24 +41,30 @@ export default function AutorPage() {
                 </p>
                 </div>
                 <div style={{display: 'flex' , gap: '32px'}}>
-                    <Image
-                        src={instaIconBlack}
-                        width={50}
-                        height={50}
-                        alt="Picture of an instaIconBlack"
-                        />
-                     <Image
-                        src={linkdinIconBlack}
-                        width={50}
-                        height={50}
-                        alt="Picture of a linkdinIconBlack"
-                        />
-                    <Image
-                        src={githubIconBlack}
-                        width={50}
-                        height={50}
-                        alt="Picture of a githubIconBlack"
-                        />
+                    <a target="_blank" href="https://www.instagram.com/p/C7hoJrLPztV/?utm_source=ig_web_copy_link&img_index=2">
+                        <Image 
+                            src={instaIconBlack}
+                            width={50}
+                            height={50}
+                            alt="Picture of an instaIconBlack"
+                            />
+                    </a>    
+                    <a target="_blank" href="https://www.linkedin.com/feed/">
+                        <Image
+                            src={linkdinIconBlack}
+                            width={50}
+                            height={50}
+                            alt="Picture of a linkdinIconBlack"
+                            />
+                    </a>
+                    <a target="_blank" href="https://github.com">
+                        <Image
+                            src={githubIconBlack}
+                            width={50}
+                            height={50}
+                            alt="Picture of a githubIconBlack"
+                            />
+                    </a>
                 </div>
             </article>
         </section>

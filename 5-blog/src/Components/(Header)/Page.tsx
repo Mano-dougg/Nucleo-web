@@ -3,13 +3,16 @@ import Image from 'next/image';
 import styles from './Page.module.css'
 import { Italianno } from 'next/font/google';
 import ThemeSwicher from '../ThemeSwicher/theme.swicher';
+import Link from 'next/link';
 
 export default function Header() {
     return (
       <>
       <header className={styles.header}>
           <section>
+            <Link href="/HomePage">
             <h1 className={styles.h1Header}><strong>AI</strong><i>TODAY</i></h1>
+            </Link>
           </section>
           <section className={styles.sectionBar}>
             <article className={styles.searchBar}>

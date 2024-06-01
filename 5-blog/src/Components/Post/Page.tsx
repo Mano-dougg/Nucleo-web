@@ -4,6 +4,7 @@ import share from './ImgPost/Share.png'
 import Image from 'next/image'
 import styles from './Page.module.css'
 import { Hedvig_Letters_Sans } from 'next/font/google'
+import Link from 'next/link'
 
 interface PostProps {
     widthPost: number,
@@ -17,6 +18,7 @@ interface PostProps {
 export default function Post({widthPost, heightPost, flexPost, padding = 'default', widthImg, heightImg}: PostProps) {
     return(
         <>
+        <Link href="/PostPage" >
         <section className={styles.post} style={{width: widthPost, height: heightPost, flexDirection: flexPost,  
             padding: ` ${padding==='default' ? '34px 25px': '25px 20px'}` }}>
             <section className={styles.mainPost}>
@@ -62,6 +64,7 @@ export default function Post({widthPost, heightPost, flexPost, padding = 'defaul
                 />
             </section>
         </section>
+        </Link>
         </>
     )
 }

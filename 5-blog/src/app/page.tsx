@@ -9,7 +9,6 @@ import AutorPage from "./AutorPage/page";
 import { useState } from "react";
 
 export default function Home() {
-
   return (
     <>
     <HomePage/>
