@@ -1,62 +1,69 @@
 {
   "format": "page",
-  "id": "home",
-  "label": "Settings",
-  "repeatable": false,
+  "id": "blog_post",
+  "label": "Blog Post",
+  "repeatable": true,
   "status": true,
   "json": {
-    "settings": {
-      "site_title": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "title": {
         "type": "Text",
         "config": {
-          "label": "site title",
+          "label": "título",
           "placeholder": ""
         }
       },
-      "meta_desc": {
-        "type": "Text",
-        "config": {
-          "label": "Meta description",
-          "placeholder": ""
-        }
-      },
-      "og_image": {
+      "post_image": {
         "type": "Image",
         "config": {
-          "label": "OG image",
+          "label": "Imagem Do Post",
           "constraint": {},
           "thumbnails": []
         }
       },
-      "navigation": {
+      "paragraph": {
         "type": "Group",
         "config": {
-          "label": "navigation",
+          "label": "Parágrafo",
           "repeat": true,
           "fields": {
-            "add": {
-              "type": "Link",
-              "config": {
-                "label": "add",
-                "placeholder": "",
-                "select": null
-              }
-            },
-            "label": {
+            "title": {
               "type": "Text",
               "config": {
-                "label": "label",
+                "label": "Título do Paragrafo",
+                "placeholder": "deixar vazio caso não haja"
+              }
+            },
+            "content": {
+              "type": "Text",
+              "config": {
+                "label": "Conteúdo do Parágrafo",
                 "placeholder": ""
               }
             }
           }
         }
       },
-      "contact_email": {
+      "autor": {
         "type": "Text",
         "config": {
-          "label": "contact email",
+          "label": "Autor",
           "placeholder": ""
+        }
+      },
+      "category": {
+        "type": "Select",
+        "config": {
+          "label": "categoria",
+          "placeholder": "",
+          "options": ["Homebrew", "D&D", "VTM", "Tormenta"],
+          "default_value": "Homebrew"
         }
       },
       "slices": {

@@ -1,0 +1,140 @@
+{
+  "id": "main_image",
+  "type": "SharedSlice",
+  "name": "MainImage",
+  "description": "MainImage",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "reason": {
+          "type": "Text",
+          "config": {
+            "label": "motivo",
+            "placeholder": ""
+          }
+        },
+        "miniPost": {
+          "type": "Group",
+          "config": {
+            "label": "mini-post",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "título",
+                  "placeholder": ""
+                }
+              },
+              "desc": {
+                "type": "Text",
+                "config": {
+                  "label": "descrição",
+                  "placeholder": ""
+                }
+              },
+              "category": {
+                "type": "Select",
+                "config": {
+                  "label": "categoria",
+                  "placeholder": "escolha a categoria do conteúdo em destaque",
+                  "options": [
+                    "Homebrew",
+                    "Tormenta",
+                    "VTM",
+                    "D&D"
+                  ],
+                  "default_value": "Homebrew"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "link",
+                  "select": "document",
+                  "customtypes": [
+                    "blog_post"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "mainImageNoCategory",
+      "name": "Main Image no-category",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "reason": {
+          "type": "Text",
+          "config": {
+            "label": "motivo",
+            "placeholder": ""
+          }
+        },
+        "miniPost": {
+          "type": "Group",
+          "config": {
+            "label": "mini-post",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Imagem",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "título",
+                  "placeholder": ""
+                }
+              },
+              "desc": {
+                "type": "Text",
+                "config": {
+                  "label": "descrição",
+                  "placeholder": ""
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "link",
+                  "select": "document",
+                  "customtypes": [
+                    "blog_post"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

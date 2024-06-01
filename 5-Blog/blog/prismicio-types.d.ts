@@ -5,6 +5,155 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *Blog Post → Parágrafo*
+ */
+export interface BlogPostDocumentDataParagraphItem {
+  /**
+   * Título do Paragrafo field in *Blog Post → Parágrafo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: deixar vazio caso não haja
+   * - **API ID Path**: blog_post.paragraph[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Conteúdo do Parágrafo field in *Blog Post → Parágrafo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.paragraph[].content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+}
+
+type BlogPostDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Blog Post documents
+ */
+interface BlogPostDocumentData {
+  /**
+   * título field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Imagem Do Post field in *Blog Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.post_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  post_image: prismic.ImageField<never>;
+
+  /**
+   * Parágrafo field in *Blog Post*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.paragraph[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  paragraph: prismic.GroupField<Simplify<BlogPostDocumentDataParagraphItem>>;
+
+  /**
+   * Autor field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.autor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  autor: prismic.KeyTextField;
+
+  /**
+   * categoria field in *Blog Post*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Homebrew
+   * - **API ID Path**: blog_post.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  category: prismic.SelectField<
+    "Homebrew" | "D&D" | "VTM" | "Tormenta",
+    "filled"
+  >;
+
+  /**
+   * Slice Zone field in *Blog Post*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice> /**
+   * Meta Description field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: blog_post.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Blog Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: blog_post.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Blog Post document from Prismic
+ *
+ * - **API ID**: `blog_post`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogPostDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BlogPostDocumentData>,
+    "blog_post",
+    Lang
+  >;
+
+/**
  * Item in *Settings → navigation*
  */
 export interface HomeDocumentDataNavigationItem {
@@ -36,7 +185,7 @@ type HomeDocumentDataSlicesSlice = never;
  */
 interface HomeDocumentData {
   /**
-   * Casa do RPG field in *Settings*
+   * site title field in *Settings*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -58,15 +207,15 @@ interface HomeDocumentData {
   meta_desc: prismic.KeyTextField;
 
   /**
-   * Main image field in *Settings*
+   * OG image field in *Settings*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.main_image
+   * - **API ID Path**: home.og_image
    * - **Tab**: settings
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  main_image: prismic.ImageField<never>;
+  og_image: prismic.ImageField<never>;
 
   /**
    * navigation field in *Settings*
@@ -78,6 +227,17 @@ interface HomeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   navigation: prismic.GroupField<Simplify<HomeDocumentDataNavigationItem>>;
+
+  /**
+   * contact email field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.contact_email
+   * - **Tab**: settings
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_email: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *Settings*
@@ -134,7 +294,381 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = HomeDocument;
+type HomepageDocumentDataSlicesSlice = MainImageSlice;
+
+/**
+ * Content for HomePage documents
+ */
+interface HomepageDocumentData {
+  /**
+   * title field in *HomePage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *HomePage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
+   * Meta Description field in *HomePage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: homepage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *HomePage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *HomePage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: homepage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * HomePage document from Prismic
+ *
+ * - **API ID**: `homepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomepageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomepageDocumentData>,
+    "homepage",
+    Lang
+  >;
+
+type PostCategoryDocumentDataSlicesSlice = MainImageSlice;
+
+/**
+ * Content for Post Category documents
+ */
+interface PostCategoryDocumentData {
+  /**
+   * categoria field in *Post Category*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Homebrew
+   * - **API ID Path**: post_category.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  category: prismic.SelectField<
+    "Homebrew" | "D&D" | "VTM" | "Tormenta",
+    "filled"
+  >;
+
+  /**
+   * relação de posts field in *Post Category*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_category.posts
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  posts: prismic.ContentRelationshipField<"blog_post">;
+
+  /**
+   * Slice Zone field in *Post Category*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_category.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PostCategoryDocumentDataSlicesSlice> /**
+   * Meta Description field in *Post Category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: post_category.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Post Category*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_category.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Post Category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: post_category.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Post Category document from Prismic
+ *
+ * - **API ID**: `post_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostCategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PostCategoryDocumentData>,
+    "post_category",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | BlogPostDocument
+  | HomeDocument
+  | HomepageDocument
+  | PostCategoryDocument;
+
+/**
+ * Item in *MainImage → Default → Primary → mini-post*
+ */
+export interface MainImageSliceDefaultPrimaryMiniPostItem {
+  /**
+   * Imagem field in *MainImage → Default → Primary → mini-post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.default.primary.miniPost[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * título field in *MainImage → Default → Primary → mini-post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.default.primary.miniPost[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * descrição field in *MainImage → Default → Primary → mini-post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.default.primary.miniPost[].desc
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  desc: prismic.KeyTextField;
+
+  /**
+   * categoria field in *MainImage → Default → Primary → mini-post*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: escolha a categoria do conteúdo em destaque
+   * - **Default Value**: Homebrew
+   * - **API ID Path**: main_image.default.primary.miniPost[].category
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  category: prismic.SelectField<
+    "Homebrew" | "Tormenta" | "VTM" | "D&D",
+    "filled"
+  >;
+
+  /**
+   * link field in *MainImage → Default → Primary → mini-post*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.default.primary.miniPost[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.ContentRelationshipField<"blog_post">;
+}
+
+/**
+ * Item in *MainImage → Main Image no-category → Primary → mini-post*
+ */
+export interface MainImageSliceMainImageNoCategoryPrimaryMiniPostItem {
+  /**
+   * Imagem field in *MainImage → Main Image no-category → Primary → mini-post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.mainImageNoCategory.primary.miniPost[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * título field in *MainImage → Main Image no-category → Primary → mini-post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.mainImageNoCategory.primary.miniPost[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * descrição field in *MainImage → Main Image no-category → Primary → mini-post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.mainImageNoCategory.primary.miniPost[].desc
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  desc: prismic.KeyTextField;
+
+  /**
+   * link field in *MainImage → Main Image no-category → Primary → mini-post*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.mainImageNoCategory.primary.miniPost[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.ContentRelationshipField<"blog_post">;
+}
+
+/**
+ * Primary content in *MainImage → Default → Primary*
+ */
+export interface MainImageSliceDefaultPrimary {
+  /**
+   * motivo field in *MainImage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.default.primary.reason
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  reason: prismic.KeyTextField;
+
+  /**
+   * mini-post field in *MainImage → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.default.primary.miniPost[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  miniPost: prismic.GroupField<
+    Simplify<MainImageSliceDefaultPrimaryMiniPostItem>
+  >;
+}
+
+/**
+ * Default variation for MainImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MainImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MainImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *MainImage → Main Image no-category → Primary*
+ */
+export interface MainImageSliceMainImageNoCategoryPrimary {
+  /**
+   * motivo field in *MainImage → Main Image no-category → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.mainImageNoCategory.primary.reason
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  reason: prismic.KeyTextField;
+
+  /**
+   * mini-post field in *MainImage → Main Image no-category → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_image.mainImageNoCategory.primary.miniPost[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  miniPost: prismic.GroupField<
+    Simplify<MainImageSliceMainImageNoCategoryPrimaryMiniPostItem>
+  >;
+}
+
+/**
+ * Main Image no-category variation for MainImage Slice
+ *
+ * - **API ID**: `mainImageNoCategory`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MainImageSliceMainImageNoCategory = prismic.SharedSliceVariation<
+  "mainImageNoCategory",
+  Simplify<MainImageSliceMainImageNoCategoryPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MainImage*
+ */
+type MainImageSliceVariation =
+  | MainImageSliceDefault
+  | MainImageSliceMainImageNoCategory;
+
+/**
+ * MainImage Shared Slice
+ *
+ * - **API ID**: `main_image`
+ * - **Description**: MainImage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MainImageSlice = prismic.SharedSlice<
+  "main_image",
+  MainImageSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -146,11 +680,29 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      BlogPostDocument,
+      BlogPostDocumentData,
+      BlogPostDocumentDataParagraphItem,
+      BlogPostDocumentDataSlicesSlice,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataNavigationItem,
       HomeDocumentDataSlicesSlice,
+      HomepageDocument,
+      HomepageDocumentData,
+      HomepageDocumentDataSlicesSlice,
+      PostCategoryDocument,
+      PostCategoryDocumentData,
+      PostCategoryDocumentDataSlicesSlice,
       AllDocumentTypes,
+      MainImageSlice,
+      MainImageSliceDefaultPrimaryMiniPostItem,
+      MainImageSliceDefaultPrimary,
+      MainImageSliceMainImageNoCategoryPrimaryMiniPostItem,
+      MainImageSliceMainImageNoCategoryPrimary,
+      MainImageSliceVariation,
+      MainImageSliceDefault,
+      MainImageSliceMainImageNoCategory,
     };
   }
 }

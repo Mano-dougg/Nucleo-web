@@ -166,11 +166,11 @@ export default function PlaySettings(){
 
     const randomWordPicker = (wordType:string)=>{
         let typeToSee = wordType;
-        if(wordType==='aleatório'){
+        while(typeToSee==='aleatório'){
             const miniPosition = Math.round(Math.random()*5)
             typeToSee = wordList.get(wordType)[miniPosition]
         }
-        const position:number = Math.round(Math.random()*10)
+        const position:number = Math.round(Math.random()*9)
         const choosenWord:string = wordList.get(typeToSee)[position]
         chooseWord(choosenWord)
     }

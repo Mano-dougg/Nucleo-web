@@ -3,4 +3,15 @@
 @tailwind utilities;
 
 :root {
+    --header-bg: #1F3519;
+    --font: white;
+    --font2: black; 
+    --logo-color2: #73FEB3;
+    --background1: #588E22;
+    --background2: #E2DFDF;
+    --background3: white;
+    --DnD: #34B3FB;
+    --tormenta: #C6C146;
+    --vtm: #DF34FB;
+    --homebrew: #FB3434;
 }

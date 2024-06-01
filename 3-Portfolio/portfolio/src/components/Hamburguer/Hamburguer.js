@@ -39,7 +39,7 @@ export default function Hamburguer(){
                 display: none;
             }}
             `}</style>
-            <button onClick={showMenu} className={show?"hambutton active show-mobile":"hambutton show-mobile"}>
+            <button onClick={showMenu} className={show?"hambutton active":"hambutton"}>
                 <div className="hambutton__bar first hambutton-color"></div>
                 <div className="hambutton__bar second hambutton-color"></div>
                 <div className="hambutton__bar third hambutton-color"></div>
