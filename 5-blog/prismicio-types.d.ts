@@ -109,6 +109,67 @@ interface PostmeDocumentData {
 export type PostmeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PostmeDocumentData>, "Postme", Lang>;
 
+/**
+ * Content for Home documents
+ */
+interface HomeMeDocumentData {
+  /**
+   * title home field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homeMe.title_home
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_home: prismic.KeyTextField;
+
+  /**
+   * title presentation home field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homeMe.title_presentation_home
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_presentation_home: prismic.KeyTextField;
+
+  /**
+   * text presentation home field in *Home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homeMe.text_presentation_home
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_presentation_home: prismic.RichTextField;
+
+  /**
+   * image presentation home field in *Home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homeMe.image_presentation_home
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_presentation_home: prismic.ImageField<never>;
+}
+
+/**
+ * Home document from Prismic
+ *
+ * - **API ID**: `homeMe`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeMeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<HomeMeDocumentData>, "homeMe", Lang>;
+
 type PagepostDocumentDataSlicesSlice = never;
 
 /**
@@ -174,7 +235,10 @@ export type PagepostDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = PostmeDocument | PagepostDocument;
+export type AllDocumentTypes =
+  | PostmeDocument
+  | HomeMeDocument
+  | PagepostDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -188,6 +252,8 @@ declare module "@prismicio/client" {
     export type {
       PostmeDocument,
       PostmeDocumentData,
+      HomeMeDocument,
+      HomeMeDocumentData,
       PagepostDocument,
       PagepostDocumentData,
       PagepostDocumentDataSlicesSlice,

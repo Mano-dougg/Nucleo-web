@@ -1,5 +1,4 @@
 import bigMiniRobot from '../AutorPage/imgAutor/BigMiniRobot.png'
-import share from '../../Components/Post/ImgPost/Share.png'
 import Image from 'next/image';
 import { createClient } from "../../prismicio";
 import { PrismicNextImage } from "@prismicio/next";
