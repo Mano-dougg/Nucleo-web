@@ -1,0 +1,272 @@
+.post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post h1{
+    text-align: center;
+    color: #003720;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 250%;
+}
+
+.introducao{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center ;
+}
+
+.introducao p{
+    margin-top: 15px;
+}
+
+.components{
+    text-align: justify;
+    line-height: 175%;
+    width: 32rem;
+    height: 23rem;
+    color: #404540;
+}
+
+.roboMain{
+    width: 32rem;
+    height: 23rem;
+    margin-left: 60px;
+    margin-top: 30px;
+
+}
+
+.roboMain2{
+    display: flex;
+    width: 28rem;
+    height: 18rem;
+    margin-top: 120px;
+}
+
+.roboMainP{
+    display: none;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+
+.roboMainPP{
+    display: none;
+}
+
+.components h2{
+    color: #003720;
+}
+
+.paragrafo{
+    text-align: justify;
+    line-height: 175%;
+    width: 70rem;
+    height: 23rem;
+    color: #404540;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.imagens{
+    display: flex;
+    flex-direction: row;
+}
+
+.fulano{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 110px;
+    gap:20px;
+}
+
+
+.info h4{
+    margin-bottom: 20px;
+}
+
+.info p{
+    margin-top: -15px;
+}
+
+.post1, .post2{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    gap:20px;
+    width: 34rem;
+    height: 15rem;
+    background-color: #F0FFF0	;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-top: -25px;
+    padding: 25px;
+}
+
+
+.carrossel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 6rem;
+    margin-right: 8rem;
+}
+
+.carrossel p{
+    margin-top: 10px;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrosselImg{
+    margin-left: 680px;
+    margin-top: 30px;
+    width: 15rem;
+    height: 1.5rem;
+}
+
+.efeito{
+    text-decoration: none;
+    color: #003720; 
+    transition: color 0.3s ease;
+    
+}
+
+.efeito:hover {
+    color: #32CD32	; /* cor do link quando hover */
+  }
+
+
+.setaD{
+    display: flex;
+}
+
+.setaE{
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .introducao{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .roboMain{
+        margin-left: 0;
+    }
+
+    .roboMainPP{
+        display: none;
+    }
+
+    .paragrafo{
+        width: 40rem;
+        height: 23rem;
+    }
+
+    .imagens{
+        margin-top: 450px;
+    }
+
+    .fulano{
+        margin-top: 450px;
+    }
+
+    .roboMain2{
+        display: none;
+    }
+    
+    .roboMainP{
+        display: flex;
+
+    }
+
+    .setaD{
+        display: none;
+    }
+    
+    .setaE{
+        display: none;
+    }
+
+    .post1, .post2{
+        width: 19rem;
+        height: 25rem;
+    
+    }
+
+    .robo{
+        width: 100px;
+        
+    }
+
+    .carrosselImg{
+        margin-left: 350px;
+    }
+
+    .perfil, .info{
+        padding: 25px;
+        margin-left: -20px;
+    }
+  }
+
+@media screen and (max-width: 468px) {
+    .introducao{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .components{
+        width: 20rem;
+    }
+
+    .roboMain{
+        display: none;
+    }
+
+    .roboMainPP{
+        display: flex;
+        padding-right: 20px;
+        margin-top: 310px;
+    }
+
+    .paragrafo{
+        width: 20rem;
+        margin-left: 10px;
+    }
+
+    .imagens{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1250px;
+    }
+
+    .fulano{
+        margin-top: 1350px;
+    }
+
+    .post2{
+        display: none;
+    }
+
+    .perfil, .info{
+        padding: 25px;
+    }
+
+    .carrosselImg{
+        margin-left: 200px;
+    }
+    
+  }
