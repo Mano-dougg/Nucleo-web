@@ -7,10 +7,18 @@
     padding: 34px 25px 25px 34px;
     margin-left: 10px;
 }
+.card1 h2{
+    font-size: 33px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
 .card1 p{
     font-size: 12px;
     text-align: left;
     color: #067546;
+}
+.card1 descricao{
+    margin-top: 5px;
 }
 .card1 button{
     border: none;
@@ -40,6 +48,7 @@
     font-size: 33px;
     margin-top: 5px;
     margin-bottom: 5px;
+    text-align: left;
 }
 .card2 p{
     font-size: 14px;
