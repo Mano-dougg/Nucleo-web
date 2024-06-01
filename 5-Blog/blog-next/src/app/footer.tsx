@@ -1,15 +1,16 @@
 import Image from "next/image";
 import styles from "./modulos.module.css"
 const Footer= ({tema}) => {
-    const footerClassName = `${styles.footer}-${styles[tema]}`;
+    const footerClassName = `${styles.footer}-${[tema]}`;
+    const disclaimerClassName = `${styles.disclaimer}-${[tema]}`;
     return (
         <>
-        <div className="footer">
+        <div className={footerClassName}>
             <div className="sociais">
                 <p>Conheça nossas redes sociais</p>
             </div>
         </div>
-        <div className="footer">
+        <div className={footerClassName}>
                 <Image
                     src="/instagram.svg"
                     alt="instagram"
@@ -22,8 +23,8 @@ const Footer= ({tema}) => {
                     height={32}
                 />
         </div>
-        <div className="footer">
-            <p className="footer-disclaimer">Copyright © 2024 | AITODAY </p>
+        <div className={footerClassName}>
+            <p className={disclaimerClassName}>Copyright © 2024 | AITODAY </p>
         </div>
         </>
     )

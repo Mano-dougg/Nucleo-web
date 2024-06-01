@@ -1,6 +1,13 @@
+import { useState } from "react";
+import styles from "./modulos.module.css";
 import Footer from "./footer"
 import Image from "next/image"
 export default function Pessoal () {
+    const [tema, setTema] = useState('claro');
+
+    function alternarTema() {
+        setTema((tema) => (tema === 'claro' ? 'escuro' : 'claro'));
+    }   
     return(
         <main className="principal">
         <div className="header">

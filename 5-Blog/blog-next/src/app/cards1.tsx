@@ -1,25 +1,24 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import Image from "next/image";
 import styles from "./modulos.module.css";
 
 const Card1 = ({ tema }) => {
-  const cardClassName = `${styles.card1}-${styles[tema]}`;
-  const pessoalClassName = `${styles.pessoal}-${styles[tema]}`;
-  const descricaoClassName = `${styles.descricao}-${styles[tema]}`;
+  const cardClassName = `card1-${tema}`;
+  const pessoalClassName = `pessoal1-${tema}`;
+  const descricaoClassName = `descricao1-${tema}`;
 
   return (
-    <div className={cardClassName}>
+    <div className={styles[cardClassName]}>
       <h2>Notícia muito importante</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, turpis cursus elementum commodo, lorem leo dignissim mi, eget tempus elit metus vel libero.</p>
-      <div className={styles.pessoal}>
+      <div className={styles[pessoalClassName]}>
         <Image
           src="/fulano.svg"
           width={44}
           height={44}
           alt="fulano"
         />
-        <div className={styles.descricao}>
+        <div className={styles[descricaoClassName]}>
           <p>Fulano das IAs</p>
           <p>01/01/2024</p>
         </div>

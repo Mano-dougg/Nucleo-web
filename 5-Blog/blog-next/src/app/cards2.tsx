@@ -1,27 +1,32 @@
 import Image from "next/image";
 import styles from "./modulos.module.css";
 const Card2 = ({tema}) => {
+    const cardClassName = `${styles.card2}-${[tema]}`;
+    const containerClassName =`${styles.container}-${[tema]}`;
+    const pessoalClassName = `${styles.pessoal}-${[tema]}`;
+    const descricaoClassName = `${styles.descricao}-${[tema]}`;
+
     return(
-        <div className={styles.card2}>
+        <div className={cardClassName}>
             <Image
                 src="/ai.svg"
                 width={186}
                 height={205}
                 alt="robo de IA"
             />
-            <div className={styles.resto}>  
+            <div className={containerClassName}>  
                 <div className={styles.descricao2}>
                     <h2>Notícia  de muito importante</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, turpis cursus elementum commodo, lorem leo dignissim mi, eget tempus elit metus vel libero.</p>
                 </div>
-                <div className={styles.pessoal}>
+                <div className={pessoalClassName}>
                     <Image
                     src="/fulano.svg"
                     width={44}
                     height={44}
                     alt="fulano"
                     />
-                    <div className={styles.descricao}>
+                    <div className={descricaoClassName}>
                         <p>Fulano das IAs</p>
                         <p>01/01/2024</p>
                     </div>

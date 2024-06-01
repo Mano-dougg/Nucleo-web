@@ -1,36 +1,59 @@
-.card1{
-    width: 302px;
-    height: 370px;
-    border: 1px solid;
-    border-radius: 30px;
+/** Card 1 Claro */
+.card1-claro{
     background-color: #EDFFF7;
-    padding: 34px 25px 25px 34px;
-    margin-left: 10px;
 }
-.card1 h2{
+.card1-claro h2{
     font-size: 33px;
     margin-top: 0px;
     margin-bottom: 5px;
 }
-.card1 p{
+.card1-claro p{
     font-size: 12px;
     text-align: left;
-    color: #067546;
+    color: #067546; 
 }
-.card1 descricao{
+.descricao1-claro{
     margin-top: 5px;
 }
-.card1 button{
+.card1-claro button{
     border: none;
     background-color: #EDFFF7;
     cursor: pointer;
 }
-.pessoal{
+.pessoal1-claro{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-.card2{
+/* Card 1 Escuro */
+.card1-escuro h2{
+    font-size: 33px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.card1-escuro p{
+    font-size: 12px;
+    text-align: left;
+    color: #067546;
+}
+.descricao1-escuro{
+    margin-top: 5px;
+}
+.card1-escuro button{
+    border: none;
+    background-color: #EDFFF7;
+    cursor: pointer;
+}
+.pessoal1-escuro{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+/* Final card 1 */
+
+
+/* Card 2 claro */
+.card2-claro{
     display: flex;
     width: 493px;
     height: 206px;
@@ -40,29 +63,62 @@
     background-color: #EDFFF7;
     padding: 20px 25px 25px 19px;
 }
-.resto{
+.container-claro{
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
 }
-.card2 h2{
+.card2-claro h2{
     font-size: 33px;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align: left;
 }
-.card2 p{
+.card2-claro p{
     font-size: 14px;
     margin-bottom: 0px;
     margin-top: 0px;
 }
-.card2 button{
+.card2-claro button{
     border: none;
     background-color: #EDFFF7;
     cursor: pointer;
 }
-.card2 .descricao{
+.container-claro{
+    margin-left: 5px;
+}
+/* Card 2 escuro */
+.card2-escuro{
+    display: flex;
+    width: 493px;
+    height: 206px;
+    border: 1px solid;
+    border-color: #ffffff;
+    border-radius: 30px;    
+    background-color: #EDFFF7;
+    padding: 20px 25px 25px 19px;
+}
+.container-escuro{
+    display: flex;
+    flex-direction: column;
     margin-top: 10px;
 }
-.card2 .resto{
+.card2-escuro h2{
+    font-size: 33px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.card2-escuro p{
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.card2-escuro button{
+    border: none;
+    background-color: #EDFFF7;
+    cursor: pointer;
+}
+.container-escuro{
     margin-left: 5px;
 }
