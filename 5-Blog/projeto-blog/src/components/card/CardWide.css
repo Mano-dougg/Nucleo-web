@@ -3,35 +3,35 @@
     flex-direction: row;
     gap:5%;
     align-items: center;
-
     background: #EDFFF7;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 10px;
-    gap:14px;
+    padding-bottom: 15px; 
+    gap:20px;
 }
 
 .robot-wide{
-    max-width: 186px;
+    max-width: 200px;
     object-fit:cover;
-    height: 90%;
+    height: 95%;
     border-radius: 30px;
     order: 0;
 }
 
 .text-area{
     order: 1;
-    width: 50%;
+    width: 14vw;
+
 }
+
 
 .card-wide h1{
 
     font-weight: 500;
     font-size: clamp(15px,1.8vw,25px);
-    /* font-size: 25px; */
     text-align: left;
     line-height: 25px;
     letter-spacing: -0.02em;

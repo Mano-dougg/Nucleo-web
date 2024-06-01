@@ -4,12 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import imagem from '../../assets/imagem.png'
 import ProfilePic from '../../assets/profile-pic.png'
-
+import CardWide from '@/components/card/CardWide';
+import "../creator/creator.css"
 
 const Newspage = () => {
     return (
         <section className="news">
-            <h1> Incrível crescimento das IA</h1>
+            <h1 className='titulo'> Incrível crescimento das IA</h1>
             <div className='news-body'>
                 <section>
                     <h2>Íncrivel crescimento das IAs</h2>
@@ -30,6 +31,11 @@ const Newspage = () => {
                     <p>01/01/2024</p>
                 </div>    
             </Link>
+            <h3>Mais postagens</h3>
+            <div className='cards-section'>
+                <CardWide></CardWide>
+                <CardWide></CardWide>
+            </div>
         </section>
     )
 }
