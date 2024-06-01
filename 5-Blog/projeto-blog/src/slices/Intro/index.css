@@ -34,6 +34,8 @@ body{
     letter-spacing: -0.02em;
     color: #003720;
     text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .intro-body{
@@ -42,6 +44,7 @@ body{
     flex-direction: row;
     gap: 32px;
     align-items: center;
+    text-decoration: none;
 
 }
 

@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Instagram from "../assets/instagram.png";
-import Linkedin from "../assets/linkedin.png";
+import Instagram from "../../assets/instagram.png";
+import Linkedin from "../../assets/linkedin.png";
 import "./Footer.css";
 
 export default function Footer (){

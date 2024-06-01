@@ -1,0 +1,49 @@
+.cards{
+  display: flex;
+  flex-direction: row;
+  max-width: 1300px;
+  gap:20px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.last-posts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.last-posts h1{
+  font-size: clamp(33px,8vw,55px);
+  padding-top:2%;
+  padding-bottom:2%;
+  color: #003720;
+}
+
+@media(max-width:1000px){
+  .third-card{
+    display: none;
+  }
+  .cards{
+    gap:5%;
+    width:80vw;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (max-width:413px){
+  .cards{
+    padding-top: 20px;
+  }
+}
+
+@media (max-width:360px){
+  .cards{
+    gap:10vw;
+  }
+}
