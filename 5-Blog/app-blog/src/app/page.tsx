@@ -30,13 +30,13 @@ export default async function Home() {
       </div>
       <div className="flex flex-col min-w-[320px] w-full min-h-[600px] md:p-6 p-0 ">
         <div className="flex align-top bg-neutral-100 justify-center p-10 min-w-[320px] max-h-full w-full h-20 flex-col gap-2">
-          <h1 className='self-center justify-center text-2xl xl:text-3xl'>{titulo}</h1>       
+          <h1 className='self-center justify-center text-2xl xl:text-3xl text-red-700 font-extrabold'>{titulo}</h1>       
         </div>
-        <div className=" bg-neutral-100 flex justify-center p-10 max-h-full sm:w-full w-[320] h-full min-h-full min-w-[320px] flex-col md:flex-row-reverse">
+        <div className=" bg-neutral-100 flex justify-center p-10 max-h-full sm:w-full w-[320] h-full min-h-full min-w-[320px] flex-col md:flex-row-reverse gap-x-20">
             <PrismicImage field={imagem} className=" flex max-w-[500px] max-h-[500px]min-w-[50px] min-h-[50px] w-full h-full rounded-3xl justify-center items-center"/>
           <div className=" flex flex-col px-10 gap-10 min-h-fit min-w-10 items-center justify-center">
             <h2 className=" w-80 font-extrabold text-center xl:text-2xl">{subtitulo}</h2> 
-            <div dangerouslySetInnerHTML={{__html:texto}}  className="text-justify font-serif min-h-80 text-lg xl:text-3xl xl:max-w-96 max-w-72 p-0"/>
+            <div dangerouslySetInnerHTML={{__html:texto}}  className="text-justify font-serif min-h-80 text-lg xl:text-xl xl:max-w-96 max-w-72 p-0 "/>
           </div>
         </div>
       </div>
