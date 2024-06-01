@@ -19,7 +19,9 @@ const MainImage = ({ slice }: MainImageProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative bg-gradient-to-b from-[70%] from-background-1 to-background-2 flex flex-col items-center pt-[15%] pb-[10%]"
+      className="relative bg-gradient-to-b from-[70%] from-background-1 to-background-2
+       flex flex-col items-center
+      w-full pt-[15%] sm:pt-[10%] pb-[10%]"
     >
       <h2><FireIcon /> {slice.primary.reason}</h2>
       <div  className="w-[80%]">

@@ -8,10 +8,21 @@
     --font2: black; 
     --logo-color2: #73FEB3;
     --background1: #588E22;
-    --background2: #E2DFDF;
+    --background2: transparent;
     --background3: white;
+    --background4: #E2DFDF;
     --DnD: #34B3FB;
     --tormenta: #C6C146;
     --vtm: #DF34FB;
     --homebrew: #FB3434;
+}
+
+*{
+    transition: background-color 0.4s ease-in-out, color 0.1s ease-in-out;
+
+}
+
+body{
+    background-image: url('../images/bg_bggenerator_com.jpg');
+    background-repeat: repeat-y;
 }

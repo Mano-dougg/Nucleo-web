@@ -12,6 +12,7 @@ export default async function Page() {
 
   const posts = await client.getAllByType("blog_post");
   const postList = posts
+    .reverse()
     .map(({ data, uid }:BlogPostDocument<string>)=>(
       <PostCard title={data.title} post_image={data.post_image} paragraph={data.paragraph} autor={data.autor} category={data.category} uid={parseInt(uid, 10)} key={uid} />
     ))
@@ -20,7 +21,11 @@ export default async function Page() {
   return (
   <section className="flex flex-col items-center w-screen">
     <SliceZone slices={page.data.slices} components={components} />
+    <div className="flex flex-col items-center w-full
+     md:flex-row md:items-start md:justify-evenly md:flex-wrap 
+     xl:px-[5%]">
     {postList}
+    </div>
   </section>
 );
 }

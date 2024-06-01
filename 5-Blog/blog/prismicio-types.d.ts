@@ -518,12 +518,12 @@ export interface MainImageSliceDefaultPrimaryMiniPostItem {
   /**
    * link field in *MainImage → Default → Primary → mini-post*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: main_image.default.primary.miniPost[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.ContentRelationshipField<"blog_post">;
+  link: prismic.LinkField;
 }
 
 /**
@@ -563,12 +563,12 @@ export interface MainImageSliceMainImageNoCategoryPrimaryMiniPostItem {
   /**
    * link field in *MainImage → Main Image no-category → Primary → mini-post*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: main_image.mainImageNoCategory.primary.miniPost[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.ContentRelationshipField<"blog_post">;
+  link: prismic.LinkField;
 }
 
 /**

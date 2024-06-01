@@ -65,10 +65,9 @@
                 "type": "Link",
                 "config": {
                   "label": "link",
-                  "select": "document",
-                  "customtypes": [
-                    "blog_post"
-                  ]
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null
                 }
               }
             }
@@ -124,10 +123,9 @@
                 "type": "Link",
                 "config": {
                   "label": "link",
-                  "select": "document",
-                  "customtypes": [
-                    "blog_post"
-                  ]
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null
                 }
               }
             }

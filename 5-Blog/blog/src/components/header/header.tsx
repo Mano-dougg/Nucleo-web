@@ -4,6 +4,7 @@ import SearchIcon from "@/components/icons/search-icon";
 import { useState } from "react";
 import Menu from "../menu/menu";
 import "./hamburguer-animations.css"
+import Switch from "../switch/switch";
 
 
 export default function Header({ logo }:{logo:string}){
@@ -25,8 +26,7 @@ export default function Header({ logo }:{logo:string}){
             </button>
             <h2 className="font-body">{logoPart1}<span className="text-logo-2"> {logoPart2}</span></h2>
             <div className="flex items-center h-1/2 rounded-xl bg-transparent lg:bg-white overflow-hidden">
-                <input type="search" name="header-search" id="" className="hidden lg:inline-block h-full" />
-                <SearchIcon />
+                <Switch />
             </div>
         </header>
         {menu && <Menu toggleMenu={toggleMenu} />}
