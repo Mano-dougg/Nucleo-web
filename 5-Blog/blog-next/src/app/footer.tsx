@@ -1,5 +1,7 @@
 import Image from "next/image";
-const Footer = () => {
+import styles from "./modulos.module.css"
+const Footer= ({tema}) => {
+    const footerClassName = `${styles.footer}-${styles[tema]}`;
     return (
         <>
         <div className="footer">
@@ -8,12 +10,12 @@ const Footer = () => {
             </div>
         </div>
         <div className="footer">
-                <Image className="image"
+                <Image
                     src="/instagram.svg"
                     alt="instagram"
                     width={32}
                     height={32}
-                /><Image className="image"
+                /><Image
                     src="/linkedin.svg"
                     alt="linkedin"
                     width={32}

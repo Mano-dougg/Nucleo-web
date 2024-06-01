@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./modulos.module.css";
-const Card2 = () => {
+const Card2 = ({tema}) => {
     return(
         <div className={styles.card2}>
             <Image
