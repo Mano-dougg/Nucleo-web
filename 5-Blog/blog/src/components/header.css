@@ -1,0 +1,43 @@
+
+
+header{
+    background: rgba(31, 53, 25, 1);
+    height: 4rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.logo{
+    margin-left: 8rem;
+    display:flex;
+    justify-content: flex-start;
+    text-decoration: none;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 54px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: aquamarine
+}
+
+
+
+.barra{
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 8rem;
+    width: 12%;
+    height: 9%;
+    padding: 10px 8px 10px 8px;
+    gap: 95px;
+    border-radius: 20px 20px 20px 20px;
+    background: rgba(217, 217, 217, 1);
+
+
+
+}

@@ -6,32 +6,34 @@
   "status": true,
   "json": {
     "Main": {
-      "titulo": {
+      "logo": {
         "type": "Text",
         "config": {
-          "label": "Titulo",
+          "label": "Logo",
           "placeholder": ""
         }
       },
-      "descrilcao": {
-        "type": "Text",
+      "caixa": {
+        "type": "StructuredText",
         "config": {
-          "label": "Descrilçao",
-          "placeholder": ""
+          "label": "Caixa",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "og_image": {
+      "search": {
         "type": "Image",
         "config": {
-          "label": "OG image",
+          "label": "search",
           "constraint": {},
           "thumbnails": []
         }
       },
-      "header": {
+      "info": {
         "type": "Group",
         "config": {
-          "label": "Header",
+          "label": "Info",
           "repeat": true,
           "fields": {
             "link": {
@@ -45,8 +47,16 @@
             "label": {
               "type": "Text",
               "config": {
-                "label": "Label",
+                "label": "label",
                 "placeholder": ""
+              }
+            },
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "icon",
+                "constraint": {},
+                "thumbnails": []
               }
             }
           }
