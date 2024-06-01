@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./modulos.module.css";
 const Card = () => {
     return(
-        <div className={styles.card}>
+        <div className={styles.card1}>
             <h2>Notícia muito importante</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, turpis cursus elementum commodo, lorem leo dignissim mi, eget tempus elit metus vel libero.</p>
             <div className={styles.pessoal}>

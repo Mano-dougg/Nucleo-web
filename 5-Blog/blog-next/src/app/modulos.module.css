@@ -1,18 +1,18 @@
-.card{
+.card1{
     width: 302px;
     height: 370px;
     border: 1px solid;
-    border-radius: 30px;    
+    border-radius: 30px;
     background-color: #EDFFF7;
     padding: 34px 25px 25px 34px;
     margin-left: 10px;
 }
-.card p{
+.card1 p{
     font-size: 12px;
     text-align: left;
     color: #067546;
 }
-.card button{
+.card1 button{
     border: none;
     background-color: #EDFFF7;
     cursor: pointer;
@@ -22,6 +22,38 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.descricao{
-    margin-right: 60px;
+.card2{
+    display: flex;
+    width: 493px;
+    height: 206px;
+    border: 1px solid;
+    border-color: #ffffff;
+    border-radius: 30px;    
+    background-color: #EDFFF7;
+    padding: 20px 25px 25px 19px;
+}
+.resto{
+    display: flex;
+    flex-direction: column;
+}
+.card2 h2{
+    font-size: 33px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.card2 p{
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.card2 button{
+    border: none;
+    background-color: #EDFFF7;
+    cursor: pointer;
+}
+.card2 .descricao{
+    margin-top: 10px;
+}
+.card2 .resto{
+    margin-left: 5px;
 }

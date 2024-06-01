@@ -4,6 +4,7 @@ const LastPosts: React.FC = () => {
     return(
         <>
         <h1>Ultimas Postagens</h1>
+        
         </>
     )
 }
