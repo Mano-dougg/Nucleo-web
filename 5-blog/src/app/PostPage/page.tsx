@@ -9,7 +9,6 @@ import { CaroulselRow } from "@/Components/CaroulselSwiper/Page";
 export default async function PostPage() {
      const prismic = createClient()
      const post = await prismic.getByUID('Postme','postyes')
-     console.log(post);
      return (
         <>
          <section className={styles.pagePost}>

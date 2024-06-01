@@ -1,8 +1,8 @@
-import sun from './imgHeader/Sun.png'
 import search from './imgHeader/Search.png'
 import Image from 'next/image';
 import styles from './Page.module.css'
 import { Italianno } from 'next/font/google';
+import ThemeSwicher from '../ThemeSwicher/theme.swicher';
 
 export default function Header() {
     return (
@@ -22,12 +22,7 @@ export default function Header() {
               />
             </article>
             <article>
-            <Image
-                src={sun}
-                width={40}
-                height={40}
-                alt="Picture of a Sun"
-              />
+            <ThemeSwicher/>
             </article>
           </section>
       </header>

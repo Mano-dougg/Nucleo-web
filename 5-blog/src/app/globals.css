@@ -16,8 +16,7 @@
     --paragPost: #067546;
 }
 
-@media (:window-inactive) {
-  :root {
+.dark {
     --bgColorMain: #161616;
     --bgColorHeader: #078D55;
     --bgColorSearchBar: #282A26;
@@ -27,7 +26,10 @@
     --h2Color: #F6F7F6;
     --h3Color: #FFFFFF;
     --pColor: #078D55;
-  }
+}
+
+.App {
+  background-color: var(--bgColorMain);
 }
 
 h1{

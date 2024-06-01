@@ -13,7 +13,6 @@ import { PrismicRichText } from "@prismicio/react";
 export default async function HomePage(){
     const prismic = createClient()
     const home = await prismic.getByUID('homeMe','homeyes')
-    console.log(home);
     return(
         <>
         <section className={styles.homePage}>
