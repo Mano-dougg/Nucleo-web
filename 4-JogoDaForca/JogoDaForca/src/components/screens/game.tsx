@@ -122,7 +122,7 @@ const setarHistorico = ({
 };
 
 export const GameScreen = () => {
-  const [palavrasVetor, setPalvrasVetor] = useState<string[]>([""])
+  const [palavrasVetor, setPalvrasVetor] = useState<string[]>()
   const[palavra, setPalavra] = useState<string>("")
   const [erro, setErro] = useState("\u00a0");
   const [textoSeparado] = useState<string[]>(new Array(7));
@@ -134,12 +134,11 @@ export const GameScreen = () => {
   const inRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const palavrasVeto: string[] = localStorage
+    const palavrasVetor: string[] = localStorage
       .getItem("palavra")
       ?.split("-") || [""];
 
-      setPalvrasVetor(palavrasVeto)
-      
+      setPalvrasVetor(palavrasVetor)
   
     const palavra: string = palavrasVetor[
       Math.floor(Math.random() * palavrasVetor.length)
