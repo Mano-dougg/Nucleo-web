@@ -11,6 +11,10 @@ main{
   justify-content: center;
   align-items: center;
 }
+.subtitulo{
+  font-size: 65px;
+  color: #003720;
+}
 .header{  
   display: flex;
   justify-content: space-evenly;
