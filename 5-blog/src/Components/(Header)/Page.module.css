@@ -43,8 +43,17 @@
 }
 
 .inputSearchBar::placeholder{
-    font-size: 24px;
+    font-size: 1rem;
     color: #000000;
 }
 
+@media (max-width: 570px)  {
+    .header{
+        padding: 0px 11.11% 0px 8%;
+        gap: 30%;
+    }
 
+    .searchBar{
+        display: none;
+    }
+}

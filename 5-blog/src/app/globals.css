@@ -65,7 +65,7 @@ a:link{
 }
 
 .swiper {
-  max-width: 1200px;
+  width: 100% !important;
   min-height: 330px;
 }
 

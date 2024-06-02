@@ -39,7 +39,9 @@
         "type": "Image",
         "config": {
           "label": "image presentation home",
-          "constraint": {},
+          "constraint": {
+            "width": 0
+          },
           "thumbnails": []
         }
       }

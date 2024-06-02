@@ -31,3 +31,31 @@
     align-items: center;
     gap: 32px;
 }
+
+@media (max-width: 1050px ) {
+    .mainContent{
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 1270px) {
+    .post1{
+        display: none;
+    }
+}
+
+@media (max-width: 864px) {
+    .post2{
+        display: none;
+    }
+    .arrows{
+        display: none;
+    }
+}
+
+@media (max-width: 580px) {
+    .astronautApresentation{
+        max-width: 544px;
+        width: 100%;
+    }
+}

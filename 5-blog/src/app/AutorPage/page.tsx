@@ -8,14 +8,15 @@ import Image from 'next/image'
 import Post from '../../Components/Post/Page'
 import { CaroulselRow } from '@/Components/CaroulselSwiper/Page'
 import Link from 'next/link'
+import styles from './Page.module.css'
 
 export default function AutorPage() {
     return(
-        <article style={{ marginTop: '36px', display:'flex', flexDirection: 'column', alignItems:'center', gap: '32px', padding: '0px 11.11% 0px 11.11%'}}>
+        <article className={styles.pageAutor}>
         <section>
             <h1> Fulano das IAs </h1>
         </section>
-        <section style={{display: 'flex'}}>
+        <section className={styles.presentationContent}>
             <article>
             <Image
                 src={BigMiniRobot}
@@ -24,7 +25,7 @@ export default function AutorPage() {
                 alt="Picture of a BigMiniRobot"
                 />
             </article>
-            <article style={{display: 'flex', flexDirection: 'column', gap: '32px'}}>
+            <article className={styles.textPresentationContent}>
                 <div>
                 <p style={{maxWidth: '675px'}}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In posuere, turpis
@@ -40,7 +41,7 @@ export default function AutorPage() {
                     In posuere, turpis cursus elementum commodo.
                 </p>
                 </div>
-                <div style={{display: 'flex' , gap: '32px'}}>
+                <div className={styles.icons}>
                     <a target="_blank" href="https://www.instagram.com/p/C7hoJrLPztV/?utm_source=ig_web_copy_link&img_index=2">
                         <Image 
                             src={instaIconBlack}
@@ -93,9 +94,33 @@ export default function AutorPage() {
         <section>
             <h1> Mais do Autor </h1>    
         </section>        
-        <section style={{display: 'flex', alignItems: 'center',gap: '32px'}}>
-              <CaroulselRow/>
-        </section>
+        <section style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '32px'}}>
+               <div className={styles.arrows}>
+                  <Image
+                     src={arrowLeft}
+                     width={30}
+                     height={60}
+                     alt="Image of a small robot"
+                     />
+               </div>
+               <div className={styles.post1}>
+                  <Post widthPost={302} heightPost={430} flexPost={'column'} widthImg={302} heightImg={156} />
+               </div>
+               <div className={styles.post2}>
+                  <Post widthPost={302} heightPost={430} flexPost={'column'} widthImg={302} heightImg={156} />
+               </div>
+               <div>
+                  <Post widthPost={302} heightPost={430} flexPost={'column'} widthImg={302} heightImg={156} />
+               </div>
+               <div className={styles.arrows}>
+                  <Image
+                     src={arrowRight}
+                     width={30}
+                     height={60}
+                     alt="Image of a small robot"
+                     />
+               </div>
+            </section>
         </article>
     )
 }
