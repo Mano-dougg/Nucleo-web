@@ -1,6 +1,9 @@
 import Image from "next/image";
 import styles from "./modulos.module.css"
-const Footer= ({tema}) => {
+type tema = {
+    tema: string
+}
+const Footer= ({tema}:tema) => {
     const footerClassName = `${styles.footer}-${[tema]}`;
     const disclaimerClassName = `${styles.disclaimer}-${[tema]}`;
     return (

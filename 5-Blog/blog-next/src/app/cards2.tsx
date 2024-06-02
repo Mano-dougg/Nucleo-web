@@ -1,6 +1,9 @@
 import Image from "next/image";
 import styles from "./modulos.module.css";
-const Card2 = ({tema}) => {
+type tema = {
+    tema: string
+}
+const Card2 = ({tema}:tema) => {
     const cardClassName = `${styles.card2}-${[tema]}`;
     const containerClassName =`${styles.container}-${[tema]}`;
     const pessoalClassName = `${styles.pessoal}-${[tema]}`;

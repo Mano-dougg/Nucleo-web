@@ -2,7 +2,10 @@ import PropTypes from 'prop-types';
 import Image from "next/image";
 import styles from "./modulos.module.css";
 
-const Card1 = ({ tema }) => {
+type tema = {
+    tema: string
+}
+const Card1 = ({ tema }:tema) => {
   const cardClassName = `card1-${tema}`;
   const pessoalClassName = `pessoal1-${tema}`;
   const descricaoClassName = `descricao1-${tema}`;
