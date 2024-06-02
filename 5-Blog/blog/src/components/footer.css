@@ -29,12 +29,12 @@ footer{
    
 }
 
-li a {
-   
+.footerli a {
     text-decoration: none;
     transition: color 0.3s; 
     color:antiquewhite;
     font-size: 90%;
+    
 }
 
 

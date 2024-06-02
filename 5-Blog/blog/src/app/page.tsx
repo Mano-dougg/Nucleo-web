@@ -1,8 +1,7 @@
 
 import { Metadata } from "next";
 import { SliceZone } from "@prismicio/react";
-import "./page.module.css";
-
+import styles from "./page.module.css";
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
 //import { components } from "@/slices";
@@ -12,15 +11,16 @@ export default async function Page() {
 
   const page = await client.getSingle("homepage");
 
-  return <div className="itens"> 
-    <ul className="itensul">
-      {page.data.itens.map(({link, label})=>(
-          <li key={label}>
-              <PrismicNextLink field={link}>{label}</PrismicNextLink>
-          </li>
-      ))}
-    </ul>
-  </div>
+  return <main className={styles.main}>
+  <ul className={styles.itensul}>
+    {page.data.itens.map(({ link, label }) => (
+      <li className={styles.itensli} key={label}>
+        <PrismicNextLink field={link}>{label}</PrismicNextLink>
+      </li>
+    ))}
+  </ul>
+</main>
+ 
   //return <SliceZone slices={page.data.slices} components={components} />;
 }
 

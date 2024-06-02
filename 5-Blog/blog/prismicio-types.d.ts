@@ -29,7 +29,7 @@ export interface HomepageDocumentDataItensItem {
   label: prismic.KeyTextField;
 }
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = never;
 
 /**
  * Content for Homepage documents
@@ -219,46 +219,133 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 /**
- * Primary content in *Hero → Default → Primary*
+ * Item in *Card → Default → Primary → modelo*
  */
-export interface HeroSliceDefaultPrimary {
+export interface CardSliceDefaultPrimaryModeloItem {
   /**
-   * texto field in *Hero → Default → Primary*
+   * image field in *Card → Default → Primary → modelo*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.modelo[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * icon field in *Card → Default → Primary → modelo*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.modelo[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<
+    "jogoicon" | "emaltaicon" | "filmeicon" | "serieicon"
+  >;
+
+  /**
+   * titulo field in *Card → Default → Primary → modelo*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.texto
+   * - **API ID Path**: card.default.primary.modelo[].titulo
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  texto: prismic.RichTextField;
+  titulo: prismic.RichTextField;
+
+  /**
+   * descriçao field in *Card → Default → Primary → modelo*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.modelo[].descricao
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  descricao: prismic.RichTextField;
+
+  /**
+   * perfil field in *Card → Default → Primary → modelo*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.modelo[].perfil
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  perfil: prismic.ImageField<never>;
+
+  /**
+   * nome field in *Card → Default → Primary → modelo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.modelo[].nome
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nome: prismic.KeyTextField;
+
+  /**
+   * data field in *Card → Default → Primary → modelo*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.modelo[].data
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  data: prismic.DateField;
 }
 
 /**
- * Default variation for Hero Slice
+ * Primary content in *Card → Default → Primary*
+ */
+export interface CardSliceDefaultPrimary {
+  /**
+   * categoria field in *Card → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.categoria
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  categoria: prismic.RichTextField;
+
+  /**
+   * modelo field in *Card → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.modelo[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  modelo: prismic.GroupField<Simplify<CardSliceDefaultPrimaryModeloItem>>;
+}
+
+/**
+ * Default variation for Card Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSliceDefault = prismic.SharedSliceVariation<
+export type CardSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<HeroSliceDefaultPrimary>,
+  Simplify<CardSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *Hero*
+ * Slice variation for *Card*
  */
-type HeroSliceVariation = HeroSliceDefault;
+type CardSliceVariation = CardSliceDefault;
 
 /**
- * Hero Shared Slice
+ * Card Shared Slice
  *
- * - **API ID**: `hero`
- * - **Description**: Hero
+ * - **API ID**: `card`
+ * - **Description**: Card
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+export type CardSlice = prismic.SharedSlice<"card", CardSliceVariation>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -278,10 +365,11 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataInfoItem,
       AllDocumentTypes,
-      HeroSlice,
-      HeroSliceDefaultPrimary,
-      HeroSliceVariation,
-      HeroSliceDefault,
+      CardSlice,
+      CardSliceDefaultPrimaryModeloItem,
+      CardSliceDefaultPrimary,
+      CardSliceVariation,
+      CardSliceDefault,
     };
   }
 }

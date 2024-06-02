@@ -1,12 +1,79 @@
 
+.main {
 
+  height: 100rem;
+  
+}
 
-.itens{
+.itensul{
+  
+  height: 18%;
   display: flex;
   flex-direction: row;
-  margin:0px;
   background: rgba(88, 142, 34, 1);
+  justify-content: center;
+  justify-content: space-between;
+  margin:0px;
 }
+
+.itensli  {
+  display: flex;
+  justify-content: center;
+  margin-top:3%;
+  text-decoration: underline;
+  margin-left: 0%;
+  margin-right: 0%;
+  width:75%;
+}
+
+.itensli a{
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  color: whitesmoke;
+  
+}
+
+.itensli:nth-child(1)  {
+  text-decoration: underline;
+  text-decoration-color: rgba(251, 52, 52, 1);
+  text-decoration-thickness: 2px;
+
+}
+
+.itensli:nth-child(2) {
+  text-decoration: underline;
+  text-decoration-color: rgba(52, 179, 251, 1);
+
+  text-decoration-thickness: 2px;
+}
+
+.itensli:nth-child(3) {
+  text-decoration: underline;
+  text-decoration-color: rgb(198, 193, 70, 1);
+  text-decoration-thickness: 2px;
+}
+
+.itensli:nth-child(4) {
+  text-decoration: underline;
+  text-decoration-color: rgba(223, 52, 251, 1);
+
+  text-decoration-thickness: 2px;
+}
+
+@media (max-width: 700px){
+
+  .itensli{
+    margin-left: -32%;
+  }
+
+  .itensli:nth-child(1) {
+    visibility: hidden;
+  }
+
+
+}
+
 
 /*.logo {
   position: relative;
