@@ -15,7 +15,7 @@
 .logo img{
     width: 209px;
     height: 59px;
-    border: 1px dashed coral;
+    /* border: 1px dashed coral; */
 }
 
 .direita{
@@ -40,17 +40,29 @@
 
 .pesquisa input{
     height: 32px;
-    width: 308px;
+    width: 415px;
     border-radius: 30px;
     border: 0;
+    margin-left: 2px;
+    font-size: 16px;
 }
 
 .pesquisa input:focus{
     outline: 0;
+}
+input::placeholder {
+    font-size: 16px;
+  }
+
+.pesquisa img{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
 }
 
 
 .tema img{
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }

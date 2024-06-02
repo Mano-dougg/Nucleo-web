@@ -1,0 +1,107 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.noticia1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titulo1{
+    font-family: Rubik;
+    color: #003720;
+    font-size: 40px;
+}
+
+.conteudo1{
+    width: 1120px;
+    height: 374px;
+    display: flex;
+    /* background-color: red; */
+    justify-content: space-between;
+}
+
+.conteudo1 img{
+    width: 544px;
+    height: 374px;
+}
+
+.texto1{
+    width: 547px;
+    height: 374px;
+}
+
+.texto1 h2{
+    font-family: Rubik;
+    color:#003720;
+    font-size: 30px;
+    margin: 0;
+}
+
+.texto1 p{
+    font-family: Rubik;
+    color: #404540;
+    font-size: 18px;
+}
+
+.conteudo2{
+    width: 1120px;
+    height: 1302px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    justify-content: space-evenly;
+}
+
+.conteudo2 p{
+    font-family: Rubik;
+    color: #404540;
+    font-size: 18px;
+}
+
+.imagens{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagens img{
+    width: 544px;
+    height: 354px;
+}
+
+.autor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.autor img{
+    width: 100px;
+    height: 100px;
+}
+
+.nomeAutor{
+    display: flex;
+    flex-direction: column;
+    width: 215px;
+    height: 63px;
+    margin-left: 5px;
+    /* background-color: red; */
+    justify-content: space-evenly;
+}
+
+#nome{
+    margin: 0;
+    font-family: Rubik;
+    color: #003720;
+    font-size: 20px;
+}
+
+#data{
+    font-family: Rubik;
+    color: #067546;
+    font-size: 15px;
+}
+
