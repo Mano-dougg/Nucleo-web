@@ -4,211 +4,96 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogPageDocumentDataSlicesSlice = never;
-
 /**
- * Content for Blog Page documents
+ * Content for Card documents
  */
-interface BlogPageDocumentData {
+interface CardDocumentData {
   /**
-   * Slice Zone field in *Blog Page*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_page.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<BlogPageDocumentDataSlicesSlice> /**
-   * Meta Description field in *Blog Page*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: blog_page.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Blog Page*
+   * img field in *Card*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_page.meta_image
-   * - **Tab**: SEO & Metadata
+   * - **API ID Path**: card.img
+   * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  meta_image: prismic.ImageField<never>;
+  img: prismic.ImageField<never>;
 
   /**
-   * Meta Title field in *Blog Page*
+   * titulocard field in *Card*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: blog_page.meta_title
-   * - **Tab**: SEO & Metadata
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.titulocard
+   * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  meta_title: prismic.KeyTextField;
+  titulocard: prismic.KeyTextField;
+
+  /**
+   * subtitle field in *Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.subtitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
 }
 
 /**
- * Blog Page document from Prismic
+ * Card document from Prismic
  *
- * - **API ID**: `blog_page`
- * - **Repeatable**: `true`
+ * - **API ID**: `card`
+ * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type BlogPageDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<BlogPageDocumentData>,
-    "blog_page",
-    Lang
-  >;
+export type CardDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<CardDocumentData>, "card", Lang>;
 
 /**
- * Item in *teste → nav itens*
+ * Content for Title documents
  */
-export interface TesteDocumentDataNavItensItem {
+interface TitleDocumentData {
   /**
-   * series field in *teste → nav itens*
+   * Title field in *Title*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: teste.nav_itens[].series
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: title.title
+   * - **Tab**: main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  series: prismic.LinkField;
+  title: prismic.KeyTextField;
 
   /**
-   * jogos field in *teste → nav itens*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: teste.nav_itens[].jogos
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  jogos: prismic.LinkField;
-
-  /**
-   * novidades field in *teste → nav itens*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: teste.nav_itens[].novidades
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  novidades: prismic.LinkField;
-}
-
-type TesteDocumentDataSlicesSlice = never;
-
-/**
- * Content for teste documents
- */
-interface TesteDocumentData {
-  /**
-   * jogos field in *teste*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: teste.jogos
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  jogos: prismic.LinkField;
-
-  /**
-   * nav itens field in *teste*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: teste.nav_itens[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  nav_itens: prismic.GroupField<Simplify<TesteDocumentDataNavItensItem>>;
-
-  /**
-   * `slices` field in *teste*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: teste.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<TesteDocumentDataSlicesSlice>;
-}
-
-/**
- * teste document from Prismic
- *
- * - **API ID**: `teste`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type TesteDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<TesteDocumentData>, "teste", Lang>;
-
-export type AllDocumentTypes = BlogPageDocument | TesteDocument;
-
-/**
- * Primary content in *Title → Default → Primary*
- */
-export interface TitleSliceDefaultPrimary {
-  /**
-   * jogos field in *Title → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: title.default.primary.jogos
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  jogos: prismic.LinkToMediaField;
-
-  /**
-   * img field in *Title → Default → Primary*
+   * img field in *Title*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: title.default.primary.img
+   * - **API ID Path**: title.img
+   * - **Tab**: main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   img: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for Title Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TitleSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TitleSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Title*
- */
-type TitleSliceVariation = TitleSliceDefault;
-
-/**
- * Title Shared Slice
+ * Title document from Prismic
  *
  * - **API ID**: `title`
- * - **Description**: Title
- * - **Documentation**: https://prismic.io/docs/slice
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
  */
-export type TitleSlice = prismic.SharedSlice<"title", TitleSliceVariation>;
+export type TitleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<TitleDocumentData>, "title", Lang>;
+
+export type AllDocumentTypes = CardDocument | TitleDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -220,18 +105,11 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      BlogPageDocument,
-      BlogPageDocumentData,
-      BlogPageDocumentDataSlicesSlice,
-      TesteDocument,
-      TesteDocumentData,
-      TesteDocumentDataNavItensItem,
-      TesteDocumentDataSlicesSlice,
+      CardDocument,
+      CardDocumentData,
+      TitleDocument,
+      TitleDocumentData,
       AllDocumentTypes,
-      TitleSlice,
-      TitleSliceDefaultPrimary,
-      TitleSliceVariation,
-      TitleSliceDefault,
     };
   }
 }

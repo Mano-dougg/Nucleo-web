@@ -1,8 +1,12 @@
 "use client";
 import styled from "styled-components";
 import { ImgCard } from "./imgCard1";
+import { KeyTextField } from "@prismicio/client";
 
-interface Card1Props {}
+interface Card1Props {
+card : KeyTextField;
+
+}
 
 const Container = styled.div`
   display: flex;
@@ -86,7 +90,14 @@ const Card = styled.div`
   width: 100%;
 `;
 
-export function Card1() {
+
+interface PropsCard1 {
+  title : KeyTextField;
+}
+
+
+
+export function Card1({title}: PropsCard1) {
   return (
     <Container>
       <ContainerCard>
@@ -94,7 +105,7 @@ export function Card1() {
         <Card>
           <ImgCard />
           <ConteudoCard>
-            <h2>Hades 2, uma continuação divina.</h2>
+            <h2>{title}</h2>
             <p>A continuação do famoso rogue-like, Hades, chega em forma de...</p>
           </ConteudoCard>
         </Card>

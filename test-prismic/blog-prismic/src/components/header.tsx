@@ -79,6 +79,8 @@ const SearchWrapper = styled.div`
   }
 `;
 
+
+
 export function Header(props: HeaderProps) {
   return (
     <TagHeader>

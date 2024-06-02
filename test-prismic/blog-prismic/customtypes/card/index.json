@@ -1,0 +1,40 @@
+{
+  "format": "custom",
+  "id": "card",
+  "label": "Card",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "img": {
+        "type": "Image",
+        "config": {
+          "label": "img",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "titulocard": {
+        "type": "Text",
+        "config": {
+          "label": "titulocard",
+          "placeholder": ""
+        }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "subtitle",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

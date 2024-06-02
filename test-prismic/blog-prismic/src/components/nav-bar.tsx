@@ -2,8 +2,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Card1 } from './Card1';
+import { KeyTextField } from '@prismicio/client';
 
-interface NavBarProps {}
+interface NavBarProps {
+title : KeyTextField;
+  
+}
 
 const NavBarContainer = styled.div`
   background-color: var(--green);
@@ -88,7 +92,7 @@ export function NavBar(props: NavBarProps) {
         <NavItem><NavLink href="#link3">Filmes</NavLink></NavItem>
         <NavItem><NavLink href="#link4">Séries</NavLink></NavItem>
       </NavList>
-      <Card1 />
+      <Card1 title={props.title} />
     </NavBarContainer>
   );
 }
