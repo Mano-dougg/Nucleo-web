@@ -1,0 +1,49 @@
+{
+  "id": "blog",
+  "type": "SharedSlice",
+  "name": "Blog",
+  "description": "Blog",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Blog",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo_blog": {
+          "type": "Text",
+          "config": {
+            "label": "Titulo Blog",
+            "placeholder": ""
+          }
+        },
+        "link_blog": {
+          "type": "Link",
+          "config": {
+            "label": "Link Blog",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "subtitulo_blog": {
+          "type": "Text",
+          "config": {
+            "label": "Subtítulo Blog",
+            "placeholder": ""
+          }
+        },
+        "imagem_blog": {
+          "type": "Image",
+          "config": {
+            "label": "Imagem Blog",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
