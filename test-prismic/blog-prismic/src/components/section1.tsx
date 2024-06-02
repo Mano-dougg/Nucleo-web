@@ -1,7 +1,9 @@
 "use client";
 import { ImgCardSection } from "@/assets/imgcardSection";
 import { Picture } from "@/assets/picture";
+import { ImageField, KeyTextField } from "@prismicio/client";
 import styled from "styled-components";
+import { PrismicNextImage } from '@prismicio/next'
 
 const Container = styled.section`
   margin-top: 100px;
@@ -43,7 +45,7 @@ const ConteudoSection = styled.div`
 `;
 
 const Tag = styled.p`
-  width: 62px;
+  width: 23%;
   height: 32px;
   padding: 5px 11px;
   border-radius: 16px;
@@ -136,19 +138,23 @@ const Data = styled.p`
   margin-left: 20px;
 `;
 
-interface SectionOneProps {}
+interface SectionOneProps {
+  cardtag:KeyTextField;
+  cardtitle: KeyTextField;
+  cardsubtitle: KeyTextField;
+  imgcard: ImageField;
+}
 
-export function SectionOne(props: SectionOneProps) {
+export function SectionOne( {cardtag, cardtitle, cardsubtitle, imgcard }: SectionOneProps) {
   return (
     <Container>
       <ConteudoSection>
         <ContainerConteudo>
-          <ImgCardSection />
-          <Tag>Jogos</Tag>
-          <h1>“Que vontade de um bolo de pote”</h1>
+        {imgcard && <PrismicNextImage field={imgcard} />}
+          <Tag>{cardtag}</Tag>
+          <h1>{cardtitle}</h1>
           <p>
-            Designer de jogos diz que comer um bolo de pote além de manter a
-            consistência no trabalho auxilia na concentração
+            {cardsubtitle}
           </p>
         </ContainerConteudo>
         <Perfil>

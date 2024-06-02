@@ -4,23 +4,25 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type CardDocumentDataSlicesSlice = never;
+
 /**
- * Content for Card documents
+ * Content for card documents
  */
 interface CardDocumentData {
   /**
-   * img field in *Card*
+   * tag field in *card*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: card.img
+   * - **API ID Path**: card.tag
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  img: prismic.ImageField<never>;
+  tag: prismic.KeyTextField;
 
   /**
-   * titulocard field in *Card*
+   * titulocard field in *card*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -31,22 +33,44 @@ interface CardDocumentData {
   titulocard: prismic.KeyTextField;
 
   /**
-   * subtitle field in *Card*
+   * subtitulo field in *card*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: card.subtitle
+   * - **API ID Path**: card.subtitulo
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  subtitle: prismic.KeyTextField;
+  subtitulo: prismic.KeyTextField;
+
+  /**
+   * image field in *card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * `slices` field in *card*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CardDocumentDataSlicesSlice>;
 }
 
 /**
- * Card document from Prismic
+ * card document from Prismic
  *
  * - **API ID**: `card`
- * - **Repeatable**: `false`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
@@ -107,6 +131,7 @@ declare module "@prismicio/client" {
     export type {
       CardDocument,
       CardDocumentData,
+      CardDocumentDataSlicesSlice,
       TitleDocument,
       TitleDocumentData,
       AllDocumentTypes,
