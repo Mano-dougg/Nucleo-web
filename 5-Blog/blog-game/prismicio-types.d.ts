@@ -250,12 +250,12 @@ export interface FeaturesSliceDefaultPrimaryPostItem {
   /**
    * Date field in *Features → Default → Primary → Post*
    *
-   * - **Field Type**: Timestamp
+   * - **Field Type**: Date
    * - **Placeholder**: *None*
    * - **API ID Path**: features.default.primary.post[].date
-   * - **Documentation**: https://prismic.io/docs/field#timestamp
+   * - **Documentation**: https://prismic.io/docs/field#date
    */
-  date: prismic.TimestampField;
+  date: prismic.DateField;
 }
 
 /**

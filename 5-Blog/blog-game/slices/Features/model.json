@@ -78,7 +78,7 @@
                 }
               },
               "date": {
-                "type": "Timestamp",
+                "type": "Date",
                 "config": {
                   "label": "Date",
                   "placeholder": ""
