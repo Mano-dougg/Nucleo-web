@@ -1,0 +1,140 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"post": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"post_title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading2",
+											"content": {
+												"text": "Orbit"
+											}
+										}
+									]
+								}
+							],
+							[
+								"post_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Esse Lorem ad dolor non sunt."
+											}
+										}
+									]
+								}
+							],
+							[
+								"userphoto",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+										"width": 3212,
+										"height": 3880
+									},
+									"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+									"width": 3212,
+									"height": 3880,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"post",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+										"width": 8640,
+										"height": 8640
+									},
+									"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+									"width": 8640,
+									"height": 8640,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"date",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Timestamp",
+									"value": "2012-02-25T19:34:00Z"
+								}
+							],
+							[
+								"post_tag",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "dust",
+									"type": "Text"
+								}
+							],
+							[
+								"username",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ut velit aute minim mollit ipsum et id quis tempor."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Report"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

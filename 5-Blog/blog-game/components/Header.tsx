@@ -27,7 +27,6 @@ export default async function Header() {
           </div>
         </Bounded>
         
-        {/* Background span element */}
         <span className="absolute -z-10 top-full left-0 w-full h-[300%] bg-green-500"></span>
       </div>
 

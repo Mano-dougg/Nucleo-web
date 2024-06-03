@@ -184,6 +184,136 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomepageDocument | SettingsDocument;
 
 /**
+ * Item in *Features → Default → Primary → Post*
+ */
+export interface FeaturesSliceDefaultPrimaryPostItem {
+  /**
+   * Post field in *Features → Default → Primary → Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.post[].post
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  post: prismic.ImageField<never>;
+
+  /**
+   * Post Tag field in *Features → Default → Primary → Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.post[].post_tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  post_tag: prismic.KeyTextField;
+
+  /**
+   * Post Title field in *Features → Default → Primary → Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.post[].post_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  post_title: prismic.RichTextField;
+
+  /**
+   * Post Description field in *Features → Default → Primary → Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.post[].post_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  post_description: prismic.RichTextField;
+
+  /**
+   * Userphoto field in *Features → Default → Primary → Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.post[].userphoto
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  userphoto: prismic.ImageField<never>;
+
+  /**
+   * Username field in *Features → Default → Primary → Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.post[].username
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  username: prismic.RichTextField;
+
+  /**
+   * Date field in *Features → Default → Primary → Post*
+   *
+   * - **Field Type**: Timestamp
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.post[].date
+   * - **Documentation**: https://prismic.io/docs/field#timestamp
+   */
+  date: prismic.TimestampField;
+}
+
+/**
+ * Primary content in *Features → Default → Primary*
+ */
+export interface FeaturesSliceDefaultPrimary {
+  /**
+   * Heading field in *Features → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Post field in *Features → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.default.primary.post[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  post: prismic.GroupField<Simplify<FeaturesSliceDefaultPrimaryPostItem>>;
+}
+
+/**
+ * Default variation for Features Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Features*
+ */
+type FeaturesSliceVariation = FeaturesSliceDefault;
+
+/**
+ * Features Shared Slice
+ *
+ * - **API ID**: `features`
+ * - **Description**: Features
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturesSlice = prismic.SharedSlice<
+  "features",
+  FeaturesSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -272,6 +402,11 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
       AllDocumentTypes,
+      FeaturesSlice,
+      FeaturesSliceDefaultPrimaryPostItem,
+      FeaturesSliceDefaultPrimary,
+      FeaturesSliceVariation,
+      FeaturesSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
