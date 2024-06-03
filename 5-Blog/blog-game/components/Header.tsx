@@ -19,28 +19,28 @@ export default async function Header() {
           <input
             type="text"
             placeholder="Search"
-            className="border border-gray-300 rounded-3xl px-2 py-1 w-25 md: w-40"
+            className=" w-2/5 md:w-48 border border-gray-300 rounded-3xl px-2 py-1 text-sm"
           />
         </div>
-        </Bounded>
-        
-        <nav className="flex-row flex justify-center mt-5">
-          <ul className="flex gap-3 md:gap-10">
-            {settings.data.navigation.map(({ link, label }, index) => (
-              <li key={label}>
-                <PrismicNextLink
-                  className={`relative p-3 text-sm transition-colors duration-300 ease-in-out hover:text-green-500 md:text-lg`}
-                  field={link}
-                >
-                  {label}
-                  <span
-                    className={`absolute bottom-0 left-0 w-full h-1 rounded-full ${getColorClass(index + 1)}`}
-                  ></span>
-                </PrismicNextLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      </Bounded>
+      
+      <nav className="flex-row flex justify-center mt-5">
+        <ul className="flex gap-3 md:gap-10">
+          {settings.data.navigation.map(({ link, label }, index) => (
+            <li key={label}>
+              <PrismicNextLink
+                className={`relative p-3 text-sm transition-colors duration-300 ease-in-out hover:text-green-500 md:text-lg`}
+                field={link}
+              >
+                {label}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-1 rounded-full ${getColorClass(index + 1)}`}
+                ></span>
+              </PrismicNextLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </>
   );
 }
