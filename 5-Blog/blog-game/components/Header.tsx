@@ -35,7 +35,7 @@ export default async function Header() {
           {settings.data.navigation.map(({ link, label }, index) => (
             <li key={label} className="flex-grow">
               <PrismicNextLink
-                className="relative p-3 text-sm transition-colors duration-300 ease-in-out hover:text-green-950 md:text-lg"
+                className="relative p-3 text-sm transition-colors duration-300 ease-in-out hover:text-white md:text-lg"
                 field={link}
               >
                 {label}

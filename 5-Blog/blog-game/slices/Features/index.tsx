@@ -6,7 +6,7 @@ import Heading from "../../components/Heading";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <Heading as="h1" size="lg" className="text-left font-bold mb-2">
+    <Heading as="h1" size="lg" className="text-left font-bold mb-4">
       {children}
     </Heading>
   ),
@@ -38,7 +38,7 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
       >
         <PrismicRichText components={components} field={slice.primary.heading} />
 
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="flex flex-col lg:flex-row gap-8">
           {slice.primary.post.map((item,index) => (
             <div key={index} className="flex flex-col p-10 max-w-96 gap-4 rounded-3xl bg-white">
               <PrismicNextImage className="rounded-3xl max-h-48 max-w-92 object-cover object-center" field={item.post} />

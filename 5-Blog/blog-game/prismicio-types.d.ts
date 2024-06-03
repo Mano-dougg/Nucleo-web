@@ -80,6 +80,67 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type PageDocumentDataSlicesSlice = FeaturesSlice | HeroSlice | NewsSlice;
+
+/**
+ * Content for Page documents
+ */
+interface PageDocumentData {
+  /**
+   * Slice Zone field in *Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Description field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Page document from Prismic
+ *
+ * - **API ID**: `page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
 /**
  * Item in *Settings → Navigation*
  */
@@ -181,7 +242,10 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | SettingsDocument;
+export type AllDocumentTypes =
+  | HomepageDocument
+  | PageDocument
+  | SettingsDocument;
 
 /**
  * Item in *Features → Default → Primary → Post*
@@ -385,6 +449,128 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *News → Default → Primary*
+ */
+export interface NewsSliceDefaultPrimary {
+  /**
+   * Heading field in *News → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * News Face field in *News → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.news_face
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  news_face: prismic.ImageField<never>;
+
+  /**
+   * News Title field in *News → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.news_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  news_title: prismic.RichTextField;
+
+  /**
+   * Paragraph field in *News → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField;
+
+  /**
+   * Another News Title field in *News → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.another_news_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  another_news_title: prismic.RichTextField;
+
+  /**
+   * Another Paragraph field in *News → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.another_paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  another_paragraph: prismic.RichTextField;
+
+  /**
+   * Userphoto field in *News → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.userphoto
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  userphoto: prismic.ImageField<never>;
+
+  /**
+   * Username field in *News → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.username
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  username: prismic.RichTextField;
+
+  /**
+   * Date field in *News → Default → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.default.primary.date
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
+}
+
+/**
+ * Default variation for News Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NewsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *News*
+ */
+type NewsSliceVariation = NewsSliceDefault;
+
+/**
+ * News Shared Slice
+ *
+ * - **API ID**: `news`
+ * - **Description**: News
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsSlice = prismic.SharedSlice<"news", NewsSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -398,6 +584,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      PageDocument,
+      PageDocumentData,
+      PageDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
@@ -411,6 +600,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      NewsSlice,
+      NewsSliceDefaultPrimary,
+      NewsSliceVariation,
+      NewsSliceDefault,
     };
   }
 }
