@@ -31,7 +31,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center text-black">
         <PrismicRichText 
           field={slice.primary.heading} 
           components={components} 

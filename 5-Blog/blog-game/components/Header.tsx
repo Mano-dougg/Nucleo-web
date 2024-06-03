@@ -10,26 +10,33 @@ export default async function Header() {
 
   return (
     <>
-      <Bounded as="header" className="py-4 md:py-6 lg:py-8 flex gap-5 items-center justify-between bg-green-950">
-        <div className="flex justify-between items-center">
-          <Link href="/">
-            <Heading as="h1" size="md" className="font-display font-normal text-white"><span className="font-extrabold text-green-500">Game</span>Network</Heading>
-          </Link>
+      <div className="relative">
+        <Bounded as="header" className="py-4 md:py-6 lg:py-8 flex gap-5 items-center justify-between bg-green-950 z-10">
+          <div className="flex justify-between items-center w-full">
+            <Link href="/">
+              <Heading as="h1" size="md" className="font-display font-normal text-white">
+                <span className="font-extrabold text-green-500">Game</span>Network
+              </Heading>
+            </Link>
 
-          <input
-            type="text"
-            placeholder="Search"
-            className=" w-2/5 md:w-48 border border-gray-300 rounded-3xl px-2 py-1 text-sm"
-          />
-        </div>
-      </Bounded>
-      
-      <nav className="flex-row flex justify-center mt-5">
-        <ul className="flex gap-3 md:gap-10">
+            <input
+              type="text"
+              placeholder="Search"
+              className="w-2/5 md:w-48 border border-gray-300 rounded-3xl px-2 py-1 text-sm"
+            />
+          </div>
+        </Bounded>
+        
+        {/* Background span element */}
+        <span className="absolute -z-10 top-full left-0 w-full h-[300%] bg-green-500"></span>
+      </div>
+
+      <nav className="flex justify-center mt-5 z-10">
+        <ul className="flex gap-3 md:gap-10 justify-between px-2">
           {settings.data.navigation.map(({ link, label }, index) => (
-            <li key={label}>
+            <li key={label} className="flex-grow">
               <PrismicNextLink
-                className={`relative p-3 text-sm transition-colors duration-300 ease-in-out hover:text-green-500 md:text-lg`}
+                className="relative p-3 text-sm transition-colors duration-300 ease-in-out hover:text-green-950 md:text-lg"
                 field={link}
               >
                 {label}
@@ -45,7 +52,7 @@ export default async function Header() {
   );
 }
 
-function getColorClass(index) {
+function getColorClass(index: number) {
   switch (index) {
     case 1:
       return 'bg-red-500';
