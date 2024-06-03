@@ -15,4 +15,5 @@ model User {
   idade  Int
   estado String
   cidade String
+  password String
 }
