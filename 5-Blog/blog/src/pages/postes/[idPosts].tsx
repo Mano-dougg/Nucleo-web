@@ -16,7 +16,23 @@ interface IdpostsProps {
 }
 
 const idPosts: React.FC<IdpostsProps> = ({ post, recomendados, computer, frutas }) => {
-  const maximoRecomendacoes = recomendados.results.slice(0, 3);
+  const maximoRecomendacoes:string[] = recomendados.results.slice(0, 3);
+
+  function Renderizarcards(elemento: string[]) {
+
+    const cards = elemento.map((post: any, i: number) => {
+      return (
+        <Card
+          CardTitulo={post.data.titulo[0].text}
+          CardDescricao={post.data.descricao[0].text}
+          CardImage={post.data.cardimagem.url}
+          key={post.id}
+          CardLink={`/postes/${post.id}`}
+        />
+      );
+    });;
+    return cards;
+  }
 
   return (
     <Posts>
@@ -41,32 +57,7 @@ const idPosts: React.FC<IdpostsProps> = ({ post, recomendados, computer, frutas 
         </PostText>
       </PostContent>
       <ContentSec secNome={"Recomendados"} btnLink={``}>
-        {maximoRecomendacoes.map(
-          (
-            post: {
-              data: {
-                titulo: { text: string }[];
-                descricao: { text: string }[];
-                cardimagem: { url: string };
-              };
-              id: Key | null | undefined;
-            },
-            i: number
-          ) => {
-            if (i == 4) {
-              return;
-            }
-            return (
-              <Card
-                CardTitulo={post.data.titulo[0].text}
-                CardDescricao={post.data.descricao[0].text}
-                CardImage={post.data.cardimagem.url}
-                key={post.id}
-                CardLink={`/postes/${post.id}`}
-              />
-            );
-          }
-        )}
+       {Renderizarcards(maximoRecomendacoes)}
       </ContentSec>
     </Posts>
   );

@@ -23,6 +23,21 @@ export default function postTagElement({
   computer: Query<AllDocumentTypes>;
   frutas: Query<AllDocumentTypes>;
 }) {
+
+  function Renderizarcards(elemento: any) {
+    const cards = elemento.results.map((post: any, i: number) => {
+      return (
+        <Card
+          CardTitulo={post.data.titulo[0].text}
+          CardDescricao={post.data.descricao[0].text}
+          CardImage={post.data.cardimagem.url}
+          key={post.id}
+          CardLink={`/postes/${post.id}`}
+        />
+      );
+    });;
+    return cards;
+  }
   return (
     <>
       <HomeScreen>
@@ -41,26 +56,7 @@ export default function postTagElement({
           secNome={page?.results[0].tags[0]}
           btnLink={`/blogPostsTags/$`}
         >
-          {page?.results?.map(
-            (post: {
-              data: {
-                titulo: { text: string }[];
-                descricao: { text: string }[];
-                cardimagem: { url: string };
-              };
-              id: Key | null | undefined;
-            }) => {
-              return (
-                <Card
-                  CardTitulo={post.data.titulo[0].text}
-                  CardDescricao={post.data.descricao[0].text}
-                  CardImage={post.data.cardimagem.url}
-                  key={post.id}
-                  CardLink={`/postes/${post.id}`}
-                />
-              );
-            }
-          )}
+         {Renderizarcards(page)}
         </ContentSec>
       </HomeScreen>
     </>

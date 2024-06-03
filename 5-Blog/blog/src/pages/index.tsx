@@ -40,8 +40,26 @@ export default function Home({
     results: { tags: string }[];
   };
 }) {
+
+
   const maximoDeCards = computer.results.slice(0, 3);
   const maximoDeCards2 = frutas.results.slice(0, 3);
+
+   function Renderizarcards(elemento: any) {
+
+    const cards = elemento.map((post: any, i: number) => {
+      return (
+        <Card
+          CardTitulo={post.data.titulo[0].text}
+          CardDescricao={post.data.descricao[0].text}
+          CardImage={post.data.cardimagem.url}
+          key={post.id}
+          CardLink={`/postes/${post.id}`}
+        />
+      );
+    });;
+    return cards;
+  }
 
   return (
     <>
@@ -61,39 +79,13 @@ export default function Home({
           secNome={"Computers"}
           btnLink={`/blogPostsTags/${computer.results[0].tags}`}
         >
-          {maximoDeCards.map((post: any, i: number) => {
-            if (i == 3) {
-              return;
-            }
-            return (
-              <Card
-                CardTitulo={post.data.titulo[0].text}
-                CardDescricao={post.data.descricao[0].text}
-                CardImage={post.data.cardimagem.url}
-                key={post.id}
-                CardLink={`/postes/${post.id}`}
-              />
-            );
-          })}
+          {Renderizarcards(maximoDeCards)}
         </ContentSec>
         <ContentSec
           secNome={"Frutas"}
           btnLink={`/blogPostsTags/${frutas.results[0].tags}`}
         >
-          {maximoDeCards2.map((post: any, i: number) => {
-            if (i == 3) {
-              return;
-            }
-            return (
-              <Card
-                CardTitulo={post.data.titulo[0].text}
-                CardDescricao={post.data.descricao[0].text}
-                CardImage={post.data.cardimagem.url}
-                key={post.id}
-                CardLink={`/postes/${post.id}`}
-              />
-            );
-          })}
+          {Renderizarcards(maximoDeCards2)}
         </ContentSec>
       </HomeScreen>
     </>
@@ -107,7 +99,7 @@ export async function getStaticProps() {
   const computer = await client.getByTag("computer");
 
   const frutas = await client.getByTag("fruta");
-  console.log(frutas.results[0])
+  console.log(frutas.results[0]);
 
   return {
     props: { page, computer, frutas },
