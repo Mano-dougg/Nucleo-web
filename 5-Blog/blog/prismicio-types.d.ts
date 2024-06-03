@@ -5,6 +5,100 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Content for Autor documents
+ */
+interface AutorDocumentData {
+  /**
+   * Titulo field in *Autor*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.titulo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titulo: prismic.RichTextField;
+
+  /**
+   * Imagem_autor field in *Autor*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.imagem_autor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem_autor: prismic.ImageField<never>;
+
+  /**
+   * conteudo_1 field in *Autor*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.conteudo_1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  conteudo_1: prismic.RichTextField;
+
+  /**
+   * rede_social_1 field in *Autor*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.rede_social_1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  rede_social_1: prismic.ImageField<never>;
+
+  /**
+   * rede_social_2 field in *Autor*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.rede_social_2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  rede_social_2: prismic.ImageField<never>;
+
+  /**
+   * rede_social_3 field in *Autor*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.rede_social_3
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  rede_social_3: prismic.ImageField<never>;
+
+  /**
+   * conteudo_2 field in *Autor*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.conteudo_2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  conteudo_2: prismic.RichTextField;
+}
+
+/**
+ * Autor document from Prismic
+ *
+ * - **API ID**: `autor`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AutorDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<AutorDocumentData>, "autor", Lang>;
+
+/**
  * Content for Post documents
  */
 interface PostDocumentData {
@@ -119,15 +213,15 @@ interface PostDocumentData {
   autor: prismic.RichTextField;
 
   /**
-   * Data field in *Post*
+   * Data_postagem field in *Post*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: post.data
+   * - **API ID Path**: post.data_postagem
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  data: prismic.RichTextField;
+  data_postagem: prismic.RichTextField;
 }
 
 /**
@@ -196,7 +290,10 @@ export type PostPequenosDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = PostDocument | PostPequenosDocument;
+export type AllDocumentTypes =
+  | AutorDocument
+  | PostDocument
+  | PostPequenosDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -208,6 +305,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AutorDocument,
+      AutorDocumentData,
       PostDocument,
       PostDocumentData,
       PostPequenosDocument,

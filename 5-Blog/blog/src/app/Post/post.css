@@ -87,7 +87,7 @@ html, body{
     flex-direction: column;
     width: 215px;
     height: 63px;
-    margin-left: 5px;
+    margin-left: 8px;
     /* background-color: red; */
     justify-content: space-evenly;
 }
@@ -99,13 +99,17 @@ html, body{
     font-size: 20px;
 }
 
+#line{
+    text-decoration: none;
+}
+
 #data{
     font-family: Rubik;
     color: #067546;
     font-size: 15px;
 }
 
-.mais{
+.mais_postagens{
     display: flex;
     align-items: center;
     justify-content: center;

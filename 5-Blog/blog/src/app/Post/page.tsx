@@ -2,8 +2,7 @@ import Topo from '../../components/Topo/topo'
 import Rodape from '../../components/Rodape/rodape'
 import Carrossel from '../../components/Carrossel/carrossel'
 import './post.css'
-import autor from '../../assets/RoboAutor.png'
-import Image from 'next/image'
+import Link from 'next/link'
 import { createClient } from '@/prismicio'
 import { asHTML } from '@prismicio/client'
 import { asText } from "@prismicio/client";
@@ -51,14 +50,14 @@ export default async function Post(){
             </div>
 
             <div className='autor'>
-                <Image src={autor} alt='Autor'/>
+                <Link href={'./Perfil'}><PrismicImage field={post.data.imagem_autor}/></Link>
                 <div className='nomeAutor'>
-                    <p id='nome'>Fulano das IAs</p>
-                    <p id='data'>01/01/2024</p>
+                    <Link href={'./Perfil'} id='line'><p id='nome'>{asText(post.data.autor)}</p></Link>
+                    <p id='data'>{asText(post.data.data_postagem)}</p>
                 </div>
             </div>
             
-            <div className='mais'>
+            <div className='mais_postagens'>
                 <h1 id='titulo1'>Mais postagens</h1>
             </div> 
 

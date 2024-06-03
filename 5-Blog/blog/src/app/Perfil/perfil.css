@@ -2,3 +2,75 @@ html, body{
     margin: 0;
     padding: 0;
 }
+
+.autor-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titulo_autor{
+    font-family: Rubik;
+    color: #003720;
+    font-size: 40px;
+}
+
+.sessao_1{
+    width: 1120px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.texto_1{
+    width: 736px;
+    height: 264px;
+}
+
+.texto_1 p{
+    font-family: Rubik;
+    color: #404540;
+    font-size: 18px;
+}
+
+.imagem_autor, .imagem_autor img{
+    width: 352px;
+    height: 350px;
+}
+
+
+.redes_autor{
+    display: flex;
+    justify-content: space-between;
+    width: 214px;
+    height: 50px;
+}
+
+
+.redes_autor img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+.sessao_2{
+    display: flex;
+    align-items: center;
+    width: 1120px;
+    height: 432px;
+}
+
+.sessao_2 p{
+    font-family: Rubik;
+    color: #404540;
+    font-size: 18px;
+}
+
+.mais_autor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
