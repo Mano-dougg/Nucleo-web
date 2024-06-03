@@ -44,6 +44,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <div className=" bg-slate-400"></div>
       </body>
     </html>
   );
