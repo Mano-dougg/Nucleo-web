@@ -11,9 +11,7 @@ export default async function Footer() {
     <footer>
         <h4>Todos direitos reservados</h4>
         <h4>Gamenetwork@gmail.com</h4>
-        <Link href="/">{settings.data.site_title}</Link>
-    
-    
+        <Link href="/">{settings.data.site_title}</Link>    
     </footer>
   );
 }
