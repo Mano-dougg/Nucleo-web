@@ -1,13 +1,14 @@
 
 .main {
 
-  height: 100rem;
-  
+  height: auto;
+  background: rgba(226, 223, 223, 1);
+
 }
 
 .itensul{
   
-  height: 18%;
+  height: 115px;
   display: flex;
   flex-direction: row;
   background: rgba(88, 142, 34, 1);
@@ -70,6 +71,7 @@
   .itensli:nth-child(1) {
     visibility: hidden;
   }
+  
 
 
 }

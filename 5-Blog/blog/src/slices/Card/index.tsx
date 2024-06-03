@@ -1,8 +1,9 @@
-import { Content } from "@prismicio/client";
+import { Content, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Bounded from "@/components/bounded";
 import "./index.css";
+import { createClient } from "@/prismicio";
 
 /**
  * Props for `Card`.
@@ -20,15 +21,21 @@ const icons = {
 /**
  * Component for "Card" Slices.
  */
-const Card = ({ slice }: CardProps): JSX.Element => {
+const Card = async ({ slice }: CardProps): Promise<JSX.Element> => {
+
+ 
+  
   return (
     <Bounded 
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}>
 
 
+<div>
   <PrismicRichText field={slice.primary.categoria} />
 
+  </div>
+  <div className="quadro">
   {slice.primary.modelo.map((item, index) => (
     <div className="coisasdocard" key={index}>
       <PrismicNextImage className="imagem" field={item.image} />
@@ -42,11 +49,10 @@ const Card = ({ slice }: CardProps): JSX.Element => {
       </div>
       <div>{item.data}</div>
 
-      </div>
-      
-    </div>
+   </div>
+   </div>
   ))}
-
+  </div>  
     </Bounded>
   );
 };

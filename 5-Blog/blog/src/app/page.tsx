@@ -4,7 +4,7 @@ import { SliceZone } from "@prismicio/react";
 import styles from "./page.module.css";
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
-//import { components } from "@/slices";
+import { components } from "@/slices";
 
 export default async function Page() {
   const client = createClient();
@@ -19,6 +19,7 @@ export default async function Page() {
       </li>
     ))}
   </ul>
+  <SliceZone slices={page.data.slices} components={components} />
 </main>
  
   //return <SliceZone slices={page.data.slices} components={components} />;

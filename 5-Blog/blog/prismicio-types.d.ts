@@ -29,7 +29,7 @@ export interface HomepageDocumentDataItensItem {
   label: prismic.KeyTextField;
 }
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = CardSlice;
 
 /**
  * Content for Homepage documents
