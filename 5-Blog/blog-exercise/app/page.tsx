@@ -10,7 +10,7 @@ export default async function Page() {
 
   return (
     <main
-      className={`p-[100px_16px_103px] sm:p-[141px_32px_148px] flex flex-col gap-y-4 md:gap-x-8 items-center`}
+      className={`p-[100px_16px_103px] sm:p-[141px_32px_148px] flex flex-col gap-y-4 md:gap-x-8 items-center max-w-[95vw] mx-auto`}
     >
       <PrismicRichText
         field={page.data.main_section_header}

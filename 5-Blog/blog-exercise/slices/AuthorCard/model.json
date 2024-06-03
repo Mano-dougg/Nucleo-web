@@ -1,0 +1,63 @@
+{
+  "id": "author_card",
+  "type": "SharedSlice",
+  "name": "AuthorCard",
+  "description": "AuthorCard",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "author_info": {
+          "type": "Link",
+          "config": {
+            "label": "Author info",
+            "select": "document",
+            "customtypes": [
+              "author"
+            ]
+          }
+        },
+        "post_date": {
+          "type": "Link",
+          "config": {
+            "label": "Post date",
+            "select": "document"
+          }
+        },
+        "share_button": {
+          "type": "Group",
+          "config": {
+            "label": "Share button",
+            "repeat": true,
+            "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "networks": {
+                "type": "Link",
+                "config": {
+                  "label": "Networks",
+                  "select": "document",
+                  "customtypes": [
+                    "shareable_networks"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

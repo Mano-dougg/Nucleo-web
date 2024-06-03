@@ -1,0 +1,55 @@
+{
+  "format": "custom",
+  "id": "shareable_networks",
+  "label": "Shareable network",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "link": {
+        "type": "Group",
+        "config": {
+          "label": "Link",
+          "repeat": true,
+          "fields": {
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "base_url": {
+              "type": "Text",
+              "config": {
+                "label": "Base url",
+                "placeholder": ""
+              }
+            },
+            "post_url": {
+              "type": "Link",
+              "config": {
+                "label": "Post url",
+                "select": "document"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
