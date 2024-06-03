@@ -3,7 +3,7 @@ html, body{
     padding: 0;
 }
 
-.noticia1{
+.noticia-principal{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,3 +105,8 @@ html, body{
     font-size: 15px;
 }
 
+.mais{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

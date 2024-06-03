@@ -1,5 +1,6 @@
 import Topo from '../../components/Topo/topo'
 import Rodape from '../../components/Rodape/rodape'
+import Carrossel from '../../components/Carrossel/carrossel'
 import './post.css'
 import autor from '../../assets/RoboAutor.png'
 import Image from 'next/image'
@@ -16,16 +17,11 @@ export default async function Post(){
 
     const titulomaior = asHTML(post.data.titulomaior)
 
-    const  titulomenor = asHTML(post.data.titulomenor)
-
-
-
-
     return(
         <div>
             <Topo />
 
-            <div className='noticia1'>
+            <div className='noticia-principal'>
                 <div>
                     <h1 dangerouslySetInnerHTML={{ __html: titulomaior }} id='titulo1'/>
                 </div>
@@ -61,6 +57,12 @@ export default async function Post(){
                     <p id='data'>01/01/2024</p>
                 </div>
             </div>
+            
+            <div className='mais'>
+                <h1 id='titulo1'>Mais postagens</h1>
+            </div> 
+
+            <Carrossel />
 
             <Rodape/>
         </div>

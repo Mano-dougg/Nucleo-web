@@ -3,12 +3,13 @@ import logo from '../../assets/logo.png'
 import lupa from '../../assets/lupa.png'
 import solzinho from '../../assets/sol.png'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Topo(){
     return(
         <div className="titulo">
             <div className='logo'>
-                <Image src={logo} />
+                <Link href={'./'}><Image src={logo} /></Link>
             </div>
 
             <div className='direita'>

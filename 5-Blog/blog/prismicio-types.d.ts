@@ -95,6 +95,39 @@ interface PostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   texto3: prismic.RichTextField;
+
+  /**
+   * Imagem_autor field in *Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.imagem_autor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem_autor: prismic.ImageField<never>;
+
+  /**
+   * Autor field in *Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.autor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  autor: prismic.RichTextField;
+
+  /**
+   * Data field in *Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.data
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  data: prismic.RichTextField;
 }
 
 /**
@@ -109,7 +142,61 @@ interface PostDocumentData {
 export type PostDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
 
-export type AllDocumentTypes = PostDocument;
+/**
+ * Content for post_pequenos documents
+ */
+interface PostPequenosDocumentData {
+  /**
+   * imagem field in *post_pequenos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_pequenos.imagem
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem: prismic.ImageField<never>;
+
+  /**
+   * Titulo field in *post_pequenos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_pequenos.titulo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titulo: prismic.RichTextField;
+
+  /**
+   * texto field in *post_pequenos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_pequenos.texto
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texto: prismic.RichTextField;
+}
+
+/**
+ * post_pequenos document from Prismic
+ *
+ * - **API ID**: `post_pequenos`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostPequenosDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PostPequenosDocumentData>,
+    "post_pequenos",
+    Lang
+  >;
+
+export type AllDocumentTypes = PostDocument | PostPequenosDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -120,6 +207,12 @@ declare module "@prismicio/client" {
   }
 
   namespace Content {
-    export type { PostDocument, PostDocumentData, AllDocumentTypes };
+    export type {
+      PostDocument,
+      PostDocumentData,
+      PostPequenosDocument,
+      PostPequenosDocumentData,
+      AllDocumentTypes,
+    };
   }
 }
