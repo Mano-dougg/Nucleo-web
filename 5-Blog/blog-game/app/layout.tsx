@@ -1,11 +1,22 @@
 import type { Metadata } from 'next'
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
+import clsx from 'clsx';
 import "./globals.css";
 import { createClient } from '../prismicio';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-monstserrat',
+  display: 'swap',
+})
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
@@ -28,8 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={clsx(inter.className, montserrat.className)}>
+      <body>
         <Header />
         {children}
         <Footer />
