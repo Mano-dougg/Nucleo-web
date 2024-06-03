@@ -7,9 +7,10 @@ import './App.css'
 import { useCallback, useEffect, useState } from "react"
 import icon from './../public/exclamation-sign.png'
 
+
 function App() {
   // Stuff to track
-  const [words_to_guess,setWTG] = useState<string>('Digite uma Palavra - apenas minusculas')
+  const [words_to_guess,setWTG] = useState<string>('Digite uma Palavra - Para jogar uma partida aperte o botão azul. Ao final do jogo, aperte a tecla TIL duas vezes para ver os resultados. Para voltar a esta tela aperte o botão branco. Para começar, substitua este texto com a palavra desejada!')
   const [guessedLetters, setGLT] = useState<string[]>([]) 
   const [incorrectGuesses, setIG] = useState<string[]>([])
   const [wincount,setWC] = useState<number>(0)
@@ -18,75 +19,91 @@ function App() {
   const [loadGame,setLG] = useState<boolean>(false)
   const [isLoser,setILoser] = useState<boolean>(false)
   const [isWin,setIWin] = useState<boolean>(false)
+  
+  // Função de ganhos e perdas
+  const trackCounters = useCallback(() => {
+    if(isWin == true && isLoser == false) {
+      setWC(wincount => wincount + 1)
+      return setIG([])
+    }if (isLoser == true && isWin == false) {
+      setLC(losecount => losecount + 1)
+      return setIG([])
+    } else {
+      return 
+    }
+  },[isLoser,isWin,setLC,setWC])
+
+  // Função de Checar se ganhou ou não  
+  const hasWon = useCallback(() => {
+    if ((incorrectGuesses.length >= 5) && (loadGame == true) && (loadInput == false)) {
+      return setILoser(isLoser => !isLoser),setGLT([]),setIG([]),trackCounters
+    }if (((words_to_guess.split('').every(letter => guessedLetters.includes(letter))) && (loadGame == true) && (loadInput == false))) {
+      return setIWin(isWin => !isWin), setGLT([]),setIG([]),trackCounters()
+    }else{
+      return trackCounters()
+    }
+  },[words_to_guess,guessedLetters,incorrectGuesses,loadGame,loadInput,trackCounters])
 
   // Function to handle Game
   function handleGame() {
       if(loadGame == false){
-        return setLG(true), setLI(false),setILoser(false), setIWin(false)
+        return setLG(true), setLI(false),setIG([]), setIWin(false), setILoser(false)
       }
-        return setLG(false),setWTG('')
+        return setLG(false),setWTG(''),setIG([])
   }
+
   // Function to handle the Input
   function handleInput() {
       if(loadInput == false){
-        return setLG(false), setLI(true),setIG([])
+        return setLG(false), setLI(true),setIG([]),setGLT([])
       }
-        return setLI(false),setWTG('')
+        return setLI(false),setWTG(''),setIG([]),setIWin(isWin => !isWin), setILoser(isLoser => !isLoser)
   }
-  // Function to handle losses - or win
-
+  
   // Parents Logic - Add Guess Letter
   const addGuessLetter = useCallback((letter:string)=> {
-
-    function trackCounters() {
-      if(isLoser == true && isWin == false) {
-        const newvalue:number = losecount + 1
-        return setLC(newvalue)
-      }if (isWin == true && isLoser == false) {
-        const newwinner:number = wincount + 1
-        return setWC(newwinner)
-      } else {
-        return 
-      }
+    if((guessedLetters.includes(letter) || isWin || isLoser) && (loadGame == false)) {
+      return
+    }else{
+      return setGLT(currentLetters => [...currentLetters,letter])
     }
-    if((guessedLetters.includes(letter) || isWin || isLoser) && (loadGame == true)) return trackCounters()
-    setGLT(currentLetters => [...currentLetters,letter])
-  },[guessedLetters,isWin,isLoser,losecount,wincount,loadGame])
+  },[guessedLetters,isWin,isLoser,loadGame])
+
+
   // Taking the event of a Keyboard press.   
   useEffect(()=>{
-    const handler = (l:KeyboardEvent) => {
+    const handleClick = (l:KeyboardEvent) => {
+  
       function trackIncorrect(letter:string){
-        if(guessedLetters.filter(letter => !words_to_guess.includes(letter))){
+        if( guessedLetters.find( letter => !words_to_guess.includes(letter))){
+          console.log('incorreta adicionada')
           return setIG(cletters => [...cletters,letter])
-        }
-          return setIG([])
-      }
-
-      function hasWon(){
-        if ((incorrectGuesses.length >= 5) && (loadGame == true) && (loadInput == false)) {
-          return setILoser(true),setGLT([])
-        }if (((words_to_guess.split('').every(letter => guessedLetters.includes(letter))) && (loadGame == true) && (loadInput == false))) {
-          return setIWin(true)
         }else{
-          return
-        } 
-      }
-      const key = l.key
-      if(!key.match(/^[a-z]$/) || loadInput == true) return 
+          return 
+        }
+      } 
 
-      l.preventDefault()
-      trackIncorrect(key)
-      addGuessLetter(key)
-      hasWon()
+      const key = l.key
+      if(!key.match(/^[a-z,A-Z,~]$/) || loadInput == true) {
+        return
+      }else{
+        if((words_to_guess.split('').every(letter => guessedLetters.includes(letter)))){
+          return hasWon()
+        }else{
+          return addGuessLetter(key),
+          trackIncorrect(key),
+          hasWon()
+        }
+      } 
     }
 
-    document.addEventListener('keypress',handler)
+    document.addEventListener('keypress',handleClick)
 
     return(()=>{
-      document.removeEventListener('keypress',handler)
+      document.removeEventListener('keypress',handleClick)
     })
 
-  },[guessedLetters,addGuessLetter,loadInput,words_to_guess,incorrectGuesses,loadGame])
+  },[guessedLetters,addGuessLetter,loadInput,words_to_guess,incorrectGuesses,loadGame,isLoser,isWin,wincount,losecount, setWC,setLC, setGLT, setILoser,setIWin,hasWon])
 
   // Childs Components and Proprerties passing :) 
   return (
@@ -107,8 +124,8 @@ function App() {
       textAlign: "center",
       color:'black'
     }}>
-      {isWin && "Você ganhou my friend! - Clique no botão branco para jogar denovo"}
-      {isLoser && "Você perdeu, vacilão - Clique no botão branco para chorar denovo"}
+      { (isWin && !isLoser) && "Você ganhou my friend! - Clique no botão branco para jogar denovo"}
+      { (isLoser && !isWin) && "Você perdeu, vacilão - Clique no botão branco para chorar denovo"}
     </div>
     <div style={{
       display:(loadGame == true)? "flex":'none',
@@ -130,7 +147,7 @@ function App() {
       alignSelf:'center',
       justifySelf:'center',
     }}>
-      <input type="text"  value={words_to_guess} onChange={(e) => {if(loadInput == true && loadGame == false) {
+      <textarea rows={30} cols={40} value={words_to_guess} onChange={(e) => {if(loadInput == true && loadGame == false) {
         return setWTG(e.target.value)
       } else {
         return 
@@ -138,12 +155,13 @@ function App() {
         color:"darkblue",
         backgroundColor:'white', 
         padding:'0px',
-        fontSize:'32px',
+        fontSize:'24px',
         borderColor:'transparent',
         minHeight:'200px',
         height:'50vh',
-        textAlign:'left',
-      }}></input>
+        textAlign:'justify',
+        textJustify:'inter-word', 
+      }}></textarea>
       <div className="icon">
         <img src={icon}/>
         <span>Máx. de 8 letras</span>

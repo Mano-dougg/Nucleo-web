@@ -7,6 +7,8 @@ import { LeftLeg } from "./../../HangmanAssets/HangmanAssets"
 
 type DrawProps = {
     numberOfGuesses:number;
+    won?:boolean;
+    lost?:boolean;
 }
 
 const BODY_PARTS = [<Head/>,<Body/>,<RightArm/>,<LeftArm/>,<RightLeg/>,<LeftLeg/>]
