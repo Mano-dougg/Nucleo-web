@@ -19,7 +19,7 @@ function App() {
   const [loadGame,setLG] = useState<boolean>(false)
   const [isLoser,setILoser] = useState<boolean>(false)
   const [isWin,setIWin] = useState<boolean>(false)
-  
+
   // Função de ganhos e perdas
   const trackCounters = useCallback(() => {
     if(isWin == true && isLoser == false) {
@@ -76,7 +76,6 @@ function App() {
   
       function trackIncorrect(letter:string){
         if( guessedLetters.find( letter => !words_to_guess.includes(letter))){
-          console.log('incorreta adicionada')
           return setIG(cletters => [...cletters,letter])
         }else{
           return 
