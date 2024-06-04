@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { createClient } from "@/prismicio";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PrismicPreview } from "@prismicio/next";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
         <Header/>
         {children}
         <Footer/>
+        <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1] inset-0 opacity-50" />
       </body>
     </html>
   );
