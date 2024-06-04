@@ -35,7 +35,7 @@ Com base no design especificado crie esse portfolio responsivo utilizando React.
 ### React
 
 - https://www.youtube.com/watch?v=37SwqREHRGI&ab_channel=Rocketseat
-- https://react.dev/learn
+- npm 
 
 ## Instruções para envio
 
