@@ -21,7 +21,7 @@
     gap: 20px;
 }
 
-.carrossel .noticia{
+.carrossel .carrossel_noticia{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,7 +32,7 @@
     gap: 15px;
 }
 
-.noticia img{
+.carrossel_noticia img{
     width: 186px;
     height: 205px;
 }
@@ -80,5 +80,9 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
+}
+
+#line{
+    text-decoration: none;
 }
 

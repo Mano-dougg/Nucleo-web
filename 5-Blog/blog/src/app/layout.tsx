@@ -4,10 +4,7 @@ import { Rubik } from "next/font/google";
 const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Oi mundo",
-  icons: {
-    icon: '/favicon.ico'
-  }
+  title: "AIToday",
 };
 
 export default function RootLayout({

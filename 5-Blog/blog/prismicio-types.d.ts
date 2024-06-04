@@ -99,6 +99,104 @@ export type AutorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AutorDocumentData>, "autor", Lang>;
 
 /**
+ * Content for Noticia documents
+ */
+interface NoticiaDocumentData {
+  /**
+   * Titulo_noticia field in *Noticia*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: noticia.titulo_noticia
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titulo_noticia: prismic.RichTextField;
+
+  /**
+   * conteudo_noticia field in *Noticia*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: noticia.conteudo_noticia
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  conteudo_noticia: prismic.RichTextField;
+
+  /**
+   * imagem_autor_noticia field in *Noticia*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: noticia.imagem_autor_noticia
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem_autor_noticia: prismic.ImageField<never>;
+
+  /**
+   * autor_noticia field in *Noticia*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: noticia.autor_noticia
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  autor_noticia: prismic.RichTextField;
+
+  /**
+   * data_noticia field in *Noticia*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: noticia.data_noticia
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  data_noticia: prismic.RichTextField;
+
+  /**
+   * share field in *Noticia*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: noticia.share
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  share: prismic.ImageField<never>;
+
+  /**
+   * imagem_noticia field in *Noticia*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: noticia.imagem_noticia
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem_noticia: prismic.ImageField<never>;
+}
+
+/**
+ * Noticia document from Prismic
+ *
+ * - **API ID**: `noticia`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NoticiaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<NoticiaDocumentData>,
+    "noticia",
+    Lang
+  >;
+
+/**
  * Content for Post documents
  */
 interface PostDocumentData {
@@ -290,10 +388,99 @@ export type PostPequenosDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Principal documents
+ */
+interface PrincipalDocumentData {
+  /**
+   * Titulo field in *Principal*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: principal.titulo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titulo: prismic.RichTextField;
+
+  /**
+   * Subtitulo field in *Principal*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: principal.subtitulo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitulo: prismic.RichTextField;
+
+  /**
+   * Texto field in *Principal*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: principal.texto
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texto: prismic.RichTextField;
+
+  /**
+   * Imagem field in *Principal*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: principal.imagem
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem: prismic.ImageField<never>;
+
+  /**
+   * TituloCarrossel_1 field in *Principal*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: principal.titulocarrossel_1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titulocarrossel_1: prismic.RichTextField;
+
+  /**
+   * TituloCarrossel_2 field in *Principal*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: principal.titulocarrossel_2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  titulocarrossel_2: prismic.RichTextField;
+}
+
+/**
+ * Principal document from Prismic
+ *
+ * - **API ID**: `principal`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PrincipalDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PrincipalDocumentData>,
+    "principal",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AutorDocument
+  | NoticiaDocument
   | PostDocument
-  | PostPequenosDocument;
+  | PostPequenosDocument
+  | PrincipalDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -307,10 +494,14 @@ declare module "@prismicio/client" {
     export type {
       AutorDocument,
       AutorDocumentData,
+      NoticiaDocument,
+      NoticiaDocumentData,
       PostDocument,
       PostDocumentData,
       PostPequenosDocument,
       PostPequenosDocumentData,
+      PrincipalDocument,
+      PrincipalDocumentData,
       AllDocumentTypes,
     };
   }
