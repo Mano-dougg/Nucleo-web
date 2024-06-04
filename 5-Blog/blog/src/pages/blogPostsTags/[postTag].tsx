@@ -1,14 +1,11 @@
-import Head from "next/head";
-import Image from "next/image";
+
 import { Inter } from "next/font/google";
 import Card from "@/components/ui/Card/Card";
-import Buttons from "@/components/ui/Buttons/Buttons";
 import NavBar from "@/components/ui/NavBar/NavBar";
 import Header from "@/components/ui/Header/Header";
 import HomeScreen from "@/components/screens/homeScreen/HomeScreen";
 import ContentSec from "@/components/ui/ContentSec/ContentSec";
 import { createClient } from "../../../jaedsonblog/src/prismicio";
-import { Key } from "react";
 import { Query } from "@prismicio/client";
 import { AllDocumentTypes } from "../../../prismicio-types";
 

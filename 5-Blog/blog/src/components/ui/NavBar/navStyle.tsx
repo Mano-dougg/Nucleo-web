@@ -33,10 +33,6 @@ export const NavActions = styled.div`
     display: none;
   }
 
-  input[type="checkbox"]:checked ~ .evento {
-    transform: translatex(450px);
-  }
-
   ${media.tablet} {
     button {
       display: none;
@@ -45,6 +41,10 @@ export const NavActions = styled.div`
     ${media.mobile} {
       img {
         display: flex;
+      }
+
+      input[type="checkbox"]:checked ~ .evento {
+        transform: translatex(450px);
       }
     }
   }

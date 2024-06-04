@@ -1,11 +1,9 @@
-import Image from "next/image";
+
 import { PostContent, Posts, PostText } from "./PostsStyle";
 import Header from "@/components/ui/Header/Header";
-import { createClient, Query } from "@prismicio/client";
-import { AllDocumentTypes, PageDocument } from "../../../prismicio-types";
+import { createClient } from "@prismicio/client";
 import ContentSec from "@/components/ui/ContentSec/ContentSec";
 import Card from "@/components/ui/Card/Card";
-import { Key, useEffect } from "react";
 import NavBar from "@/components/ui/NavBar/NavBar";
 
 interface IdpostsProps {
