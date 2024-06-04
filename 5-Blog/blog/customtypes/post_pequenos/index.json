@@ -37,6 +37,40 @@
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
+      },
+      "imagem_autor_pequeno": {
+        "type": "Image",
+        "config": {
+          "label": "imagem_autor_pequeno",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "autor_pequeno": {
+        "type": "StructuredText",
+        "config": {
+          "label": "autor_pequeno",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "data_pequena": {
+        "type": "StructuredText",
+        "config": {
+          "label": "data_pequena",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "share": {
+        "type": "Image",
+        "config": {
+          "label": "share",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }

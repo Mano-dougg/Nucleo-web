@@ -37,11 +37,19 @@
     height: 205px;
 }
 
-.texto-noticia{
-    width: 291px;
+.organizador{
     height: 206px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+.texto-noticia{
+    width: 302px;
+    height: 154px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .texto-noticia h2{
@@ -54,6 +62,44 @@
 .texto-noticia p{
     font-size: 14px;
     color: #067546;
+}
+
+.autor_carrossel{
+    display: flex;
+    align-items: center;
+    width: 290px;
+    height: 44px;
+}
+
+.dados_autor_pequeno{
+    width: 215px;
+    height: 31px;
+    display: flex;
+    flex-direction: column;
+}
+
+#autor_pequeno{
+    color: #003720;
+    font-size: 14px;
+    margin: 0;
+    margin-left: 5px;
+}
+
+#data_pequena{
+    color: #067546;
+    font-size: 12px;
+    margin: 0;
+    margin-left: 5px;
+}
+
+#imagem_pequena{
+    width: 44px;
+    height: 44px;
+}
+
+#share_pequena{
+    width: 32px;
+    height: 32px;
 }
 
 .bolinhas-mae{

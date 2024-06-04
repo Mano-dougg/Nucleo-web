@@ -370,6 +370,50 @@ interface PostPequenosDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   texto: prismic.RichTextField;
+
+  /**
+   * imagem_autor_pequeno field in *post_pequenos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_pequenos.imagem_autor_pequeno
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem_autor_pequeno: prismic.ImageField<never>;
+
+  /**
+   * autor_pequeno field in *post_pequenos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_pequenos.autor_pequeno
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  autor_pequeno: prismic.RichTextField;
+
+  /**
+   * data_pequena field in *post_pequenos*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_pequenos.data_pequena
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  data_pequena: prismic.RichTextField;
+
+  /**
+   * share field in *post_pequenos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post_pequenos.share
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  share: prismic.ImageField<never>;
 }
 
 /**
