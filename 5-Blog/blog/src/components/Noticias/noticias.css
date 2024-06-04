@@ -27,6 +27,29 @@
     border-radius: 30px;
 }
 
+
+.noticia_2{
+    width: 352px;
+    height: 438px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #EDFFF7;
+    border-radius: 30px;
+}
+
+.noticia_3{
+    width: 352px;
+    height: 438px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #EDFFF7;
+    border-radius: 30px;
+}
+
 .conteudo_noticia{
     width: 302px;
     height: 206px;
@@ -120,4 +143,44 @@
 
 #line{
     text-decoration: none;
+}
+
+@media (max-width: 550px) { 
+
+    .bolinhas-mae{
+        width: 151px;
+        height: 20px;
+    }
+
+    .bolinhas-filha{
+        width: 10px;
+        height: 10px;
+    }
+    
+}
+
+
+@media (max-width: 900px) { 
+
+    .noticia_2{
+        display: None;
+    }
+
+    .seta_esq_noticia{
+        display: none;
+    }
+
+    .seta_dir_noticia{
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 1280px) { 
+
+    .noticia_3{
+        display: None;
+    }
+
 }

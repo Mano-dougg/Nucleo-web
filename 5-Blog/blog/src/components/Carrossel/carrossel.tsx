@@ -21,13 +21,13 @@ export default async function Carrossel(){
 
             <div className='carrossel'>
 
-                <div>
+                <div className='seta_esq'>
                     <Image src={SetaEsq} alt='Seta Esquerda'/>
                 </div>
 
                 <div className='carrossel-dinamico'>
 
-                    <div className='carrossel_noticia'>
+                    <div className='carrossel_noticia_1'>
                         <Link href={'./Post'}><PrismicImage field={pequeno1.data.imagem}/></Link>
                         
                         <div className='organizador'>
@@ -52,7 +52,7 @@ export default async function Carrossel(){
                         
                     </div>
 
-                    <div className='carrossel_noticia'>
+                    <div className='carrossel_noticia_2'>
 
                         <Link href={'./Post'}><PrismicImage field={pequeno2.data.imagem}/></Link>
 
@@ -80,7 +80,7 @@ export default async function Carrossel(){
 
                 </div>
 
-                <div>
+                <div className='seta_dir'>
                     <Image src={SetaDir} alt='Seta Direita'/>
                 </div>
 

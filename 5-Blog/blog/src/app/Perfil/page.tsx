@@ -17,7 +17,7 @@ export default async function Perfil(){
     const titulo = asHTML(autor.data.titulo)
 
     return(
-        <div>
+        <div className='autor_maior'>
             <Topo />
 
             <div className='autor-principal'>
@@ -27,9 +27,11 @@ export default async function Perfil(){
                 </div>
 
                 <div className='sessao_1'>
+
                     <div className='imagem_autor'>
                         <PrismicImage field={autor.data.imagem_autor}/>
                     </div>
+
                     <div className='conteudo_1'>
 
                         <div className='texto_1'>
@@ -49,18 +51,7 @@ export default async function Perfil(){
                     <p>{asText(autor.data.conteudo_2)}</p>
                 </div>
 
-
-
-
-
-
-
-
-
             </div>
-
-
-
 
             <div className='mais_autor'>
                 <h1 id='titulo_autor'>Mais do autor</h1>

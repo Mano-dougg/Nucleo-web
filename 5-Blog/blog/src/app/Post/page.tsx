@@ -17,17 +17,16 @@ export default async function Post(){
     const titulomaior = asHTML(post.data.titulomaior)
 
     return(
-        <div>
+        <div className='maior_post'>
             <Topo />
 
             <div className='noticia-principal'>
-                <div>
+                <div className='titulo_post'>
                     <h1 dangerouslySetInnerHTML={{ __html: titulomaior }} id='titulo1'/>
                 </div>
 
                 <div className='conteudo1'>
                     <div className='texto1'>
-                        {/* <h2 dangerouslySetInnerHTML={{ __html: titulomenor }} id='titulo2'/> */}
                         <h2>{asText(post.data.titulomenor)}</h2>
                         <p>{asText(post.data.texto1)}</p>
                     </div>

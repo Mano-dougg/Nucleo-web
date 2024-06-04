@@ -66,3 +66,40 @@ input::placeholder {
     height: 40px;
     cursor: pointer;
 }
+
+
+@media (max-width: 900px) { 
+
+    .logo img{
+        width: 105px;
+        height: 30px;
+    }
+
+    .direita{
+        width: 170px;
+        height: 34px;
+    }
+
+    .pesquisa{
+        width: 130px;
+        height: 34px;
+    }
+
+    .pesquisa input{
+        /* background-color: red; */
+        width: 100px;
+        height: 30px;
+        
+    }
+
+    .pesquisa img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .tema img{
+        width: 30px;
+        height: 30px;
+    }
+
+}

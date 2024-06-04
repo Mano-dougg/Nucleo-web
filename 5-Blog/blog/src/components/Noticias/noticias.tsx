@@ -20,7 +20,7 @@ export default async function Noticias() {
 
             <div className='carrossel_noticias'>
 
-                    <div>
+                    <div className='seta_esq_noticia'>
                         <Image src={SetaEsq} alt='Seta Esquerda'/>
                     </div>
 
@@ -53,7 +53,7 @@ export default async function Noticias() {
 
                         </div>
 
-                        <div className='noticia'>
+                        <div className='noticia_2'>
 
                             <div className='conteudo_noticia'>
 
@@ -80,7 +80,7 @@ export default async function Noticias() {
 
                         </div>
 
-                        <div className='noticia'>
+                        <div className='noticia_3'>
 
                             <div className='conteudo_noticia'>
 
@@ -109,7 +109,7 @@ export default async function Noticias() {
 
                     </div>
 
-                <div>
+                <div className='seta_dir_noticia'>
                     <Image src={SetaDir} alt='Seta Direita'/>
                 </div>
 

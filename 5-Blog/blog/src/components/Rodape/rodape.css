@@ -34,3 +34,27 @@
     font-size: 12px;
     color: white;
 }
+
+
+
+@media (max-width: 550px) {
+
+    .redes{
+        font-size: 14px;
+        width: 262px;
+        height: 20px;
+    }
+
+    .redes img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .direitos{
+        width: 190px;
+        height: 17px;
+        font-size: 8px;
+    }
+
+
+}
