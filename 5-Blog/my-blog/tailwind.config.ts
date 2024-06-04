@@ -11,7 +11,7 @@ const config: Config = {
       fontFamily: {
         body: ["var(--font-nunito-sans"],
         display: ["var(--font-nunito)"],
-      }
+      },
     },
   },
   plugins: [],
