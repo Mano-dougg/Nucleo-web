@@ -19,35 +19,26 @@
           "placeholder": ""
         }
       },
-      "link": {
-        "type": "Group",
+      "icon": {
+        "type": "Image",
         "config": {
-          "label": "Link",
-          "repeat": true,
-          "fields": {
-            "icon": {
-              "type": "Image",
-              "config": {
-                "label": "Icon",
-                "constraint": {},
-                "thumbnails": []
-              }
-            },
-            "base_url": {
-              "type": "Text",
-              "config": {
-                "label": "Base url",
-                "placeholder": ""
-              }
-            },
-            "post_url": {
-              "type": "Link",
-              "config": {
-                "label": "Post url",
-                "select": "document"
-              }
-            }
-          }
+          "label": "Icon",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "base_url": {
+        "type": "Text",
+        "config": {
+          "label": "Base url",
+          "placeholder": ""
+        }
+      },
+      "post_url": {
+        "type": "Link",
+        "config": {
+          "label": "Post url",
+          "select": "document"
         }
       }
     }

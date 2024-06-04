@@ -27,6 +27,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "author_card": {
+              "type": "SharedSlice"
+            },
             "featured_post": {
               "type": "SharedSlice"
             }

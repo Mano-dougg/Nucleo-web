@@ -30,23 +30,23 @@
           }
         },
         "share_button": {
-          "type": "Group",
+          "type": "Image",
           "config": {
             "label": "Share button",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "networks": {
+          "type": "Group",
+          "config": {
+            "label": "Networks",
             "repeat": true,
             "fields": {
-              "icon": {
-                "type": "Image",
-                "config": {
-                  "label": "Icon",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              },
-              "networks": {
+              "network": {
                 "type": "Link",
                 "config": {
-                  "label": "Networks",
+                  "label": "Network",
                   "select": "document",
                   "customtypes": [
                     "shareable_networks"

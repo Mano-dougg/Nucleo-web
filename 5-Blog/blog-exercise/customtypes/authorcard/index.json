@@ -1,0 +1,64 @@
+{
+  "format": "custom",
+  "id": "authorcard",
+  "label": "AuthorCard",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "avatar": {
+        "type": "Image",
+        "config": {
+          "label": "Avatar",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "post_date": {
+        "type": "Link",
+        "config": {
+          "label": "Post date",
+          "select": "document"
+        }
+      },
+      "share_button": {
+        "type": "Image",
+        "config": {
+          "label": "Share button",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "networks": {
+        "type": "Group",
+        "config": {
+          "label": "Networks",
+          "repeat": true,
+          "fields": {
+            "network": {
+              "type": "Link",
+              "config": {
+                "label": "Network",
+                "select": "document",
+                "customtypes": ["shareable_networks"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
