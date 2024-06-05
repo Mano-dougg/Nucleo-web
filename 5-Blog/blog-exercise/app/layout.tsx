@@ -5,7 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const rubik = Rubik({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: [ "latin" ] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   }
 }
- 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,7 +31,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={rubik.className}>
         <Header />
-        {children}
+        <main
+          className={`p-[100px_16px_103px] sm:p-[141px_32px_148px] flex flex-col gap-y-4 md:gap-x-8 items-center max-w-[95vw] mx-auto`}
+        >
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

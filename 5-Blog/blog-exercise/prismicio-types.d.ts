@@ -27,23 +27,22 @@ export interface AuthorDocumentDataNetworksItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   url: prismic.LinkField;
+
+  /**
+   * Name field in *Author → Networks*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.networks[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
 }
 
 /**
  * Content for Author documents
  */
 interface AuthorDocumentData {
-  /**
-   * Avatar field in *Author*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author.avatar
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  avatar: prismic.ImageField<never>;
-
   /**
    * Name field in *Author*
    *
@@ -54,6 +53,17 @@ interface AuthorDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   name: prismic.KeyTextField;
+
+  /**
+   * Avatar field in *Author*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.avatar
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  avatar: prismic.ImageField<never>;
 
   /**
    * Networks field in *Author*
@@ -79,98 +89,225 @@ interface AuthorDocumentData {
 export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
+type AuthorpageDocumentDataSlicesSlice = RichTextSlice;
+
 /**
- * Item in *AuthorCard → Networks*
+ * Content for AuthorPage documents
  */
-export interface AuthorcardDocumentDataNetworksItem {
+interface AuthorpageDocumentData {
   /**
-   * Network field in *AuthorCard → Networks*
+   * Author field in *AuthorPage*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: authorcard.networks[].network
+   * - **API ID Path**: authorpage.author
+   * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  network: prismic.ContentRelationshipField<"shareable_networks">;
-}
+  author: prismic.ContentRelationshipField<"author">;
 
-/**
- * Content for AuthorCard documents
- */
-interface AuthorcardDocumentData {
   /**
-   * Avatar field in *AuthorCard*
+   * Summary field in *AuthorPage*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: authorcard.avatar
+   * - **API ID Path**: authorpage.summary
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  avatar: prismic.ImageField<never>;
+  summary: prismic.RichTextField;
 
   /**
-   * Name field in *AuthorCard*
+   * Description field in *AuthorPage*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: authorpage.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *AuthorPage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: authorpage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AuthorpageDocumentDataSlicesSlice> /**
+   * Meta Description field in *AuthorPage*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: authorcard.name
-   * - **Tab**: Main
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: authorpage.meta_description
+   * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField;
+   */;
+  meta_description: prismic.KeyTextField;
 
   /**
-   * Post date field in *AuthorCard*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: authorcard.post_date
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  post_date: prismic.ContentRelationshipField;
-
-  /**
-   * Share button field in *AuthorCard*
+   * Meta Image field in *AuthorPage*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: authorcard.share_button
-   * - **Tab**: Main
+   * - **API ID Path**: authorpage.meta_image
+   * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  share_button: prismic.ImageField<never>;
+  meta_image: prismic.ImageField<never>;
 
   /**
-   * Networks field in *AuthorCard*
+   * Meta Title field in *AuthorPage*
    *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: authorcard.networks[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: authorpage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  networks: prismic.GroupField<Simplify<AuthorcardDocumentDataNetworksItem>>;
+  meta_title: prismic.KeyTextField;
 }
 
 /**
- * AuthorCard document from Prismic
+ * AuthorPage document from Prismic
  *
- * - **API ID**: `authorcard`
+ * - **API ID**: `authorpage`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AuthorcardDocument<Lang extends string = string> =
+export type AuthorpageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
-    Simplify<AuthorcardDocumentData>,
-    "authorcard",
+    Simplify<AuthorpageDocumentData>,
+    "authorpage",
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = AuthorCardSlice | FeaturedPostSlice;
+type BlogPostDocumentDataSlicesSlice = RichTextSlice;
+
+/**
+ * Content for Blog Post documents
+ */
+interface BlogPostDocumentData {
+  /**
+   * Title field in *Blog Post*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Featured Image field in *Blog Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Publication Date field in *Blog Post*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.publication_date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  publication_date: prismic.DateField;
+
+  /**
+   * Summary field in *Blog Post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.summary
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  summary: prismic.RichTextField;
+
+  /**
+   * Author field in *Blog Post*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.author
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  author: prismic.ContentRelationshipField;
+
+  /**
+   * Slice Zone field in *Blog Post*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BlogPostDocumentDataSlicesSlice> /**
+   * Meta Description field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: blog_post.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Blog Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Blog Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: blog_post.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Blog Post document from Prismic
+ *
+ * - **API ID**: `blog_post`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogPostDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BlogPostDocumentData>,
+    "blog_post",
+    Lang
+  >;
+
+type HomepageDocumentDataSlicesSlice = RichTextSlice | FeaturedPostSlice;
 
 /**
  * Content for Homepage documents
@@ -456,102 +593,11 @@ export type ShareableNetworksDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AuthorDocument
-  | AuthorcardDocument
+  | AuthorpageDocument
+  | BlogPostDocument
   | HomepageDocument
   | LogoDocument
   | ShareableNetworksDocument;
-
-/**
- * Item in *AuthorCard → Default → Primary → Networks*
- */
-export interface AuthorCardSliceDefaultPrimaryNetworksItem {
-  /**
-   * Network field in *AuthorCard → Default → Primary → Networks*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author_card.default.primary.networks[].network
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  network: prismic.ContentRelationshipField<"shareable_networks">;
-}
-
-/**
- * Primary content in *AuthorCard → Default → Primary*
- */
-export interface AuthorCardSliceDefaultPrimary {
-  /**
-   * Author info field in *AuthorCard → Default → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author_card.default.primary.author_info
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  author_info: prismic.ContentRelationshipField<"author">;
-
-  /**
-   * Post date field in *AuthorCard → Default → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author_card.default.primary.post_date
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  post_date: prismic.ContentRelationshipField;
-
-  /**
-   * Share button field in *AuthorCard → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author_card.default.primary.share_button
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  share_button: prismic.ImageField<never>;
-
-  /**
-   * Networks field in *AuthorCard → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author_card.default.primary.networks[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  networks: prismic.GroupField<
-    Simplify<AuthorCardSliceDefaultPrimaryNetworksItem>
-  >;
-}
-
-/**
- * Default variation for AuthorCard Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AuthorCardSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<AuthorCardSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *AuthorCard*
- */
-type AuthorCardSliceVariation = AuthorCardSliceDefault;
-
-/**
- * AuthorCard Shared Slice
- *
- * - **API ID**: `author_card`
- * - **Description**: AuthorCard
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AuthorCardSlice = prismic.SharedSlice<
-  "author_card",
-  AuthorCardSliceVariation
->;
 
 /**
  * Primary content in *FeaturedPost → Default → Primary*
@@ -618,6 +664,51 @@ export type FeaturedPostSlice = prismic.SharedSlice<
   FeaturedPostSliceVariation
 >;
 
+/**
+ * Primary content in *RichText → Default → Primary*
+ */
+export interface RichTextSliceDefaultPrimary {
+  /**
+   * Content field in *RichText → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rich_text.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for RichText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RichTextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RichTextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RichText*
+ */
+type RichTextSliceVariation = RichTextSliceDefault;
+
+/**
+ * RichText Shared Slice
+ *
+ * - **API ID**: `rich_text`
+ * - **Description**: RichText
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RichTextSlice = prismic.SharedSlice<
+  "rich_text",
+  RichTextSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -631,9 +722,12 @@ declare module "@prismicio/client" {
       AuthorDocument,
       AuthorDocumentData,
       AuthorDocumentDataNetworksItem,
-      AuthorcardDocument,
-      AuthorcardDocumentData,
-      AuthorcardDocumentDataNetworksItem,
+      AuthorpageDocument,
+      AuthorpageDocumentData,
+      AuthorpageDocumentDataSlicesSlice,
+      BlogPostDocument,
+      BlogPostDocumentData,
+      BlogPostDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
@@ -643,15 +737,14 @@ declare module "@prismicio/client" {
       ShareableNetworksDocument,
       ShareableNetworksDocumentData,
       AllDocumentTypes,
-      AuthorCardSlice,
-      AuthorCardSliceDefaultPrimaryNetworksItem,
-      AuthorCardSliceDefaultPrimary,
-      AuthorCardSliceVariation,
-      AuthorCardSliceDefault,
       FeaturedPostSlice,
       FeaturedPostSliceDefaultPrimary,
       FeaturedPostSliceVariation,
       FeaturedPostSliceDefault,
+      RichTextSlice,
+      RichTextSliceDefaultPrimary,
+      RichTextSliceVariation,
+      RichTextSliceDefault,
     };
   }
 }

@@ -1,3 +1,4 @@
+import { RichText } from "@/components/RichText";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -24,27 +25,11 @@ const FeaturedPost = ({ slice }: FeaturedPostProps): JSX.Element => {
       <div
         className={`order-2 md:order-1 flex flex-col gap-2 sm:gap-6 md:gap-8 md:w-[70vw]`}
       >
-        <PrismicRichText
+        <RichText
           field={slice.primary.posttitle}
-          components={{
-            heading2: ({ children }) => (
-              <h2
-                className={`text-xl sm:text-[40px] text-center font-semibold text-green-950 dark:text-foreground`}
-              >
-                {children}
-              </h2>
-            ),
-          }}
         />
-        <PrismicRichText
+        <RichText
           field={slice.primary.postdescription}
-          components={{
-            paragraph: ({ children }) => (
-              <p className={`text-foreground text-xs sm:text-base md:text-xl`}>
-                {children}
-              </p>
-            ),
-          }}
         />
       </div>
     </section>

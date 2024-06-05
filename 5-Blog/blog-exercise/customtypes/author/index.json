@@ -6,6 +6,13 @@
   "status": true,
   "json": {
     "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
       "uid": {
         "config": {
           "label": "UID"
@@ -18,13 +25,6 @@
           "label": "Avatar",
           "constraint": {},
           "thumbnails": []
-        }
-      },
-      "name": {
-        "type": "Text",
-        "config": {
-          "label": "Name",
-          "placeholder": ""
         }
       },
       "networks": {
@@ -47,6 +47,13 @@
                 "label": "URL",
                 "placeholder": "",
                 "select": null
+              }
+            },
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
               }
             }
           }

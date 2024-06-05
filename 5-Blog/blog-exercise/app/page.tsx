@@ -1,31 +1,34 @@
 import { Metadata } from "next";
-import { PrismicRichText, SliceZone } from "@prismicio/react";
+import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { RichText } from "@/components/RichText";
+import { PostCard } from "@/components/PostCard";
 
 export default async function Page() {
   const client = createClient();
-  const page = await client.getSingle("homepage");
+  const home = await client.getSingle("homepage");
+  const posts = await client.getAllByType("blog_post", {
+    orderings: [
+      { field: "my.blog_post.publication_date", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
 
   return (
-    <main
-      className={`p-[100px_16px_103px] sm:p-[141px_32px_148px] flex flex-col gap-y-4 md:gap-x-8 items-center max-w-[95vw] mx-auto`}
-    >
-      <PrismicRichText
-        field={page.data.main_section_header}
-        components={{
-          heading1: ({ children }) => (
-            <h1
-              className={`text-center font-bold mb-8 text-4xl sm:text-6xl text-green-950 dark:text-foreground`}
-            >
-              {children}
-            </h1>
-          ),
-        }}
+    <>
+      <RichText
+        field={home.data.main_section_header}
       />
-      <SliceZone slices={page.data.slices} components={components} />
-    </main>
+      <SliceZone slices={home.data.slices} components={components} />
+
+      <section className="grid grid-cols-1 gap-8 max-w-3xl w-full">
+        {posts.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </section>
+    </>
   );
 }
 

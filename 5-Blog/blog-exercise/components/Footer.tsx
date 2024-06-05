@@ -16,7 +16,12 @@ const Footer = async (props: Props) => {
           {settings.data.social_networks.map(({ url_to_network, social_media_icon }) => (
             <li key={crypto.randomUUID()}>
               <PrismicNextLink field={url_to_network}>
-                <PrismicNextImage field={social_media_icon} className="size-5 sm:size-8" />
+                <PrismicNextImage
+                  field={social_media_icon}
+                  max-h="50"
+                  max-w="50"
+                  imgixParams={{ ar: "1:1", fit: "crop" }}
+                />
               </PrismicNextLink>
             </li>
           ))}
