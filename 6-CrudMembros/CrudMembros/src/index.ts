@@ -40,6 +40,18 @@ app.post('/user', async (req: Request, res: Response) => {
 });
 
 
+//Retornar lista de usuários cadastrados no banco de dados
+app.get('/users', async(req:Request, res:Response) => {
+    try{
+        const users = await prisma.user.findMany();
+        res.status(201).json({ 
+            message: 'Segue abaixo a lista de usuários:', users});
+    } catch (error){
+        res.status(404).json({error:'Erro ao buscar usuários'});
+    }
+
+});
+
 
 // Retornar usuário por ID
 app.get('/user/:id', async (req: Request, res: Response) => {
