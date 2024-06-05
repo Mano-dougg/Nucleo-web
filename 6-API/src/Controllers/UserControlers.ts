@@ -30,5 +30,25 @@ export default {
         return res.json(user)
     }
     catch (error) {}
-}
+},
+
+    async getUser(req: Request, res: Response) {
+        try {
+            const {id} = req.params
+            const user = await prisma.user.findUnique({where: {id: Number(id)}})
+
+            if (!user) {
+                return res.json({ error: "Não foi possível encontrar esse membro"})
+            }
+            
+            return res.json(user)
+        }
+
+        catch {
+            return res.json({ error })
+        }
+    },
+
+
+
 }
