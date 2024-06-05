@@ -6,10 +6,11 @@ import {
 } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
+import Image from "next/image";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
-    <Heading as="h2" size="md" className="text-center mb-12">
+    <Heading as="h2" size="md" className=" text-white text-center mb-12">
       {children}
     </Heading>
   ),
@@ -17,13 +18,13 @@ const components: JSXMapSerializer = {
     <Heading
       as="h3"
       size="sm"
-      className="mb-8 font-medium text-center font-display"
+      className=" text-white mb-8 font-medium text-center font-display"
     >
       {children}
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <p className="text-base font-medium font-body text-slate-600 sm:text-left text-center">
+    <p className=" text-6xl text-base font-medium font-body text-white sm:text-left text-center">
       {children}
     </p>
   ),
@@ -52,15 +53,14 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
     >
       <PrismicRichText components={components} field={slice.primary.heading} />
 
-      <div className=" grid sm:grid-cols-2 lg:grid-cols-4 max-w-5xl gap-x-8 gap-y-12 mx-auto sm:place-items-start place-items-center">
+      <div className=" grid sm:grid-cols-2 lg:grid-cols-3 max-w-5xl gap-x-15 gap-y-12 mx-auto place-items-center place-items-center">
         {slice.primary.repeatablezone.map((item, index) => (
           <div
             key={index}
-            className="max-w-xs grid sm:place-items-start place-items-center"
+            className="max-w-xs grid sm:place-items-start place-items-center text-center "
           >
             {item.icon && <div className="mb-5">{icons[item.icon]}</div>}
             <PrismicRichText components={components} field={item.title} />
-            <PrismicRichText components={components} field={item.description} />
           </div>
         ))}
       </div>
@@ -72,82 +72,34 @@ export default Features;
 
 function CalendarIcon() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="80"
-      height="80"
-      fill="none"
-      viewBox="0 0 80 80"
-    >
-      <path
-        stroke="#0891B2"
-        strokeWidth="5"
-        d="M6.7 40c0-12.6 0-18.9 3.9-22.8 3.9-3.9 10.2-3.9 22.7-3.9h13.4c12.5 0 18.8 0 22.7 4 4 3.8 4 10.1 4 22.7v6.7c0 12.5 0 18.8-4 22.7-3.9 4-10.2 4-22.7 4H33.3c-12.5 0-18.8 0-22.7-4-4-3.9-4-10.2-4-22.7V40z"
-      ></path>
-      <path
-        stroke="#0891B2"
-        strokeLinecap="round"
-        strokeOpacity="0.5"
-        strokeWidth="5"
-        d="M23.3 13.3v-5M56.7 13.3v-5M8.3 30h63.4"
-      ></path>
-      <path
-        fill="#0891B2"
-        d="M60 56.7a3.3 3.3 0 11-6.7 0 3.3 3.3 0 016.7 0zM60 43.3a3.3 3.3 0 11-6.7 0 3.3 3.3 0 016.7 0zM43.3 56.7a3.3 3.3 0 11-6.6 0 3.3 3.3 0 016.6 0zM43.3 43.3a3.3 3.3 0 11-6.6 0 3.3 3.3 0 016.6 0zM26.7 56.7a3.3 3.3 0 11-6.7 0 3.3 3.3 0 016.7 0zM26.7 43.3a3.3 3.3 0 11-6.7 0 3.3 3.3 0 016.7 0z"
-      ></path>
-    </svg>
+    <Image 
+    src="/assets/icons8-números-50.png" 
+    alt="Logo"
+    width={100} // ajuste conforme necessário
+    height={100} // ajuste conforme necessário
+  />
   );
 }
 
 function BarGraphIcon() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="80"
-      height="80"
-      fill="none"
-      viewBox="0 0 80 80"
-    >
-      <g stroke="#0891B2" strokeWidth="5" clipPath="url(#clip0_1_1478)">
-        <path strokeLinecap="round" d="M73.3 73.3H6.7"></path>
-        <path
-          strokeOpacity="0.5"
-          d="M70 73.3v-25a5 5 0 00-5-5H55a5 5 0 00-5 5v25"
-        ></path>
-        <path d="M50 73.3V16.7c0-4.7 0-7.1-1.5-8.6-1.4-1.4-3.8-1.4-8.5-1.4s-7 0-8.5 1.4C30 9.6 30 12 30 16.7v56.6"></path>
-        <path
-          strokeOpacity="0.5"
-          d="M30 73.3V31.7a5 5 0 00-5-5H15a5 5 0 00-5 5v41.6"
-        ></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_1_1478">
-          <rect width="80" height="80" fill="#fff" rx="16.6"></rect>
-        </clipPath>
-      </defs>
-    </svg>
+    <Image 
+    src="/assets/icons8-2-50.png" 
+    alt="Logo"
+    width={100} // ajuste conforme necessário
+    height={100} // ajuste conforme necessário
+  />
   );
 }
 
 function CloverIcon() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="80"
-      height="80"
-      fill="none"
-      viewBox="0 0 80 80"
-    >
-      <g stroke="#0891B2" strokeWidth="5" clipPath="url(#clip0_1_1492)">
-        <path strokeOpacity="0.5" d="M26.7 26.7h26.6v26.6H26.7V26.7z"></path>
-        <path d="M53.3 53.3h10a10 10 0 11-10 10v-10zM26.7 53.3h-10a10 10 0 1010 10v-10zM53.3 26.7h10a10 10 0 10-10-10v10zM26.7 26.7h-10a10 10 0 1110-10v10z"></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_1_1492">
-          <rect width="80" height="80" fill="#fff" rx="16.6"></rect>
-        </clipPath>
-      </defs>
-    </svg>
+    <Image 
+    src="/assets/icons8-3-50.png" 
+    alt="Logo"
+    width={100} // ajuste conforme necessário
+    height={100} // ajuste conforme necessário
+  />
   );
 }
 

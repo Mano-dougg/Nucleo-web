@@ -11,13 +11,13 @@ const components: JSXMapSerializer = {
     <Heading
       as="h1"
       size="xl"
-      className="md:mb-8 mb-4 mt-12 first:mt-0 last:mb-0"
+      className=" text-white md:mb-8 mb-4 mt-12 first:mt-0 last:mb-0"
     >
       {children}
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <p className="text-2xl font-normal leading-10 font-body text-slate-600 mb-4 md:mb-8 max-w-md">
+    <p className="text-2xl font-normal leading-10 font-body text-white  mb-4 md:mb-8 max-w-md">
       {children}
     </p>
   ),
@@ -43,13 +43,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <div className="grid grid-cols-1 place-items-center text-center ">
           <PrismicRichText field={slice.primary.heading} components={{
             heading1: ({children}) => (
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight font-display text-slate-700 text-center ">{children}</h1>
+              <h1 className=" text-white text-5xl md:text-7xl font-bold leading-tight tracking-tight font-main text-slate-700 text-center ">{children}</h1>
             )
           }} />  
           <PrismicRichText field={slice.primary.body}
           components={{
             paragraph: ({children}) =>( 
-              <p className="text-2xl text-center font-normal leading-10 font-body text-slate-600 mb-4 md:mb-8">{children}</p>
+              <p className="text-2xl text-center font-normal leading-10 font-body text-white  mb-4 md:mb-8">{children}</p>
             )
           }}
           />

@@ -265,16 +265,6 @@ export interface FeaturesSliceDefaultPrimaryRepeatablezoneItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
-
-  /**
-   * Description field in *Features → Default → Primary → Repeatablezone*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: features.default.primary.repeatablezone[].description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
 }
 
 /**
@@ -509,6 +499,16 @@ export interface TextWithImageSliceDefaultPrimary {
   body: prismic.RichTextField;
 
   /**
+   * Postlink field in *TextWithImage → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.default.primary.postlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  postlink: prismic.LinkField;
+
+  /**
    * Image field in *TextWithImage → Default → Primary*
    *
    * - **Field Type**: Image
@@ -545,6 +545,16 @@ export interface TextWithImageSliceImageRightPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Postlink field in *TextWithImage → Image Right → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_image.imageRight.primary.postlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  postlink: prismic.LinkField;
 
   /**
    * Body field in *TextWithImage → Image Right → Primary*

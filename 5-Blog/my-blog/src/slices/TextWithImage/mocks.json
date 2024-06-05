@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Laboris ullamco aute qui consequat occaecat."
+							"text": "Est nulla in enim nostrud incididunt non enim aliquip occaecat occaecat nostrud ut aliqua labore ad."
 						}
 					}
 				]
@@ -47,6 +47,13 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"postlink": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
 			}
 		},
 		"items": []
@@ -99,6 +106,13 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"postlink": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
 			}
 		},
 		"items": [

@@ -1,7 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import clsx from "clsx";
-import { Nunito, Nunito_Sans } from "next/font/google";
+import { Nunito, Nunito_Sans} from "next/font/google";
+import { Dancing_Script} from "next/font/google";
 import { createClient, repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
 
@@ -19,6 +20,12 @@ const nunitoSans = Nunito_Sans({
   display: "swap",
   variable: "--font-nunito-sans",
 });
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dancing-script",
+})
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
@@ -41,12 +48,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={clsx(nunito.variable, nunitoSans.variable)}>
-      <body>
+    <html lang="en" className={clsx(nunito.variable, nunitoSans.variable, dancingScript.variable)}>
+      <body className="bg-black">
         <Header />
         {children}
         <Footer />
-        <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1] inset-0 opacity-50" />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>

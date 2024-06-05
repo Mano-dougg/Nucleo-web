@@ -12,7 +12,7 @@ export default async function Header() {
 
   return (
     <Bounded as="header" className="py-4 md:py-6 lg:py-8">
-      <div className="flex gap-4 items-center justify-between sm:flex-row flex-col">
+      <div className=" text-white flex gap-4 items-center justify-between sm:flex-row flex-col">
         <Link href="/">
           <Logo />
         </Link>

@@ -11,7 +11,7 @@ export default async function Footer() {
 
   return (
     <Bounded as="footer">
-      <div className="flex sm:flex-row flex-col justify-between items-center gap-6">
+      <div className="text-white flex sm:flex-row flex-col justify-between items-center gap-6">
         <Link href="/">
           <Logo />
         </Link>

@@ -69,22 +69,8 @@
 								"icon",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "bargraph",
+									"value": "clover",
 									"type": "Select"
-								}
-							],
-							[
-								"description",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Ea eu exercitation consequat irure irure mollit quis mollit exercitation ullamco dolore in. Dolore eu amet dolor sint nostrud consectetur magna sint elit incididunt incididunt. Dolore dolore occaecat occaecat consectetur enim consectetur nostrud cillum tempor voluptate."
-											}
-										}
-									]
 								}
 							]
 						]
@@ -92,14 +78,6 @@
 					{
 						"__TYPE__": "GroupItemContent",
 						"value": [
-							[
-								"icon",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "bargraph"
-								}
-							],
 							[
 								"title",
 								{
@@ -117,19 +95,11 @@
 								}
 							],
 							[
-								"description",
+								"icon",
 								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Ea eu exercitation consequat irure irure mollit quis mollit exercitation ullamco dolore in. Dolore eu amet dolor sint nostrud consectetur magna sint elit incididunt incididunt. Dolore dolore occaecat occaecat consectetur enim consectetur nostrud cillum tempor voluptate.",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
+									"__TYPE__": "FieldContent",
+									"value": "hourglass",
+									"type": "Select"
 								}
 							]
 						]
@@ -137,14 +107,6 @@
 					{
 						"__TYPE__": "GroupItemContent",
 						"value": [
-							[
-								"icon",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "clover"
-								}
-							],
 							[
 								"title",
 								{
@@ -162,19 +124,11 @@
 								}
 							],
 							[
-								"description",
+								"icon",
 								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Ea eu exercitation consequat irure irure mollit quis mollit exercitation ullamco dolore in. Dolore eu amet dolor sint nostrud consectetur magna sint elit incididunt incididunt. Dolore dolore occaecat occaecat consectetur enim consectetur nostrud cillum tempor voluptate.",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
+									"__TYPE__": "FieldContent",
+									"value": "calendar",
+									"type": "Select"
 								}
 							]
 						]
@@ -182,14 +136,6 @@
 					{
 						"__TYPE__": "GroupItemContent",
 						"value": [
-							[
-								"icon",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "hourglass"
-								}
-							],
 							[
 								"title",
 								{
@@ -207,19 +153,11 @@
 								}
 							],
 							[
-								"description",
+								"icon",
 								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Ea eu exercitation consequat irure irure mollit quis mollit exercitation ullamco dolore in. Dolore eu amet dolor sint nostrud consectetur magna sint elit incididunt incididunt. Dolore dolore occaecat occaecat consectetur enim consectetur nostrud cillum tempor voluptate.",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
+									"__TYPE__": "FieldContent",
+									"value": "bargraph",
+									"type": "Select"
 								}
 							]
 						]

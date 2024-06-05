@@ -12,12 +12,12 @@ import Heading from "@/components/Heading";
 
 const components: JSXMapSerializer = {
   heading2: ({ children }) => (
-    <Heading as="h2" size="lg" className="">
+    <Heading as="h2" size="lg" className=" text-white">
       {children}
     </Heading>
   ),
   paragraph: ({ children }) => (
-    <p className="max-w-md text-lg font-body text-slate-600">{children}</p>
+    <p className="  text-white max-w-md text-lg font-body text-slate-600">{children}</p>
   ),
 };
 
@@ -36,16 +36,16 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid gap-8 md:grid-cols-2 place-items-center">
+      <div className="  text-white grid gap-8 md:grid-cols-2 place-items-center">
         <PrismicNextImage
           field={slice.primary.image}
           className={clsx(
-            "rounded-lg",
+            "rounded-lg ",
             slice.variation === "imageRight" && "md:order-2"
           )}
         />
 
-        <div className="grid gap-4">
+        <div className="  text-white grid gap-4">
           <PrismicRichText
             field={slice.primary.heading}
             components={components}

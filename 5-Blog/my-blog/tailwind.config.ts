@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       fontFamily: {
         body: ["var(--font-nunito-sans)"],
-        display: ["var(--font-nunito)"],
+        main: ["var(--font-dancing-script)"],
+        display: ["var(--font-nunito)"]
       },
     },
   },

@@ -27,7 +27,15 @@
             "label": "Body",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,strong,em"
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "postlink": {
+          "type": "Link",
+          "config": {
+            "label": "Postlink",
+            "placeholder": "",
+            "select": null
           }
         },
         "image": {
@@ -56,6 +64,14 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "heading2"
+          }
+        },
+        "postlink": {
+          "type": "Link",
+          "config": {
+            "label": "Postlink",
+            "placeholder": "",
+            "select": null
           }
         },
         "body": {
