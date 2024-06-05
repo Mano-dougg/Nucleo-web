@@ -6,7 +6,13 @@ const app = express()
 const port = 3000
 
 app.get('/', (req: Request, res:Response) => {
-  res.send('Hello World!')
+    return res.send( { message :'Helo world!'})
+
+   })
+
+app.get('/teste', (req: Request, res:Response) => {
+ return res.send('teste!')
+
 })
 
 
