@@ -254,7 +254,7 @@ export interface FeaturesSliceDefaultPrimaryRepeatablezoneItem {
    * - **API ID Path**: features.default.primary.repeatablezone[].icon
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  icon: prismic.SelectField<"calendar" | "bargraph" | "clover" | "hourglass">;
+  icon: prismic.SelectField<"primeiro" | "segundo" | "terceiro">;
 
   /**
    * Title field in *Features → Default → Primary → Repeatablezone*

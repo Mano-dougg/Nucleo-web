@@ -31,10 +31,9 @@ const components: JSXMapSerializer = {
 };
 
 const icons = {
-  calendar: <CalendarIcon />,
-  bargraph: <BarGraphIcon />,
-  clover: <CloverIcon />,
-  hourglass: <HourGlassIcon />,
+  primeiro: <PrimeiroIcon />,
+  segundo: <SegundoIcon />,
+  terceiro: <TerceiroIcon />,
 };
 
 /**
@@ -53,7 +52,7 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
     >
       <PrismicRichText components={components} field={slice.primary.heading} />
 
-      <div className=" grid sm:grid-cols-2 lg:grid-cols-3 max-w-5xl gap-x-15 gap-y-12 mx-auto place-items-center place-items-center">
+      <div className=" grid sm:grid-cols-2 lg:grid-cols-3 max-w-5xl gap-x-15 gap-y-12 mx-auto place-items-center">
         {slice.primary.repeatablezone.map((item, index) => (
           <div
             key={index}
@@ -70,60 +69,35 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
 
 export default Features;
 
-function CalendarIcon() {
+function PrimeiroIcon() {
   return (
     <Image 
-    src="/assets/icons8-números-50.png" 
-    alt="Logo"
-    width={100} // ajuste conforme necessário
-    height={100} // ajuste conforme necessário
-  />
+      src="/assets/icons8-números-50.png" 
+      alt="Primeiro Ícone"
+      width={100} 
+      height={100} 
+    />
   );
 }
 
-function BarGraphIcon() {
+function SegundoIcon() {
   return (
     <Image 
-    src="/assets/icons8-2-50.png" 
-    alt="Logo"
-    width={100} // ajuste conforme necessário
-    height={100} // ajuste conforme necessário
-  />
+      src="/assets/icons8-2-50.png" 
+      alt="Segundo Ícone"
+      width={100} 
+      height={100} 
+    />
   );
 }
 
-function CloverIcon() {
+function TerceiroIcon() {
   return (
     <Image 
-    src="/assets/icons8-3-50.png" 
-    alt="Logo"
-    width={100} // ajuste conforme necessário
-    height={100} // ajuste conforme necessário
-  />
-  );
-}
-
-function HourGlassIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="80"
-      height="80"
-      fill="none"
-      viewBox="0 0 80 80"
-    >
-      <g stroke="#0891B2" strokeWidth="5" clipPath="url(#clip0_1_1501)">
-        <path d="M49.9 30.2L40 40l-9.9-9.8C20.4 20.6 15.5 15.8 17 11.6l.4-1c2-4 9-4 22.7-4 13.8 0 20.7 0 22.7 4l.4 1c1.4 4.2-3.5 9-13.2 18.6z"></path>
-        <path
-          strokeOpacity="0.5"
-          d="M30.1 49.8L40 40l9.9 9.8c9.7 9.6 14.6 14.4 13.2 18.6l-.4 1c-2 4-9 4-22.7 4-13.8 0-20.7 0-22.7-4a7 7 0 01-.4-1c-1.4-4.2 3.5-9 13.2-18.6z"
-        ></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_1_1501">
-          <rect width="80" height="80" fill="#fff" rx="16.6"></rect>
-        </clipPath>
-      </defs>
-    </svg>
+      src="/assets/icons8-3-50.png" 
+      alt="Terceiro Ícone"
+      width={100}
+      height={100} 
+    />
   );
 }
