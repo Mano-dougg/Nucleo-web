@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 router.post("/criar_membro", UserControlers.createUser);
 router.get("/membro/:id", UserControlers.getUserId);
-router.get("/email/:email", UserControlers.getUserEmail);
-router.get("/membro", UserControlers.getUserNome);
+router.get("/membro/email/:email", UserControlers.getUserEmail);
+router.get("/membro/nome/:nome", UserControlers.getUserNome);
 
 export { router }

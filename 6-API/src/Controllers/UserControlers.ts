@@ -68,6 +68,23 @@ export default {
         }
     },
 
+    async getUserNome (req: Request, res: Response) {
+        try {
+            const nome = req.params.nome
+            const user = await prisma.user.findMany({where: {nome: String(nome)}})
+
+            if (!user) {
+                return res.json({ error: "Não foi possível encontrar esse membro"})
+            }
+
+            return res.json(user)
+        }
+
+        catch {
+            return res.json({ error })
+        }
+    },
+
 
 
 }
