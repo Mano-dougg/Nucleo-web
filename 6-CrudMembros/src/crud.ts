@@ -9,7 +9,7 @@ router.post("/", async (req: Request, res: Response) => {
         const { nome, idade, email, senha, estado, cidade } = req.body;
 
         if(nome.match(/[0-9]/) != null){
-            throw new Error("O nome deve conter apenas letras!")
+            throw new Error("O nome deve conter apenas letras!");
         }
 
         if(estado.match(/[^\w\s]/) != null || cidade.match(/[^\w\s]/) != null){
@@ -18,6 +18,16 @@ router.post("/", async (req: Request, res: Response) => {
 
         if (typeof idade != "number") { 
             throw new Error("Idade inválida");
+        }
+
+        const userEmail = await prisma.user.findUnique({
+            where:{
+                email: email
+            }
+        }) 
+
+        if(userEmail !== undefined){
+            throw new Error("Esse email já está cadastrado!")
         }
 
         const addUser = await prisma.user.create({
