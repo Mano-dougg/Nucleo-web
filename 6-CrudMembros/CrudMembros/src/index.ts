@@ -35,7 +35,8 @@ app.post('/user', async (req: Request, res: Response) => {
         }
     });
 
-    res.status(201).json(user);
+    res.status(201).json({ //padrão para mensagem de sucesso
+        message: 'Usuário criado com sucesso!', user});
 });
 
 // Retornar usuário por ID
@@ -50,7 +51,8 @@ app.get('/user/:id', async (req: Request, res: Response) => {
         return res.status(404).json({ error: 'Usuário não encontrado' });
     }
 
-    res.json(user);
+    res.status(201).json({ //padrão para mensagem de sucesso
+        message: 'De acordo com o ID, o usuário é:', user});
 });
 
 // Retornar usuário por email
@@ -65,7 +67,8 @@ app.get('/user/email/:email', async (req: Request, res: Response) => {
         return res.status(404).json({ error: 'Usuário não encontrado' });
     }
 
-    res.json(user);
+    res.status(201).json({ //padrão para mensagem de sucesso
+        message: 'De acordo com o e-mail, o usuário é:', user});
 });
 
 // Retornar um ou mais usuários por nome
@@ -80,7 +83,8 @@ app.get('/users/name/:name', async (req: Request, res: Response) => {
         return res.status(404).json({ error: 'Nenhum usuário encontrado' });
     }
 
-    res.json(users);
+    res.status(201).json({ //padrão para mensagem de sucesso
+        message: 'De acordo com o nome, o(s) usuário(s) é:', users});
 });
 
 // Deletar usuário por ID
@@ -98,8 +102,9 @@ app.delete('/user/:id', async (req: Request, res: Response) => {
     await prisma.user.delete({
         where: { id: Number(id) }
     });
-
-    res.status(204).send();
+    
+    res.status(201).json({ //padrão para mensagem de sucesso
+        message: 'Usuário deletado!', user});
 });
 
 app.listen(port, () => {
