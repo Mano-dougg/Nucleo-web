@@ -5,7 +5,8 @@ import { error } from "console";
 const prisma = new PrismaClient()
 
 export default {
-    
+ 
+// POSTS
     async createUser(req: Request , res: Response) {
     try {
         const {nome, email, senha, idade, estado, cidade, } = req.body
@@ -32,10 +33,28 @@ export default {
     catch (error) {}
 },
 
-    async getUser(req: Request, res: Response) {
+// GETS
+    async getUserId (req: Request, res: Response) {
         try {
             const {id} = req.params
             const user = await prisma.user.findUnique({where: {id: Number(id)}})
+
+            if (!user) {
+                return res.json({ error: "Não foi possível encontrar esse membro"})
+            }
+
+            return res.json(user)
+        }
+
+        catch {
+            return res.json({ error })
+        }
+    },
+
+    async getUserEmail (req: Request, res: Response) {
+        try {
+            const email = req.params.email
+            const user = await prisma.user.findUnique({where: {email: email}})
 
             if (!user) {
                 return res.json({ error: "Não foi possível encontrar esse membro"})
