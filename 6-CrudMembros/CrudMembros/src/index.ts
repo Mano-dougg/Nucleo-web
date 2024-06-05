@@ -39,6 +39,8 @@ app.post('/user', async (req: Request, res: Response) => {
         message: 'Usuário criado com sucesso!', user});
 });
 
+
+
 // Retornar usuário por ID
 app.get('/user/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
@@ -54,6 +56,9 @@ app.get('/user/:id', async (req: Request, res: Response) => {
     res.status(201).json({ //padrão para mensagem de sucesso
         message: 'De acordo com o ID, o usuário é:', user});
 });
+
+
+
 
 // Retornar usuário por email
 app.get('/user/email/:email', async (req: Request, res: Response) => {
@@ -71,6 +76,8 @@ app.get('/user/email/:email', async (req: Request, res: Response) => {
         message: 'De acordo com o e-mail, o usuário é:', user});
 });
 
+
+
 // Retornar um ou mais usuários por nome
 app.get('/users/name/:name', async (req: Request, res: Response) => {
     const { name } = req.params;
@@ -87,6 +94,9 @@ app.get('/users/name/:name', async (req: Request, res: Response) => {
         message: 'De acordo com o nome, o(s) usuário(s) é:', users});
 });
 
+
+
+
 // Deletar usuário por ID
 app.delete('/user/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
@@ -102,10 +112,42 @@ app.delete('/user/:id', async (req: Request, res: Response) => {
     await prisma.user.delete({
         where: { id: Number(id) }
     });
-    
+
     res.status(201).json({ //padrão para mensagem de sucesso
-        message: 'Usuário deletado!', user});
+        message: 'Usuário deletado com sucesso!', user});
 });
+
+
+
+//Atualizar usuário pelo ID - método PUT
+app.put('/user/:id', async (req:Request, res:Response) => {
+    const { id } = req.params;
+    const { name, email, idade, estado, cidade} = req.body;
+
+    //Precisamos verificar se o e-mail já existe caso o usuário tente atualizar o usuário com um e-mail existente
+    const userExistente = await prisma.user.findUnique ({
+        where: { email }
+    });
+
+    if (userExistente && userExistente.id !== Number(id)){ //verifica se tem outro usuário
+        return res.status(400).json({ error: 'Usuário com este email já existe' });
+    }
+
+    const user = await prisma.user.update({
+        where: {  id: Number(id) },
+        data:{
+            name,
+            email,
+            estado,
+            cidade
+        }
+
+    });
+
+    res.status(201).json({ //padrão para mensagem de sucesso
+        message: 'Usuário atualizado com sucesso!', user});
+});
+
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
