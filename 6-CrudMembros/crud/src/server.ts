@@ -9,17 +9,38 @@ const prisma = new PrismaClient()
 
 app.post('/usuario',
   async (req: Request, res: Response) => {
-    const usuario = await prisma.usuario.create({
-      data: {
-        nome:   'J. Soares',
-        email:  'JSSacademica@proton.me',
-        senha:  'Haha Eu Que Não Vou Botar Minha Senha Aqui',
-        idade: 21,
-        cidade: 'Salvador',
-        estado: 'BA'
-      }
-    })
-    res.send(usuario)
+    const {nome, email, senha, idade, cidade, estado} = req.body
+    try
+    {
+      const usuario = await prisma.usuario.create({
+        data: {
+          nome,
+          email,
+          senha,
+          idade,
+          cidade,
+          estado
+        }
+      })
+      res.json(usuario)
+    } catch (error) {
+      res.status(400).json({ error : 'Usuario nao pode ser criado'})
+    }
+    
+  }
+)
+
+app.get('/usuario/:id',
+  async (req: Request, res: Response) => {
+    const { id } = req.params
+    const usuario = await prisma.usuario.findUnique({
+      where: { id: Number(id) }
+    });
+    if (usuario) {
+      res.json(usuario)
+    } else {
+      res.status(404).json({ error: 'Usuario nao pode ser encontrado' });
+    }
   }
 )
 
