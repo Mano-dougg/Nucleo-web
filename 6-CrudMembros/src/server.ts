@@ -12,7 +12,7 @@ const prisma = new PrismaClient()
 
 app.use(express.json())
 
-// Criar usuário (não permitir duplicidade de email)
+// Criar usuário (não permitir emails iguais)
 app.post('/user', async (req: Request, res: Response) => {
     const { name, email, idade, estado, senha, cidade } = req.body
     
@@ -60,6 +60,9 @@ app.get('/user/email/:email', async (req: Request, res: Response) => {
         where: { email }
     })
 
+    if (!user) {
+        return res.status(404).send({ error: 'Usuário não encontrado' })
+    }
     
 
     res.send(user)
