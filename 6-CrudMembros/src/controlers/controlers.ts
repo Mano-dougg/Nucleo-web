@@ -86,3 +86,68 @@ export async function userPorNome(req: Request, res: Response) {
         res.status(400).json({ msg: "nome não encontrao em nosso banco de dados" })
     }
 }
+
+export async function deletarUser(req: Request, res: Response) {
+    try {
+        const id = Number(req.params.id)
+
+        if (id.toString().match(/[a-z][A-Z]/g) !== null) {
+            throw new Error("Id deve conter apenas números!")
+        }
+
+        const users = await prisma.user.delete({ where: { id: id } })
+
+        res.status(200)
+        res.send("Usuário deletado! ").json()
+    } catch (error) {
+        console.log("Erro detectado: " + error)
+        res.status(400).json({ msg: error })
+    }
+}
+
+export async function atualizar(req: Request, res: Response) {
+
+    try {
+        const id = Number(req.params.id)
+
+        if (id.toString().match(/[a-z][A-Z]/g) !== null) {
+            throw new Error("Id deve conter apenas números!")
+        }
+
+        const { nome, idade, email, senha, estado, cidade } = req.body
+
+        const userEmail = await prisma.user.findUnique({where:{email:email}})
+
+        if(userEmail != null){
+
+            throw new Error("Email já cadastrado")
+        }
+
+        if (estado.match(/[^\w\s]/) != null || cidade.match(/[^\w\s]/) != null) {
+            throw new Error("Os campos de cidade e estado devem conter apenas letras");
+        }
+        if (typeof idade != "number") {
+            throw new Error("Idade inválida");
+        }
+
+        const user = await prisma.user.update({
+            where: {
+                id: id
+            },
+            data: {
+                nome: nome,
+                idade: idade,
+                email: email,
+                senha: senha,
+                estado: estado,
+                cidade: cidade
+            }
+        })
+        res.send("Usuário atualizado!").json()
+        res.status(200)
+    } catch (error) {
+        console.log("Erro detectado: " + error)
+        res.status(400).send("Erro detectado: " + error).json()
+    }
+
+}
