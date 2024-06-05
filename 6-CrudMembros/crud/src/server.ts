@@ -7,7 +7,7 @@ const port = 3000
 const prisma = new PrismaClient()
 app.use(express.json())
 
-
+//Cria Usuario
 app.post('/usuario',
   async (req: Request, res: Response) => {
     const {nome, email, senha, idade, cidade, estado} = req.body
@@ -31,6 +31,7 @@ app.post('/usuario',
   }
 )
 
+//Retorna Usuario por ID
 app.get('/usuario/:id',
   async (req: Request, res: Response) => {
     const { id } = req.params
@@ -45,7 +46,8 @@ app.get('/usuario/:id',
   }
 )
 
-app.get('/usuario/:email',
+//Retorna Usuario por e-mail
+app.get('/usuario/email/:email',
   async (req: Request, res: Response) => {
     const { email } = req.params
     const usuario = await prisma.usuario.findUnique({
@@ -59,6 +61,7 @@ app.get('/usuario/:email',
   }
 )
 
+//Retorna Usuario(s) por nome
 app.get('/usuario/nome/:nome',
   async (req: Request, res: Response) => {
     const { nome } = req.params
@@ -74,16 +77,34 @@ app.get('/usuario/nome/:nome',
   }
 )
 
-app.delete('/usuario/deletar/:id',
+//Deleta Usuario por ID
+app.delete('/usuario/:id',
   async (req: Request, res: Response) => {
     const { id } = req.params
     try {
-      const usuario = await prisma.usuario.delete({
+      await prisma.usuario.delete({
         where: { id: Number(id) }
       })
         res.json({message: 'Usuario deletado'})
     } catch (error) {
       res.status(400).json({ error: 'Usuario nao pode ser deletado' })
+    }
+  }
+)
+
+//Atualiza Usuario por ID
+app.put('/usuario/:id',
+  async (req: Request, res: Response) => {
+    const { id } = req.params
+    const {nome, email, senha, idade, cidade, estado} = req.body
+    try {
+      const usuario = await prisma.usuario.update({
+        where: { id: Number(id) },
+        data: { nome, email, senha, idade, cidade, estado }
+      })
+      res.json(usuario)
+    } catch (error) {
+      res.status(400).json({ error: 'Usuario nao pode ser atualizado' })
     }
   }
 )
