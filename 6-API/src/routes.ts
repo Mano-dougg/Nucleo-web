@@ -12,5 +12,6 @@ router.get("/membro/:id", UserControlers.getUserId);
 router.get("/membro/email/:email", UserControlers.getUserEmail);
 router.get("/membro/nome/:nome", UserControlers.getUserNome);
 router.put("/membro/update/:id", UserControlers.updateUserId);
+router.delete("/membro/delete/:id", UserControlers.deleteUserId);
 
 export { router }

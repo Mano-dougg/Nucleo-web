@@ -86,27 +86,48 @@ export default {
     },
 
 // PUTS
-async updateUserId (req: Request, res: Response) {
-    try {
-        const {id} = req.params
-        const {email} = req.body
-        let user = await prisma.user.findUnique({where: { id: Number(id) }})
+    async updateUserId (req: Request, res: Response) {
+        try {
+            const {id} = req.params
+            const {email} = req.body
+            let user = await prisma.user.findUnique({where: { id: Number(id) }})
 
-        if (!user) {
-            return res.json({ error: "Não foi possível encontrar esse membro"})
+            if (!user) {
+                return res.json({ error: "Não foi possível encontrar esse membro"})
+            }
+
+            user = await prisma.user.update({
+                where: { id: Number(id) },
+                data: { email } 
+            })
+
+            return res.json(user)
         }
 
-        user = await prisma.user.update({
-            where: { id: Number(id) },
-            data: { email } 
-        })
+        catch {
+            return res.json({ error })
+        }
+    },
 
-        return res.json(user)
-    }
+// DELETES
 
-    catch {
-        return res.json({ error })
-    }
-},
+    async deleteUserId (req: Request, res: Response) {
+        try {
+            const {id} = req.params
+            let user = await prisma.user.findUnique({where: { id: Number(id) }})
+
+            if (!user) {
+                return res.json({ error: "Não foi possível encontrar esse membro"})
+            }
+
+            await prisma.user.delete({where: { id: Number(id) }})
+
+            return res.json('Membro deletado')
+        }
+
+        catch {
+            return res.json({ error })
+        }
+    },
 
 }
