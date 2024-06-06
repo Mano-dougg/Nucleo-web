@@ -14,7 +14,7 @@ export default {
         let user = await prisma.user.findUnique({ where: {email}});
 
         if(user) {
-            return res.json({ error: "ja existe um usuario com este email"})
+            return res.json({ error: "Já existe um usuario com este email" })
         }
 
         user = await prisma.user.create({
@@ -94,6 +94,12 @@ export default {
 
             if (!user) {
                 return res.json({ error: "Não foi possível encontrar esse membro"})
+            }
+
+            const userExist = await prisma.user.findMany({where: {email: email}})
+
+            if (userExist) {
+                return res.json({ error: "Já existe um usuario com este email" })
             }
 
             user = await prisma.user.update({
