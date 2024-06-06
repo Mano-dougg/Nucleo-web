@@ -1,11 +1,13 @@
-//import Style from './cabecalho.css'
+import './reset.css'
+import './cabecalho.css'
 
 export default function Cabecalho(){
     return (
         <header>
-            <h1><span style={{fontStyle:'normal', fontWeight:'bold'}}>AI</span>TODAY</h1>
-            <input type='text' placeholder='Pesquisar' />
-            <button>togglar light/dark mode</button>
+            <div>
+                <h1><span style={{fontStyle:'normal', fontWeight:'bold'}}>JSS</span>TODAY</h1>
+                <input type='text' placeholder='Pesquisar' />
+            </div>
         </header>
     )
 }

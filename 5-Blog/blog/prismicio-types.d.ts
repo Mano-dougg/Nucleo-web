@@ -4,6 +4,60 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Content for icone post documents
+ */
+interface IconePostDocumentData {
+  /**
+   * thumbnail field in *icone post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.thumbnail
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  thumbnail: prismic.ImageField<never>;
+
+  /**
+   * titulo field in *icone post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.titulo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titulo: prismic.KeyTextField;
+
+  /**
+   * descricao field in *icone post*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.descricao
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  descricao: prismic.RichTextField;
+}
+
+/**
+ * icone post document from Prismic
+ *
+ * - **API ID**: `icone_post`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type IconePostDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<IconePostDocumentData>,
+    "icone_post",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice = never;
 
 /**
@@ -76,7 +130,108 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = PageDocument;
+/**
+ * Content for postagem documents
+ */
+interface PostagemDocumentData {
+  /**
+   * titulo field in *postagem*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.titulo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titulo: prismic.KeyTextField;
+
+  /**
+   * texto1 field in *postagem*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.texto1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texto1: prismic.RichTextField;
+
+  /**
+   * imagem1 field in *postagem*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.imagem1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem1: prismic.ImageField<never>;
+
+  /**
+   * texto2 field in *postagem*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.texto2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texto2: prismic.RichTextField;
+
+  /**
+   * imagem2 field in *postagem*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.imagem2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem2: prismic.ImageField<never>;
+
+  /**
+   * imagem3 field in *postagem*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.imagem3
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem3: prismic.ImageField<never>;
+
+  /**
+   * texto3 field in *postagem*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.texto3
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  texto3: prismic.RichTextField;
+}
+
+/**
+ * postagem document from Prismic
+ *
+ * - **API ID**: `postagem`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PostagemDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PostagemDocumentData>,
+    "postagem",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | IconePostDocument
+  | PageDocument
+  | PostagemDocument;
 
 /**
  * Default variation for Cabecalho Slice
@@ -145,9 +300,13 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      IconePostDocument,
+      IconePostDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PostagemDocument,
+      PostagemDocumentData,
       AllDocumentTypes,
       CabecalhoSlice,
       CabecalhoSliceVariation,
