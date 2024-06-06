@@ -4,57 +4,267 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-/**
- * Content for icone post documents
- */
-interface IconePostDocumentData {
-  /**
-   * thumbnail field in *icone post*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: icone_post.thumbnail
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  thumbnail: prismic.ImageField<never>;
+type AutorDocumentDataSlicesSlice = IconePostSlice;
 
+/**
+ * Content for Autor documents
+ */
+interface AutorDocumentData {
   /**
-   * titulo field in *icone post*
+   * Nome field in *Autor*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: icone_post.titulo
+   * - **API ID Path**: autor.nome
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nome: prismic.KeyTextField;
+
+  /**
+   * Icone field in *Autor*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.icone
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone: prismic.ImageField<never>;
+
+  /**
+   * Texto1 field in *Autor*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.texto1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  texto1: prismic.KeyTextField;
+
+  /**
+   * Instagram field in *Autor*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.instagram
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  instagram: prismic.LinkField;
+
+  /**
+   * Linkedin field in *Autor*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.linkedin
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin: prismic.LinkField;
+
+  /**
+   * Github field in *Autor*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.github
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  github: prismic.LinkField;
+
+  /**
+   * Texto2 field in *Autor*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.texto2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  texto2: prismic.KeyTextField;
+
+  /**
+   * Mais do Autor field in *Autor*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.mais_do_autor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  mais_do_autor: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Autor*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: autor.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AutorDocumentDataSlicesSlice>;
+}
+
+/**
+ * Autor document from Prismic
+ *
+ * - **API ID**: `autor`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AutorDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<AutorDocumentData>, "autor", Lang>;
+
+/**
+ * Item in *Cabeçalho → Conteudo*
+ */
+export interface CabecalhoDocumentDataConteudoItem {
+  /**
+   * Link Logo field in *Cabeçalho → Conteudo*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cabecalho.conteudo[].link_logo
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_logo: prismic.LinkField;
+
+  /**
+   * caixa pesquisa field in *Cabeçalho → Conteudo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cabecalho.conteudo[].caixa_pesquisa
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  caixa_pesquisa: prismic.KeyTextField;
+}
+
+/**
+ * Content for Cabeçalho documents
+ */
+interface CabecalhoDocumentData {
+  /**
+   * Conteudo field in *Cabeçalho*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cabecalho.conteudo[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  conteudo: prismic.GroupField<Simplify<CabecalhoDocumentDataConteudoItem>>;
+}
+
+/**
+ * Cabeçalho document from Prismic
+ *
+ * - **API ID**: `cabecalho`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CabecalhoDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CabecalhoDocumentData>,
+    "cabecalho",
+    Lang
+  >;
+
+type HomepageDocumentDataSlicesSlice = IconePostSlice;
+
+/**
+ * Content for Homepage documents
+ */
+interface HomepageDocumentData {
+  /**
+   * Titulo field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.titulo
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   titulo: prismic.KeyTextField;
 
   /**
-   * descricao field in *icone post*
+   * texto1 field in *Homepage*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: icone_post.descricao
+   * - **API ID Path**: homepage.texto1
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  descricao: prismic.RichTextField;
+  texto1: prismic.RichTextField;
+
+  /**
+   * Imagem field in *Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.imagem
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagem: prismic.ImageField<never>;
+
+  /**
+   * Ultimas Postagens field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.ultimas_postagens
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  ultimas_postagens: prismic.KeyTextField;
+
+  /**
+   * Mais Acessadas field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.mais_acessadas
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  mais_acessadas: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice>;
 }
 
 /**
- * icone post document from Prismic
+ * Homepage document from Prismic
  *
- * - **API ID**: `icone_post`
+ * - **API ID**: `homepage`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type IconePostDocument<Lang extends string = string> =
+export type HomepageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
-    Simplify<IconePostDocumentData>,
-    "icone_post",
+    Simplify<HomepageDocumentData>,
+    "homepage",
     Lang
   >;
 
@@ -129,6 +339,8 @@ interface PageDocumentData {
  */
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
+type PostagemDocumentDataSlicesSlice = IconePostSlice | WidgetAutorSlice;
 
 /**
  * Content for postagem documents
@@ -210,6 +422,17 @@ interface PostagemDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   texto3: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *postagem*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: postagem.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PostagemDocumentDataSlicesSlice>;
 }
 
 /**
@@ -228,67 +451,310 @@ export type PostagemDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes =
-  | IconePostDocument
-  | PageDocument
-  | PostagemDocument;
-
 /**
- * Default variation for Cabecalho Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
+ * Item in *Rodapé → Conteudo*
  */
-export type CabecalhoSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  never
->;
+export interface RodapeDocumentDataConteudoItem {
+  /**
+   * Conheça field in *Rodapé → Conteudo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rodape.conteudo[].conheca
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  conheca: prismic.KeyTextField;
+
+  /**
+   * Instagram field in *Rodapé → Conteudo*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rodape.conteudo[].instagram
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  instagram: prismic.LinkField;
+
+  /**
+   * Linkedin field in *Rodapé → Conteudo*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rodape.conteudo[].linkedin
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin: prismic.LinkField;
+
+  /**
+   * Copyright field in *Rodapé → Conteudo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rodape.conteudo[].copyright
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  copyright: prismic.KeyTextField;
+}
 
 /**
- * Slice variation for *Cabecalho*
+ * Content for Rodapé documents
  */
-type CabecalhoSliceVariation = CabecalhoSliceDefault;
+interface RodapeDocumentData {
+  /**
+   * Conteudo field in *Rodapé*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rodape.conteudo[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  conteudo: prismic.GroupField<Simplify<RodapeDocumentDataConteudoItem>>;
+}
 
 /**
- * Cabecalho Shared Slice
- *
- * - **API ID**: `cabecalho`
- * - **Description**: Cabecalho
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CabecalhoSlice = prismic.SharedSlice<
-  "cabecalho",
-  CabecalhoSliceVariation
->;
-
-/**
- * Default variation for Rodape Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type RodapeSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  never
->;
-
-/**
- * Slice variation for *Rodape*
- */
-type RodapeSliceVariation = RodapeSliceDefault;
-
-/**
- * Rodape Shared Slice
+ * Rodapé document from Prismic
  *
  * - **API ID**: `rodape`
- * - **Description**: Rodape
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RodapeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<RodapeDocumentData>,
+    "rodape",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | AutorDocument
+  | CabecalhoDocument
+  | HomepageDocument
+  | PageDocument
+  | PostagemDocument
+  | RodapeDocument;
+
+/**
+ * Primary content in *IconePost → Default → Primary*
+ */
+export interface IconePostSliceDefaultPrimary {
+  /**
+   * Titulo field in *IconePost → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titulo: prismic.KeyTextField;
+
+  /**
+   * Descricao field in *IconePost → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.descricao
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  descricao: prismic.KeyTextField;
+
+  /**
+   * Autor field in *IconePost → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.autor
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  autor: prismic.ContentRelationshipField;
+
+  /**
+   * Botao Compartilhar field in *IconePost → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.botao_compartilhar
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  botao_compartilhar: prismic.ImageField<never>;
+
+  /**
+   * Thumbnail field in *IconePost → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.thumbnail
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  thumbnail: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for IconePost Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type RodapeSlice = prismic.SharedSlice<"rodape", RodapeSliceVariation>;
+export type IconePostSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IconePostSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *IconePost → Display diferente → Primary*
+ */
+export interface IconePostSliceDisplayDiferentePrimary {
+  /**
+   * Titulo field in *IconePost → Display diferente → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.displayDiferente.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titulo: prismic.KeyTextField;
+
+  /**
+   * Descricao field in *IconePost → Display diferente → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.displayDiferente.primary.descricao
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  descricao: prismic.KeyTextField;
+
+  /**
+   * Autor field in *IconePost → Display diferente → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.displayDiferente.primary.autor
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  autor: prismic.ContentRelationshipField;
+
+  /**
+   * Botao Compartilhar field in *IconePost → Display diferente → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.displayDiferente.primary.botao_compartilhar
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  botao_compartilhar: prismic.ImageField<never>;
+
+  /**
+   * Thumbnail field in *IconePost → Display diferente → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.displayDiferente.primary.thumbnail
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  thumbnail: prismic.ImageField<never>;
+}
+
+/**
+ * Display diferente variation for IconePost Slice
+ *
+ * - **API ID**: `displayDiferente`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IconePostSliceDisplayDiferente = prismic.SharedSliceVariation<
+  "displayDiferente",
+  Simplify<IconePostSliceDisplayDiferentePrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *IconePost*
+ */
+type IconePostSliceVariation =
+  | IconePostSliceDefault
+  | IconePostSliceDisplayDiferente;
+
+/**
+ * IconePost Shared Slice
+ *
+ * - **API ID**: `icone_post`
+ * - **Description**: IconePost
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IconePostSlice = prismic.SharedSlice<
+  "icone_post",
+  IconePostSliceVariation
+>;
+
+/**
+ * Primary content in *WidgetAutor → Default → Primary*
+ */
+export interface WidgetAutorSliceDefaultPrimary {
+  /**
+   * Icone field in *WidgetAutor → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: widget_autor.default.primary.icone
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone: prismic.ImageField<never>;
+
+  /**
+   * Nome field in *WidgetAutor → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: widget_autor.default.primary.nome
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nome: prismic.KeyTextField;
+
+  /**
+   * Data field in *WidgetAutor → Default → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: widget_autor.default.primary.data
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  data: prismic.DateField;
+}
+
+/**
+ * Default variation for WidgetAutor Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WidgetAutorSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WidgetAutorSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WidgetAutor*
+ */
+type WidgetAutorSliceVariation = WidgetAutorSliceDefault;
+
+/**
+ * WidgetAutor Shared Slice
+ *
+ * - **API ID**: `widget_autor`
+ * - **Description**: WidgetAutor
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WidgetAutorSlice = prismic.SharedSlice<
+  "widget_autor",
+  WidgetAutorSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -300,20 +766,35 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      IconePostDocument,
-      IconePostDocumentData,
+      AutorDocument,
+      AutorDocumentData,
+      AutorDocumentDataSlicesSlice,
+      CabecalhoDocument,
+      CabecalhoDocumentData,
+      CabecalhoDocumentDataConteudoItem,
+      HomepageDocument,
+      HomepageDocumentData,
+      HomepageDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       PostagemDocument,
       PostagemDocumentData,
+      PostagemDocumentDataSlicesSlice,
+      RodapeDocument,
+      RodapeDocumentData,
+      RodapeDocumentDataConteudoItem,
       AllDocumentTypes,
-      CabecalhoSlice,
-      CabecalhoSliceVariation,
-      CabecalhoSliceDefault,
-      RodapeSlice,
-      RodapeSliceVariation,
-      RodapeSliceDefault,
+      IconePostSlice,
+      IconePostSliceDefaultPrimary,
+      IconePostSliceDisplayDiferentePrimary,
+      IconePostSliceVariation,
+      IconePostSliceDefault,
+      IconePostSliceDisplayDiferente,
+      WidgetAutorSlice,
+      WidgetAutorSliceDefaultPrimary,
+      WidgetAutorSliceVariation,
+      WidgetAutorSliceDefault,
     };
   }
 }

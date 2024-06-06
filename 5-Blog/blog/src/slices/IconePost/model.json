@@ -1,0 +1,104 @@
+{
+  "id": "icone_post",
+  "type": "SharedSlice",
+  "name": "IconePost",
+  "description": "IconePost",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo": {
+          "type": "Text",
+          "config": {
+            "label": "Titulo",
+            "placeholder": ""
+          }
+        },
+        "descricao": {
+          "type": "Text",
+          "config": {
+            "label": "Descricao",
+            "placeholder": ""
+          }
+        },
+        "autor": {
+          "type": "Link",
+          "config": {
+            "label": "Autor",
+            "select": "document"
+          }
+        },
+        "botao_compartilhar": {
+          "type": "Image",
+          "config": {
+            "label": "Botao Compartilhar",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "thumbnail": {
+          "type": "Image",
+          "config": {
+            "label": "Thumbnail",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "displayDiferente",
+      "name": "Display diferente",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo": {
+          "type": "Text",
+          "config": {
+            "label": "Titulo",
+            "placeholder": ""
+          }
+        },
+        "descricao": {
+          "type": "Text",
+          "config": {
+            "label": "Descricao",
+            "placeholder": ""
+          }
+        },
+        "autor": {
+          "type": "Link",
+          "config": {
+            "label": "Autor",
+            "select": "document"
+          }
+        },
+        "botao_compartilhar": {
+          "type": "Image",
+          "config": {
+            "label": "Botao Compartilhar",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "thumbnail": {
+          "type": "Image",
+          "config": {
+            "label": "Thumbnail",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

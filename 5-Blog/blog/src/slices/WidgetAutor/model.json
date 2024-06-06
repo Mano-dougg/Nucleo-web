@@ -1,0 +1,41 @@
+{
+  "id": "widget_autor",
+  "type": "SharedSlice",
+  "name": "WidgetAutor",
+  "description": "WidgetAutor",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "icone": {
+          "type": "Image",
+          "config": {
+            "label": "Icone",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "nome": {
+          "type": "Text",
+          "config": {
+            "label": "Nome",
+            "placeholder": ""
+          }
+        },
+        "data": {
+          "type": "Date",
+          "config": {
+            "label": "Data",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

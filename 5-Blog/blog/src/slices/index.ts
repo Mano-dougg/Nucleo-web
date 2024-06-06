@@ -3,6 +3,6 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  cabecalho: dynamic(() => import("./Cabecalho")),
-  rodape: dynamic(() => import("./Rodape")),
+  icone_post: dynamic(() => import("./IconePost")),
+  widget_autor: dynamic(() => import("./WidgetAutor")),
 };
