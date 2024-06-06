@@ -134,6 +134,16 @@ router.get('/usuarios/salvos/:nome', async(req:Request, res:Response) => {
     }
 });
 
+router.get('/banco', async(req:Request, res:Response) => {
+
+    try {
+        const usuarios = await prisma.user.findMany()
+        res.json(usuarios)
+    } catch (error) {
+        res.status(500).json("Sem nada no banco")
+    }
+
+})
 
 
 
