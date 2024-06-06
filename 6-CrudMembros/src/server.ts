@@ -13,7 +13,7 @@ app.get('/', (req: Request, res: Response) => {
 
 
 app.get('/user/:id', UserController.getUserById);
-app.get('/user/:email', UserController.getUserByEmail);
+app.get('/user/email/:email', UserController.getUserByEmail);
 
 
 
