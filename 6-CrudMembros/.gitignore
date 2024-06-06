@@ -1,3 +1,7 @@
 node_modules
 tsconfig.json
 package-lock.json
+package.json
+prisma
+db
+.env
