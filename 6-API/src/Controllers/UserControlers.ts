@@ -85,6 +85,28 @@ export default {
         }
     },
 
+// PUTS
+async updateUserId (req: Request, res: Response) {
+    try {
+        const {id} = req.params
+        const {email} = req.body
+        let user = await prisma.user.findUnique({where: { id: Number(id) }})
 
+        if (!user) {
+            return res.json({ error: "Não foi possível encontrar esse membro"})
+        }
+
+        user = await prisma.user.update({
+            where: { id: Number(id) },
+            data: { email } 
+        })
+
+        return res.json(user)
+    }
+
+    catch {
+        return res.json({ error })
+    }
+},
 
 }
