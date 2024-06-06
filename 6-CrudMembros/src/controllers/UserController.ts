@@ -46,5 +46,68 @@ export default {
             console.error("Erro ao criar usuário:", error);
             return response.status(500).json({ error: true, message: error.message });
         }
+    },
+
+
+
+    async getUserById(request: Request, response: Response) {
+        try {
+            const { id } = request.params;
+
+            const user = await prisma.user.findUnique({
+                where: {
+                    id: parseInt(id)
+                }
+            });
+            if (!user) {
+                return response.status(404).json({
+                    message: "Erro: Usuário não encontrado!"
+                });
+            }
+
+            return response.status(200).json({
+                user
+            });
+        } catch (error: any) {
+            console.error("Erro ao buscar usuário:", error);
+            return response.status(500).json({ error: true, message: error.message });
+        }
+    },
+
+   async getUserByEmail(request: Request, response: Response) {
+    try {
+        const { email } = request.params;
+
+        if (!email) {
+            return response.status(400).json({
+                error: true,
+                message: "Erro: Endereço de email não fornecido!"
+            });
+        }
+
+        const user = await prisma.user.findUnique({
+            where: {
+                email: email
+            }
+        });
+
+        if (!user) {
+            return response.status(404).json({
+                error: true,
+                message: "Erro: Endereço de email não encontrado na base de dados!"
+            });
+        }
+
+        return response.status(200).json({
+            success: true,
+            message: "Sucesso: Usuário encontrado!",
+            user
+        });
+    } catch (error: any) {
+        console.log("Erro ao buscar email:", error);
+        return response.status(500).json({ error: true, message: error.message });
     }
+}
+
+
 };
