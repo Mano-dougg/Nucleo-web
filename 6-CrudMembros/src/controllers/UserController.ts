@@ -1,5 +1,6 @@
-import { Request, Response } from "express";
+import { Request, Response, response } from "express";
 import { prisma } from "../database";
+import { error } from "console";
 
 export default {
     async createUser(request: Request, response: Response) {
@@ -74,40 +75,76 @@ export default {
         }
     },
 
-   async getUserByEmail(request: Request, response: Response) {
-    try {
-        const { email } = request.params;
+    async getUserByEmail(request: Request, response: Response) {
+        try {
+            const { email } = request.params;
 
-        if (!email) {
-            return response.status(400).json({
-                error: true,
-                message: "Erro: Endereço de email não fornecido!"
-            });
-        }
-
-        const user = await prisma.user.findUnique({
-            where: {
-                email: email
+            if (!email) {
+                return response.status(400).json({
+                    error: true,
+                    message: "Erro: Endereço de email não fornecido!"
+                });
             }
-        });
 
-        if (!user) {
-            return response.status(404).json({
+            const user = await prisma.user.findUnique({
+                where: {
+                    email: email
+                }
+            });
+
+            if (!user) {
+                return response.status(404).json({
+                    error: true,
+                    message: "Erro: Endereço de email não encontrado na base de dados!"
+                });
+            }
+
+            return response.status(200).json({
+                success: true,
+                message: "Sucesso: Usuário encontrado!",
+                user
+            });
+        } catch (error: any) {
+            console.log("Erro ao buscar email:", error);
+            return response.status(500).json({ error: true, message: error.message });
+        }
+    },
+
+    async getUserbyName(request: Request, res: Response) {
+        try {
+            const { name } = request.params;
+
+            if (!name) {
+                return res.status(400).json({
+                    error: true,
+                    message: "Erro, nome não encontrado"
+                });
+            }
+
+            const users = await prisma.user.findMany({
+                where: {
+                    name: name
+                }
+            });
+
+            if (users.length === 0) {
+                return res.status(404).json({
+                    error: true,
+                    message: "Erro, nome não encontrado"
+                });
+            }
+
+            return res.status(200).json({
+                success: true,
+                message: "Sucesso, usuários com este nome encontrado(s).",
+                users: users
+            });
+        } catch (error: any) {
+            console.log("Erro ao buscar nome:", error);
+            return res.status(500).json({
                 error: true,
-                message: "Erro: Endereço de email não encontrado na base de dados!"
+                message: error.message
             });
         }
-
-        return response.status(200).json({
-            success: true,
-            message: "Sucesso: Usuário encontrado!",
-            user
-        });
-    } catch (error: any) {
-        console.log("Erro ao buscar email:", error);
-        return response.status(500).json({ error: true, message: error.message });
     }
-}
-
-
 };
