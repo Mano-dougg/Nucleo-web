@@ -1,37 +1,50 @@
-import { Request, Response } from "express"
+import { Request, Response } from "express";
 import { prisma } from "../database";
-import { error } from "console";
 
 export default {
     async createUser(request: Request, response: Response) {
         try {
-            const { id, name, email, senha, idade, estado, cidade } = request.body;
-            const userExists = await prisma.user.findUnique({ where: { email, id } });
+            console.log("Request Body:", request.body);
+            const { name, email, senha, idade, estado, cidade } = request.body;
 
-
-            if (userExists) {
-                return response.json({
+            if (!email) {
+                return response.status(400).json({
                     error: true,
-                    message: "erro: usuario existente! "
+                    message: "Erro: O campo 'email' é obrigatório!"
                 });
             }
 
+            const userExists = await prisma.user.findUnique({ where: { email } });
+
+            if (userExists) {
+                console.log('Usuário já existe:', userExists);
+                return response.status(409).json({
+                    error: true,
+                    message: "Erro: usuário existente!"
+                });
+            }
 
             const user = await prisma.user.create({
-                data:{
-                    name,email,senha,idade,estado,cidade
+                data: {
+                    name,
+                    email,
+                    senha,
+                    idade,
+                    estado,
+                    cidade
                 }
-            })
+            });
 
+            console.log('Usuário criado:', user);
 
-
-            return response.json({
-                error: false,
-                message: "Sucesso: usuario Cadastrado ! ",
+            return response.status(201).json({
+                success: true,
+                message: "Sucesso: Usuário cadastrado!",
                 user
             });
-        } catch (error) {
-            return response.json({ message: error.message });
+        } catch (error: any) {
+            console.error("Erro ao criar usuário:", error);
+            return response.status(500).json({ error: true, message: error.message });
         }
     }
-}
+};

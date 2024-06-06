@@ -8,7 +8,7 @@ datasource db {
 }
 
 model User {
-  id     Int    @unique @id @default(autoincrement())
+  id     Int     @id @default(autoincrement())
   email  String  @unique
   name   String?
   senha  String
@@ -19,11 +19,11 @@ model User {
 }
 
 model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  userId Int
-  author User @relation(fields: [userId], references: [id])
+  id      Int     @id @default(autoincrement())
+  title   String
+  content String?
+  userId  Int
+  author  User @relation(fields: [userId], references: [id])
 
   @@map("posts")
 }
