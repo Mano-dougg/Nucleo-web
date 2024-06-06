@@ -35,13 +35,17 @@ app.post('/usuario',
 app.get('/usuario/:id',
   async (req: Request, res: Response) => {
     const { id } = req.params
-    const usuario = await prisma.usuario.findUnique({
-      where: { id: Number(id) }
-    })
-    if (usuario) {
-      res.json(usuario)
-    } else {
-      res.status(404).json({ error: 'Usuario nao pode ser encontrado' })
+    try {
+      const usuario = await prisma.usuario.findUnique({
+        where: { id: Number(id) }
+      })
+      if (usuario) {
+        res.json(usuario)
+      } else {
+        res.status(404).json({ error: 'Usuario nao pode ser encontrado' })
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao procurar usuario' })
     }
   }
 )
@@ -70,7 +74,7 @@ app.get('/usuario/nome/:nome',
         where: { nome: nome }
       })
       if (usuarios.length > 0) {res.json(usuarios)}
-      else {res.status(404).json({error: 'Usuarios nao encontrados'})}
+      else {res.status(404).json({error: 'Nenhum usuario encontrado'})}
     } catch (error) {
       res.status(500).json({ error: 'Erro ao procurar usuarios' })
     }
