@@ -14,7 +14,7 @@ export default {
         let user = await prisma.user.findUnique({ where: {email}});
 
         if(user) {
-            return res.json({ error: "Já existe um usuario com este email" })
+            return res.status(422).json({ error: "Já existe um usuario com este email" })
         }
 
         user = await prisma.user.create({
@@ -28,7 +28,7 @@ export default {
             },
         })
 
-        return res.json(user)
+        return res.status(201).json(user)
     }
     catch (error) {}
 },
@@ -40,10 +40,10 @@ export default {
             const user = await prisma.user.findUnique({where: {id: Number(id)}})
 
             if (!user) {
-                return res.json({ error: "Não foi possível encontrar esse membro"})
+                return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
 
-            return res.json(user)
+            return res.status(200).json(user)
         }
 
         catch {
@@ -57,10 +57,10 @@ export default {
             const user = await prisma.user.findUnique({where: {email: email}})
 
             if (!user) {
-                return res.json({ error: "Não foi possível encontrar esse membro"})
+                return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
             
-            return res.json(user)
+            return res.status(200).json(user)
         }
 
         catch {
@@ -74,10 +74,10 @@ export default {
             const user = await prisma.user.findMany({where: {nome: String(nome)}})
 
             if (!user) {
-                return res.json({ error: "Não foi possível encontrar esse membro"})
+                return res.status(200).status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
 
-            return res.json(user)
+            return res.status(200).json(user)
         }
 
         catch {
@@ -93,13 +93,13 @@ export default {
             let user = await prisma.user.findUnique({where: { id: Number(id) }})
 
             if (!user) {
-                return res.json({ error: "Não foi possível encontrar esse membro"})
+                return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
 
             const userExist = await prisma.user.findMany({where: {email: email}})
 
             if (userExist) {
-                return res.json({ error: "Já existe um usuario com este email" })
+                return res.status(422).json({ error: "Já existe um usuario com este email" })
             }
 
             user = await prisma.user.update({
@@ -107,7 +107,7 @@ export default {
                 data: { email } 
             })
 
-            return res.json(user)
+            return res.status(200).json(user)
         }
 
         catch {
@@ -123,12 +123,12 @@ export default {
             let user = await prisma.user.findUnique({where: { id: Number(id) }})
 
             if (!user) {
-                return res.json({ error: "Não foi possível encontrar esse membro"})
+                return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
 
             await prisma.user.delete({where: { id: Number(id) }})
 
-            return res.json('Membro deletado')
+            return res.status(200).json('Membro deletado')
         }
 
         catch {
