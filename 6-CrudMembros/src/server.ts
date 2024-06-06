@@ -12,7 +12,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 app.get('/user/:id', UserController.getUserById);
 app.get('/user/email/:email', UserController.getUserByEmail);
-app.get('/user/name/:name', UserController.getUserbyName); 
+app.get('/user/name/:name', UserController.getUserbyName);
 app.get('/createUser/:id', (req: Request, res: Response) => {
     const userId = req.params.id;
     res.send(`User ID is: ${userId}`);
@@ -23,7 +23,7 @@ app.get('/createUser/:id', (req: Request, res: Response) => {
 app.post('/createUser', UserController.createUser);
 
 //metod delete//
-
+app.delete('/delete/:id', UserController.DeletebyId);
 //method update//
 
 app.listen(port, () => {

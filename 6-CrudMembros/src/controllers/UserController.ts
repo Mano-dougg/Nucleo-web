@@ -146,5 +146,39 @@ export default {
                 message: error.message
             });
         }
+    },
+
+
+    async DeletebyId(request: Request, res: Response) {
+        try {
+            const { id } = request.params;
+
+            const user = await prisma.user.delete({
+                where: {
+                    id: parseInt(id)
+                }
+            });
+
+            return res.status(200).json({
+                success: true,
+                message: "Sucesso, o usuário foi excluído.",
+                user: user
+            });
+        } catch (error: any) {
+
+            if (error.code === 'P2025') {
+                return res.status(404).json({
+                    error: true,
+                    message: "Erro: usuário não encontrado."
+                });
+            }
+            console.log("Erro ao deletar usuário:", error);
+            return res.status(500).json({
+                error: true,
+                message: error.message
+            });
+        }
     }
+
+
 };
