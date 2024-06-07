@@ -1,12 +1,18 @@
 .header-claro{
     display: flex;
     justify-content: end;
-    gap: 10px;
+    gap: 400px;
+}
+.header-claro h1{
+    color: #ffffff;
 }
 .header-escuro{
     display: flex;
     justify-content: space-around;
     gap: 10px;
+}
+.header-escuro h1{
+    color: black;
 }
 /** Card 1 Claro */
 .card1-claro{
@@ -73,7 +79,7 @@
     width: 493px;
     height: 206px;
     border: 1px solid;
-    border-color: #ffffff;
+    border-color: black;
     border-radius: 30px;    
     background-color: #EDFFF7;
     padding: 20px 25px 25px 19px;
@@ -99,8 +105,14 @@
     background-color: #EDFFF7;
     cursor: pointer;
 }
-.container-claro{
+.container2-claro{
     margin-left: 5px;
+}
+.pessoal2-claro{
+    margin-left: 5px;
+    margin-block: 5px;
+    display: flex;
+    gap: 2px;
 }
 /* Card 2 escuro */
 .card2-escuro{
@@ -110,10 +122,10 @@
     border: 1px solid;
     border-color: #ffffff;
     border-radius: 30px;    
-    background-color: #EDFFF7;
+    background-color: #161616;
     padding: 20px 25px 25px 19px;
 }
-.container-escuro{
+.container2-escuro{
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -136,4 +148,43 @@
 }
 .container-escuro{
     margin-left: 5px;
+}
+/* Footer claro */
+.footer-claro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #067546;
+    gap: 5px;
+    max-height: 80px;
+}
+.footer-claro h6{
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: 500;
+}
+.disclaimer-claro{
+    font-size: 12px;
+    color: #ffffff;
+}
+/* Footer escuro */
+.footer-escuro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #067546;
+    gap: 5px;
+    max-height: 80px;
+}
+.footer-escuro Image{
+
+}
+.footer-escuro h6{
+    font-size: 26px;
+}
+.disclaimer-escuro{
+    font-size: 12px;
+    color:black;
 }
