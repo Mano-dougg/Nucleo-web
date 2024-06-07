@@ -37,7 +37,7 @@ export default function Pessoal () {
             </div>
             </div>
         </div>
-        <Footer></Footer>
+        <Footer tema= {tema}/>
     </main>
     )
 }
