@@ -4,7 +4,6 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import { PrismaClient } from '@prisma/client';
 
-import { userRouter } from './user.routes';
 
 dotenv.config();
 
@@ -13,7 +12,25 @@ const server: Application = express();
 
 server.use(cors());
 server.use(bodyParser.json());
-server.use("/api/users", userRouter);
+
+server.get('/users', async (req: Request, res: Response) => {
+  try {
+    const users = await prisma.user.findMany({
+      select: {
+        id: true,
+        nome: true,
+        email: true,
+        senha: true,
+        idade: true,
+        estado: true,
+        cidade: true,
+      },
+    });
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 // Rota para criar um usuário (não permitir duplicatas de email)
 server.post('/user', async (req: Request, res: Response) => {
@@ -31,7 +48,7 @@ server.post('/user', async (req: Request, res: Response) => {
 });
 
 // Rota para retornar usuário por ID
-server.get('/user/:id', async (req: Request, res: Response) => {
+server.get('/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
     const user = await prisma.user.findUnique({ where: { id: Number(id) } });
@@ -45,7 +62,7 @@ server.get('/user/:id', async (req: Request, res: Response) => {
 });
 
 // Rota para retornar usuário por email
-server.get('/userByEmail/:email', async (req: Request, res: Response) => {
+server.get('/email/:email', async (req: Request, res: Response) => {
   const { email } = req.params;
   try {
     const user = await prisma.user.findUnique({ where: { email } });
@@ -59,10 +76,10 @@ server.get('/userByEmail/:email', async (req: Request, res: Response) => {
 });
 
 // Rota para retornar um ou mais usuários por nome
-server.get('/usersByName/:name', async (req: Request, res: Response) => {
-  const { name } = req.params;
+server.get('/nome/:nome', async (req: Request, res: Response) => {
+  const { nome } = req.params;
   try {
-    const users = await prisma.user.findMany({ where: { nome: name } });
+    const users = await prisma.user.findMany({ where: { nome: nome } });
     if (!users.length) {
       return res.status(404).json({ error: 'Users not found' });
     }
@@ -83,7 +100,7 @@ server.delete('/user/:id', async (req: Request, res: Response) => {
   }
 });
 
-// Rota para atualizar usuário por ID (não permitir duplicatas de email)
+// Rota para atualizar usuário por ID (não permite duplicatas de email)
 server.put('/user/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
   const { nome, email, senha, idade, estado, cidade } = req.body;
