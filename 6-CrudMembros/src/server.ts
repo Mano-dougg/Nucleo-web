@@ -98,6 +98,14 @@ app.put('/updateUserById', async (req: Request, res: Response) => {
             });
         }
 
+        const userWithSameEmail = await prisma.user.findUnique({ where: { email } });
+        if (userWithSameEmail && userWithSameEmail.id !== Number(id)) {
+            return res.json({
+                error: true,
+                message: 'Erro: este email já está em uso por outro usuário!',
+            });
+        }
+
         const user = await prisma.user.update({
             where: {
                 id: Number(req.body.id) 
