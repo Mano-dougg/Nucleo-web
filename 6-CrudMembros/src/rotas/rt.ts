@@ -9,7 +9,8 @@ const router = Router();
 
 //Criar Usuário
 
-router.post('/usuarios', async (req: Request, res: Response) => {
+
+/* router.post('/usuarios', async (req: Request, res: Response) => {
     const { nome, email, senha, idade, estado, cidade } = req.body;
 
     const usuarioExistente = await prisma.user.findUnique({where: { email }});
@@ -30,6 +31,36 @@ router.post('/usuarios', async (req: Request, res: Response) => {
             }
         });
         res.status(201).json(novoUsuario);
+    } catch (error) {
+        res.status(400).json({ error: 'Erro ao criar usuário' });
+    }
+}); */
+
+router.post('/usuarios', async (req: Request, res: Response) => {
+    const { nome, email, senha, idade, estado, cidade } = req.body;
+
+    const usuarioExistente = await prisma.user.findUnique({ where: { email } });
+
+    if (usuarioExistente) {
+        return res.status(400).json({ error: 'Usuário com este email já existe' });
+    }
+    
+    try {
+        const novoUsuario = await prisma.user.create({
+            data: {
+                nome,
+                email,
+                senha,
+                idade,
+                estado,
+                cidade
+            }
+        });
+
+        res.status(201).json({
+            message: 'Usuário cadastrado com sucesso',
+            usuario: novoUsuario
+        });
     } catch (error) {
         res.status(400).json({ error: 'Erro ao criar usuário' });
     }
@@ -80,7 +111,10 @@ router.delete('/usuarios/:id', async (req: Request, res: Response) => {
         const us = await prisma.user.findUnique({ where: { id: Number(id) } });
         if (us) {
             const deletado = await prisma.user.delete({ where: { id: Number(req.params.id) } })
-            return res.json(deletado);
+             return res.json({
+                message: 'Sucesso: Cpf Cancelado',
+                deletado
+            });
         } else {
             res.status(404).json({ error: 'Quer terminar com o que nem começou?' }); 
         }
@@ -106,6 +140,9 @@ router.put('/usuarios/:id', async (req: Request, res: Response) => {
                     return res.json({ error: 'Parado aí, esse email já existe' });
                 }
             }
+            if (email && email === us.email) {
+                return res.status(400).json({ error: 'Amigo, que tipo de atualização coloca o mesmo email?' });
+            }
             const updates = await prisma.user.update({
                 where: { id: Number(id) },  
                 data: {
@@ -117,7 +154,10 @@ router.put('/usuarios/:id', async (req: Request, res: Response) => {
                     cidade
                 }
             });
-            return res.json(updates);  
+            return res.json({
+                message: 'Sucesso: Usuário Atualizado',
+                updates
+            }); 
         } else {
             res.status(404).json({ error:'Acho que você quer atualizar demais' });
         }
