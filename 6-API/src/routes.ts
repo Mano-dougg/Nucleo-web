@@ -1,5 +1,5 @@
 import { Router } from "express";
-import UserControlers from "./Controllers/UserControlers";
+import UserControlers, { checkToken } from "./Controllers/UserControlers";
 
 const router = Router()
 
@@ -18,5 +18,6 @@ router.delete("/membro/delete/:id", UserControlers.deleteUserId);
 // AUTH ROUTERS
 router.post("/auth/register", UserControlers.registerUser);
 router.post("/auth/login", UserControlers.loginUser);
+router.get("/auth/user/:id", checkToken, UserControlers.getAuthUser);
 
 export { router }

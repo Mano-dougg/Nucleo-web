@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response, response } from "express";
 import { PrismaClient } from "@prisma/client";
 import { error } from "console";
 
@@ -165,6 +165,17 @@ export default {
         }
     },
 
+    async getAuthUser (req: Request, res: Response) {
+        const {id} = req.params
+        let user = await prisma.user.findUnique({where: {id: Number(id)}})
+        
+        if (!user) {
+            return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
+        }
+
+        return res.status(200).json(user)
+    },
+
 // PUTS
     async updateUserId (req: Request, res: Response) {
         try {
@@ -216,6 +227,23 @@ export default {
         }
     },
 
-   
+}   
 
+export function checkToken(req: Request, res: Response, next: any) {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(" ")[1]
+
+    if (!token) {return res.status(401).json({ msg: "Acesso negado!" })}
+
+    try {
+        const secret = process.env.SECRET
+
+        jwt.verify(token, secret)
+
+        next()
+    }
+
+    catch {
+        res.status(400).json({ msg: "Token inválido" })
+    }
 }
