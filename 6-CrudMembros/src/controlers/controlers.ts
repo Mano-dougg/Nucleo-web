@@ -8,7 +8,7 @@ export async function cadastro(req: Request, res: Response) {
         if (nome.match(/[0-9]/) != null) {
             throw new Error("O nome deve conter apenas letras!");
         }
-        if (estado.match(/[^\w\s]/) != null || cidade.match(/[^\w\s]/) != null) {
+        if (estado.match(/[0-9]/) != null || cidade.match(/[0-9]/) != null) {
             throw new Error("Os campos de cidade e estado devem conter apenas letras");
         }
         if (typeof idade != "number") {
@@ -51,7 +51,11 @@ export async function userPorID(req: Request, res: Response) {
 
         const users = await prisma.user.findUnique({ where: { id: id } })
 
-        res.status(200).json({ msg: "Usuário cadastrado!", user: users });
+        if (users == null) {
+            throw new Error("Usuário não encontrado")
+        }
+
+        res.status(200).json({ msg: "Usuários encontrados!", user: users });
     } catch (error: any) {
         console.log("Erro detectado: " + error)
         res.status(400).json({ msg: error.message })
@@ -62,8 +66,11 @@ export async function userPorEmail(req: Request, res: Response) {
     try {
         const email = req.params.email
         const users = await prisma.user.findUnique({ where: { email: email } })
+        if (users == null) {
+            throw new Error("Usuário não encontrado")
+        }
 
-        res.status(200).json({ msg: "Usuário cadastrado!", user: users });
+        res.status(200).json({ msg: "Usuário encontrado!", user: users });
     } catch (error) {
         console.log("Email não encontrao em nosso banco de dados ")
         res.status(400).json({ msg: "Email não encontrao em nosso banco de dados" })
@@ -74,6 +81,10 @@ export async function userPorNome(req: Request, res: Response) {
     try {
         const nome = req.params.nome
         const users = await prisma.user.findMany({ where: { nome: nome } })
+
+        if (users == null) {
+            throw new Error("Usuário não encontrado")
+        }
 
         res.status(200).json({ msg: "Usuários encontrados!", user: users });
     } catch (error) {
@@ -116,7 +127,7 @@ export async function atualizar(req: Request, res: Response) {
             throw new Error("Email já cadastrado")
         }
 
-        if (estado.match(/[^\w\s]/) != null || cidade.match(/[^\w\s]/) != null) {
+        if (estado.match(/[0-9]/) != null || cidade.match(/[0-9]/) != null) {
             throw new Error("Os campos de cidade e estado devem conter apenas letras");
         }
         if (typeof idade != "number") {
@@ -136,7 +147,7 @@ export async function atualizar(req: Request, res: Response) {
                 cidade: cidade
             }
         })
-        res.status(200).json({ msg: "Usuário cadastrado!", user: user });
+        res.status(200).json({ msg: "Usuário Atualizado!", user: user });
     } catch (error: any) {
         res.status(400).json({ msg: "Erro detectado", erro: error.message })
     }
