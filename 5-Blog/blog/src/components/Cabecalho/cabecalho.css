@@ -6,6 +6,8 @@ header {
     justify-content: center;
     padding: 1em 5em;
     box-shadow: 0 5px 10px #00000030;
+    width: 100vw;
+    margin-bottom: 2em;
 }
 header h1 {
     font-family: Arial, Helvetica, sans-serif;

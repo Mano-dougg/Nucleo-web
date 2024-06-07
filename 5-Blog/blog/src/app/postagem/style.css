@@ -1,0 +1,43 @@
+html, body, #__next {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.pagina {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 1000px;
+    justify-content: center;
+}
+
+p {
+    line-height: 1em;
+}
+
+main h1 {
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main img {
+    width: 544px;
+    height: 374px;
+    border-radius: 30px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.75em;
+}
