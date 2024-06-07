@@ -63,7 +63,7 @@ export default function Home() {
       </div>
       <br />
       <br />
-      <PageFooter tema={tema} />
+      <PageFooter tema={tema}/>
     </main>
   );
 }
