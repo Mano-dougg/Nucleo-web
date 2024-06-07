@@ -78,7 +78,7 @@ app.put('/updateUserById', async (req: Request, res: Response) => {
 
         const user = await prisma.user.update({
             where: {
-                id: Number(id) 
+                id: Number(req.body.id) 
             },
             data: {
                 nome,
@@ -99,6 +99,36 @@ app.put('/updateUserById', async (req: Request, res: Response) => {
         return res.json({ message: (error as Error).message });
     }
 });
+
+app.delete('/deleteUserById/:id', async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+
+        const userExists = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+        if (!userExists) {
+            return res.json({
+                error: true,
+                message: 'Erro: usuário não encontrado!',
+            });
+        }
+
+        const user = await prisma.user.delete({
+            where: {
+                id: Number(req.params.id) 
+            },
+        });
+
+        return res.json({
+            error: false,
+            message: 'Sucesso, usuário deletado!',
+            user
+        });
+    } catch (error: unknown) {
+        return res.json({ message: (error as Error).message });
+    }
+});
+
 
 
 app.listen(port, () => {
