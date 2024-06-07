@@ -7,6 +7,8 @@ const router = Router();
 
 // CRUD BÁSICO
 
+//Criar Usuário
+
 router.post('/usuarios', async (req: Request, res: Response) => {
     const { nome, email, senha, idade, estado, cidade } = req.body;
 
@@ -33,6 +35,8 @@ router.post('/usuarios', async (req: Request, res: Response) => {
     }
 });
 
+//Buscar Usuário por email
+
 router.get('/usuarios/emails/:email',  async (req: Request, res: Response)=> {
     const { email } = req.params;
 
@@ -48,6 +52,8 @@ router.get('/usuarios/emails/:email',  async (req: Request, res: Response)=> {
         res.status(400).json({ error: 'Erro para achar usuário' });
     }
 });
+
+//Buscar Usuário por Id
 
 router.get('/usuarios/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
@@ -65,6 +71,8 @@ router.get('/usuarios/:id', async (req: Request, res: Response) => {
     }
 });
 
+//Deletar Usuário por Id
+
 router.delete('/usuarios/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
 
@@ -80,6 +88,8 @@ router.delete('/usuarios/:id', async (req: Request, res: Response) => {
         res.status(500).json({ error: 'Erro ao buscar usuário' }); 
     }
 });
+
+//Atualizar usuário por Id
 
 router.put('/usuarios/:id', async (req: Request, res: Response) => {
     const { id } = req.params;  
@@ -118,6 +128,8 @@ router.put('/usuarios/:id', async (req: Request, res: Response) => {
 
 // Buscas Específicas
 
+//Buscar Usuários por nome
+
 router.get('/usuarios/salvos/:nome', async(req:Request, res:Response) => {
     const {nome} = req.params;
     const us = await prisma.user.findMany({where: { nome }});
@@ -133,6 +145,9 @@ router.get('/usuarios/salvos/:nome', async(req:Request, res:Response) => {
         res.status(500).json("Erro ao procurar nome")
     }
 });
+
+
+//Mostra o Banco existente
 
 router.get('/banco', async(req:Request, res:Response) => {
 
