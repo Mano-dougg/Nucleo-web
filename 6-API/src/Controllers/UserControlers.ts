@@ -3,35 +3,115 @@ import { PrismaClient } from "@prisma/client";
 import { error } from "console";
 
 const prisma = new PrismaClient()
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 export default {
  
 // POSTS
     async createUser(req: Request , res: Response) {
-    try {
+        try {
+            const {nome, email, senha, idade, estado, cidade, } = req.body
+            
+            let user = await prisma.user.findUnique({ where: {email}});
+
+            // VALIDATIONS
+            if(user) {return res.status(422).json({ error: "Já existe um usuario com este email" })}
+
+            if(!email) {return res.status(422).json({ error: "Email é obrigatório" })} 
+
+            if(!senha) {return res.status(422).json({ error: "Senha é obrigatória" })}
+
+
+            user = await prisma.user.create({
+                data: {
+                    nome, 
+                    email, 
+                    senha, 
+                    idade, 
+                    estado, 
+                    cidade,
+                },
+            })
+
+            return res.status(201).json(user)
+        }
+        catch (error) {
+            console.log(error)
+            res.status(500).json({ msg: "Aconteceu um erro no servidor, tente novamente mais tarde"})
+        }
+    },
+
+    async registerUser(req: Request , res: Response) {
+        try {
+            const {nome, email, senha, idade, estado, cidade, } = req.body
+            
+            let user = await prisma.user.findUnique({ where: {email}});
+
+            // VALIDATIONS
+            if(user) {return res.status(422).json({ error: "Já existe um usuario com este email" })}
+
+            if(!email) {return res.status(422).json({ error: "Email é obrigatório" })} 
+
+            if(!senha) {return res.status(422).json({ error: "Senha é obrigatória" })}
+
+
+            //create password
+            const salt = await bcrypt.genSalt(12)
+            const senhaHash = await bcrypt.hash(senha, salt)
+
+            user = await prisma.user.create({
+                data: {
+                    nome, 
+                    email, 
+                    senha: senhaHash, 
+                    idade, 
+                    estado, 
+                    cidade,
+                },
+            })
+
+            return res.status(201).json(user)
+        }
+        catch (error) {
+            console.log(error)
+            res.status(500).json({ msg: "Aconteceu um erro no servidor, tente novamente mais tarde"})
+        }
+    },
+
+    async loginUser(req: Request , res: Response) {
+       
         const {nome, email, senha, idade, estado, cidade, } = req.body
-        
+            
         let user = await prisma.user.findUnique({ where: {email}});
 
-        if(user) {
-            return res.status(422).json({ error: "Já existe um usuario com este email" })
+        // VALIDATIONS
+        if(!user)  {return res.status(404).json({ msg: "Não foi possível encontrar esse membro" })}
+
+        if(!email) {return res.status(422).json({ msg: "Email é obrigatório" })} 
+
+        if(!senha) {return res.status(422).json({ msg: "Senha é obrigatória" })}
+
+        //check if passoword match
+        const checkSenha = await bcrypt.compare(senha, user.senha)
+
+        if (!checkSenha) {return res.status(422).json({ error: "Senha inválida" })}
+           
+        try {
+            const secret = process.env.SECRET
+
+            const token = jwt.sign({
+                id: user.id
+            }, secret,)
+            
+            return res.status(201).json({ msg: "Autenticação realizada com sucesso", token })
         }
 
-        user = await prisma.user.create({
-            data: {
-                nome, 
-                email, 
-                senha, 
-                idade, 
-                estado, 
-                cidade,
-            },
-        })
-
-        return res.status(201).json(user)
-    }
-    catch (error) {}
-},
+        catch (error) {
+            console.log(error)
+            res.status(500).json({ msg: "Aconteceu um erro no servidor, tente novamente mais tarde"})
+        }
+    },
 
 // GETS
     async getUserId (req: Request, res: Response) {
@@ -135,5 +215,7 @@ export default {
             return res.json({ error })
         }
     },
+
+   
 
 }
