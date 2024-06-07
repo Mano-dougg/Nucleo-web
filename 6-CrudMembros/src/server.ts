@@ -29,5 +29,5 @@ app.post('/user', async (req:Request, res:Response) => {
 })
 
 app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
+  console.log(`Servidor rodando na porta ${port}`); 
 });
