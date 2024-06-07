@@ -1,0 +1,49 @@
+services:
+  node:
+    image: node:16-alpine
+    container_name: node
+    # keeps container running
+    tty: true
+    # allows to read from stdin
+    stdin_open: true
+    command: sh
+    # restarts the container unless stopped
+    restart: unless-stopped
+    # exposes default node port
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    # configuration and sensitive data
+    env_file: .env
+    # environment variables
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      # Checks if port 3000 is being used
+      test: ["CMD", "lsof", "-t", "-i:3000"]
+      timeout: 10s
+      retries: 5
+  db:
+    image: mysql:8
+    container_name: db
+    restart: unless-stopped
+    # exposes default MySQL port
+    ports:
+      - "3306:3306"
+    # configuration and sensitive data
+    env_file: .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    healthcheck:
+      # Pings MySQL server
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 5

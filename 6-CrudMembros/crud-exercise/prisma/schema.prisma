@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator zod {
+  provider = "zod-prisma-types"
+}
+
+generator mock_data {
+  provider = "prisma-generator-fake-data"
+  output   = "./generated/mocks/fake-data.ts"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
+  name     String
+  ///@zod.number.int().min(14, { message: "No under aged permitted" }).max(130, { message: "Unlikely age entered" })
+  age      Int
+  ///@zod.string.email({ message: "Invalid email address" }).min(8, { message: "Minimum 8 characters" })
+  email    String @unique
+  ///FAKE:faker.internet.password(10)
+  password String ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" })
+  ///FAKE:faker.location.state({ abbreviated: true })
+  state    String ///@zod.string.length(2, { message: "Use abbreviation"})
+  ///FAKE:faker.location.city()
+  city     String ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" })
+}
