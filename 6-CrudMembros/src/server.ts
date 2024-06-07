@@ -1,29 +1,72 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '@prisma/client';
 import express, { Request, Response } from 'express';
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
-const prisma = new PrismaClient()
+app.use(express.json());
 
-// 1 - rota de retornar todos os usuarios
+const prisma = new PrismaClient();
 
+// 1 - rota de retornar todos os usuários
 
-// 2 - criar usuario POST
-app.post('/user', async (req: Request, res: Response) => {
-    const user = await prisma.user.create({
-        data: {
-            nome: 'Julio',
-            idade: 20,
-            senha: 'ahnes321',
-            email: 'julio@gamil.com',
-            estado: 'Bahia',
-            cidade: 'Brumado'
+// 2 - criar usuário POST
+app.post('/createUser', async (req: Request, res: Response) => {
+    try {
+        const { nome, idade, email, senha, estado, cidade } = req.body;
+        const userExists = await prisma.user.findUnique({ where: { email } });
+
+        if (userExists) {
+            return res.json({
+                error: true,
+                message: 'Erro: usuário já existe!'
+            });
         }
-    }) 
-  res.send(user)
-})
+
+        const user = await prisma.user.create({
+            data: {
+                nome,
+                idade,
+                senha,
+                email,
+                estado,
+                cidade
+            }
+        });
+
+        return res.json({
+            error: false,
+            message: 'Sucesso: usuário cadastrado!',
+            user
+        });
+    } catch (error: unknown) {
+        return res.json({ message: (error as Error).message });
+    }
+});
+
+app.get('/findUserById/:id', async (req: Request, res: Response) => {
+    try {
+        const { id } = req.params;
+
+        const user = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+        if (!user) {
+            return res.json({
+                error: true,
+                message: 'Erro: usuário não encontrado!',
+            });
+        }
+
+        return res.json({
+            error: false,
+            user
+        });
+    } catch (error: unknown) {
+        return res.json({ message: (error as Error).message });
+    }
+});
+
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+    console.log(`Aplicativo de exemplo ouvindo na porta ${port}`);
+});
