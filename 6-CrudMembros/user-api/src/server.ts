@@ -1,34 +1,42 @@
-// import { PrismaClient } from '@prisma/client'
-import { configDotenv } from 'dotenv';
+import { PrismaClient } from '@prisma/client';
 import express, { Request, Response } from 'express';
 
-configDotenv()
+const app = express();
+const port = 3000;
+const prisma = new PrismaClient();
 
-//configuração das bibliotecas do express que precisam rodar para construir o servidor
-// const express = require('express')
-const app = express()
-const port = 3000
+app.use(express.json());
 
-// const prisma = new PrismaClient()
+// 1 - rota para criar usuario (não permite criação de usuario caso email já cadastrado)
 
+app.post('/users', async (req: Request, res: Response) => {
+  const { name, email, password, age, state, city } = req.body;
 
-// 1 - rota de retornar todos os usuários GET
+  if (!name || !email || !password || !age || !state || !city) {
+    return res.status(400).json({ error: 'Todos os dados do usuário devem ser preenchidos!' });
+  }
 
-// 2 - criar usuário POST
-// app.post('/user', async (req: Request, res: Response)=>{
-//     const user = await prisma.user.create ({
-//         data:{
-//             nome: 
-//         }
-//     })
-// })
+  const emailExists = await prisma.user.findUnique({where: { email }, });
 
-app.get('/teste', (req: Request, res: Response) => {
-    console.log(req.params)
-  res.send('Hello World!')
-})
+  if (emailExists) {
+    return res.status(400).json({ error: 'Email já cadastrado!' });
+  }
 
-// inicia o servidor depois de definir as rotas
+  const user = await prisma.user.create({
+    data: {
+      name,
+      email,
+      password,
+      age,
+      state,
+      city,
+    },
+  });
+
+  res.status(201).json(user);
+});
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`API rodando na porta: ${port}`);
+});
+
