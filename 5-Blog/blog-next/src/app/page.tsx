@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./modulos.module.css";
+import PageHeader from "./header"
 import PageFooter from "./footer";
 import Card1 from "./cards1";
 import Card2 from "./cards2";
@@ -17,22 +18,9 @@ export default function Home() {
 
   return (
     <main className="principal">
-      <div className="header">
-        <h1>
-            AI
-            <i>Today</i>
-        </h1>
-        <div className="container">
-          <div className="entrada">
-            <textarea className="pesquisar" placeholder=" Pesquisar" />
-            <Image
-              src="/lupa.svg"
-              alt="lupa"
-              width={32}
-              height={32}
-            />
-          </div>
-          <div className="luz">
+      <div className="container-header">
+        <PageHeader tema = {tema}/>
+        <div className="luz">
             <button id="mudarmodo" onClick={alternarTema}>
               <Image
                 src="/light.svg"
@@ -42,7 +30,6 @@ export default function Home() {
               />
             </button>
           </div>
-        </div>
       </div>
       <h1 className="subtitulo">Sua dose diária de informação</h1>
       <div className="text">

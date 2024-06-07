@@ -3,6 +3,13 @@ body {
   margin: 0;
   padding: 0;
 }
+.container-header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #067546;
+  justify-content:center;
+}
 .principal{
   font-family: 'Rubik',sans-serif;
   display: flex;
@@ -39,13 +46,6 @@ body {
 .subtitulo{
   font-size: 65px;
   color: #003720;
-}
-.header{  
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  background-color: #067546;
 }
 .sociais{
   display: flex;
