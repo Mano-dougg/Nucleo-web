@@ -63,6 +63,28 @@ app.get('/findUserById/:id', async (req: Request, res: Response) => {
     }
 });
 
+app.get('/findUsersByName/:nome', async (req: Request, res: Response) => {
+    try {
+        const { nome } = req.params;
+
+        const users = await prisma.user.findMany({ where: { nome } });
+
+        if (users.length === 0) {
+            return res.json({
+                error: true,
+                message: 'Erro: nenhum usuário encontrado com esse nome!',
+            });
+        }
+
+        return res.json({
+            error: false,
+            users
+        });
+    } catch (error: unknown) {
+        return res.json({ message: (error as Error).message });
+    }
+});
+
 app.put('/updateUserById', async (req: Request, res: Response) => {
     try {
         const { id, nome, idade, email, senha, estado, cidade } = req.body;
