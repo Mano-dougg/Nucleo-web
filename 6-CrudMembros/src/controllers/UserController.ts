@@ -18,10 +18,9 @@ export default {
             const userExists = await prisma.user.findUnique({ where: { email } });
 
             if (userExists) {
-                console.log('Usuário já existe:', userExists);
                 return response.status(409).json({
                     error: true,
-                    message: "Erro: usuário existente!"
+                    message: "Erro: email já existente!"
                 });
             }
 
@@ -178,7 +177,59 @@ export default {
                 message: error.message
             });
         }
+    },
+
+    async editById(request: Request, response: Response) {
+        try {
+            const { id } = request.params;
+            const { name, email, senha, idade, estado, cidade } = request.body;
+
+
+
+            const verificaEmail = await prisma.user.findUnique({
+                where: {
+                    email: email
+                }
+            });
+
+            if (verificaEmail && verificaEmail.id !== parseInt(id)) {
+                return response.status(409).json({
+                    error: true,
+                    message: "email existente, favor digite outro"
+                });
+            }
+
+            const user = await prisma.user.update({
+                where: {
+                    id: parseInt(id)
+                },
+                data: {
+                    name,
+                    email,
+                    senha,
+                    idade,
+                    estado,
+                    cidade
+                }
+            });
+
+            return response.status(200).json({
+                sucesso: true,
+                mensagem: "Sucesso, o usuário foi atualizado.",
+                user: user
+            });
+        } catch (error: any) {
+            if (error.code === 'P2025') {
+                return response.status(404).json({
+                    error: true,
+                    message: "Erro: usuário não encontrado."
+                });
+            }
+            console.error("Erro ao atualizar usuário:", error);
+            return response.status(500).json({
+                error: true,
+                message: error.message
+            });
+        }
     }
-
-
 };

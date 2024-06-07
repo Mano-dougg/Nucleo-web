@@ -17,14 +17,14 @@ app.get('/createUser/:id', (req: Request, res: Response) => {
     const userId = req.params.id;
     res.send(`User ID is: ${userId}`);
 });
-
-
 //method post//
 app.post('/createUser', UserController.createUser);
-
 //metod delete//
 app.delete('/delete/:id', UserController.DeletebyId);
-//method update//
+//method put//
+app.put('/user/:id', UserController.editById)
+
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
