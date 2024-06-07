@@ -8,9 +8,6 @@ app.use(express.json());
 
 const prisma = new PrismaClient();
 
-// 1 - rota de retornar todos os usuários
-
-// 2 - criar usuário POST
 app.post('/createUser', async (req: Request, res: Response) => {
     try {
         const { nome, idade, email, senha, estado, cidade } = req.body;
@@ -59,6 +56,43 @@ app.get('/findUserById/:id', async (req: Request, res: Response) => {
 
         return res.json({
             error: false,
+            user
+        });
+    } catch (error: unknown) {
+        return res.json({ message: (error as Error).message });
+    }
+});
+
+app.put('/updateUserById', async (req: Request, res: Response) => {
+    try {
+        const { id, nome, idade, email, senha, estado, cidade } = req.body;
+
+        const userExists = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+        if (!userExists) {
+            return res.json({
+                error: true,
+                message: 'Erro: usuário não encontrado!',
+            });
+        }
+
+        const user = await prisma.user.update({
+            where: {
+                id: Number(id) 
+            },
+            data: {
+                nome,
+                idade: parseInt(idade), 
+                senha,
+                email,
+                estado,
+                cidade
+            }
+        });
+
+        return res.json({
+            error: false,
+            message: 'Sucesso, usuário atualizado!',
             user
         });
     } catch (error: unknown) {
