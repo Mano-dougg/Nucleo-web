@@ -1,8 +1,8 @@
 import './App.css'
 import Play from './play'
 import { useState } from 'react'
-import JogoDaForcaLogo from '/public/JogoDaForcaLogo.png';
-import JogoDaForcaLogo2 from '/public/JogoDaForcaLogo2.png';
+import JogoDaForcaLogo from '/JogoDaForcaLogo.png';
+import JogoDaForcaLogo2 from '/JogoDaForcaLogo2.png';
 
   function App() {
     const [mostrarJogo, setMostrarJogo] = useState(false);
