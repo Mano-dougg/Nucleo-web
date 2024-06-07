@@ -41,6 +41,19 @@ export async function cadastro(req: Request, res: Response) {
     }
 }
 
+export async function allUsers(_req: Request, res: Response) {
+    try {
+        const users = await prisma.user.findMany({
+            orderBy: {
+                id: "asc"
+            }
+        })
+        res.status(200).json({ msg: "Esses aqui que foram encontrados:", users: users })
+    } catch (error: any) {
+        res.status(400).json({ msg: error.message })
+    }
+}
+
 export async function userPorID(req: Request, res: Response) {
     try {
         const id = Number(req.params.id)

@@ -1,11 +1,13 @@
 import { Router } from "express"
-import { userPorEmail, cadastro, userPorID, userPorNome, deletarUser,atualizar } from "../controlers/controlers"
+import { userPorEmail, cadastro, userPorID, userPorNome, deletarUser,atualizar, allUsers } from "../controlers/controlers"
 const router = Router()
 
 
 router.post("/cadastro", cadastro)
 
 router.get("/id/:id", userPorID)
+
+router.get("/", allUsers)
 
 router.get("/email/:email", userPorEmail)
 
