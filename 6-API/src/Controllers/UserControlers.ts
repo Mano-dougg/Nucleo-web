@@ -18,11 +18,14 @@ export default {
             // VALIDATIONS
             if(user) {return res.status(422).json({ error: "Já existe um usuario com este email" })}
 
-            if(!email) {return res.status(422).json({ error: "Email é obrigatório" })} 
+            if(!nome)   {return res.status(422).json ({ error: "Nome é obrigatório"   })}
+            if(!email)  {return res.status(422).json ({ error: "Email é obrigatório"  })} 
+            if(!senha)  {return res.status(422).json ({ error: "Senha é obrigatória"  })}
+            if(!idade)  {return res.status(422).json ({ error: "Idade é obrigatória"  })}
+            if(!estado) {return res.status(422).json ({ error: "Estado é obrigatória" })}
+            if(!cidade) {return res.status(422).json ({ error: "Cidade é obrigatória" })}
 
-            if(!senha) {return res.status(422).json({ error: "Senha é obrigatória" })}
-
-
+            // CREATE USER
             user = await prisma.user.create({
                 data: {
                     nome, 
@@ -42,6 +45,7 @@ export default {
         }
     },
 
+    // AUTH ROUTER
     async registerUser(req: Request , res: Response) {
         try {
             const {nome, email, senha, idade, estado, cidade, } = req.body
@@ -51,15 +55,18 @@ export default {
             // VALIDATIONS
             if(user) {return res.status(422).json({ error: "Já existe um usuario com este email" })}
 
-            if(!email) {return res.status(422).json({ error: "Email é obrigatório" })} 
+            if(!nome)   {return res.status(422).json ({ error: "Nome é obrigatório"   })}
+            if(!email)  {return res.status(422).json ({ error: "Email é obrigatório"  })} 
+            if(!senha)  {return res.status(422).json ({ error: "Senha é obrigatória"  })}
+            if(!idade)  {return res.status(422).json ({ error: "Idade é obrigatória"  })}
+            if(!estado) {return res.status(422).json ({ error: "Estado é obrigatória" })}
+            if(!cidade) {return res.status(422).json ({ error: "Cidade é obrigatória" })}
 
-            if(!senha) {return res.status(422).json({ error: "Senha é obrigatória" })}
-
-
-            //create password
+            // CREATE PASSWORD
             const salt = await bcrypt.genSalt(12)
             const senhaHash = await bcrypt.hash(senha, salt)
 
+            // CREATE USER
             user = await prisma.user.create({
                 data: {
                     nome, 
@@ -79,6 +86,7 @@ export default {
         }
     },
 
+    // AUTH ROUTER
     async loginUser(req: Request , res: Response) {
        
         const {nome, email, senha, idade, estado, cidade, } = req.body
@@ -92,7 +100,7 @@ export default {
 
         if(!senha) {return res.status(422).json({ msg: "Senha é obrigatória" })}
 
-        //check if passoword match
+        // CHECK IF PASSWORD MATCH
         const checkSenha = await bcrypt.compare(senha, user.senha)
 
         if (!checkSenha) {return res.status(422).json({ error: "Senha inválida" })}
@@ -119,6 +127,7 @@ export default {
             const {id} = req.params
             const user = await prisma.user.findUnique({where: {id: Number(id)}})
 
+            // VALIDATION
             if (!user) {
                 return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
@@ -136,6 +145,7 @@ export default {
             const email = req.params.email
             const user = await prisma.user.findUnique({where: {email: email}})
 
+            // VALIDATION
             if (!user) {
                 return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
@@ -153,6 +163,7 @@ export default {
             const nome = req.params.nome
             const user = await prisma.user.findMany({where: {nome: String(nome)}})
 
+            // VALIDATION
             if (!user) {
                 return res.status(200).status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
@@ -169,6 +180,7 @@ export default {
         const {id} = req.params
         let user = await prisma.user.findUnique({where: {id: Number(id)}})
         
+        // VALIDATION
         if (!user) {
             return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
         }
@@ -183,12 +195,13 @@ export default {
             const {email} = req.body
             let user = await prisma.user.findUnique({where: { id: Number(id) }})
 
+            // VALIDATION
             if (!user) {
                 return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
 
+            // VALIDATION
             const userExist = await prisma.user.findMany({where: {email: email}})
-
             if (userExist) {
                 return res.status(422).json({ error: "Já existe um usuario com este email" })
             }
@@ -207,12 +220,12 @@ export default {
     },
 
 // DELETES
-
     async deleteUserId (req: Request, res: Response) {
         try {
             const {id} = req.params
             let user = await prisma.user.findUnique({where: { id: Number(id) }})
 
+            // VALIDATION
             if (!user) {
                 return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
             }
@@ -229,6 +242,7 @@ export default {
 
 }   
 
+// CHECK TOKEN 
 export function checkToken(req: Request, res: Response, next: any) {
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(" ")[1]
