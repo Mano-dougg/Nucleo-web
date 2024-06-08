@@ -63,6 +63,18 @@ app.get('/users/email', async(req: Request, res: Response) => {
 
 })
 
+// 4 - rota para retornar um ou mais usuarios pelo nome
+app.get('/users/name', async(req: Request, res: Response) => {
+  const { name } = req.query;
+
+  const usersFound = await prisma.user.findMany({where: {name : String(name) }});
+
+  if (usersFound){
+    return res.status(200).json(usersFound);
+  }
+
+  return res.status(404).json({error: "Nome não cadastrado"});
+})
 
 app.listen(port, () => {
   console.log(`API rodando na porta: ${port}`);
