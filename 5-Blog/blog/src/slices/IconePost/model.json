@@ -26,27 +26,43 @@
             "placeholder": ""
           }
         },
-        "autor": {
-          "type": "Link",
-          "config": {
-            "label": "Autor",
-            "select": "document"
-          }
-        },
-        "botao_compartilhar": {
-          "type": "Image",
-          "config": {
-            "label": "Botao Compartilhar",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
         "thumbnail": {
           "type": "Image",
           "config": {
             "label": "Thumbnail",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "autor": {
+          "type": "Group",
+          "config": {
+            "label": "Autor",
+            "repeat": true,
+            "fields": {
+              "icone": {
+                "type": "Image",
+                "config": {
+                  "label": "icone",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "nome": {
+                "type": "Text",
+                "config": {
+                  "label": "Nome",
+                  "placeholder": ""
+                }
+              },
+              "data": {
+                "type": "Text",
+                "config": {
+                  "label": "data",
+                  "placeholder": ""
+                }
+              }
+            }
           }
         }
       },

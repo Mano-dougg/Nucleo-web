@@ -77,9 +77,6 @@
           "choices": {
             "icone_post": {
               "type": "SharedSlice"
-            },
-            "widget_autor": {
-              "type": "SharedSlice"
             }
           }
         }

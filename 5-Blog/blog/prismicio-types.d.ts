@@ -268,6 +268,93 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for icone dum Post documents
+ */
+interface IconeDumPostDocumentData {
+  /**
+   * Thumbnail field in *icone dum Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_dum_post.thumbnail
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  thumbnail: prismic.ImageField<never>;
+
+  /**
+   * Titulo field in *icone dum Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_dum_post.titulo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  titulo: prismic.KeyTextField;
+
+  /**
+   * Descricao field in *icone dum Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_dum_post.descricao
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  descricao: prismic.KeyTextField;
+
+  /**
+   * icone autor field in *icone dum Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_dum_post.icone_autor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone_autor: prismic.ImageField<never>;
+
+  /**
+   * nome autor field in *icone dum Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_dum_post.nome_autor
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nome_autor: prismic.KeyTextField;
+
+  /**
+   * data field in *icone dum Post*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_dum_post.data
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  data: prismic.DateField;
+}
+
+/**
+ * icone dum Post document from Prismic
+ *
+ * - **API ID**: `icone_dum_post`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type IconeDumPostDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<IconeDumPostDocumentData>,
+    "icone_dum_post",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice = never;
 
 /**
@@ -340,7 +427,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type PostagemDocumentDataSlicesSlice = IconePostSlice | WidgetAutorSlice;
+type PostagemDocumentDataSlicesSlice = IconePostSlice;
 
 /**
  * Content for postagem documents
@@ -532,9 +619,45 @@ export type AllDocumentTypes =
   | AutorDocument
   | CabecalhoDocument
   | HomepageDocument
+  | IconeDumPostDocument
   | PageDocument
   | PostagemDocument
   | RodapeDocument;
+
+/**
+ * Item in *IconePost → Default → Primary → Autor*
+ */
+export interface IconePostSliceDefaultPrimaryAutorItem {
+  /**
+   * icone field in *IconePost → Default → Primary → Autor*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.autor[].icone
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone: prismic.ImageField<never>;
+
+  /**
+   * Nome field in *IconePost → Default → Primary → Autor*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.autor[].nome
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  nome: prismic.KeyTextField;
+
+  /**
+   * data field in *IconePost → Default → Primary → Autor*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.autor[].data
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  data: prismic.KeyTextField;
+}
 
 /**
  * Primary content in *IconePost → Default → Primary*
@@ -561,26 +684,6 @@ export interface IconePostSliceDefaultPrimary {
   descricao: prismic.KeyTextField;
 
   /**
-   * Autor field in *IconePost → Default → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: icone_post.default.primary.autor
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  autor: prismic.ContentRelationshipField;
-
-  /**
-   * Botao Compartilhar field in *IconePost → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: icone_post.default.primary.botao_compartilhar
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  botao_compartilhar: prismic.ImageField<never>;
-
-  /**
    * Thumbnail field in *IconePost → Default → Primary*
    *
    * - **Field Type**: Image
@@ -589,6 +692,16 @@ export interface IconePostSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   thumbnail: prismic.ImageField<never>;
+
+  /**
+   * Autor field in *IconePost → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: icone_post.default.primary.autor[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  autor: prismic.GroupField<Simplify<IconePostSliceDefaultPrimaryAutorItem>>;
 }
 
 /**
@@ -775,6 +888,8 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      IconeDumPostDocument,
+      IconeDumPostDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -786,6 +901,7 @@ declare module "@prismicio/client" {
       RodapeDocumentDataConteudoItem,
       AllDocumentTypes,
       IconePostSlice,
+      IconePostSliceDefaultPrimaryAutorItem,
       IconePostSliceDefaultPrimary,
       IconePostSliceDisplayDiferentePrimary,
       IconePostSliceVariation,

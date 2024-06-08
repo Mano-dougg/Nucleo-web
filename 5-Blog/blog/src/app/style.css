@@ -17,13 +17,14 @@ main {
     gap: 32px;
     width: 1000px;
     justify-content: center;
+    padding-bottom: 32px;
 }
 
 p {
     line-height: 1em;
 }
 
-main h1 {
+h1 {
     font-style: normal;
     font-weight: bold;
     text-align: center;
@@ -40,6 +41,76 @@ main img {
 h2 {
     font-weight: bold;
     font-size: 1.75em;
+}
+.carrosselFake {
+    width: 100vw;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    padding: 2em 0;
+}
+.iconePost {
+    border-radius: 30px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1em;
+    gap: 16px;
+    width: 700px;
+}
+.iconePost.Vertical {
+    flex-direction: column;
+    width: 400px;
+}
+.iconePost .thumbnail {
+    height: 320px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 36px;
+}
+.iconePost.Vertical .thumbnail {
+    width: 360px;
+    height: 200px;
+}
+.iconePost h1 {
+    font-size: 1.75em;
+    font-weight: bolder;
+}
+.iconePost p {
+    font-size: .9em;
+}
+.iconePost div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+}
+.iconePost div div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.iconePost a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.iconePost a div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.iconePost a img {
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+}
+h3 {font-weight: bold;}
+h4 {font-size: .8em}
+
+.compart {
+    width: 50px;
 }
 
 @media (max-width:1025px){
