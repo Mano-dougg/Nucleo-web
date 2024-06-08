@@ -4,11 +4,13 @@ import Rodape from "@/components/Rodape/rodape"
 import './style.css'
 import { PrismicRichText } from "@prismicio/react"
 import { PrismicNextImage } from "@prismicio/next"
+import Link from "next/link"
 
 export default async function Post(){
 
     const prismic = createClient()
     const post = await prismic.getByUID('postagem', 'post')
+    const autor = await prismic.getByUID('autor', 'autor')
 
     return (
         <div className="pagina">
@@ -27,7 +29,13 @@ export default async function Post(){
                     <PrismicNextImage field={post.data.imagem3} />
                 </div>
                 <PrismicRichText field={post.data.texto3} />
-                <div className="autor"></div>
+                <Link href={"/autor"} className="areaAutor">
+                    <PrismicNextImage field={autor.data.icone} />
+                    <div>
+                        <h3>{autor.data.nome}</h3>
+                        <h4>{new Date().getDay()}/{new Date().getMonth()}/{new Date().getFullYear()}</h4>
+                    </div>
+                </Link>
                 <h1>Mais postagens</h1>
                 {/* CARROSSEL DE POSTS */}
             </main>

@@ -52,6 +52,23 @@ h2 {
     font-size: 1.75em;
 }
 
+.areaAutor {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 32px;
+}
+.areaAutor img {
+    width:100px;
+    height:100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.areaAutor h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
 @media (max-width:1025px){
     main {
         width:80vw;

@@ -9,8 +9,8 @@ export default function Rodape(){
             <div>
                 <div>
                     <p className='futConheca'>Conheça nossas redes sociais</p>
-                    <a><Image priority src={Instagram} alt="Instagram" /></a>
-                    <a><Image priority src={LinkedIn} alt="Linked In" /></a>
+                    <a href='https://www.instagram.com'><Image priority src={Instagram} alt="Instagram" /></a>
+                    <a href='https://br.linkedin.com'><Image priority src={LinkedIn} alt="Linked In" /></a>
                 </div>
                 <p>Copyright &copy; {new Date().getFullYear()} | JSSTODAY</p>
             </div>

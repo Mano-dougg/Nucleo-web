@@ -24,7 +24,11 @@ header input {
     border: transparent;
     width: 250px;
 }
-
+a {
+    color:inherit;
+    font-style: normal;
+    text-decoration: none;
+}
 @media(max-width:1050px) {
     header input {
         width: 150px;
