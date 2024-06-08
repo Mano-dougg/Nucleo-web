@@ -6,6 +6,8 @@ import userByEmail from "./controllers/userByEmail";
 import userByName from "./controllers/userByName";
 import deleteByID from "./controllers/deleteByID";
 import updateUser from "./controllers/updateUser";
+import {loginUser} from "./controllers/loginUser";
+import { authenticateUser } from './controllers/autenticacaoUser';
 
 
 configDotenv()
@@ -17,7 +19,8 @@ const port = 3000
 
 
 
-// rota de retornar todos os usuários 
+// Rota de login
+app.post('/login', loginUser);
 
 
 // rota de criar usuario
