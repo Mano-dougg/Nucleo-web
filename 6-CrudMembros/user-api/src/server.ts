@@ -8,7 +8,6 @@ const prisma = new PrismaClient();
 app.use(express.json());
 
 // 1 - rota para criar usuario (não permite criação de usuario caso email já cadastrado)
-
 app.post('/users', async (req: Request, res: Response) => {
   const { name, email, password, age, state, city } = req.body;
 
@@ -36,7 +35,7 @@ app.post('/users', async (req: Request, res: Response) => {
   res.status(201).json(user);
 });
 
-// 2 - rota pra retornar usuario por Id
+// 2 - rota para retornar usuario por Id
 app.get('/users', async(req: Request, res: Response) => {
   const { id } = req.query;
 
@@ -46,8 +45,22 @@ app.get('/users', async(req: Request, res: Response) => {
     return res.status(200).json(userFound);
   }
 
-  res.status(404).json({ error: 'Usuário não cadastrado' });
+  res.status(404).json({ error: 'Id não cadastrado' });
   
+})
+
+// 3 - rota para retornar usuário por email
+app.get('/users/email', async(req: Request, res: Response) => {
+  const { email } = req.query;
+
+  const userFound = await prisma.user.findUnique({ where: { email: String(email) } });
+
+  if (userFound){
+    return res.status(200).json(userFound);
+  }
+
+  res.status(404).json({error: 'Email não cadastrado'})
+
 })
 
 
