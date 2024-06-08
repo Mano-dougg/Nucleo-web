@@ -24,3 +24,12 @@ header input {
     border: transparent;
     width: 250px;
 }
+
+@media(max-width:1050px) {
+    header input {
+        width: 150px;
+    }
+    header {
+        padding: 1em;
+    }
+}

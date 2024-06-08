@@ -15,14 +15,14 @@ export default async function Post(){
             <Cabecalho />
             <main>
                 <h1>{post.data.titulo}</h1>
-                <div style={{display:"flex", gap:"32px"}}>
+                <div className="div1">
                     <div style={{display:"flex", flexDirection:"column", gap:"32px"}}>
                         <PrismicRichText field={post.data.texto1} />
                     </div>
                     <PrismicNextImage field={post.data.imagem1} />
                 </div>
                 <PrismicRichText field={post.data.texto2} />
-                <div style={{display:"flex", gap:"32px"}}>
+                <div className="div2">
                     <PrismicNextImage field={post.data.imagem2} />
                     <PrismicNextImage field={post.data.imagem3} />
                 </div>
