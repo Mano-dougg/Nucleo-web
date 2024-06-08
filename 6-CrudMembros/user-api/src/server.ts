@@ -36,6 +36,21 @@ app.post('/users', async (req: Request, res: Response) => {
   res.status(201).json(user);
 });
 
+// 2 - rota pra retornar usuario por Id
+app.get('/users', async(req: Request, res: Response) => {
+  const { id } = req.query;
+
+  const userFound = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+  if (userFound){
+    return res.status(200).json(userFound);
+  }
+
+  res.status(404).json({ error: 'Usuário não cadastrado' });
+  
+})
+
+
 app.listen(port, () => {
   console.log(`API rodando na porta: ${port}`);
 });
