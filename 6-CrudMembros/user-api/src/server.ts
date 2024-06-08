@@ -90,7 +90,35 @@ app.delete('/users/id', async(req: Request, res: Response) => {
   return res.status(404).json({error: "Id não cadastrado"})
 })
 
+// 6 - rota para atualizar o usuario por Id (não permite caso email já cadastrado)
+app.put('/users/update', async(req: Request, res: Response) => {
+  const { id } = req.query;
+  const { name, email, password, age, state, city } = req.body;
 
+  const userFound = await prisma.user.findUnique({ where: { id: Number(id) } });
+
+  if (!name || !email || !password || !age || !state || !city) {
+    return res.status(400).json({ error: 'Todos os dados do usuário devem ser preenchidos!' });
+  }
+  
+  if (!userFound) {
+    return res.status(404).json({ error: 'Id não cadastrado' });
+  }
+
+  const emailExists = await prisma.user.findUnique({where: { email }, });
+
+  if (emailExists && emailExists.id != Number(id) ) {
+    return res.status(400).json({ error: 'Email já cadastrado!' });
+  }
+
+  const updatedUser = await prisma.user.update({
+    where: { id: Number(id) },
+    data: { name, email, password, age, state, city }
+  });
+
+  res.status(200).json(updatedUser);
+
+});
 
 app.listen(port, () => {
   console.log(`API rodando na porta: ${port}`);
