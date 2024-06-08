@@ -76,6 +76,22 @@ app.get('/users/name', async(req: Request, res: Response) => {
   return res.status(404).json({error: "Nome não cadastrado"});
 })
 
+// 5 - rota para deletar usuário por Id
+app.delete('/users/id', async(req: Request, res: Response) => {
+  const { id } = req.query;
+
+  const userFound = await prisma.user.findUnique({ where: { id: Number ( id ) }});
+
+  if (userFound){
+    await prisma.user.delete({ where: { id: Number(id) } });
+    res.status(204).send();
+  }
+
+  return res.status(404).json({error: "Id não cadastrado"})
+})
+
+
+
 app.listen(port, () => {
   console.log(`API rodando na porta: ${port}`);
 });
