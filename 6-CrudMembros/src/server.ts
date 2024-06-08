@@ -12,7 +12,7 @@ const prisma = new PrismaClient()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Rotas de Leitura da Tabela - Read 
+// Rotas de Leitura da Tabela - READ
 app.get('/leitura', async (req:Request,res:Response) => {
     const table = await prisma.user.findMany()
     res.send(table)
@@ -39,7 +39,7 @@ app.get('/ler_usuarios', async (req:Request,res:Response) => {
     }})
     res.send(findUserArr)    
 })
-// Rota de Adição de um Usuário por Email - Create [1]
+// Rota de Adição de um Usuário por Email - CREATE
 app.post('/criar_usuario', async (req:Request,res:Response) => {
     const email:string = String(req.query.email)
     const name:string = String(req.query.name)
@@ -59,7 +59,7 @@ app.post('/criar_usuario', async (req:Request,res:Response) => {
     })
     res.send(user)
 })
-// Rota de atualizar algum dado de usuário 
+// Rota de atualizar algum dado de usuário - UPDATE 
 app.patch('/atualizar', async (req:Request,res:Response) => {
     const user_id:number = Number(req.query.id)
     const email:string = String(req.query.email)
@@ -81,7 +81,7 @@ app.patch('/atualizar', async (req:Request,res:Response) => {
     }})
     res.send(patchUser)
 })
-
+// Rota pra Deletar algum usuário - DELETE 
 app.delete('/deletar', async (req:Request, res:Response) => {
     const user_id:number = Number(req.query.id)
     const deleteFromExistence = await prisma.user.delete({where:{
