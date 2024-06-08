@@ -29,7 +29,7 @@ export default async function Post(){
                 <PrismicRichText field={post.data.texto3} />
                 <div className="autor"></div>
                 <h1>Mais postagens</h1>
-                {/* CARROSSEL DE POSTS HORIZONTAL */}
+                {/* CARROSSEL DE POSTS */}
             </main>
             <Rodape />
         </div>
