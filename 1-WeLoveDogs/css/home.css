@@ -1,0 +1,27 @@
+* {
+	font-family: 'Open Sans';
+}
+
+.link4 {
+	display:inline-block;
+	width: 10vw;
+	padding:15px;
+	border-radius: 14px;
+	background-color: #7ED321;
+	font-weight: bold;
+	text-decoration: none;
+	color: black;
+	text-align:center;
+}
+main section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main section h1 {
+	width: 20vw;
+	font-size: 2.5rem;
+	font-weight: 900;
+}
+

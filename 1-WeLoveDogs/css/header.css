@@ -1,0 +1,20 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.2rem;
+	padding: 1.2rem;
+}
+
+.links {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 26px;
+	font-weight: bold;
+}
+
+.links a {
+	text-decoration: none;
+	color: black;
+}

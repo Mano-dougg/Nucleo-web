@@ -1,0 +1,210 @@
+body {
+	background-color: #BCCDD0;
+}
+main {
+	min-height: 98vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section {
+	display:flex;
+	width: 40vw;
+	height: 34vw;
+
+}
+
+img.plant {
+	width: 60%;
+	height:60%;
+}
+
+
+article {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #DFDFD6;
+	height:60%;
+	border-radius: 0 5% 5% 0;
+	padding:20px 20px 20px 20px;
+}
+
+h1 {
+	font-size: 2rem;
+	font-family: "Josefin Sans";
+	margin:1rem 0 1rem 0;
+}
+
+p {
+	font-family: "Open Sans";
+	font-size: 0.8rem;
+	margin: 0;
+	width:90%;
+}
+
+.bar {
+	display:flex;
+	justify-content: space-between;
+	align-items: end;
+	
+}
+
+.icon {
+	display:flex;
+	gap: 0.5rem;
+}
+
+img.share {
+	align-self: flex-end;
+}
+
+.date {
+	font-family: "Josefin Sans";
+	display: flex;
+	flex-direction:column;
+	justify-content: space-around;
+}
+
+.doguito {
+	font-size: 1.2rem;
+}
+
+.share_bar {
+	display:flex;
+	flex-direction:column;
+	gap: 7px;
+}
+
+.menu {
+	font-family: "Josefin Sans";
+	align-self: flex-end;
+
+}
+
+.menu_off {
+	display: none;
+	align-self: flex-end;
+}
+
+.plant_mobile {
+	display: none;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+
+}
+
+@media (max-width: 1680px) {
+
+	p {
+		font-size: 0.7rem;
+	}
+
+	.doguito {
+		font-size: 1.1rem;
+	}
+
+	h1 {
+		font-size: 1.8rem;
+	}
+}
+
+@media (max-width: 1590px) {
+
+	p {
+		font-size: 0.6rem;
+	}
+	.doguito {
+		font-size: 1rem;
+	}
+
+	h1 {
+		font-size: 1.6rem;
+	}
+
+
+}
+
+
+@media only screen and (max-width: 1470px) and (min-width: 769px)  {
+	section {
+		min-width: 600px;
+		min-height: 505px;
+	}
+}
+
+@media (max-width: 768px) {
+
+	p {
+		font-size: 0.9rem;
+	}
+
+	.doguito {
+		font-size: 1.1rem;
+	}
+
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	section {
+		display:flex;
+		flex-direction: column;
+		width: 70vw;
+		height: 80vh;
+
+	}
+
+	img.plant {
+		display:none;
+	}
+
+	article {
+		border-radius: 0 0 5% 5%;
+	}
+
+	.plant_mobile {
+		display: block;
+	}
+
+	.share_bar {
+		display:flex;
+		flex-direction:column;
+		gap: 17px;
+	}
+
+	.bar {
+		display:flex;
+	}
+	
+}
+
+@media (max-width: 520px) {
+
+	p {
+		font-size: 0.7rem;
+	}
+
+}
+
+@media (max-width: 440px) {
+
+	span img {
+		width: 132px;
+		height: 25px;
+	}
+
+}
+
+@media (max-width: 340px) {
+
+	p {
+		font-size: 0.6rem;
+	}
+
+}
