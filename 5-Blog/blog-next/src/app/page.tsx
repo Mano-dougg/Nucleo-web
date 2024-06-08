@@ -49,7 +49,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <h1 className={subtituloClassName}>Ultimas postagens</h1>
+      <h1 className={subtituloClassName}>Últimas postagens</h1>
       <div className="cards1">
         <Card1 tema={tema} />
         <Card1 tema={tema} />

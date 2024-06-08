@@ -1,10 +1,13 @@
 import Image from "next/image";
 import styles from "./modulos.module.css";
+
 type tema = {
     tema: string
 }
 const Header = ({tema}:tema) => {
     const headerClassName = `header-${tema}`;
+    const entradaClassName = `entrada-${tema}`
+    const textareaClassName = `textarea-${tema}`
     return(
         <div className={styles[headerClassName]}>
             <h1>
@@ -12,14 +15,8 @@ const Header = ({tema}:tema) => {
                 <i>Today</i>
             </h1>
             <div className="container">
-            <div className="entrada">
-                <textarea className="pesquisar" placeholder=" Pesquisar" />
-                <Image
-                src="/lupa.svg"
-                alt="lupa"
-                width={32}
-                height={32}
-                />
+            <div className={styles[entradaClassName]}>
+                <textarea className={styles[textareaClassName]} placeholder=" Pesquisar" />
             </div>
             </div>
         </div>

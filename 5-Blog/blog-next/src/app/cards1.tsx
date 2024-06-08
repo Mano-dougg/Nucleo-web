@@ -27,10 +27,10 @@ const Card1 = ({ tema }:tema) => {
         </div>
         <button className="compartilhar">
           <Image
-            src="/share.svg"
+            src="./share.svg"
             width={32}
             height={32}
-            alt="compartilhar"
+            alt="compartilhar"  
           />
         </button>
       </div>

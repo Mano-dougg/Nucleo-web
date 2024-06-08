@@ -8,8 +8,8 @@
 }
 .header-escuro{
     display: flex;
-    justify-content: space-around;
-    gap: 10px;
+    justify-content: space-around;      
+    gap: 400px;
 }
 .header-escuro h1{
     color: black;
@@ -47,22 +47,32 @@
     justify-content: space-evenly;
 }
 /* Card 1 Escuro */
+.card1-escuro{
+    background-color: #161616;
+    width: 302px;
+    height: 370px;
+    padding: 34px 25px 25px 34px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #ffffff;
+}
 .card1-escuro h2{
+    color: #ffffff;
     font-size: 33px;
     margin-top: 0px;
     margin-bottom: 5px;
 }
 .card1-escuro p{
+    color: #ffffff;     
     font-size: 12px;
     text-align: left;
-    color: #754106;
 }
 .descricao1-escuro{
     margin-top: 5px;
 }
 .card1-escuro button{
     border: none;
-    background-color: #EDFFF7;
+    background-color: #161616;  ;
     cursor: pointer;
 }
 .pessoal1-escuro{
@@ -70,7 +80,7 @@
     align-items: center;
     justify-content: space-evenly;
 }
-/* Final card 1 */
+/* Final card 1 */  
 
 
 /* Card 2 claro */
@@ -126,11 +136,12 @@
     padding: 20px 25px 25px 19px;
 }
 .container2-escuro{
-    display: flex;
+    display: flex;  
     flex-direction: column;
     margin-top: 10px;
 }
 .card2-escuro h2{
+    color: #ffffff  ;
     font-size: 33px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -140,13 +151,14 @@
     font-size: 14px;
     margin-bottom: 0px;
     margin-top: 0px;
+    color: #ffffff;
 }
 .card2-escuro button{
     border: none;
-    background-color: #EDFFF7;
+    background-color: #161616;
     cursor: pointer;
 }
-.container-escuro{
+.container2-escuro{
     margin-left: 5px;
 }
 /* Footer claro */
@@ -168,6 +180,12 @@
     font-size: 12px;
     color: #ffffff;
 }
+.pessoal2-escuro{
+    margin-left: 5px;
+    margin-block: 5px;
+    display: flex;
+    gap: 5px;
+}
 /* Footer escuro */
 .footer-escuro{
     display: flex;
@@ -184,4 +202,41 @@
 .disclaimer-escuro{
     font-size: 12px;
     color:black;
+}
+/* Outros */ 
+.entrada-claro{
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+    align-items: center;
+}
+.entrada-escuro{    
+    background-color: #161616;
+    border: 2px solid;
+    border-color:#161616;   
+    border-radius: 10px;
+    align-items: center;
+}
+.textarea-claro{
+  resize: none;
+  text-decoration: none;
+  border: none;
+  font-family: 'Rubik',sans-serif;
+  font-size: 22px;
+  align-items: center;
+  width: 180px;
+  max-height: 32px;
+}
+.textarea-escuro{
+    resize: none;
+    text-decoration: none;
+    border: none;
+    font-family: 'Rubik',sans-serif;
+    font-size: 22px;
+    align-items: center;
+    width: 180px;
+    color: #ffffff;
+    background-color: #161616;
+    max-height: 32px;       
 }

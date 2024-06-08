@@ -51,6 +51,7 @@ body {
   display: flex;
 }
 .text-description-escuro p{
+  color: #ffffff;
   margin-right: 10px;
   text-align: left;
   font-size: 20px;
@@ -62,7 +63,7 @@ body {
 }
 .text-escuro h2{
   font-size: 40px;
-  color: #003720;
+  color: #ffffff  ;
   margin-block: 10px;
 }
 .subtitulo-claro{
@@ -71,7 +72,7 @@ body {
 }
 .subtitulo-escuro{
   font-size: 65px;
-  color: #003720;
+  color: #ffffff;
 }
 .mudarmodo-claro{
   background-color: #067546;
@@ -97,10 +98,13 @@ body {
   border-radius: 10px;
   align-items: center;
 }
+.entrada-escuro Image{
+  filter: invert(100%) sepia(4%) saturate(7500%) hue-rotate(280deg) brightness(107%) contrast(105%);
+}
 .entrada-escuro{
-  background-color: #ffffff;
+  color: #161616;
+  background-color: #161616;
   border: 2px solid;
-  border-color: #ffffff;
   border-radius: 10px;
   align-items: center;
 }
