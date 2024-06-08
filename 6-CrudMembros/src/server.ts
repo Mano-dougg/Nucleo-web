@@ -14,7 +14,7 @@ const port = 3000;
 app.use(express.json());
 
 const prisma = new PrismaClient();
-const jwtSecret = 'your_jwt_secret'; // Replace with your secret key
+const jwtSecret = 'your_jwt_secret';
 
 // Middleware to authenticate JWT token
 const authenticateToken = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
