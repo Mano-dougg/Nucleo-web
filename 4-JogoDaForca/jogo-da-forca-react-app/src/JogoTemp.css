@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap');
+.pergunta{
+    margin-top: 10px;
+    margin-inline: 30%;
+    border-radius: 30px;
+    border: 5px solid;
+    text-align: center;
+    font-family: "Bebas Neue",sans-serif;
+    font-size: 30px;
+}
+.entrada-palavra{
+    resize: none;
+    height: 30px;
+    width: 200px;
+    margin-bottom: 20px;
+    border: 5px solid;
+    border-radius: 15px;
+    font-family: "Open sans",sans-serif;
+    text-align: center;
+}
+.aviso{
+    margin-top: 10px;
+    margin-inline: 30%;
+    border-radius: 30px;
+    border: 5px solid;
+    text-align: center;
+    font-family: "Bebas Neue",sans-serif;
+    font-size: 30px;
+}
+.botao{
+    margin-block: 10px;
+    font-family: "Bebas Neue",sans-serif;
+    font-size: 30px;
+    background: white;
+    border: 5px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.em-jogo{
+    font-family: "Bebas Neue",sans-serif;
+    font-size: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    border: 5px solid;
+    margin-inline: 25%;
+    border-radius: 20px;
+}
+.em-jogo h1{
+    margin-bottom: 0px;
+}
+#palavra{
+    margin-bottom: 0px;
+}
+.letras-botao{
+    font-family: "Open sans",sans-serif; 
+}
+.replay{
+    font-family: "Bebas Neue",sans-serif;
+    font-size: 20px;
+    background: white;
+    border: 3px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media (max-width:1100px){
+    .em-jogo{
+        margin: 0 20%;
+    }
+}
+@media (max-width:760px){
+    .pergunta{
+        margin-top: 10px;
+        margin-inline: 10%;
+        border-radius: 30px;
+        border: 5px solid;
+        text-align: center;
+        font-family: "Bebas Neue",sans-serif;
+        font-size: 30px;
+    }
+    .entrada-palavra{
+        width: 120px;
+    }
+    .aviso{
+        margin-inline: 10%;
+    }
+    .em-jogo{
+        margin: 0 10%;
+        padding: 0 10px;
+    }
+}
+@media (max-width:450px){
+    .pergunta{
+        margin: 0 5%;
+    }
+    .aviso{
+        margin: 10px 5%;
+    }
+}
+@media (max-width: 366){
+    .em-jogo{
+        padding: 5px 15px;
+    }
+}

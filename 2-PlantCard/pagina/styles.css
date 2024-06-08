@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background-color: #BCCDD0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-block: 0;
+    margin-inline: 0;
+}
+h1{
+    font-family: 'Josefin Sans',sans-serif;
+    font-weight: 600;
+    text-align: left;
+    padding-top: 50px;
+    font-size: 36px;
+    margin-top: 0;
+}
+p{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 20px;
+    text-align: justify;
+}
+.card{
+    display: flex;
+    background:#DFDFD6;
+    max-height: 492px;
+    max-width: 875px;
+    border-radius: 30px;
+    
+}
+.descricao{
+    padding-left: 30px;
+}
+.autor{
+    margin-top: 133px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    max-height: 60px;
+}
+.identificacao{
+    font-family: 'Overpass',sans-serif;
+    font-weight: 500;
+}
+.compartilhar{
+    background-color:#696F5A;
+    padding: 8px;
+    border-radius: 30px;
+}
+.hamburguer{
+    margin-left: 290px;
+}
+.botao{
+    border: none;
+    background-color:#DFDFD6;
+    cursor: pointer;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 15px 10px 15px;
+    margin-block: 0px;
+}
+li{
+    max-height: 23px;
+}
+.menu-compartilhar{
+    margin-top: 90px;
+    font-family: 'Overpass',sans-serif;
+    background-color: #696F5A;
+    font-size: 20px;
+    margin-left: 260px;
+    margin-right: 20px;
+    border-radius: 30px 30px 30px 30px;
+    display: none; 
+}
+a{
+    text-decoration: none;
+    color:#DFDFD6;
+}
+@media (width<= 450px){
+    h1{
+        padding-top: 25px;
+    }
+    .menu-compartilhar{
+        margin-left: 40px;
+        margin-top: 40px;
+        margin-bottom: 5px;
+    }
+    .plantas{
+        width:350px;
+        max-height: 202px;
+        overflow: hidden;
+        border-radius: 30px 30px 0px 0px;
+    }
+    .card{
+        max-height: 708px;
+        flex-direction: column;
+        max-width: 350px;
+        margin-block: 30px;
+    }
+    .descricao{
+        padding-top: 0px;
+        background:#DFDFD6;
+        max-height: 506px;
+        border-radius: 0px 0px 30px 30px;
+        padding-bottom: 15px;
+    }   
+    .autor{
+        margin-top: 88px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+    .identificacao{
+        max-height: max-content;
+    }
+    .hamburguer{
+        margin-left: 60px;  
+    }
+    #folhas{
+        width: 100%;
+    }
+}

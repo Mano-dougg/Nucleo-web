@@ -1,0 +1,242 @@
+.header-claro{
+    display: flex;
+    justify-content: end;
+    gap: 400px;
+}
+.header-claro h1{
+    color: #ffffff;
+}
+.header-escuro{
+    display: flex;
+    justify-content: space-around;      
+    gap: 400px;
+}
+.header-escuro h1{
+    color: black;
+}
+/** Card 1 Claro */
+.card1-claro{
+    background-color: #EDFFF7;
+    width: 302px;
+    height: 370px;
+    padding: 34px 25px 25px 34px;
+    border: 1px solid;
+    border-radius: 30px;
+}
+.card1-claro h2{
+    font-size: 33px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.card1-claro p{
+    font-size: 12px;
+    text-align: left;
+    color: #067546; 
+}
+.descricao1-claro{
+    margin-top: 5px;
+}
+.card1-claro button{
+    border: none;
+    background-color: #EDFFF7;
+    cursor: pointer;
+}
+.pessoal1-claro{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+/* Card 1 Escuro */
+.card1-escuro{
+    background-color: #161616;
+    width: 302px;
+    height: 370px;
+    padding: 34px 25px 25px 34px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #ffffff;
+}
+.card1-escuro h2{
+    color: #ffffff;
+    font-size: 33px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.card1-escuro p{
+    color: #ffffff;     
+    font-size: 12px;
+    text-align: left;
+}
+.descricao1-escuro{
+    margin-top: 5px;
+}
+.card1-escuro button{
+    border: none;
+    background-color: #161616;  ;
+    cursor: pointer;
+}
+.pessoal1-escuro{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+/* Final card 1 */  
+
+
+/* Card 2 claro */
+.card2-claro{
+    display: flex;
+    width: 493px;
+    height: 206px;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 30px;    
+    background-color: #EDFFF7;
+    padding: 20px 25px 25px 19px;
+}
+.container-claro{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.card2-claro h2{
+    font-size: 33px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.card2-claro p{
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.card2-claro button{
+    border: none;
+    background-color: #EDFFF7;
+    cursor: pointer;
+}
+.container2-claro{
+    margin-left: 5px;
+}
+.pessoal2-claro{
+    margin-left: 5px;
+    margin-block: 5px;
+    display: flex;
+    gap: 2px;
+}
+/* Card 2 escuro */
+.card2-escuro{
+    display: flex;
+    width: 493px;
+    height: 206px;
+    border: 1px solid;
+    border-color: #ffffff;
+    border-radius: 30px;    
+    background-color: #161616;
+    padding: 20px 25px 25px 19px;
+}
+.container2-escuro{
+    display: flex;  
+    flex-direction: column;
+    margin-top: 10px;
+}
+.card2-escuro h2{
+    color: #ffffff  ;
+    font-size: 33px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.card2-escuro p{
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #ffffff;
+}
+.card2-escuro button{
+    border: none;
+    background-color: #161616;
+    cursor: pointer;
+}
+.container2-escuro{
+    margin-left: 5px;
+}
+/* Footer claro */
+.footer-claro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #067546;
+    gap: 5px;
+    max-height: 80px;
+}
+.footer-claro h6{
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: 500;
+}
+.disclaimer-claro{
+    font-size: 12px;
+    color: #ffffff;
+}
+.pessoal2-escuro{
+    margin-left: 5px;
+    margin-block: 5px;
+    display: flex;
+    gap: 5px;
+}
+/* Footer escuro */
+.footer-escuro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #067546;
+    gap: 5px;
+    max-height: 80px;
+}
+.footer-escuro h6{
+    font-size: 26px;
+}
+.disclaimer-escuro{
+    font-size: 12px;
+    color:black;
+}
+/* Outros */ 
+.entrada-claro{
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+    align-items: center;
+}
+.entrada-escuro{    
+    background-color: #161616;
+    border: 2px solid;
+    border-color:#161616;   
+    border-radius: 10px;
+    align-items: center;
+}
+.textarea-claro{
+  resize: none;
+  text-decoration: none;
+  border: none;
+  font-family: 'Rubik',sans-serif;
+  font-size: 22px;
+  align-items: center;
+  width: 180px;
+  max-height: 32px;
+}
+.textarea-escuro{
+    resize: none;
+    text-decoration: none;
+    border: none;
+    font-family: 'Rubik',sans-serif;
+    font-size: 22px;
+    align-items: center;
+    width: 180px;
+    color: #ffffff;
+    background-color: #161616;
+    max-height: 32px;       
+}

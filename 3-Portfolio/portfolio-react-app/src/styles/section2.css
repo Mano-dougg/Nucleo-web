@@ -1,0 +1,87 @@
+h4{
+    font-size: 20px;
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+h2{
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+#lovedogs{
+    width: 640px;
+    height: 370px;
+}
+#plantcard{
+    width: 640px;
+    height: 370px;
+    border-radius: 20px;
+}
+.container2{
+    display: flex;
+    flex-direction: column;
+    max-width: 960px;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+}
+.container2 :nth-child(4){
+    flex-direction: row-reverse;
+}
+.tabela{
+    gap: 10px;
+    display: flex;
+    padding-bottom: 36px;
+}
+.botao-descricao{
+    border: 1px solid;
+    padding-inline: 16px;
+    padding-block: 30px;
+    border-radius: 44px;
+    border-color: #0065FF;
+    max-width: fit-content;
+}
+@media(width <= 1000px){
+    .container2{
+        padding-inline: 15px;
+    }
+}
+@media(width <= 805px){
+    .container2{
+        margin: 0 auto;
+    }
+    .moldura{
+        max-width: fit-content;
+        margin: 0 auto;
+    }
+    #lovedogs{
+        width: 400px;
+        margin: 0 auto;
+    }
+    #plantcard{
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .botao-descricao{
+        margin: 0 auto;
+        margin-bottom: 15px ;
+        padding-inline: 80px;
+        padding-block: 10px;
+        border-radius: 30px;
+    }
+    .tabela{
+        display: block;
+    }
+}
+@media(width <= 450px){
+    #lovedogs{
+        width: 300px;
+    }
+    #plantcard{
+        width: 300px;
+    }
+    .moldura{
+        max-width: fit-content;
+        margin: 0 auto;
+    }
+    .botao-descricao{
+        margin: 0 auto;
+        margin-bottom: 15px ;
+    }
+}

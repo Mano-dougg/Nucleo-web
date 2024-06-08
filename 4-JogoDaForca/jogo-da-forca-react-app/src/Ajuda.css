@@ -1,0 +1,64 @@
+.ajuda-overlay{
+    justify-content: center;
+    font-family: "Bebas Neue",sans-serif;
+    border: 5px solid;
+    border-radius: 30px;
+    margin-inline: 25%;
+    padding-bottom: 20px;
+    padding-inline: 20px;
+    margin-top: 20px;
+}
+.ajuda-content{
+    text-align: left;
+}
+.ajuda-content li{
+    list-style: none;
+    text-align: left;
+    font-size: 30px;
+    margin-left: 0;
+}
+.atencao{
+    color: red;
+}
+.ajuda-content h2{
+    font-size: 40px;
+    align-self: center;
+}
+.ajuda-content p{
+    font-size: 35px;
+}
+.ajuda-content button{
+    margin-top: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: white;
+    font-family: "Monospace",sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.joia{
+    color: green;
+}
+@media (max-width: 800px){
+    .ajuda-overlay{
+        margin-inline: 20%;
+    }
+}
+@media (max-width: 600px){
+    .ajuda-overlay{
+        margin-inline: 10%;
+    }
+}
+@media (max-width: 600px){
+    .ajuda-content h2{
+        font-size: 30px;
+        align-self: center;
+    }
+    .ajuda-content li{
+        font-size: 20px;
+    }
+    .ajuda-content p{
+        font-size: 20px;
+    }
+
+}

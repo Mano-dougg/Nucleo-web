@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+}
+.container-header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #067546;
+  justify-content:center;
+}
+.principal-claro{
+  font-family: 'Rubik',sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+.principal-escuro{
+  background-color: black;
+  font-family: 'Rubik',sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.cards1{
+  display: flex;
+  gap: 10px;
+}
+.cards2{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.text-description-claro{
+  max-width: 1087px;
+  display: flex;
+}
+.text-description-claro p{
+  margin-right: 10px;
+  text-align: left;
+  font-size: 20px;
+}
+.text-description-escuro{
+  max-width: 1087px;
+  display: flex;
+}
+.text-description-escuro p{
+  color: #ffffff;
+  margin-right: 10px;
+  text-align: left;
+  font-size: 20px;
+}
+.text-claro h2{
+  font-size: 40px;
+  color: #003720;
+  margin-block: 10px;
+}
+.text-escuro h2{
+  font-size: 40px;
+  color: #ffffff  ;
+  margin-block: 10px;
+}
+.subtitulo-claro{
+  font-size: 65px;
+  color: #003720;
+}
+.subtitulo-escuro{
+  font-size: 65px;
+  color: #ffffff;
+}
+.mudarmodo-claro{
+  background-color: #067546;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+}
+.mudarmodo-escuro{
+  background-color: #067546;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+}
+.container{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.entrada-claro{
+  background-color: #ffffff;
+  border: 2px solid;
+  border-color: #ffffff;
+  border-radius: 10px;
+  align-items: center;
+}
+.entrada-escuro Image{
+  filter: invert(100%) sepia(4%) saturate(7500%) hue-rotate(280deg) brightness(107%) contrast(105%);
+}
+.entrada-escuro{
+  color: #161616;
+  background-color: #161616;
+  border: 2px solid;
+  border-radius: 10px;
+  align-items: center;
+}
+textarea{
+  resize: none;
+  text-decoration: none;
+  border: none;
+  font-family: 'Rubik',sans-serif;
+  font-size: 22px;
+  align-items: center;
+  width: 180px;
+}
+.pesquisar{
+  max-height: 32px;
+}

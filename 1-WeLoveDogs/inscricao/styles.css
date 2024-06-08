@@ -1,0 +1,109 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0;
+
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+.item{
+    padding: 40px;
+    font-size: 16px;
+    display: inline-block;
+    white-space: nowrap;
+    
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color:#000000;
+}
+a:visited{
+    color: #000000;
+}
+.welovedogs{
+    font-size: 48px;
+    margin: 0;
+}
+.verde{
+    color:#7ED321;
+}
+p{
+    font-size: 16px;
+    text-align: justify;
+}
+.inscricao{
+    background-color: #7ED321;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-inline: 32px;
+    border-radius: 15px;
+}
+h1{
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    padding-left: 12%;
+}
+.entrada{
+    display: flex;
+}
+input[type=text] {
+    width: 350px;
+    border-color: #9F9F9F;
+    border-radius: 4px;
+    border-width: 1px;
+    height: 30px;
+}
+.entradas{
+    flex-direction: column;
+    padding-right: 50px;
+    margin-left: 0;
+    
+}
+.entrada-simples{
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.enviar{
+    margin-left: auto;
+    font-weight: bold;
+    background-color: #7ED321;
+    padding-inline: 35px;
+    border-radius: 10px;
+}
+.simples{
+    margin-right: 40px;
+    margin-left: 30px;
+}
+.pergunta{
+    margin-left: 10px;
+    margin-right: 57px;
+}
+#nome{
+    margin-left: 40px;
+}
+#idade{
+    margin-left: 43px;
+}
+#email{
+    margin-left: 36px;
+}
+#amacachorros{
+    width: 350px;
+    height: 80px;
+}
