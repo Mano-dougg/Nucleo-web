@@ -21,6 +21,15 @@ export default class UsersService {
     return user;
   };
 
+  public async getByEmail(email: string) {
+    const user: User | null = await this.prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+    return user;
+  }
+
   public async create(userData: Omit<User, "id">) {
     const user: User = await this.prisma.user.create({
       data: userData,

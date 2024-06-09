@@ -23,6 +23,20 @@ export default class UsersController {
     }
   }
 
+  public getByEmail = async (req: Request, res: Response) => {
+    const { q } = req.query;
+
+    try {
+      const user = await this.usersService.getByEmail(q as string);
+      if (!user) {
+        throw new Error("User not found");
+      }
+      return res.status(StatusCodes.OK).json(user);
+    } catch (err) {
+      return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    }
+  }
+
   public async list(req: Request, res: Response) {
     try {
       const users = await this.usersService.list();
