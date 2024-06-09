@@ -8,7 +8,7 @@ rota.post('/usuario/adc', async (request: Request, response: Response) => {
 
     const existe = await prisma.usuario.findUnique({ where: {email} });
 
-    if (existe) {
+    if(existe){
         return response.json({ error: 'Email já cadastrado' });
     }
 
@@ -41,15 +41,16 @@ rota.get('/usuario/buscaid', async (request: Request, response: Response) => {
     try {
         const usuario = await prisma.usuario.findUnique({ where: { id: Number(id) } });
 
-        if (usuario) {
+        if(usuario){
             return response.json(usuario);
         } else {
             response.json({ error: 'Id não encontrado'}); 
         }
-    } catch (error) {
+    } catch (error){
         response.status(500).json({ error: 'Erro' }); 
     }
 });
+
 
 rota.put('/usuario/atualizaid', async (request: Request, response: Response) => {
     const { id } = request.body;  
@@ -59,7 +60,7 @@ rota.put('/usuario/atualizaid', async (request: Request, response: Response) => 
     try {
         const usuario = await prisma.usuario.findUnique({ where: { id: Number(id) } });
 
-        if (usuario) {
+        if(usuario){
             
             const existe = await prisma.usuario.findUnique({where: { email }})
             const another = await prisma.usuario.findUnique({where: { id: Number(id) }})
@@ -67,7 +68,7 @@ rota.put('/usuario/atualizaid', async (request: Request, response: Response) => 
             if(existe?.email == another?.email){
                     return response.json({ error: 'Email já cadastrado' });
             }
-            if (email === usuario.email) {
+            if(email === usuario.email) {
                 return response.json({ error: 'Email não atualizado' });
             }
             const atualizado = await prisma.usuario.update({
@@ -88,46 +89,57 @@ rota.put('/usuario/atualizaid', async (request: Request, response: Response) => 
         } else {
             response.json({ error:'Id não encontrado' });
         }
-    } catch (error) {
+    } catch (error){
         response.json({ error: 'Erro' });
     }
 });
 
 
 rota.delete('/usuario/deletar', async (request: Request, response: Response) => {
+
     const {id}  = request.body;
 
     try {
+
         const usuario = await prisma.usuario.findUnique({ where: { id: Number(id) } });
         
-        if (usuario) {
+        if(usuario){
             const deletar = await prisma.usuario.delete({ where: { id: Number(id) } })
 
              return response.json({
                 message: 'Usuario deletado',
                 deletar
             });
-        } else {
-            response.json({ error: 'Id não encontrado' }); 
+
+        } else{
+
+            response.json({ error: 'Id não encontrado' });
+
         }
-    } catch (error) {
+
+    } catch (error){
+
         response.json({ error: 'Erro' }); 
+
     }
 });
 
 
 rota.get('/usuario/buscaemail',  async (request: Request, response: Response)=> {
+
     const { email } = request.body;
 
     const usuario = await prisma.usuario.findUnique({where: { email }});
 
     try {
-        if (usuario) {
+
+        if(usuario){
             return response.json(usuario);
         } else {
             response.json({ error: 'Usuario não encontrado' });
         }
-    } catch (error) {
+
+    } catch (error){
         response.status(500).json({ error: 'Erro' });
     }
 });
@@ -140,7 +152,7 @@ rota.get('/usuario/buscanome', async(request:Request, response:Response) => {
     const usuario = await prisma.usuario.findMany({where: { name }});
 
     try{
-        if (usuario){
+        if(usuario){
             return response.json(usuario)
         }
         else{
@@ -153,18 +165,19 @@ rota.get('/usuario/buscanome', async(request:Request, response:Response) => {
 });
 
 
-// rota.get('/usuario/mostrartodos', async(request:Request, response:Response) => {
+rota.get('/usuario/mostrartodos', async(request:Request, response:Response) => {
 
-//     const usuario = await prisma.usuario;
+    const usuario = await prisma.usuario.findMany();
 
-//     try{
-//             return response.json(usuario)
-//     }
-//     catch(error){
-//         response.status(500).json("Erro")
-//     }
-// });
-
+    try{
+        if(usuario){
+            return response.json(usuario)
+        }
+    }
+    catch(error){
+        response.status(500).json("Erro")
+    }
+});
 
 
 export default rota
