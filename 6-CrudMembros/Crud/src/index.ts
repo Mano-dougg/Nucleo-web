@@ -8,6 +8,7 @@ const prisma = new PrismaClient()
 
  const Port = 5001
 
+
  app.use(Express.json())
 
  app.use('/', rota)
