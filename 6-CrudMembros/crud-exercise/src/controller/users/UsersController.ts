@@ -37,6 +37,21 @@ export default class UsersController {
     }
   }
 
+  public getByName = async (req: Request, res: Response) => {
+    const { q } = req.query;
+    console.log(q);
+
+    try {
+      const user = await this.usersService.getByName(q as string);
+      if (user.length === 0) {
+        throw new Error(`No user found containing ${q} in name`);
+      }
+      return res.status(StatusCodes.OK).json(user);
+    } catch (err: any) {
+      return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
+    }
+  }
+
   public async list(req: Request, res: Response) {
     try {
       const users = await this.usersService.list();

@@ -7,6 +7,7 @@ const usersRouter = Router();
 const usersController = new UsersController();
 
 usersRouter.post('/', validateData(UserCreateInputSchema), (req: Request, res: Response) => usersController.create(req, res));
+usersRouter.get('/name', (req: Request, res: Response) => usersController.getByName(req, res));
 usersRouter.get('/email', (req: Request, res: Response) => usersController.getByEmail(req, res));
 usersRouter.get('/:id', (req: Request, res: Response) => usersController.getById(req, res));
 usersRouter.get('/', (req: Request, res: Response) => usersController.list(req, res));

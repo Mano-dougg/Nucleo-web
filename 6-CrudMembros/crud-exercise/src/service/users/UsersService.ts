@@ -30,6 +30,15 @@ export default class UsersService {
     return user;
   }
 
+  public async getByName(name: string) {
+    const user: User[] = await this.prisma.user.findMany({
+      where: {
+        name: { contains: name }
+      },
+    });
+    return user;
+  }
+
   public async create(userData: Omit<User, "id">) {
     const user: User = await this.prisma.user.create({
       data: userData,
