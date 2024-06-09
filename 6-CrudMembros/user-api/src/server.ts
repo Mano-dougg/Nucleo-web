@@ -35,7 +35,7 @@ app.post('/users', async (req: Request, res: Response) => {
 
     res.status(201).json(user);
   } catch (error) {
-    res.status(500).json({ error: 'Não foi possível criar o usuário (parâmetros inválidos)' });
+    res.status(500).json({ error: 'Não foi possível criar usuário' });
   }
 
 });
@@ -54,7 +54,7 @@ app.get('/users/:id', async(req: Request, res: Response) => {
 
     res.status(404).json({ error: 'Id não cadastrado' });
   } catch (error){
-    res.status(500).json({ error: 'Id inválido' });
+    res.status(500).json({ error: 'Não foi possível buscar o id' });
   }
 });
 
@@ -72,7 +72,7 @@ app.get('/users/email/:email', async(req: Request, res: Response) => {
 
     res.status(404).json({error: 'Email não cadastrado'})
   } catch (error) {
-    res.status(500).json({ error: 'Email inválido' });
+    res.status(500).json({ error: 'Não foi possível buscar o email' });
   }
 })
 
@@ -90,7 +90,7 @@ app.get('/users/name/:name', async(req: Request, res: Response) => {
 
     return res.status(404).json({error: "Nome não cadastrado"});
   } catch (error){
-    res.status(500).json({ error: 'Nome inválido' });
+    res.status(500).json({ error: 'Não foi possível buscar o nome' });
   }
 })
 
@@ -110,7 +110,7 @@ app.delete('/users/:id', async(req: Request, res: Response) => {
     return res.status(404).json({ error: "Id não cadastrado" });
 
   } catch (error){
-      res.status(500).json({ error: "Id inválido"});
+      res.status(500).json({ error: "Não foi possível deletar usuário"});
   }
 })
 
