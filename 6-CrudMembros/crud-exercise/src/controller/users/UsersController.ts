@@ -77,4 +77,43 @@ export default class UsersController {
       return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
     }
   }
+
+  public async update(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const {
+      name,
+      email,
+      password,
+      age,
+      city,
+      state,
+    }: Partial<User> = req.body;
+
+    try {
+      const user = await this.usersService.getById(Number(id));
+      if (!user) {
+        throw new Error("User not found");
+      }
+
+      const newUser = await this.usersService.update(Number(id), user, {
+        name,
+        email,
+        password,
+        age,
+        city,
+        state,
+      });
+      return res.status(StatusCodes.CREATED).json(newUser);
+    } catch (err) {
+      if (err instanceof Prisma.PrismaClientKnownRequestError) {
+        if (err.code === "P2002") {
+          return res.status(StatusCodes.CONFLICT).json({ message: "Email already taken" });
+        }
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Internal server error" });
+      } else {
+        return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+      }
+    }
+  }
 };

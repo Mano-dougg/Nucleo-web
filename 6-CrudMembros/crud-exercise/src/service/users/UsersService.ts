@@ -21,9 +21,9 @@ export default class UsersService {
     return user;
   };
 
-  public async create(userDdata: Omit<User, "id">) {
+  public async create(userData: Omit<User, "id">) {
     const user: User = await this.prisma.user.create({
-      data: userDdata,
+      data: userData,
     });
     return user;
   }
@@ -35,5 +35,18 @@ export default class UsersService {
       },
     })
     return deletedUser;
+  }
+
+  public async update(id: number, user: User, userData: Partial<User>) {
+    const newUser: User = await this.prisma.user.update({
+      where: {
+        id,
+      },
+      data: {
+        ...user,
+        ...userData,
+      },
+    });
+    return newUser;
   }
 };
