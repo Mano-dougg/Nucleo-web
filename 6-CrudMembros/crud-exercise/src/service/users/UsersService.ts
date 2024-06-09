@@ -20,4 +20,11 @@ export default class UsersService {
     });
     return user;
   };
+
+  public async create(userDdata: Omit<User, "id">) {
+    const user: User = await this.prisma.user.create({
+      data: userDdata,
+    });
+    return user;
+  }
 };

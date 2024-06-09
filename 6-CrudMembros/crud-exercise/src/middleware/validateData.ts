@@ -2,15 +2,15 @@ import { Request, Response, NextFunction } from 'express';
 import { z, ZodError } from 'zod';
 import { StatusCodes } from 'http-status-codes';
 
-export function validateData(zodSchema: z.ZodObject<any, any>) {
+export function validateData(zodSchema: z.ZodType<any, any>) {
   return (req: Request, res: Response, next: NextFunction) => {
     try {
       zodSchema.parse(req.body);
       next();
     } catch (error) {
       if (error instanceof ZodError) {
-      const errorMessages = error.errors.map((issue: any) => ({
-            message: `${issue.path.join('.')} is ${issue.message}`,
+        const errorMessages = error.errors.map((issue: any) => ({
+          message: `${issue.path.join('.')} is ${issue.message}`,
         }))
         res.status(StatusCodes.BAD_REQUEST).json({ error: 'Invalid data', details: errorMessages });
       } else {
