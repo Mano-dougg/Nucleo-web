@@ -33,6 +33,13 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    colors: {
+      "bg-primary": "rgba(229, 207, 148, 1)",
+      "bg-cardClient": "rgba(255, 255, 255, 1)",
+      "bg-card": "rgba(255, 255, 255, 0.8) ",
+      "text-primary":"rgba(95, 51, 5, 1)",
+      "bg-card2":"rgba(95, 51, 5, 1)"
+    }
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
