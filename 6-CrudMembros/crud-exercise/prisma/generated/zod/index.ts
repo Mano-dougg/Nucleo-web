@@ -26,10 +26,22 @@ export const SortOrderSchema = z.enum(['asc','desc']);
 export const UserSchema = z.object({
   id: z.number().int(),
   name: z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),
+  /**
+   * FAKE:faker.number.int({min: 14, max: 130})
+   */
   age: z.number().int().min(14, { message: "No under aged permitted" }).max(130, { message: "Unlikely age entered" }),
   email: z.string().email({ message: "Invalid email address" }).min(8, { message: "Minimum 8 characters" }),
+  /**
+   * FAKE:faker.internet.password(10)
+   */
   password: z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),
+  /**
+   * FAKE:faker.location.state({ abbreviated: true })
+   */
   state: z.string().length(2, { message: "Use abbreviation"}),
+  /**
+   * FAKE:faker.location.city()
+   */
   city: z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),
 })
 

@@ -26,8 +26,8 @@ model User {
   id       Int    @id @default(autoincrement())
   ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
   name     String
-  ///@zod.number.int().min(14, { message: "No under aged permitted" }).max(130, { message: "Unlikely age entered" })
-  age      Int
+  ///FAKE:faker.number.int({min: 14, max: 130})
+  age      Int ///@zod.number.int().min(14, { message: "No under aged permitted" }).max(130, { message: "Unlikely age entered" })
   ///@zod.string.email({ message: "Invalid email address" }).min(8, { message: "Minimum 8 characters" })
   email    String @unique
   ///FAKE:faker.internet.password(10)

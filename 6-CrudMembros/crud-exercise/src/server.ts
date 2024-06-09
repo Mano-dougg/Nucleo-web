@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 
 const app = express();
 // Use the PORT environment variable if present in .env
-const port = process.env.EXPRESS_PORT || 3000;
+const port = Number(process.env.EXPRESS_PORT) || 3000;
 
 app.get("/", (_req: Request, res: Response) => {
   res.send("Initial route.");

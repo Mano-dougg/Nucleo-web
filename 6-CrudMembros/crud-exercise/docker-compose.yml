@@ -2,22 +2,22 @@ services:
   node:
     image: node:16-alpine
     container_name: node
-    # keeps container running
+    # Keeps container running
     tty: true
-    # allows to read from stdin
+    # Allows to read from stdin
     stdin_open: true
     command: sh
-    # restarts the container unless stopped
+    # Restarts the container unless stopped
     restart: unless-stopped
-    # exposes default node port
+    # Exposes default Node.js port
     ports:
       - "3000:3000"
     volumes:
       - ./:/app
     working_dir: /app
-    # configuration and sensitive data
+    # Configuration and sensitive data
     env_file: .env
-    # environment variables
+    # Environment variables
     environment:
       - MYSQL_HOST=${MYSQL_HOST}
     depends_on:
@@ -29,21 +29,25 @@ services:
       timeout: 10s
       retries: 5
   db:
-    image: mysql:8
+    image: mysql:8.0.32
     container_name: db
     restart: unless-stopped
-    # exposes default MySQL port
+    # Exposes default MySQL port
     ports:
-      - "3306:3306"
-    # configuration and sensitive data
+      - "3307:3306"
+    # Configuration and sensitive data
     env_file: .env
+    command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    # Applies initial migration on build
+    volumes:
+      - ./prisma/migrations/migration.sql:/docker-entrypoint-initdb.d/migration.sql
     healthcheck:
       # Pings MySQL server
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 10s
       retries: 5
