@@ -10,6 +10,6 @@ usersRouter.post('/', validateData(UserCreateInputSchema), (req: Request, res: R
 usersRouter.get('/:id', (req: Request, res: Response) => usersController.getById(req, res));
 usersRouter.get('/', (req: Request, res: Response) => usersController.list(req, res));
 // usersRouter.put('/:id', validateData(), UsersController.update);
-// usersRouter.delete('/:id', validateData(schema), UsersController.delete);
+usersRouter.delete('/:id', (req: Request, res: Response) => usersController.delete(req, res));
 
 export default usersRouter;
