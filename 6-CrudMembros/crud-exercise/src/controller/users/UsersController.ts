@@ -7,20 +7,43 @@ import { Prisma } from "@prisma/client";
 export default class UsersController {
   constructor(
     private usersService = new UsersService(),
-    private NOT_FOUND_MESSAGE = (fieldName: string, field: string) => `No user found with ${fieldName} ${field}`,
-    private EMAIL_TAKEN_MESSAGE = (email: string) => `Email ${email} already taken`,
-    private INTERNAL_ERROR_MESSAGE = "Internal server error"
   ) { }
+
+  private NOT_FOUND_MESSAGE = (fieldName: string, field: string) => `No user found with ${fieldName} ${field}`;
+  private EMAIL_TAKEN_MESSAGE = (email: string) => `Email ${email} already taken`;
+  private INTERNAL_ERROR_MESSAGE = "Internal server error";
+
+  private passwordlessUser = (user: User) => {
+    function exclude<User, Key extends keyof User>(
+      user: User,
+      keys: Key[]
+    ): Omit<User, Key> {
+      return Object.fromEntries(
+        Object.entries(user as { [ key: string ]: any }).filter(([ key ]) => !keys.includes(key as Key))
+      ) as Omit<User, Key>;
+    }
+    return exclude(user, [ "password" ]);
+  }
+
+  private findUser = async (id: number) => {
+    const user = await this.usersService.getById(id);
+    if (!user) {
+      throw new Error(this.NOT_FOUND_MESSAGE("id", id.toString()));
+    }
+    return user;
+  }
+
+  private userResponse = (res: Response, responseCode: StatusCodes, user: User) => {
+    const sanitizedUser = this.passwordlessUser(user);
+    return res.status(responseCode).json(sanitizedUser);
+  }
 
   public getById = async (req: Request, res: Response) => {
     const { id } = req.params;
 
     try {
-      const user = await this.usersService.getById(Number(id));
-      if (!user) {
-        throw new Error(this.NOT_FOUND_MESSAGE("id", id));
-      }
-      return res.status(StatusCodes.OK).json(user);
+      const foundUser = await this.findUser(Number(id));
+      return this.userResponse(res, StatusCodes.OK, foundUser);
     } catch (err: any) {
       return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
     }
@@ -30,11 +53,11 @@ export default class UsersController {
     const { q } = req.query;
 
     try {
-      const user = await this.usersService.getByEmail(q as string);
-      if (!user) {
+      const foundUser = await this.usersService.getByEmail(q as string);
+      if (!foundUser) {
         throw new Error(this.NOT_FOUND_MESSAGE("email", q as string));
       }
-      return res.status(StatusCodes.OK).json(user);
+      return this.userResponse(res, StatusCodes.OK, foundUser);
     } catch (err: any) {
       return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
     }
@@ -44,11 +67,12 @@ export default class UsersController {
     const { q } = req.query;
 
     try {
-      const user = await this.usersService.getByName(q as string);
-      if (user.length === 0) {
+      const foundUsers = await this.usersService.getByName(q as string);
+      if (foundUsers.length === 0) {
         throw new Error(this.NOT_FOUND_MESSAGE("name", q as string));
       }
-      return res.status(StatusCodes.OK).json(user);
+      const users = foundUsers.map((user) => this.passwordlessUser(user));
+      return res.status(StatusCodes.OK).json(users);
     } catch (err: any) {
       return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
     }
@@ -56,7 +80,8 @@ export default class UsersController {
 
   public async list(req: Request, res: Response) {
     try {
-      const users = await this.usersService.list();
+      const foundUsers = await this.usersService.list();
+      const users = foundUsers.map((user) => this.passwordlessUser(user));
       return res.status(StatusCodes.OK).json(users);
     } catch (err) {
       return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: this.INTERNAL_ERROR_MESSAGE });
@@ -74,7 +99,7 @@ export default class UsersController {
     }: Omit<User, "id"> = req.body;
 
     try {
-      const user = await this.usersService.create({
+      const createdUser = await this.usersService.create({
         name,
         email,
         password,
@@ -82,7 +107,7 @@ export default class UsersController {
         city,
         state,
       });
-      return res.status(StatusCodes.CREATED).json(user);
+      return this.userResponse(res, StatusCodes.CREATED, createdUser);
     } catch (err) {
       if (err instanceof Prisma.PrismaClientKnownRequestError) {
         if (err.code === "P2002") {
@@ -97,18 +122,15 @@ export default class UsersController {
     const { id } = req.params;
 
     try {
-      const user = await this.usersService.getById(Number(id));
-      if (!user) {
-        throw new Error(this.NOT_FOUND_MESSAGE("id", id));
-      }
-      const result = await this.usersService.delete(Number(id))
-      return res.status(StatusCodes.OK).json(result);
+      const _ = await this.findUser(Number(id));
+      const deletedUser = await this.usersService.delete(Number(id))
+      return this.userResponse(res, StatusCodes.OK, deletedUser);
     } catch (err: any) {
       return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
     }
   }
 
-  public async update(req: Request, res: Response) {
+  public update = async (req: Request, res: Response) => {
     const { id } = req.params;
 
     const {
@@ -121,20 +143,18 @@ export default class UsersController {
     }: Partial<User> = req.body;
 
     try {
-      const user = await this.usersService.getById(Number(id));
-      if (!user) {
-        throw new Error(this.NOT_FOUND_MESSAGE("id", id));
+      const foundUser = await this.findUser(Number(id));
+      if (foundUser) {
+        const newUser = await this.usersService.update(Number(id), foundUser, {
+          name,
+          email,
+          password,
+          age,
+          city,
+          state,
+        });
+        return this.userResponse(res, StatusCodes.CREATED, foundUser);
       }
-
-      const newUser = await this.usersService.update(Number(id), user, {
-        name,
-        email,
-        password,
-        age,
-        city,
-        state,
-      });
-      return res.status(StatusCodes.CREATED).json(newUser);
     } catch (err: any) {
       if (err instanceof Prisma.PrismaClientKnownRequestError) {
         if (err.code === "P2002") {
