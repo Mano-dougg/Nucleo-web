@@ -98,7 +98,7 @@ export default function Header() {
             <Name>Entrada</Name>
             <Icon src="cypher.svg" alt="Cifrão de dinheiro" />
           </NameAndIcon>
-          <Info>R$ 0</Info>
+          <Info>R$ 0,00</Info>
         </InfoDivBrown>
       </TransactionDiv>
     </HeaderStyle>
