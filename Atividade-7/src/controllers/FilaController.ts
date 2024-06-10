@@ -34,5 +34,44 @@ export default {
         } catch (error) {
             return response.status(500).json({ message: error.message });
         }
+    },
+    async listarPedidos(request: Request, response: Response) {
+        try {
+            const pedidos = await prisma.fila.findMany();
+            return response.json({
+                pedidos
+            });
+    
+        } catch (error) {
+            return response.status(500).json({ message: error.message });
+        }
+    },
+
+    async deleteFila(request: Request, response: Response) {
+        try {
+            const { id } = request.params;
+            const filaExist = await prisma.fila.findUnique({ where: { id: parseInt(id) } });
+            if (!filaExist) {
+                return response.status(404).json({
+                    error: true,
+                    message: 'Erro: item não encontrado!'
+                });
+            }
+    
+            await prisma.fila.delete({ where: { id: parseInt(id) } });
+    
+            return response.json({
+                error: false,
+                message: ' ${nome} o item foi excluido !'
+            });
+        } catch (error) {
+            // Se ocorrer algum erro, retorne um status 500 com uma mensagem de erro
+            return response.status(500).json({ message: error.message });
+        }
     }
+    
+
+
+
+
 };

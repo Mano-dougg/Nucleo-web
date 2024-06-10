@@ -9,8 +9,13 @@ const VALOR_PAO = 2.50;
 app.get('/', (request,response) => {
 return response.send({message:"hello world"})
 })
-
+//metodos Get
+app.get('/listarPedidos', FilaController.listarPedidos)
+//metodos post
 app.post('/createFila', FilaController.createFila )
+//metodos delete
+app.delete('/delete/:id', FilaController.deleteFila);
+
 
 
 app.listen(PORT, () => {
