@@ -1,10 +1,12 @@
-import CardClient from "@/components/CardClient";
+import Header from "@/components/Header";
+import Lista from "@/components/Lista";
 
 function DialogDemo() {
   return (
-    <div className="flex md:flex-row gap-4 w-full flex-col">
-      <CardClient cliente={"Alexandre Shyjada Sousa"} totalPao={"10"} totalPagar={"10,00"}></CardClient>
-    </div>
+    <main className="flex  h-screen gap-4 w-full flex-col ">
+      <Header />
+      <Lista />
+    </main>
   );
 }
 

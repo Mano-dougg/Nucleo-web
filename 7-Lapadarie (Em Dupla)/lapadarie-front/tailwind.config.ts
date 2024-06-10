@@ -36,9 +36,12 @@ const config = {
     colors: {
       "bg-primary": "rgba(229, 207, 148, 1)",
       "bg-cardClient": "rgba(255, 255, 255, 1)",
-      "bg-card": "rgba(255, 255, 255, 0.8) ",
-      "text-primary":"rgba(95, 51, 5, 1)",
-      "bg-card2":"rgba(95, 51, 5, 1)"
+      "bg-card": "rgba(255, 255, 255) ",
+      "bg-modal-overlay":"rgba(229, 207, 148, 0.5)",
+      "text-primary": "rgba(95, 51, 5, 1)",
+      "bg-card2": "rgba(95, 51, 5, 1)",
+      "bg-header": "#965A1B",
+      "bg-input":"rgba(245, 245, 245, 1)"
     }
   },
   plugins: [require("tailwindcss-animate")],

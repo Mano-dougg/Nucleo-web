@@ -17,7 +17,7 @@ const CardClient: React.FC<CardClientProps> = ({
   totalPao, //Vai receber o total de pães que o cliente comprou
 }) => {
   return (
-    <div className=" w-full p-4 bg-bg-cardClient rounded-md flex gap-1 justify-between items-center">
+    <div className=" w-full p-4 bg-bg-cardClient rounded-md flex gap-1 justify-between items-center h-fit mb-5">
       <div
         className={`
         w-full rounded-md flex flex-col gap-1 

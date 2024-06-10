@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({
   icon
 }) => {
   return (
-    <div className={`${varianteCard} rounded-md gap-4 flex-1`}>
+    <div className={`${varianteCard} w-full rounded-md gap-4 flex-1 grow max-w-[330px]`}>
       <p className="text-base w-full text-black flex justify-between ">
         {titulo}
         <Image src={icon} alt={"icon"} width={22} height={22} className="max-h-[22px]"/>
