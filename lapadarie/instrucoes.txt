@@ -1,0 +1,6 @@
+seguir documentação do express 
+em seguida do prisma 
+
+baixar types do expres, node -D
+
+
