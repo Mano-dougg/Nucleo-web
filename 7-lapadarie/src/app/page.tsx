@@ -9,7 +9,41 @@ export default function Home() {
       <Header></Header>
       <section className="queue">
         <p>+ Adicionar pessoa a fila</p>
-        <QueueCard></QueueCard>
+        <QueueCard
+          clientName="Alexandre Shyjada Sousa"
+          totalBread="50 pães"
+          toPay="R$ 25,00"
+        />
+        <QueueCard
+          clientName="Alexandre Shyjada Sousa"
+          totalBread="50 pães"
+          toPay="R$ 25,00"
+        />
+        <QueueCard
+          clientName="Alexandre Shyjada Sousa"
+          totalBread="50 pães"
+          toPay="R$ 25,00"
+        />
+        <QueueCard
+          clientName="Alexandre Shyjada Sousa"
+          totalBread="50 pães"
+          toPay="R$ 25,00"
+        />
+        <QueueCard
+          clientName="Alexandre Shyjada Sousa"
+          totalBread="50 pães"
+          toPay="R$ 25,00"
+        />
+        <QueueCard
+          clientName="Alexandre Shyjada Sousa"
+          totalBread="50 pães"
+          toPay="R$ 25,00"
+        />
+        <QueueCard
+          clientName="Alexandre Shyjada Sousa"
+          totalBread="50 pães"
+          toPay="R$ 25,00"
+        />
       </section>
     </>
   );

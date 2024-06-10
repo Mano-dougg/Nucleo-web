@@ -9,14 +9,14 @@ header .logoContainer img{
     margin-bottom: 112px;
 }
 
-
-
-header .contentCardContainer{
+.contentCardContainer {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 10px; 
 }
 
-.contentCard{
+.contentCard {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -25,7 +25,9 @@ header .contentCardContainer{
     background-color: #FFFFFF;
     border-radius: 8px;
     margin-bottom: 80px;
+    box-sizing: border-box; 
 }
+
 
 .contentCard.highlight{
     background-color: #5F3305;
