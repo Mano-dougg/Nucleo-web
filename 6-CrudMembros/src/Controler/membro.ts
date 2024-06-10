@@ -9,7 +9,6 @@ export default{
 
             if (usuarioExiste){
                 return res.json({
-                    error: true,
                     message: 'Erro: E-mail já cadastrado'
                 });
             }
@@ -26,7 +25,6 @@ export default{
             })
 
             return res.json({
-                error: false,
                 message: 'Sucesso: Usuário cadastrado com sucesso',
                 user
             });
@@ -44,13 +42,11 @@ export default{
 
             if(!user){
                 return res.json({
-                    error: true,
                     message: 'Error: Usuário não encontrado'
                 });
             }
 
             return res.json({
-                error: false,
                 user
             });
 
@@ -67,13 +63,11 @@ export default{
 
             if(!user){
                 return res.json({
-                    error: true,
                     message: 'Error: Usuário não encontrado'
                 });
             }
 
             return res.json({
-                error: false,
                 user
             });
 
@@ -90,13 +84,11 @@ export default{
 
             if (users.length === 0) {
                 return res.status(404).json({
-                    error: true,
                     message: 'Usuário não encontrado'
                 });
             }
 
             return res.json({
-                error: false,
                 users: users.map(user => ({
                     id: user.id,
                     nome: user.nome,
@@ -118,7 +110,6 @@ export default{
 
             if (!usuarioExiste){
                 return res.json({
-                    error: true,
                     message: 'Erro: E-mail já cadastrado'
                 });
             }
@@ -138,7 +129,6 @@ export default{
 
 
             return res.json({
-                error: false,
                 message: 'Sucesso: Usuário atualizado com sucesso',
                 user
             });
@@ -156,8 +146,7 @@ export default{
 
             if (!usuarioExiste){
                 return res.json({
-                    error: true,
-                    message: 'Erro: E-mail já cadastrado'
+                    message: ''
                 });
             }
 
@@ -166,7 +155,6 @@ export default{
             });
 
             return res.json({
-                error: false,
                 message: 'Sucesso: Usuário deletado com sucesso',
                 user
             });
