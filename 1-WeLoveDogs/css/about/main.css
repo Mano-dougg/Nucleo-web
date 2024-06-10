@@ -1,0 +1,37 @@
+body{
+    overflow: hidden;
+}
+.pagetwo-container{
+    display: flex;
+    padding: 0 20px;
+    margin: 0;
+}
+
+.container-text{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container-text:nth-child(n+1){
+    font-family: "Open Sans", sans-serif;
+}
+
+.container-text h2{
+    font-size: 40px;
+    margin: 0;
+    align-self: center;
+}
+.container-text p{
+    max-width: 700px;
+    text-align: justify;
+}
+
+.container-text img{
+    width: 300px;
+    height: 300px;
+    padding-bottom: 40px;
+    margin: -30px;
+    align-self: center;
+}

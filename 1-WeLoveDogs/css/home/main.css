@@ -1,0 +1,41 @@
+.pageone-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 15px;
+}
+
+.container-text p{
+    max-width: 300px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 0;
+    line-height: 50px;
+}
+
+.container-text button{
+    background-color: var(--green);
+    border: none;
+    padding: 10px 45px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    color: var(--darkgreen);
+    border-radius: 15px;
+    font-size: 15px;
+    margin-top: 25px;
+}
+
+.container-text button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+.container-img > img {
+    max-width:520px;
+    max-height:520px;
+    width: auto;
+    height: auto
+}

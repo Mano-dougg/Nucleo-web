@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--beige);
+}
+.container{
+    width: 100%;
+    height: 45%;
+}
+
+.container-content{
+    align-self: flex-start;
+    height: 85%;
+    background: linear-gradient(to bottom, var(--light-brown) 80%, var(--beige) 20%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.logo{
+    width: 5rem;
+    height: 4.4rem;
+}
+
+
+.container-transactions{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0.6rem;
+    width: 80%;
+    min-height: 5rem;
+    max-height: 20rem;
+    flex-wrap: wrap;
+}
+
+.container-pp{
+    background-color: var(--white);
+    height: 5rem;
+    padding: 0.8rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.container-pp-o{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container-en{
+    background-color: var(--brown);
+    height: 5rem;
+    padding: 0.8rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.title-box{
+    font-family: var(--font);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.title-box.en{
+    color: var(--white);
+}
+
+.number-box.en{
+    color: var(--white);
+}
+.icon-box{
+    width: 1.2rem;
+}
+.number-box{
+    display: block;
+    font-family: var(--font);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
