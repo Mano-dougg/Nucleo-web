@@ -80,26 +80,31 @@ app.delete('/user/delete' , async (req: Request, res: Response) => {
       where: {id: idUsuario}  
     }
     )
-    res.status(200).send("Usuario: " + idUsuario + "deletado com sucesso.")
+    res.status(200).send("Usuario: " + idUsuario + " deletado com sucesso.")
   } else{
     res.status(404).send("Usuario nao encontrado")
   }
 });
 /* Atualizar usuario por ID */  
-app.put('user/update/:id', async (req: Request, res : Response) => {
+app.put('/user/update/:id', async (req: Request, res: Response) => {
+  const idUsuario = parseInt(req.params.id);
   const usuario = req.body;
-  const tempEmail = await prisma.user.findUnique({
-    where: {email: usuario.email}
-  })
-  if(!tempEmail){
-    const usuarioAtualizado = await prisma.user.update({
-      where: {id: usuario.id},
-      data: usuario, 
-    })
-    res.status(200).send("Usuario: " + usuario.id + "atualizado com sucesso" + "\n" + usuarioAtualizado)
-  }
-});
 
+  const tempEmail = await prisma.user.findUnique({
+    where: { email: usuario.email }
+  });
+
+  if (tempEmail && tempEmail.id !== idUsuario) {
+    return res.status(400).send("O email já está em uso por outro usuário.");
+  }
+
+  const usuarioAtualizado = await prisma.user.update({
+    where: { id: idUsuario },
+    data: usuario,
+  });
+
+  res.status(200).send("Usuário: " + usuario.nome + " atualizado com sucesso");
+});
 
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`); 
