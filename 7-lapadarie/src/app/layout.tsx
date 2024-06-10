@@ -4,6 +4,7 @@ import "@/app/styles/globals.css"
 import "@/app/styles/page.css"
 import "@/app/styles/header.css"
 import "@/app/styles/queue.css"
+import "@/app/styles/modal.module.css"
 
 const poppins = Poppins({
   subsets: ['latin'],

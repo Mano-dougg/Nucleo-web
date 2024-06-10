@@ -4,4 +4,10 @@ body {
     margin-left: 343px;
     margin-right: 343px;
 }
-  
+
+footer{
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin: 80px 0;
+}
