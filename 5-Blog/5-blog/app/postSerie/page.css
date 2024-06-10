@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+}
+
+.mainPostSerie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.postSerie{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50%;
+    height: 1000px;
+    padding: 40px;
+    margin-bottom: 100px;
+    height: 1000px;
+    align-items: center;
+    margin-top: -200px;
+    border-radius: 15px;
+    padding-top: 100px;
+    gap: 10px;
+
+}
+
+.postSerie img{
+    width: 651px;
+    height: 300px;
+    
+}
+
+.postSerie h1{
+    align-self: flex-start;
+    padding-bottom: 10px;
+    font-size: 44px;
+}
+
+.postSerie h2{
+    font-size: 34px;
+    align-self: flex-start;
+    padding: 20px 0px 40px 0px;
+}
+
+.postSerie p{
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-top: -30px;
+    font-weight: 300;
+}
+
+.autor{
+    margin-top: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    
+  }
+  
+  .autor h5{
+    margin-left: -300px;
+  
+  }
+  .autor img{
+    width: 64px;
+    height: 64px;
+    
+  }
+@media(max-width:768px){
+    .postSerie{
+        width: 60%;
+        
+    }
+
+    .postSerie img{
+        width: 80%;
+       
+    }
+
+    .postSerie h1{
+        font-size: 34px;
+    }
+
+    .postSerie h2{
+        font-size: 24px;
+    }
+
+    .postSerie p{
+        font-size: 16px;
+    }
+
+    .autor img{
+        width: 32px;
+        height: 32px;
+    }
+     
+    .autor{
+       font-size: 20px;
+    }
+
+    .autor h5{
+        margin-left: -100px;
+
+    }
+
+}
+
+@media(max-width:360px){
+    .postSerie{
+        width: 70%;
+        padding-bottom: 50px;
+    }
+
+    .mainPostSerie{
+        padding-bottom: 40px;
+    }
+    
+    .postSerie h1{
+        font-size: 20px;
+    }
+
+    .postSerie img{
+        width: 80%;
+    }
+
+    .autor{
+        font-size: 15px;
+        margin-top: 50px;
+    }
+
+    .autor img{
+        width: 32px;
+        height: 32px;
+    }
+
+    .autor h5{
+        margin-left: -15px;
+    }
+}

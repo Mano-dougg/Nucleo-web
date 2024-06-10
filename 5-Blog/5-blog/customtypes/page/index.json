@@ -1,0 +1,94 @@
+{
+  "format": "custom",
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "imgpaginaprincipal": {
+        "type": "Image",
+        "config": {
+          "label": "ImgPaginaPrincipal",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "subtitulo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Subtitulo",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "texto": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Texto",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "fotoautor": {
+        "type": "Image",
+        "config": {
+          "label": "fotoautor",
+          "constraint": {
+            "width": 32,
+            "height": 32
+          },
+          "thumbnails": []
+        }
+      },
+      "nomeautor": {
+        "type": "StructuredText",
+        "config": {
+          "label": "nomeautor",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading5"
+        }
+      },
+      "datapublicada": {
+        "type": "Date",
+        "config": {
+          "label": "datapublicada",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "image": {
+              "type": "SharedSlice"
+            },
+            "text": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

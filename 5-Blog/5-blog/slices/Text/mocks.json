@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna ea dolor in laborum duis sit id dolor."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

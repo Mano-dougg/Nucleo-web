@@ -1,0 +1,20 @@
+.out_linha{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: monospace;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.linha{
+    margin-top: 60px;
+    font-size: 50px;
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+}
+

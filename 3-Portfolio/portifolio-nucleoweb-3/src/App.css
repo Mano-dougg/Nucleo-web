@@ -1,0 +1,354 @@
+.appe{
+    background-color: var(--background-color);
+    color: var(--letter-colortwo);
+    width: 100%;
+    height: 250vh;
+    transition: background-color 250ms ease-in-out;
+    font-family: "Be Vietnam Pro", sans-serif;
+
+}
+
+.icone{
+    color: var(--letter-colorlink);
+    transition: transform .5s;
+}
+
+.icone:hover{
+    transform: scale(1.5);
+
+}
+
+.appe a{
+    color: var(--letter-colorlink);
+    text-decoration: none;
+   
+}
+
+
+.appe h2{
+    color: var(--letter-colorone);
+    font-family:"EB Garamond", serif;
+}
+
+.appe h3{
+    color: var(--letter-colorone);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--nav-color);
+    align-items: center;
+    padding: 30px 87px 30px 87px;
+    box-shadow: 5px 5px 5px 5px var(--shadow-color);
+
+}
+
+nav ul li{
+    display: inline-flex;
+    padding-right: 20px;
+    align-items: center;
+    
+}
+
+.logo{
+    padding-right: 20px;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.ul_um{
+    position: absolute;
+    left: 250px;
+}
+
+
+/* --------- apresentação ------------ */
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.apresentacao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin-top: 40px;
+}
+.imgperfil{
+    border-radius:500px;
+    box-shadow: var(--shadow-color) 0px 22px 30px 4px;
+}
+.apresentacao h2{
+    font-size: 60px;
+    margin-bottom: 40px;
+    margin-top: 50px;
+    width: 18ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(50), blinking 0.50s infinite step-end alternate;
+}
+
+
+.quebra_de_texto_um{
+    width: 20%;
+    height: 1px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    background-color: var(--letter-colorone);
+}
+
+
+.available {
+    display: flex;
+    padding: 20px;
+    margin-top: 30px;
+    align-items: center;
+    background-color: var(--available-color);
+    width: 60%;
+    border-radius:5px;
+
+}
+
+.available p {
+    margin-left: 10px;
+    align-self: center;
+    
+}
+
+.quebra_de_texto_dois{
+    width: 45%;
+    height: 1px;
+    margin-bottom: 70px;
+    margin-top: 50px;
+    margin-left: 70px;
+    background-color: var(--letter-colorone);
+}
+
+.titulo_projetos{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 40%;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.projeto_um  h4{
+    margin-bottom: 20px;
+}
+
+.projeto_um{
+    display: flex;
+    width: 40%;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+
+}
+.projeto_dois h4{
+    margin-bottom: 20px;
+}
+
+.projeto_dois{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 40%;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+.projeto_img{
+    border: 3px solid var(--available-color);
+    border-radius: 10px;
+}
+
+.projeto_botao{
+    margin-top: 20px;
+    width: 180px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: var(--background-color);
+    color: var(--letter-colorone);
+    border-color: var(--letter-colorone);
+    cursor: pointer;
+}
+
+
+.mobile_menu_icon{
+    display: none;
+}
+
+.menu_mobile{
+    display: none;
+
+}
+
+
+
+/*----------keyframe----------*/
+@keyframes typing{
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blinking{
+    50%{
+        border-color: transparent;
+    }
+}
+
+
+
+/*------Responsividade------*/
+
+
+@media (max-width:375px){
+    .imgperfil{
+        width: 180px;
+        align-self: center;
+        margin-top: 30px;
+    }
+
+    .appe{
+        height: 160vh;
+    }
+    .apresentacao{
+        width: 80%;
+    }
+    
+    .apresentacao h2{
+        font-size: 32px;
+        text-align: center;
+        width: 18ch;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 2s steps(50), blinking 0.50s infinite step-end alternate;
+    }
+
+    .quebra_de_texto_um{
+        width: 70%;
+        align-self: center;
+        margin-top: 25px
+    }
+
+    
+
+    .available{
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .quebra_de_texto_dois{
+        width: 90%;
+        margin-left: 0px;
+    }
+
+    .titulo_projetos{
+        width: 80%;
+        justify-content: center;
+    }
+
+    .titulo_projetos h3{
+        align-self: center;
+    }
+
+    .projeto_um, .projeto_dois {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        
+        
+    }
+
+    .projeto_img{
+        width: 300px;
+    }
+
+    .projeto_um h4  {
+        text-align: center;
+        margin-bottom: 30px;
+        
+    }
+
+    .projeto_dois h4{
+        text-align: center;
+        margin-bottom: 30px;
+        
+    }
+
+    .projeto_botao{
+        width: 100%;
+    }
+
+    .logo{
+        margin-left: -50px;
+    }
+
+    .mobile_menu_icon{
+        display: block;
+        position: absolute;
+        top: 120px;
+        left: 20px;
+        
+    }
+    .icon_burguer{
+        color: var(--letter-colorone);
+        cursor: pointer;
+        
+    }
+    .ul_um, .ul_dois{
+        display: none;
+    }
+
+    .menu_mobile{
+        height: 50vh;
+    }
+
+    .menu_mobile ul li{
+        padding: 20px;
+    }
+
+   
+
+    .menu_mobile ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+        padding-bottom: 1rem;
+        margin-top: 60px;
+        
+    }
+
+    .menumobile .nav-item{
+        padding-top: 1.2rem ;
+    }
+
+    .open{
+        display: block;
+    }
+
+    .ul_horizontal ul {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        list-style-type: none;
+        margin-top: -10px;
+    }
+    
+    .ul_horizontal ul li{
+        padding-right: 30px;
+    }
+
+
+
+
+   
+}
+
+

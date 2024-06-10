@@ -1,0 +1,80 @@
+{
+  "format": "custom",
+  "id": "postdue",
+  "label": "PostDue",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "imagedois": {
+        "type": "Image",
+        "config": {
+          "label": "ImageDois",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "titulodois": {
+        "type": "StructuredText",
+        "config": {
+          "label": "TituloDois",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "subtitulodois": {
+        "type": "StructuredText",
+        "config": {
+          "label": "subtitulodois",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "textodois": {
+        "type": "StructuredText",
+        "config": {
+          "label": "TextoDois",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "imgautordois": {
+        "type": "Image",
+        "config": {
+          "label": "imgautordois",
+          "constraint": {
+            "width": 32,
+            "height": 32
+          },
+          "thumbnails": []
+        }
+      },
+      "nomeautordois": {
+        "type": "StructuredText",
+        "config": {
+          "label": "nomeautordois",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading5"
+        }
+      },
+      "datapublicadadois": {
+        "type": "Date",
+        "config": {
+          "label": "datapublicadadois",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

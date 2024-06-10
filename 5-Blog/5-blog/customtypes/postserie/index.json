@@ -1,0 +1,94 @@
+{
+  "format": "custom",
+  "id": "postserie",
+  "label": "postSerie",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titulopost2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "titulopostserie",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "imgpostserie": {
+        "type": "Image",
+        "config": {
+          "label": "imgPostSerie",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "tituloserie": {
+        "type": "StructuredText",
+        "config": {
+          "label": "TituloSerie",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "textoserie": {
+        "type": "StructuredText",
+        "config": {
+          "label": "textoSerie",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "textoserie2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "textoSerie2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "tituloserie2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "TituloSerie2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "fotoautorserie": {
+        "type": "Image",
+        "config": {
+          "label": "fotoautorserie",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "nomeautorserie": {
+        "type": "StructuredText",
+        "config": {
+          "label": "nomeautorserie",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading5"
+        }
+      },
+      "dataautorserie": {
+        "type": "Date",
+        "config": {
+          "label": "dataautorserie",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
