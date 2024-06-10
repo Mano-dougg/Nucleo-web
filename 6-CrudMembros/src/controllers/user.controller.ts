@@ -82,7 +82,7 @@ export const getUserByName = async (req, res) => {
         });
         if (!user) {
             return res.status(404).json({ error: 'Usuário não encontrado' });
-        }
+        } // return
         res.status(200).json({ data: user });
     } catch (e) {
         console.log(e);
