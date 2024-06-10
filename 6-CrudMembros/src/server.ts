@@ -20,7 +20,7 @@ app.get('/teste', (req: Request, res: Response) => {
 app.post('/new-user', async (req:Request, res:Response) => {
   const usuario = req.body
   const existente = await prisma.user.findUnique({
-    where: usuario.email
+    where: {email: usuario.email}
   })
   if(existente){
     res.send("O email já está cadastrado")
@@ -28,11 +28,11 @@ app.post('/new-user', async (req:Request, res:Response) => {
       const novoUsuario = await prisma.user.create({
         data: usuario
       })
-      res.send("Usuário: " + novoUsuario.nome + "criado com sucesso!");
+      res.send("Usuário: " + novoUsuario.nome + " criado com sucesso!");
   }
 });
 /* Encontrar usuario por ID */
-app.get('/user?:id', async (req:Request, res:Response) => {
+app.get('/user:id', async (req:Request, res:Response) => {
     const idUsuario = parseInt(req.params.id);
     const usuario = await prisma.user.findUnique({
       where: { id: idUsuario },
@@ -57,7 +57,7 @@ app.get('/user/email', async (req: Request, res: Response) => {
   }
 });
 /* Encontrar usuario pelo nome */
-app.get('/users?:nome', async (req: Request, res: Response) => {
+app.get('/users/:nome', async (req: Request, res: Response) => {
   const nomeUsuario = req.params.nome;
   const usuario = await prisma.user.findMany({
     where: {nome: nomeUsuario}
@@ -86,7 +86,7 @@ app.delete('/user/delete' , async (req: Request, res: Response) => {
   }
 });
 /* Atualizar usuario por ID */  
-app.put('user/att?:id', async (req: Request, res : Response) => {
+app.put('user/update/:id', async (req: Request, res : Response) => {
   const usuario = req.body;
   const tempEmail = await prisma.user.findUnique({
     where: {email: usuario.email}
