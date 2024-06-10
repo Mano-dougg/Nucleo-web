@@ -7,6 +7,9 @@ import { Prisma } from "@prisma/client";
 export default class UsersController {
   constructor(
     private usersService = new UsersService(),
+    private NOT_FOUND_MESSAGE = (fieldName: string, field: string) => `No user found with ${fieldName} ${field}`,
+    private EMAIL_TAKEN_MESSAGE = (email: string) => `Email ${email} already taken`,
+    private INTERNAL_ERROR_MESSAGE = "Internal server error"
   ) { }
 
   public getById = async (req: Request, res: Response) => {
@@ -15,11 +18,11 @@ export default class UsersController {
     try {
       const user = await this.usersService.getById(Number(id));
       if (!user) {
-        throw new Error("User not found");
+        throw new Error(this.NOT_FOUND_MESSAGE("id", id));
       }
       return res.status(StatusCodes.OK).json(user);
-    } catch (err) {
-      return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    } catch (err: any) {
+      return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
     }
   }
 
@@ -29,22 +32,21 @@ export default class UsersController {
     try {
       const user = await this.usersService.getByEmail(q as string);
       if (!user) {
-        throw new Error("User not found");
+        throw new Error(this.NOT_FOUND_MESSAGE("email", q as string));
       }
       return res.status(StatusCodes.OK).json(user);
-    } catch (err) {
-      return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    } catch (err: any) {
+      return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
     }
   }
 
   public getByName = async (req: Request, res: Response) => {
     const { q } = req.query;
-    console.log(q);
 
     try {
       const user = await this.usersService.getByName(q as string);
       if (user.length === 0) {
-        throw new Error(`No user found containing ${q} in name`);
+        throw new Error(this.NOT_FOUND_MESSAGE("name", q as string));
       }
       return res.status(StatusCodes.OK).json(user);
     } catch (err: any) {
@@ -57,8 +59,7 @@ export default class UsersController {
       const users = await this.usersService.list();
       return res.status(StatusCodes.OK).json(users);
     } catch (err) {
-      console.log(err);
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Internal server error" });
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: this.INTERNAL_ERROR_MESSAGE });
     }
   }
 
@@ -85,9 +86,9 @@ export default class UsersController {
     } catch (err) {
       if (err instanceof Prisma.PrismaClientKnownRequestError) {
         if (err.code === "P2002") {
-          return res.status(StatusCodes.CONFLICT).json({ message: "Email already taken" });
+          return res.status(StatusCodes.CONFLICT).json({ message: this.EMAIL_TAKEN_MESSAGE(email) });
         }
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Internal server error" });
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: this.INTERNAL_ERROR_MESSAGE });
       }
     }
   }
@@ -98,12 +99,12 @@ export default class UsersController {
     try {
       const user = await this.usersService.getById(Number(id));
       if (!user) {
-        throw new Error("User not found");
+        throw new Error(this.NOT_FOUND_MESSAGE("id", id));
       }
       const result = await this.usersService.delete(Number(id))
       return res.status(StatusCodes.OK).json(result);
-    } catch (err) {
-      return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    } catch (err: any) {
+      return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
     }
   }
 
@@ -122,7 +123,7 @@ export default class UsersController {
     try {
       const user = await this.usersService.getById(Number(id));
       if (!user) {
-        throw new Error("User not found");
+        throw new Error(this.NOT_FOUND_MESSAGE("id", id));
       }
 
       const newUser = await this.usersService.update(Number(id), user, {
@@ -134,14 +135,14 @@ export default class UsersController {
         state,
       });
       return res.status(StatusCodes.CREATED).json(newUser);
-    } catch (err) {
+    } catch (err: any) {
       if (err instanceof Prisma.PrismaClientKnownRequestError) {
         if (err.code === "P2002") {
-          return res.status(StatusCodes.CONFLICT).json({ message: "Email already taken" });
+          return res.status(StatusCodes.CONFLICT).json({ message: this.EMAIL_TAKEN_MESSAGE(email!) });
         }
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Internal server error" });
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: this.INTERNAL_ERROR_MESSAGE });
       } else {
-        return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+        return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
       }
     }
   }
