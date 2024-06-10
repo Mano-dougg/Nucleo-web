@@ -168,7 +168,7 @@ router.put('/usuarios/:id', async (req: Request, res: Response) => {
 
 // Buscas Específicas
 
-//Buscar Usuários por nome
+//Buscar Usuários por nomes
 
 router.get('/usuarios/salvos/:nome', async(req:Request, res:Response) => {
     const {nome} = req.params;
