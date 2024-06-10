@@ -1,0 +1,54 @@
+header .logoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logoContainer img{
+    margin-top: 80px;
+    margin-bottom: 112px;
+}
+
+
+
+header .contentCardContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contentCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 395px;
+    height: 136px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-bottom: 80px;
+}
+
+.contentCard.highlight{
+    background-color: #5F3305;
+    color: #FFF;
+
+}
+
+.contentCard .contentCardText{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+
+.contentCard .contentCardText p{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.contentCard .contentCardNumber p{
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 36px;
+}

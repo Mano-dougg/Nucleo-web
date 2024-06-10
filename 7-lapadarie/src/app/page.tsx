@@ -1,8 +1,16 @@
+import Header from "@/components/Header";
+import QueueCard from "@/components/QueueCard";
 import Image from "next/image";
-import styles from "./page.module.css";
+
 
 export default function Home() {
   return (
-   <p> Teste </p>
+    <>
+      <Header></Header>
+      <section className="queue">
+        <p>+ Adicionar pessoa a fila</p>
+        <QueueCard></QueueCard>
+      </section>
+    </>
   );
 }

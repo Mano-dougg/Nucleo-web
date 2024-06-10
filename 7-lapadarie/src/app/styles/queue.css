@@ -1,0 +1,37 @@
+section.queue p{
+    font-weight: 700;
+    font-size: 16px;
+    color: #5F3305;
+}
+
+.queueCard{
+    width: 1235px;
+    height: 77px;
+    border-radius: 5px;
+    background-color: #FFFFFFCC;
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.queueCard .clientInfo{
+    margin-left: 15px;
+    height: 47px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+}
+
+.queueCard .clientInfo p.orderInfo{
+    font-size: 12px;
+}
+.queueCard .clientInfo p.orderInfo span{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.queueCard .delete{
+    margin-right: 15px;
+}

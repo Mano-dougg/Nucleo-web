@@ -1,0 +1,7 @@
+body {
+    background: linear-gradient(to bottom, #965A1B 0px, #965A1B 374px, #E5CF94 374px, #E5CF94 100%);
+    height: 100vh; /* Adicione esta linha para garantir que o body ocupe a altura total da viewport */
+    margin-left: 343px;
+    margin-right: 343px;
+}
+  
