@@ -1,0 +1,26 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  --dark-blue: 10, 56, 113;
+  --white: 243, 245, 252;
+  --gray: 73, 80, 87;
+
+  color-scheme: light dark;
+  color: rgb(var(--dark-blue));
+  background-color: rgb(var(--white));
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}

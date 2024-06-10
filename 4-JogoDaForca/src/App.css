@@ -1,0 +1,29 @@
+.App {
+  position: relative;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  left: 1rem;
+  top: 1.5rem;
+  width: 32px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    left: 2.5rem;
+    top: 4.67rem;
+  }
+}
+
+@media (min-width: 1366px) {
+  .logo {
+    left: 5.25rem;
+    top: 2.5rem;
+  }
+}

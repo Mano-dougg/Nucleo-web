@@ -1,0 +1,41 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8125rem;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.home button {
+  padding: 24px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.home .start {
+  background-color: rgb(var(--dark-blue));
+  width: 317px;
+  height: 102px;
+}
+
+.home .new-word {
+  color: rgb(var(--dark-blue));
+  background-color: rgb(var(--white));
+  border: 1px solid rgb(var(--dark-blue));
+  width: 293px;
+  height: 67px;
+}
+
+@media (min-width: 768px) {
+  .home .new-word {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .home .new-word {
+    width: 317px;
+    height: 102px;
+  }
+}
