@@ -53,7 +53,12 @@ const OrderInfoQuantity = styled.p`
 `;
 
 const TrashIcon = styled.img`
+`;
 
+const TrashButton = styled.button`
+  background: none;
+  border: 0;
+  cursor: pointer;
 `;
 
 export default function Order() {
@@ -68,7 +73,9 @@ export default function Order() {
           <OrderInfoQuantity>R$ 0,00</OrderInfoQuantity>
         </OrderInfo>
       </OrderDivLeft>
-      <TrashIcon src="trashcan.svg" />
+      <TrashButton>
+        <TrashIcon src="trashcan.svg" />
+      </TrashButton>
     </OrderDiv>
   );
 }
