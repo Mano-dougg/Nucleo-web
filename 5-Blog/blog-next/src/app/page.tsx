@@ -45,7 +45,7 @@ export default function Home() {
             src="astronaut.svg"
             width={544}
             height={374}  
-            alt="astronauta"
+            alt="astronauta"  
           />
         </div>
       </div>

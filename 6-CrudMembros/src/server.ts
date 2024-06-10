@@ -17,7 +17,7 @@ app.get('/teste', (req: Request, res: Response) => {
   })
 });
 /* Novo usuario */
-app.post('/user', async (req:Request, res:Response) => {
+app.post('/new-user', async (req:Request, res:Response) => {
   const usuario = req.body
   const existente = await prisma.user.findUnique({
     where: usuario.email
@@ -57,8 +57,8 @@ app.get('/user/email', async (req: Request, res: Response) => {
   }
 });
 /* Encontrar usuario pelo nome */
-app.get('/user/email', async (req: Request, res: Response) => {
-  const nomeUsuario = req.body.nome;
+app.get('/users?:nome', async (req: Request, res: Response) => {
+  const nomeUsuario = req.params.nome;
   const usuario = await prisma.user.findMany({
     where: {nome: nomeUsuario}
   });
