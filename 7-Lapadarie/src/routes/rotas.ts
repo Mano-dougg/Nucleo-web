@@ -7,22 +7,40 @@ const router = Router();
 
 // CRUD BÁSICO
 
+//Função para calcular o total de pães
+
+const calcularTotalPaes = async () => {
+    const usuarios = await prisma.user.findMany();
+    return usuarios.reduce((total, user) => total + user.paes, 0);
+};
+
+//Função para saber o povo na fila
+
+const Fila = async () => {
+    const us = await prisma.user.findMany();
+    return us.length;
+};
+
 //Criar Usuário
 
 router.post('/', async (req: Request, res: Response) => {
-    const { name, paes } = req.body;
+    const { nome, paes } = req.body;
 
     try {
         const novoUsuario = await prisma.user.create({
             data: {
-                name,
+                nome,
                 paes
             }
         });
 
+        const totalPaes = await calcularTotalPaes();
+        const preco = paes * 0.50
+
         res.status(201).json({
             message: 'Usuário cadastrado com sucesso',
-            usuario: novoUsuario
+            usuario: novoUsuario,
+            preco
         });
     } catch (error) {
         res.status(400).json({ error: 'Erro ao criar usuário' });
@@ -54,7 +72,7 @@ router.delete('/:id', async (req: Request, res: Response) => {
 
 router.put('/:id', async (req: Request, res: Response) => {
     const { id } = req.params;  
-    const { name, paes} = req.body;
+    const { nome, paes} = req.body;
 
 
     try {
@@ -64,7 +82,7 @@ router.put('/:id', async (req: Request, res: Response) => {
             const updates = await prisma.user.update({
                 where: { id: Number(id) },  
                 data: {
-                    name, 
+                    nome, 
                     paes
                 }
             });
@@ -92,6 +110,17 @@ router.get('/', async(req:Request, res:Response) => {
     }
 
 })
+
+router.get('/totais', async (req: Request, res: Response) => {
+    try {
+        const totalPaes = await calcularTotalPaes(); 
+        const pessoas = await Fila();
+        const precototal = totalPaes * 0.50
+        res.json({ totalPaes , precototal, pessoas}); 
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao calcular total de pães' });
+    }
+});
 
 
 
