@@ -153,7 +153,7 @@ export default class UsersController {
           city,
           state,
         });
-        return this.userResponse(res, StatusCodes.CREATED, foundUser);
+        return this.userResponse(res, StatusCodes.CREATED, newUser);
       }
     } catch (err: any) {
       if (err instanceof Prisma.PrismaClientKnownRequestError) {
