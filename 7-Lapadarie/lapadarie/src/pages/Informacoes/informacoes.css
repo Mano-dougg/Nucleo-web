@@ -77,3 +77,26 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@media (max-width: 834px){
+    .infor{
+        background: linear-gradient(to bottom, var(--header) 15%, var(--body) 15%, var(--body) 75%, var(--body) 75%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .pessoasfila{
+        width: 70%;
+    }
+
+    .vendidos{
+        width: 70%;
+    }
+
+    .entrada{
+        width: 70%;
+    }
+
+}
