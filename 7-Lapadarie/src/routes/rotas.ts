@@ -21,7 +21,7 @@ const Fila = async () => {
     return us.length;
 };
 
-//Criar Usuário
+//Criar Usuários
 
 router.post('/', async (req: Request, res: Response) => {
     const { nome, paes } = req.body;
