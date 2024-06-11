@@ -17,12 +17,8 @@ export const repositoryName =
 const routes: prismic.ClientConfig["routes"] = [
   // Examples:
    {
-   	type: "homepage",
-    path: "http://localhost:3000/",
-  // },
-  // {
-  // 	type: "page",
-  // 	path: "/:uid",
+   	type: "home",
+    path: "/",
   }
 ];
 

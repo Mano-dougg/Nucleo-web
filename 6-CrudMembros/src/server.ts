@@ -95,7 +95,7 @@ app.put('/user/update/:id', async (req: Request, res: Response) => {
   });
 
   if (tempEmail && tempEmail.id !== idUsuario) {
-    return res.status(400).send("O email já está em uso por outro usuário.");
+    res.status(400).send("O email já está em uso por outro usuário.");
   }
 
   const usuarioAtualizado = await prisma.user.update({
