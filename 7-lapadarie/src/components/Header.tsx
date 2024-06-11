@@ -3,9 +3,15 @@ import logoImage from '../../public/Logo.svg';
 import ContentCard from "./ContentCard";
 import queueImage from "../../public/queue.svg";
 import marketImage from "../../public/market.svg";
-import moneyImage from "../../public/money.svg"
+import moneyImage from "../../public/money.svg";
 
-export default function Header() {
+interface HeaderProps {
+  queueCount: number;
+  totalBreads: number;
+  totalPay: number;
+}
+
+export default function Header({ queueCount, totalBreads, totalPay }: HeaderProps) {
     return (
         <header>
             <div className="logoContainer">
@@ -18,22 +24,22 @@ export default function Header() {
             </div>
             <div className="contentCardContainer">
                 <ContentCard 
-                    queueText="Pessoas na fila" 
+                    contentText="Pessoas na fila" 
                     imageSrc={queueImage} 
                     imageAlt="Ícone de fila" 
-                    numberText="7" 
+                    numberText={queueCount.toString()} 
                 />
                 <ContentCard 
-                    queueText="Pães vendidos" 
+                    contentText="Pães vendidos" 
                     imageSrc={marketImage} 
                     imageAlt="Ícone de atendimento" 
-                    numberText="20" 
+                    numberText={totalBreads.toString()} 
                 />
                 <ContentCard 
-                    queueText="Entrada" 
+                    contentText="Entrada" 
                     imageSrc={moneyImage} 
                     imageAlt="Ícone de tickets" 
-                    numberText="R$ 175,00" 
+                    numberText={`R$ ${totalPay.toFixed(2)}`} 
                     customClass="highlight"
                 />
             </div>

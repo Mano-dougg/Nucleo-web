@@ -2,18 +2,18 @@ import Image from "next/image";
 import { StaticImageData } from 'next/image'; 
 
 interface ContentCardProps {
-    queueText: string;
+    contentText: string;
     imageSrc: StaticImageData; 
     imageAlt: string;
     numberText: string;
     customClass?: string; 
 }
 
-export default function ContentCard({ queueText, imageSrc, imageAlt, numberText, customClass }: ContentCardProps) {
+export default function ContentCard({ contentText, imageSrc, imageAlt, numberText, customClass }: ContentCardProps) {
     return (
         <div className={`contentCard ${customClass}`}>
             <div className="contentCardText">
-                <p>{queueText}</p>
+                <p>{contentText}</p>
                 <Image
                     src={imageSrc}
                     alt={imageAlt}

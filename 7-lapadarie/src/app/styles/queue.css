@@ -34,3 +34,7 @@ section.queue p{
 .queueCard .delete{
     margin-right: 15px;
 }
+
+.queueCard .delete img{
+    cursor: pointer;
+}
