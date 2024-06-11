@@ -1,48 +1,82 @@
 .newWord {
+  position: relative;
+  top: 6rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.8125rem;
-  align-items: center;
   justify-content: space-between;
-  position: relative;
-  margin: 0 auto;
 }
 
-.newWord h2 {
+.newWord > .text {
   font-size: 2rem;
   font-weight: 400;
-  line-height: 48px;
-
+  line-height: 3rem;
 }
 
 .options {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.newWord .options .warning {
+  position: relative;
+  left: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newWord .options div {
+  block-size: fit-content;
+  
+}
+.newWord .options input {
+  /* box-sizing: border-box; */
+  width: 100%;
+  border: 0;
+}
+
+.newWord .options .warning img {
+  width: 1rem;
+}
+
+.newWord .options .warning span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+.buttons {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  margin: 0 auto;
 }
 
 .newWord .options button {
-  padding: 24px;
+  width: 21.43rem;
+  height: 4.18rem;
+  padding: 1.5rem;
   border-radius: 24px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.21rem;
 }
 
 .newWord .options .save-continue {
+  color: rgb(var(--white));
   background-color: rgb(var(--dark-blue));
-  width: 317px;
-  height: 102px;
 }
 
 .newWord .options .cancel {
-  color: rgb(var(--dark-blue));
   background-color: rgb(var(--white));
   border: 1px solid rgb(var(--dark-blue));
-  width: 293px;
-  height: 67px;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .newWord .options {
     flex-direction: row;
   }
@@ -57,4 +91,4 @@
     width: 317px;
     height: 102px;
   }
-}
+} */

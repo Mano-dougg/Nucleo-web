@@ -1,29 +1,23 @@
 .App {
-  position: relative;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 1.5rem 1rem 1rem;
 }
 
 .logo {
-  position: absolute;
-  left: 1rem;
-  top: 1.5rem;
+  position: relative;
+  left: 0;
+  top: 0;
   width: 32px;
   height: auto;
 }
 
 @media (min-width: 768px) {
-  .logo {
-    left: 2.5rem;
-    top: 4.67rem;
+  .App {
+    padding: 4.67rem 2.5rem 2.5rem;
   }
 }
 
 @media (min-width: 1366px) {
-  .logo {
-    left: 5.25rem;
-    top: 2.5rem;
+  .App {
+    padding: 2.5rem 5.25rem 3.3125rem;
   }
 }
