@@ -19,7 +19,7 @@ app.post('/order', async (req: Request, res: Response) => {
   }
 });
 
-app.put('/orders/:id', async (req: Request, res: Response) => {
+app.put('/order/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
   const { customer_name, numberOfBreads } = req.body;
   try {
@@ -31,7 +31,7 @@ app.put('/orders/:id', async (req: Request, res: Response) => {
   }
 });
 
-app.patch('/orders/:id/finish', async (req: Request, res: Response) => {
+app.patch('/order/:id/finish', async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
     const updatedOrder = await finishOrder(parseInt(id));
@@ -42,7 +42,7 @@ app.patch('/orders/:id/finish', async (req: Request, res: Response) => {
   }
 });
 
-app.delete('/orders/:id', async (req: Request, res: Response) => {
+app.delete('/order/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
     await deleteOrder(parseInt(id));
