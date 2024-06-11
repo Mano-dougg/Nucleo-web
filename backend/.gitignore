@@ -1,3 +1,14 @@
 node_modules
 # Keep environment variables out of version control
 .env
+
+# Org mode files
+*.org
+
+# Zod validation schemas
+prisma/generated/zod/index.ts
+prisma/generated/zod/outputTypeSchemas
+prisma/generated/zod/inputTypeSchemas/*
+!/prisma/generated/zod/inputTypeSchemas/UserCreateInputSchema.ts
+prisma/generated/zod/modelSchema/*
+!prisma/generated/zod/modelSchema/UserSchema.ts

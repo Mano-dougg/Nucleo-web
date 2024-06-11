@@ -17,7 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.15.0",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "zod-prisma-types": "^3.1.8"
   },
   "devDependencies": {
     "@tsconfig/node21": "^21.0.3",
