@@ -11,7 +11,7 @@ justify-content:center;
 aling-intens:center;
 flex-direction: row;
 gap: 30px;
-margin-top: -50px;
+margin-top: -65px;
 `
 const WrapperPessoa = styled.div`
 width: 395px;
