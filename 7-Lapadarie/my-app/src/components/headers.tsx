@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import '../styles/headers.css';
 import '../styles/clients.css';
@@ -10,6 +11,7 @@ import Trash from '../assets/trash-icon.svg';
 import Modal from './modal';
 
 interface Client {
+  id: number;
   name: string;
   totalBread: number;
 }
@@ -29,15 +31,23 @@ const Headers: React.FC = () => {
   };
 
   const addClient = (name: string, totalBread: number) => {
-    const newClient = { name, totalBread };
+    const newClient = { id: Date.now(), name, totalBread }; // Temporarily using Date.now() for id
     setClients([newClient, ...clients]);
     setTotalBreadSold(totalBreadSold + totalBread);
     setTotalRevenue(totalRevenue + totalBread * 0.5);
   };
 
-  const deleteClient = (index: number) => {
-    const updatedClients = clients.filter((_, i) => i !== index);
-    setClients(updatedClients);
+  const deleteClient = async (id: number, index: number) => {
+    try {
+      await axios.delete(`http://localhost:3000/user/${id}`);
+      const updatedClients = clients.filter((_, i) => i !== index);
+      setClients(updatedClients);
+      const client = clients[index];
+      setTotalBreadSold(totalBreadSold - client.totalBread);
+      setTotalRevenue(totalRevenue - client.totalBread * 0.5);
+    } catch (error) {
+      console.error('Erro ao deletar usuário:', error);
+    }
   };
 
   return (
@@ -72,7 +82,7 @@ const Headers: React.FC = () => {
 
         <div className="container-cl">
           <div className="container-cl-content">
-            <button className='add-btn' onClick={openModal}>+ Adicionar pessoa a fila</button>
+            <button className='add-btn' onClick={openModal}>+ Adicionar pessoa à fila</button>
           </div>
         </div>
 
@@ -86,19 +96,15 @@ const Headers: React.FC = () => {
                   <p><span className='span'>Total a pagar:</span> R$ {(client.totalBread * 0.5).toFixed(0.5)},00</p>
                 </div>
               </div>
-             <button onClick={() => deleteClient(index)}> <Image src={Trash} alt='Botão excluir' /> </button>
+              <button onClick={() => deleteClient(client.id, index)}> 
+                <Image src={Trash} alt='Botão excluir' /> 
+              </button>
             </div>
           ))}
-
-          
         </div>
 
         <footer>Criado por Rian Victor e Samuel Santos - 2024 (InfoJR)</footer>
-        
       </section>
-
-        
-
 
       <Modal isOpen={isModalOpen} onClose={closeModal} addClient={addClient} />
     </>
