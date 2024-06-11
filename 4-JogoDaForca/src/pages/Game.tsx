@@ -1,36 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import Word from './Word';
-import Input from './Input';
+import { useNavigate } from "react-router-dom";
+import Word from '../components/Word';
+import Input from '../components/Input';
 
-const words = ["react", "typescript", "javascript", "programming"];
+const savedWords = localStorage.getItem('savedWords');
+const words: string = savedWords ? JSON.parse(savedWords) : '';
 
 interface GameProps {
   onGameEnd: (win: boolean) => void;
 }
 
 const Game: React.FC<GameProps> = ({ onGameEnd }) => {
+  const navigate = useNavigate();
+
+  const [gameStarted, setGameStarted] = useState(false);
   const [word, setWord] = useState('');
   const [guesses, setGuesses] = useState<string[]>([]);
   const [attemptsLeft, setAttemptsLeft] = useState(6);
 
   useEffect(() => {
     setWord(words[Math.floor(Math.random() * words.length)]);
+
+    setGameStarted(true);
   }, []);
 
   useEffect(() => {
+    if(!gameStarted)
+      return;
+
     const wordLetters = word.split('');
     const guessedAllLetters = wordLetters.every(letter => guesses.includes(letter));
 
     if (guessedAllLetters) {
       onGameEnd(true);
       resetGame();
+      navigate("/");
     }
 
     if (attemptsLeft === 0) {
       onGameEnd(false);
       resetGame();
+      navigate("/");
     }
-  }, [guesses, attemptsLeft, word, onGameEnd]);
+  }, [gameStarted, guesses, attemptsLeft, word, navigate]);
 
   const resetGame = () => {
     setWord(words[Math.floor(Math.random() * words.length)]);

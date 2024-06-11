@@ -4,7 +4,7 @@ interface InputProps {
   onGuess: (letter: string) => void;
 }
 
-const letters: string = "aáâãàbcçdeéêèfghiíîìjklmnoóôõòpqrstuúûùvwxyz";
+const letters: string = "aáâãàbcçdeéêèfghiíîìjklmnoóôõòpqrstuúûùvwxyz ";
 
 const Input: React.FC<InputProps> = ({ onGuess }) => {
   useEffect(() => {

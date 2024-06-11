@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import LogoAlura from './assets/logo-alura.svg';
 import Home from './pages/Home';
@@ -8,22 +9,29 @@ import Game from './pages/Game';
 const App: React.FC = () => {
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
-
   const handleGameEnd = (win: boolean) => {
-    if (win) {
-      setWins(wins + 1);
-    } else {
-      setLosses(losses + 1);
-    }
+    win ? setWins(wins + 1) : setLosses(losses + 1);
   };
+
+  const router = createBrowserRouter([
+    { path: "/", element: <Home /> },
+    { path: "/new-word", element: <NewWord /> },
+    { path: "/game", element: <Game onGameEnd={handleGameEnd} /> },
+  ]);
 
   return (
     <div className="App">
-      <img className="logo" src={LogoAlura} alt="" />
+      <div className="menu">
+        <img className="logo" src={LogoAlura} alt="" />
 
-      {/* <Home /> */}
-      <NewWord />
-      {/* <Game onGameEnd={handleGameEnd} /> */}
+        <div className="scoreboard">
+          {wins}
+          {losses}
+        </div>
+      </div>
+
+      <RouterProvider router={router} />
+
     </div>
   );
 };
