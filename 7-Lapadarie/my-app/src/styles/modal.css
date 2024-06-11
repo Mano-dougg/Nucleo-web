@@ -13,7 +13,7 @@
 .modal {
   background-color: var(--white);
   margin-top: 6rem;
-  width: 28rem;
+  width: 80%;
   height: 19rem;
   padding: 2rem;
   box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
@@ -73,4 +73,11 @@ input::placeholder{
   background: none;
   border: 1px solid var(--red);
   color: var(--red);
+}
+
+
+@media (min-width: 531px){
+  .modal{
+    width: 28rem;
+  }
 }

@@ -21,3 +21,103 @@
 .add-btn:hover{
     cursor: pointer;
 }
+
+.clients-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+    max-height: 39rem;
+  /* Adjust based on the approximate height of 7 clients */
+    overflow-x:auto;
+}
+
+.clients-list::-webkit-scrollbar {
+    width: 48px;
+  }
+  
+  .clients-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  
+  .clients-list::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+  }
+
+.client-item{
+    width: 80%;
+    margin-top: 1rem;
+    background-color: var(--white);
+    opacity: 0.8;
+    display: flex;
+    padding: 0.9rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.3rem;
+   
+
+}
+
+.client-item >button:hover{
+    cursor: pointer;
+}
+.client-item.h3 {
+    font-family: var(--font);
+    color: var(--brown);
+    font-weight: 600;
+    opacity: 1;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+}
+.client-p{
+    display: flex;
+    font-family: var(--font);
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--brown);
+    flex-wrap: wrap;
+}
+
+.span{
+    font-weight: 600;
+}
+.client-item > button{
+    background: none;
+    border: none;
+}
+
+.client-item-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    opacity: 1;
+    z-index: 999;
+}
+
+footer{
+    position: relative;
+    top: 100%;
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    font-family: var(--font);
+    color: var(--brown);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+@media (max-width: 530px){
+    .container-cl{
+        margin-top: 8rem;
+    }
+    
+}
