@@ -4,24 +4,24 @@ import Image from 'next/image'
 type Props = {
   title: string,
   value: number,
-  icon: string,
-  dark?: boolean
+  icon: React.JSX.Element,
+  total?: boolean
 }
 
 const HeaderCard = (props: Props) => {
   return (
     <div
       className={`
-        ${props.dark ? "bg-[#5F3305]" : "bg-white"}
-        ${props.dark ? "text-white" : "text-black"}
+        ${props.total ? "bg-[#5F3305]" : "bg-white"}
+        ${props.total ? "text-white" : "text-[#5F3305]"}
         gap-2 p-4 rounded-lg shadow-md flex flex-col w-full 
       `}
     >
       <div className="flex justify-between">
-        <p>{props.title}</p>
-        <Image src={props.icon} alt="icon" className="w-8 h-8 ml-auto" />
+        <h1 className="font-semibold">{props.title}</h1>
+        {props.icon}
       </div>
-      <p>{props.value}</p>
+      <p className="text-4xl">{props.total ? `$ ${props.value.toFixed(2)}` : props.value}</p>
     </div>
   )
 }
