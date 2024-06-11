@@ -70,8 +70,4 @@ export default {
         }
     }
     
-
-
-
-
 };

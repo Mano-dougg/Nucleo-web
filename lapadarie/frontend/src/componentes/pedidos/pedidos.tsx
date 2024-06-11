@@ -1,10 +1,16 @@
-"use client";
-
+import { ButtonDelete } from "@/assets/logo";
 import axios, { AxiosResponse } from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-interface PedidosPros {}
+interface Pedido {
+  id: number;
+  nome: string;
+  totalPaes: number;
+  totalAPagar: number; // Adicionado o campo totalAPagar
+}
+
+interface PedidosProps {}
 
 const Container = styled.div`
   width: 100%;
@@ -17,20 +23,20 @@ const Container = styled.div`
 
 const ContainerCard = styled.div`
   width: 1235px;
-  height:77px;
+  height: 77px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px; 
+  padding: 20px;
   gap: 20px;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
   background-color: white;
 `;
 
 const NomeInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
 `;
 
 const NomeCliente = styled.div`
@@ -42,7 +48,7 @@ const Info = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10px; 
+  gap: 10px;
 `;
 
 const Excluir = styled.div`
@@ -51,55 +57,59 @@ const Excluir = styled.div`
   justify-content: center;
 `;
 
-export function Pedidos(props: PedidosPros) {
- 
-async function DadosPedido(){ 
- const res: AxiosResponse = await axios.get('http://localhost/listarPedidos')
- const dados = res.data
- console.log(dados)
-}
-DadosPedido()
+const BotaoLixeira = styled.button`
+cursor: pointer;
+background: none;
+border: none;
+
+`
+export function Pedidos(props: PedidosProps) {
+  const [pedidos, setPedidos] = useState<Pedido[]>([]);
+
+  useEffect(() => {
+    async function fetchPedidos() {
+      try {
+        const response: AxiosResponse = await axios.get('http://localhost:1080/listarPedidos');
+        const dados: Pedido[] = response.data.pedidos;
+        setPedidos(dados);
+      } catch (error) {
+        console.error("Erro ao buscar pedidos:", error);
+      }
+    }
+    fetchPedidos();
+  }, []);
+
+
+
+  const DeleteItem = async (id:number )=> {
+    try{
+      await axios.delete(`http://localhost:1080/delete/${id}`);
+      setPedidos((prevPedidos) => prevPedidos.filter(pedido => pedido.id != id));
+    }catch(error){
+      console.error("erro ao excluir pedido", error)
+    }
+  };
+
 
   return (
     <Container>
       <div> + Adicionar Pessoas na Fila</div>
-
-      <ContainerCard>
-        <NomeInfoContainer>
-          <NomeCliente>
-            <h1>Nome do cliente</h1>
-          </NomeCliente>
-          <Info>
-            <p>total de pães: 50</p>
-            <p>total a pagar: 25</p>
-          </Info>
-        </NomeInfoContainer>
-        <Excluir>excluir</Excluir>
-      </ContainerCard>
-      <ContainerCard>
-        <NomeInfoContainer>
-          <NomeCliente>
-            <h1>Nome do cliente</h1>
-          </NomeCliente>
-          <Info>
-            <p>total de pães: 50</p>
-            <p>total a pagar: 25</p>
-          </Info>
-        </NomeInfoContainer>
-        <Excluir>excluir</Excluir>
-      </ContainerCard>
-      <ContainerCard>
-        <NomeInfoContainer>
-          <NomeCliente>
-            <h1>Nome do cliente</h1>
-          </NomeCliente>
-          <Info>
-            <p>total de pães: 50</p>
-            <p>total a pagar: 25</p>
-          </Info>
-        </NomeInfoContainer>
-        <Excluir>excluir</Excluir>
-      </ContainerCard>
+      {pedidos.map((pedido) => (
+        <ContainerCard key={pedido.id}>
+          <NomeInfoContainer>
+            <NomeCliente>
+              <h1>{pedido.nome}</h1>
+            </NomeCliente>
+            <Info>
+              <p>Total de pães: {pedido.totalPaes}</p>
+              <p>Total a pagar: {pedido.totalAPagar}</p>
+            </Info>
+          </NomeInfoContainer>
+          <Excluir>
+            <BotaoLixeira onClick={() => DeleteItem(pedido.id)}> <ButtonDelete/>  </BotaoLixeira>
+            </Excluir>
+        </ContainerCard>
+      ))}
     </Container>
   );
 }

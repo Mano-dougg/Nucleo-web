@@ -1,40 +1,93 @@
-"use client";
-
 import React from "react";
 import styled from "styled-components";
 
 interface ContadorProps {}
 
 const Container = styled.div`
-display: flex;
-justify-content:center;
-aling-intens:center;
-flex-direction: row;
-gap: 30px;
-margin-top: -65px;
-`
-const WrapperPessoa = styled.div`
-width: 395px;
-height: 136px;
-background-color:white;
-`
-const WrapperPaesVendidos = styled.div`
-width: 395px;
-height: 136px;
-background-color:white;
-`
-const WrapperEntrada = styled.div`
-width: 395px;
-height: 136px;
-background-color:var(--colorEntrada);
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: -65px;
+`;
+
+const Wrapper = styled.div`
+  width: 395px;
+  height: 136px;
+  background-color: white;
+  padding: 1.25rem;
+`;
+
+const WrapperEntrada = styled(Wrapper)`
+  background-color: var(--colorEntrada);
+`;
+
+const FlexEst = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Aling = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const PessoaText = styled.div`
+  margin-bottom: 10%; 
+`;
+
+const EntradaText = styled.h1`
+  color: white;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 10%;
+`;
+
+const ValorText = styled.p`
+  color: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+`;
 
 export function Contador(props: ContadorProps) {
   return (
     <Container>
-        <WrapperPessoa>Contagem de pessoas</WrapperPessoa>
-        <WrapperPaesVendidos>Pães vendidos</WrapperPaesVendidos>
-        <WrapperEntrada>Entrada :</WrapperEntrada>
+      <Wrapper>
+        <Aling>
+          <FlexEst>
+            <PessoaText>Pessoa na fila</PessoaText>
+            <div>icon</div>
+          </FlexEst>
+          <div>7</div>
+        </Aling>
+      </Wrapper>
+
+      <Wrapper>
+        <Aling>
+          <FlexEst>
+            <PessoaText>Pães Vendidos</PessoaText>
+            <div>icon</div>
+          </FlexEst>
+          <div>350</div>
+        </Aling>
+      </Wrapper>
+
+      <WrapperEntrada>
+        <Aling>
+          <FlexEst>
+            <EntradaText>Entrada</EntradaText>
+            <div>icon</div>
+          </FlexEst>
+          <ValorText>Valor</ValorText>
+        </Aling>
+      </WrapperEntrada>
     </Container>
   );
 }

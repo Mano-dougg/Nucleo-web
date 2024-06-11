@@ -7,13 +7,12 @@ import styled from "styled-components";
 
 export default function Home() {
   return (
-  <>
-   <Header/>
-   <Contador/>
-  <Pedidosteste/>
-  <Pedidos/>
-   
-  </>
-       
+    <>
+      <Header />
+      <Contador />
+      <Pedidosteste/>
+      <Pedidos />
+    </>
+
   );
 }

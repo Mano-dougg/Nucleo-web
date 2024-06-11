@@ -5,7 +5,7 @@ interface Pedido {
   id: number;
   nome: string;
   totalPaes: number;
-  totalAPagar: number; // Adicionando o campo totalAPagar
+  totalAPagar: number; 
 }
 
 export function Pedidosteste() {
@@ -20,6 +20,15 @@ export function Pedidosteste() {
     }
   };
 
+  const handleDelete = async (id: number) => {
+    try {
+      await axios.delete(`http://localhost:1080/delete/${id}`);
+      setPedidos((prevPedidos) => prevPedidos.filter(pedido => pedido.id !== id));
+    } catch (error) {
+      console.error("Erro ao excluir pedido:", error);
+    }
+  };
+
   useEffect(() => {
     handleFetch();
   }, []);
@@ -30,7 +39,8 @@ export function Pedidosteste() {
         <div key={pedido.id}>
           <p>Nome: {pedido.nome}</p>
           <p>Total de Pães: {pedido.totalPaes}</p>
-          <p>Total a Pagar: {pedido.totalAPagar}</p> {/* Mostrando o totalAPagar */}
+          <p>Total a Pagar: {pedido.totalAPagar}</p> 
+          <button onClick={() => handleDelete(pedido.id)}>excluir</button>
         </div>
       ))}
     </>
