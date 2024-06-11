@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { configDotenv } from 'dotenv';
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 
 configDotenv();
 
@@ -9,6 +10,7 @@ const port = 3000;
 
 const prisma = new PrismaClient();
 
+app.use(cors());
 app.use(express.json());
 
 // Criar pessoa (User) - POST
