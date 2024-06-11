@@ -1,5 +1,6 @@
 "use client";
 
+import axios, { AxiosResponse } from "axios";
 import React from "react";
 import styled from "styled-components";
 
@@ -51,6 +52,14 @@ const Excluir = styled.div`
 `;
 
 export function Pedidos(props: PedidosPros) {
+ 
+async function DadosPedido(){ 
+ const res: AxiosResponse = await axios.get('http://localhost/listarPedidos')
+ const dados = res.data
+ console.log(dados)
+}
+DadosPedido()
+
   return (
     <Container>
       <div> + Adicionar Pessoas na Fila</div>
