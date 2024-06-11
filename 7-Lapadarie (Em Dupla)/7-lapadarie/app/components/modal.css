@@ -1,0 +1,89 @@
+.modalOut{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(243, 230, 168, 0.5);
+    z-index: 1000;
+}
+
+.modalIn{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    width: 605px;
+    height: 347px;
+    padding: 10px;
+
+}
+
+.modalConteudo{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.modalConteudo input{
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 95%;
+    padding: 15px;
+
+}
+
+.modalConteudo p{
+    color: #5F3305;
+    font-size: 16px ;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.btnsModal{
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.btnModal{
+    background-color: white;
+    color: red;
+    padding: 15px 100px 15px 100px;
+    border: 1px red solid;
+    font-weight: bolder;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+
+.btnModalMarrom{
+    background-color: #5F3305;
+    color: white;
+    padding: 15px 100px 15px 100px;
+    border: 1px #5F3305 solid;
+    font-weight: bolder;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.btnPessoas{
+    position: relative;
+    top: 100px;
+    left: 410px;
+}
+
+.btnPessoas button{
+    background-color: rgba(0,0,0,0.0);
+    border: 0;
+    font-size: 14px;
+    color:#5F3305;
+    font-weight: bolder;
+    cursor: pointer;
+}

@@ -3,6 +3,7 @@ import "./globals.css"
 import HeaderLogo from "./components/headerLogo";
 import Footer from "./components/footer";
 import Transicoes from "./components/transicoes";
+import ModalButton from "./components/modalButton";
 
 export default function Home() {
   return (
@@ -13,6 +14,19 @@ export default function Home() {
 
       <div className="transactions">
         <Transicoes/>
+      </div>
+
+      {/* modal */}
+      <div>
+        <ModalButton />
+      </div>
+
+
+    {/* implementar table */}
+      <div className="tabela">
+        <div>
+
+        </div>
       </div>
 
       <footer>
