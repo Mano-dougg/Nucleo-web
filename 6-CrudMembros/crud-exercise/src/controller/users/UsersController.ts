@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import UsersService from "../../service/users/UsersService";
 import { StatusCodes } from "http-status-codes";
-import { User, UserCreateInputSchema } from "../../../prisma/generated/zod";
+import { User } from "../../../prisma/generated/zod";
 import { Prisma } from "@prisma/client";
 
 export default class UsersController {
@@ -10,8 +10,6 @@ export default class UsersController {
   ) { }
 
   private NOT_FOUND_MESSAGE = (fieldName: string, field: string) => `No user found with ${fieldName} ${field}`;
-  private EMAIL_TAKEN_MESSAGE = (email: string) => `Email ${email} already taken`;
-  private INTERNAL_ERROR_MESSAGE = "Internal server error";
 
   private passwordlessUser = (user: User) => {
     function exclude<User, Key extends keyof User>(
@@ -38,6 +36,24 @@ export default class UsersController {
     return res.status(responseCode).json(sanitizedUser);
   }
 
+  private errorResponse = (
+    res: Response,
+    responseCode: StatusCodes,
+    err: any,
+    email?: string
+  ) => {
+    switch (responseCode) {
+      case StatusCodes.NOT_FOUND:
+        return res.status(responseCode).json({ error: err.message })
+      case StatusCodes.INTERNAL_SERVER_ERROR:
+        return res.status(responseCode).json({ error: "Internal server error" })
+      case StatusCodes.CONFLICT:
+        return res.status(responseCode).json({ error: `Email ${email ?? "provided"} already taken` })
+      default:
+        break;
+    }
+  }
+
   public getById = async (req: Request, res: Response) => {
     const { id } = req.params;
 
@@ -45,7 +61,7 @@ export default class UsersController {
       const foundUser = await this.findUser(Number(id));
       return this.userResponse(res, StatusCodes.OK, foundUser);
     } catch (err: any) {
-      return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
+      return this.errorResponse(res, StatusCodes.NOT_FOUND, err);
     }
   }
 
@@ -59,7 +75,7 @@ export default class UsersController {
       }
       return this.userResponse(res, StatusCodes.OK, foundUser);
     } catch (err: any) {
-      return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
+      return this.errorResponse(res, StatusCodes.NOT_FOUND, err);
     }
   }
 
@@ -74,7 +90,7 @@ export default class UsersController {
       const users = foundUsers.map((user) => this.passwordlessUser(user));
       return res.status(StatusCodes.OK).json(users);
     } catch (err: any) {
-      return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
+      return this.errorResponse(res, StatusCodes.NOT_FOUND, err);
     }
   }
 
@@ -84,7 +100,7 @@ export default class UsersController {
       const users = foundUsers.map((user) => this.passwordlessUser(user));
       return res.status(StatusCodes.OK).json(users);
     } catch (err) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: this.INTERNAL_ERROR_MESSAGE });
+      return this.errorResponse(res, StatusCodes.INTERNAL_SERVER_ERROR, err);
     }
   }
 
@@ -111,9 +127,9 @@ export default class UsersController {
     } catch (err) {
       if (err instanceof Prisma.PrismaClientKnownRequestError) {
         if (err.code === "P2002") {
-          return res.status(StatusCodes.CONFLICT).json({ message: this.EMAIL_TAKEN_MESSAGE(email) });
+          return this.errorResponse(res, StatusCodes.CONFLICT, err, email);
         }
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: this.INTERNAL_ERROR_MESSAGE });
+        return this.errorResponse(res, StatusCodes.INTERNAL_SERVER_ERROR, err);
       }
     }
   }
@@ -126,7 +142,7 @@ export default class UsersController {
       const deletedUser = await this.usersService.delete(Number(id))
       return this.userResponse(res, StatusCodes.OK, deletedUser);
     } catch (err: any) {
-      return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
+      return this.errorResponse(res, StatusCodes.NOT_FOUND, err);
     }
   }
 
@@ -158,12 +174,11 @@ export default class UsersController {
     } catch (err: any) {
       if (err instanceof Prisma.PrismaClientKnownRequestError) {
         if (err.code === "P2002") {
-          return res.status(StatusCodes.CONFLICT).json({ message: this.EMAIL_TAKEN_MESSAGE(email!) });
+          return this.errorResponse(res, StatusCodes.CONFLICT, err, email);
         }
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: this.INTERNAL_ERROR_MESSAGE });
-      } else {
-        return res.status(StatusCodes.NOT_FOUND).json({ error: err.message });
+        return this.errorResponse(res, StatusCodes.INTERNAL_SERVER_ERROR, err);
       }
+      return this.errorResponse(res, StatusCodes.NOT_FOUND, err);
     }
   }
 };
