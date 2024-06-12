@@ -100,7 +100,7 @@ router.put('/:id', async (req: Request, res: Response) => {
 
 //Mostra o Banco existente
 
-router.get('/', async(req:Request, res:Response) => {
+router.get('/usuarios', async(req:Request, res:Response) => {
 
     try {
         const usuarios = await prisma.user.findMany()
