@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '@/app/styles/modal.module.css';
+import axios from 'axios';
 
 interface ModalProps {
     isOpen: boolean;
@@ -18,6 +19,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onAddClient }) => {
             setTotalBread("");
         }
     };
+
+    //axios({
+    //    method: "post",
+    //    url: "http://localhost:8080/create_user",
+    //    data: {
+    //      name: "Fred Flintstone",
+    //      paes: 3,
+    //    },
+    //});
 
     if (!isOpen) return null;
 
