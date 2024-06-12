@@ -31,17 +31,22 @@ app.post('/user', async (req: Request, res: Response) => {
 });
 
 // Remover pessoa (User) - DELETE
-app.delete('/user/:id', async (req: Request, res: Response) => {
-  const { id } = req.params;
-
-  try {
-    const user = await prisma.user.delete({
-      where: { id: parseInt(id) }
-    });
-    res.send({ message: 'Usuário deletado com sucesso', user });
-  } catch (error) {
-    res.status(400).send({ error: 'Erro ao deletar usuário', details: error });
-  }
+app.delete('/user/:name', async (req: Request, res: Response) => {
+    const { name } = req.params;
+  
+    try {
+      const result = await prisma.user.deleteMany({
+        where: { name }
+      });
+  
+      if (result.count > 0) {
+        res.send({ message: 'Usuário(s) deletado(s) com sucesso', result });
+      } else {
+        res.status(404).send({ error: 'Usuário não encontrado' });
+      }
+    } catch (error) {
+      res.status(400).send({ error: 'Erro ao deletar usuário', details: error });
+    }
 });
 
 // Editar/Atualizar pessoa (User) - PUT

@@ -37,9 +37,9 @@ const Headers: React.FC = () => {
     setTotalRevenue(totalRevenue + totalBread * 0.5);
   };
 
-  const deleteClient = async (id: number, index: number) => {
+  const deleteClient = async (name: string, index: number) => {
     try {
-      await axios.delete(`http://localhost:3000/user/${id}`);
+      await axios.delete(`http://localhost:3000/user/${name}`);
       const updatedClients = clients.filter((_, i) => i !== index);
       setClients(updatedClients);
       const client = clients[index];
@@ -96,7 +96,7 @@ const Headers: React.FC = () => {
                   <p><span className='span'>Total a pagar:</span> R$ {(client.totalBread * 0.5).toFixed(0.5)},00</p>
                 </div>
               </div>
-              <button onClick={() => deleteClient(client.id, index)}> 
+              <button onClick={() => deleteClient(client.name, index)}> 
                 <Image src={Trash} alt='Botão excluir' /> 
               </button>
             </div>
