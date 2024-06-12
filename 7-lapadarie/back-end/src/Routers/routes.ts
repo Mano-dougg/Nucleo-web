@@ -8,6 +8,6 @@ router.get('/', (req, res) => {
 })
 
 router.post("/create_user", UserControllers.createUser);
-router.get("/user/:name", UserControllers.createUser);
+router.get("/user", UserControllers.getUserLastId);
 
-export { router }
+export { router}

@@ -31,13 +31,17 @@ export default {
     },
 
 // GETS 
-    async getUserName(req: Request, res: Response) {
+    async getUserLastId(req: Request, res: Response) {
         try {
-            const {name} = req.body
-            const user = await prisma.user.findMany({where: {name: name}})
-            // VALIDATION
+            const user = await prisma.user.findMany({
+                orderBy: {
+                    id: 'desc',
+                },
+                take: 1,
+            });
+            // VALIDATIONS
             if (!user) {
-                return res.status(422).json({ error: "Não foi possível encontrar esse membro"})
+                return res.status(422).json({ error: "Não foi possível encontrar esse usuário"})
             }
             
             return res.status(200).json(user)
