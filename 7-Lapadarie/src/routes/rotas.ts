@@ -14,7 +14,7 @@ const calcularTotalPaes = async () => {
     return usuarios.reduce((total, user) => total + user.paes, 0);
 };
 
-//Função para saber o povo na fila
+//Função para saber o povo nas filas
 
 const Fila = async () => {
     const us = await prisma.user.findMany();
