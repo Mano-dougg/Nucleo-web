@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
+import Head from "next/head";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,8 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-      <body className={inter.className}>{children}</body>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <body className="h-screen flex flex-col items-center bg-pbeige">
+        {children}
+      </body>
     </html>
   );
 }

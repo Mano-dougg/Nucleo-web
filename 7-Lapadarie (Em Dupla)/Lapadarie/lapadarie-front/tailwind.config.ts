@@ -17,10 +17,16 @@ const config: Config = {
         pbrown: '#5F3305',
         plightbrown: '#965A1B',
         pbeige: '#E5CF94',
+        pred: '#DB1E1E',
       },
       fontFamily: {
         'sans': ['Poppins', 'sans-serif'],
       },
+      gridTemplateColumns: {
+        'transactions3': 'minmax(230px, 395px) minmax(230px, 395px) minmax(230px, 395px)',
+        'transactions2': 'minmax(230px, 395px) minmax(230px, 395px)',
+        'transactions1': 'minmax(230px, 395px)',
+      }
     },
   },
   plugins: [],

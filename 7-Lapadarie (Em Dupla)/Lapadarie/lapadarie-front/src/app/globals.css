@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @layer utilities {
+  .placeholder-custom {
+    @apply placeholder-gray-500;
+    ::placeholder {
+      @apply text-xs;
+    }
+  }
+} */
+
+#name-input::placeholder {
+  font-size: 0.875rem;
+}
+#bread-amount-input::placeholder {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 790px) {
+  #grid {
+    grid-template-columns: minmax(230px, 395px) minmax(230px, 395px);
+  }
+}
+
+@media (max-width: 530px) {
+  #grid {
+    grid-template-columns: minmax(230px, 395px);
+  }
+  #item-list-amounts {
+    gap: 6px;
+    flex-direction: column;
+  }
+}
