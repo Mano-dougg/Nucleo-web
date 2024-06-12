@@ -1,15 +1,11 @@
 import express from 'express';
-import { Request, Response } from 'express';
+import { router } from './Routers/routes'
 
 const app = express();
-
 app.use(express.json());
-
-app.get('/', (req: Request, res: Response) => {
-    return res.status(200).json('Olá Mundo! Essa é a minha primeira rota :)');
-});
-
+app.use(router)
 const PORT = 8080;
+
 
 app.listen(PORT, () => {
     console.log(`Servidor está executando na porta ${PORT}`);
