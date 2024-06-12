@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
 interface ModalFormsProps {
@@ -6,7 +6,6 @@ interface ModalFormsProps {
     children?: React.ReactNode;
     setModalOpen: (isOpen: boolean) => void;
 }
-
 
 const JanelaForms = styled.div`
     position: fixed;
@@ -66,7 +65,6 @@ const FormularioInput = styled.input`
     border-radius: 5px 5px 5px 5px;
     @media screen and (max-width: 768px) {
         width: 80vw;
-
     }
 `;
 
@@ -92,6 +90,7 @@ const FormularioBotao = styled(BotaoBase)`
         background-color: var(--colorheader);
     }
 `;
+
 const FormularioBotaoCancelar = styled(BotaoBase)`
     background: none;
     color: var(--colorBordForms);
@@ -102,7 +101,7 @@ const FormularioBotaoCancelar = styled(BotaoBase)`
     }
 `;
 
-const Buttons = styled.div`
+const Buttons = styled.form`
     display: flex;
     flex-direction: row;
     gap: 10px; 
@@ -110,6 +109,44 @@ const Buttons = styled.div`
 `;
 
 export function ModalForms({ isOpen, setModalOpen , children }: ModalFormsProps) {
+    const [nome, setNome] = useState('');
+    const [totalPaes, setTotalPaes] = useState('');
+
+    const onChangeNome = (evt: ChangeEvent<HTMLInputElement>) => {
+        setNome(evt.target.value);
+    };
+
+    const onChangeTotalPaes = (evt: ChangeEvent<HTMLInputElement>) => {
+        setTotalPaes(evt.target.value);
+    };
+
+    const SendPedido = async (evt: React.MouseEvent<HTMLButtonElement>) => {
+        evt.preventDefault();
+
+        const pedidoData = {
+            nome: nome,
+            totalPaes: parseInt(totalPaes),
+        };
+
+        try {
+            const response = await fetch('http://localhost:1080/createFila', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(pedidoData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro ao enviar pedido');
+            }
+
+            setModalOpen(false);
+        } catch (error) {
+            console.error('Erro ao enviar pedido:', error);
+        }
+    };
+
     if (isOpen) {
         return (
             <JanelaForms>
@@ -117,12 +154,24 @@ export function ModalForms({ isOpen, setModalOpen , children }: ModalFormsProps)
                     <Forms>
                         <Title>Adicionar pessoas a fila</Title>
                         <FormularioContainer>
-                            <FormularioInput type="text" placeholder="Nome completo do cliente" />
-                            <FormularioInput type="text" placeholder="Total de pães :" />
+                            <FormularioInput 
+                                type="text" 
+                                name='nome' 
+                                value={nome} 
+                                onChange={onChangeNome}
+                                placeholder="Nome completo do cliente" 
+                            />
+                            <FormularioInput 
+                                type="text" 
+                                name='totalPaes' 
+                                value={totalPaes} 
+                                onChange={onChangeTotalPaes}
+                                placeholder="Total de pães :" 
+                            />
                         </FormularioContainer>
                     </Forms>
                     <Buttons>
-                        <FormularioBotao type="submit">Enviar</FormularioBotao>
+                        <FormularioBotao onClick={SendPedido}>Enviar</FormularioBotao>
                         {children}
                         <FormularioBotaoCancelar type="button" onClick={() => setModalOpen(false)}>Cancelar</FormularioBotaoCancelar>
                     </Buttons>
@@ -130,4 +179,6 @@ export function ModalForms({ isOpen, setModalOpen , children }: ModalFormsProps)
             </JanelaForms>
         );
     }
+
+    return null;
 }

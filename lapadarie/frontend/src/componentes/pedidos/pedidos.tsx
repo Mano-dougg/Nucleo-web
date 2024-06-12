@@ -20,21 +20,15 @@ interface ModalProps {
 
 const Container = styled.div`
   width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 3.8rem;
-  gap: 50px;
+  padding: 1rem;
 `;
 
 const ContainerCard = styled.div`
-  width: 1235px;
-  height: 77px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  gap: 20px;
+  padding: 1rem;
+  margin-bottom: 1rem;
   border-radius: 5px;
   background-color: white;
 `;
@@ -42,7 +36,7 @@ const ContainerCard = styled.div`
 const NomeInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.5rem;
 `;
 
 const NomeCliente = styled.div`
@@ -54,7 +48,7 @@ const Info = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10px;
+  gap: 0.5rem;
 `;
 
 const Excluir = styled.div`
@@ -63,13 +57,16 @@ const Excluir = styled.div`
   justify-content: center;
 `;
 
-const BotaoLixeira = styled.button``;
-
-//styles do forms
+const BotaoLixeira = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
 
 const ContainerAddPessoas = styled.div`
   color: white;
   text-align: start;
+  margin-bottom: 1rem;
 `;
 
 const ButtonForms = styled.button`
@@ -94,15 +91,21 @@ export function Pedidos(props: PedidosProps) {
         console.error("Erro ao buscar pedidos:", error);
       }
     }
+
     fetchPedidos();
+
+    const intervalId = setInterval(fetchPedidos, 0);
+    return () => clearInterval(intervalId);
   }, []);
 
   const DeleteItem = async (id: number) => {
     try {
       await axios.delete(`http://localhost:1080/delete/${id}`);
-      setPedidos((prevPedidos) => prevPedidos.filter((pedido) => pedido.id !== id));
+      setPedidos((prevPedidos) =>
+        prevPedidos.filter((pedido) => pedido.id !== id)
+      );
     } catch (error) {
-      console.error("erro ao excluir pedido", error);
+      console.error("Erro ao excluir pedido", error);
     }
   };
 
@@ -110,7 +113,6 @@ export function Pedidos(props: PedidosProps) {
     <Container>
       <ContainerAddPessoas>
         <ButtonForms onClick={() => setOpenModal(true)}>
-          {" "}
           + Adicionar Pessoas na Fila
         </ButtonForms>
       </ContainerAddPessoas>
@@ -124,13 +126,12 @@ export function Pedidos(props: PedidosProps) {
             </NomeCliente>
             <Info>
               <p>Total de pães: {pedido.totalPaes}</p>
-              <p>Total a pagar: {pedido.totalAPagar}</p>
+              <p>Total a pagar: R${pedido.totalAPagar}</p>
             </Info>
           </NomeInfoContainer>
           <Excluir>
             <BotaoLixeira onClick={() => DeleteItem(pedido.id)}>
-              {" "}
-              <ButtonDelete />{" "}
+              <ButtonDelete />
             </BotaoLixeira>
           </Excluir>
         </ContainerCard>
