@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import "./globals.css";
 import { poppins } from '@/src/app/ui/fonts';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: "La padarie",
@@ -21,7 +22,7 @@ export default function RootLayout({
 
         <Header></Header>
         {children}
-
+        <Footer></Footer>
 
       </body>
 
@@ -30,17 +31,3 @@ export default function RootLayout({
 
 }
 
-// import Header from "@/components/header/Header";
-// import Footer from '@/components/footer/Footer';
- 
-// const inter = Inter({
-//   subsets: ['latin'],
-//   variable: '--font-inter',
-//   display: 'swap',
-// })
- 
-// const montserrat = Montserrat({
-//   subsets: ['latin'],
-//   variable: '--font-montserrat',
-//   display: 'swap',
-// })
