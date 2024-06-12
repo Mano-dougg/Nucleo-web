@@ -1,23 +1,27 @@
+'use client'
 import "./pedidos.css";
-import Image from 'next/image';
+import { useState } from "react";
+import Modal from "./Modal";
 
 export default function Pedidos() {
-    return (
-      
-      <main className="allpedidos">
 
-        <section className="pedidos">
+  const [isOpen, setIsOpen] = useState(false);
 
-          <div className="addpedidos">
-            <button>+ Adicionar pessoa a fila</button>
-          </div>
+  return (
+    <main className="allpedidos">
 
-          <div className="pedidoslista">
+      <section className="pedidos">
+        
+        <div className="addpedidos">
+          <button onClick={() => setIsOpen(true)}>+ Adicionar pessoa a fila</button>
+        </div>
 
-          </div>
-          
-        </section>
+        <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
+          <></>
+        </Modal>
 
-      </main>
-    );
+      </section>
+
+    </main>
+  );
 }
