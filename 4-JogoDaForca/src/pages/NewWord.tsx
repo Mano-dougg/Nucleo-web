@@ -34,7 +34,7 @@ const NewWord: React.FC = () => {
       <div className="options">
         
         <div className="input">
-          <input className="text" id="word" name="word" type="text" value={inputValue} onChange={handleInputChange} />
+          <input className="text" id="word" name="word" type="text" maxLength={8} value={inputValue} onChange={handleInputChange} />
           <label  className="warning" htmlFor="word"><img src={Warning} alt="aviso: máximo de 8 letras" /><span>Máx. de 8 letras</span></label>
         </div>
 
