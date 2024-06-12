@@ -1,27 +1,28 @@
-import React from 'react'
-import './modal.css'
+import React, { ReactNode } from 'react';
+import './modal.css';
 
-export default function Modal({isOpen, setModalOpen, children}){
-    
-    if(isOpen){
-       return(
-        <div className='modalOut'>
-            <div className='modalIn'>
-                <div className='modalConteudo'>
-                    <div>   
-                        {children}
-                    </div>
-                    
-                    <div className='btnsModal'>
-                        <button className='btnModalMarrom'>Enviar</button>
-                        <button className='btnModal'onClick={setModalOpen}>Cancelar</button>
-                    </div>
+interface ModalProps {
+  isOpen: boolean;
+  setModalOpen: (isOpen: boolean) => void;
+  children: ReactNode;
+}
 
-                </div>
-
-            </div>
+const Modal: React.FC<ModalProps> = ({ isOpen, setModalOpen, children }) => {
+  if (isOpen) {
+    return (
+      <div className="modalOut">
+        <div className="modalIn">
+          <div className="modalConteudo">
+            {children}
+          </div>
+          <div className="btnsModal">
+            <button className="btnModal" onClick={() => setModalOpen(false)}>Cancelar</button>
+          </div>
         </div>
-    )} 
+      </div>
+    );
+  }
+  return null;
+}
 
-    return null
-    }
+export default Modal;

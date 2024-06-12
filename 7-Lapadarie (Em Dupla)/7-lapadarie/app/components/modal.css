@@ -26,7 +26,7 @@
     flex-direction: column;
 }
 
-.modalConteudo input{
+.inputData {
     background-color: #F5F5F5;
     border-radius: 5px;
     font-size: 12px;
@@ -44,10 +44,10 @@
 
 .btnsModal{
     display: flex;
-    margin-top: 50px;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+    margin-top:-68px;
+    justify-content:center;
+    align-items:center;
+
 }
 
 .btnModal{
@@ -59,7 +59,7 @@
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
-
+    margin-left: 300px;
 
 }
 
@@ -71,6 +71,10 @@
     font-weight: bolder;
     font-size: 14px;
     border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+
+
 }
 
 .btnPessoas{
