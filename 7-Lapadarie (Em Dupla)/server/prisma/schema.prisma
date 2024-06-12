@@ -15,14 +15,7 @@ model Order {
   customer_name    String
   numberOfBreads Int      
   totalPrice     Float    
-  createdAt DateTime @default(autoDateTime())
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-}
-
-model FulfilledOrder {
-  id    Int     @id @default(autoincrement())
-  customer_name    String
-  numberOfBreads Int      
-  totalPrice     Float    
-  fulfillmentDate DateTime?
+  FulfilledOrder Boolean 
 }
