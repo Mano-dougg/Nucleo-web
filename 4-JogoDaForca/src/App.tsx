@@ -7,28 +7,16 @@ import NewWord from './pages/NewWord';
 import Game from './pages/Game';
 
 const App: React.FC = () => {
-  const [wins, setWins] = useState(0);
-  const [losses, setLosses] = useState(0);
-  const handleGameEnd = (win: boolean) => {
-    win ? setWins(wins + 1) : setLosses(losses + 1);
-  };
 
   const router = createBrowserRouter([
     { path: "/", element: <Home /> },
     { path: "/new-word", element: <NewWord /> },
-    { path: "/game", element: <Game onGameEnd={handleGameEnd} /> },
+    { path: "/game", element: <Game /> },
   ]);
 
   return (
     <div className="App">
-      <div className="menu">
-        <img className="logo" src={LogoAlura} alt="" />
-
-        <div className="scoreboard">
-          {wins}
-          {losses}
-        </div>
-      </div>
+      <img className="logo" src={LogoAlura} alt="" />
 
       <RouterProvider router={router} />
 

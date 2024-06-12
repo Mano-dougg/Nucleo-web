@@ -4,7 +4,7 @@ import './NewWord.css'
 import Warning from '../assets/warning.svg'
 
 const NewWord: React.FC = () => {
-  const [textValue, setTextValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>('');
   const [savedWords, setSavedWords] = useState<string[]>([]);
 
   useEffect(() => {
@@ -14,15 +14,15 @@ const NewWord: React.FC = () => {
     }
   }, []);
 
-  const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setTextValue(event.target.value);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
   };
 
   const handleClick = () => {
-    if (!textValue)
+    if (!inputValue)
       return;
 
-      const updatedTexts = [...savedWords, textValue.toLowerCase()];
+      const updatedTexts = [...savedWords, inputValue.toLowerCase()];
       setSavedWords(updatedTexts);
       localStorage.setItem('savedWords', JSON.stringify(updatedTexts));
   };
@@ -34,7 +34,7 @@ const NewWord: React.FC = () => {
       <div className="options">
         
         <div className="input">
-          <textarea className="text" id="word" name="word" value={textValue} onChange={handleTextChange} />
+          <input className="text" id="word" name="word" type="text" value={inputValue} onChange={handleInputChange} />
           <label  className="warning" htmlFor="word"><img src={Warning} alt="aviso: máximo de 8 letras" /><span>Máx. de 8 letras</span></label>
         </div>
 

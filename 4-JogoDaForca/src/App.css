@@ -9,9 +9,6 @@
   display: block;
   width: 32px;
 }
-.scoreboard {
-  
-}
 
 @media (min-width: 768px) {
   .App {

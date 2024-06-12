@@ -4,14 +4,11 @@
   --gray: 73, 80, 87;
 }
 
-@font-face {
-  font-family: 'Inter';
-  src: url('./fonts/Inter-VariableFont_slnt\,wght.ttf') format('tff');
-}
-
 * {
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
   color: rgb(var(--dark-blue));
   background-color: rgb(var(--white));
 }
