@@ -26,9 +26,9 @@ const Lista = () => {
   // atualiza cada vez a variável dados é mudada
   //Função para retornar todos os users
   const fetchDados = async () => {
-    const res: AxiosResponse = await axios.get("http://localhost:3001/usuario");
+    /* const res: AxiosResponse = await axios.get("http://localhost:3001/usuario");
     const data = res.data.users;
-    setDados(data);
+    setDados(data); */
   };
 
   useEffect(() => {
@@ -38,9 +38,9 @@ const Lista = () => {
   //Função assíncrona para deletar usuário, é chamada ao clicar na lixeira
   const handleDelete = async (id: string) => {
     try {
-      const req = await axios.delete(
+      /* const req = await axios.delete(
         `http://localhost:3001/usuario/deletar/${id}` // API teste
-      );
+      ); */
       fetchDados();
     } catch (error) {
       alert(error);
@@ -56,10 +56,10 @@ const Lista = () => {
       />
       <div className=" h-screen w-full mb-52">
         <section className="w-full flex items-center justify-center">
-          <div className="min-w-[395px] h-auto flex flex-col px-5 md:max-w-[1235px] md:w-[1235px]">
+          <div className="min-w-[80%] h-auto flex flex-col px-5 md:max-w-[1235px] md:w-[1235px]">
             <Modal atualizar={() => fetchDados()} />
             {/* Map para retornar todos os users */}
-            {dados?.map((item: Item) => (
+            {/* {dados?.map((item: Item) => (
               <CardClient
                 cliente={item.nome}
                 totalPao={item.email}
@@ -67,7 +67,28 @@ const Lista = () => {
                 key={item.id}
                 evento={() => handleDelete(item.id.toString())}
               />
-            ))}
+            ))} */}
+            <CardClient
+                cliente={"Vladmir"}
+                totalPao={"pao"}
+                totalPagar={`R$ ${'din'}`}
+                
+                evento={() => handleDelete('item.id'.toString())}
+              />
+            <CardClient
+                cliente={"Vladmir"}
+                totalPao={"pao"}
+                totalPagar={`R$ ${'din'}`}
+                
+                evento={() => handleDelete('item.id'.toString())}
+              />
+            <CardClient
+                cliente={"Vladmir"}
+                totalPao={"pao"}
+                totalPagar={`R$ ${'din'}`}
+                
+                evento={() => handleDelete('item.id'.toString())}
+              />
           </div>
         </section>
       </div>
