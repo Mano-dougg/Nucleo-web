@@ -1,9 +1,11 @@
 import Image from "next/image";
+import { MouseEventHandler, ReactEventHandler } from "react";
 
 interface CardClientProps {
   cliente: string;
   totalPao: string;
   totalPagar: string;
+  evento: any
 }
 
 interface clientDadosProps {
@@ -14,7 +16,8 @@ interface clientDadosProps {
 const CardClient: React.FC<CardClientProps> = ({
   cliente, //Vai receber o nome do cliente para por no card
   totalPagar,//Vai receber o total a pagar relativo a quantidade de pães do cliente
-  totalPao, //Vai receber o total de pães que o cliente comprou
+  totalPao,
+  evento//Vai receber o total de pães que o cliente comprou
 }) => {
   return (
     <div className=" w-full p-4 bg-bg-cardClient rounded-md flex gap-1 justify-between items-center h-fit mb-5">
@@ -33,7 +36,7 @@ const CardClient: React.FC<CardClientProps> = ({
         </div>
         <div className="flex flex-wrap gap-2 font-bold"></div>
       </div>
-      <Image src={"/delete.svg"} alt={"lixeira"} width={28} height={28} className="w-7 h-7"/>
+      <Image src={"/delete.svg"} alt={"lixeira"} width={28} height={28} className="w-7 h-7 hover:cursor-pointer" onClick={evento}/>
     </div>
   );
 };

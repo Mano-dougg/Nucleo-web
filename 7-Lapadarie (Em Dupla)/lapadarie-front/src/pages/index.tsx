@@ -1,12 +1,12 @@
 import Header from "@/components/Header";
 import Lista from "@/components/Lista";
+import { useState } from "react";
 
 function DialogDemo() {
+
+
   return (
-    <main className="flex  h-screen gap-4 w-full flex-col ">
-      <Header />
-      <Lista />
-    </main>
+      <Lista  />
   );
 }
 

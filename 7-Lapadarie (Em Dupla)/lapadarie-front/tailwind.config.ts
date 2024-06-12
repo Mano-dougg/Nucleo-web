@@ -41,7 +41,8 @@ const config = {
       "text-primary": "rgba(95, 51, 5, 1)",
       "bg-card2": "rgba(95, 51, 5, 1)",
       "bg-header": "#965A1B",
-      "bg-input":"rgba(245, 245, 245, 1)"
+      "bg-input":"rgba(245, 245, 245, 1)",
+      "cancel":"rgba(219, 30, 30, 1)"
     }
   },
   plugins: [require("tailwindcss-animate")],
