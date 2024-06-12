@@ -5,6 +5,7 @@ import Queue from "@/src/app/assets/Queue-icon.png";
 import Cart from "@/src/app/assets/Cart-icon.png";
 import Dolar from "@/src/app/assets/Dolar-icon.png";
 
+
 export default function Header (){
 
     return (
@@ -51,3 +52,4 @@ export default function Header (){
 
     </header> );
 }
+

@@ -1,5 +1,5 @@
 header{
-    min-height: 32vh;
+    /* min-height: 32vh; */
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -43,6 +43,7 @@ header{
     flex-direction: column;
     padding: 20px;
     justify-content: space-between;
+    border-radius: 5px;
 }
 
 .total-info{

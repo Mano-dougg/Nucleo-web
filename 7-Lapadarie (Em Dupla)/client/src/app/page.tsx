@@ -1,14 +1,23 @@
-import styles from "./page.module.css";
-// import { lusitana } from '@/app/ui/fonts';
+import Header from "./components/Header/Header";
+import Queue from "./components/Queue/Queue";
+import "./page.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <p> Página principal</p>
-    </main>
+    <div className="home">
+      
+      <Header></Header>
+
+      <main className="main">
+
+        <button className="add-order"> + Adicione pessoas a fila </button>
+
+        <Queue></Queue>
+
+        <p className="finished"> Finalizados </p>
+
+      </main>
+
+    </div>
   );
 }
-
-
-// para mudar a fonte de uma parte específica do código
-{/* <p className={lusitana.className}> Página principal</p> */}
