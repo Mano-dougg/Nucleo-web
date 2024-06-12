@@ -52,3 +52,30 @@ export const deleteUser = async (req: Request, res: Response) => {
     return res.status(404).json({ error: error.message });
   }
 }
+
+
+export const deleteAllUsers = async (_: Request, res: Response) => {
+  try {
+    const users = await prisma.user.findMany();
+
+    if (users.length === 0) {
+      return res.status(404).json({
+        error: true,
+        message: 'Error: There are no users',
+      });
+    }
+
+    await prisma.user.deleteMany();
+
+    return res.status(200).json({
+      error: false,
+      message: 'Success: All users have been deleted',
+    });
+  } catch (error) {
+    console.error('Error deleting users:', error);
+    return res.status(500).json({
+      error: true,
+      message: 'Internal Server Error',
+    });
+  }
+};

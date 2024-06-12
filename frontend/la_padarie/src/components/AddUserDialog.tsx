@@ -1,4 +1,5 @@
 "use client"
+import axios from 'axios'
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -28,21 +29,30 @@ export function AddUserDialog() {
     },
   })
 
-  const onSubmit = (values: z.infer<typeof userCreateInputSchema>) => {
-    toast({
-      title: "New order!",
-      description: `${values.name} ordered ${values.breads} bread${values.breads > 1 ? "s" : ""}`,
-    })
-    setOpen(false)
-  }
+  const onSubmit = async (values: z.infer<typeof userCreateInputSchema>) => {
+    try {
+      const _ = await axios.post('http://localhost:3001/', values);
+      toast({
+        title: "New order!",
+        description: `${values.name} ordered ${values.breads} bread${values.breads > 1 ? "s" : ""}`,
+      });
+      setOpen(false); 
+    } catch (error) {
+      console.error('Error adding user');
+      toast({
+        title: "Error",
+        description: "Unable to add another order"
+      });
+    }
+  };
 
   useEffect(() => {
     if (form.formState.isSubmitSuccessful) {
-      form.reset()
+      form.reset();
     }
-  })
+  }, [form]);
 
-  const [ open, setOpen ] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -60,7 +70,7 @@ export function AddUserDialog() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-right font-bold  text-[hsl(31,90%,20%)]">Name</FormLabel>
+                  <FormLabel className="text-right font-bold text-[hsl(31,90%,20%)]">Name</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Customer name"

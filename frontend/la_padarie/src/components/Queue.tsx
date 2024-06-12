@@ -10,16 +10,18 @@ export type User = {
 }
 
 type Props = {
-  users: User[]
+  users: User[],
+  onDelete:(id:number) => void
 }
 
-function Queue({ users }: Props) {
+
+function Queue({ users, onDelete}: Props) {
   return (
     <section className={`flex flex-col items-start w-full max-w-[1250px] gap-1 sm:gap-3`}>
       <AddUserDialog />
       <div className={`flex flex-col w-full gap-3`}>
         {users && users.map((user) => (
-          <UserCard key={user.id} user={user} />
+          <UserCard key={user.id} user={user} onDelete={onDelete}/>
         ))}
       </div>
     </section>
