@@ -1,5 +1,8 @@
 import logoImage from '/src/assets/logo.svg'; 
 import bottonimg from './Icon.png'
+import iconuserpng from "./iconC1.svg"
+import iconlojapng from "./iconC2.svg"
+import icondolar from "./iconC3.svg"
 import Image from 'next/image';
 
 export function LogoPadaria() {
@@ -13,6 +16,46 @@ export function LogoPadaria() {
     />
   );
 }
+export function IconUser() {
+  return (
+    
+    <Image 
+        src={iconuserpng} 
+        alt="" 
+        layout="responsive" 
+        width={24}  
+        height={24} 
+    />
+);
+
+}
+
+
+export function IconLoja(){
+  return (
+    
+    <Image 
+        src={iconlojapng} 
+        alt="Delete button" 
+        layout="responsive" 
+        width={24}  
+        height={24} 
+    />
+);
+}
+
+export function IconDolar(){
+  return (
+    
+    <Image 
+        src={icondolar} 
+        alt="" 
+        layout="responsive" 
+        width={24}  
+        height={24} 
+    />
+);
+  }
 
 export function ButtonDelete() {
   return (

@@ -2,6 +2,9 @@
   --colorheader:#965A1B;
   --colorEntrada: #5F3305;
   --colorbackground: #E5CF94;
+  --colorBordForms:#DB1E1E;
+  --colorbackgroundclaro: #E5CF9480;
+
 }
 
 *{
@@ -12,4 +15,6 @@
 }
 body{
   background-color: var(--colorbackground);
+
+  
 }

@@ -1,4 +1,5 @@
 import { ButtonDelete } from "@/assets/logo";
+import { ModalForms } from "./modalforms";
 import axios, { AxiosResponse } from "axios";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -7,10 +8,15 @@ interface Pedido {
   id: number;
   nome: string;
   totalPaes: number;
-  totalAPagar: number; // Adicionado o campo totalAPagar
+  totalAPagar: number;
 }
 
 interface PedidosProps {}
+
+interface ModalProps {
+  isOpen: boolean;
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 const Container = styled.div`
   width: 100%;
@@ -57,19 +63,31 @@ const Excluir = styled.div`
   justify-content: center;
 `;
 
-const BotaoLixeira = styled.button`
-cursor: pointer;
-background: none;
-border: none;
+const BotaoLixeira = styled.button``;
 
-`
+//styles do forms
+
+const ContainerAddPessoas = styled.div`
+  color: white;
+  text-align: start;
+`;
+
+const ButtonForms = styled.button`
+  cursor: pointer;
+  background: none;
+  border: none;
+`;
+
 export function Pedidos(props: PedidosProps) {
   const [pedidos, setPedidos] = useState<Pedido[]>([]);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     async function fetchPedidos() {
       try {
-        const response: AxiosResponse = await axios.get('http://localhost:1080/listarPedidos');
+        const response: AxiosResponse = await axios.get(
+          "http://localhost:1080/listarPedidos"
+        );
         const dados: Pedido[] = response.data.pedidos;
         setPedidos(dados);
       } catch (error) {
@@ -79,21 +97,25 @@ export function Pedidos(props: PedidosProps) {
     fetchPedidos();
   }, []);
 
-
-
-  const DeleteItem = async (id:number )=> {
-    try{
+  const DeleteItem = async (id: number) => {
+    try {
       await axios.delete(`http://localhost:1080/delete/${id}`);
-      setPedidos((prevPedidos) => prevPedidos.filter(pedido => pedido.id != id));
-    }catch(error){
-      console.error("erro ao excluir pedido", error)
+      setPedidos((prevPedidos) => prevPedidos.filter((pedido) => pedido.id !== id));
+    } catch (error) {
+      console.error("erro ao excluir pedido", error);
     }
   };
 
-
   return (
     <Container>
-      <div> + Adicionar Pessoas na Fila</div>
+      <ContainerAddPessoas>
+        <ButtonForms onClick={() => setOpenModal(true)}>
+          {" "}
+          + Adicionar Pessoas na Fila
+        </ButtonForms>
+      </ContainerAddPessoas>
+      <ModalForms isOpen={openModal} setModalOpen={setOpenModal} />
+
       {pedidos.map((pedido) => (
         <ContainerCard key={pedido.id}>
           <NomeInfoContainer>
@@ -106,8 +128,11 @@ export function Pedidos(props: PedidosProps) {
             </Info>
           </NomeInfoContainer>
           <Excluir>
-            <BotaoLixeira onClick={() => DeleteItem(pedido.id)}> <ButtonDelete/>  </BotaoLixeira>
-            </Excluir>
+            <BotaoLixeira onClick={() => DeleteItem(pedido.id)}>
+              {" "}
+              <ButtonDelete />{" "}
+            </BotaoLixeira>
+          </Excluir>
         </ContainerCard>
       ))}
     </Container>

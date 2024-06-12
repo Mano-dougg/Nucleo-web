@@ -1,3 +1,4 @@
+import { IconDolar, IconLoja, IconUser } from "@/assets/logo";
 import React from "react";
 import styled from "styled-components";
 
@@ -40,7 +41,7 @@ const PessoaText = styled.div`
 
 const EntradaText = styled.h1`
   color: white;
-  font-family: Poppins;
+  font-family: ;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -50,7 +51,6 @@ const EntradaText = styled.h1`
 
 const ValorText = styled.p`
   color: white;
-  font-family: Poppins;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -63,7 +63,7 @@ export function Contador(props: ContadorProps) {
         <Aling>
           <FlexEst>
             <PessoaText>Pessoa na fila</PessoaText>
-            <div>icon</div>
+            <div><IconUser/></div>
           </FlexEst>
           <div>7</div>
         </Aling>
@@ -73,7 +73,7 @@ export function Contador(props: ContadorProps) {
         <Aling>
           <FlexEst>
             <PessoaText>Pães Vendidos</PessoaText>
-            <div>icon</div>
+            <div><IconLoja/></div>
           </FlexEst>
           <div>350</div>
         </Aling>
@@ -83,7 +83,7 @@ export function Contador(props: ContadorProps) {
         <Aling>
           <FlexEst>
             <EntradaText>Entrada</EntradaText>
-            <div>icon</div>
+            <div><IconDolar/></div>
           </FlexEst>
           <ValorText>Valor</ValorText>
         </Aling>
