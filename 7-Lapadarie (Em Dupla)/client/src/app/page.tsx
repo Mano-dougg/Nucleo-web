@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header";
 import Queue from "./components/Queue/Queue";
+import History from "./components/History/History";
 import "./page.css";
 
 export default function Home() {
@@ -15,6 +16,8 @@ export default function Home() {
         <Queue></Queue>
 
         <p className="finished"> Finalizados </p>
+
+        <History></History>
 
       </main>
 
