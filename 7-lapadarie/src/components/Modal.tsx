@@ -18,17 +18,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onAddClient }) => {
             setName("");
             setTotalBread("");
         }
+        axios({
+            method: "post",
+            url: "http://localhost:8080/create_user",
+            data: {
+              name: name,
+              paes: totalBread,
+            },
+        });
     };
-
-    //axios({
-    //    method: "post",
-    //    url: "http://localhost:8080/create_user",
-    //    data: {
-    //      name: "Fred Flintstone",
-    //      paes: 3,
-    //    },
-    //});
-
+    
     if (!isOpen) return null;
 
     return (
