@@ -6,9 +6,14 @@
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+
 }
 
 html {
     background-color: #E5CF94;
     overflow-x: hidden;
+}
+
+.no-scroll {
+    overflow-y:hidden;
 }
