@@ -9,11 +9,22 @@ const router = Router();
 
 //Função para calcular o total de pãess
 
-const calcularTotalPaes = async () => {
-    const usuarios = await prisma.user.findMany();
-    return usuarios.reduce((total, user) => total + user.paes, 0);
+let totalPaesVendidos = 0;
+
+const inicializarTotalPaesVendidos = async () => {
+    try {
+        const usuarios = await prisma.user.findMany();
+        totalPaesVendidos = usuarios.reduce((total, user) => total + user.paes, 0);
+    } catch (error) {
+        console.error('Erro ao inicializar total de pães vendidos:', error);
+    }
 };
 
+inicializarTotalPaesVendidos();
+
+const calcularTotalPaes = async () => {
+    return totalPaesVendidos;
+};
 //Função para saber o povo nas filas
 
 const Fila = async () => {
@@ -34,7 +45,8 @@ router.post('/', async (req: Request, res: Response) => {
             }
         });
 
-        const totalPaes = await calcularTotalPaes();
+        /* const totalPaes = await calcularTotalPaes(); */
+        totalPaesVendidos += paes; 
         const preco = paes * 0.50
 
         res.status(201).json({
