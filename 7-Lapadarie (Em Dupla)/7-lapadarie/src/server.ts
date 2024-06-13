@@ -7,31 +7,31 @@ const prisma = new PrismaClient()
 const app = express();
 const PORT = 3001;
 
-app.get("/helloworld", (req: Request, res: Response) => {
+app.get("/hello", (req: Request, res: Response) => {
   res.send("｢ʜȷxʃ ɵȷ xʃɤʃɞʃʭ｣ Esta não é a página de front-end. ;P")
 })
 
-app.post("/",
+app.post("/criar",
   async (req: Request, res: Response) => {
     const {nome, quantidade} = req.body
-    const pedido = await prisma.pedido.create({
+    await prisma.pedido.create({
       data: {
         cliente: nome,
         quant: quantidade
       }
     })
-    res.send(pedido)
+    res.status(200).json({message: "Pedido gerado com sucesso"})
   }
 )
 
-app.delete("/:id",
+app.delete("/deletar/:id",
   async (req: Request, res: Response) => {
     const { id } = req.params
     try {
       await prisma.pedido.delete({
         where: { id: Number(id) }
       })
-        res.json({message: 'Pessoa removida da fila'})
+        res.status(200).json({message: 'Pessoa removida da fila'})
     } catch (error) {
       res.status(400).json({ error: 'Pedido não pôde ser removido' })
     }
