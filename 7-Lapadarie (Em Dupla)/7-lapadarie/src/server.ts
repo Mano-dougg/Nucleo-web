@@ -24,6 +24,20 @@ app.post("/",
   }
 )
 
+app.delete("/:id",
+  async (req: Request, res: Response) => {
+    const { id } = req.params
+    try {
+      await prisma.pedido.delete({
+        where: { id: Number(id) }
+      })
+        res.json({message: 'Pessoa removida da fila'})
+    } catch (error) {
+      res.status(400).json({ error: 'Pedido não pôde ser removido' })
+    }
+  }
+)
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando no endereço http://localhost:${PORT}`)
 })
