@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["native", "windows"]
 }
 
 datasource db {
@@ -21,7 +22,7 @@ model Bread {
   order OrderList @relation(fields: [orderId], references: [id])
   orderId Int
 
-  @@map("breads.types")
+  @@map("bread")
 }
 
 model OrderList {
@@ -30,5 +31,5 @@ model OrderList {
   breadItems  Bread[]
   finished    Boolean  @default(false)
 
-  @@map("orders.order_list")
+  @@map("orderList")
 }
