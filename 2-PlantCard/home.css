@@ -181,13 +181,14 @@ button{
 
 
 @media screen and (max-width: 1120px){ 
-    
+
     .corpo{
         display: flex;
         margin: auto;
         width: 50%;
         height: 80%;
         justify-content: center;
+        align-items: center;
         
     }
 
@@ -258,8 +259,9 @@ button{
 
     .menu-hamburguer-icone img{
         display: flex;
-        margin-left: 98px;
-        margin-top: 10px;
+        margin-left: 90px;
+        margin-top: 5px;
+        
         
     }
 
@@ -268,6 +270,8 @@ button{
         align-items: center;
         justify-content: center;
         margin-left: -10px;
+        margin-top: -30px;
+        
 
     }
 

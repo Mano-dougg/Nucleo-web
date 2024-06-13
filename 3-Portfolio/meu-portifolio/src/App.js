@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Cabecalho toggleMenu={toggleMenu} menuVisible={menuVisible} />
-      {menuVisible ? null : (
+      {!menuVisible && (
         <>
           <Titulo/>
           <Descricao/>

@@ -11,3 +11,4 @@ function menuRedes(){
         
     }
 }
+export default meuEvento

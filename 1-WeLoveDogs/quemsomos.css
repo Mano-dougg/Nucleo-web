@@ -71,18 +71,23 @@ body {
 }
 
 .titulo{
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo h1{
+    display: flex;
     font-size: 35px;
     font-weight: 700;
     line-height: 65.37px;
     text-align: left;
-    width: 334px;
-    height: 65px;
     text-align: center;
     white-space: nowrap;
-    margin-left: 600px;
+    margin-left: 650px;
 }
 
 .post{
+    display: flex;
     width: 687px;
     height: 176px;
     font-size: 16px;

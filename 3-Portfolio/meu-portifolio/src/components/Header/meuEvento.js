@@ -10,4 +10,4 @@ function meuEvento(){
             menuObjeto.style.display = 'none';
         }
 }
-export default meuEvento;
+export default meuEvento
