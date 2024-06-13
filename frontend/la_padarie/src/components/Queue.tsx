@@ -19,11 +19,11 @@ function Queue({ users, onDelete}: Props) {
   return (
     <section className={`flex flex-col items-start w-full max-w-[1250px] gap-1 sm:gap-3`}>
       <AddUserDialog />
-      <div className={`flex flex-col w-full gap-3`}>
+      <ul className={`flex flex-col w-full gap-3`}>
         {users && users.map((user) => (
           <UserCard key={user.id} user={user} onDelete={onDelete}/>
         ))}
-      </div>
+      </ul>
     </section>
   )
 }

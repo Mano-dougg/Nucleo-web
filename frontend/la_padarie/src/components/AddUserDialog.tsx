@@ -1,10 +1,9 @@
 "use client"
-import axios from 'axios'
+
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -17,6 +16,7 @@ import UserCreateInputSchema from "../types/users/UserCreateInputSchema"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
 import { useToast } from "./ui/use-toast"
 import { useEffect, useState } from "react"
+import { createUser } from '@/service/services'
 
 export function AddUserDialog() {
   const { toast } = useToast();
@@ -31,17 +31,20 @@ export function AddUserDialog() {
 
   const onSubmit = async (values: z.infer<typeof userCreateInputSchema>) => {
     try {
-      const _ = await axios.post('http://localhost:3001/', values);
-      toast({
-        title: "New order!",
-        description: `${values.name} ordered ${values.breads} bread${values.breads > 1 ? "s" : ""}`,
-      });
-      setOpen(false); 
-    } catch (error) {
+      const createdUser = await createUser(values);
+      if (createdUser) {
+        toast({
+          title: "New order!",
+          description: `${createdUser.name} ordered ${createdUser.breads} bread${createdUser.breads > 1 ? "s" : ""}`,
+        });
+      }
+      setOpen(false);
+    } catch (error: any) {
       console.error('Error adding user');
       toast({
+        variant: "destructive",
         title: "Error",
-        description: "Unable to add another order"
+        description: `Unable to add another order: ${error.message}`
       });
     }
   };
@@ -50,9 +53,9 @@ export function AddUserDialog() {
     if (form.formState.isSubmitSuccessful) {
       form.reset();
     }
-  }, [form]);
+  }, [ form ]);
 
-  const [open, setOpen] = useState(false);
+  const [ open, setOpen ] = useState(false);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

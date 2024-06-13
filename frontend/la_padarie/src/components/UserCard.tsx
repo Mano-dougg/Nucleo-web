@@ -10,7 +10,7 @@ type Props = {
 
 const UserCard = ({ user, onDelete }: Props) => {
   return (
-    <div className={`flex justify-between items-center p-4 bg-background text-[hsl(31,90%,20%)] rounded-lg`}>
+    <li className={`flex justify-between items-center p-4 bg-background text-[hsl(31,90%,20%)] rounded-lg`}>
       <div className="flex flex-col font-bold">
         <h2 className="text-lg">{user.name}</h2>
         <div className="flex flex-col gap-x-3 sm:flex-row">
@@ -19,8 +19,7 @@ const UserCard = ({ user, onDelete }: Props) => {
         </div>
       </div>
       <Button variant="ghost" onClick={()=> onDelete(user.id)}><DeleteIcon /></Button>
-
-    </div>
+    </li>
   )
 }
 
