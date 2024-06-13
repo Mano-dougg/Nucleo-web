@@ -48,6 +48,12 @@ button{
     background: none;
     border: none;
     margin: 0;
+
+    transition: transform 600ms;
+}
+
+button:hover{
+    transform: scale(1.06);
 }
 
 @media (max-width: 834px){
