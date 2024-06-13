@@ -10,6 +10,8 @@ interface ModalProps {
   handleClose: () => void;
 }
 
+//Modal
+
 const Modal: React.FC<ModalProps> = ({ children, isOpen, handleClose }) => {
   const postarNome = new Postar();
   const nodeRef = useRef(null);
