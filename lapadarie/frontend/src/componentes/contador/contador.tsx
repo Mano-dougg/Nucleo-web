@@ -117,7 +117,7 @@ export function Contador(props: ContadorProps) {
             <EntradaText>Entrada</EntradaText>
             <div><IconDolar /></div>
           </FlexEst>
-          <ValorText>{contadores.valorTotalEmReais.toFixed(2)} R$</ValorText>
+          <ValorText>R${contadores.valorTotalEmReais.toFixed(2)} </ValorText>
         </Aling>
       </WrapperEntrada>
     </Container>
