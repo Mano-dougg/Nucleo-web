@@ -1,0 +1,56 @@
+body{
+    overflow: hidden;
+}
+
+.container{
+    padding: 40px 100px;
+}
+
+.container img{
+    width:220px;
+    height: 220px;
+}
+
+.container-one{
+    display: flex;
+}
+
+.container-one-text{
+    display: block;
+    width: fit-content;
+}
+
+.container-one-text h2{
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.container-one-text p{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.container-two{
+    display: flex;
+}
+
+.container-two-text{
+    display: block;
+    width: fit-content;
+}
+
+.container-two-text h2{
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.container-two-text p{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-align: justify;
+}

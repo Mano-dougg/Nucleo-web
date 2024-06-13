@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Inter' ;
+    src: url("./components/Inter/static/Inter-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-color:#F3F5FC;
+}
+
+.elementos-forca{
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    gap: 2rem;
+    font-family: "Inter";
+    animation: transitionIn 0.7s;
+}
+
+.botoes-pag3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2rem;
+    animation: transitionIn 0.7s;
+}
+
+.placar{
+    color: #0A3871;
+    font-size: 30px;
+    animation: transitionIn 0.7s;
+}
+
+@keyframes transitionIn{
+    from{
+      opacity: 0;
+      transform: rotateX(-10deg);
+    }
+    
+    to{
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  }
+  
+
+@media screen and (max-width: 1010px){
+    .botoes-pag3{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .elementos-forca{
+        margin-top: 50px;
+    }
+    
+}

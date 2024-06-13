@@ -1,0 +1,253 @@
+:root{
+    --blue: #BCCDD0;
+    --black: #111313;
+    --green: #696F5A;
+    --brown: #7C795E;
+    --white: #DFDFD6;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--blue);
+}
+
+img{
+    display: block;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    background-color: var(--white);
+    display: flex;
+    max-width: 800px;
+    max-height: 450px;
+    border-radius: 25px;
+}
+
+.card-image{
+    max-height: inherit;
+   
+}
+.card-img{
+    object-fit: fill;
+    max-width: 280px;
+    max-height: 100%;
+    margin: 0;
+    position: relative;
+    border-radius: 25px 0 0 25px;
+}
+
+.card-content{
+    display: block;
+    padding: 50px 30px 50px 15px;
+    flex-wrap: wrap;
+}
+
+.card-content-text > h2{
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 32px;
+}
+
+.card-content-text .text{
+    margin-top: 30px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+}
+
+.card-content-footer {
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    justify-content: space-between;
+    margin-top: 95px;
+    position: relative;
+}
+
+.card-dog{
+    display: flex;
+}
+.card-dog-text{
+    display: flex;
+    font-family: "Overpass", sans-serif;
+    margin-left: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-dog-text > h3 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.card-dog-text > p{
+    font-size: 16px;
+    font-weight: 500;
+}
+.card-content-footer-arrow:hover{
+    cursor: pointer;
+}
+
+/* DROPDOWN */
+
+.menu-wrap{
+    position: absolute;
+    bottom: 110%;
+    left: 55%;
+    width: 220px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.menu-wrap.open-menu{
+    max-height: 45px;
+}
+.menu{
+    background-color: var(--green);
+    padding: 10px;
+    border-radius: 14px;
+}
+
+.socialmedia{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.socialmedia-title{
+    display: flex;
+    max-width: 84px;
+    max-height: 21px;
+}
+
+.socialmedia-title > h2{
+    display: block;
+    font-family: "Overpass", sans-serif;
+    color: var(--white);
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 19px;
+}
+
+.socialmedia img{
+    width: 24px;
+    height: 24px;
+}
+
+.socialmedia > a:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* RESPONSIVIDADE */
+
+@media (min-width: 470px) and (max-width: 769px){
+    /* MOBILE */
+    .card{
+        max-width: 320px;
+        max-height:800px;
+        flex-direction: column;
+    }
+
+    .card-image{  
+        max-height: inherit;
+        background-image: url(assets/img/folha\ mobile.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 25px 25px 0 0;
+        object-fit: cover;
+        max-width: 390px;
+        max-height: 200px;
+        margin: 0;
+        position: relative;
+    }
+
+    .card-image img{
+        opacity: 0;
+    }
+
+    .card-content{
+        padding: 25px;
+    }
+
+    .card-content-text .text{
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    .card-content-footer{
+        margin-top: 70px;
+    }
+
+    .menu-wrap{
+        left: 25%;
+        width: 200px;
+    }
+
+    .menu{
+        border-radius: 35px;
+        padding: 5px;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 991px){
+    /* TABLET */
+
+    .card{
+        max-width: 620px;
+        max-height: 1100px;
+        flex-direction: column;
+    }
+
+    .card-image{  
+        max-height: inherit;
+        background-image: url(assets/img/folha\ tablet.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 25px 25px 0 0;
+        object-fit: cover;
+        max-width: 690px;
+        max-height: 300px;
+        margin: 0;
+        position: relative;
+    }
+
+    .card-image img{
+        opacity: 0;
+    }
+
+    .card-content{
+        padding: 25px;
+    }
+
+    .card-content-text .text{
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .card-content-footer{
+        margin-top: 70px;
+    }
+
+    .menu-wrap{
+        left: 65%;
+        width: 200px;
+    }
+
+    .menu{
+        border-radius: 35px;
+        padding: 5px;
+    }
+}

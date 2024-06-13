@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*header*/
+
+.header-container {
+    background: #FFFFFF;
+    height: 0px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.wrapper {
+    width: 1440px;
+    margin: 15px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav .logo {
+    width: 281px;
+    height: 65px;
+    top: 27px;
+    left: 15px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.nav-items li {
+    list-style: none;
+    width: 112px;
+    height: 22px;
+    margin-right: 50px;
+}
+
+.nav-items li:nth-child(1) {
+    width: 112px;
+    height: 22px;
+    top: 49px;
+    left: 1047px;
+    gap: 0px;
+    opacity: 0px;
+    
+}
+
+.nav-items li:nth-child(2) {
+    width: 45px;
+    height: 22px;
+    top: 49px;
+    left: 1194px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.nav-items li:nth-child(3) {
+    width: 87px;
+    height: 22px;
+    top: 49px;
+    left: 1306px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.nav-items li:nth-child(1) a,
+.nav-items li:nth-child(2) a {
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: left;
+
+}
+
+.nav-items li:nth-child(3) a {
+    color: #1C4701;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: left;
+    border-radius: 15px;
+    background:#7ED32166;
+    padding: 12px 28px;
+
+}
+
+/*main*/
+.main-container {
+    background: #FFFFFF;
+    height: 904px;
+    width: 1440px;
+    top: 120px;
+    display: flex;
+    align-items: center;
+
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 340px;
+    height: 234px;
+    left: 200px;
+    margin-left: 260px;
+    margin-top: auto;
+
+}
+
+header h1 {
+    width: 371px;
+    height: 351px;
+    top: -28px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+   
+}
+    
+
+header a {
+    color: #1C4701;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    background: #7ED321;
+    border-radius: 15px;
+    width: 220px;
+    height: 51px;
+    padding: 12px 48px;
+    display: inline-block;
+    transition: 300ms;
+}
+
+header a:hover{
+    transform: translateY(-8px);
+}
