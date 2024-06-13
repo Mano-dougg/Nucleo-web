@@ -18,8 +18,10 @@ export class Totais{
         return axiosInstance.get('/totais')
     }
 }
+export class Postar{
 
-export class Apagar{
-
+    Criar(){
+        return axiosInstance.post('/')
+    }
     
 }
