@@ -6,7 +6,11 @@ function DialogDemo() {
 
 
   return (
-      <Lista  />
+    <>
+    <Lista  />
+   
+    </>
+      
   );
 }
 

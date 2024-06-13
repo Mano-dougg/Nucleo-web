@@ -18,10 +18,10 @@ type Item = {
 
 const Lista = () => {
   //estados para salvar os dados dos usuários!
-  const [dados, setDados] = useState<any[]>([]); 
+  const [dados, setDados] = useState<any[]>([]);
   const [pessoasfila, adicionarFila] = useState<number>(0);
-  const [paesVendidos, setPaesVendidos] = useState<number>(0); 
-  const [entrada, setEntrada] = useState<number>(0); 
+  const [paesVendidos, setPaesVendidos] = useState<number>(0);
+  const [entrada, setEntrada] = useState<number>(0);
 
   // atualiza cada vez a variável dados é mudada
   //Função para retornar todos os users
@@ -54,7 +54,7 @@ const Lista = () => {
         paesVendidos={paesVendidos}
         entrada={`R$ ${entrada}`}
       />
-      <div className=" h-screen w-full mb-52">
+      <div className=" h-screen w-full">
         <section className="w-full flex items-center justify-center">
           <div className="min-w-[80%] h-auto flex flex-col px-5 md:max-w-[1235px] md:w-[1235px]">
             <Modal atualizar={() => fetchDados()} />
@@ -69,28 +69,22 @@ const Lista = () => {
               />
             ))} */}
             <CardClient
-                cliente={"Vladmir"}
-                totalPao={"pao"}
-                totalPagar={`R$ ${'din'}`}
-                
-                evento={() => handleDelete('item.id'.toString())}
-              />
+              cliente={"Vladmir"}
+              totalPao={"pao"}
+              totalPagar={`R$ ${"din"}`}
+              evento={() => handleDelete("item.id".toString())}
+            />
             <CardClient
-                cliente={"Vladmir"}
-                totalPao={"pao"}
-                totalPagar={`R$ ${'din'}`}
-                
-                evento={() => handleDelete('item.id'.toString())}
-              />
-            <CardClient
-                cliente={"Vladmir"}
-                totalPao={"pao"}
-                totalPagar={`R$ ${'din'}`}
-                
-                evento={() => handleDelete('item.id'.toString())}
-              />
+              cliente={"Vladmir"}
+              totalPao={"pao"}
+              totalPagar={`R$ ${"din"}`}
+              evento={() => handleDelete("item.id".toString())}
+            />
           </div>
         </section>
+        <footer className="w-full text-bg-card2 flex justify-center py-20">
+        Com 💛 Info Jr UFBA 2022
+      </footer>
       </div>
     </main>
   );
