@@ -1,3 +1,7 @@
+*{
+    margin:0;
+}
+
 .container-pedidos{
     display: flex;
     flex-direction: column;
@@ -32,7 +36,7 @@
     font-weight: 400;
 }
 
-.botoes{
+.botoes-pedidos{
     display: flex;
     flex-direction: row;
     gap:15px;
@@ -43,6 +47,7 @@ button{
     cursor: pointer;
     background: none;
     border: none;
+    margin: 0;
 }
 
 @media (max-width: 834px){

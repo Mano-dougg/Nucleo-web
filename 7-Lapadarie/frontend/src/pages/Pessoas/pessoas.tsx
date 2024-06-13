@@ -3,6 +3,7 @@ import axios from 'axios';
 import { User } from "../../../service/User";
 import './pessoas.css';
 import Image from 'next/image';
+import Editar from './Editar';
 
 interface Da {
   id: number;
@@ -13,6 +14,8 @@ interface Da {
 export default function Pessoas() {
   const [data, setData] = useState<Da[] | null>(null);
   const UserA = new User();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     UserA.listarall()
@@ -53,8 +56,8 @@ export default function Pessoas() {
                   </div>
                 </div>
 
-                <div className='botoes'>
-                  <button>
+                <div className='botoes-pedidos'>
+                  <button onClick={() => setIsOpen(true)}>
                     <Image
                       src="/lapis.png"
                       alt="Ícone de atualizar"
@@ -62,6 +65,10 @@ export default function Pessoas() {
                       height={25} 
                     /> 
                   </button>
+
+                  <Editar handleClose={() => setIsOpen(false)} isOpen={isOpen}>
+                    <></>
+                  </Editar>
 
                   <button onClick={() => Apagar(item.id)}>
                     <Image
