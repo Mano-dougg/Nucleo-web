@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
 import styles from '@/app/styles/modal.module.css';
 import axios from 'axios';
+import getUserId from '../app/page'
 
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
     onAddClient: (name: string, totalBread: number) => void;
+    getUserId: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onAddClient }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onAddClient, getUserId }) => {
     const [name, setName] = useState("");
     const [totalBread, setTotalBread] = useState<number | string>("");
 
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         if (typeof totalBread === "number" && name.trim() !== "") {
             onAddClient(name, totalBread);
             setName("");
             setTotalBread("");
         }
-        axios({
+        await axios({
             method: "post",
             url: "http://localhost:8080/create_user",
             data: {
@@ -26,6 +28,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onAddClient }) => {
               paes: totalBread,
             },
         });
+        getUserId()
     };
     
     if (!isOpen) return null;
