@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState } from "react"
@@ -9,13 +8,13 @@ import {prisma}
 
 */
 interface FormData{
-    nome: string,
-    paes: string,
+    cliente: string,
+    quant: string,
 }
 
 export default function ModalButton(){
     const [openModal, setOpenModal] = useState(false)
-    const [form, setForm] = useState<FormData>({nome: '', paes: ''})
+    const [form, setForm] = useState<FormData>({cliente: '', quant: ''})
 
     /*async function create(data:FormData*/
     /*const handleSubmit = async (data:...*/
@@ -34,10 +33,10 @@ export default function ModalButton(){
             {exemplos.map(exemplo => (
               <li key={exemplo.id} className="listaCliente">
                 <div>
-                    <h3>{exemplo.nome}</h3>
+                    <h3>{exemplo.cliente}</h3>
                 </div>
                 <div>
-                    <p>Total de pães: {exemplo.paes}</p>
+                    <p>Total de pães: {exemplo.quant}</p>
                     <p>Total a pagar: </p>
                 </div>
               </li> 
@@ -53,8 +52,8 @@ export default function ModalButton(){
                     e.preventDefault()
                     /*handleSubmit*/
                 }}>
-                    <input className="inputData" type="text" /*value={form.nome}*/ placeholder='Nome Completo do Cliente'/* onChange={e=> setForm({...form, nome: e.target.value})}*//>
-                    <input className="inputData" type="number" /*value={form.paes}*/ placeholder='Total de Pães:' /*onChange={e => setForm({...form, paes: e.target.value})} *//>
+                    <input className="inputData" type="text" value={form.cliente} placeholder='Nome Completo do Cliente' onChange={e=> setForm({...form, cliente: e.target.value})}/>
+                    <input className="inputData" type="number" value={form.quant} placeholder='Total de Pães:' onChange={e => setForm({...form, quant: e.target.value})} />
                     <button type="submit" className='btnModalMarrom'>Enviar</button>
                 </form>
 
@@ -68,8 +67,8 @@ export default function ModalButton(){
 
 /*export const getServerSideProps: GetServerSideProps = async () => {
     select:{
-    nome: true
-    paes: true
+    cliente: true
+    quant: true
     }
     return{
     props: {
