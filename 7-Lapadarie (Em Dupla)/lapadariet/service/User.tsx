@@ -18,3 +18,8 @@ export class Totais{
         return axiosInstance.get('/totais')
     }
 }
+
+export class Apagar{
+
+    
+}
