@@ -10,5 +10,5 @@
   --header: #965A1B;
   --body: #E5CF94;
   --primary: #5F3305;
-  background: linear-gradient(to bottom, var(--header) 50%, var(--body) 50%);
+  background-color: var(--body);
 }

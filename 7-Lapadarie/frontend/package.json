@@ -1,5 +1,5 @@
 {
-  "name": "lapadarie",
+  "name": "lapadariet",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,16 +10,16 @@
   },
   "dependencies": {
     "@types/react-transition-group": "^4.4.10",
-    "next": "14.2.3",
+    "axios": "^1.7.2",
+    "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-transition-group": "^4.4.5",
-    "styled-components": "^6.1.11"
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
-    "@types/node": "^20.14.2",
-    "@types/react": "^18.3.3",
+    "@types/node": "^20",
+    "@types/react": "^18",
     "@types/react-dom": "^18",
-    "typescript": "^5.4.5"
+    "typescript": "^5"
   }
 }

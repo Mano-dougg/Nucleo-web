@@ -27,8 +27,13 @@
     padding-left: 25px;
     padding-right: 25px;
 
+    transition: transform 600ms;
     color: var(--primary);
     font-size: 16px;
+}
+
+.pessoasfila:hover{
+    transform: scale(1.06);
 }
 
 .pessoasfila .cima {
@@ -47,8 +52,13 @@
     padding-left: 25px;
     padding-right: 25px;
 
+    transition: transform 600ms;
     color: var(--primary);
     font-size: 16px;
+}
+
+.vendidos:hover{
+    transform: scale(1.06);
 }
 
 .vendidos .cima {
@@ -67,8 +77,13 @@
     padding-left: 25px;
     padding-right: 25px;
 
+    transition: transform 600ms;
     color: #fff;
     font-size: 16px;
+}
+
+.entrada:hover{
+    transform: scale(1.06);
 }
 
 .entrada .cima {
