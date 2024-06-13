@@ -22,7 +22,7 @@ export default {
                 data: {
                     nome,
                     totalPaes,
-                    totalAPagar  
+                    totalAPagar
                 }
             });
             return response.json({
@@ -41,7 +41,7 @@ export default {
             return response.json({
                 pedidos
             });
-    
+
         } catch (error) {
             return response.status(500).json({ message: error.message });
         }
@@ -57,17 +57,16 @@ export default {
                     message: 'Erro: item não encontrado!'
                 });
             }
-    
+
             await prisma.fila.delete({ where: { id: parseInt(id) } });
-    
+
             return response.json({
                 error: false,
                 message: ' ${nome} o item foi excluido !'
             });
         } catch (error) {
-            // Se ocorrer algum erro, retorne um status 500 com uma mensagem de erro
             return response.status(500).json({ message: error.message });
         }
     }
-    
+
 };

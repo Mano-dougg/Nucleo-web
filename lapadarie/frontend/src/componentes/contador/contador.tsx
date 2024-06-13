@@ -1,6 +1,7 @@
-import { IconDolar, IconLoja, IconUser } from "@/assets/logo";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { IconDolar, IconLoja, IconUser } from "@/assets/logo";
 
 interface ContadorProps {}
 
@@ -36,12 +37,11 @@ const Aling = styled.div`
 `;
 
 const PessoaText = styled.div`
-  margin-bottom: 10%; 
+  margin-bottom: 10%;
 `;
 
 const EntradaText = styled.h1`
   color: white;
-  font-family: ;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -57,15 +57,37 @@ const ValorText = styled.p`
 `;
 
 export function Contador(props: ContadorProps) {
+  const [contadores, setContadores] = useState({
+    numeroDePedidos: 0,
+    quantidadePaesVendidos: 0,
+    valorTotalEmReais: 0,
+  });
+
+  useEffect(() => {
+    const fetchContadores = async () => {
+      try {
+        const response = await axios.get("http://localhost:1080/contadores");
+        setContadores(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchContadores();
+    const intervalId = setInterval(fetchContadores, 0);
+
+    return () => clearInterval(intervalId); 
+  }, []);
+
   return (
     <Container>
       <Wrapper>
         <Aling>
           <FlexEst>
-            <PessoaText>Pessoa na fila</PessoaText>
-            <div><IconUser/></div>
+            <PessoaText>Pessoas na fila</PessoaText>
+            <div><IconUser /></div>
           </FlexEst>
-          <div>7</div>
+          <div>{contadores.numeroDePedidos}</div>
         </Aling>
       </Wrapper>
 
@@ -73,9 +95,9 @@ export function Contador(props: ContadorProps) {
         <Aling>
           <FlexEst>
             <PessoaText>Pães Vendidos</PessoaText>
-            <div><IconLoja/></div>
+            <div><IconLoja /></div>
           </FlexEst>
-          <div>350</div>
+          <div>{contadores.quantidadePaesVendidos}</div>
         </Aling>
       </Wrapper>
 
@@ -83,9 +105,9 @@ export function Contador(props: ContadorProps) {
         <Aling>
           <FlexEst>
             <EntradaText>Entrada</EntradaText>
-            <div><IconDolar/></div>
+            <div><IconDolar /></div>
           </FlexEst>
-          <ValorText>Valor</ValorText>
+          <ValorText>{contadores.valorTotalEmReais.toFixed(2)} R$</ValorText>
         </Aling>
       </WrapperEntrada>
     </Container>
