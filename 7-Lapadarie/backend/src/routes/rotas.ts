@@ -7,7 +7,7 @@ const router = Router();
 
 // CRUD BÁSICO
 
-//Função para calcular o total de pães
+//Função para calcular o total de pãess
 
 const calcularTotalPaes = async () => {
     const usuarios = await prisma.user.findMany();
@@ -51,7 +51,6 @@ router.post('/', async (req: Request, res: Response) => {
 
 router.delete('/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
-
     try {
         const us = await prisma.user.findUnique({ where: { id: Number(id) } });
         if (us) {
