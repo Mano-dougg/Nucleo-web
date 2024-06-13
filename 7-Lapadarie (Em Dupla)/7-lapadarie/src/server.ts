@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client/extension';
+import { PrismaClient } from '@prisma/client';
 import { configDotenv } from 'dotenv';
 import express, { Request, Response } from 'express';
 
@@ -20,6 +20,7 @@ app.post("/",
         quant: quantidade
       }
     })
+    res.send(pedido)
   }
 )
 

@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "backend": "tsx src/server.ts",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx prisma generate && nest build",
     "start": "next start",
     "lint": "next lint"
   },
