@@ -11,7 +11,6 @@ interface EditarProps {
 }
 
 const Editar: React.FC<EditarProps> = ({ children, isOpen, handleClose }) => {
-  const postarNome = new Postar();
   const nodeRef = useRef(null);
 
   const [name, setName] = useState("");
@@ -40,7 +39,6 @@ const Editar: React.FC<EditarProps> = ({ children, isOpen, handleClose }) => {
         paes: quantity as number,
       });
       window.location.reload()
-      await postarNome.Criar();
 
       setName("");
       setQuantity("");
