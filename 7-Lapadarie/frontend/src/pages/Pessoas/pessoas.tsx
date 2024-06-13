@@ -29,6 +29,7 @@ export default function Pessoas() {
     if (data){
       await axios.delete(`http://localhost:3001/${id}`);
       setData(data.filter(item => item.id !== id));
+      window.location.reload()
     }
     } catch (error) {
       console.error('Erro', error);
@@ -52,14 +53,25 @@ export default function Pessoas() {
                   </div>
                 </div>
 
-                <button onClick={() => Apagar(item.id)}>
-                  <Image
-                    src="/deletar.svg"
-                    alt="Ícone de deletar"
-                    width={24}  
-                    height={25} 
-                  /> 
-                </button>
+                <div className='botoes'>
+                  <button>
+                    <Image
+                      src="/lapis.png"
+                      alt="Ícone de atualizar"
+                      width={24}  
+                      height={25} 
+                    /> 
+                  </button>
+
+                  <button onClick={() => Apagar(item.id)}>
+                    <Image
+                      src="/deletar.svg"
+                      alt="Ícone de deletar"
+                      width={24}  
+                      height={25} 
+                    /> 
+                  </button>
+                </div>
               </div>
             </div>
           ))}
