@@ -1,0 +1,13 @@
+body {
+    background: linear-gradient(to bottom, #965A1B 374px, #E5CF94 374px);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+::placeholder {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+}
