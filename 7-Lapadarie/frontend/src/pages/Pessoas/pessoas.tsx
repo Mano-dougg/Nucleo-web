@@ -48,7 +48,7 @@ export default function Pessoas() {
                   <p className='nome'>{item.nome}</p>
                   <div className='informacoes'>
                     <p>Total de pães: <span>{item.paes} pães</span></p>
-                    <p>Total a pagar: <span>R$ {item.paes}</span></p>
+                    <p>Total a pagar: <span>R$ {item.paes * 0.50}</span></p>
                   </div>
                 </div>
 
@@ -60,7 +60,6 @@ export default function Pessoas() {
                     height={25} 
                   /> 
                 </button>
-              
               </div>
             </div>
           ))}
