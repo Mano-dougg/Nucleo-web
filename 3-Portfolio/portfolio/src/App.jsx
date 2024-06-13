@@ -6,10 +6,10 @@ function App() {
   
 
   return (
-    <>
+    <body data-theme className='corpo'>
       <Nav />
       <Main />
-    </>
+    </body>
   )
 }
 

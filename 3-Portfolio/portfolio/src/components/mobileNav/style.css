@@ -5,6 +5,7 @@
     transition: background 0s;
     position: sticky;
     top: -1px;
+    margin-left:10px;
 }
 
 #menu {

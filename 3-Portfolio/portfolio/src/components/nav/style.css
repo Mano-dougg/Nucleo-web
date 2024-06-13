@@ -1,12 +1,12 @@
 @import '../../index.css';
 
 nav {
-    padding: 30px 87px 30px 87px;
-
+    padding: 30px  ;
+    width:100%;
     background-color: var(--nav-bg);
     box-shadow: 0 25px 65px 0 var(--nav-shadow);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     font-family: "Be Vietnam Pro", sans-serif;
     position: sticky;
@@ -56,12 +56,14 @@ nav {
 
 .nav_actions {
     display: flex;
+    align-items:center;
     gap: 50px;
 }
 
 .nav_actions-imgs {
     display: flex;
     gap: 30px;
+    height:min-content;
 }
 
 .nav_actions-imgs img {
@@ -76,6 +78,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 10px;
+    color:var(--primary-black);
 }
 
 .btn {

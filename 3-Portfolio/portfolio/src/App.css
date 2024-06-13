@@ -2,3 +2,12 @@
     border-style: solid;
     border-color: var(--row-color);
  }
+
+ .corpo{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+ }
