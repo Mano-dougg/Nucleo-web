@@ -18,10 +18,19 @@ export class Totais{
         return axiosInstance.get('/totais')
     }
 }
+
 export class Postar{
 
     Criar(){
         return axiosInstance.post('/')
+    }
+    
+}
+
+export class Atualizar{
+
+    Atualizar(id: any, data: any) {
+        return axiosInstance.put(`/usuarios/${id}`, data);
     }
     
 }
