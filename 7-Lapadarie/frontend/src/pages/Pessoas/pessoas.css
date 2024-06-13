@@ -32,8 +32,27 @@
     font-weight: 400;
 }
 
+.botoes{
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    margin: 0;
+}
+
 button{
     cursor: pointer;
     background: none;
     border: none;
+}
+
+@media (max-width: 834px){
+    .all-pedido{
+        width: auto;
+    }
+
+    .informacoes{
+        flex-direction: column;
+        gap: 5px;
+    }
+
 }
