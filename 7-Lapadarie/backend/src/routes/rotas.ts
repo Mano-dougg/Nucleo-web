@@ -7,7 +7,7 @@ const router = Router();
 
 // CRUD BÁSICO
 
-//Função para calcular o total de pãess
+//Função para calcular o total de pães
 
 let totalPaesVendidos = 0;
 
