@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import {
   Dialog,
   DialogContent,
@@ -25,6 +26,7 @@ export const Modal: React.FC<cadastrado> = ({ atualizar }) => {
   const [nome, setNome] = useState<string>("");//estados para salvar os valores dos inputs
   const [paes, setPaes] = useState<string>("");
   const [loading, setLoading] = useState<boolean>()
+  const [error, setError] = useState<boolean>(true)
 
   const data = { nome, paes };
 
@@ -38,21 +40,26 @@ export const Modal: React.FC<cadastrado> = ({ atualizar }) => {
       atualizar();
       onClose()
     } catch (error) {
-      alert("Tente novamente");
+      setError(false)
     } finally{
       setLoading(false)
+      setTimeout(() =>{
+        setError(true)
+      },5000)
     }
   };
   
 
   return (
     <Dialog  open={isOpen} modal defaultOpen={isOpen}>
+     
       <DialogTrigger asChild >
         <Button className="flex justify-start text-text-primary font-bold w-full mb-2 text-base" onClick={onOpen}>
           + Adicionar pessoa a fila
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
+      <AlertDestructive translate={error}/>
         <DialogHeader>
           <div className="flex justify-start text-text-primary font-bold w-full mb-2 text-base">
             Adicionar pessoa a fila
@@ -69,7 +76,7 @@ export const Modal: React.FC<cadastrado> = ({ atualizar }) => {
           />
           <div className={
              `w-10 h-10 rounded-full border-8 border-text-primary p-4 border-b-bg-cardClient transition
-             animate-spin${loading == true? "flex" : "hidden"}`
+             animate-spin ${loading == true? "flex" : "hidden"}`
              }>
 
           </div>
@@ -92,5 +99,17 @@ export const Modal: React.FC<cadastrado> = ({ atualizar }) => {
     </Dialog>
   );
 };
+
+function AlertDestructive({translate}:{translate:any}) {
+  return (
+    <Alert variant="destructive" className={`bg-cancel border-0 transition absolute z-[999999px] max-w-full right-0
+    ${translate == true ? "top-[1000px]": "translate-y-[-120px]"}`}>
+      <AlertTitle className="text-bg-card">Error</AlertTitle>
+      <AlertDescription className="text-bg-card">
+        Verifique se os dados estão conforme pedidos!
+      </AlertDescription>
+    </Alert>
+  )
+}
 
 export default Modal;
