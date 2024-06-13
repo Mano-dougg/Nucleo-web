@@ -2,6 +2,7 @@
 import "./pedidos.css";
 import { useState } from "react";
 import Modal from "./Modal";
+import Pessoas from "../Pessoas/pessoas";
 
 export default function Pedidos() {
 
@@ -19,6 +20,8 @@ export default function Pedidos() {
         <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
           <></>
         </Modal>
+
+        <Pessoas/>
 
       </section>
 

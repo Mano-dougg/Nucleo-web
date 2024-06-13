@@ -1,0 +1,39 @@
+.container-pedidos{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.all-pedido{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    background-color: #FFFFFFCC;
+    color: var(--primary);
+    border-radius: 5px;
+    padding: 15px;
+
+}
+.nome{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.informacoes{
+    display: flex;
+    gap:15px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.informacoes span{
+    font-weight: 400;
+}
+
+button{
+    cursor: pointer;
+    background: none;
+    border: none;
+}

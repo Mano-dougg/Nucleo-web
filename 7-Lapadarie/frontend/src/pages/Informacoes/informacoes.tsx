@@ -10,7 +10,19 @@ interface TO {
 }
 
 export default function Informacoes() {
-    const [tota, setTota] = useState<TO | null>(null);
+
+    return (
+      <main className="infor">
+        <Fila />
+        <Vendidos/>
+        <Entrada />
+      </main>
+    );
+}
+
+function Fila(){
+
+  const [tota, setTota] = useState<TO | null>(null);
     const toti = new Totais();
     useEffect(() => {
         toti.totasss()
@@ -22,28 +34,6 @@ export default function Informacoes() {
         })
       }, []);
 
-    return (
-      <main className="infor">
-    <div>
-      {tota ? (
-        <div>
-          <h1>Dados do Backend:</h1>
-          <p>Total de Pães: {tota.totalPaes}</p>
-          <p>Preço Total: {tota.precototal}</p>
-          <p>Pessoas: {tota.pessoas}</p>
-        </div>
-      ) : (
-        <p>Carregando dados...</p>
-      )}
-    </div>
-        <Fila />
-        <Vendidos/>
-        <Entrada />
-      </main>
-    );
-}
-
-function Fila(){
     return(
         <main className="pessoasfila">
             <div className="cima">
@@ -52,7 +42,11 @@ function Fila(){
             </div>
 
             <div className="fila">
-                <p className="branco">7</p>
+              {tota ? (
+                <p className="branco">{tota.pessoas}</p>
+              ) : (
+                <p>Carregando dados...</p>
+              )}
             </div>
         </main>
     );
@@ -70,6 +64,7 @@ function Vendidos(){
           console.log(error)
         })
       }, []);
+
     return(
         <main className="vendidos">
             <div className="cima">
@@ -78,13 +73,30 @@ function Vendidos(){
             </div>
 
             <div className="quantidade">
-                <p className="branco">350</p>
+              {tota ? (
+                <p className="branco">{tota.totalPaes}</p>
+              ) : (
+                <p>Carregando dados...</p>
+              )}
             </div>
         </main>
     );
 }
 
 function Entrada(){
+
+  const [tota, setTota] = useState<TO | null>(null);
+    const toti = new Totais();
+    useEffect(() => {
+        toti.totasss()
+        .then((response)=>{
+          console.log(response.data)
+          setTota(response.data)
+        }).catch((error)=>{
+          console.log(error)
+        })
+      }, []);
+
     return(
         <main className="entrada">
             <div className="cima">
@@ -93,8 +105,13 @@ function Entrada(){
             </div>
 
             <div className="valor">
-                <p className="marrom">R$ 175,00</p>
+              {tota ? (
+                  <p className="marrom">R$ {tota.precototal}</p>
+              ) : (
+                <p>Carregando dados...</p>
+              )}
             </div>
+
         </main>
     );
 }

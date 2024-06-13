@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { User } from "../../../service/User";
+import './pessoas.css';
+import Image from 'next/image';
 
 interface Da {
   id: number;
@@ -34,21 +36,40 @@ export default function Pessoas() {
   }
 
   return (
-    <div>
+    <>
       {data ? (
-        <div>
-          <h1>Clientes</h1>
+        <section className='container-pedidos'>
           {data.map((item) => (
-            <div key={item.id}>
-              <p>{item.nome}: {item.paes} pães</p>
-              <button onClick={() => Apagar(item.id)}>Deletar</button>
+            <div key={item.id} className='pedido'>
+
+              <div className='all-pedido'>
+
+                <div className='cliente'>
+                  <p className='nome'>{item.nome}</p>
+                  <div className='informacoes'>
+                    <p>Total de pães: <span>{item.paes} pães</span></p>
+                    <p>Total a pagar: <span>R$ {item.paes}</span></p>
+                  </div>
+                </div>
+
+                <button onClick={() => Apagar(item.id)}>
+                  <Image
+                    src="/deletar.svg"
+                    alt="Ícone de deletar"
+                    width={24}  
+                    height={25} 
+                  /> 
+                </button>
+              
+              </div>
             </div>
           ))}
-        </div>
+        </section>
+
       ) : (
         <p>Carregando dados...</p>
       )}
-    </div>
+    </>
   );
 }
   

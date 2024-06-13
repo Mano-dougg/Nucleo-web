@@ -6,14 +6,12 @@ import Pedidos from "@/pages/Pedidos/Pedidos";
 import Footer from "@/pages/Footer/Footer";
 import { User } from "../../service/User";
 import { useEffect, useState } from "react";
-import Pessoas from "@/pages/Pessoas/pessoas";
 
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <Header />
-      <Pessoas/>
       <Informacoes />
       <Pedidos />
       <Footer />
