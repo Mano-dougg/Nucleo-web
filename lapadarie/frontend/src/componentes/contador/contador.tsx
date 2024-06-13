@@ -12,6 +12,12 @@ const Container = styled.div`
   flex-direction: row;
   gap: 30px;
   margin-top: -65px;
+
+  @media only screen and (max-width: 768px) {
+    display:flex;
+    flex-direction:column;
+    }
+}
 `;
 
 const Wrapper = styled.div`
@@ -19,6 +25,10 @@ const Wrapper = styled.div`
   height: 136px;
   background-color: white;
   padding: 1.25rem;
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+    height:auto;
+}
 `;
 
 const WrapperEntrada = styled(Wrapper)`

@@ -20,8 +20,9 @@ interface ModalProps {
 
 const Container = styled.div`
   width: 100%;
-  padding: 1rem;
-`;
+  padding: 3.2rem;
+  
+  `;
 
 const ContainerCard = styled.div`
   display: flex;
@@ -74,6 +75,33 @@ const ButtonForms = styled.button`
   background: none;
   border: none;
 `;
+const Text = styled.h1`
+color: var(--colorEntrada);
+font-family: inherit;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+text-align: left;
+
+`
+const TextP = styled.p`
+color: var(--colorEntrada);
+font-family: inherit;
+font-size: 12px;
+font-weight: 700;
+line-height: 18px;
+text-align: left;
+
+`
+const TextSpan = styled.span`
+font-family: inherit;
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+text-align: left;
+
+
+`
 
 export function Pedidos(props: PedidosProps) {
   const [pedidos, setPedidos] = useState<Pedido[]>([]);
@@ -113,7 +141,7 @@ export function Pedidos(props: PedidosProps) {
     <Container>
       <ContainerAddPessoas>
         <ButtonForms onClick={() => setOpenModal(true)}>
-          + Adicionar Pessoas na Fila
+          <Text>+ Adicionar Pessoas na Fila </Text>
         </ButtonForms>
       </ContainerAddPessoas>
       <ModalForms isOpen={openModal} setModalOpen={setOpenModal} />
@@ -122,11 +150,11 @@ export function Pedidos(props: PedidosProps) {
         <ContainerCard key={pedido.id}>
           <NomeInfoContainer>
             <NomeCliente>
-              <h1>{pedido.nome}</h1>
+              <Text>{pedido.nome}</Text>
             </NomeCliente>
             <Info>
-              <p>Total de pães: {pedido.totalPaes}</p>
-              <p>Total a pagar: R${pedido.totalAPagar}</p>
+              <TextP>Total de pães: <TextSpan>{pedido.totalPaes} </TextSpan> </TextP>
+              <TextP>Total a pagar: <TextSpan>R${pedido.totalAPagar} </TextSpan> </TextP>
             </Info>
           </NomeInfoContainer>
           <Excluir>

@@ -7,7 +7,7 @@ interface HeaderProps {}
 
 const TagHeader = styled.header`
   width: 100%;
-  height: 441px;
+  height: 331px;
   background: var(--colorheader);
   display: flex;
   align-items: center;
