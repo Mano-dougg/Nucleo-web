@@ -4,18 +4,21 @@
 import { useState } from "react"
 import Modal from "./modal"
 import './modal.css'
+import { GetStaticProps } from "next"
+import prisma from '../../lib/prisma'
+import Tabela from "./tabela"
 /*import { GetServerSideProps } from "next"
 import {prisma}
 
 */
 interface FormData{
-    nome: string,
-    paes: string,
+    cliente: string,
+    quant: string,
 }
 
 export default function ModalButton(){
     const [openModal, setOpenModal] = useState(false)
-    const [form, setForm] = useState<FormData>({nome: '', paes: ''})
+    const [form, setForm] = useState<FormData>({cliente: '', quant: ''})
 
     /*async function create(data:FormData*/
     /*const handleSubmit = async (data:...*/
@@ -29,21 +32,7 @@ export default function ModalButton(){
         </div>
 
         {/* mostrar as tabelas */}
-        {/* <div className="tabelas">
-            <u>
-            {exemplos.map(exemplo => (
-              <li key={exemplo.id} className="listaCliente">
-                <div>
-                    <h3>{exemplo.nome}</h3>
-                </div>
-                <div>
-                    <p>Total de pães: {exemplo.paes}</p>
-                    <p>Total a pagar: </p>
-                </div>
-              </li> 
-            ))}
-            </u>
-        </div> */}
+        <Tabela pedidos={[]} />
 
         <div>
           <Modal isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}>
@@ -66,12 +55,3 @@ export default function ModalButton(){
     )
 }
 
-/*export const getServerSideProps: GetServerSideProps = async () => {
-    select:{
-    nome: true
-    paes: true
-    }
-    return{
-    props: {
-    }}
-}*/
