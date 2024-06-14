@@ -78,9 +78,12 @@
 }
 
 .btnPessoas{
-    position: relative;
-    top: 100px;
-    left: 410px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 50%;
+    margin-left: 160px;
+    height: 100px;
 }
 
 .btnPessoas button{
