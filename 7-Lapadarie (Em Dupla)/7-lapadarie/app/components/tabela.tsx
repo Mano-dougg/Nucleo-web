@@ -1,6 +1,6 @@
 import { Pedido } from "@prisma/client";
 import { GetStaticProps } from "next";
-import prisma from "../../lib/prisma"
+import { prisma } from "../../lib/prisma"
 
 interface PedidosProps{
     pedidos: Array<Pedido>;
