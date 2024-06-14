@@ -27,7 +27,7 @@ export class Postar{
     
 }
 
-//Classe não implementada
+//Classe não implementada, infelizmente
 
 export class Atualizar{
     
