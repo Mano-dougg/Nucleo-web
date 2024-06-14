@@ -9,6 +9,7 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors())
+app.use(express.json())
 
 app.get("/hello", (req: Request, res: Response) => {
   res.send("｢ʜȷxʃ ɵȷ xʃɤʃɞʃʭ｣ Esta não é a página de front-end. ;P")
@@ -16,11 +17,22 @@ app.get("/hello", (req: Request, res: Response) => {
 
 app.post("/criar",
   async (req: Request, res: Response) => {
-    const {nome, quantidade} = req.body
+    const {cliente, quant} = req.body
+    console.log("Peguei o body")
+    if (!cliente || !quant) {
+      if (!cliente) {
+        console.log("NOT cliente")
+      }
+      if (!quant) {
+        console.log("NOT quant")
+      }
+      return res.status(400).json({ error: "Faltou cliente ou quant no body" })
+    }
+    console.log("Tem os dois")
     await prisma.pedido.create({
       data: {
-        cliente: nome,
-        quant: quantidade
+        cliente: cliente,
+        quant: parseInt(quant)
       }
     })
     res.status(200).json({message: "Pedido gerado com sucesso"})

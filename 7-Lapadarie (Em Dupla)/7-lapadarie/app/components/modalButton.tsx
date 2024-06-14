@@ -4,10 +4,7 @@ import { useState } from "react"
 import Modal from "./modal"
 import './modal.css'
 import axios from "axios"
-/*import { GetServerSideProps } from "next"
-import {prisma}
 
-*/
 interface FormData{
     cliente: string,
     quant: string,
@@ -25,7 +22,7 @@ export default function ModalButton(){
                 url: "http://localhost:3001/criar",
                 data: {
                   cliente: data.cliente,
-                  quant: data.quant
+                  quant: parseInt(data.quant)
                 },
               }).then(()=> setForm({cliente: '', quant: ''}))
         } catch (error) {
@@ -35,6 +32,7 @@ export default function ModalButton(){
     const handleSubmit = async (data: FormData) => {
         try {
             criar(data)
+            console.log("Função CRIAR executada")
         } catch (error) {
             console.log(error)
         }
