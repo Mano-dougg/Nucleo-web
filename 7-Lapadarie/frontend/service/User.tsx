@@ -29,8 +29,10 @@ export class Postar{
 
 export class Atualizar{
 
-    Atualizar(id: any, data: any) {
-        return axiosInstance.put(`/usuarios/${id}`, data);
-    }
+    
+        atualizarUsuario(id: number, data: { nome: string, paes: number }) {
+            return axiosInstance.put(`/usuarios/${id}`, data);
+        }
+    
     
 }

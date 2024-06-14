@@ -1,7 +1,7 @@
 import { CSSTransition } from "react-transition-group";
 import React, { useEffect, useState, useRef, FormEvent } from 'react';
 import './editar.css';
-import { Postar, axiosInstance } from "../../../service/User";
+import { Atualizar, Postar, axiosInstance } from "../../../service/User";
 
 
 interface EditarProps {
@@ -11,6 +11,7 @@ interface EditarProps {
 }
 
 const Editar: React.FC<EditarProps> = ({ children, isOpen, handleClose }) => {
+  const atualizarUsuario = new Atualizar();
   const nodeRef = useRef(null);
 
   const [name, setName] = useState("");
@@ -39,6 +40,7 @@ const Editar: React.FC<EditarProps> = ({ children, isOpen, handleClose }) => {
         paes: quantity as number,
       });
       window.location.reload()
+      
 
       setName("");
       setQuantity("");
