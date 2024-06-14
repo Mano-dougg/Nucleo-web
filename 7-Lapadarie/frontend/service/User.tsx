@@ -27,8 +27,9 @@ export class Postar{
     
 }
 
-export class Atualizar{
+//Classe não implementada
 
+export class Atualizar{
     
         atualizarUsuario(id: number, data: { nome: string, paes: number }) {
             return axiosInstance.put(`/usuarios/${id}`, data);
