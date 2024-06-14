@@ -11,42 +11,37 @@ body{
     gap: 80px;
     padding-top: 20px;
 }
-.metadecimadados{
+.dados-entrada{
     display: flex;
     gap: 25px;
     justify-content: center;
 }
-.metadebaixodados{
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    margin-bottom: 100px;
-}
-.metadeblocodados{
+.bloco-dados-entrada{
     margin-top: 5rem;
     background-color: #ffffff;
     align-items: center;
     justify-content: space-between;
     display: flex;
-    padding: 0 20px;
     margin-top: 0;
-    width: 140px;
+    padding-inline: 20px;
+    width: auto;
 }
 .completarblocodados{
     margin-top: 5rem;
     background-color: #ffffff;
     align-items: center;
     display: flex;
-    padding: 0 20px;
     margin-top: 0;
-    width: 140px;
+    width: auto;
+    justify-content: right;
+    padding-right: 10px;
 }
 .completarblocodados p{
     margin: 0 0 10px 0;
     font-size: 36px;
     text-align: left;
 }
-.metadeblocodados p{
+.bloco-dados-entrada p{
     margin-right: 10px;
 }
 .box-pedido{

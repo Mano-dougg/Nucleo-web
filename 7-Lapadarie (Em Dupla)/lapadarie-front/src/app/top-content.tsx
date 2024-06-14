@@ -10,35 +10,50 @@ const Tophalf = () => {
             height={113}
             alt="lapadarie logo" 
             />
-            <div className="metadecimadados">
-                <div className="metadeblocodados">
-                    <p>Pessoas na fila</p>
-                    <Image
-                    src="./pessoas.svg"
-                    width={25}
-                    height={22}
-                    alt="pessoas na fila"
-                    />
+            <div className="dados-entrada">
+                <div className="container-dados">
+                    <div className="bloco-dados-entrada">
+                        <p>Pessoas na fila</p>
+                        <Image
+                        src="./pessoas.svg"
+                        width={25}
+                        height={22}
+                        alt="pessoas na fila"
+                        />
+                    </div>
+                    <div className="completarblocodados">
+                        <p>7</p>
+                    </div>
                 </div>
-                <div className="metadeblocodados">
-                <p>Pães vendidos</p>
-                    <Image
-                    src="./shop.svg"
-                    width={25}
-                    height={22}
-                    alt="pães vendidos"
-                    />
+                <div className="container-dados">
+                    <div className="bloco-dados-entrada">
+                        <p>Pães vendidos</p>
+                        <Image
+                        src="./shop.svg"
+                        width={25}
+                        height={22}
+                        alt="pães vendidos"
+                        />
+                    </div>
+                    <div className="completarblocodados">
+                        <p>240</p>
+                    </div>
                 </div>
-                <div className="metadeblocodados" id="entrada">
-                <p>Entrada</p>
-                    <Image
-                    src="./money.svg"
-                    width={12}
-                    height={22}
-                    alt="entrada em reais"
-                    />
+                <div className="container-dados">
+                    <div className="bloco-dados-entrada" id="entrada">
+                        <p>Entrada</p>
+                        <Image
+                        src="./money.svg"
+                        width={12}
+                        height={22}
+                        alt="entrada em reais"
+                        />
+                        </div>
+                        <div className="completarblocodados" id="entrada">
+                            <p>240</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
     )
 }; export default Tophalf;
