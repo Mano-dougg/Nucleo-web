@@ -53,6 +53,19 @@ app.delete("/deletar/:id",
   }
 )
 
+app.get("/pedidos",
+  async (req: Request, res: Response) => {
+    console.log("tentando pegar todos os pedidos")
+    try {
+      const pedidos = await prisma.pedido.findMany()
+      return res.status(200).json(pedidos)
+    } catch (error) {
+      console.error("Erro ao pegar a lista de pedidos:", error)
+      res.status(500).json({error: "Erro ao pegar a lista de pedidos"})
+    }
+  }
+)
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando no endereço http://localhost:${PORT}`)
 })
