@@ -91,3 +91,40 @@
     font-weight: bolder;
     cursor: pointer;
 }
+
+
+@media (max-width: 375px) {
+   .btnPessoas{
+    top: 0;
+    left: 0;
+    margin-top: 50px;
+    margin-left: 10px;
+   }
+
+   .modalIn{
+    width: 330px;
+    height: 457px;
+   }
+
+   .modal_input{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    }
+
+    .btnsModal{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-left: -300px;
+        align-items: center;
+    }
+
+    .btnModalMarrom{
+        margin-top: 50px;
+        margin-left: 10px;
+        padding: 15px 110px 15px 110px;
+    }
+}

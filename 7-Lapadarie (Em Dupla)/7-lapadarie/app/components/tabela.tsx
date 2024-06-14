@@ -21,7 +21,7 @@ export default function Tabela({pedidos}: PedidosProps){
 
 export const getStaticProps: GetStaticProps = async (context) =>{
 
-    const pedidos = await prisma.pedido.findMany();
+    const pedidos = await prisma.pedido.findMany()
 
     return{
         props: {

@@ -50,3 +50,12 @@ input{
     color: white;
 
 }
+
+
+@media (max-width: 375px) {
+    .transicoesOut{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

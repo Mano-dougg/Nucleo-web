@@ -4,6 +4,7 @@ import { useState } from "react"
 import Modal from "./modal"
 import './modal.css'
 import axios from "axios"
+import Tabela from "./tabela"
 
 interface FormData{
     cliente: string,
@@ -47,25 +48,11 @@ export default function ModalButton(){
         </div>
 
         {/* mostrar as tabelas */}
-        {/* <div className="tabelas">
-            <u>
-            {exemplos.map(exemplo => (
-              <li key={exemplo.id} className="listaCliente">
-                <div>
-                    <h3>{exemplo.cliente}</h3>
-                </div>
-                <div>
-                    <p>Total de pães: {exemplo.quant}</p>
-                    <p>Total a pagar: </p>
-                </div>
-              </li> 
-            ))}
-            </u>
-        </div> */}
+        <Tabela pedidos={[]} />
 
         <div>
           <Modal isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}>
-            <div>
+            <div className="modal_input">
                 <p>Adicionar pessoa a fila</p>
                 <form onSubmit={e => {
                     e.preventDefault()
@@ -84,12 +71,3 @@ export default function ModalButton(){
     )
 }
 
-/*export const getServerSideProps: GetServerSideProps = async () => {
-    select:{
-    cliente: true
-    quant: true
-    }
-    return{
-    props: {
-    }}
-}*/
