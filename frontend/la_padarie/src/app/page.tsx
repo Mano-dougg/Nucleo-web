@@ -27,17 +27,24 @@ export default function Home() {
     fetchUsers();
   }, []);
 
-  useEffect(() => {
-    const sumBreads = users.reduce((sum, user) => sum + user.breads, 0);
-    setBreads(sumBreads);
-    setTotal(sumBreads * 0.5);
-  }, [users]);
+  const updateBreadsAndTotal = ( id:number) => {
+    const removeIdUser = users.find(user => user.id === id);
+    if (removeIdUser){
+        setBreads(prevState => prevState + removeIdUser?.breads);
+        setTotal(prevState => prevState + removeIdUser.breads*0.5);
+      }
+  };
 
   const removeUser = async (id: number) => {
     try {
       await deleteUser(id);
       const newUsers = await getUsers();
+      updateBreadsAndTotal(id);
       setUsers(newUsers);
+      console.log("users:",newUsers)
+      console.log("breades:", breads)
+      console.log(id)
+
     } catch (error: any) {
       console.error('Error deleting user:', error.message);
     }
