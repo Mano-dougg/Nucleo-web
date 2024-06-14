@@ -13,7 +13,7 @@ const CreateOrder: React.FC<CreateOrderProps> = ({ closeCreateOrderForm }) => {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-            const response = await axios.post("http://localhost:3000/order", {
+            const response = await axios.post("http://localhost:8080/order", {
                 customer_name: customerName,
                 numberOfBreads: totalBreads,
             });
@@ -46,8 +46,10 @@ const CreateOrder: React.FC<CreateOrderProps> = ({ closeCreateOrderForm }) => {
                     placeholder='Total de pães'
                     className='order-input'
                     required
+                    min="0"
                     value={totalBreads}
                     onChange={(e) => setTotalBreads(parseInt(e.target.value))}
+
                 />
 
                 <div className='form-buttons'>

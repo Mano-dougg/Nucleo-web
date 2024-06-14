@@ -24,7 +24,7 @@ export default function History() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const ordersRes = await axios.get<Order[]>("http://localhost:3000/orders");
+        const ordersRes = await axios.get<Order[]>("http://localhost:8080/orders");
         const ordersData = ordersRes.data;
 
         const fulfilled = ordersData.filter((order) => order.FulfilledOrder);

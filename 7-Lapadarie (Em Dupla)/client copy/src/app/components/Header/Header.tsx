@@ -32,7 +32,7 @@ export default function Header() {
 
   useEffect(() => {
     const fetchOrders = async () => {
-        const ordersRes = await axios.get<Order[]>("http://localhost:3000/orders");
+        const ordersRes = await axios.get<Order[]>("http://localhost:8080/orders");
         const ordersData = ordersRes.data;
 
         const peopleInQueue = ordersData.filter((order) => !order.FulfilledOrder).length;
