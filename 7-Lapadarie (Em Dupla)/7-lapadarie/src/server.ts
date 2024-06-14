@@ -1,11 +1,14 @@
 import { PrismaClient } from '@prisma/client';
 import { configDotenv } from 'dotenv';
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 
 configDotenv()
 const prisma = new PrismaClient()
 const app = express();
 const PORT = 3001;
+
+app.use(cors())
 
 app.get("/hello", (req: Request, res: Response) => {
   res.send("｢ʜȷxʃ ɵȷ xʃɤʃɞʃʭ｣ Esta não é a página de front-end. ;P")
