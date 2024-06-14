@@ -1,24 +1,27 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import UserCreateInputSchema from "../types/users/UserCreateInputSchema"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
-import { useToast } from "./ui/use-toast"
-import { useEffect, useState } from "react"
-import { createUser } from '@/service/services'
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import UserCreateInputSchema from "../types/users/UserCreateInputSchema";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
+import { useToast } from "./ui/use-toast";
+import { useEffect, useState } from "react";
 
-export function AddUserDialog() {
+type AddUserDialogProps = {
+  onAddUser: (data: { name: string, breads: number }) => Promise<void>,
+};
+
+export function AddUserDialog({ onAddUser }: AddUserDialogProps) {
   const { toast } = useToast();
   const userCreateInputSchema = UserCreateInputSchema;
   const form = useForm<z.infer<typeof userCreateInputSchema>>({
@@ -27,35 +30,26 @@ export function AddUserDialog() {
       name: "Customer",
       breads: 1
     },
-  })
-
-  const onSubmit = async (values: z.infer<typeof userCreateInputSchema>) => {
-    try {
-      const createdUser = await createUser(values);
-      if (createdUser) {
-        toast({
-          title: "New order!",
-          description: `${createdUser.name} ordered ${createdUser.breads} bread${createdUser.breads > 1 ? "s" : ""}`,
-        });
-      }
-      setOpen(false);
-    } catch (error: any) {
-      console.error('Error adding user');
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: `Unable to add another order: ${error.message}`
-      });
-    }
-  };
+  });
 
   useEffect(() => {
     if (form.formState.isSubmitSuccessful) {
       form.reset();
     }
-  }, [ form ]);
+  }, [form]);
 
-  const [ open, setOpen ] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const onSubmit = async (data: { name: string, breads: number }) => {
+    try {
+      await onAddUser(data);
+      setOpen(false);
+      form.reset();
+    } catch (error) {
+      console.error("Failed to add user:", error);
+      toast({ title: "Failed to add user", description: "There was an error adding the user to the queue." });
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -112,5 +106,5 @@ export function AddUserDialog() {
         </Form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
