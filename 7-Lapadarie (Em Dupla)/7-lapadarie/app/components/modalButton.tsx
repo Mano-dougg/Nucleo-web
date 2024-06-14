@@ -1,10 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Modal from "./modal"
 import './modal.css'
 import axios from "axios"
 import Tabela from "./tabela"
+import { Pedido } from "@prisma/client"
 
 interface FormData{
     cliente: string,
@@ -14,22 +15,43 @@ interface FormData{
 export default function ModalButton(){
     const [openModal, setOpenModal] = useState(false)
     const [form, setForm] = useState<FormData>({cliente: '', quant: ''})
+    const [pedidos, setPedidos] = useState<Pedido[]>([])
 
     async function criar(data:FormData){
         console.log("qqrCoisa")
         try {
-            axios({
+            await axios({
                 method: "post",
                 url: "http://localhost:3001/criar",
                 data: {
                   cliente: data.cliente,
                   quant: parseInt(data.quant)
                 },
-              }).then(()=> setForm({cliente: '', quant: ''}))
+              })
+              setForm({cliente: '', quant: ''})
+              fetchPedidos()
         } catch (error) {
             console.log(error)
         }
     }
+
+    async function fetchPedidos(){
+        console.log("RODANDO FUNÇÃO PEDIDOS")
+        try {
+            const resposta = await axios({
+                method: "get",
+                url: "http://localhost:3001/pedidos",
+              })
+              setPedidos(resposta.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        fetchPedidos()
+    }, [])
+
     const handleSubmit = async (data: FormData) => {
         try {
             criar(data)
@@ -48,7 +70,7 @@ export default function ModalButton(){
         </div>
 
         {/* mostrar as tabelas */}
-        <Tabela pedidos={[]} />
+        <Tabela pedidos={pedidos} />
 
         <div>
           <Modal isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}>
