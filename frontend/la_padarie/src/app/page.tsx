@@ -27,24 +27,17 @@ export default function Home() {
     fetchUsers();
   }, []);
 
-  const updateBreadsAndTotal = ( id:number) => {
-    const removeIdUser = users.find(user => user.id === id);
-    if (removeIdUser){
-        setBreads(prevState => prevState + removeIdUser?.breads);
-        setTotal(prevState => prevState + removeIdUser.breads*0.5);
-      }
+  const calculateBreadsAndTotal = (userBreads: number) => {
+    setBreads(prevState => prevState + userBreads);
+    setTotal(prevState => prevState + userBreads*0.5);
+
   };
 
   const removeUser = async (id: number) => {
     try {
       await deleteUser(id);
       const newUsers = await getUsers();
-      updateBreadsAndTotal(id);
       setUsers(newUsers);
-      console.log("users:",newUsers)
-      console.log("breades:", breads)
-      console.log(id)
-
     } catch (error: any) {
       console.error('Error deleting user:', error.message);
     }
@@ -53,6 +46,7 @@ export default function Home() {
   const addUser = async (data: { name: string, breads: number }) => {
     try {
       await createUser(data);
+      calculateBreadsAndTotal(data.breads); 
       const newUsers = await getUsers();
       setUsers(newUsers);
     } catch (error: any) {
