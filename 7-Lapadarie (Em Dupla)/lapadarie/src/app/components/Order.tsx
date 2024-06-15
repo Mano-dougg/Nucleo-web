@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 const OrderDiv = styled.div`
   width: inherit;
+  max-width: inherit;
   height: 77px;
   background-color: white;
   color: #5f3305;
@@ -15,6 +16,11 @@ const OrderDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    margin-bottom: 22px;
+    height: 100px;
+  }
 `;
 
 const OrderDivLeft = styled.div`
@@ -35,6 +41,16 @@ const OrderInfo = styled.div`
   display: flex;
   flex-direction: row;
   gap: 0.4vw;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const OrderInfoLine = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 `;
 
 const OrderInfoName = styled.h4`
@@ -54,8 +70,7 @@ const OrderInfoQuantity = styled.p`
   margin-right: 1vw;
 `;
 
-const TrashIcon = styled.img`
-`;
+const TrashIcon = styled.img``;
 
 const TrashButton = styled.button`
   background: none;
@@ -63,19 +78,32 @@ const TrashButton = styled.button`
   cursor: pointer;
 `;
 
-export default function Order({ id, name, breadCount, valor}:OrderToUse) {
+export default function Order({ id, name, breadCount, valor }: OrderToUse) {
   return (
     <OrderDiv>
       <OrderDivLeft>
         <OrderClientName>{name}</OrderClientName>
         <OrderInfo>
-          <OrderInfoName>Total de Pães:</OrderInfoName>
-          <OrderInfoQuantity>{breadCount} {breadCount===1?'pão':'pães'}</OrderInfoQuantity>
-          <OrderInfoName>Total a Pagar:</OrderInfoName>
-          <OrderInfoQuantity>R$ {valor.toFixed(2).replace('.', ',')}</OrderInfoQuantity>
+          <OrderInfoLine>
+            {" "}
+            <OrderInfoName>Total de Pães:</OrderInfoName>
+            <OrderInfoQuantity>
+              {breadCount} {breadCount === 1 ? "pão" : "pães"}
+            </OrderInfoQuantity>
+          </OrderInfoLine>
+          <OrderInfoLine>
+            <OrderInfoName>Total a Pagar:</OrderInfoName>
+            <OrderInfoQuantity>
+              R$ {valor.toFixed(2).replace(".", ",")}
+            </OrderInfoQuantity>
+          </OrderInfoLine>
         </OrderInfo>
       </OrderDivLeft>
-      <TrashButton onClick={()=>{finishOrder(id)}}>
+      <TrashButton
+        onClick={() => {
+          finishOrder(id);
+        }}
+      >
         <TrashIcon src="trashcan.svg" />
       </TrashButton>
     </OrderDiv>
