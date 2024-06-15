@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
   display: flex;
   margin: 0;
@@ -11,10 +12,73 @@ body{
     gap: 80px;
     padding-top: 20px;
 }
+.container-criador{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 15vw;
+    gap: 10px;
+}
+.botoes-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.botoes-container button{
+    border: none;
+    width: 50%;
+    padding: 18px 104px 18px 104px;
+}
+.botoes-container :nth-child(1){
+    background-color: #5F3305;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.botoes-container :nth-child(2){
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #DB1E1E;
+    color: #DB1E1E;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.entrada-pedidos{
+    display: flex;
+    flex-direction: column;
+}
+#criar-pedido{
+    border: none;
+    background-color: #E5CF94;
+    color: #5F3305;
+    font-weight: 700;
+}
+.pedido-container{
+    background-color: #ffffff;
+    max-width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+}
+.pedido-container h2{
+    font-size: 16px;
+    color: #5F3305;
+}
+.pedido-container textarea{
+    resize: none;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
 .dados-entrada{
     display: flex;
     gap: 25px;
     justify-content: center;
+    margin-bottom: 20px;
 }
 .bloco-dados-entrada{
     margin-top: 5rem;
@@ -84,12 +148,19 @@ body{
     cursor: pointer;
 }
 @media(max-width:600px){
-    .metadecimadados{
+    .dados-entrada{
         flex-direction: column;
     }
     .metadebaixodados{
         flex-direction: column;
         align-items: center;
     }
-
+    .pedido-container{
+        max-width: 80vw;
+    }
+    .botoes-container button{
+        border: none;
+        width: 50%;
+        padding: 20px 12vw;
+    }
 }

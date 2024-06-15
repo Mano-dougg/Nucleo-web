@@ -1,7 +1,22 @@
+"use client"
 import Image from "next/image"
 import "./globals.css"
 import styles from "./page.module.css"
-const Tophalf = () => {
+import { useState } from "react";
+
+type Dados = {
+    pedidos: number,
+    total: number,
+}
+const Tophalf = (dados:Dados) => {
+
+    const[pedidos,setPedidos] = useState(dados.pedidos)
+    const[total,setTotal] = useState(dados.total)
+
+    function calcularPaesVendidos(){
+        return total * 2
+    }
+
     return(
         <div className="lapadarie">
             <Image
@@ -22,7 +37,7 @@ const Tophalf = () => {
                         />
                     </div>
                     <div className="completarblocodados">
-                        <p>7</p>
+                        <p>{pedidos}</p>
                     </div>
                 </div>
                 <div className="container-dados">
@@ -36,7 +51,7 @@ const Tophalf = () => {
                         />
                     </div>
                     <div className="completarblocodados">
-                        <p>240</p>
+                        <p>{calcularPaesVendidos()}</p>
                     </div>
                 </div>
                 <div className="container-dados">
@@ -50,10 +65,10 @@ const Tophalf = () => {
                         />
                         </div>
                         <div className="completarblocodados" id="entrada">
-                            <p>240</p>
-                        </div>
+                            <p>{dados.total}</p>
                     </div>
                 </div>
+            </div>
         </div>
     )
 }; export default Tophalf;
