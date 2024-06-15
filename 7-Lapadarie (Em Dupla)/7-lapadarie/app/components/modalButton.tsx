@@ -70,7 +70,7 @@ export default function ModalButton(){
         </div>
 
         {/* mostrar as tabelas */}
-        <Tabela pedidos={pedidos} />
+        <Tabela pedidos={pedidos} fetchPedidos={fetchPedidos} />
 
         <div>
           <Modal isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}>

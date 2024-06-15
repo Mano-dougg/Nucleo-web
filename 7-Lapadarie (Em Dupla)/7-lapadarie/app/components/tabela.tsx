@@ -3,13 +3,31 @@ import { GetStaticProps } from "next";
 import { prisma } from "../../lib/prisma"
 import './modal.css'
 import { FaRegTrashAlt } from "react-icons/fa";
+import axios from "axios";
 
 interface PedidosProps{
     pedidos: Array<Pedido>;
+    fetchPedidos: () => void;
 }
 
-export default function Tabela({pedidos}: PedidosProps){
+export default function Tabela({pedidos, fetchPedidos}: PedidosProps){
     
+    async function deletar(pedido:Pedido){
+        console.log("DELETANDO")
+        try {
+            await axios({
+                method: "delete",
+                url: `http://localhost:3001/deletar/${pedido.id}`,
+                data: {
+                  id: pedido.id
+                },
+              })
+              fetchPedidos()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return(
         <div className="divTabelaOut">
             <div className="divTabela">
@@ -25,7 +43,7 @@ export default function Tabela({pedidos}: PedidosProps){
                         </div>
 
                         <div>
-                            <button className="btnDelete"><FaRegTrashAlt size={25}/></button>
+                            <button className="btnDelete" onClick={()=>deletar(pedido)}><FaRegTrashAlt size={25}/></button>
                         </div>
 
                     </div>
