@@ -1,28 +1,36 @@
 // header.tsx
-'use client';
+"use client";
 
 import styled from "styled-components";
 import SoldBreads from "./SoldBreadsCount";
 import { useEffect, useState } from "react";
-import { getSoldBreadsValue, receiveOpenOrders } from "@/server/GETOrder.service";
+import {
+  getSoldBreadsValue,
+  receiveOpenOrders,
+} from "@/server/GETOrder.service";
 
 const HeaderStyle = styled.header`
-  height: 375px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
   padding-top: 60px;
+  gap: 111px;
 `;
 
 const Lapadarie = styled.img`
   width: 155px;
   height: 113px;
+
+  @media (width: 768px) {
+    margin-bottom: 110px;
+  }
 `;
 
 const InfoDiv = styled.div`
-  width: 20vw;
-  height: 136px; 
+  width: 395px;
+  max-width: 30vw;
+  height: 136px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -30,12 +38,19 @@ const InfoDiv = styled.div`
   border-radius: 5px;
   justify-content: space-between;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: 93vw;
+    max-width: none;
+    height: 128.82px;
+  }
 `;
 
 const InfoDivBrown = styled.div`
-  width: 20vw;
-  height: 136px; 
-  background-color: #5F3305;
+  width: 395px;
+  max-width: 30vw;
+  height: 136px;
+  background-color: #5f3305;
   display: flex;
   flex-direction: column;
   padding: 20px 25px;
@@ -43,6 +58,12 @@ const InfoDivBrown = styled.div`
   justify-content: space-between;
   color: white;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: 93vw;
+    max-width: none;
+    height: 128.82px;
+  }
 `;
 
 const NameAndIcon = styled.div`
@@ -76,29 +97,34 @@ const TransactionDiv = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1.5vw;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 25px;
+  }
 `;
 
 export default function Header() {
-  const [ queue, setQueue ] = useState(0);
-  const [ entry, setEntry ] = useState(0);
+  const [queue, setQueue] = useState(0);
+  const [entry, setEntry] = useState(0);
 
-  useEffect(()=>{
+  useEffect(() => {
     const changeQueue = async () => {
       const orders = await receiveOpenOrders();
-      setQueue(orders.length)
+      setQueue(orders.length);
     };
 
     changeQueue();
   });
 
-  useEffect(()=>{
-    const changeEntry = async ()=>{
+  useEffect(() => {
+    const changeEntry = async () => {
       const value = await getSoldBreadsValue();
-      setEntry(value)
-    }
+      setEntry(value);
+    };
 
     changeEntry();
-  })
+  });
 
   return (
     <HeaderStyle>
@@ -116,14 +142,16 @@ export default function Header() {
             <Name>Pães Vendidos</Name>
             <Icon src="cart.svg" alt="Carrinho de compras" />
           </NameAndIcon>
-          <Info><SoldBreads /></Info>
+          <Info>
+            <SoldBreads />
+          </Info>
         </InfoDiv>
         <InfoDivBrown>
           <NameAndIcon>
             <Name>Entrada</Name>
             <Icon src="cypher.svg" alt="Cifrão de dinheiro" />
           </NameAndIcon>
-          <Info>R$ {entry.toFixed(2).replace('.', ',')}</Info>
+          <Info>R$ {entry.toFixed(2).replace(".", ",")}</Info>
         </InfoDivBrown>
       </TransactionDiv>
     </HeaderStyle>

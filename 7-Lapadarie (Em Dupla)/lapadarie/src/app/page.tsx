@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { getSoldBreadsCount } from "@/server/GETOrder.service";
 import Header from "./components/Header";
@@ -14,16 +14,17 @@ const Footer = styled.footer`
   line-height: 18px;
   letter-spacing: 0.20000000298023224px;
   text-align: center;
-`
-
+`;
 
 export default function Home() {
-  
   return (
     <body>
       <Header />
       <Main />
-      <Footer>— Tem pães?<br></br>— Sães<br></br>— Então trães<br></br>Com 🥖 InfoJr UFBA</Footer>
+      <Footer>
+        — Tem pães?<br></br>— Sães<br></br>— Então trães<br></br>Com 🥖 InfoJr
+        UFBA<br></br>Feito por Alfabeto e Bruno Emanoel
+      </Footer>
     </body>
   );
 }
