@@ -81,8 +81,8 @@ const Lista = () => {
             {dados?.map((item: Item) => (
               <CardClient
                 cliente={item.name}
-                totalPao={item.breads.toFixed(2)}
-                totalPagar={`R$ ${item.cash}`}
+                totalPao={item.breads.toString()}
+                totalPagar={` ${item.cash.toFixed(2)}`}
                 key={item.id}
                 evento={() => handleDelete(item.id.toString())}
               />
