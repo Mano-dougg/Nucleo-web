@@ -1,5 +1,6 @@
-"use client";
+'use client';
 
+import { getSoldBreadsCount } from "@/server/order.service";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import styled from "styled-components";
@@ -15,7 +16,9 @@ const Footer = styled.footer`
   text-align: center;
 `
 
+
 export default function Home() {
+  
   return (
     <body>
       <Header />

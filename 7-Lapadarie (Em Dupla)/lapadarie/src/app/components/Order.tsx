@@ -61,16 +61,16 @@ const TrashButton = styled.button`
   cursor: pointer;
 `;
 
-export default function Order() {
+export default function Order({ name, breadCount, valor}:{name:string, breadCount:number, valor:number}) {
   return (
     <OrderDiv>
       <OrderDivLeft>
-        <OrderClientName>Nomeildo Fulano da Silva</OrderClientName>
+        <OrderClientName>{name}</OrderClientName>
         <OrderInfo>
           <OrderInfoName>Total de Pães:</OrderInfoName>
-          <OrderInfoQuantity>0 pães</OrderInfoQuantity>
+          <OrderInfoQuantity>{breadCount} pães</OrderInfoQuantity>
           <OrderInfoName>Total a Pagar:</OrderInfoName>
-          <OrderInfoQuantity>R$ 0,00</OrderInfoQuantity>
+          <OrderInfoQuantity>R$ {valor}</OrderInfoQuantity>
         </OrderInfo>
       </OrderDivLeft>
       <TrashButton>

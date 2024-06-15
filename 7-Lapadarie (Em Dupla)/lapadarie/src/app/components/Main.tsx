@@ -2,7 +2,8 @@
 
 import styled from "styled-components";
 import Order from "./Order";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { OrderToUse, receiveOpenOrders } from "@/server/order.service";
 
 const AddButton = styled.button`
   font-family: inherit;
@@ -100,32 +101,54 @@ const AddClientCancel = styled.button`
   font-weight: 600;
 `
 
-export default function Main() {
-  const [showAddClient, setShowAddClient] = useState(false);
-
-  const openAddClient = () => {
-    setShowAddClient(true);
-  };
-
-  const closeAddClient = () => {
-    setShowAddClient(false);
-  };
-
-  return (
-    <MainMain>
-      <DivClients>
-        <AddButton onClick={openAddClient}>+ Adicionar pessoa à fila</AddButton>
-        <Order />
-      </DivClients>
-      {showAddClient && <AddClientDiv>
+function AddClientMenu({ toggleClient }:{toggleClient:()=>void}) {
+  return(
+    <AddClientDiv>
         <AddClientTitle>Adicionar pessoa à fila</AddClientTitle>
         <AddClientForm>
           <AddClientFormInput placeholder="Nome completo do cliente"></AddClientFormInput>
           <AddClientFormInput placeholder="Total de pães:" type="number"></AddClientFormInput>
           <AddClientFormSubmit type="submit" value="Enviar"/>
         </AddClientForm>
-        <AddClientCancel onClick={closeAddClient}>Cancelar</AddClientCancel>
-        </AddClientDiv>}
+        <AddClientCancel onClick={toggleClient}>Cancelar</AddClientCancel>
+        </AddClientDiv>
+  )
+}
+
+function OpenOrderList() {
+  const initializer:OrderToUse[] = []
+  const [ data, setData ] = useState(initializer)
+
+  useEffect(()=>{
+    const takeData = async()=>{
+      const orderData = await receiveOpenOrders();
+      setData(orderData)
+    }
+
+    takeData();
+  })
+
+  const orderList = data.map((order, i)=>(
+    <Order name={order.name} breadCount={order.breadCount} valor={order.valor} key={i}/>
+  ))
+
+  return orderList
+}
+
+export default function Main() {
+  const [showAddClient, setShowAddClient] = useState(false);
+
+  const toggleClient = () => {
+    setShowAddClient(!showAddClient);
+  };
+
+  return (
+    <MainMain>
+      <DivClients>
+        <AddButton onClick={toggleClient}>+ Adicionar pessoa à fila</AddButton>
+        <OpenOrderList />
+      </DivClients>
+      {showAddClient && <AddClientMenu toggleClient={toggleClient}/>}
     </MainMain>
   );
 }

@@ -1,6 +1,8 @@
-"use client";
+// header.tsx
+'use client';
 
 import styled from "styled-components";
+import SoldBreads from "./SoldBreadsCount";
 
 const HeaderStyle = styled.header`
   height: 375px;
@@ -60,7 +62,7 @@ const Icon = styled.img`
   height: 24px;
 `;
 
-const Info = styled.h2`
+export const Info = styled.h2`
   font-size: 2.25rem;
   font-weight: 500;
   line-height: 3.375rem;
@@ -75,6 +77,7 @@ const TransactionDiv = styled.div`
 `;
 
 export default function Header() {
+
   return (
     <HeaderStyle>
       <Lapadarie src="logo.svg" alt="Lapadarie Ron Pão Pão Pão" />
@@ -91,7 +94,7 @@ export default function Header() {
             <Name>Pães Vendidos</Name>
             <Icon src="cart.svg" alt="Carrinho de compras" />
           </NameAndIcon>
-          <Info>0</Info>
+          <Info><SoldBreads /></Info>
         </InfoDiv>
         <InfoDivBrown>
           <NameAndIcon>
