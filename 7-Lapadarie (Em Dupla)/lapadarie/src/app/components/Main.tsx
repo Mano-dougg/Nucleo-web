@@ -3,7 +3,8 @@
 import styled from "styled-components";
 import Order from "./Order";
 import { useEffect, useState } from "react";
-import { OrderToUse, receiveOpenOrders } from "@/server/order.service";
+import { receiveOpenOrders } from "@/server/GETOrder.service";
+import { OrderToUse } from "@/types/order.types";
 
 const AddButton = styled.button`
   font-family: inherit;

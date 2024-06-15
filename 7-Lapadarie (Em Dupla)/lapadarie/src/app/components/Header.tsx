@@ -4,7 +4,7 @@
 import styled from "styled-components";
 import SoldBreads from "./SoldBreadsCount";
 import { useEffect, useState } from "react";
-import { getSoldBreadsValue, receiveOpenOrders } from "@/server/order.service";
+import { getSoldBreadsValue, receiveOpenOrders } from "@/server/GETOrder.service";
 
 const HeaderStyle = styled.header`
   height: 375px;

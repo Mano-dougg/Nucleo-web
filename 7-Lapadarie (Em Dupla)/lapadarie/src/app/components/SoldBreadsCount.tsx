@@ -2,7 +2,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { getSoldBreadsCount } from "@/server/order.service";
+import { getSoldBreadsCount } from "@/server/GETOrder.service";
 
 export default function SoldBreads() {
   const [ count, setCount ] = useState(0);

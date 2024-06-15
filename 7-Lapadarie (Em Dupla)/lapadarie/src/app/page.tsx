@@ -1,6 +1,6 @@
 'use client';
 
-import { getSoldBreadsCount } from "@/server/order.service";
+import { getSoldBreadsCount } from "@/server/GETOrder.service";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import styled from "styled-components";
