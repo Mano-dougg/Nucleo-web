@@ -1,0 +1,96 @@
+{
+  "format": "custom",
+  "id": "posta",
+  "label": "posta",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "posta",
+          "placeholder": ""
+        }
+      },
+      "title2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "title2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "subtitle2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "subtitle2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "imgbas": {
+        "type": "Image",
+        "config": {
+          "label": "imgbas",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "contentador1": {
+        "type": "StructuredText",
+        "config": {
+          "label": "contentador1",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "subsecao": {
+        "type": "StructuredText",
+        "config": {
+          "label": "subsecao",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "imgbas2": {
+        "type": "Image",
+        "config": {
+          "label": "imgbas2",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "contentador2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "contentador2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "ultimaimg": {
+        "type": "Image",
+        "config": {
+          "label": "ultimaimg",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "contentador3": {
+        "type": "StructuredText",
+        "config": {
+          "label": "contentador3",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      }
+    }
+  }
+}

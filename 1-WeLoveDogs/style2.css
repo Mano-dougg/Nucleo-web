@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+body{
+    width: 1440px;
+    height: 1024px;
+    top: 120px;
+    gap: 0px;
+    opacity: 0px;
+    background: #FFFFFF;
+}
+
+div.home{
+    width: 100%;
+    height: 120px;
+    gap: 0px;
+    opacity: 0px;
+    color: #FFFFFF;
+
+}
+
+header.um{
+    width: 100%;
+    height: 120px;
+    gap: 0px;
+    opacity: 0px;
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+a.T{
+    text-decoration: none;
+}
+
+h1.inin{
+    width: 281px;
+    height: 65px;
+    top: 27px;
+    left: 15px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Open Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+    font-family: Open Sans;
+    color: #000000;
+
+}
+
+span.love{
+    font-family: Open Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+    color: #7ED321;
+}
+
+nav.menu{
+   display: flex;
+   align-items: center;
+}
+
+
+ul.faixa > li{
+    display: inline-block;
+    margin : 10px;
+}    
+
+
+
+a.somos{
+    width: 112px;
+    height: 22px;
+    top: 49px;
+    left: 1047px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: right;
+    color: #000000;
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.blog{
+    width: 45px;
+    height: 22px;
+    top: 49px;
+    left: 1194px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: right;
+    color:#000000;
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.inscri{
+    width: 151px;
+    height: 40px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    background-color: rgba(126, 211, 33, 0.4);;
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+}
+
+li.link3{
+    width: 151px;
+    height: 40px;
+}
+
+h1.in{
+    width: 87px;
+    height: 22px;
+    top: 49px;
+    left: 1306px;
+    gap: 0px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: center;
+    display: inline-block;
+    color: #1C4701;
+
+}
+
+h1.Título{
+    width: 334px;
+    height: 65px;
+    top: 150px;
+    left: 553px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Open Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+    color:#000000;
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+
+}
+
+div.para{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+}
+
+p.latim{
+    width: 687px;
+    height: 176px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: justify;
+
+}
+
+figure.dog{
+    width: 354px;
+    height: 266px;
+    top: 419px;
+    left: 543px;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+    top: 97%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+
+}

@@ -1,0 +1,1931 @@
+/* Telas pequenas */
+
+@media(min-width:200px) and (max-width:1296px){
+
+  /* Cabeçalho formatado */
+
+  body{
+    width: 100%;
+    height: 2215px;
+    top: 2166px;
+    left: -2311px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: white;
+    transition: opacity 0.3s ease;
+  }
+  div.Desk{
+    display:none;
+  }
+  nav.menu{
+    width: 104%;
+    height: 72px;
+    gap: 0px;
+    opacity: 0px;
+    box-shadow: 0px 25px 65px 0px #00000026;
+    background-color: #FFFFFF;
+    position: relative;
+    bottom:25px;
+    left:-15px;
+  }
+  h4.dono{
+    width: 130px;
+    height: 22px;
+    top: 25px;
+    left: 25px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #202020;
+    position: relative;
+    top:24px;
+    left: 15px;
+  }
+  label.dark{
+    width: 77px;
+    height: 22px;
+    top: 25px;
+    left: 226px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color: #202020;
+    white-space: nowrap;
+    position: relative;
+    left:56%;
+    top:-21.5px;
+  
+  }
+  .checkbox {
+    opacity: 0;
+    position: relative;
+    top: -45px;
+    left:80%;
+  }
+
+  label.env {
+    width: 40px;
+    height: 14px;
+    background-color: #d3d3d3;
+    border-radius: 50px;
+    border: 1px solid #3C3B3A;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+    top:-66px;
+    left:80%;
+  }
+  div.bola {
+    width: 18px;
+    height: 20px;
+    top: 2.36px;
+    left: 3px;
+    gap: 0px;
+    Opacity: 0px;
+    background-color: #3C3B3A;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 250ms linear;
+  }
+  .checkbox:checked + .env .bola {
+    transform: translateX(26px);
+  }
+  button.btt{
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    top:-20px;
+    left:17px;
+  }
+  img.IC{
+    width: 30px;
+    height: 30px;
+    top: 97px;
+    left: 25px;
+    padding: 4.5px 0px 3px 0px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  img.IC:hover{
+    color:black;
+  }
+
+
+  /* Primeira parte */
+
+  div.section1{
+    width: 310px;
+    height: 926px;
+    top: 152px;
+    left: 40px;
+    gap: 0px;
+    opacity: 0px;
+    
+  }
+  figure.Icon{
+    width: 100px;
+    height: 100px;
+    top: 132px;
+    left: 238px;
+    gap: 0px;
+    border-radius: 93px 93px 93px 93px;
+    opacity: 0px;
+    background-color: #E5E5E5;
+    box-shadow: 0px 25px 65px 0px #00000026;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    left:30%;
+    top:40px;
+  }
+  img.Me{
+    width: 100%;
+    height:100%;
+    border-radius: 93px 93px 93px 93px;
+  }
+  h1.Kevin{
+    width: 236px;
+    height: 64px;
+    top: 292px;
+    left: 69px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: EB Garamond;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #0065FF;
+    position: relative;
+    left:21.5%;
+    top: 50px;
+  }
+  hr.maior{
+    display:none
+  }
+  hr.Azul{
+    width: 192px;
+    height: 1px;
+    gap: 10px;
+    opacity: 0px;
+    background-color: #0065FF;
+    background: #0065FF;
+    position: relative;
+    left: 29px;
+    top: 65px;
+  }
+  p.text1{
+    width: 310px;
+    height: 540px;
+    top: 441px;
+    left: 40px;
+    gap: 0px;
+    opacity: 0px;
+    color: #202020;
+    font-family: Be Vietnam;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    position: relative;
+    top:95px;
+    left:35px;
+  }
+  span.um{
+    color: #0065FF;
+  }
+  div.Frase{
+    width: 260px;
+    height: 50px;
+    top: 1006px;
+    left: 46px;
+    padding: 20px 20px 20px 20px;
+    gap: 10px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0px;    
+    background-color: #F8F9FA;
+    position: relative;
+    top: 12.5%;
+    left: 12.5%;
+  }
+  figure.bol1{
+    width: 16px;
+    height: 16px;
+    padding: 0.25px 0.25px 0.25px 0.25px;
+    gap: 0px;
+    opacity: 0px;
+    position: relative;
+    right:45px;
+    top:-7px;
+  }
+  img.bl{
+    height: 16px;
+  }
+  p.pa{
+    width: 217px;
+    height: 25px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    position: relative;
+    left: 8%;
+    top: -38px;
+  }
+  span.say{
+    color: #0065FF;
+  }
+  span.temp{
+    white-space: nowrap;
+  }
+
+  /* Segunda parte */
+
+  div.section2{
+    width: 310px;
+    height: 174px;
+    top: 1154px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+  }
+  hr.ma2{
+    width: 310px;
+    height: 1px;
+    top: 1128px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0.1px;    
+    position: relative;
+    top:-20%;
+    left:5%;
+    background-color: #0065FF;
+  }
+  h2.titu{
+    width: 52px;
+    height: 24px;
+    top: 1076px;
+    left: 240px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #0065FF;
+    position: relative;
+    top: -20%;
+    left:47%;
+  }
+  p.leg{
+    width: 310px;
+    height: 125px;
+    top: 1203px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;    
+    font-family: Be Vietnam;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    color: #202020;
+    position: relative;
+    top: -15%;
+    left:6%;
+  }
+  div.cab{
+    width: 310px;
+    height: 401px;
+    top: 1353px;
+    left: 32px;
+    gap: 0px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+  }
+  figure.empty{
+    width: 308px;
+    height: 179px;
+    top: 1353px;
+    left: 32px;
+    gap: 0px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0px;
+    background-color: #E5E5E5;
+    position: relative;
+    top: -5%;
+    left:-7%;
+  }
+  img.CM{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+  }
+  h4.title1{
+    width: 43px;
+    height: 20px;
+    top: 1549px;
+    left: 166px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #202020;
+    position: relative;
+    top: -5%;
+    left:48%;
+  }
+  p.imgdesc{
+    width: 310px;
+    height: 100px;
+    top: 1579px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;    
+    font-family: Be Vietnam;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    position: relative;
+    top:-7.5%;
+    left:7%;
+  }
+  button.btn{
+    width: 305px;
+    height: 50px;
+    top: 1704px;
+    left: 32px;
+    padding: 16px 30px 16px 30px;
+    gap: 10px;
+    border-radius: 44.5px 44.5px 44.5px 44.5px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #0065FF;
+    background: #FFFFFF;
+    position: relative;
+    top: -7%;
+    left:5%;
+    color: #0065FF;
+    transition: color 500ms;
+    transition: background 500ms;
+    transition: height 500ms;
+    cursor: pointer;
+  }
+  button.btn:hover{
+    color:#FFFFFF;
+    background: #0065FF;
+    height: 60px;
+  }
+  h1.nome{
+    width: 120px;
+    height: 18px;
+    gap: 0px;
+    opacity: 0px;    
+    font-family: Be Vietnam;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 17.53px;
+    text-align: left;
+    white-space: nowrap;
+    position: relative;
+    top: 15%;
+    left:28%;
+  }
+  div.cab2{
+    width: 310px;
+    height: 401px;
+    top: 1779px;
+    left: 32px;
+    gap: 0px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+  }
+  figure.empty2{
+    width: 308px;
+    height: 179px;
+    top: 1353px;
+    left: 32px;
+    gap: 0px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0px;
+    background-color: #E5E5E5;
+    position: relative;
+    top:1%;
+    left:-7%;
+  }
+  img.math2{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+  }
+  h4.title2{
+    width: 43px;
+    height: 20px;
+    top: 1549px;
+    left: 166px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #202020;
+    position: relative;
+    top: 1%;
+    left:47.5%;
+  }
+  p.imgdesc1{
+    width: 310px;
+    height: 100px;
+    top: 1579px;
+    left: 32px;
+    gap: 0px;
+    opacity: 0px;    
+    font-family: Be Vietnam;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    position: relative;
+    top:0.5%;
+    left:7%;
+  }
+  button.btn1{
+    width: 305px;
+    height: 50px;
+    top: 1704px;
+    left: 32px;
+    padding: 16px 30px 16px 30px;
+    gap: 10px;
+    border-radius: 44.5px 44.5px 44.5px 44.5px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #0065FF;
+    background: #FFFFFF;
+    position: relative;
+    top: -1%;
+    left:5%;
+    color: #0065FF;
+    transition: color 500ms;
+    transition: background 500ms;
+    transition: height 500ms;
+    cursor: pointer;
+  }
+  button.btn1:hover{
+    color:#FFFFFF;
+    background: #0065FF;
+    height: 60px;
+  }
+
+  /* Tela com ativamento do menu hamburguer*/
+
+  div.telab{
+    width: 100%;
+    height: 2215px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index:1;
+    transition: opacity 0.3s ease;
+  }
+  nav.menu1{
+    width: 104%;
+    height: 72px;
+    gap: 0px;
+    opacity: 0px;
+    box-shadow: 0px 25px 65px 0px #00000026;
+    background-color: #FFFFFF;
+    position: relative;
+    bottom:40px;
+    left:-15px;
+  }
+  button.X{
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    position:relative;
+    top:-10px;
+    left:4.5px;
+    transition: transform 0.5s ease, opacity 10s ease;
+  }
+  img.VX{
+    width: 28.13px;
+    height: 28.13px;
+    top: 29.06px;
+    left: 0.94px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  ul{
+    width: Fixed (375px)px;
+    height: Hug (160px)px;
+    top: 127px;
+    padding: 25px 25px 25px 25px;
+    gap: 25px;
+    opacity: 0px;
+    position: absolute;
+    top:110px;
+    left:7px;
+  }
+  label.dois{
+    width: 79px;
+    height: 20px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color: #0065FF;
+    position:relative;
+    left: 50%;
+    cursor: pointer;
+    transition: color 500ms;
+    transition: font-size 500ms;
+  }
+  label.dois:hover{
+    color: #296bcf;
+  }
+  label.tres{
+    width: 90px;
+    height: 20px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color: #0065FF;
+    position:relative;
+    left: 16.7%;
+    top:55px;
+    cursor: pointer;
+    transition: color 500ms;
+    transition: font-size 500ms;
+  }
+  label.tres:hover{
+    color: #296bcf;
+  }
+  label.quatro{
+    width: 81px;
+    height: 20px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color:#0065FF;
+    position:relative;
+    left: -17.25%;
+    top:115px;
+    cursor: pointer;
+    transition: color 500ms;
+    transition: font-size 500ms;
+  }
+  label.quatro:hover{
+    color: #296bcf;
+  }
+  div.Barra{
+    width: 150px;
+    height: Hug (10px)px;
+    top: 312px;
+    left: 62px;
+    gap: 100px;
+    opacity: 0px;
+    position: relative;
+    top:295px;
+    left: 120px;
+  }
+  img.tt{
+    width: 22px;
+    height: 17.87px;
+    top: 2.07px;
+    gap: 0px;
+    opacity: 0px;
+    position: absolute;
+    left:-45%;
+    top:-1px;
+    cursor: pointer;
+  }
+  img.insta{
+    width: 16px;
+    height: 18px;
+    padding: 1.12px 0px 1.13px 0px;
+    gap: 0px;
+    opacity: 0px;
+    position:relative;
+    left:115%;
+    top:-2px;
+    cursor: pointer;
+  }
+  img.fg{
+    width: 13px;
+    height: 18px;
+    padding: 0px 0.73px 0px 0.71px;
+    gap: 0px;
+    opacity: 0px;
+    position:relative;
+    left:45%;
+    top:-3.8px;
+    cursor: pointer;
+  }
+  label.dark1{
+    width: 77px;
+    height: 22px;
+    top: 25px;
+    left: 226px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color: #202020;
+    white-space: nowrap;
+    position: relative;
+    left:56%;
+    top:-45.9px;
+  
+  }
+  .checkbox {
+    opacity: 0;
+  }
+  label.env1 {
+    width: 40px;
+    height: 14px;
+    background-color: #d3d3d3;
+    border-radius: 50px;
+    border: 1px solid #3C3B3A;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+    top:-91px;
+    left:80%;
+  
+  }
+  div.bola {
+    width: 18px;
+    height: 20px;
+    top: 2.36px;
+    left: 3px;
+    gap: 0px;
+    Opacity: 0px;
+    background-color: #3C3B3A;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 250ms linear;
+  }
+  .checkbox:checked + .env1 .bola {
+    transform: translateX(26px);
+  }
+}
+
+/* Telas intermediárias*/
+
+@media(min-width:1297px) and (max-width:1370px){
+
+/* Cabeçalho */
+
+body{
+  width: 1250px;
+  height: 2580px;
+  top: -512px;
+  left: -2311px;
+  gap: 0px;
+  opacity: 0px;
+  background-color: white;
+}
+div.Mobile{
+  display:none;
+}
+button.btt{
+  display: none;
+}
+nav.menu{
+  width: 1179px;
+  height: 40px;
+  padding: 30px 87px 30px 87px;
+  gap: 511px;
+  opacity: 0px;
+  background: #FFFFFF;
+  box-shadow: 0px 25px 65px 0px #00000026;
+  align-items: center;
+  position:relative;
+  right: 60px;
+  left: -20px;
+  top: -5px;
+} 
+div.aesquerda{
+  width: 400px;
+  height: 20px;
+  gap: 50px;
+  opacity: 0px;
+  position: relative;
+  top:-50%;
+}
+h4.dono{
+  width: 130px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  position:relative;
+  right: 25px;
+}
+label.dois{
+  width: 79px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  color: #0065FF;
+  position:relative;
+  left: 150px;
+  cursor: pointer;
+  transition: color 500ms;
+  transition: font-size 500ms;
+}
+label.dois:hover{
+  color: #296bcf;
+}
+label.tres{
+  width: 90px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  color: #0065FF;
+  position:relative;
+  left: 165px;
+  cursor: pointer;
+  transition: color 500ms;
+  transition: font-size 500ms;
+}
+label.tres:hover{
+  color: #296bcf;
+}
+label.quatro{
+  width: 81px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  color:#0065FF;
+  position:relative;
+  left: 180px;
+  top:0.27px;
+  cursor: pointer;
+  transition: color 500ms;
+  transition: font-size 500ms;
+}
+label.quatro:hover{
+  color: #296bcf;
+}
+ul{
+  display: flex;
+  align-items: center;
+  position: relative;
+  top:-42px;
+}
+div.adireita{
+  width: 285px;
+  height: 22px;
+  gap: 50px;
+  opacity: 0px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  left:73%;
+  top:-10px;
+  margin-bottom: 100px;
+  top:-80%;
+}
+img.insta{
+  width: 16px;
+  height: 18px;
+  padding: 1.12px 0px 1.13px 0px;
+  gap: 0px;
+  opacity: 0px;
+  cursor:pointer;
+  position:relative;
+
+}
+img.tt{
+  width: 22px;
+  height: 22px;
+  padding: 2.07px 0px 2.07px 0px;
+  gap: 0px;
+  opacity: 0px;
+  cursor:pointer;
+}
+img.fg{
+  width: 13px;
+  height: 18px;
+  padding: 0px 0.73px 0px 0.71px;
+  gap: 0px;
+  opacity: 0px;
+  cursor:pointer;
+}
+label.dark{
+  width: 50px;
+  height: 15px;
+  left: 161px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.45px;
+  text-align: left;
+  color: #202020;
+  white-space: nowrap;
+
+}
+.checkbox {
+  opacity: 0;
+}
+
+label.env {
+  width: 40px;
+  height: 14px;
+  background-color: #d3d3d3;
+  border-radius: 50px;
+  border: 1px solid #3C3B3A;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+  bottom:8px;
+  left:1px;
+
+}
+div.bola {
+  width: 18px;
+  height: 20px;
+  top: 2.36px;
+  left: 3px;
+  gap: 0px;
+  Opacity: 0px;
+  background-color: #3C3B3A;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 250ms linear;
+}
+.checkbox:checked + .env .bola {
+  transform: translateX(26px);
+}
+
+/* Primeira parte */
+
+div.section1{
+  width: 962px;
+  height: 783px;
+  top: 132px;
+  left: 238px;
+  gap: 0px;
+  opacity: 0px;
+}
+figure.Icon{
+  width: 100px;
+  height: 100px;
+  top: 132px;
+  left: 238px;
+  gap: 0px;
+  border-radius: 93px 93px 93px 93px;
+  opacity: 0px;
+  background-color: #E5E5E5;
+  box-shadow: 0px 25px 65px 0px #00000026;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  left:17%;
+  top: 70px;
+}
+img.Me{
+  width: 100%;
+  height:100%;
+  border-radius: 93px 93px 93px 93px;
+}
+h1.Kevin{
+  width: 517px;
+  height: 140px;
+  top: 272px;
+  left: 240px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: EB Garamond;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 70px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #0065FF;
+  position: relative;
+  left:22%;
+  top: 100px;
+}
+hr.maior{
+  width:960px;
+  height: 1px;
+  top: 492px;
+  left: 240px;
+  gap: 10px;
+  opacity: 0;
+  position: relative;
+  left:21%;
+  top: 177px;
+}
+hr.Azul{
+  width: 192px;
+  height: 1px;
+  gap: 10px;
+  opacity: 0px;
+  background-color: #0065FF;
+  background: #0065FF;
+  position: relative;
+  left: -178px;
+  top: 165px;
+}
+p.text1{
+  width: 960px;
+  height: 240px;
+  top: 573px;
+  left: 240px;
+  gap: 0px;
+  opacity: 0px;
+  color: #202020;
+  font-family: Be Vietnam;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24.84px;
+  text-align: left;
+  position: relative;
+  top:260px;
+  left:205.5px;
+}
+span.um{
+  color: #0065FF;
+}
+div.Frase{
+  width: 462px;
+  height: 35px;
+  top: 859px;
+  left: 240px;
+  padding: 20px 20px 20px 20px;
+  gap: 10px;
+  border-radius: 10px 10px 10px 10px;
+  opacity: 0px;
+  background-color: #F8F9FA;
+  position: relative;
+  top: 42%;
+  left: 21%;
+}
+figure.bol1{
+  width: 16px;
+  height: 16px;
+  padding: 0.25px 0.25px 0.25px 0.25px;
+  gap: 0px;
+  opacity: 0px;
+  position: relative;
+  right:40px;
+  top:-10px;
+}
+p.pa{
+  width: 396px;
+  height: 16px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  position: relative;
+  left: 10%;
+  top: -35px;
+}
+span.say{
+  color: #0065FF;
+}
+
+/* Segunda parte */
+
+div.section2{
+  width: 960px;
+  height: 1003px;
+  top: 995px;
+  left: 240px;
+  gap: 0px;
+  border: 1px 1px 1px 1px;
+  opacity: 0px;
+  position: relative;
+  top:50%;
+}
+hr.ma2{
+  width:960px;
+  height: 1px;
+  top: 492px;
+  left: 240px;
+  gap: 10px;
+  opacity: 0.1px;
+  position: relative;
+  top:37%;
+  left:-3.75%;
+  background-color: #0065FF;
+}
+h2.titu{
+  width: 52px;
+  height: 24px;
+  top: 1076px;
+  left: 240px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #0065FF;
+  position: relative;
+  top: 47%;
+  left:-37.1px;
+}
+p.leg{
+  width: 960px;
+  height: 50px;
+  top: 1136px;
+  left: 240px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24.84px;
+  text-align: left;
+  color: #202020;
+  position: relative;
+  top: 51%;
+  left:-36.1px;
+}
+div.cab{
+  width: 960px;
+  height: 370px;
+  top: 1222px;
+  left: 240px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+figure.empty{
+  width: 640px;
+  height: 370px;
+  top: 1222px;
+  left: 240px;
+  gap: 0px;
+  border-radius: 10px 10px 10px 10px;
+  opacity: 0px;
+  background-color: #E5E5E5;
+  position: relative;
+  top: 150%;
+  left:-75px;
+}
+img.CM{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
+}
+h4.title1{
+  width: 43px;
+  height: 20px;
+  top: 1222px;
+  left: 920px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #202020;
+  position: relative;
+  top: 42.5%;
+  left:69%;
+}
+p.imgdesc{
+  width: 280px;
+  height: 125px;
+  top: 1252px;
+  left: 920px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24.84px;
+  text-align: left;
+  position: relative;
+  top:42%;
+  left:68.9%;
+}
+button.btn{
+  width: 180px;
+  height: 50px;
+  top: 1405px;
+  left: 920px;
+  padding: 16px 30px 16px 30px;
+  gap: 10px;
+  border-radius: 44.5px 44.5px 44.5px 44.5px;
+  border: 1px 1px 1px 1px;
+  opacity: 0px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #0065FF;
+  background: #FFFFFF;
+  position: relative;
+  top: 47%;
+  left:69.2%;
+  color: #0065FF;
+  transition: color 500ms;
+  transition: background 500ms;
+  transition: height 500ms;
+  cursor: pointer;
+}
+button.btn:hover{
+  color:#FFFFFF;
+  background: #0065FF;
+  height: 60px;
+}
+h1.nome{
+  width: 120px;
+  height: 18px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17.53px;
+  text-align: left;
+  white-space: nowrap;
+
+}
+div.cab2{
+  width: 960px;
+  height: 370px;
+  top: 1628px;
+  left: 240px;
+  gap: 0px;
+  border: 1px 1px 1px 1px;
+  opacity: 0px;
+}
+figure.empty2{
+  width: 640px;
+  height: 370px;
+  top: 1628px;
+  left: 560px;
+  gap: 0px;
+  border-radius: 10px 10px 10px 10px;
+  opacity: 0px;
+  background-color: #E5E5E5;
+  position: relative;
+  top:160%;
+  left:27%;
+}
+img.math2{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 10px 10px;
+}
+h4.title2{
+  width: 43px;
+  height: 20px;
+  top: 1222px;
+  left: 920px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #202020;
+  position: relative;
+  top: 52.2%;
+  left:-3.75%;
+}
+p.imgdesc1{
+  width: 280px;
+  height: 125px;
+  top: 1252px;
+  left: 920px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Be Vietnam;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24.84px;
+  text-align: left;
+  position: relative;
+  top:52%;
+  left:-3.7%;
+}
+button.btn1{
+  width: 180px;
+  height: 50px;
+  top: 1405px;
+  left: 920px;
+  padding: 16px 30px 16px 30px;
+  gap: 10px;
+  border-radius: 44.5px 44.5px 44.5px 44.5px;
+  border: 1px 1px 1px 1px;
+  opacity: 0px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #0065FF;
+  background: #FFFFFF;
+  position: relative;
+  top: 57%;
+  left:-3.75%;
+  color: #0065FF;
+  transition: color 500ms;
+  transition: background 500ms;
+  transition: height 500ms;
+  cursor: pointer;
+}
+button.btn1:hover{
+  color:#FFFFFF;
+  background: #0065FF;
+  height: 60px;
+}
+}
+
+
+/* Esse código tem as mesmas informações do outro, com mudança apenas no Width do body e da barra de navegação*/
+
+@media(min-width:1370px){
+
+  body{
+    width: 100%;
+    height: 2600px;
+    top: -512px;
+    left: -2311px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: white;
+  }
+  div.Mobile{
+    display:none;
+  }
+  button.btt{
+    display: none;
+  }
+  header{
+    height:none;
+  }
+  nav.menu{
+    width: 100%;
+    height: 40px;
+    padding: 30px 87px 30px 87px;
+    gap: 511px;
+    opacity: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 25px 65px 0px #00000026;
+    align-items: center;
+    position:relative;
+    right: 60px;
+    left: -20px;
+    top: -5px;
+  }
+  div.aesquerda{
+    width: 400px;
+    height: 20px;
+    gap: 50px;
+    opacity: 0px;
+    position: relative;
+    top:-50%;
+  }
+  h4.dono{
+    width: 130px;
+    height: 20px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    position:relative;
+    right: 25px;
+  }
+  label.dois{
+    width: 79px;
+    height: 20px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color: #0065FF;
+    position:relative;
+    left: 150px;
+    cursor: pointer;
+    transition: color 500ms;
+    transition: font-size 500ms;
+  }
+  label.dois:hover{
+    color: #296bcf;
+  }
+  label.tres{
+    width: 90px;
+    height: 20px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color: #0065FF;
+    position:relative;
+    left: 165px;
+    cursor: pointer;
+    transition: color 500ms;
+    transition: font-size 500ms;
+  }
+  label.tres:hover{
+    color: #296bcf;
+  }
+  label.quatro{
+    width: 81px;
+    height: 20px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color:#0065FF;
+    position:relative;
+    left: 180px;
+    top: 0.27px;
+    cursor: pointer;
+    transition: color 500ms;
+    transition: font-size 500ms;
+  }
+  label.quatro:hover{
+    color: #296bcf;
+  }
+  ul{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top:-42px;
+  }
+  div.adireita{
+    width: 285px;
+    height: 22px;
+    gap: 50px;
+    opacity: 0px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    position: relative;
+    left:73%;
+    top:-10px;
+    margin-bottom: 100px;
+    top:-80%;
+  }
+  img.insta{
+    width: 16px;
+    height: 18px;
+    padding: 1.12px 0px 1.13px 0px;
+    gap: 0px;
+    opacity: 0px;
+    cursor:pointer;
+    position:relative;
+  
+  }
+  img.tt{
+    width: 22px;
+    height: 22px;
+    padding: 2.07px 0px 2.07px 0px;
+    gap: 0px;
+    opacity: 0px;
+    cursor:pointer;
+  }
+  img.fg{
+    width: 13px;
+    height: 18px;
+    padding: 0px 0.73px 0px 0.71px;
+    gap: 0px;
+    opacity: 0px;
+    cursor:pointer;
+  }
+  label.dark{
+    width: 50px;
+    height: 15px;
+    left: 161px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.45px;
+    text-align: left;
+    color: #202020;
+    white-space: nowrap;
+  
+  }
+  .checkbox {
+    opacity: 0;
+  }
+  
+  
+  label.env {
+    width: 40px;
+    height: 14px;
+    background-color: #d3d3d3;
+    border-radius: 50px;
+    border: 1px solid #3C3B3A;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+    bottom:8px;
+    left:1px;
+  
+  }
+  div.bola {
+    width: 18px;
+    height: 20px;
+    top: 2.36px;
+    left: 3px;
+    gap: 0px;
+    Opacity: 0px;
+    background-color: #3C3B3A;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 250ms linear;
+  }
+  .checkbox:checked + .env .bola {
+    transform: translateX(26px);
+  }
+  div.section1{
+    width: 962px;
+    height: 783px;
+    top: 132px;
+    left: 238px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  figure.Icon{
+    width: 100px;
+    height: 100px;
+    top: 132px;
+    left: 238px;
+    gap: 0px;
+    border-radius: 93px 93px 93px 93px;
+    opacity: 0px;
+    background-color: #E5E5E5;
+    box-shadow: 0px 25px 65px 0px #00000026;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    left:17%;
+    top: 70px;
+  }
+  img.Me{
+    width: 100%;
+    height:100%;
+    border-radius: 93px 93px 93px 93px;
+  }
+  h1.Kevin{
+    width: 517px;
+    height: 140px;
+    top: 272px;
+    left: 240px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: EB Garamond;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #0065FF;
+    position: relative;
+    left:22%;
+    top: 100px;
+  }
+  hr.maior{
+    width:960px;
+    height: 1px;
+    top: 492px;
+    left: 240px;
+    gap: 10px;
+    opacity: 0;
+    position: relative;
+    left:21%;
+    top: 177px;
+  }
+  hr.Azul{
+    width: 192px;
+    height: 1px;
+    gap: 10px;
+    opacity: 0px;
+    background-color: #0065FF;
+    background: #0065FF;
+    position: relative;
+    left: -178px;
+    top: 165px;
+  }
+  p.text1{
+    width: 960px;
+    height: 240px;
+    top: 573px;
+    left: 240px;
+    gap: 0px;
+    opacity: 0px;
+    color: #202020;
+    font-family: Be Vietnam;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    position: relative;
+    top:260px;
+    left:205.5px;
+  }
+  span.um{
+    color: #0065FF;
+  }
+  div.Frase{
+    width: 462px;
+    height: 35px;
+    top: 859px;
+    left: 240px;
+    padding: 20px 20px 20px 20px;
+    gap: 10px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0px;
+    background-color: #F8F9FA;
+    position: relative;
+    top: 42%;
+    left: 21%;
+  }
+  figure.bol1{
+    width: 16px;
+    height: 16px;
+    padding: 0.25px 0.25px 0.25px 0.25px;
+    gap: 0px;
+    opacity: 0px;
+    position: relative;
+    right:40px;
+    top:-10px;
+  }
+  p.pa{
+    width: 396px;
+    height: 16px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    position: relative;
+    left: 10%;
+    top: -35px;
+  }
+  span.say{
+    color: #0065FF;
+  }
+  div.section2{
+    width: 960px;
+    height: 1003px;
+    top: 995px;
+    left: 240px;
+    gap: 0px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+    position: relative;
+    top:50%;
+  }
+  hr.ma2{
+    width:960px;
+    height: 1px;
+    top: 492px;
+    left: 240px;
+    gap: 10px;
+    opacity: 0.1px;
+    position: relative;
+    top:37%;
+    left:-3.75%;
+    background-color: #0065FF;
+  }
+  h2.titu{
+    width: 52px;
+    height: 24px;
+    top: 1076px;
+    left: 240px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #0065FF;
+    position: relative;
+    top: 47%;
+    left:-37.1px;
+  }
+  p.leg{
+    width: 960px;
+    height: 50px;
+    top: 1136px;
+    left: 240px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    color: #202020;
+    position: relative;
+    top: 51%;
+    left:-36.1px;
+  }
+  div.cab{
+    width: 960px;
+    height: 370px;
+    top: 1222px;
+    left: 240px;
+    gap: 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+  }
+  figure.empty{
+    width: 640px;
+    height: 370px;
+    top: 1222px;
+    left: 240px;
+    gap: 0px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0px;
+    background-color: #E5E5E5;
+    position: relative;
+    top: 150%;
+    left:-75px;
+  }
+  img.CM{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+  }
+  h4.title1{
+    width: 43px;
+    height: 20px;
+    top: 1222px;
+    left: 920px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #202020;
+    position: relative;
+    top: 42.5%;
+    left:69%;
+  }
+  p.imgdesc{
+    width: 280px;
+    height: 125px;
+    top: 1252px;
+    left: 920px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    position: relative;
+    top:42%;
+    left:68.9%;
+  }
+  button.btn{
+    width: 180px;
+    height: 50px;
+    top: 1405px;
+    left: 920px;
+    padding: 16px 30px 16px 30px;
+    gap: 10px;
+    border-radius: 44.5px 44.5px 44.5px 44.5px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #0065FF;
+    background: #FFFFFF;
+    position: relative;
+    top: 47%;
+    left:69.2%;
+    color: #0065FF;
+    transition: color 500ms;
+    transition: background 500ms;
+    transition: height 500ms;
+    cursor: pointer;
+  }
+  button.btn:hover{
+    color:#FFFFFF;
+    background: #0065FF;
+    height: 60px;
+  }
+  h1.nome{
+    width: 120px;
+    height: 18px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 17.53px;
+    text-align: left;
+    white-space: nowrap;
+  
+  }
+  div.cab2{
+    width: 960px;
+    height: 370px;
+    top: 1628px;
+    left: 240px;
+    gap: 0px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+  }
+  figure.empty2{
+    width: 640px;
+    height: 370px;
+    top: 1628px;
+    left: 560px;
+    gap: 0px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0px;
+    background-color: #E5E5E5;
+    position: relative;
+    top:160%;
+    left:27%;
+  }
+  img.math2{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+  }
+  h4.title2{
+    width: 43px;
+    height: 20px;
+    top: 1222px;
+    left: 920px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #202020;
+    position: relative;
+    top: 52.2%;
+    left:-3.75%;
+  }
+  p.imgdesc1{
+    width: 280px;
+    height: 125px;
+    top: 1252px;
+    left: 920px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Be Vietnam;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.84px;
+    text-align: left;
+    position: relative;
+    top:52%;
+    left:-3.7%;
+  }
+  button.btn1{
+    width: 180px;
+    height: 50px;
+    top: 1405px;
+    left: 920px;
+    padding: 16px 30px 16px 30px;
+    gap: 10px;
+    border-radius: 44.5px 44.5px 44.5px 44.5px;
+    border: 1px 1px 1px 1px;
+    opacity: 0px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #0065FF;
+    background: #FFFFFF;
+    position: relative;
+    top: 57%;
+    left:-3.75%;
+    color: #0065FF;
+    transition: color 500ms;
+    transition: background 500ms;
+    transition: height 500ms;
+    cursor: pointer;
+  }
+  button.btn1:hover{
+    color:#FFFFFF;
+    background: #0065FF;
+    height: 60px;
+  }
+}
+
+

@@ -1,0 +1,62 @@
+/* Telas pequenas*/
+
+@media(min-width:200px) and (max-width:768px){
+    
+    .figure {
+        width: 120px;
+        height: 48px;
+        top: 40px;
+        left: 40px;
+        gap: 40px;
+        opacity: 0px;
+        position: relative;
+        top:28px;
+        left:-20px;
+    }
+    .figure img{
+        width:100%;
+        height:100%;
+    }
+  }
+  
+/* Telas intermediárias */
+  
+@media(min-width:768px) and (max-width:1270px){
+
+    .figure {
+        width: 120px;
+        height: 48px;
+        top: 40px;
+        left: 40px;
+        gap: 40px;
+        opacity: 0px;
+        position: relative;
+        top:60px;
+        left:-20px;
+    }
+    .figure img{
+        width:100%;
+        height:100%;
+    }
+  }
+  
+/* Telas grandes */
+  
+@media(min-width:1270px){
+
+    .figure {
+        width: 120px;
+        height: 48px;
+        top: 40px;
+        left: 40px;
+        gap: 40px;
+        opacity: 0px;
+        position: relative;
+        top:28px;
+        left:30px;
+    }
+    .figure img{
+        width:100%;
+        height:100%;
+    }
+  }

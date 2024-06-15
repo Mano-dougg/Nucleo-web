@@ -1,0 +1,157 @@
+{
+  "format": "custom",
+  "id": "base",
+  "label": "Base",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Chave",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "subtitle": {
+        "type": "StructuredText",
+        "config": {
+          "label": "subtitle",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "imagem": {
+        "type": "Image",
+        "config": {
+          "label": "Imagem",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "cotent": {
+        "type": "StructuredText",
+        "config": {
+          "label": "cotent",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "animeatual": {
+        "type": "Image",
+        "config": {
+          "label": "animeatual",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "animename": {
+        "type": "StructuredText",
+        "config": {
+          "label": "animename",
+          "placeholder": "Nome do anime",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "legenda": {
+        "type": "StructuredText",
+        "config": {
+          "label": "legenda",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "persfav": {
+        "type": "Image",
+        "config": {
+          "label": "persfav",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "personame": {
+        "type": "StructuredText",
+        "config": {
+          "label": "personame",
+          "placeholder": "Nome e anime do personagem",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "animefav": {
+        "type": "StructuredText",
+        "config": {
+          "label": "animefav",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "qtdanimes": {
+        "type": "StructuredText",
+        "config": {
+          "label": "qtdanimes",
+          "placeholder": "Insira um número de preferência",
+          "allowTargetBlank": true,
+          "multi": "heading3"
+        }
+      },
+      "qtdeps": {
+        "type": "StructuredText",
+        "config": {
+          "label": "qtdeps",
+          "placeholder": "Insira um número de preferência",
+          "allowTargetBlank": true,
+          "multi": "heading3"
+        }
+      },
+      "genfav": {
+        "type": "StructuredText",
+        "config": {
+          "label": "genfav",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading3"
+        }
+      },
+      "insta": {
+        "type": "Link",
+        "config": {
+          "label": "insta",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "twitter": {
+        "type": "Link",
+        "config": {
+          "label": "twitter",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "myanimelist": {
+        "type": "Link",
+        "config": {
+          "label": "myanimelist",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}

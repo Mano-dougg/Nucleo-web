@@ -1,0 +1,229 @@
+.div {
+    text-decoration-line: none;
+    cursor: default;
+
+}
+
+
+/* Telas pequenas*/
+
+@media(min-width:200px) and (max-width:768px){
+    
+    .div button {
+        width: 343px;
+        height: 67px;
+        top: 281px;
+        left: 29px;
+        padding: 24px 24px 24px 24px;
+        Gap: 8px;
+        border-radius: 24px 24px 24px 24px;
+        opacity: 0px;
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        transition: background-color 600ms, color 600ms, height 600ms;
+        margin-bottom: -100px;
+        position: relative;
+    }
+    
+    .div h1{
+        width: 269px;
+        height: 57px;
+        gap: 0px;
+        opacity: 0px;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        top:35%;
+    }
+    
+    .div .button.az {
+        background-color: #0A3871;
+        color: white;
+        position: relative;
+        top:125px;
+        left: 4.5%;
+        border: none;
+        padding-top: 5px; 
+        padding-bottom: 5px;
+      }
+    
+    .div .button.az:hover {
+        background-color: white;
+        color: #0A3871;
+        height:80px;
+        border: 1px solid #0A3871;
+      }
+      
+    .div .button.br {
+        background-color: white;
+        color: #0A3871;
+        text-align: center;
+        position: relative;
+        left: 17px;
+        top:245px;
+        border: 1px solid #0A3871;
+        padding-top: 5px; 
+        padding-bottom: 5px;
+      }
+
+    .div .button.br:hover {
+        background-color: #0A3871;
+        color: white;
+        height:69px;
+      }
+    
+    }
+
+/* Telas intermediárias */
+
+@media(min-width:768px) and (max-width:1270px){
+
+    .div button {
+        width: 332px;
+        height: 67px;
+        top: 281px;
+        left: 29px;
+        padding: 24px 24px 24px 24px;
+        Gap: 8px;
+        border-radius: 24px 24px 24px 24px;
+        opacity: 0px;
+        cursor: pointer;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        transition: background-color 600ms, color 600ms, height 600ms;
+        margin-bottom: -100px;
+        position: relative;
+    }
+    
+    .div h1{
+        width: 269px;
+        height: 57px;
+        gap: 0px;
+        opacity: 0px;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        top:35%;
+    }
+    
+    .div .button.az {
+        background-color: #0A3871;
+        color: white;
+        position: relative;
+        top:250px;
+        left: 40px;
+        border: none;
+      }
+    
+    .div .button.az:hover {
+        background-color: white;
+        color: #0A3871;
+        height:80px;
+        border: 1px solid #0A3871;
+      }
+      
+    .div .button.br {  
+        background-color: white;
+        color: #0A3871;
+        text-align: center;
+        position: relative;
+        top:283px;
+        left: 410px;
+        border: 1px solid #0A3871;
+        padding-top: 5px; 
+        padding-bottom: 5px;
+      }
+
+    .div .button.br:hover {
+        background-color: #0A3871;
+        color: white;
+        height:80px;
+      }
+    
+    }
+
+/* Telas grandes */
+
+@media(min-width:1270px){
+.div button {
+    width:322px;
+    height:67px;
+    top: 394px;
+    left: 562px;
+    padding: 24px 24px 24px 24px;
+    Gap: 8px;
+    border-radius: 24px 24px 24px 24px;
+    opacity: 0px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    transition: background-color 600ms, color 600ms, height 600ms;
+    margin-bottom: 30px;
+    position: relative;
+    top:260px;
+    left: 39.5%;
+    padding-top: 5px; 
+    padding-bottom: 5px;
+}
+
+.div h1{
+    width: 269px;
+    height: 57px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    top:35%;
+}
+
+.div .button.az {
+    background-color: #0A3871;
+    color: white;
+    border: none;
+    position: relative;
+    left: 330px;
+  }
+
+.div .button.az:hover {
+    background-color: white;
+    color: #0A3871;
+    height:80px;
+    border: 1px solid #0A3871;
+  }
+  
+.div .button.br {
+    background-color: white;
+    color: #0A3871;
+    border: 1px solid #0A3871;
+    position: relative;
+    left: 700px;
+    top: 163px;
+  }
+  
+.div .button.br:hover {
+    background-color: #0A3871;
+    color: white;
+    height:80px;
+  }
+
+}

@@ -1,0 +1,176 @@
+*{
+  border-style: border-box;
+  margin:0;
+  text-decoration-line: none;
+}
+
+/* Telas pequenas*/
+
+@media(min-width:200px) and (max-width:768px){
+  body{
+    width: 375px;
+    height: 667px;
+    top: 2015px;
+    left: -720px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #F3F5FC;
+  }
+  div.botao{
+    position: relative;
+    top:188px;
+    left:15px;
+  }
+  div.errado{
+    text-transform: uppercase;
+    opacity:0.6;
+    position: absolute;
+    top:51%;
+    left:30%;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    color: #495057;
+    letter-spacing: 10px;
+  }
+  div.win {
+    position: absolute;
+    top:20%;
+    left:34%;
+    animation: win 1s infinite; 
+    color: green; 
+    font-family: Lucida Sans;
+    font-size: 20px; 
+    font-weight: bolder;
+    text-align: center; 
+  }
+  div.lose {
+    position: absolute;
+    top:22%;
+    left:38%;
+    animation: win 1s infinite; 
+    color: red; 
+    font-size: 25px; 
+    text-align: center; 
+    font-family: Lucida Sans;
+  }
+}
+
+/* Telas intermediárias */
+
+@media(min-width:768px) and (max-width:1270px){
+  body{
+    width: 768px;
+    height: 1024px;
+    top: 751px;
+    left: -720px;
+    gap: 0px;
+    opacity: 0px;    
+    background-color: #F3F5FC;
+  }
+  div.botao{
+    position: relative;
+    top:400px;
+  }
+  div.errado{
+    text-transform: uppercase;
+    opacity:0.6;
+    position: absolute;
+    top:68%;
+    left:33%;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    color: #495057;
+    letter-spacing: 20px;
+  }
+  div.win {
+    position: absolute;
+    top:7%;
+    left:40%;
+    animation: win 1s infinite; 
+    color: green; 
+    font-family: Lucida Sans;
+    font-size: 24px; 
+    font-weight: bolder;
+    text-align: center; 
+  }
+  div.lose {
+    position: absolute;
+    top:7%;
+    left:42%;
+    animation: win 1 infinite;
+    color: red; 
+    font-size: 30px; 
+    text-align: center; 
+    font-family: Lucida Sans;
+  }
+  
+}
+
+/* Telas grandes */
+
+@media(min-width:1270px){
+  body{
+    width: 100%;
+    height: 1100px;
+    top: -513px;
+    left: -720px;
+    gap: 0px;
+    opacity: 0px;    
+    background-color: #F3F5FC;
+  }
+  div.botao{
+    width: 0;
+    position:relative;
+    top: 450px;
+    left:50px;
+  }
+  div.errado{
+    text-transform: uppercase;
+    opacity:0.6;
+    position: absolute;
+    top:92%;
+    left:40%;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    color: #495057;
+    letter-spacing: 20px;
+  }
+div.win {
+  position: absolute;
+  top:7%;
+  left:42%;
+  animation: win 1s infinite; 
+  color: green; 
+  font-family: Lucida Sans;
+  font-size: 24px; 
+  font-weight: bolder;
+  text-align: center; 
+}
+div.lose {
+  position: absolute;
+  top:7%;
+  left:45%;
+  animation: win 1s infinite;
+  color: red; 
+  font-size: 30px; 
+  text-align: center; 
+  font-family: Lucida Sans;
+}
+}
+
+
+@keyframes win {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+

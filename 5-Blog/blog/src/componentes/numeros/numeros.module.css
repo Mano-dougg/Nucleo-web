@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+/* Telas pequenas*/
+  
+@media(min-width:200px) and (max-width:767px){
+    .div {
+        height:300px;
+      }
+      
+    .div section {
+        width:300px;
+        height:200px;
+        background: #2a2a2a;
+        border: 1px solid #00ffcc; 
+        border-radius: 10px; 
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 255, 204, 0.5); 
+        color: #00ffcc; 
+        font-family: 'Roboto Mono', monospace; 
+        position: relative;
+        top:260px;
+        left:28px;
+        transition: transform 0.3s ease;
+        font-size: 0.65rem; 
+        margin-top: -1px;
+      }
+    .div section:hover{
+        transform: scale(1.01);
+    }
+    .div hgroup {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+      }
+      
+    .div h2 {
+        margin: 0;
+        font-size: 0.65rem; 
+        font-weight: bold;
+        border-bottom: 1px solid #00ffcc; 
+        padding-bottom: 5px;
+        margin-top: -5px;
+      }
+    }
+    
+/* Telas intermediárias */
+    
+@media(min-width:768px) and (max-width:1270px){
+  .div {
+    height:380px;
+  }
+  
+.div section {
+    width:500px;
+    height:270px;
+    background: #2a2a2a;
+    border: 1px solid #00ffcc; 
+    border-radius: 10px; 
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.5); 
+    color: #00ffcc; 
+    font-family: 'Roboto Mono', monospace; 
+    position: relative;
+    top:210px;
+    left:140px;
+    transition: transform 0.3s ease;
+    font-size: 1.0rem; 
+    margin-top: -3.5px;
+  }
+.div section:hover{
+    transform: scale(1.05);
+}
+.div hgroup {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+  }
+  
+.div h2 {
+    margin: 0;
+    font-size: 1.0rem; 
+    font-weight: bold;
+    border-bottom: 1px solid #00ffcc; 
+    padding-bottom: 5px;
+    margin-top: -3.5px;
+  }
+      
+    }
+    
+/* Telas grandes */
+    
+@media(min-width:1270px){
+
+    .div {
+        height:380px;
+      }
+      
+    .div section {
+        width:500px;
+        height:370px;
+        background: #2a2a2a;
+        border: 1px solid #00ffcc; 
+        border-radius: 10px; 
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 255, 204, 0.5); 
+        color: #00ffcc; 
+        font-family: 'Roboto Mono', monospace; 
+        position: relative;
+        top:-170px;
+        left:780px;
+        transition: transform 0.3s ease;
+      }
+    .div section:hover{
+        transform: scale(1.05);
+    }
+    .div hgroup {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+      }
+      
+    .div h2 {
+        margin: 0;
+        font-size: 1.25rem; 
+        font-weight: bold;
+        border-bottom: 1px solid #00ffcc; 
+        padding-bottom: 5px;
+        margin-top: 15px;
+      }
+    }
