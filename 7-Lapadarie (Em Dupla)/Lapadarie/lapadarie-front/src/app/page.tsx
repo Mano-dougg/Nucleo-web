@@ -44,7 +44,6 @@ export default async function Home() {
       {data.data.map((todo: { id: Key; name: string; quant_paes: string; valor: string; }) => (
           <ListItem key={todo.id}  title={todo.name} breadAmount={todo.quant_paes}
           amountToPay={todo.valor} />
-          // <h1 key={todo.id}> {todo.id} - {todo.name}</h1>
       ))}
       </section>
       <footer className="m-20 text-sm">Com 💛 Info Jr UFBA 2022</footer>
