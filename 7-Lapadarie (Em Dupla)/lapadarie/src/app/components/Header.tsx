@@ -3,6 +3,8 @@
 
 import styled from "styled-components";
 import SoldBreads from "./SoldBreadsCount";
+import { useEffect, useState } from "react";
+import { getSoldBreadsValue, receiveOpenOrders } from "@/server/order.service";
 
 const HeaderStyle = styled.header`
   height: 375px;
@@ -77,6 +79,26 @@ const TransactionDiv = styled.div`
 `;
 
 export default function Header() {
+  const [ queue, setQueue ] = useState(0);
+  const [ entry, setEntry ] = useState(0);
+
+  useEffect(()=>{
+    const changeQueue = async () => {
+      const orders = await receiveOpenOrders();
+      setQueue(orders.length)
+    };
+
+    changeQueue();
+  });
+
+  useEffect(()=>{
+    const changeEntry = async ()=>{
+      const value = await getSoldBreadsValue();
+      setEntry(value)
+    }
+
+    changeEntry();
+  })
 
   return (
     <HeaderStyle>
@@ -87,7 +109,7 @@ export default function Header() {
             <Name>Pessoas na Fila</Name>
             <Icon src="people.svg" alt="Pessoas esperando na fila" />
           </NameAndIcon>
-          <Info>0</Info>
+          <Info>{queue}</Info>
         </InfoDiv>
         <InfoDiv>
           <NameAndIcon>
@@ -101,7 +123,7 @@ export default function Header() {
             <Name>Entrada</Name>
             <Icon src="cypher.svg" alt="Cifrão de dinheiro" />
           </NameAndIcon>
-          <Info>R$ 0,00</Info>
+          <Info>R$ {entry.toFixed(2).replace('.', ',')}</Info>
         </InfoDivBrown>
       </TransactionDiv>
     </HeaderStyle>

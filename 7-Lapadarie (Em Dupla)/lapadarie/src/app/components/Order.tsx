@@ -68,9 +68,9 @@ export default function Order({ name, breadCount, valor}:{name:string, breadCoun
         <OrderClientName>{name}</OrderClientName>
         <OrderInfo>
           <OrderInfoName>Total de Pães:</OrderInfoName>
-          <OrderInfoQuantity>{breadCount} pães</OrderInfoQuantity>
+          <OrderInfoQuantity>{breadCount} {breadCount===1?'pão':'pães'}</OrderInfoQuantity>
           <OrderInfoName>Total a Pagar:</OrderInfoName>
-          <OrderInfoQuantity>R$ {valor}</OrderInfoQuantity>
+          <OrderInfoQuantity>R$ {valor.toFixed(2).replace('.', ',')}</OrderInfoQuantity>
         </OrderInfo>
       </OrderDivLeft>
       <TrashButton>

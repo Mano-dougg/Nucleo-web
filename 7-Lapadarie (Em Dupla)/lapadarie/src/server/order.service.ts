@@ -31,6 +31,11 @@ const getBreadsCount = async (order:Order[]):Promise<number> => {
     return totalBreads;
 }
 
+const getBreadsValues = async (order:Order[]):Promise<number> => {
+    return order
+    .reduce((keep, current) =>(keep+current.total), 0)
+}
+
 
 const getOrderData = (orders:Order[]):OrderToUse[] => {
     return orders.map((order)=>({
@@ -61,6 +66,16 @@ export async function getSoldBreadsCount() {
     }
     return totalBreads;
     
+}
+
+export async function getSoldBreadsValue() {
+    
+    const orders = await getClosedOrders()
+    let totalBreads = 0;
+    if(orders){
+        totalBreads += await getBreadsValues(orders)
+    }
+    return totalBreads;
 }
 
 // Pegar pedidos em aberto
