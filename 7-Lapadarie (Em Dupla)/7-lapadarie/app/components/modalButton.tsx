@@ -6,16 +6,25 @@ import './modal.css'
 import axios from "axios"
 import Tabela from "./tabela"
 import { Pedido } from "@prisma/client"
+import incrementarCounter from '../components/transicoes'
+
 
 interface FormData{
     cliente: string,
     quant: string,
 }
 
-export default function ModalButton(){
+interface ModalButtonProps {
+
+    incrementarPaesValue: (quant: number) => void;
+    incrementarEntradaValue: (quant: number) => void;
+}
+
+export default function ModalButton({ incrementarPaesValue, incrementarEntradaValue }: ModalButtonProps){
     const [openModal, setOpenModal] = useState(false)
     const [form, setForm] = useState<FormData>({cliente: '', quant: ''})
     const [pedidos, setPedidos] = useState<Pedido[]>([])
+
 
     async function criar(data:FormData){
         console.log("qqrCoisa")
@@ -54,7 +63,10 @@ export default function ModalButton(){
 
     const handleSubmit = async (data: FormData) => {
         try {
+            const quant = parseInt(data.quant);
             criar(data)
+            incrementarPaesValue(quant)
+            incrementarEntradaValue(quant)
             console.log("Função CRIAR executada")
         } catch (error) {
             console.log(error)
@@ -82,7 +94,7 @@ export default function ModalButton(){
                 }}>
                     <input className="inputData" type="text" value={form.cliente} placeholder='Nome Completo do Cliente' onChange={e=> setForm({...form, cliente: e.target.value})}/>
                     <input className="inputData" type="number" value={form.quant} placeholder='Total de Pães:' onChange={e => setForm({...form, quant: e.target.value})} />
-                    <button type="submit" className='btnModalMarrom'>Enviar</button>
+                    <button type="submit" id="btnEnviar" className='btnModalMarrom' >Enviar</button>
                 </form>
 
             </div>

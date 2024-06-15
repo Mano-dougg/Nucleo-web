@@ -1,29 +1,22 @@
+"use client"
+
 import { GoPeople } from "react-icons/go";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { LuDollarSign } from "react-icons/lu";
 import './transicoes.css'
+import { useState } from "react";
 
-export default function Transicoes(){
-//possível lógica para botão enviar do modal e botao deletar pedido:
+interface TransicoesProps {
+    paesValue: number;
+    entradaValue: number;
+  }
 
 
-// const counter = document.querySelector('#counterValue');
-// const btnEnviar = document.querySelector('#btnEnviar');
-// const btnDeletar = document.querySelector('#btnDeletar');
+  const Transicoes: React.FC<TransicoesProps> = ({ paesValue, entradaValue }) => {
 
-// let valor = counter.value;
-
-// btnEnviar.addEventListener('click', () => {
-//     valor = valor++;
-//     counter.value = valor;
-// });
-
-// btnDeletar?.addEventListener('click', () =>{
-//     valor = valor != 0? --valor : 0;
-//     counter.value = valor;
-// });
 
     return(
+        
         <div className="transicoesOut">
 
             <div className="fila">
@@ -47,7 +40,7 @@ export default function Transicoes(){
                 </div>
 
                 <div>
-                    <input type="text" value="0" disabled id="paesValue"></input>
+                    <input type="text" value={paesValue} disabled id="paesValue"></input>
                 </div>
 
             </div>
@@ -59,11 +52,14 @@ export default function Transicoes(){
                     <LuDollarSign  size={25}/>
                 </div>
 
-                <div>
-                    <input type="text" value="0" disabled id="entradaValue"></input>
+                <div className="labelDin">
+                    <label htmlFor={entradaValue.toFixed(2)}>R$</label>
+                    <input type="text" value={entradaValue.toFixed(2)} disabled id="entradaValue"></input>
                 </div>
 
             </div>
         </div>
     )
 }
+
+export default Transicoes;
