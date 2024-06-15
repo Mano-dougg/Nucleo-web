@@ -1,46 +1,45 @@
 "use client";
-import React, { Children, useEffect, useState } from "react";
+
+import React, { useState } from "react";
 import "../app/globals.css";
 import ListItem from "./ListItem";
 import AddPersonPopUp from "./AddPersonPopUp";
+import Background from "./Background";
+import axios from "axios";
 
-interface QueueProps {}
+const getData = async () => {
+  const data = await axios.get("http://localhost:4040/mostrartodos");
+  return data;
+};
 
 export default function Queue() {
-  // State para ver se o form de adicionar cliente/pedido está aberto
-  const [createOrder, setCreateOrder] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // adiciona classe ao html para não haver overflow-y (para que o form ocupe toda tela)
-  useEffect(() => {
-    if (createOrder) {
-      document.documentElement.classList.add("no-scroll");
-    } else {
-      document.documentElement.classList.remove("no-scroll");
-    }
-  }, [createOrder]);
-
-  const OpenCreateOrderForm = () => {
-    setCreateOrder(true);
+  const handleOpenModal = () => {
+    setIsVisible(true);
+    console.log("era pra abrir");
   };
 
-  // fechar form de adicionar cliente/pedido
-  const CloseCreateOrderForm = () => {
-    setCreateOrder(false);
-  };
+  const handleCloseModal = () => {
+    setIsVisible(false);
+    // fetchFila();
+  }
+
+  const setFila = async () => {
+
+  }
 
   return (
     <>
-      {createOrder ? (
-        <AddPersonPopUp onClose={CloseCreateOrderForm}></AddPersonPopUp>
-      ) : (
-        ""
-      )}
+      <AddPersonPopUp onClose={handleCloseModal} isVisible={isVisible} />
+      <Background isVisible={isVisible} />
       <section className="w-[100%] p-6 pt-20 gap-6 flex flex-col items-start">
-        <button className="text-pbrown font-bold text-base">
+        <button className="text-pbrown font-bold text-base" onClick={handleOpenModal}>
           + Adicionar pessoa à fila
         </button>
-        <ListItem />
+        {/* <ListItem /> */}
       </section>
+      <footer className="m-20 text-sm">Com 💛 Info Jr UFBA 2022</footer>
     </>
   );
 }

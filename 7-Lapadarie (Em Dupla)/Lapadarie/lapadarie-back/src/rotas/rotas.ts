@@ -1,15 +1,13 @@
-import { Router, Request, Response } from "express";
+import express, { Router, Request, Response } from "express";
 import { prisma } from "../index";
 
 
-const rotas = Router()
+const rotas = express.Router()
 
-//Rota de cadastro
+// Rota de cadastro
 
 rotas.post('/adicionar', async (request: Request, response: Response) => {
-
     const { name, quant_paes, valor } = request.body;
-
     try{
         const novocadastro = await prisma.fila_clientes.create({
             data: {
@@ -40,6 +38,6 @@ rotas.get('/mostrartodos', async(request:Request, response:Response) => {
     }
 });
 
-
+module.exports = rotas;
 
 export default rotas
