@@ -6,10 +6,20 @@ import TransactionA from "@/components/TransactionA";
 import "./globals.css";
 import ListItem from "@/components/ListItem";
 import AddPersonPopUp from "@/components/AddPersonPopUp";
+import axios from "axios";
+import { Key } from "react";
 
 // Os valores amount de cada componente ta hardcoded, a gente implementa depois
 
-export default function Home() {
+const getDados = async () =>  {
+  const dados = await axios.get('http://localhost:4040/mostrartodos')
+  return dados
+}
+
+export default async function Home() {
+
+  const data = await getDados();
+
   return (
     <div className="m-w-[900px] h-screenc flex flex-col items-center">
       <div className="bg-plightbrown w-screen h-[374px] absolute top-0" />
@@ -31,26 +41,11 @@ export default function Home() {
         <button className="text-pbrown font-bold text-base">
           + Adicionar pessoa à fila
         </button>
-        <ListItem
-          title="Alexandre Shyjada Sousa"
-          breadAmount="50"
-          amountToPay="25,00"
-        ></ListItem>
-        <ListItem
-          title="Matheus Novais"
-          breadAmount="50"
-          amountToPay="25,00"
-        ></ListItem>
-        <ListItem
-          title="Victor Peixoto"
-          breadAmount="50"
-          amountToPay="25,00"
-        ></ListItem>
-        <ListItem
-          title="Kennedy Anderson"
-          breadAmount="50"
-          amountToPay="25,00"
-        ></ListItem>
+      {data.data.map((todo: { id: Key; name: string; quant_paes: string; valor: string; }) => (
+          <ListItem key={todo.id}  title={todo.name} breadAmount={todo.quant_paes}
+          amountToPay={todo.valor} />
+          // <h1 key={todo.id}> {todo.id} - {todo.name}</h1>
+      ))}
       </section>
       <footer className="m-20 text-sm">Com 💛 Info Jr UFBA 2022</footer>
     </div>

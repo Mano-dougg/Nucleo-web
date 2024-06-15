@@ -9,6 +9,20 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model fila_clientes{
+  id Int @id @default(autoincrement())
+  name String
+  quant_paes Int
+  valor Float
+}
+
+model caixa{
+ id Int @id @default(autoincrement())
+ quant_fila Int @default(0)
+ quant_total_paes Int @default(0)
+ valor_total Float @default(0)
 }
