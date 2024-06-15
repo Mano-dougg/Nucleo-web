@@ -70,9 +70,18 @@ const OrderInfoQuantity = styled.p`
   margin-right: 1vw;
 `;
 
+const ButtonsDiv = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const TrashIcon = styled.img``;
 
-const TrashButton = styled.button`
+const PencilIcon = styled.img`
+  height: 27px;
+`;
+
+const OrderButton = styled.button`
   background: none;
   border: 0;
   cursor: pointer;
@@ -85,7 +94,6 @@ export default function Order({ id, name, breadCount, valor }: OrderToUse) {
         <OrderClientName>{name}</OrderClientName>
         <OrderInfo>
           <OrderInfoLine>
-            {" "}
             <OrderInfoName>Total de Pães:</OrderInfoName>
             <OrderInfoQuantity>
               {breadCount} {breadCount === 1 ? "pão" : "pães"}
@@ -99,13 +107,18 @@ export default function Order({ id, name, breadCount, valor }: OrderToUse) {
           </OrderInfoLine>
         </OrderInfo>
       </OrderDivLeft>
-      <TrashButton
-        onClick={() => {
-          finishOrder(id);
-        }}
-      >
-        <TrashIcon src="trashcan.svg" />
-      </TrashButton>
+      <ButtonsDiv>
+        <OrderButton>
+          <PencilIcon src="pencil.svg"></PencilIcon>
+        </OrderButton>
+        <OrderButton
+          onClick={() => {
+            finishOrder(id);
+          }}
+        >
+          <TrashIcon src="trashcan.svg" />
+        </OrderButton>
+      </ButtonsDiv>
     </OrderDiv>
   );
 }
