@@ -2,9 +2,10 @@
 
 import styled from "styled-components";
 import Order from "./Order";
-import { useEffect, useState } from "react";
+import { FormEvent, FormEventHandler, MouseEventHandler, useEffect, useState } from "react";
 import { receiveOpenOrders } from "@/server/GETOrder.service";
 import { OrderToUse } from "@/types/order.types";
+import { postOrder } from "@/server/POSTOrder.service";
 
 const AddButton = styled.button`
   font-family: inherit;
@@ -103,13 +104,44 @@ const AddClientCancel = styled.button`
 `
 
 function AddClientMenu({ toggleClient }:{toggleClient:()=>void}) {
+  const [ newName, setNewName] = useState("");
+  const [ quantity, setQuantity ] = useState(0);
+
+  const clientAdder = async (event:FormEvent)=>{
+    event.preventDefault();
+     
+    try{
+      const response = await postOrder({
+        clientName:newName,
+        breadItems:[{
+          name:"pão de sal",
+          quantity:quantity
+        }]
+      })
+      console.log(response);
+      setNewName("");
+      setQuantity(0);
+    } catch (error:any){
+      console.error("Erro ao fazer o pedido: ", error);
+    }
+  }
+  
+
   return(
     <AddClientDiv>
         <AddClientTitle>Adicionar pessoa à fila</AddClientTitle>
-        <AddClientForm>
-          <AddClientFormInput placeholder="Nome completo do cliente"></AddClientFormInput>
-          <AddClientFormInput placeholder="Total de pães:" type="number"></AddClientFormInput>
-          <AddClientFormSubmit type="submit" value="Enviar"/>
+        <AddClientForm onSubmit={clientAdder}>
+          <AddClientFormInput placeholder="Nome completo do cliente" 
+          value={newName} 
+          onChange={(e)=> setNewName(e.target.value)}></AddClientFormInput>
+          <AddClientFormInput placeholder="Total de pães:" 
+          type="number" 
+          value={quantity}
+          onChange={(e)=> setQuantity(parseInt(e.target.value, 10))}></AddClientFormInput>
+          <AddClientFormSubmit 
+          type="submit" 
+          value="Enviar"
+          disabled={ !(newName.length>0 && quantity>0) }/>
         </AddClientForm>
         <AddClientCancel onClick={toggleClient}>Cancelar</AddClientCancel>
         </AddClientDiv>
@@ -130,7 +162,7 @@ function OpenOrderList() {
   })
 
   const orderList = data.map((order, i)=>(
-    <Order name={order.name} breadCount={order.breadCount} valor={order.valor} key={i}/>
+    <Order id={order.id} name={order.name} breadCount={order.breadCount} valor={order.valor} key={i}/>
   ))
 
   return orderList
@@ -138,6 +170,7 @@ function OpenOrderList() {
 
 export default function Main() {
   const [showAddClient, setShowAddClient] = useState(false);
+
 
   const toggleClient = () => {
     setShowAddClient(!showAddClient);
@@ -149,7 +182,7 @@ export default function Main() {
         <AddButton onClick={toggleClient}>+ Adicionar pessoa à fila</AddButton>
         <OpenOrderList />
       </DivClients>
-      {showAddClient && <AddClientMenu toggleClient={toggleClient}/>}
+      {showAddClient && <AddClientMenu toggleClient={toggleClient} />}
     </MainMain>
   );
 }

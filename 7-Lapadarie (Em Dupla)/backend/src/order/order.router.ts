@@ -61,7 +61,7 @@ orderRouter.get("/closed",
 
 orderRouter.post("/",
     body("clientName").isString().withMessage("Name must be a string"),
-    (request: Request, response: Response)=>{
+    async (request: Request, response: Response)=>{
 
         const errors = validationResult(request);
         if(!errors.isEmpty()) {
@@ -89,7 +89,7 @@ orderRouter.post("/",
             const { clientName, breadItems } = body as Order;
             treatBreadsAsOrder(breadItems);
 
-            const newOrder = OrderService.createOrder({clientName, breadItems})
+            const newOrder = await OrderService.createOrder({clientName, breadItems})
             return response.status(201).json(newOrder);
 
         

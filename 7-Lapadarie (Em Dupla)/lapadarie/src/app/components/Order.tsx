@@ -1,5 +1,7 @@
 "use client";
 
+import { finishOrder } from "@/server/PUTOrder.service";
+import { OrderToUse } from "@/types/order.types";
 import styled from "styled-components";
 
 const OrderDiv = styled.div`
@@ -61,7 +63,7 @@ const TrashButton = styled.button`
   cursor: pointer;
 `;
 
-export default function Order({ name, breadCount, valor}:{name:string, breadCount:number, valor:number}) {
+export default function Order({ id, name, breadCount, valor}:OrderToUse) {
   return (
     <OrderDiv>
       <OrderDivLeft>
@@ -73,7 +75,7 @@ export default function Order({ name, breadCount, valor}:{name:string, breadCoun
           <OrderInfoQuantity>R$ {valor.toFixed(2).replace('.', ',')}</OrderInfoQuantity>
         </OrderInfo>
       </OrderDivLeft>
-      <TrashButton>
+      <TrashButton onClick={()=>{finishOrder(id)}}>
         <TrashIcon src="trashcan.svg" />
       </TrashButton>
     </OrderDiv>

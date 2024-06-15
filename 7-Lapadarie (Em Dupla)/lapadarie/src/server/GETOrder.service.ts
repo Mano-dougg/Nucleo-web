@@ -49,6 +49,7 @@ const getBreadsValues = async (order:Order[]):Promise<number> => {
 
 const getOrderData = (orders:Order[]):OrderToUse[] => {
     return orders.map((order)=>({
+        id:order.id,
         name:order.clientName,
         breadCount:order.bread
         .reduce((keep, actual)=>(keep+actual.quantity),0),
