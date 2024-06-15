@@ -15,6 +15,14 @@ const getData = async () => {
   return data;
 };
 
+const deleteData = async (id: number) => {
+  var numero = id;
+
+  axios.delete(`http://localhost:4040/deletar/${numero}`)
+
+  window.location.reload() 
+}
+
 const ListItem: React.FC = async () => {
   const data = await getData();
   return (
@@ -43,7 +51,7 @@ const ListItem: React.FC = async () => {
                 </p>
               </div>
             </div>
-            <button>
+            <button onClick={()=>{deleteData(Number(todo.id))}}>
               <Trash />
             </button>
           </span>

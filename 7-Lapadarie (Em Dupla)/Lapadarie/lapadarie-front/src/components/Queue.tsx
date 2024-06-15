@@ -34,10 +34,10 @@ export default function Queue() {
       <AddPersonPopUp onClose={handleCloseModal} isVisible={isVisible} />
       <Background isVisible={isVisible} />
       <section className="w-[100%] p-6 pt-20 gap-6 flex flex-col items-start">
-        <button className="text-pbrown font-bold text-base" onClick={handleOpenModal}>
+        <button className="text-pbrown font-bold text-base" onClick={()=>{handleOpenModal()}}>
           + Adicionar pessoa à fila
         </button>
-        {/* <ListItem /> */}
+        <ListItem />
       </section>
       <footer className="m-20 text-sm">Com 💛 Info Jr UFBA 2022</footer>
     </>
