@@ -12,21 +12,47 @@ const counters = prisma.counter
 server.use(json())
 server.use(cors())
 
+type paess = { idCount: number | 0; peopleSum: number; breadSum: number; entry: number; } | null
 
-// Primeira Rota - Post dos customers 
+
 server.post('/post_customer', async (req: Request, res: Response) => {
-    const { nome, pao } = req.body
-    const money: number = (0.5 * Number(pao))
+    const { nome, pao } = req.body;
+    const money: number = (0.5 * Number(pao));
+
     const new_customer = await prisma.customer.create({
         data: {
             name: nome,
             breads: Number(pao),
-            cash: money
-        }
-    })
-    console.log(new_customer)
-    res.send(new_customer)
-})
+            cash: money,
+        },
+    });
+
+    let counter = await prisma.counter.findFirst({
+        where: { idCount: 1 },
+    });
+
+    if (!counter) {
+        counter = await prisma.counter.create({
+            data: {
+                breadSum: 0,
+                entry: 0,
+                idCount: 1,
+                peopleSum: 0,
+            },
+        });
+    }
+
+
+    await prisma.counter.update({
+        where: { idCount: 1 },
+        data: {
+            breadSum: counter.breadSum + Number(pao),
+            entry: counter.entry + money,
+        },
+    });
+
+    res.send(new_customer);
+});
 
 server.get('/clientes', async (req: Request, res: Response) => {
     const clientes = await prisma.customer.findMany({
@@ -49,31 +75,16 @@ server.delete('/delete/:id', async (req: Request, res: Response) => {
     }
 })
 //Terceira Rota - Rota de subir o Contador 
-server.get('/increase_counter', async (req: Request, res: Response) => {
+server.get('/increase_counter', async (_req: Request, res: Response) => {
     try {
-        const customers = await prisma.customer.findMany({
-            select: {
-                breads: true,
-                cash: true,
-            },
+        const customers = await prisma.counter.findFirst({
+            where: { idCount: 1 }
         });
 
-        const breadSum = customers.reduce((sum, customer) => sum + (customer.breads || 0), 0);
-        const cashSum = customers.reduce((sum, customer) => sum + (customer.cash || 0), 0);
 
-        const increase_counter = {breadSum, cashSum}
-
-      /*   const increaseCounter = await prisma.counter.update({
-            where: { idCount: 1 },
-            data: {
-                breadSum: breadSum,
-                entry: cashSum,
-            },
-        }); */
-
-        res.status(200).json(increase_counter);
+        res.status(200).json(customers);
     } catch (error) {
-        res.status(400).json({ error: error});
+        res.status(400).json({ error: error });
     }
 });
 // Quarta Rota - Rota de descer o Contador 

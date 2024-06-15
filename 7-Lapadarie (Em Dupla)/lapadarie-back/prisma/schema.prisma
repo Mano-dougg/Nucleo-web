@@ -14,7 +14,7 @@ model Counter {
   idCount Int @id
   peopleSum Int 
   breadSum Int
-  entry Int
+  entry Float
 }
 
 model Customer {

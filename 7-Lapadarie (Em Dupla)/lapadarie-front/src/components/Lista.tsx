@@ -27,31 +27,29 @@ const Lista = () => {
       "http://localhost:7001/clientes"
     );
     const data = res.data.clientes;
-    const pessoas = data.length
+    const pessoas = data.length;
     setDados(data);
-    adicionarFila(pessoas)
-    handleGet()
+    adicionarFila(pessoas);
+    handleGet();
   };
 
   useEffect(() => {
     fetchDados();
-    handleGet()
+    handleGet();
   }, []);
 
-  const handleGet = async () =>{
-    try{
+
+  const handleGet = async () => {
+    try {
       const res: AxiosResponse = await axios.get(
         "http://localhost:7001/increase_counter"
       );
       const data = res.data;
 
-      setEntrada(data.cashSum)
-      setPaesVendidos(data.breadSum)
-    } catch(error){
-      alert(error)
-    }
-    
-  }
+      setPaesVendidos(data.breadSum);
+      setEntrada(data.entry);
+    } catch (error) {}
+  };
 
   //Função assíncrona para deletar usuário, é chamada ao clicar na lixeira
   const handleDelete = async (id: string) => {
@@ -62,7 +60,7 @@ const Lista = () => {
       );
       fetchDados();
     } catch (error) {
-      alert(error +' '+ id);
+      alert(error + " " + id);
     }
   };
 
@@ -71,7 +69,7 @@ const Lista = () => {
       <Header
         pessoasFila={pessoasfila}
         paesVendidos={paesVendidos}
-        entrada={`R$ ${entrada.toFixed(2)}`}
+        entrada={`R$ ${Number(entrada)}`}
       />
       <div className=" h-screen w-full">
         <section className="w-full flex items-center justify-center">
