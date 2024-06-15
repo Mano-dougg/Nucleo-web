@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { openDb } from "./configDB";
 import express from "express";
 import { PrismaClient } from "@prisma/client";
