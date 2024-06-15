@@ -95,6 +95,44 @@
     cursor: pointer;
 }
 
+.divTabelaOut{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.divTabela{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.83);
+    width: 80%;
+    padding: 10px;
+    color: #5F3305;
+
+
+}
+
+.divTabelaItens{
+    display: flex;
+    gap: 10px;
+    margin-top: -5px;
+  
+}
+.divTabela h1{
+    font-size: 12px;
+
+}
+
+.divTabela p{ 
+    font-size: 10px;
+}
+
+.btnDelete{
+    cursor: pointer;
+}
 
 @media (max-width: 450px) {
    .btnPessoas{
