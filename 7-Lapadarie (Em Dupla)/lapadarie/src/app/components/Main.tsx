@@ -56,12 +56,14 @@ const AddClientDiv = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 605px;
+  max-width: 93vw;
   height: 347px;
   z-index: 1;
   box-sizing: border-box;
   padding: 30px;
   display: flex;
   flex-direction: column;
+  opacity: 1;
 `;
 
 const AddClientTitle = styled.h3`
@@ -91,6 +93,7 @@ const AddClientFormInput = styled.input`
 
 const AddClientFormSubmit = styled.input`
   width: 260px;
+  max-width: 42.5%;
   height: 60px;
   background-color: #5f3305;
   color: white;
@@ -105,6 +108,7 @@ const AddClientFormSubmit = styled.input`
 
 const AddClientCancel = styled.button`
   width: 260px;
+  max-width: 42.5%;
   height: 60px;
   background-color: white;
   color: red;
@@ -117,6 +121,14 @@ const AddClientCancel = styled.button`
   right: 30px;
   font-size: 16px;
   font-weight: 600;
+`;
+
+const BigGrayDiv = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(64, 64, 64, 0.5);
+  position: fixed;
+  top: 0;
 `;
 
 function AddClientMenu({ toggleClient }: { toggleClient: () => void }) {
@@ -145,28 +157,30 @@ function AddClientMenu({ toggleClient }: { toggleClient: () => void }) {
   };
 
   return (
-    <AddClientDiv>
-      <AddClientTitle>Adicionar pessoa à fila</AddClientTitle>
-      <AddClientForm onSubmit={clientAdder}>
-        <AddClientFormInput
-          placeholder="Nome completo do cliente"
-          value={newName}
-          onChange={(e) => setNewName(e.target.value)}
-        ></AddClientFormInput>
-        <AddClientFormInput
-          placeholder="Total de pães:"
-          type="number"
-          value={quantity}
-          onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
-        ></AddClientFormInput>
-        <AddClientFormSubmit
-          type="submit"
-          value="Enviar"
-          disabled={!(newName.length > 0 && quantity > 0)}
-        />
-      </AddClientForm>
-      <AddClientCancel onClick={toggleClient}>Cancelar</AddClientCancel>
-    </AddClientDiv>
+    <BigGrayDiv>
+      <AddClientDiv>
+        <AddClientTitle>Adicionar pessoa à fila</AddClientTitle>
+        <AddClientForm onSubmit={clientAdder}>
+          <AddClientFormInput
+            placeholder="Nome completo do cliente"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+          ></AddClientFormInput>
+          <AddClientFormInput
+            placeholder="Total de pães:"
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(parseInt(e.target.value, 10))}
+          ></AddClientFormInput>
+          <AddClientFormSubmit
+            type="submit"
+            value="Enviar"
+            disabled={!(newName.length > 0 && quantity > 0)}
+          />
+        </AddClientForm>
+        <AddClientCancel onClick={toggleClient}>Cancelar</AddClientCancel>
+      </AddClientDiv>
+    </BigGrayDiv>
   );
 }
 
