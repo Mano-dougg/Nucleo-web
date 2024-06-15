@@ -24,17 +24,17 @@ interface cadastrado {
 export const Modal: React.FC<cadastrado> = ({ atualizar }) => {
   const {isOpen, onClose, onOpen} = useDialog()
   const [nome, setNome] = useState<string>("");//estados para salvar os valores dos inputs
-  const [paes, setPaes] = useState<string>("");
+  const [pao, setPaes] = useState<string>("");
   const [loading, setLoading] = useState<boolean>()
   const [error, setError] = useState<boolean>(true)
 
-  const data = { nome, paes };
+  const data = { nome, pao };
 
   const handlePost = async () => {
     setLoading(true)
     try {
        const req = await axios.post(
-        `http://localhost:3001/usuario/cadastro`,//aqui vai a url da nossa API
+        `http://localhost:7001/post_customer`,//aqui vai a url da nossa API
         data
       ); 
       atualizar();
@@ -86,7 +86,7 @@ export const Modal: React.FC<cadastrado> = ({ atualizar }) => {
             placeholder="Total de pães"
             className={`bg-bg-input px-6 py-4 w-full ${loading == true? "hidden" : "flex"}`}
             onChange={(e) => setPaes(e.target.value)}
-            value={paes}
+            value={pao}
           />
         </div>
         <DialogFooter className="w-full flex justify-between gap-5">
