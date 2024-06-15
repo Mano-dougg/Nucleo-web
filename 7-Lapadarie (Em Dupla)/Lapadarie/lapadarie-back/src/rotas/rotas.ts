@@ -41,17 +41,17 @@ rotas.get('/mostrartodos', async(request:Request, response:Response) => {
 });
 
 
-rotas.delete('/deletar/:id', async (request: Request, response: Response) => {
+rotas.delete('/deletar', async (request: Request, response: Response) => {
 
-    const {id}  = request.params;
+    const {id}  = request.body;
 
     try {
-        
-        const deletar = await prisma.fila_clientes.delete({ where: { id: Number(id) } })
+            const deletar = await prisma.fila_clientes.delete({ where: { id: Number(id) } })
 
     } catch (error){
         response.json({ error: 'Erro' }); 
     }
+
 
 });
 
