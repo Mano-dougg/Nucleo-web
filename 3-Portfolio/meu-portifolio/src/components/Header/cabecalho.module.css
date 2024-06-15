@@ -1,0 +1,143 @@
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;    
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: white;
+   
+    
+}
+
+a{
+    text-decoration: none;
+    font-family: Be Vietnam;
+}
+
+a:hover{
+    color: lightskyblue;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+
+.list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 500px;
+    gap: 20px;
+}
+
+.redesSociais{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 50px;
+    filter: drop-shadow(5px 5px 5px gray);
+    gap: 30px; /*espaçamento entre os elementos*/
+    
+}
+
+.mode{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mode ul{
+    padding: 0;
+}
+
+.mode img{
+    margin-left: 10px;
+}
+
+.mobileMenuIcon{
+    display: none;
+
+}
+
+.mobileMenu{
+    display: none;
+    
+}
+
+.mobileMenuIcon2{
+    display: none;
+}
+
+.mobileList{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobileRedesSociais{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    filter: drop-shadow(5px 5px 5px gray);
+    gap: 30px;
+    margin-left: 62px;
+    margin-right: 62px;
+    margin-top: 35px;
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .mobileMenuIcon{
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 15px;
+        margin-top: 15px;
+        
+    
+    }
+
+    .mobileMenuIcon button,
+    .mobileMenuIcon2 button{
+        border: none;
+    }
+
+
+    .mobileMenu{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+           
+    }
+
+    .list{
+        display: none;
+
+    }
+
+    .redesSociais{
+        display: none;
+    }
+
+    .cabecalho{
+        padding-left: 30px;
+        padding-right: 50px;
+        background-color: white;
+       
+        
+    }
+    
+    .mode{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-left: 5px;
+        margin-right: 10px;
+        
+    }
+
+    
+}

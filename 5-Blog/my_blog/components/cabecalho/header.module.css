@@ -1,0 +1,72 @@
+.cabecalho{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #067546;
+    height: 4rem;
+}
+
+.formPesquisa{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 25rem;
+    background-color: white;
+    border-radius: 30px;
+    margin-top: 8px;
+}
+
+.inputPesquisa {
+    width: 100%;
+    padding: 10px 40px 10px 10px; 
+    border: none; 
+    background-color: transparent; 
+    
+}
+
+.inputPesquisa:focus {
+    outline: none; /* Remove a borda ao focar */
+}
+
+.lupa {
+   width: 24px;
+   height: 24px;
+   margin-right: 10px;
+}
+
+.logo{
+    width: 13rem;
+    height: 3.8rem;
+}
+
+.elements{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.sol{
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 468px) {
+
+    .formPesquisa{
+        
+        height: 30px;
+        width: 10rem;
+    }
+
+    .logo{
+        width: 7rem;
+        height: 3.8rem;
+    }
+
+    .lupa {
+        width: 20px;
+        height: 20px;
+        
+     }
+}

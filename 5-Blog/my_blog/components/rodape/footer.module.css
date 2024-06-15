@@ -1,0 +1,26 @@
+.rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #067546;
+    color: white;
+    text-align: center;
+    height: 5rem;
+    margin-top: 15px;
+  }
+
+  .elements{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+  }
+
+  .rodape p{
+    margin-top: -10px;
+  }
+  .container{
+    min-height: 100vh;
+    
+  }

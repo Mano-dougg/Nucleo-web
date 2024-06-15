@@ -1,0 +1,74 @@
+.contadores{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.fila, .pao{
+    background-color: #FFFFFF;
+    padding: 15px;
+    margin-top: -30px;
+    width: 16rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.totalVenda{
+    background-color:#5F3305;
+    padding: 15px;
+    margin-top: -30px;
+    color:#FFFFFF;
+    width: 16rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+     
+}
+
+.topo1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imagem{
+    width: 20px;
+    height: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .contadores{
+        gap:20px;
+    }
+
+    .fila, .pao{
+        width: 10rem;
+    }
+
+    .totalVenda{
+        width: 10rem;
+    }
+
+}
+
+@media screen and (max-width: 468px) {
+    
+    .contadores{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .fila, .pao{
+        width: 18rem;
+    }
+
+    .totalVenda{
+        width: 18rem;
+    }
+}

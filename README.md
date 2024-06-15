@@ -81,5 +81,5 @@ Não se restrinja apenas ao mínimo necessário para a atividade, dê o seu melh
 
 A comunicação é essencial em todas as áreas da vida. Os núcleos de estudo não são exceção.
 
-Por fim, lembre-se que a prioridade máxima aqui dentro é o seu aprendizado! Bons estudos! :)
+Por fim, lembre-se que a prioridade máxima aqui dentro é o seu aprendizado! Bons estudos!! :)
 

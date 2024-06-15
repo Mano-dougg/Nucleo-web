@@ -1,0 +1,392 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.main h1{
+    text-align: center;
+    color: #003720;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    font-weight: bold;
+    font-size: 250%;
+}
+.postMain{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center ;
+}
+
+.corpo{
+    text-align: justify;
+    line-height: 175%;
+    width: 32rem;
+    height: 23rem;
+    color: #404540;
+}
+
+.corpo h2{
+    margin-bottom: 15px;
+}
+
+.roboMain{
+    width: 32rem;
+    height: 23rem;
+    margin-left: 60px;
+    margin-top: 30px;
+
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:15px;
+
+}
+
+.info p{
+    margin-top: -10px;
+}
+
+
+.info h4{
+    margin-top: 30px;
+}
+
+.share{
+    width: 24px;
+    height: 24px;
+    padding-right: 10px;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 22rem;
+    height: 27rem;
+    background-color: #F0FFF0	;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-top: -25px;
+    padding: 25px;
+}
+
+.post0{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 22rem;
+    height: 27rem;
+    background-color: #F0FFF0	;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-top: -25px;
+    padding: 25px;
+}
+
+.post3{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    width: 22rem;
+    height: 27rem;
+    background-color: #F0FFF0	;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-top: -25px;
+    padding: 25px;
+}
+
+.post h2, .post0 h2, .post3 h2{
+    margin-bottom: 10px;
+}
+.robo{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.carrossel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 4rem;
+    margin-right: 8rem;
+}
+
+.setaD{
+    
+    margin-left: 30px;
+}
+
+.setaD1{
+    display: flex;
+    margin-left: 30px;
+}
+
+.setaE1{
+    display: flex;
+}
+
+.carrosselImg{
+    display: flex;
+    margin-left: 640px;
+    margin-top: 30px;
+    width: 15rem;
+    height: 1.5rem;
+}
+
+.carrosselImg1{
+    display: none;
+    margin-left: 640px;
+    margin-top: 30px;
+    width: 15rem;
+    height: 1.5rem;
+}
+
+.carrosselImg2{
+    display: none;
+    margin-left: 640px;
+    margin-top: 30px;
+    width: 15rem;
+    height: 1.5rem;
+}
+
+.carrosselImgM{
+    display: flex;
+    margin-left: 640px;
+    margin-top: 30px;
+    width: 15rem;
+    height: 1.5rem;
+}
+
+.carrosselImgM1{
+    display: none;
+    margin-left: 640px;
+    margin-top: 30px;
+    width: 15rem;
+    height: 1.5rem;
+}
+.post1{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    gap:20px;
+    width: 34rem;
+    height: 15rem;
+    background-color: #F0FFF0	;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-top: -25px;
+    padding: 25px;
+}
+
+.post2{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    gap:20px;
+    width: 34rem;
+    height: 15rem;
+    background-color: #F0FFF0	;
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-top: -25px;
+    padding: 25px;
+}
+
+.post1 h2, .post2 h2{
+    margin-bottom: 10px;
+}
+.efeito{
+    text-decoration: none;
+    color: #003720; 
+    transition: color 0.3s ease;
+    
+}
+
+.efeito:hover {
+    color: #32CD32	; /* cor do link quando hover */
+  }
+
+@media screen and (max-width: 768px) {
+    .postMain{
+        flex-direction: column;
+    }
+
+    .roboMain{
+        
+        margin-left: 0;  
+    }
+
+    .post0{
+        display: none;
+    }
+
+    .post2{
+        display: none;
+    }
+
+    .carrosselImg2{
+        display: flex;
+        margin-left: 300px;
+        
+    }
+
+    .carrosselImg{
+        display: none;
+    }
+
+    .carrosselImgM1{
+        display: flex;
+        margin-left: 300px;
+    }
+
+    .carrosselImgM{
+        display: none;
+    }
+
+    .carrossel{
+        margin-left: 2rem;
+        margin-right: 4rem;
+    }
+
+    .post{
+        width: 15rem;
+        height: 27rem;
+    }
+
+    .post3{
+        width: 15rem;
+        height: 27rem;
+
+    }
+
+    .robo{
+        margin-left:0px;
+        margin-top: 15px;
+        width: 200px;
+    }
+
+    .share{
+        width: 20px;
+        height: 20px;
+        padding-right: 0;
+    }
+
+
+}
+
+@media screen and (max-width: 468px) {
+    .postMain{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .post0{
+        display: none;
+    }
+    
+    .post2{
+        display: none;
+    }
+
+    .post3{
+        display: none;
+    }
+
+    .carrosselImg1{
+        display: flex;
+        margin-left: 80px;
+        
+    }
+
+    .carrosselImg{
+        display: none;
+    }
+
+    .carrosselImg2{
+        display: none;
+        
+    }
+
+    .carrosselImgM1{
+        display: flex;
+        margin-left: 80px;
+    }
+
+    .carrosselImgM{
+        display: none;
+    }
+
+    .post1{
+        width: 16rem;
+        height: 22rem;
+        margin-left: -3px;
+        
+    }
+
+    .robo2{
+        width: 100px;
+    }
+
+    .postMain {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+    }
+
+    .corpo {
+        text-align: justify;
+        line-height: 175%;
+        width: 32rem;
+        height: auto; 
+        color: #404540;
+    }
+    
+    .corpo h2 {
+        margin-bottom: 15px;
+    }
+    
+    .roboMain {
+        width: 100%;
+        height: auto; 
+        margin-top: 30px;
+    }
+
+    .setaD{
+        width: 20px;
+        height: 20px;
+    }
+
+    .setaE{
+        width: 20px;
+        height: 20px; 
+    }
+
+    .setaD1{
+        display: none;
+    }
+
+    .setaE1{
+        display: none;
+    }
+    
+}

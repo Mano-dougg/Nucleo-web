@@ -1,0 +1,148 @@
+.publi h1 {
+    text-align: center;
+    color: #003720;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    font-size: 250%;
+    margin-top: 20px;
+}
+
+.publi h2 {
+    color: #003720;
+}
+
+.publi p {
+    text-align: justify;
+    line-height: 175%;
+    width: 70rem;
+    color: #404540;
+    margin-bottom: 30px;
+}
+
+.publi img {
+    width: 100%;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container1 p {
+    text-align: justify;
+    line-height: 175%;
+    width: 70rem;
+    color: #404540;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.robo2Img {
+    width: 40rem;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+    margin-left: 920px;
+}
+
+.info {
+    margin-left: 15px;
+}
+
+.info p {
+    margin-top: -3px;
+}
+
+.efeito {
+    text-decoration: none;
+    color: #003720;
+    transition: color 0.3s ease;
+}
+
+.efeito:hover {
+    color: #32CD32; 
+}
+
+@media screen and (max-width: 768px) {
+    .publi p,
+    .container1 p {
+        width: 90%; 
+        margin-left: 5%; 
+    }
+
+    .publi h2{
+        margin-left: 40px;
+    }
+
+    .robo2Img {
+        width: 40rem; 
+    }
+
+    .perfil {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .info {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .info p {
+        margin-top: 0;
+    }
+
+    .efeito {
+        font-size: 1.2em; 
+    }
+}
+
+@media screen and (max-width: 468px) {
+
+    .publi p,
+    .container1 p {
+        width: 90%; 
+        margin-left: 5%; 
+    }
+
+    .publi h2{
+        margin-left: 25px;
+    }
+
+    .robo2Img {
+        width: 20rem; 
+    }
+
+    .perfil {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .info {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .info p {
+        margin-top: 0;
+    }
+
+    .efeito {
+        font-size: 1.2em; 
+    }
+}
+

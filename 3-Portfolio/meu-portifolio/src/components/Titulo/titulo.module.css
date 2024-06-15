@@ -1,0 +1,48 @@
+.corpo{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 240px;
+    margin-top: 50px;
+    gap:15px;
+}
+
+.imagem{
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+}
+
+h1{
+   
+    font-family: EB Garamond;
+    text-align: left;
+    color: #0065FF;
+
+}
+
+.line{
+    width: 12rem;
+    height: 1px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .corpo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-top: 69px;
+        gap:15px;
+    }
+
+    h1{
+        margin:0;
+        text-align: center;
+    }
+
+
+
+}

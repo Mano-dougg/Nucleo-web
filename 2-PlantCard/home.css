@@ -1,0 +1,280 @@
+body{
+   background-color: #BCCDD0;
+   justify-content: center;
+   width: 100vw;
+   height: 100vh;
+   border-radius: 30px;
+}
+
+.corpo{
+    display: flex;
+    margin-left: 350px;
+    margin-top: 100px;
+    max-width: 750px;
+    min-width: 400px;
+    max-height: 700px;
+    justify-content: center;
+    background-color: #DFDFD6;
+    border-radius: 30px;
+   
+}
+
+.bloco1, .texto{
+    
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.bloco1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    
+}
+
+.bloco2{
+    display: flex;
+    width: 160px;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 30px;
+    margin-top: 100px;
+
+}
+
+.bloco2 img{
+    width: 60px;
+    height: 60px;
+  
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+}
+
+
+
+p{
+    background-color: transparent;
+    font-family: Open Sans;
+    text-align: justify;
+
+
+}
+
+
+h1{
+    font-family: Josefin Sans;
+    text-align: justify;
+    background-color: transparent;
+    font-size: 30px;
+    margin-top: -40px;
+
+}
+
+p2{
+    font-family: Overpass;
+    font-size: 22px;
+    background-color: transparent;
+
+}
+
+p3{
+    display: flex;
+    justify-content: center;
+    font-family: Overpass;
+    font-size: 14px;
+    background-color: transparent;
+    margin-top: 2px;
+}
+
+.picture{
+    
+    width: 100%;
+    height: 100%;
+    
+
+}
+
+img{
+    border-radius: 30px, 0px, 30px, 0px;
+}
+
+.dados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+    margin-top: -8px;
+}
+
+
+
+button{
+    text-decoration: none;
+    background-color:  #DFDFD6;
+    border: none;
+}
+
+.menu-hamburguer-icone{
+    margin-left: 50px;
+    
+}
+
+.menu-hamburguer-icone img{
+    width: 52px;
+    height: 52px;
+    margin-left: 115px;
+    
+}
+
+#menu-objeto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -35px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    background: #696F5A; 
+    border-radius: 15px;
+    width: 200px;
+    height: 32px;
+    visibility: hidden;
+    
+    
+}
+
+#menu-objeto ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.objetos{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    
+}
+
+.objetos img{
+    width: 24px;
+    height: 24px;
+}
+
+.objetos p{
+    color: #DFDFD6;
+    font-size: 16px;
+}
+
+
+
+@media screen and (max-width: 1120px){ 
+
+    .corpo{
+        display: flex;
+        margin: auto;
+        width: 50%;
+        height: 80%;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .corpo{
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+    h1{
+        font-family: Josefin Sans;
+        text-align: justify;
+        background-color: transparent;
+        font-size: 24px;
+        margin-top: 50px;
+    
+    }
+
+    .texto p{
+        margin-top: -20px;
+    }
+
+
+    .texto{
+        display: flex;
+        margin-top: -100px;
+    }
+
+    .bloco2{
+        display: flex;
+        flex-direction: column;
+        margin-top: 35px;
+
+    }
+
+    .bloco2 img{
+        margin-top: -10px;
+    }
+
+    picture{
+        display: flex;
+        width: 100%;
+        margin-top: -25px;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    .dados{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10px;
+    }
+
+    .bloco2{
+        display: flex;
+        width: 160px;
+        height: 60px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 30px;
+        margin-top: 20px;
+
+    }
+
+    .menu-hamburguer-icone img{
+        display: flex;
+        margin-left: 90px;
+        margin-top: 5px;
+        
+        
+    }
+
+    #menu-objeto{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -10px;
+        margin-top: -30px;
+        
+
+    }
+
+
+}
+

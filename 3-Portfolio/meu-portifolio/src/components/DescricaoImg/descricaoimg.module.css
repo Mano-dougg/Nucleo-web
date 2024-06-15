@@ -1,0 +1,135 @@
+.titulo{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: justify;
+    margin-left: 240px;
+    margin-right: 240px;
+    border-top: 2px solid #0065FF; 
+    padding: 10px;
+
+    
+}
+
+.titulo h2{
+    color: #0065FF;
+    text-align: start;
+}
+
+.imagem1{
+    width: 40rem;
+    height: 23.13rem;
+}
+
+.tituloimg{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-align: justify;
+    margin-left: 240px;
+    margin-right: 240px;
+    margin-bottom: 50px;
+}
+
+.tituloimg1{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-align: justify;
+    margin-left: 240px;
+    margin-right: 240px;
+    margin-bottom: 50px;
+}
+
+.secundaria{
+    text-align: start;
+    margin-left: 30px;  
+}
+
+
+.secundaria1{
+    text-align: start;
+    margin-right: 20px;    
+}
+
+
+h2{
+    text-align: start;
+}
+
+.secundaria button,
+.secundaria1 button {
+    padding: 15px;
+    border-radius: 44px;
+    color: #0065FF;
+    border: 1px solid #0065FF;
+}
+
+.secundaria button:active,
+.secundaria1 button:active {
+    color: white;
+    background-color: lightskyblue; /* Muda o fundo para um azul mais escuro ao clicar */
+    border-color: #0065FF; /* Muda a cor da borda para combinar com o fundo ao clicar */
+}
+
+@media screen and (max-width: 480px) {
+
+    .titulo{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px 69px 0px 69px;
+        border-top: 2px solid #0065FF; 
+        padding: 10px;
+        
+       
+    }
+    .titulo p{
+        display: flex;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .tituloimg{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: justify;
+        margin: 0px 69px 50px 69px;
+    }
+
+    .imagem1{
+        width: 19.4rem;
+        height: 11.2rem;
+    }
+
+    .secundaria{
+        text-align: center;
+        margin: 0;
+    }
+
+    .secundaria1{
+        text-align: center;
+        margin: 0;
+    }
+
+
+    .tituloimg1{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column-reverse;
+        text-align: justify;
+        margin: 0px 69px 50px 69px;
+    }
+
+    .titulo h2{
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+   
+
+}
