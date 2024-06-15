@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+.Cabecalho-esquerda{
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  column-gap: 20px; }
+h1{
+  color: #0065FF;
+margin: 0;
+}
+  
+  h2{
+    color: #0065FF;
+  }
+h3{
+  font-family: 'Be Vietnam';
+}
+
+strong{
+  color: #0065FF;
+
+}
+.opcoes{
+  color: #0065FF;
+  display: flex;
+  font-weight: 700;
+  column-gap: 20px;
+  font-family: 'Be Vietnam';
+}
+.menuListras{
+  display: none;
+}
+
+.corpo-inferior{
+  margin-top: 995px;
+    display: flex;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+.titulogrande{
+  font-family: 'EB Garamond';
+  font-weight: 700;
+  font-size: 50px;
+ 
+
+}
+
+.verificado{
+  display: flex;
+  max-width: 462px;
+  gap: 10px;
+  background: #F8F9FA;
+  border-radius: 10px;
+
+}
+
+  .Corpo{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 32px;
+    left: 238px;
+  
+  }
+  .content-div {
+    border-radius: 3rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+  .Cabecalho{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    column-gap: 260px; 
+    justify-content: space-between;
+    flex-flow: row wrap;
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-top: 32px;
+    left: 238px;
+
+    
+  }
+
+  .Cabecalho-direita{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    column-gap: 20px;
+  }
+  .imagens{
+    display: flex;
+    column-gap: 20px;
+  }
+
+  .IMAGEM{
+    margin-top: 1rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden; 
+  
+  }
+  .IMAGEM img{
+    max-width: 100%;
+   
+  }
+.imagem-x img{
+  width: 640px;
+  height: 370px;
+}
+  .imagem-x{
+    display: flex;
+  }
+
+  .imagem-x-direita{
+    margin-left: 50px;
+  }
+  .paragrafo2{
+    font-family:'Be Vietnam' ;
+  }
+.imagem-x2 img{
+  width: 640px;
+  height: 370px;
+}
+  .imagem-x2{
+    display: flex;
+    margin-top: 20px;
+    
+  }
+  .paragrafo3{
+    font-family:'Be Vietnam' ;
+  }
+
+  .imagem-x-esquerda{
+    margin-right: 50px;
+  }
+.Button{
+    padding-top: 16px;
+    padding-left: 30px;
+    padding-bottom: 16px;
+    padding-right: 30px;
+    border-color: #0065FF;
+}
+.Button2{
+  padding-top: 16px;
+  padding-left: 30px;
+  padding-bottom: 16px;
+  padding-right: 30px;
+  border-color: #0065FF;
+}
+.menu-mobile{
+  display: none;
+}
+.burger{
+  display: none;
+}
+
+  @media(max-width: 1020px){
+    .imagem-x img{
+      width: 310px;
+      height: 179px;
+      
+    }
+    .burger{
+      display: block;
+    }
+    
+    .imagem-x2 img{
+      width: 310px;
+      height: 179px;
+      flex-direction: column;
+    }
+
+    .opcoes{
+      display: none;
+    }
+   .imagens{
+    display: none;
+   }
+   .menuListras{
+    display: flex;
+  }
+  
+   
+   .titulogrande{
+    font-family: 'EB Garamond';
+    font-size: 20px;
+    text-align: center;
+    
+   }
+
+   .tituloP{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .imagem-x{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   .imagem-x2{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+   }
+   
+   .paragrafo1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   .imagem-x-direita{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+  }
+  .imagem-x-esquerda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0px;
+
+  }
+.Tittle1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu-mobile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imagens-mobile{
+  display: flex;
+    align-items: center;
+    font-weight: 700;
+    column-gap: 100px;
+}
+.opcoes-mobile{
+  color: #0065FF;
+}
+
+.imagens-mobile{
+  display: none;
+}
+
+.Cabecalho{
+  column-gap: 200px
+  ;
+}
+
+  }

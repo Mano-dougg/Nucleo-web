@@ -1,0 +1,220 @@
+* {
+    font-family: "Open Sans", sans-serif;
+    color: black;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px; 
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    background-color: white;
+    height: 120px;
+    column-gap: 800px;
+}
+
+.marca{
+    font-size: 48px;
+    align-self: center;
+    font-weight: 700;
+    text-align: left; 
+    width: 280px;
+}
+
+strong{
+    color: #00f000;
+     
+}
+
+.principal{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    column-gap: 20px; 
+}
+
+.nav-botão{
+    justify-self: end;
+    background: rgb(45, 219, 30);
+    border-radius: 15px;
+    width: 150px;
+    height: 40px;
+    font-weight: 700;
+}
+
+
+.Paginainicial {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1440px;
+    background-color: white;
+}
+
+.paginainicial{
+    display: flex;
+    flex-flow: column;
+    align-content:space-between;
+    justify-content: center;
+    justify-self: center;
+    width: 340px;
+    height: 234px;
+    left: 200px;
+}
+
+.paragrafo-homepage{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+}
+
+.botao{
+    justify-self: end;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.51px;
+    text-align: center;
+    background: #7ED321;
+    border-radius: 15px;
+    width: 220px;
+    height: 51px;
+    border-color: transparent;
+}
+
+.homepage-image{
+    display: flex;
+    flex-shrink: 2;
+    align-content: center;
+    justify-self: right;
+    width: 640px;
+    height: 480px;
+    top: 150px;
+    left: 600px;
+    padding: 0px 46.25px 20px 0px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.quemsomos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    background-color: white;
+}
+
+.quemsomos-text {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 687px;
+    text-align: justify;
+}
+
+.blog{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.content-text {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: baseline;
+    justify-content: center;
+    width: 1084px;
+}
+
+.primeiroPost {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 780px;
+    text-align: justify;
+}
+
+.Inscrever-se {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.inscrever-se{  
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 35px;
+}
+
+.formulario {
+    width: 258px;
+    height: 28px;
+    text-align: left;
+    border-radius: 7px;
+    border-color: rgba(159, 159, 159, 1);
+    color: rgba(159, 159, 159, 1);
+}
+
+.input-box-alternative {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 35px;
+    width: auto;
+}
+
+.input-big {
+    height: 80px;
+    width: 258px;
+    text-align: left;
+    border-radius: 7px;
+    border-color: rgba(159, 159, 159, 1);
+    color: rgba(159, 159, 159, 1);
+}
+
+.classButton {
+    align-self: center;
+    width: 90px;
+    height: 30px;
+    border-color: transparent;
+    border-radius: 10px;
+    background-color:rgba(126, 211, 33, 1);
+}

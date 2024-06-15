@@ -1,0 +1,53 @@
+{
+  "format": "custom",
+  "id": "blogg",
+  "label": "blogg",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "titulo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Titulo",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "subtitulo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Subtitulo",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "paragrafo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Paragrafo",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "imagemrobo": {
+        "type": "Image",
+        "config": {
+          "label": "ImagemRobo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

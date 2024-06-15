@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.corpo{
+    max-width: 87.5rem;
+    margin: 50px;
+}
+
+html{
+    font-family: 'Open Sans';
+    font-size: 62.5%;
+}
+body{
+    background-color: #BCCDD0;
+}
+
+h1{
+    font-size: 3.6rem;
+}
+p{
+    font-size: 1.6rem;
+    margin-top: 3.2rem;
+}
+
+.container{
+    max-width: 87.5rem;
+    margin: 0 auto;
+    
+
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.content-div {
+        min-height: 49.2rem;
+        background-color: #DFDFD6;
+        border-radius: 3rem;
+        width: 100%;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+       
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+.main-content{
+
+    height: 100%;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.img2{
+    margin-top: 1rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img2 img{
+    max-width: 100%;
+    max-height: 155%;
+}
+
+.inferior{
+    position:inherit;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.incon{
+    display: flex;
+}
+
+.incon p{
+    margin-top: 0.5rem;
+}
+
+h2{
+    font-size: 2rem ;
+}
+.info{
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.inferior-direita {
+    margin-top: 1rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #696F5A;
+    
+}
+.inferior-direita img{
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+.menu {
+    top: 5rem;
+    width: 23rem;
+    height: 44px;
+    border-radius: 5rem;
+    background: #696F5A;
+    display: none;
+    
+}   
+
+.PedroVitorio{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+span{
+    font-size: 2rem;
+    color: #DFDFD6 ;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.button{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: none;
+    background-image: url(../img/seta.svg);
+    background-size: contain;
+}
+
+
+@media(max-width: 894px){
+    
+    .content-div {
+    
+        display: flex;
+        flex-direction: column;
+        top: 1.5rem;
+        margin: 1.5rem;
+        bottom: 1.5rem;
+        height:77rem ;
+    }
+    .img img{
+        max-height: 20rem;
+        object-fit: cover;
+        border-top-left-radius: 3rem;
+        border-bottom-left-radius: 0rem;
+        border-top-right-radius: 3rem;
+    }
+    section{
+        height: 100vh;
+        display: flex;
+        align-items:flex-start;
+        
+    }
+    .info{
+        margin-left: 1rem;
+        
+    }
+    .img{
+        
+        max-height: 20rem;
+    }
+    .inferior-direita {
+        margin-top: 1rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inferior-direita img{
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+    }
+}

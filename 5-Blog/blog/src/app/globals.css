@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.Header{
+  display: flex;
+  justify-content: space-around;
+  background-color: #067546;
+  flex-flow: row wrap;
+  align-items: center;
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.pesquisar{
+display: flex;
+align-items: center;  
+width: 400px;
+height: 30px;
+border-radius: 15px;
+background-color: white;
+padding-left: 20px;
+}
+
+.Header h1{
+  color: white;
+}
+
+.Titulo1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  font-size: 30px;
+  color: darkslategrey;
+}
+
+.Informacao1{
+  display: flex;
+  padding-left: 600px;
+  padding-right: 600px;
+}
+
+.Paragrafo1 p{
+  font-size: 20px
+}
+
+.Paragrafo1 h3{
+  font-size: 35px;
+  color: darkslategrey;
+}
+
+.Imagem img{
+  padding-top: 40px;
+  height: 400px;
+  width: 550px;
+  border-radius: 100px;
+}
+
+.Titulo2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  font-size: 30px;
+  color: darkslategrey;
+}
+
+.Center{
+  padding-left: 500px;
+  padding-right: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: black;
+  justify-content: space-around;
+}
+.Noticia{
+  width: 305px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: #EDFFF7;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+  border-color: black;
+}
+
+.Perfil {
+display: flex;
+}
+
+.Perfil img {
+  padding-top: 20px;
+}
+
+.perfilInformacoes{
+padding-left: 10px;
+}
+
+.maisAcessadas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  font-size: 30px;
+  color: darkslategrey;
+}
+
+.total{
+  display: flex;
+}
+
+.NOTICIA{
+  width: 500px;
+  height: 305px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #EDFFF7;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+  border-color: black;
+}
+
+.NOTICIA img{
+  max-width: 200px;
+  padding-top: 50px;
+  padding-right: 20px;
+  position: relative;
+}
+
+.Inferior{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #067546;
+  height: 130px;
+}
+
+.Redes{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.Redes img {
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+.Inferior h2{
+  color: white;
+}
+
+.Inferior h6{
+  color: white;
+}
+
+.Informacao2{
+  display: flex;
+  padding-left: 600px;
+  padding-right: 600px;
+}
+
+.Informacao2 p{
+  font-size: 20px
+}
+
+.Imagens{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 600px;
+  padding-right: 600px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.Fulano{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.NomeData{
+  height: 40px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+}
+
+.TituloFulano{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: darkslategrey;
+}
+
+.TextoFulano p{
+font-size: 20px;
+padding-left: 25px;
+}
+
+.paragrafoFulano{
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.paragrafoFulano p{
+  font-size: 20px;
+  padding-left: 25px;
+}
+
+.InformacaoFulano{
+  padding-left: 400px;
+  padding-right: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.imgRedes{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  width: 250px;
+}
+
+
+@media(max-width: 1500px){
+    
+.Header{
+  padding-left: 0%;
+  padding-right: 0%;
+}
+.pesquisar{
+  width: 150px;
+}
+
+.Titulo1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Titulo1 h1{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.TituloFulano h1{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Informacao1{
+  padding-left: 0%;
+  padding-right: 0%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.Informacao2{
+  padding-left: 0%;
+  padding-right: 0%;
+  display: flex;
+}
+.Informacao2 p{
+  font-size: 15px;
+}
+
+.Imagens{
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.Imagens img{
+  height: 120px;
+  width: 185px;
+  justify-content: space-around;
+
+}
+.Imagem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Imagem img{
+  height: 200px;
+  width: 275px;
+  border-radius: 0;
+  
+}
+
+.Paragrafo1 p{
+  font-size: 15px;
+}
+
+.Paragrafo1 h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+font-size: 20px;
+}
+
+.Titulo2{
+  padding-top: 0%;
+}
+.Titulo2 h1{
+  font-size: 30px;
+}
+
+.Center{
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.maisAcessadas h1{
+  font-size: 20px;
+}
+
+.Noticia h1{
+  font-size: 10px;
+}
+
+.Noticia p{
+  font-size: 5px;
+}
+
+.Noticia{
+  height: 170px;
+  width: 100px;
+}
+
+.Imagem2{
+  height: 100px;
+}
+
+.Imagem2 img{
+  width: 100%;
+  height: 100%;
+}
+
+.Perfil{
+  width: 100px;
+  height: 40px;
+}
+
+.Perfil img{
+  width: 20px;
+  height: 20px;
+  padding-top: 0%;
+}
+
+.perfilInformacoes h6{
+font-size: 5px;
+}
+
+.perfilInformacoes p{
+  font-size: 4px;
+}
+.NOTICIA{
+  height: 100px;
+  width: 170px;
+}
+
+.NOTICIA img{
+width: 100px;
+height: 50px;
+padding-top: 0%;
+}
+
+.INFORMACOES h1{
+font-size: 6px;
+}
+
+.INFORMACOES p{
+  font-size: 4px;
+}
+
+.Redes h2{
+  font-size: 15px;
+}
+
+.Redes img{
+  padding-top: 0%;
+}
+
+.Fulano img{
+  width: 60px;
+  height: 60px;
+}
+
+.Fulano p{
+  margin: 0%;
+}
+
+.InformacaoFulano{
+  padding-left: 0%;
+  padding-right: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.InformacaoFulano img{
+width: 200px;
+height: 200px;
+}
+
+.TextoFulano p{
+  font-size: 15px;
+}
+
+.imgRedes{
+  display: none;
+}
+
+.paragrafoFulano{
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.paragrafoFulano p{
+  font-size: 15px;
+}
+
+
+}
