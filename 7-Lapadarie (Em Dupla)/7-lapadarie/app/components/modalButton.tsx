@@ -18,9 +18,10 @@ interface ModalButtonProps {
 
     incrementarPaesValue: (quant: number) => void;
     incrementarEntradaValue: (quant: number) => void;
+    setPessoasNaFila: (quant: number) => void;
 }
 
-export default function ModalButton({ incrementarPaesValue, incrementarEntradaValue }: ModalButtonProps){
+export default function ModalButton({ incrementarPaesValue, incrementarEntradaValue, setPessoasNaFila }: ModalButtonProps){
     const [openModal, setOpenModal] = useState(false)
     const [form, setForm] = useState<FormData>({cliente: '', quant: ''})
     const [pedidos, setPedidos] = useState<Pedido[]>([])
@@ -52,6 +53,7 @@ export default function ModalButton({ incrementarPaesValue, incrementarEntradaVa
                 url: "http://localhost:3001/pedidos",
               })
               setPedidos(resposta.data)
+              setPessoasNaFila(resposta.data.length)
         } catch (error) {
             console.log(error)
         }
@@ -61,16 +63,17 @@ export default function ModalButton({ incrementarPaesValue, incrementarEntradaVa
         fetchPedidos()
     }, [])
 
-    const handleSubmit = async (data: FormData) => {
-        try {
-            const quant = parseInt(data.quant);
-            criar(data)
-            incrementarPaesValue(quant)
-            incrementarEntradaValue(quant)
-            console.log("Função CRIAR executada")
-        } catch (error) {
-            console.log(error)
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        const quantValor = parseInt(form.quant);
+        if (form.cliente === '' || isNaN(quantValor)) {
+            alert("Nome e/ou valor de quantidade inválido(s).")
+            return
         }
+        criar(form)
+        incrementarPaesValue(quantValor)
+        incrementarEntradaValue(quantValor)
+        console.log("Função CRIAR executada")
     }
 
     return(
@@ -88,10 +91,7 @@ export default function ModalButton({ incrementarPaesValue, incrementarEntradaVa
           <Modal isOpen={openModal} setModalOpen={()=> setOpenModal(!openModal)}>
             <div className="modal_input">
                 <p>Adicionar pessoa a fila</p>
-                <form onSubmit={e => {
-                    e.preventDefault()
-                    handleSubmit(form)
-                }}>
+                <form onSubmit={handleSubmit}>
                     <input className="inputData" type="text" value={form.cliente} placeholder='Nome Completo do Cliente' onChange={e=> setForm({...form, cliente: e.target.value})}/>
                     <input className="inputData" type="number" value={form.quant} placeholder='Total de Pães:' onChange={e => setForm({...form, quant: e.target.value})} />
                     <button type="submit" id="btnEnviar" className='btnModalMarrom' >Enviar</button>

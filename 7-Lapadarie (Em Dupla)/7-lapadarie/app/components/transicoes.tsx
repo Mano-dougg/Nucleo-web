@@ -9,10 +9,11 @@ import { useState } from "react";
 interface TransicoesProps {
     paesValue: number;
     entradaValue: number;
+    filaValue: number;
   }
 
 
-  const Transicoes: React.FC<TransicoesProps> = ({ paesValue, entradaValue }) => {
+  const Transicoes: React.FC<TransicoesProps> = ({ paesValue, entradaValue, filaValue }) => {
 
 
     return(
@@ -27,7 +28,7 @@ interface TransicoesProps {
                 </div>
 
                 <div>
-                    <input type="text" value="0" disabled id="counterValue"></input>
+                    <input type="text" value={filaValue} disabled id="counterValue"></input>
                 </div>
 
             </div>
