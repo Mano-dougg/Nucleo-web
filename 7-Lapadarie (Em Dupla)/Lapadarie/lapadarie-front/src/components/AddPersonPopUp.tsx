@@ -16,7 +16,12 @@ const AddPersonPopUp: React.FC<AddPersonPopUpProps> = ({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4040/adicionar", { name, breads });
+      let value = breads * 0.5;
+      await axios.post("http://localhost:4040/adicionar", {
+        name,
+        quant_paes: breads,
+        valor: value,
+      });
       onClose();
       window.location.reload();
     } catch (error) {
@@ -51,7 +56,6 @@ const AddPersonPopUp: React.FC<AddPersonPopUpProps> = ({
           value={breads}
           onChange={(e) => setBreads(parseInt(e.target.value))}
           required
-          min="0"
         />
         <div className="flex flex-row gap-4">
           <button
