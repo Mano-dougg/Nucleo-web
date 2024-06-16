@@ -1,16 +1,8 @@
-// 'use client';
 
 import React, { Children, Key } from "react";
 import Trash from "./icons/Trash";
 import "../app/globals.css";
 import axios from "axios";
-
-// interface ListItemProps {
-//   // Define any props for your component here
-//   title: string;
-//   breadAmount: string;
-//   amountToPay: string;
-// }
 
 const getData = async () => {
   const data = await axios.get("http://localhost:4040/mostrartodos");
@@ -20,7 +12,15 @@ const getData = async () => {
 const deleteData = async (id: number) => {
   var numero = id;
 
-  axios.delete(`http://localhost:4040/deletar/${numero}`)
+  await axios.delete(`http://localhost:4040/deletar/${numero}`)
+
+  const diminuir = await axios.get("http://localhost:4040/pegarBanco");
+
+  let fila_atual = diminuir.data.quant_fila - 1;
+
+  await axios.put('http://localhost:4040/atualizarBanco', {
+    quant_fila: fila_atual
+  });
 
   window.location.reload() 
 }

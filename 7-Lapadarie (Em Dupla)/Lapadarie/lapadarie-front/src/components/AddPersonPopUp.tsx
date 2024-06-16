@@ -6,6 +6,12 @@ interface AddPersonPopUpProps {
   onClose: () => void;
 }
 
+const inicializaBanco = async() =>{
+  await axios.post('http://localhost:4040/inicializarBanco')
+}
+
+inicializaBanco()
+
 const AddPersonPopUp: React.FC<AddPersonPopUpProps> = ({
   onClose,
   isVisible,
@@ -22,6 +28,29 @@ const AddPersonPopUp: React.FC<AddPersonPopUpProps> = ({
         quant_paes: breads,
         valor: value,
       });
+
+      const valores = await axios.get('http://localhost:4040/pegarBanco');
+
+      let quantClientes = valores.data.quant_fila;
+
+      let quantPaes = valores.data.quant_total_paes;
+
+      let quantTotal = valores.data.valor_total;
+
+      quantClientes += 1;
+
+      quantPaes += breads;
+
+      quantTotal += value;
+
+      await axios.put('http://localhost:4040/atualizarBanco', {
+        quant_fila: quantClientes,
+        quant_total_paes: quantPaes,
+        valor_total: quantTotal
+      });
+
+
+
       onClose();
       window.location.reload();
     } catch (error) {
@@ -30,6 +59,7 @@ const AddPersonPopUp: React.FC<AddPersonPopUpProps> = ({
   };
 
   if (!isVisible) return null;
+
 
   return (
     <section className="bg-white w-[605px] h-[347px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col p-8 justify-center rounded-lg mt-10 z-30">

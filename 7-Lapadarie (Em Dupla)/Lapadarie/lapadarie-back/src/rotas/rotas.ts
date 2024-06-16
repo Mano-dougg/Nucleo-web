@@ -20,7 +20,6 @@ rotas.post('/adicionar', async (request: Request, response: Response) => {
         });
 
         response.json({
-            message: 'Usuario cadastrado',
             fila_clientes: novocadastro
         });
     } catch (error) {
@@ -53,6 +52,56 @@ rotas.delete('/deletar/:id', async (request: Request, response: Response) => {
     }
 
 
+});
+
+rotas.put('/atualizarBanco', async (request: Request, response: Response) => {
+  
+    const { quant_fila, quant_total_paes, valor_total} = request.body;
+
+    try {
+        const atualizar = await prisma.caixa.update({
+            where: { id: 1 },  
+            data: {
+                quant_fila,
+                quant_total_paes,
+                valor_total
+            }
+        });
+        return response.json({
+            message: 'Usuario atualizado',
+            atualizar
+        }); 
+    } catch (error){
+        response.json({ error: 'Erro' });
+    }
+});
+
+
+rotas.post('/inicializarBanco', async (request: Request, response: Response) => {
+    try {
+        const existe = await prisma.caixa.findFirst();
+        if (!existe) {
+            await prisma.caixa.create({
+                data: {
+                },
+            });
+        }
+    } catch (error) {
+        response.json({ error: 'Erro' });
+    }
+});
+
+
+rotas.get('/pegarBanco', async(request:Request, response:Response) => {
+
+    const valores = await prisma.caixa.findFirst();
+
+    try{
+            return response.json(valores)
+    }
+    catch(error){
+        response.status(500).json("Erro")
+    }
 });
 
 

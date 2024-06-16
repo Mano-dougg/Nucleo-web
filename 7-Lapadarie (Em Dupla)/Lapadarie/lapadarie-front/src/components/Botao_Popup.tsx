@@ -11,12 +11,10 @@ export default function Botao_pop(){
 
     const handleOpenModal = () => {
       setIsVisible(true);
-      console.log("era pra abrir");
     };
   
     const handleCloseModal = () => {
       setIsVisible(false);
-      // fetchFila();
     }
 
     return(
