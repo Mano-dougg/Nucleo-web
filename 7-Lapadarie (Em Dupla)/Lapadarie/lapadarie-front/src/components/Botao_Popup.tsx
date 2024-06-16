@@ -21,12 +21,12 @@ export default function Botao_pop(){
 
         <>
 
-        <AddPersonPopUp onClose={handleCloseModal} isVisible={isVisible} />
-        <Background isVisible={isVisible} />
+          <AddPersonPopUp onClose={handleCloseModal} isVisible={isVisible} />
+          <Background isVisible={isVisible} />
 
-        <button className="text-pbrown font-bold text-base" onClick={()=>{handleOpenModal()}}>
-            + Adicionar pessoa à fila
-        </button>
+          <button className="text-pbrown font-bold text-base" onClick={()=>{handleOpenModal()}}>
+              + Adicionar pessoa à fila
+          </button>
         
         </>
     )

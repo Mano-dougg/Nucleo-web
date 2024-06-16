@@ -62,9 +62,9 @@ const AddPersonPopUp: React.FC<AddPersonPopUpProps> = ({
 
 
   return (
-    <section className="bg-white w-[605px] h-[347px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col p-8 justify-center rounded-lg mt-10 z-30">
+    <section className="bg-white w-[605px] h-[347px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col p-8 justify-center rounded-lg mt-10 z-30" id="popup">
       <form onSubmit={handleSubmit} className="flex flex-col">
-        <label htmlFor="name" className="mb-6 font-bold text-pbrown">
+        <label htmlFor="name" className="mb-6 font-bold font-sans text-pbrown" id="form-title">
           Adicionar pessoa à fila
         </label>
         <input
@@ -87,10 +87,11 @@ const AddPersonPopUp: React.FC<AddPersonPopUpProps> = ({
           onChange={(e) => setBreads(parseInt(e.target.value))}
           required
         />
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4" id="form-buttons">
           <button
             className="bg-pbrown font-medium text-white h-[60px] w-[50%] rounded-md"
             type="submit"
+            id="button-send"
           >
             Enviar
           </button>
@@ -98,6 +99,7 @@ const AddPersonPopUp: React.FC<AddPersonPopUpProps> = ({
             type="button"
             className="bg-white font-medium border-2 border-red-600 h-[60px] w-[50%] rounded-md text-red-600"
             onClick={onClose}
+            id="button-cancel"
           >
             Cancelar
           </button>
