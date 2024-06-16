@@ -138,8 +138,7 @@ export function ClientMenu({ toggleClient, type, id=0 }: { toggleClient: () => v
   const [newName, setNewName] = useState("");
   const [quantity, setQuantity] = useState(0);
 
-  const clientAdder = async (event: FormEvent) => {
-    event.preventDefault();
+  const clientAdder = async () => {
 
     try {
       const response = await postOrder({
@@ -159,8 +158,7 @@ export function ClientMenu({ toggleClient, type, id=0 }: { toggleClient: () => v
     }
   };
 
-  const clientUpdater = async (event: FormEvent) =>{
-    event.preventDefault();
+  const clientUpdater = async () =>{
 
     try{
       await updateOrder(id, [quantity]);
