@@ -2,3 +2,10 @@ node_modules
 teste
 teste/
 /teste
+7-Lapadarie (Em Dupla)/backend/docker-compose.yml
+.gitignore
+6-CrudMembros/CrudMembros/prisma/schema.prisma
+7-Lapadarie (Em Dupla)/backend/.dockerignore
+7-Lapadarie (Em Dupla)/backend/.gitignore
+7-Lapadarie (Em Dupla)/backend/docker-compose.yml
+7-Lapadarie (Em Dupla)/lapadarie/.gitignore

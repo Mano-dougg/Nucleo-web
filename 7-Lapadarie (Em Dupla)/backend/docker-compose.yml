@@ -5,7 +5,7 @@ services:
     container_name: postgres-container
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=24022022
+      - POSTGRES_PASSWORD=senhaquantumchique
       - POSTGRES_DB=lapadarie_db
     volumes:
       - postgres-data:/var/lib/postgresql/data
@@ -18,7 +18,7 @@ services:
       dockerfile: api/Dockerfile
     container_name: api-container
     environment:
-      - DATABASE_URL=postgresql://postgres:24022022@postgres:5432/lapadarie_db
+      - DATABASE_URL=postgresql://postgres:senhaquantumchique@postgres:5432/lapadarie_db
       - PORT=3000
     depends_on:
       - postgres
