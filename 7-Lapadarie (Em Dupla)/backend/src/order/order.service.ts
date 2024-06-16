@@ -84,3 +84,29 @@ export const finishOrder = async (id:number) =>{
     if(updatedOrder===null)throw new Error("Id não encontrado")
     return updatedOrder
 }
+
+// atualizar um pedido
+export const updateOrder = async (id:number, quantity:number[]) =>{
+    if(id===1)throw new Error("Id inválido");
+
+    const oldOrders = await db.bread.findMany({
+        where:{
+            orderId:id
+        }
+    });
+
+    if(quantity.length!==oldOrders.length)throw new Error("Número de atualizações não equivale ao número de pães pedidos")
+
+     oldOrders.forEach(async (breadOrder, i)=>{
+        await db.bread.update({
+            where:{
+                id:breadOrder.id
+            },
+            data:{
+                quantity: quantity[i]
+            }
+        })
+    })
+
+    return oldOrders
+}

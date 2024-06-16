@@ -102,12 +102,26 @@ orderRouter.post("/",
 
 // PUT: finaliza um pedido
 orderRouter.put("/finish/:id",
-    async (request: Request, response: Response) =>{
+    async (request: Request, response: Response) => {
         try{
             const id: number = parseInt(request.params.id, 10)
             const updatedOrder = await OrderService.finishOrder(id)
             return response.status(200).json(updatedOrder)
-        } catch(error:any){
+        } catch(error:any) {
+            return response.status(500).json(error.message);
+        }
+    }
+)
+
+// PUT: atualiza um pedido
+orderRouter.put("/:id",
+    body("quantity").isArray().withMessage("a propriedade 'quantity' deve ser uma lista de números"),
+    async (request: Request, response: Response) => {
+        try{
+            const id:number = parseInt(request.params.id, 10)
+            const updatedOrder = await OrderService.updateOrder(id, request.body.quantity as number[])
+            return response.status(200).json(updatedOrder)
+        } catch(error:any) {
             return response.status(500).json(error.message);
         }
     }

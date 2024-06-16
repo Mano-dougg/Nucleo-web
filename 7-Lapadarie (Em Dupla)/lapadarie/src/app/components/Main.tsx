@@ -12,6 +12,7 @@ import {
 import { receiveOpenOrders } from "@/server/GETOrder.service";
 import { OrderToUse } from "@/types/order.types";
 import { postOrder } from "@/server/POSTOrder.service";
+import { updateOrder } from "@/server/PUTOrder.service";
 
 const AddButton = styled.button`
   font-family: inherit;
@@ -56,12 +57,14 @@ const AddClientDiv = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 605px;
+  max-width: 93vw;
   height: 347px;
   z-index: 1;
   box-sizing: border-box;
   padding: 30px;
   display: flex;
   flex-direction: column;
+  opacity: 1;
 `;
 
 const AddClientTitle = styled.h3`
@@ -91,6 +94,7 @@ const AddClientFormInput = styled.input`
 
 const AddClientFormSubmit = styled.input`
   width: 260px;
+  max-width: 42.5%;
   height: 60px;
   background-color: #5f3305;
   color: white;
@@ -105,6 +109,7 @@ const AddClientFormSubmit = styled.input`
 
 const AddClientCancel = styled.button`
   width: 260px;
+  max-width: 42.5%;
   height: 60px;
   background-color: white;
   color: red;
@@ -119,7 +124,17 @@ const AddClientCancel = styled.button`
   font-weight: 600;
 `;
 
-function AddClientMenu({ toggleClient }: { toggleClient: () => void }) {
+const BigGrayDiv = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(64, 64, 64, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+`;
+
+export function ClientMenu({ toggleClient, type, id=0 }: { toggleClient: () => void, type:"add"|"update", id:number }) {
   const [newName, setNewName] = useState("");
   const [quantity, setQuantity] = useState(0);
 
@@ -136,23 +151,36 @@ function AddClientMenu({ toggleClient }: { toggleClient: () => void }) {
           },
         ],
       });
-      console.log(response);
       setNewName("");
       setQuantity(0);
+      toggleClient();
     } catch (error: any) {
       console.error("Erro ao fazer o pedido: ", error);
     }
   };
 
+  const clientUpdater = async (event: FormEvent) =>{
+    event.preventDefault();
+
+    try{
+      await updateOrder(id, [quantity]);
+      setQuantity(0);
+      toggleClient();
+    } catch(error: any){
+      console.error(error)
+    }
+  }
+
   return (
+    <BigGrayDiv>
     <AddClientDiv>
       <AddClientTitle>Adicionar pessoa à fila</AddClientTitle>
-      <AddClientForm onSubmit={clientAdder}>
-        <AddClientFormInput
+      <AddClientForm onSubmit={id? clientUpdater: clientAdder}>
+        {type==="add" && <AddClientFormInput
           placeholder="Nome completo do cliente"
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
-        ></AddClientFormInput>
+        ></AddClientFormInput>}
         <AddClientFormInput
           placeholder="Total de pães:"
           type="number"
@@ -162,11 +190,12 @@ function AddClientMenu({ toggleClient }: { toggleClient: () => void }) {
         <AddClientFormSubmit
           type="submit"
           value="Enviar"
-          disabled={!(newName.length > 0 && quantity > 0)}
+          disabled={!((newName.length > 0 || type==="update") && quantity > 0)}
         />
       </AddClientForm>
       <AddClientCancel onClick={toggleClient}>Cancelar</AddClientCancel>
     </AddClientDiv>
+    </BigGrayDiv>
   );
 }
 
@@ -209,7 +238,7 @@ export default function Main() {
         <AddButton onClick={toggleClient}>+ Adicionar pessoa à fila</AddButton>
         <OpenOrderList />
       </DivClients>
-      {showAddClient && <AddClientMenu toggleClient={toggleClient} />}
+      {showAddClient && <ClientMenu id={0} toggleClient={toggleClient} type="add"  />}
     </MainMain>
   );
 }

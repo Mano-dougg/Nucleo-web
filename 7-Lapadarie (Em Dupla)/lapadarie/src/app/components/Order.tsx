@@ -2,7 +2,9 @@
 
 import { finishOrder } from "@/server/PUTOrder.service";
 import { OrderToUse } from "@/types/order.types";
+import { useState } from "react";
 import styled from "styled-components";
+import { ClientMenu } from "./Main";
 
 const OrderDiv = styled.div`
   width: inherit;
@@ -87,8 +89,40 @@ const OrderButton = styled.button`
   cursor: pointer;
 `;
 
+//function menu(){
+//  return(
+//    <BigGrayDiv>
+//      <AddClientDiv>
+//        <AddClientTitle>Modificar quantidade de Pães</AddClientTitle>
+//          <AddClientFormInput
+//            placeholder="Total de pães:"
+//            type="number"
+//          ></AddClientFormInput>
+//          <AddClientFormSubmit
+//            type="submit"
+//            value="Enviar"
+//          />
+//        </AddClientForm>
+//        <AddClientCancel>Cancelar</AddClientCancel>
+//      </AddClientDiv>
+//    </BigGrayDiv>
+//  )
+//}
+
 export default function Order({ id, name, breadCount, valor }: OrderToUse) {
+  const [ showEditClient, setShowEditClient ] = useState(false);
+
+  const toggleClient = ()=>{
+    setShowEditClient(!showEditClient)
+  };
+
   return (
+    <>
+    {showEditClient && <ClientMenu 
+      id={id}
+      toggleClient={toggleClient}
+      type={"update"}
+    />}
     <OrderDiv>
       <OrderDivLeft>
         <OrderClientName>{name}</OrderClientName>
@@ -108,17 +142,18 @@ export default function Order({ id, name, breadCount, valor }: OrderToUse) {
         </OrderInfo>
       </OrderDivLeft>
       <ButtonsDiv>
-        <OrderButton>
+        <OrderButton onClick={toggleClient}>
           <PencilIcon src="pencil.svg"></PencilIcon>
         </OrderButton>
         <OrderButton
           onClick={() => {
             finishOrder(id);
           }}
-        >
+          >
           <TrashIcon src="trashcan.svg" />
         </OrderButton>
       </ButtonsDiv>
     </OrderDiv>
+    </>
   );
 }
