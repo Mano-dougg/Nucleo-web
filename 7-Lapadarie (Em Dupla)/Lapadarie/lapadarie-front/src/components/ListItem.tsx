@@ -38,7 +38,7 @@ const ListItem: React.FC = async () => {
         }) => (
           <span
             key={todo.id}
-            className="flex flex-row w-full min-w-[390px] bg-white bg-opacity-80 rounded-md p-4 items-center justify-between pr-6"
+            className="flex flex-row w-full min-w-[300px] bg-white bg-opacity-80 rounded-md p-4 items-center justify-between pr-6"
           >
             <div className="flex flex-col justify-between h-full gap-1.5">
               <h3 className="text-pbrown text-base font-bold">{todo.name}</h3>
