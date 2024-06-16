@@ -1,3 +1,5 @@
+// 'use client';
+
 import React, { Children, Key } from "react";
 import Trash from "./icons/Trash";
 import "../app/globals.css";

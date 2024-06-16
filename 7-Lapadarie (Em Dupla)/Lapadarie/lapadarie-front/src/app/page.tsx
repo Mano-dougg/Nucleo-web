@@ -1,5 +1,6 @@
-import "./globals.css";
+'use client';
 
+import "./globals.css";
 import { Key, useEffect, useState } from "react";
 import axios from "axios";
 import Header from "@/components/Header";
