@@ -172,7 +172,7 @@ export function ClientMenu({ toggleClient, type, id=0 }: { toggleClient: () => v
   return (
     <BigGrayDiv>
     <AddClientDiv>
-      <AddClientTitle>Adicionar pessoa à fila</AddClientTitle>
+      <AddClientTitle>{type==="add"?"Adicionar":"Editar"} pessoa à fila</AddClientTitle>
       <AddClientForm onSubmit={id? clientUpdater: clientAdder}>
         {type==="add" && <AddClientFormInput
           placeholder="Nome completo do cliente"

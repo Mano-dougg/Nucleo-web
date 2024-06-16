@@ -236,6 +236,32 @@ PUT /api/order/finish/2
   "total": 21.5
 }
 ```
+
+### PUT alterar pedido
+#### Rota: PUT /api/order/:id
+Altera a quantidade de pães, recebendo uma array de números. A array deve ter uma length igual ao número de tipos de pães pedidos(por enquanto apenas 1).
+
+#### Requisição(id:13):
+```json
+{
+  "quantity":[
+    5
+  ]
+}
+```
+
+### Resposta:
+```json
+[
+	{
+		"id": 13,
+		"name": "pão de sal",
+		"price": 0.5,
+		"quantity": 5,
+		"orderId": 13
+	}
+]
+```
 ## Tipos de Dados
 ### Order
 ```typescript
