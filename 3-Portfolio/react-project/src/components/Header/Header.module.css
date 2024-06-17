@@ -1,0 +1,138 @@
+.header {
+    width: 100%;
+    height: 82px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 87px;
+    padding-right: 87px;
+    box-shadow: 0px 25px 65px 0px #00000026;
+}
+
+
+
+
+.leftNav {
+    display: flex; 
+    flex-direction: row;
+    align-items: center; 
+}
+
+.navBrand{
+    font-size: 20px;
+    font-weight: 700;
+    justify-content: left;
+    padding-right: 50px;
+}
+
+.navLinks{
+    display:flex;
+    align-items: center;
+}
+
+.navLinks a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--azul); 
+    margin-right: 20px;
+}
+
+.rightNav{
+    display: flex; 
+    align-items: center;
+}
+
+.navDark{
+    display: inline-block;
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+.navDark a{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.navSocial{
+    display: inline-block;
+    align-items: center;
+}
+
+.navSocial img {
+    margin-right: 30px;
+}
+
+.botao{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 7px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color:#E5E5E5;
+    border-radius: 50px;
+    border-color: black;
+    width: 40px;
+    height: 22px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.label .ball{
+    background-color: #3C3B3A;
+    border-radius: 50%;
+    position: absolute;
+    top:2.36px;
+    left: 3px;
+
+    height: 17.29px;
+    width: 17.25px;
+
+    transform: translateX(0px);
+    transition: tranform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball{
+    transform: translateX(16px);
+}
+
+@media (max-width:970px){
+    .header {
+        width: 100%;
+        height: 72px;
+        padding-left: 25px;
+        padding-right: 25px;
+        box-shadow: 0px 25px 65px 0px #00000026;
+    }
+
+    .navSocial,
+    .navLinks {
+        display: none;
+    }
+
+    .navBrand{
+        padding: 0;
+        justify-content: left;
+    }
+
+    .navDark{
+        padding: 0;
+    }
+
+}
+
+

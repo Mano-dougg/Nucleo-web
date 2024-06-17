@@ -1,0 +1,110 @@
+{
+  "format": "page",
+  "id": "blog_post",
+  "label": "Blog Post",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titulo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Título",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading1"
+        }
+      },
+      "subtitulo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Subtitulo",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "sinopse": {
+        "type": "StructuredText",
+        "config": {
+          "label": "sinopse",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "banner": {
+        "type": "Image",
+        "config": {
+          "label": "Banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "autor": {
+        "type": "Text",
+        "config": {
+          "label": "Autor",
+          "placeholder": ""
+        }
+      },
+      "conteudo": {
+        "type": "Group",
+        "config": {
+          "label": "Conteudo",
+          "repeat": true,
+          "fields": {
+            "subtitulo": {
+              "type": "StructuredText",
+              "config": {
+                "label": "topico",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "heading3"
+              }
+            },
+            "topico": {
+              "type": "StructuredText",
+              "config": {
+                "label": "subtopico",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "heading5"
+              }
+            },
+            "corpo": {
+              "type": "StructuredText",
+              "config": {
+                "label": "corpo",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "foto": {
+              "type": "Image",
+              "config": {
+                "label": "foto",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}
