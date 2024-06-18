@@ -58,7 +58,7 @@ import axios from 'axios';
             </div>
             <div className='Botoes'>
               <div className='Botao1'>
-            <button type='submit'>Enviar</button>
+            <button type='submit' onClick={ () => window.location.reload()}>Enviar</button>
             </div>
             <div className='Botao2'>
             <button onClick={closeModal} type='button'>Cancelar</button>

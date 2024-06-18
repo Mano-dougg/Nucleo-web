@@ -2,6 +2,9 @@
 import Image from 'next/image'
 import Lixo from '../img/Lixo.png'
 import axios from 'axios'
+import {useState } from 'react'
+import This from './content'
+
 
 export default async function content(){
 
@@ -9,6 +12,16 @@ export default async function content(){
 
          const addPerson = await axios.delete(`http://localhost:3003/remove/${id}`)
          }
+    const [, forceRender] = useState(false);
+    //const handleClick = () => {
+    //    forceRender((prev) => !prev);
+    //};
+
+    const reRender = () => { 
+        //forceRender((prev) => !prev);
+
+        window.location.reload();
+    }; 
 
     const people = await axios.get('http://localhost:3003/line')
     console.log(people.data)
@@ -26,6 +39,8 @@ export default async function content(){
             </div>
             <Image src={Lixo} alt="" onClick={() => {
                remove(item.id) 
+               //handleClick()
+                reRender()
             }}></Image>
             </div>
     
