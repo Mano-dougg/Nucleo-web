@@ -1,0 +1,1 @@
+chave api do TMDB => ad1c12884f4a7421c3d9e6d859be97a9
