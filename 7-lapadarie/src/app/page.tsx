@@ -51,8 +51,8 @@ export default function Home() {
   const removeClient = (index: number) => {
     const clientToRemove = clients[index];
     setQueueCount(queueCount - 1);
-    setTotalBreads(totalBreads - clientToRemove.totalBread);
-    setTotalPay(totalPay - clientToRemove.toPay);
+    setTotalBreads(totalBreads);
+    setTotalPay(totalPay);
     setClients(clients.filter((_, i) => i !== index));
   };
 
