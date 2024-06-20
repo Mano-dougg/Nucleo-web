@@ -16,6 +16,12 @@ app.post('/cadastro', usercontroler.Cadastro);
 app.post('/login', loginControler.login)
 
 
+//rotas get
+app.get('/profile', loginControler.getProfile)
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -3,6 +3,10 @@ import jwt from 'jsonwebtoken';
 import { prisma } from "../database";
 import bcrypt from 'bcrypt';
 
+type JWTPayload = {
+    id: number
+}
+
 export default {
     async login(request: Request, response: Response) {
         const { email, password } = request.body;
@@ -46,7 +50,37 @@ export default {
             message: "Login realizado com sucesso.",
             token: token
         });
+    },
+
+    async getProfile(request: Request, response: Response) {
+        try {
+            const { authorization } = request.headers;
+            if (!authorization) {
+                return response.status(401).send('Não autorizado');
+            }
+            const token = authorization.split(' ')[1];
+
+            const { id } = jwt.verify(token, process.env.JWT_PASS ?? '') as JWTPayload;
+
+            // Verificar se existe user no banco
+            const user = await prisma.user.findUnique({ where: { id } });
+
+            // Verifica se o usuário existe
+            if (!user) {
+                return response.status(401).json({
+                    error: true,
+                    message: "Usuário não encontrado."
+                });
+            }
+
+            const { password, ...loggerUser } = user;
+
+            return response.status(200).json(loggerUser);
+
+            
+        } catch (error) {
+            console.error('Error fetching profile:', error);
+            return response.status(500).send('Internal Server Error');
+        }
     }
-
-
 };
