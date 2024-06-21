@@ -1,0 +1,105 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap:5px;
+
+    padding: 25px;
+
+    width: 40%;
+    border: 1px solid var(--primary);
+    border-radius: 15px;
+}
+
+.form-login h1{
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    width: 100%;
+}
+
+.form-login label{
+    color: white;
+    font-size: 16px;
+}
+
+.form-login input{
+    color: black;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.botoes-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.entrar{
+    background-color: white;
+    color: var(--primary);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    transition: ease-in-out 0.5s;
+}
+
+.entrar:hover{
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.2);
+}
+
+.botao-cadastro{
+    color: var(--primary);
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    transition: ease-in-out 0.5s;
+}
+
+.botao-cadastro:hover{
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px){
+
+    .form-login{
+        width: 80%;
+    }
+
+    .form-login h1{
+        font-size: 28px;
+    }
+
+    .form-login label{
+        font-size: 18px;
+    }
+
+    .entrar{
+        width: 40%;
+    }
+
+}
