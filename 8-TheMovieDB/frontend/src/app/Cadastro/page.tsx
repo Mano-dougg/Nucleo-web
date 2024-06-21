@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import "./cadastro.css";
 
@@ -8,7 +10,7 @@ export default function Cadastro() {
             <h1>Cadastro</h1>
 
             <form className="form-cadastro">
-                <label htmlFor="username">Nome de Usuário</label>
+                <label htmlFor="username">Nome</label>
                 <input type="text" id="username" name="username" required />
 
                 <label htmlFor="email">E-mail</label>

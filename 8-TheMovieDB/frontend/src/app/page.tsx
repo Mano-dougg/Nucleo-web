@@ -1,11 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Cadastro from "@/pages/Cadastro/Cadastro";
+import Login from "./Login/page";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Cadastro/>
+      <Login/>
       
     </main>
   );
