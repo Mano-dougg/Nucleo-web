@@ -1,7 +1,9 @@
+"use client";
 // src/app/page.tsx
 import Initial from "@/pages/initial";
+import Login from "@/pages/login";
 
-"use client";
+
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -75,7 +77,7 @@ const MoviesPage = () => {
 
   return (
     <div>
-      <h1>Filmes Populares</h1>
+      {/* <h1>Filmes Populares</h1>
       <input
         type="text"
         placeholder="Pesquisar por título"
@@ -98,7 +100,10 @@ const MoviesPage = () => {
             )}
           </div>
         ))}
-      </div>
+      </div> */}
+      <Login>
+
+      </Login>
     </div>
   );
 };
