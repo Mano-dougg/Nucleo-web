@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
-const Signin = () => {
+const Login = () => {
   return (
     <section
       className={`w-full h-screen flex items-center justify-center bg-primary-color flex-col px-4 dark:bg-dark-bg`}
@@ -15,10 +15,10 @@ const Signin = () => {
           <h1
             className={`font-semibold text-2xl text-btn-bg dark:bg-dark-btn-bg`}
           >
-            Create an account
+            Welcome back !
           </h1>
           <p className={`text-dark-border text-sm dark:bg-dark-border`}>
-            Email you email bellow to create your account
+            put your email and password for acess our plataform
           </p>
         </div>
 
@@ -35,16 +35,16 @@ const Signin = () => {
             placeholder="password"
             className="outline-0 w-full"
           />
-          <Button className="w-full">Sign In with Email</Button>
+          <Button className="w-full">Login with Email</Button>
 
           <p
             className={` text-[12px] text-primary-border after:h-[1px] after:w-full after:bg-primary-border after:flex-1 before:h-[1px] before:w-full before:bg-primary-border before:flex flex items-center justify-center after:border-1 after:border-primary-border before:border-1 before:border-primary-border before:flex-1 w-full gap-2 font-semibold`}
           >
             OR CONTINUE WITH
           </p>
-          <Link href={"login"} className="w-full">
+          <Link href={"/singin"} className="w-full">
             <Button className="w-full" variant={"outline"}>
-              Already an account? Login here.
+              You dont hanve a account? Singin here.
             </Button>
           </Link>
         </form>
@@ -57,4 +57,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Login;
