@@ -5,7 +5,7 @@ import { axiosInstance } from "../../../service/User";
 
 export default function Cadastro() {
 
-    //Estados definidos 
+    //Estados 
     
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState<number | "">("");
@@ -14,6 +14,8 @@ export default function Cadastro() {
     const [city, setCity] = useState(""); 
     const [email, setEmail] = useState(""); 
 
+    //Corrigir erro
+    
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
 
