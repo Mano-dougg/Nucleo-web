@@ -20,6 +20,7 @@
     width: 40%;
     border: 1px solid var(--primary);
     border-radius: 15px;
+    box-shadow: 0 0 10px 2px var(--primary);
 }
 
 .form-login h1{
@@ -27,6 +28,11 @@
     font-size: 48px;
     text-align: center;
     width: 100%;
+}
+
+.form-login p{
+    color: white;
+    font-size: 13.3px;
 }
 
 .form-login label{
@@ -39,8 +45,9 @@
 .form-login input{
     color: black;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 5px;
+    padding-left: 10px;
     width: 60%;
 }
 
@@ -56,7 +63,7 @@
 .entrar{
     background-color: white;
     color: var(--primary);
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
     cursor: pointer;
 
@@ -83,7 +90,29 @@
 }
 
 .botao-cadastro:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.email-icon {
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    background-image: url('/mail.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 20px; 
+}
+
+.senha-icon {
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    background-image: url('/lock.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-size: 20px; 
 }
 
 @media (max-width: 768px){

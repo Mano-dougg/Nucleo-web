@@ -20,6 +20,7 @@
     width: 40%;
     border: 1px solid var(--primary);
     border-radius: 15px;
+    box-shadow: 0 0 10px 2px var(--primary);
 }
 
 .form-cadastro h1{
