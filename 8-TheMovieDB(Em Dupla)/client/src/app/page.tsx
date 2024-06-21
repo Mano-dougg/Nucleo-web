@@ -1,12 +1,14 @@
 "use client";
 // src/app/page.tsx
-import Initial from "@/pages/initial";
-import Login from "@/pages/login";
+
+
 
 
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Login from './login/page';
+import Initial from './home/page';
 
 type Movie = {
   id: number;
@@ -101,9 +103,7 @@ const MoviesPage = () => {
           </div>
         ))}
       </div> */}
-      <Login>
-
-      </Login>
+      <Initial></Initial>
     </div>
   );
 };

@@ -12,15 +12,15 @@ app.use(cors());
 // Rota para adicionar um novo usuário
 app.post('/users', async (req, res) => {
   const { user_name, password } = req.body;
-  try {
+  // try {
     const user = await addUser(user_name, password);
     res.status(201).json(user);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to create user' });
-  }
+  // } catch (error) {
+  //   res.status(500).json({ error: 'Failed to create user' });
+  // }
 });
 // Rota de login
-app.post('/login', async (req: Request, res: Response) => {
+app.put('/login', async (req: Request, res: Response) => {
   const { user_name, password } = req.body;
 
   try {
