@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Montserrat, Roboto } from 'next/font/google';
+import { Poppins, Montserrat, Josefin_Sans, DM_Sans } from 'next/font/google';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -15,11 +15,18 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700']
 });
 
-const roboto = Roboto({
+const josefin = Josefin_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-roboto',
+  variable: '--font-josefin',
   weight: ['400', '500', '700']
+});
+
+const dmsans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm',
+  weight: ['200', '300','400', '500', '700']
 });
 
 export const metadata: Metadata = {
@@ -34,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${poppins.variable} ${montserrat.variable} ${roboto.variable}`}>{children}</body>
+      <body className={`${poppins.variable} ${montserrat.variable} ${josefin.variable} ${dmsans.variable}`}>{children}</body>
     </html>
   );
 }
