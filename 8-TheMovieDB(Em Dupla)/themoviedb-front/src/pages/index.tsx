@@ -1,12 +1,15 @@
-import Image from "next/image";
+
+import { LogIn } from "lucide-react";
 import { Inter } from "next/font/google";
+import Signin from "./singin";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main> 
-      <h1>Olá mundo</h1>
-    </main>
+    <>
+      <Signin/>
+    </>
   );
 }
