@@ -2,6 +2,7 @@
 import React from "react";
 import Netflix from "../img/netflix.jpg"
 import Image from "next/image";
+import Modall from "../components/modal"
 
 export default function Header() {
   return (
@@ -22,10 +23,11 @@ export default function Header() {
           <button>Login</button>
         </div>
         <div className="Botao1">
-          <button>Cadastrar</button>
+          <Modall/>
         </div>
       </div>
     </div>
+   
     </>
   );
 }

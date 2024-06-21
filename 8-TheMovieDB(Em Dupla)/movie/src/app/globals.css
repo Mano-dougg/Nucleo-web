@@ -47,3 +47,49 @@ height: 100px;
     border-radius: 5px;
    
 }
+
+.Black{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 505px;
+    height: 287px;
+    margin-left: 570px;
+    margin-top: 200px;
+    border-style: none;
+  }
+
+  .Formulario{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-top: 10px;
+  }
+  .Formulario input{
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: hsl(0, 0%, 96%);
+    border-style: none;
+    padding-left: 20px;
+    border-radius: 5px;
+  }
+
+  .Botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Botao button{
+    width: 180px;
+    height: 40px;
+   background-color: black;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    
+   }
+
+   .Titulo{
+    padding-left: 30px;
+   }
