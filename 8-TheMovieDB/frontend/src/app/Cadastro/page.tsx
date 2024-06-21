@@ -4,6 +4,9 @@ import "./cadastro.css";
 import { axiosInstance } from "../../../service/User";
 
 export default function Cadastro() {
+
+    //Estados definidos 
+    
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState<number | "">("");
     const [password, setPassword] = useState(""); 
