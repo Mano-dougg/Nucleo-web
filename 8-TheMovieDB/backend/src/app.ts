@@ -1,16 +1,22 @@
+import { PrismaClient } from '@prisma/client';
 import express from 'express';
 import { Request, Response } from 'express';
+import router from './routes/rotas';
 
 const app = express();
+const cors = require('cors');
+const prisma = new PrismaClient();
 
 app.use(express.json());
 
-app.get('/', (req: Request, res: Response) => {
-    return res.status(200).json('Whistle');
-});
+app.use(cors());
+
+app.use('/',router);
 
 const PORT = 3000;
 
 app.listen(PORT, () => {
     console.log(`Servidor ${PORT}`);
 });
+
+export{prisma}
