@@ -8,22 +8,22 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
   return (
-    <div className="flex flex-col justify-start max-w-[250px] max-h-[290px] h-[290px]">
+    <div className="flex h-[290px] max-h-[290px] max-w-[250px] flex-col justify-start">
       <img
         src={`https://image.tmdb.org/t/p/w300${props.image}`}
         alt=""
-        className="rounded-md max-w-[250px] max-h-[370px]"
+        className="max-h-[370px] max-w-[250px] rounded-md"
       />
-      <div className="py-2 flex flex-col items-start gap-2">
+      <div className="flex flex-col items-start gap-2 py-2">
         <span className="text-[12px] text-primary-border">
           USA, 2016 - Current
         </span>
-        <h2 className="font-bold text-xl text-btn-bg ">{props.title}</h2>
-        <p className="text-btn-bg  text-sm font-normal flex justify-between w-full items-end">
-          <span className="text-btn-bg font-semibold">
+        <h2 className="text-xl font-bold text-btn-bg">{props.title}</h2>
+        <p className="flex w-full items-end justify-between text-sm font-normal text-btn-bg">
+          <span className="font-semibold text-btn-bg">
             RATED: {props.rate}/100
           </span>
-          <FaStar className="w-6 h-6" color="yellow" />
+          <FaStar className="h-6 w-6" color="yellow" />
         </p>
       </div>
     </div>

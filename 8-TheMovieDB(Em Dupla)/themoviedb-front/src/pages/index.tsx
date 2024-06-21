@@ -17,7 +17,7 @@ export default function Home() {
 
   function handleSearch() {
     setMovie(search);
-    setPage(1)
+    setPage(1);
     refetch();
   }
 
@@ -28,22 +28,22 @@ export default function Home() {
 
   return (
     <main
-      className={`w-full h-screen flex flex-col gap-10 p-2 relative overflow-x-hidden`}
+      className={`relative flex h-screen w-full flex-col gap-10 overflow-x-hidden p-2`}
     >
-      <nav className="w-full h-auto p-2 flex justify-between gap-2">
-        <div className="flex gap-6 *:text-sm *:text-btn-bg items-center *:font-semibold *:cursor-pointer">
+      <nav className="flex h-auto w-full justify-between gap-2 p-2">
+        <div className="flex items-center gap-6 *:cursor-pointer *:text-sm *:font-semibold *:text-btn-bg">
           <Menu />
           <Link href="">
-            <MdOutlineLocalMovies className="w-8 h-8 sm:flex hidden" />
+            <MdOutlineLocalMovies className="hidden h-8 w-8 sm:flex" />
           </Link>
-          <span className="sm:flex hidden">Movies JC</span>
-          <span className="sm:flex hidden">Discover</span>
-          <span className="sm:flex hidden">Filter</span>
+          <span className="hidden sm:flex">Movies JC</span>
+          <span className="hidden sm:flex">Discover</span>
+          <span className="hidden sm:flex">Filter</span>
         </div>
-        <div className="w-96 max-w-96 border-2 rounded-md flex items-center pl-2 justify-between">
-          <CiSearch className="w-6 h-6" />
+        <div className="flex w-96 max-w-96 items-center justify-between rounded-md border-2 pl-2">
+          <CiSearch className="h-6 w-6" />
           <Input
-            className="w-full border-0 outline-0 flex-1"
+            className="w-full flex-1 border-0 outline-0"
             placeholder="Search Movies"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -52,11 +52,11 @@ export default function Home() {
         </div>
       </nav>
       <section
-        className={`w-full h-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-2`}
+        className={`grid h-auto w-full grid-cols-1 justify-items-center gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
       >
         <Dialog open={isFetching}>
-          <DialogContent className="w-auto h-auto bg-transparent rounded-full text-2xl text-white flex items-center justify-center font-bold">
-            <div className="w-8 h-8 border-[4px] rounded-full border-l-white border-t-white border-b-white border-r-transparent animate-spin"></div>
+          <DialogContent className="flex h-auto w-auto items-center justify-center rounded-full bg-transparent text-2xl font-bold text-white">
+            <div className="h-8 w-8 animate-spin rounded-full border-[4px] border-b-white border-l-white border-r-transparent border-t-white"></div>
           </DialogContent>
         </Dialog>
         {isFetched &&
@@ -71,7 +71,7 @@ export default function Home() {
               />
             ))}
       </section>
-      <div className="w-full h-auto flex justify-center gap-12 pb-4">
+      <div className="flex h-auto w-full justify-center gap-12 pb-4">
         <Button disabled={page == 1} onClick={() => setPage((e) => e - 1)}>
           Prev Page
         </Button>

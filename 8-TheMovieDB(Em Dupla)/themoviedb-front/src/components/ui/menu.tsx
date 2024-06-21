@@ -21,7 +21,7 @@ export function Menu() {
     <Menubar className="sm:hidden">
       <MenubarMenu>
         <MenubarTrigger>
-          <IoMenuOutline className="w-6 h-6" />
+          <IoMenuOutline className="h-6 w-6" />
         </MenubarTrigger>
         <MenubarContent>
           <Link href={""}>
