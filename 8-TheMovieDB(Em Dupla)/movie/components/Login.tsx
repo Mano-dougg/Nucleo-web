@@ -11,9 +11,7 @@ export default function Header() {
       <Image src={Netflix} alt=""></Image>
     </div>
     <div className="login">
-      <h2>Login</h2>
-      <h3>Usuário</h3>
-      <input placeholder="Username"></input>
+      <h2>Login</h2> 
       <h3>Email</h3>
       <input placeholder="Email"></input>
       <h3>Senha</h3>
