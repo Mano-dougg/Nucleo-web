@@ -2,8 +2,48 @@ body{
     background-color: black;
 }
 
-
 .logoNetflix img{
 width: 200px;
 height: 100px;
+}
+
+.login{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 700px;
+}
+
+.login h3{
+    display: flex;
+    align-items: none;
+    color: white;
+}
+.login h2{
+    color: white;
+}
+
+.login input{
+    height: 30px;
+  margin-bottom: 10px;
+  background-color: hsl(0, 0%, 96%);
+  border-style: none;
+  padding-left: 20px;
+  border-radius: 5px;   
+}
+
+
+.inferior{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.inferior button{
+    border-style: none;
+    background-color: red;
+    color: white;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+   
 }
