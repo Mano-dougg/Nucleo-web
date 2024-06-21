@@ -1,7 +1,7 @@
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import axios from "axios";
 
- interface fetchProps {
+interface fetchProps {
   movie: string;
   page: number;
 }
@@ -17,7 +17,7 @@ const fetchDados = async ({ movie, page = 1 }: fetchProps) => {
 export function GetMovies({ movie, page = 1 }: fetchProps) {
   const query = useQuery({
     queryFn: () => fetchDados({ movie, page }),
-    queryKey: ["movies", page],
+    queryKey: ["movies", page, movie],
     placeholderData: keepPreviousData,
   });
 
