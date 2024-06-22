@@ -1,12 +1,8 @@
-import { MdOutlineLocalMovies } from "react-icons/md";
-import { CiSearch } from "react-icons/ci";
-import { Input } from "@/components/ui/input";
-import { Menu } from "@/components/ui/menu";
-import Card from "@/components/ui/Card";
+"use client";
+import  Card  from "@/components/ui/Card";
 import { GetMovies } from "@/hooks/getMovies";
 import { useState } from "react";
 import { cardType } from "@/types/cardType";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import NavBar from "@/components/NavBar";
@@ -29,7 +25,7 @@ export default function Home() {
 
   return (
     <main
-      className={`relative flex h-screen w-full flex-col gap-10 overflow-x-hidden p-2`}
+      className={`relative flex h-screen w-full flex-col gap-10 overflow-x-hidden p-2 pt-0`}
     >
       <NavBar
         value={search}
@@ -53,6 +49,7 @@ export default function Home() {
                 title={item.original_title}
                 rate={item.vote_average}
                 image={item.backdrop_path}
+                snap="snap-start"
               />
             ))}
       </section>

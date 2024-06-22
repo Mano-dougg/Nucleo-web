@@ -1,16 +1,8 @@
 import {
   Menubar,
-  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import Link from "next/link";
@@ -24,7 +16,10 @@ export function Menu() {
           <IoMenuOutline className="h-6 w-6" />
         </MenubarTrigger>
         <MenubarContent>
-          <Link href={""}>
+        <Link href={"/"}>
+            <MenubarItem>Home</MenubarItem>
+          </Link>
+          <Link href={"/discover"}>
             <MenubarItem>Discover</MenubarItem>
           </Link>
 

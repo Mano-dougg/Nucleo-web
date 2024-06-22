@@ -4,17 +4,20 @@ interface CardProps {
   title: string;
   rate: number;
   image: string;
+  snap: string;
 }
 
 const Card = (props: CardProps) => {
   return (
-    <div className="flex h-[290px] max-h-[290px] max-w-[250px] flex-col justify-start">
+    <div
+      className={`flex h-[310px] max-h-[310px] max-w-[250px] flex-col justify-start ${props.snap} border-2 rounded-lg`}
+    >
       <img
-        src={`https://image.tmdb.org/t/p/w300${props.image}`}
+        src={`https://image.tmdb.org/t/p/w400${props.image}`}
         alt=""
-        className="max-h-[370px] max-w-[250px] rounded-md"
+        className="max-h-[370px] h-60 max-w-[250px] rounded-md"
       />
-      <div className="flex flex-col items-start gap-2 py-2">
+      <div className="flex flex-col items-start gap-2 py-2 px-1">
         <span className="text-[12px] text-primary-border">
           USA, 2016 - Current
         </span>
