@@ -1,8 +1,8 @@
 'use client'
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { useState } from "react";
 import axios from "axios";
+import Cookies from 'js-cookie'; 
 import "./login.css";
 
 export default function Login() {
@@ -17,7 +17,7 @@ export default function Login() {
 
     const handleHome = async (e: React.FormEvent) => {
         e.preventDefault(); 
-        setError(''); 
+        setError('');
 
         try {
             const response = await axios.post('http://localhost:3002/login', {
@@ -25,24 +25,22 @@ export default function Login() {
                 senha: password 
             });
 
-            if (response.status === 200) {
-                
+            if (response.status === 200 && response.data.usuario) {
+                const userId = response.data.usuario.id;
+                Cookies.set('Iddoparca', userId.toString(), { expires: 1 }); 
                 router.push('/Home');
-            } else {
-                setError('Falha no login.');
-            }
+            } 
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 if (error.response && error.response.status === 401) {
                     setError('Email ou senha incorretos.');
                 } 
-            } 
+            }
         }
     };
 
     return (
         <section className="login-container">
-            
             <form className="form-login" onSubmit={handleHome}>
                 <h1>POPMovies</h1>
 
