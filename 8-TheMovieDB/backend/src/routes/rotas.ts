@@ -149,6 +149,29 @@ router.get('/banco', async(req:Request, res:Response) => {
 
 })
 
+//Login do Usuário
+
+router.post('/login', async (req: Request, res: Response) => {
+    const { email, senha } = req.body;
+
+    try {
+        const usuario = await prisma.user.findUnique({ where: { email } });
+
+        if (!usuario) {
+            return res.status(401).json({ error: 'Email ou senha incorretos' });
+        }
+
+        if (senha !== usuario.senha) {
+            return res.status(401).json({ error: 'Email ou senha incorretos' });
+        }
+
+        res.status(200).json({ message: 'Login bem-sucedido', usuario: { id: usuario.id, nome: usuario.nome, email: usuario.email } });
+
+    } catch (error) {
+        console.error('Erro ao tentar logar:', error);
+        res.status(500).json({ error: 'Erro interno no servidor' });
+    }
+});
 
 
 
