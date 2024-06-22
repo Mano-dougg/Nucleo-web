@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Logo from "@/components/Logo";
 import movieCollage from "../../public/movie-collage.png"
 
-export default function Home() {
+export default function Page() {
     return (
         <div className="home-container">
             <div className="left-side">
