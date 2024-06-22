@@ -1,0 +1,25 @@
+.postCard,
+.link,
+.postImage,
+.postCard .overlay {
+  position: relative;
+  width: 100%;
+}
+
+.postImage {
+  height: 20vw;
+  width: auto;
+}
+
+.postCard .overlay {
+  padding: 1rem 0.75rem;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0, 0.8);
+}
+
+@media (max-width: 900px) {
+  .postImage {
+    height: 100%;
+  }
+}

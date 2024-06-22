@@ -1,17 +1,11 @@
 {
   "format": "page",
-  "id": "post",
-  "label": "Post",
-  "repeatable": true,
+  "id": "posts",
+  "label": "Posts",
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "config": {
-          "label": "UID"
-        },
-        "type": "UID"
-      },
       "title": {
         "type": "Text",
         "config": {
@@ -19,28 +13,13 @@
           "placeholder": ""
         }
       },
-      "date": {
-        "type": "Date",
-        "config": {
-          "label": "Date",
-          "placeholder": ""
-        }
-      },
-      "description": {
+      "text": {
         "type": "StructuredText",
         "config": {
-          "label": "Description",
+          "label": "Text",
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "image": {
-        "type": "Image",
-        "config": {
-          "label": "Image",
-          "constraint": {},
-          "thumbnails": []
         }
       },
       "slices": {

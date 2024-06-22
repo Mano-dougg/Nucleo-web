@@ -1,0 +1,27 @@
+{
+  "id": "post_card",
+  "type": "SharedSlice",
+  "name": "PostGrid",
+  "description": "PostCard",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "postlink": {
+          "type": "Link",
+          "config": {
+            "label": "PostLink",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
