@@ -1,0 +1,29 @@
+.search-bar{
+    display: flex;
+    gap:10px;
+} 
+
+.search-bar input{
+    background-color: #354244;
+    border-radius: 15px;
+    width: 20vw;
+    height:30px;
+    font-size: 14px;
+    padding-left:10px;
+    text-overflow: ellipsis;
+    color: #E2EBEB;
+}
+
+.search-bar input::placeholder{
+    margin-right: 10px;
+}
+
+.search-bar button{
+    background-color: #080B0C;
+}
+
+@media(max-width:420px){
+    .search-bar input{
+        display: none;
+    }
+}
