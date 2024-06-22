@@ -33,7 +33,6 @@ export const MovieList: React.FC<MovieListProps> = ({ searchTerm }) => {
         }
 
         const data = await response.json();
-        console.log(data);
 
         const moviesData = data.results.map((movie: any) => ({
           title: movie.title,

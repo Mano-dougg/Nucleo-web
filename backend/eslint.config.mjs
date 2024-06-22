@@ -11,6 +11,7 @@ export default [
   {
     rules: {
       "@typescript-eslint/no-require-imports": 1,
+      "@typescript-eslint/no-explicit-any": 0,
     }
   },
 ];

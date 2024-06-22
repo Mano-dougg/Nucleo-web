@@ -9,9 +9,9 @@ import { useState } from "react";
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   
-  const addUser = async (password: string, email: string, nome: string)  => {
+  const addUser = async (password: string, email: string, name: string)  => {
     try {
-      await createUser(password, email, nome);
+      await createUser(password, email, name);
     } catch (error: any) {
       console.error('Error adding user:', error.message);
     }

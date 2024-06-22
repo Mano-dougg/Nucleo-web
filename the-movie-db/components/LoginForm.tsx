@@ -13,21 +13,21 @@ import { Input } from "@/components/ui/input";
 import { Label } from '@/components/ui/label';
 
 interface LoginFormProps {
-  addUser: (password: string, email: string, nome: string) => Promise<void>;
+  addUser: (password: string, email: string, name: string) => Promise<void>;
 }
 
 export function LoginForm({ addUser }: LoginFormProps) {
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [nome, setNome] = useState('');
+  const [ password, setPassword ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ name, setName ] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await addUser(password, email, nome);
+      await addUser(password, email, name);
       setPassword('');
       setEmail('');
-      setNome('');
+      setName('');
     } catch (error) {
       console.error('Error creating user:', (error as any).message);
     }
@@ -42,11 +42,11 @@ export function LoginForm({ addUser }: LoginFormProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="grid gap-4">
+        <form onSubmit={(e) => handleSubmit(e)} className="grid gap-4">
           <div className="grid grid-cols gap-4">
             <div className="grid gap-2">
               <Label htmlFor="first-name">Name</Label>
-              <Input id="first-name" placeholder="Fulano's tal" required value={nome} onChange={(e) => setNome(e.target.value)} />
+              <Input id="first-name" placeholder="Fulano's tal" required value={name} onChange={(e) => setName(e.target.value)} />
             </div>
           </div>
           <div className="grid gap-2">

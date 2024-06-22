@@ -12,9 +12,9 @@ export const getUsers = async () => {
   }
 };
 
-export const createUser = async (password: string, email: string, nome: string) => {
+export const createUser = async (password: string, email: string, name: string) => {
   try {
-    const user = { password, email, nome };
+    const user = { password, email, name };
     const response = await fetch(API_URL, {
       method: 'POST',
       body: JSON.stringify(user),
