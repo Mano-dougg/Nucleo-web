@@ -1,0 +1,16 @@
+.logo {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff; 
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logo span {
+    color: #ff4500;
+}
+
+.logo span:hover {
+    color: #ffa500;
+}
