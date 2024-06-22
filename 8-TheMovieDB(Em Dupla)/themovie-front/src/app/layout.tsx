@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata: Metadata = {
-  title: "The Movie",
+  title: "OMNI",
 };
 
 export default function RootLayout({
