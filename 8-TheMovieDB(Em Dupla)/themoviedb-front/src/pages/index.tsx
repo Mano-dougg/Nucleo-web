@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Menu } from "@/components/ui/menu";
 import Card from "@/components/ui/Card";
 import { GetMovies } from "@/hooks/getMovies";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { cardType } from "@/types/cardType";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -30,7 +30,7 @@ export default function Home() {
     <main
       className={`relative flex h-screen w-full flex-col gap-10 overflow-x-hidden p-2`}
     >
-      <nav className="flex h-auto w-full justify-between gap-2 p-2">
+      <nav className="relative flex h-auto w-full justify-between gap-2 p-2 after:absolute after:bottom-0 after:w-full after:border">
         <div className="flex items-center gap-6 *:cursor-pointer *:text-sm *:font-semibold *:text-btn-bg">
           <Menu />
           <Link href="">
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
       </nav>
       <section
-        className={`grid h-auto w-full grid-cols-1 justify-items-center gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
+        className={`flex h-auto w-full grid-cols-1 flex-wrap justify-center gap-4`}
       >
         <Dialog open={isFetching}>
           <DialogContent className="flex h-auto w-auto items-center justify-center rounded-full bg-transparent text-2xl font-bold text-white">
