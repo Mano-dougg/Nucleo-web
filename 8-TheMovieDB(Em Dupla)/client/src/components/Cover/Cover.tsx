@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import './Cover.css'
+import { FaStar } from 'react-icons/fa';
 
 interface Movie {
   title: string;
@@ -62,6 +63,11 @@ const Cover: React.FC = () => {
 
         <div className='cover-description'>
             <h1>{movie.title}</h1>
+            <div>
+            {/* <div className='rating'>
+                  <FaStar color="gold" className='fa-star'/> {movie.vote_average.toFixed(1)}
+            </div> */}
+            </div>
             <p>{movie.overview}</p>
         </div>
 

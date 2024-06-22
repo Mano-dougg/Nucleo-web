@@ -16,6 +16,7 @@ header{
 header .logo{
     font-size: 25px;
     margin-right: 7vw;
+    text-decoration: none;
 }
 
 nav ul {

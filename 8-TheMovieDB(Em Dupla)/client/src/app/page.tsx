@@ -12,7 +12,7 @@ export default function Home() {
     <Cover/>
 
     <section className="now-playing">
-      <h1> Now Playing </h1>
+      <h1> Filmes </h1>
       <MovieList/>
     </section>  
 

@@ -6,12 +6,12 @@ import { GrFavorite } from "react-icons/gr";
 export default function Header() {
     return (
       <header>
-        <p className='logo'>MovieDB</p>
+        <a href="/" className='logo'>MovieDB</a>
 
         <nav>
         <ul>
-            <li><a href="#"> <FaRegUser /> <p className="text"> Login   </p> </a></li>
-            <li><a href="#"> <GrFavorite /> <p className="text">  Favoritos </p></a></li>
+            <li><a href="/login"> <FaRegUser /> <p className="text"> Login   </p> </a></li>
+            <li><a href="/favorites"> <GrFavorite /> <p className="text">  Favoritos </p></a></li>
         </ul>
         </nav>
         <SearchBar/>
