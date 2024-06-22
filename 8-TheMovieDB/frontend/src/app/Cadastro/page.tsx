@@ -42,6 +42,7 @@ export default function Cadastro() {
             });
 
             console.log("Data posted successfully:", dataResponse.data);
+            alert("Cadastro feito")
             setName("");
             setQuantity("");
             setPassword("");
