@@ -12,7 +12,9 @@ export default {
             
             let user = await prisma.user.findUnique({ where: {email}});
 
-            validationRegister(user, nome, email, senha, res)
+            const validation = validationRegister(user, nome, email, senha, res)
+
+            if(validation) {return validation}
 
             // CREATE PASSWORD WITH HASH
             const salt = await bcrypt.genSalt(12)

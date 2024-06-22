@@ -12,7 +12,10 @@ export default {
                 
             let user = await prisma.user.findUnique({ where: {email}});
 
-            validationLogin(user, email, senha, res)
+            const validation = validationLogin(user, email, senha, res)
+
+            if (validation) { return validation}
+            
             checkPassword(senha, user, res)
         }
         catch (error) {
