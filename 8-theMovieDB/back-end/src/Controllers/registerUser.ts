@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
+import validationRegister from "../Entities/validationRegister";
 
 const prisma = new PrismaClient()
 const bcrypt = require('bcrypt')
@@ -11,7 +12,9 @@ export default {
             
             let user = await prisma.user.findUnique({ where: {email}});
 
-            // CREATE PASSWORD
+            validationRegister(user, nome, email, senha, res)
+
+            // CREATE PASSWORD WITH HASH
             const salt = await bcrypt.genSalt(12)
             const senhaHash = await bcrypt.hash(senha, salt)
 
