@@ -1,0 +1,53 @@
+.form_out{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    flex-direction: column;
+}
+nav{
+    background-color: var(--first-color);
+    letter-spacing: 1px;
+}
+.form{
+    background-color: var(--fourth-color);
+    padding: 100px;
+    border-radius: 10px;
+}
+
+.form h2{
+    margin-bottom: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "DM Serif Display", serif;
+    color: var(--first-color);
+    align-items: center;
+
+}
+
+.form input{
+    padding: 10px;
+    border: 1px solid var(--fourth-color);
+    border-radius: 10px;
+    width: 250px;
+    color: rgb(179, 174, 174);
+    font-size: 10px;
+}
+
+.btnEnviar{
+    background-color: var(--third-color);
+    padding: 10px 25px 10px 25px;
+    width: 80%;
+    align-self: center;
+    border: 1px solid var(--third-color);
+    margin-top: 15px;
+    border-radius: 10px;
+    font-family:"Danfo", serif;
+    color: var(--fourth-color);
+    font-size: 16px;
+    cursor: pointer;
+}
