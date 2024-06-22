@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import "./login.css";
+import { useState } from "react";
 
 export default function Login() {
     const router = useRouter();
@@ -17,11 +18,11 @@ export default function Login() {
     return (
         <section className="login-container">
 
-            <Image src="/cinema.png" alt="" width={100} height={100} />
+            {/*<Image className="logo-login" src="/cinema.png" alt="" width={70} height={70} />*/}
             
             <form className="form-login">
 
-                <h1>Login</h1>
+                <h1>POPMovies</h1>
 
                 <label htmlFor="email">E-mail</label>
                 <input type="email" id="email" name="email" className="email-icon" required />
@@ -30,7 +31,7 @@ export default function Login() {
                 <input type="password" id="password" name="password" className="senha-icon" required />
 
                 <div className="botoes-login">
-                    <button onClick={handleHome} type="submit" className="entrar">Entrar</button>
+                    <button onClick={handleHome} type="submit" className="entrar">Login</button>
                     <p>Não tem uma conta? <button onClick={handleSignUpClick} className="botao-cadastro">Cadastre-se</button></p>
                 </div>
 
