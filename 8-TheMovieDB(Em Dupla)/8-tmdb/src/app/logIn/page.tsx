@@ -1,10 +1,10 @@
-import NavBar from "../components/navBar";
+import Link from "next/link";
 import './logIn.css'
 export default function Login() {
     return (
         <main>
         <nav>
-            <h1>TRIO</h1>
+            <Link className="goHome" href="/"><h1>TRIO</h1></Link>
         </nav>
 
         <div className="form_out">

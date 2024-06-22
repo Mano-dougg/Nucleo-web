@@ -101,3 +101,7 @@ nav{
   letter-spacing: 1px;
 }
 
+.goHome{
+  text-decoration: none;
+  color: var(--third-color)
+}

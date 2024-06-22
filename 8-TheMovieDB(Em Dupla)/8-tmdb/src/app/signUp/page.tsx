@@ -1,16 +1,17 @@
+import Link from "next/link"
 import "./signIn.css"
 
 export default function Login() {
     return (
         <main>
         <nav>
-            <h1>TRIO</h1>
+            <Link className="goHome" href="/"><h1>TRIO</h1></Link>
         </nav>
 
         <div className="form_out">
             <div className="form">
                 <form>
-                <h2>Inicie sessão</h2>
+                <h2>Crie seu cadastro:</h2>
 
                     <label htmlFor="nome">Digite seu Nome Completo:</label>
                     <input type="text" placeholder="Nome" minLength={4}></input> { /*colocar value*/}

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       <nav>
-        <h1>TRIO</h1>
+        <Link className="goHome" href="/"><h1>TRIO</h1></Link>
       </nav>
 
       <div className="main">
