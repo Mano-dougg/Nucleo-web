@@ -22,6 +22,12 @@
     background-color: #080B0C;
 }
 
+@media(max-width:800px){
+    .search-bar input{
+        height: 22px;
+    }
+}
+
 @media(max-width:420px){
     .search-bar input{
         display: none;
