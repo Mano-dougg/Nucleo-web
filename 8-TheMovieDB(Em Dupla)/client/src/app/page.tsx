@@ -4,7 +4,7 @@
 
 
 
-
+import './globals.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Login from './login/page';
@@ -78,7 +78,7 @@ const MoviesPage = () => {
   };
 
   return (
-    <div>
+    <>
       {/* <h1>Filmes Populares</h1>
       <input
         type="text"
@@ -104,7 +104,7 @@ const MoviesPage = () => {
         ))}
       </div> */}
       <Initial></Initial>
-    </div>
+    </>
   );
 };
 

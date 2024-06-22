@@ -17,7 +17,7 @@ const config: Config = {
         "solidblack": "#26292A",
       },
       dropShadow: {
-        'button': '0 4px 30px rgba(0, 0, 0, 0.8)',
+        'button': '0 4px 20px rgba(0, 0, 0, 0.8)',
         'heading': '3px 3px 8px rgba(0, 0, 0, 0.7)',
         'vignette': '0 0 144px rgba(0, 0, 0, 1)',
       }

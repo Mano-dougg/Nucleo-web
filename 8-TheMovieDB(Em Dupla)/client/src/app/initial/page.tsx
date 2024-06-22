@@ -41,6 +41,7 @@ export default function Initial() {
       <Image
         src={Mosaic}
         alt=""
+        unoptimized={true}
         layout="fill"
         objectFit="cover"
         className="w-full h-full -z-20"
