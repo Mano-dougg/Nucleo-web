@@ -1,3 +1,13 @@
+npx create-next-app@latest
+npm install express --save
+npm install typescript ts-node @types/node --save-devnpx tsc --init
+ npx tsc --init
+ npm install prisma --save-dev
+ npx prisma init --datasource-provider sqlite
+ npm install @prisma/client
+ npx prisma init
+
+
 # Atividade de Núcleo
 
 ## Informações principais
