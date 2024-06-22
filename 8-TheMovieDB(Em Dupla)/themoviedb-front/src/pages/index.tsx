@@ -9,6 +9,7 @@ import { cardType } from "@/types/cardType";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import NavBar from "@/components/NavBar";
 
 export default function Home() {
   const [search, setSearch] = useState<string>("");
@@ -30,27 +31,11 @@ export default function Home() {
     <main
       className={`relative flex h-screen w-full flex-col gap-10 overflow-x-hidden p-2`}
     >
-      <nav className="relative flex h-auto w-full justify-between gap-2 p-2 after:absolute after:bottom-0 after:w-full after:border">
-        <div className="flex items-center gap-6 *:cursor-pointer *:text-sm *:font-semibold *:text-btn-bg">
-          <Menu />
-          <Link href="">
-            <MdOutlineLocalMovies className="hidden h-8 w-8 sm:flex" />
-          </Link>
-          <span className="hidden sm:flex">Movies JC</span>
-          <span className="hidden sm:flex">Discover</span>
-          <span className="hidden sm:flex">Filter</span>
-        </div>
-        <div className="flex w-96 max-w-96 items-center justify-between rounded-md border-2 pl-2">
-          <CiSearch className="h-6 w-6" />
-          <Input
-            className="w-full flex-1 border-0 outline-0"
-            placeholder="Search Movies"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <Button onClick={() => handleSearch()}>Search</Button>
-        </div>
-      </nav>
+      <NavBar
+        value={search}
+        btnFn={() => handleSearch()}
+        valueChange={(e) => setSearch(e.target.value)}
+      />
       <section
         className={`flex h-auto w-full grid-cols-1 flex-wrap justify-center gap-4`}
       >
