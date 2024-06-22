@@ -26,6 +26,7 @@ export default function Login() {
             });
 
             if (response.status === 200) {
+                
                 router.push('/Home');
             } else {
                 setError('Falha no login.');
