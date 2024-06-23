@@ -9,7 +9,7 @@ export default function Home() {
       <nav>
         <Link className="goHome" href="/"><h1>TRIO</h1></Link>
       </nav>
-
+            
       <div className="main">
         <div className="destaque">
             Acesse. Descubra. Assista.
