@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    color:#E2EBEB;
+}
+
+body{
+    width: 100vw;
+    background-color: #080B0C;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(249, 249, 250) transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb { border-radius: 10px; }
+  /* Works on Chrome, Edge, and Safari
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(250, 250, 252);
+    border-radius: 20px;
+    /* border: 3px solid orange; */
