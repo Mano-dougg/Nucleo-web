@@ -1,13 +1,11 @@
-// components/LoginForm.tsx
 'use client';
 import React, { useState } from 'react';
-// import api from '../axiosConfig';
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [isLogin, setIsLogin] = useState(true); // Toggle between login and signup
+  const [isLogin, setIsLogin] = useState(true); 
 
   const handleSubmit = async (e: React.FormEvent) => {
   };

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 import { SelectedMovieProvider } from "@/context/SelectedMovieContext";
 
 const comfortaa = Comfortaa({ subsets: ["latin"] });
@@ -25,8 +24,6 @@ export default function RootLayout({
       <SelectedMovieProvider>
         <Header/>
         {children}
-        {/* <Footer/> */}
-      
       </SelectedMovieProvider>
       
       </body>
