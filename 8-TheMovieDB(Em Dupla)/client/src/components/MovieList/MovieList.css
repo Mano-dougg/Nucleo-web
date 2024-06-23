@@ -17,6 +17,10 @@
   margin-bottom: 20px;
 }
 
+.card:hover{
+  cursor: pointer;
+}
+
 .card-poster{
   position: relative;
   overflow: hidden;
