@@ -1,14 +1,12 @@
 "use client";
 // src/app/page.tsx
 
-
-
-
-import './globals.css'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Login from './login/page';
-import Initial from './home/page';
+import "./globals.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Login from "./login/page";
+import Initial from "./home/page";
+import Feed from "./feed/page";
 
 type Movie = {
   id: number;
@@ -19,31 +17,34 @@ type Movie = {
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log('API Key:', process.env.TMDB_API_KEY);
+    console.log("API Key:", process.env.TMDB_API_KEY);
 
     const fetchMovies = async () => {
       setLoading(true);
       setError(null);
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/popular`, {
-          params: {
-            api_key: process.env.TMDB_API_KEY,
-            language: 'pt-BR',
-          },
-        });
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/movie/popular`,
+          {
+            params: {
+              api_key: process.env.TMDB_API_KEY,
+              language: "pt-BR",
+            },
+          }
+        );
         setMovies(response.data.results);
       } catch (error) {
         if (axios.isAxiosError(error)) {
-          setError(error.response?.data?.message || 'Failed to fetch movies.');
+          setError(error.response?.data?.message || "Failed to fetch movies.");
         } else {
-          setError('Failed to fetch movies.');
+          setError("Failed to fetch movies.");
         }
-        console.error('Failed to fetch movies:', error);
+        console.error("Failed to fetch movies:", error);
       } finally {
         setLoading(false);
       }
@@ -53,25 +54,28 @@ const MoviesPage = () => {
   }, []);
 
   const handleSearch = async () => {
-    if (searchTerm.trim() === '') return;
+    if (searchTerm.trim() === "") return;
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
-        params: {
-          api_key: process.env.TMDB_API_KEY,
-          query: searchTerm,
-          language: 'pt-BR',
-        },
-      });
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/search/movie`,
+        {
+          params: {
+            api_key: process.env.TMDB_API_KEY,
+            query: searchTerm,
+            language: "pt-BR",
+          },
+        }
+      );
       setMovies(response.data.results);
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        setError(error.response?.data?.message || 'Failed to search movies.');
+        setError(error.response?.data?.message || "Failed to search movies.");
       } else {
-        setError('Failed to search movies.');
+        setError("Failed to search movies.");
       }
-      console.error('Failed to search movies:', error);
+      console.error("Failed to search movies:", error);
     } finally {
       setLoading(false);
     }
@@ -103,7 +107,8 @@ const MoviesPage = () => {
           </div>
         ))}
       </div> */}
-      <Initial></Initial>
+      {/* <Initial></Initial> */}
+      <Feed />
     </>
   );
 };

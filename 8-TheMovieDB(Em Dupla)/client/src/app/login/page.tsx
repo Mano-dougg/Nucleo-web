@@ -4,7 +4,8 @@ import axios from "axios";
 import Mosaic from "../../../public/mosaic-tinted.png";
 import Image from "next/image";
 import { MdOutlineVisibility, MdOutlineVisibilityOff } from "react-icons/md";
-import Home from "../home/page"; // Importe o componente Home
+import Home from "../home/page";
+import Feed from "../feed/page";
 
 const Login = () => {
   const [userName, setUserName] = useState<string>("");
@@ -78,7 +79,7 @@ const Login = () => {
 
   // Renderizar a tela Home se o usuário estiver logado
   if (isLoggedIn) {
-    return <Home />;
+    return <Feed />;
   }
 
   return (
