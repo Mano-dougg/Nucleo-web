@@ -1,19 +1,41 @@
-.header-container{
-    width: 100%;
-    height: 64px;
+.header-container {
+    width: 64px;
+    height: 100vh;
     background-color: black;
-
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-
+    justify-content: center;
+    transition: width 0.5s ease-in-out; 
 }
 
-.logo-header{
-    color: white;
+.header-container.expanded {
+    width: 200px; 
 }
 
-.logo-header span {
-    color:var(--primary);
+.icons-header {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.icons-header button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+
+.additional-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: var(--primary);
+    font-size: 14px;
+    transition: width 0.5s ease-in-out;
 }
