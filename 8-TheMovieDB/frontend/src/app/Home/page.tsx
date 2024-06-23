@@ -34,20 +34,21 @@ export default function Home() {
 
     return (
         <>
-            {data ? (
+        <Header/>
+            {/*{data ? (
                 <section>
                     {data.map((item) => (
-                        <>
+                        <body className="body-home">
                             <Header />
                             <div key={item.id} className='nomes'>
                                 <p className='nome'>Olá, {item.nome}</p>
                             </div>
-                        </>
+                        </body>
                     ))}
                 </section>
             ) : (
                 <p>Carregando dados...</p>
             )}
-        </>
+        */}</>
     );
 }
