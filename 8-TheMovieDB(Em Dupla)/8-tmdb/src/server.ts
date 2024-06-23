@@ -11,17 +11,24 @@ app.listen(port, () =>
 console.log(`Server running on port: ${port}`))
 
 // REGISTRA USUÁRIO
-app.put("/registrar",
+app.post("/registrar",
     async (req: Request, res: Response) => {
+        console.log("começa função")
         const {email, name, password} = req.body
+        console.log("peguei body")
         try {
+            console.log("começa try")
             await prisma.user.create({
                 data: {
                     email: email,
                     name: name,
-                    password: password
+                    password: password,
                 }
             })
+            if(!email) console.log("NOT email")
+            if(!name) console.log("NOT nome")
+            if(!password) console.log("NOT senha")
+            
             res.status(200).json({message: "Usuário registrado com sucesso"})
         } catch (error) {
             res.status(500).json({error:"Erro ao registrar usuário"})
