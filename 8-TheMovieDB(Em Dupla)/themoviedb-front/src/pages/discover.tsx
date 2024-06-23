@@ -4,7 +4,7 @@ import * as React from "react";
 import { usePopularGeneres } from "@/hooks/Getgenre";
 import DiscoverList from "@/components/DiscoverList";
 const Discover = () => {
-  const {isFetching, isFetched} = usePopularGeneres()
+  const { isFetching, isFetched } = usePopularGeneres();
 
   return (
     <main
@@ -21,7 +21,7 @@ const Discover = () => {
         enable={false}
       />
       <section
-        className={`flex h-auto w-full snap-x flex-col justify-center gap-4 items-center`}
+        className={`flex h-auto w-full snap-x flex-col items-center justify-center gap-4`}
       >
         <Dialog open={isFetching}>
           <DialogContent className="flex h-auto w-auto items-center justify-center rounded-full bg-transparent text-2xl font-bold text-white">

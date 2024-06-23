@@ -11,10 +11,11 @@ import Card from "./ui/Card";
 import genres from "@/genres/genres";
 
 const DiscoverList = () => {
-const {isFetched} = usePopularGeneres()
+  const { isFetched } = usePopularGeneres();
+
   const lista = Object.values(usePopularGeneres());
   const generos = Object.values(genres).slice(0, 19);
-  console.log(generos);
+  console.log(lista);
 
   return (
     <>
@@ -28,7 +29,9 @@ const {isFetched} = usePopularGeneres()
             className="w-11/12"
             key={index}
           >
-            <h1 className="text-2xl font-semibold text-btn-bg dark:bg-dark-btn-bg mb-4">Most rated {generos[index]}</h1>
+            <h1 className="mb-4 text-2xl font-semibold text-btn-bg dark:bg-dark-btn-bg">
+              Most rated {generos[index]}
+            </h1>
             <CarouselContent>
               {isFetched &&
                 genero?.results?.map((item: cardType) => (
