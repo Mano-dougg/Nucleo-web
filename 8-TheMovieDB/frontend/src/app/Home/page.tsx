@@ -5,15 +5,27 @@ import Header from "../Header/page";
 import { User } from "../../../service/User";
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
+import HomePage from "../Filmes/page";
+import axios from 'axios';
+import Filmes from "../Filmes/page";
 
 interface nomes {
     id: number;
     nome: string;
 }
 
+interface Movie {
+    id: number;
+    title: string;
+    release_date: string;
+    overview: string;
+    poster_path: string;
+}
+
 export default function Home() {
     const Usuario = new User();
     const [data, setData] = useState<nomes[] | null>(null);
+    const [movies, setMovies] = useState<Movie[]>([]); 
 
     useEffect(() => {
         const loggedUserId = Cookies.get('Iddoparca');
@@ -30,6 +42,18 @@ export default function Home() {
         } else {
             console.log('Usuário out');
         }
+
+        const fetchMovies = async () => {
+            try {
+                const response = await axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1');
+                setMovies(response.data.results);
+            } catch (error) {
+                console.log('Erro');
+            }
+        };
+
+        fetchMovies();
+
     }, []);
 
     return (
@@ -37,16 +61,20 @@ export default function Home() {
             {data ? (
                 <section>
                     {data.map((item) => (
-                        <>
+                        <div key={item.id}>
                             <Header />
-                            <div key={item.id} className='nomes'>
+                            <div className='nomes'>
                                 <p className='nome'>Olá, {item.nome}</p>
                             </div>
-                        </>
+                            <Filmes movies={movies} /> 
+                        </div>
                     ))}
                 </section>
             ) : (
+                <>
                 <p>Carregando dados...</p>
+                <Filmes movies={movies} /> 
+                </>
             )}
         </>
     );
