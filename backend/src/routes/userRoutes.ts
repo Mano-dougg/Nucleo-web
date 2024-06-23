@@ -1,13 +1,14 @@
 import { Router } from 'express';
-import { createUser, deleteUser } from '../controller/userController';
-import cors from 'cors'
-import bodyParser from 'body-parser';
+import { createUser, deleteUser, getUserById } from '../controller/userController';
+import cors from 'cors';
 import { validateUser } from '../middleware/validateUser';
 import { UserCreateInputSchema } from '../../prisma/generated/zod/index';
 
-export const userRouter = Router();
+const userRouter = Router();
 
-userRouter.use(cors())
-userRouter.use(bodyParser.json());
+userRouter.use(cors());
 userRouter.post('/', validateUser(UserCreateInputSchema), createUser);
+userRouter.get('/', getUserById);
 userRouter.delete('/', deleteUser);
+
+export default userRouter;

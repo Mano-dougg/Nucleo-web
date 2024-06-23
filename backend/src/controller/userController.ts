@@ -19,21 +19,32 @@ const passwordlessUser = (user: User) => {
   return exclude(user, [ "password" ]);
 }
 
-const getById = async (id: number) => {
+const getById = async (id: string) => {
   const user: User | null = await prisma.user.findUnique({
     where: {
-      id: id.toString(),
+      id
     },
   });
   return user;
 };
 
-const findUser = async (id: number) => {
+const findUser = async (id: string) => {
   const user = await getById(id);
   if (!user) {
     throw new Error(NOT_FOUND_MESSAGE("id", id.toString()));
   }
   return user;
+}
+
+export const getUserById = async (req: Request, res: Response) => {
+  const { id } = req.body;
+
+  try {
+    const foundUser = await findUser(id);
+    return userResponse(res, StatusCodes.OK, foundUser);
+  } catch (err: any) {
+    return errorResponse(res, StatusCodes.NOT_FOUND, err);
+  }
 }
 
 const userResponse = (res: Response, responseCode: StatusCodes, user: User) => {
@@ -67,6 +78,7 @@ export const createUser = async (req: Request, res: Response) => {
   }: Omit<User, "id"> = req.body;
 
   try {
+    console.log(req.body);
     const createdUser = await prisma.user.create({
       data: {
         name,
@@ -74,6 +86,7 @@ export const createUser = async (req: Request, res: Response) => {
         password,
       }
     });
+    console.log(createdUser);
     return userResponse(res, StatusCodes.CREATED, createdUser);
   } catch (err) {
     if (err instanceof Prisma.PrismaClientKnownRequestError) {
