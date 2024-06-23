@@ -29,6 +29,8 @@ export default function Home() {
 
     useEffect(() => {
         const loggedUserId = Cookies.get('Iddoparca');
+        
+        //User
 
         if (loggedUserId) {
             Usuario.listarall()
@@ -58,6 +60,7 @@ export default function Home() {
 
     return (
         <>
+        <Header/>
             {data ? (
                 <section>
                     {data.map((item) => (
