@@ -1,0 +1,464 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/page.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+
+.page_corpo__r2qNZ{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./components/contadores/contador.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.contador_contadores__qzSg3{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.contador_fila__DgErT, .contador_pao__IWpQg{
+    background-color: #FFFFFF;
+    padding: 15px;
+    margin-top: -30px;
+    width: 16rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contador_totalVenda___yT0v{
+    background-color:#5F3305;
+    padding: 15px;
+    margin-top: -30px;
+    color:#FFFFFF;
+    width: 16rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contador_topo___7mv1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+     
+}
+
+.contador_topo1__c6olG{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contador_imagem__Q2_dm{
+    width: 20px;
+    height: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .contador_contadores__qzSg3{
+        gap:20px;
+    }
+
+    .contador_fila__DgErT, .contador_pao__IWpQg{
+        width: 10rem;
+    }
+
+    .contador_totalVenda___yT0v{
+        width: 10rem;
+    }
+
+}
+
+@media screen and (max-width: 468px) {
+    
+    .contador_contadores__qzSg3{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contador_fila__DgErT, .contador_pao__IWpQg{
+        width: 18rem;
+    }
+
+    .contador_totalVenda___yT0v{
+        width: 18rem;
+    }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./components/fila/fila.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************/
+.fila_fila___m5SS{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-left: -700px;
+}
+
+.fila_botao__cBATt{
+    border: none;
+    background: transparent;
+    color: #5F3305;
+    cursor: pointer;
+}
+
+.fila_botao__cBATt:hover{
+    color: #77644f;
+}
+
+.fila_cards__CVE4C{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 56rem;
+    height: 3rem;
+    background-color: #FFFFFF;
+    padding: 15px;
+    margin-left: 700px;
+    margin-top: 20px;
+    color:#5F3305;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fila_caneta__hCfAm{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.fila_cards__CVE4C .fila_actions__IwwGX {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fila_compra__lkn_t{
+    display: flex;
+    flex-direction: row;
+    gap:25px;
+    margin-top: 10px;
+}
+
+.fila_lixo__joaRG{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+    .fila_fila___m5SS{
+        margin-left: -400px;
+    }
+
+    .fila_cards__CVE4C{
+        width: 35rem;
+        margin-left: 400px;  
+    }
+}
+
+@media screen and (max-width: 468px) {
+
+    .fila_fila___m5SS{
+        margin-left: 0px;
+    }
+
+    .fila_botao__cBATt{
+        margin-left: -100px;
+    }
+
+    .fila_cards__CVE4C{
+        width: 18rem;
+        height: 5rem;
+        margin-left: 0px;  
+    }
+
+    .fila_compra__lkn_t{
+        display: flex;
+        flex-direction: column;
+        gap:10px
+    }
+
+}
+
+.fila_formulario__k4_Eo{
+    color: #5F3305;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./components/modal/modal.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.modal_overlay__V3TZT{
+    position: fixed;  /* O vídeo que assisti usa esse "fixed", mas não sei se podemos usar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(229, 207, 148, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.modal_modal__fxUI5 {
+    background-color: white; 
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /*sombra */
+    width: 400px;
+    height: 240px;
+    
+}
+
+.modal_modal__fxUI5 h4{
+    color: #5F3305;
+}
+
+@media screen and (max-width: 768px) {
+
+    .modal_modal__fxUI5{
+        margin-top: -300px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+
+    .modal_modal__fxUI5{
+        width: 320px;
+        height: 250px;
+        margin-top: -115px;
+    }
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./components/forms/forms.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.forms_formulario__F79mq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+    margin-top: 30px;
+    
+}
+
+.forms_forms__oYKza {
+    width: 200px;
+}
+
+.forms_nome__pP59u input{
+    width: 350px;
+    height: 15px;
+    background-color: #F5F5F5;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    color:#7D7D7D ;
+}
+
+.forms_pao__tOmz3 input{
+    width: 350px;
+    height: 15px;
+    background-color:#F5F5F5 ;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    color:#7D7D7D ;
+}
+
+.forms_botaoModal__9VN74{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 8px;
+}
+
+.forms_enviar__NP9_v{
+    background-color: #5F3305;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.forms_cancelar__Bf3Ja{
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 468px) {
+    .forms_nome__pP59u input,
+    .forms_pao__tOmz3 input {
+        width: 300px;
+        height: 15px;
+    }
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./components/editForm/editForm.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.editForm_overlay__BXwtl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(229, 207, 148, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .editForm_modal__oQc2a {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px; 
+    min-height: 240px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .editForm_modal__oQc2a h4 {
+    color: #5F3305;
+    margin-bottom: 16px; 
+  }
+  
+  .editForm_formGroup___LB7_ {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+  
+  .editForm_formGroup___LB7_ label {
+    font-size: 14px;
+    color: #5F3305;
+    margin-bottom: 4px;
+  }
+  
+  .editForm_formGroup___LB7_ input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .editForm_formActions__dCspO {
+    display: flex;
+    justify-content: flex-end; 
+  }
+  
+  .editForm_saveButton__r810m {
+    background-color: #5F3305;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .editForm_cancelButton__vppX9 {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 468px) {
+
+    .editForm_modal__oQc2a {
+      width: 200px; 
+      min-height: 340px; 
+      
+    }
+    
+    .editForm_modal__oQc2a h4 {
+      margin-bottom: 0px;
+    }
+
+    .editForm_formGroup___LB7_ {
+      margin-bottom: 25px;
+    }
+    
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./components/historico/historico.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.historico_historicoContainer__O_w_w {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.historico_historicoBotao__QUSJO {
+    margin: 0 auto;
+    width: 10rem;
+    height: 2rem;
+    background-color: #E5CF94;
+    color: #634527; 
+    border: 2px solid #634527 ;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: .5rem;
+}
+
+.historico_historicoBotao__QUSJO:hover {
+    background-color: #634527; 
+    color: #E5CF94;
+}
+
+.historico_historicoCard__TGvnk {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    width: 56rem;
+    height: auto; 
+    background-color: #EAE0D5; 
+    padding: 15px; 
+    margin: 10px auto; 
+    color: #3E2723; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+}
+
+.historico_historicoInfo__dxh5b {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .historico_historicoCard__TGvnk {
+        width: 35rem;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .historico_historicoContainer__O_w_w {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .historico_historicoCard__TGvnk {
+        width: 18rem;
+        padding: 15px;
+    }
+
+    .historico_historicoInfo__dxh5b {
+        gap: 5px;
+    }
+}
+
