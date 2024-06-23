@@ -1,26 +1,67 @@
+"use client"
+
+import { useState } from 'react';
 import Link from "next/link";
-import './logIn.css'
+import { useRouter } from 'next/navigation';
+import './logIn.css';
+
 export default function Login() {
-    return (
-        <main>
-        <nav>
-            <Link className="goHome" href="/"><h1>TRIO</h1></Link>
-        </nav>
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
 
-        <div className="form_out">
-            <div className="form">
-                <form>
-                <h2>Inicie sessão</h2>
 
-                    <label htmlFor="email">Digite seu e-mail:</label>
-                    <input type="text" placeholder="Email"></input> { /*colocar value*/}
+  //enviar dados para API pelo form
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
 
-                    <label htmlFor="senha">Digite sua senha:</label>
-                    <input type="text" placeholder="Senha"></input>{ /*colocar value*/}
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
 
-                    <button type="submit" className="btnEnviar">Entrar</button>
-                </form>
-            </div>
+    if (response.ok) {
+      const data = await response.json();
+      localStorage.setItem('token', data.token);
+      router.push('/'); // ir para home // ------------ mudar para pag de movies ----------
+    } else {
+      // Lidar com erro de login
+      alert('Os dados estão incorretos, por favor tente novamente!');
+    }
+  };
+
+  return (
+    <main>
+      <nav>
+        <Link className="goHome" href="/"><h1>TRIO</h1></Link>
+      </nav>
+
+      <div className="form_out">
+        <div className="form">
+          <form onSubmit={handleSubmit}>
+            <h2>Inicie sessão</h2>
+
+            <label htmlFor="email">Digite seu e-mail:</label>
+            <input 
+              type="text" placeholder="Email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <label htmlFor="senha">Digite sua senha:</label>
+            <input 
+              type="password" placeholder="Senha" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <button type="submit" className="btnEnviar">Entrar</button>
+          </form>
         </div>
-        </main>
-    )}
+      </div>
+    </main>
+  );
+}
