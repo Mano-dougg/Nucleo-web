@@ -1,4 +1,3 @@
-// src/components/Cover/Cover.tsx
 "use client";
 import { useSelectedMovie } from '@/context/SelectedMovieContext';
 import Image from 'next/image';
