@@ -5,7 +5,6 @@ import Header from "../Header/page";
 import { User } from "../../../service/User";
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
-import HomePage from "../Filmes/page";
 import axios from 'axios';
 import Filmes from "../Filmes/page";
 
