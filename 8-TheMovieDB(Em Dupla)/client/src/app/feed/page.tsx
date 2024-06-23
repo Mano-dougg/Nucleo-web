@@ -6,7 +6,7 @@ import MovieBanner from "../../../public/movie-banner.jpg";
 import MovieLogo from "../../../public/svg/movieLogo";
 import Play from "../../../public/svg/icons/play";
 import Link from "next/link";
-import MovieCard from "../../../components/MovieCard";
+import MovieCard from "../../components/MovieCard";
 import AnatomyOfAFall from "../../../public/anatomy-of-a-fall-landscape.jpg";
 import Barbie from "../../../public/barbie-landscape.jpeg";
 

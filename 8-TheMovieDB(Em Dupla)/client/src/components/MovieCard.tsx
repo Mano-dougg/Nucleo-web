@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image";
 import Image from "next/image";
-import CartSm from "../public/svg/icons/cart.sm";
-import Heart from "../public/svg/icons/heart";
-import HeartFill from "../public/svg/icons/heart.fill";
-import AddToAlbum from "../public/svg/icons/add.to.album";
+import CartSm from "../../public/svg/icons/cart.sm";
+import Heart from "../../public/svg/icons/heart";
+import HeartFill from "../../public/svg/icons/heart.fill";
+import AddToAlbum from "../../public/svg/icons/add.to.album";
 import { useState } from "react";
 
 interface MovieProps {
