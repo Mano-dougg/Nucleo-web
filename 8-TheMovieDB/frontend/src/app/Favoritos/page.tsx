@@ -17,6 +17,8 @@ export default function Favoritos() {
   const [filmesFavoritos, setFilmesFavoritos] = useState<number[]>([]);
   const [filmesDetalhes, setFilmesDetalhes] = useState<Movie[]>([]);
 
+  //Favoritos
+  
   useEffect(() => {
     const Favoritos = Cookies.get("IdsFavoritos");
     if (Favoritos) {

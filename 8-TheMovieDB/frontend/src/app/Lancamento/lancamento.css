@@ -6,10 +6,29 @@
 }
 
 .informacoes-movie{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     color: white;
-    margin-left: 25px;
+    margin-left: 40px;
 }
 
-.image-container {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Aplica uma sombra suave */
+.informacoes-movie h1{
+    text-align: center;
+    font-size: 48px;
+    padding-bottom: 40px;
+}
+
+.informacoes-movie h5{
+    color: gray;
+}
+
+.informacoes-movie p{
+    color: gray;
+    text-align: justify;
+    font-weight: 300;
+}
+
+.image-lancamento{
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
