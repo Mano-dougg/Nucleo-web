@@ -65,7 +65,6 @@ export default function Home() {
                 <section>
                     {data.map((item) => (
                         <div key={item.id}>
-                            <Header />
                             <div className='nomes'>
                                 <p className='nome'>Olá, {item.nome}</p>
                             </div>
