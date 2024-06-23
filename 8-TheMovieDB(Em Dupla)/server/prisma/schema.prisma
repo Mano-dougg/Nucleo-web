@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User{
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String
+  whatched Movie[] //movies that the user already watch
+  watchList Int[] //movies that the user wants to watch
+  favorites Int[] //movies favorited by the user
+  friends User[] @relation("UserFriends") //user friends self type relation
+  friendOf User[] @relation("UserFriends")
+  sentFriendRequests   FriendRequest[] @relation("SentFriendRequests") //users that the said user has send requests
+  receivedFriendRequests FriendRequest[] @relation("ReceivedFriendRequests") //users that send friend requests to said user
+
+  @@map("userList")
+}
+
+model FriendRequest {
+  id        Int      @id @default(autoincrement())
+  fromId    Int
+  toId      Int
+  from      User     @relation("SentFriendRequests", fields: [fromId], references: [id])
+  to        User     @relation("ReceivedFriendRequests", fields: [toId], references: [id])
+  status    FriendRequestStatus   @default(pending) // status can be "pending", "accepted", "rejected"
+}
+
+model Movie{
+  id Int @id @default(autoincrement())
+  movieId Int
+  userRating Int
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+  
+  @@map("movieRating")
+}
+
+enum FriendRequestStatus {
+  pending
+  accepted
+  rejected
+}
