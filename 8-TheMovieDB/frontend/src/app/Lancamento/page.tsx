@@ -1,4 +1,3 @@
-import Image from "next/image";
 import "./lancamento.css";
 
 export default function Lancamento() {
@@ -18,7 +17,7 @@ export default function Lancamento() {
             </div>
 
             <div className="image-container">
-                <Image className="image-lancamento" src="/insideout.jpg" alt="Exemplo" width={900} height={500} />
+                <img src='/insideout.jpg' className="image-lancamento"></img>
             </div>
         </section>
 

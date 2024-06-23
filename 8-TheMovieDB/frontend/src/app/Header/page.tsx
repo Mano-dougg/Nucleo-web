@@ -46,6 +46,7 @@ export default function Header() {
             <section className="esquerdo">
                 <div className="nome-site">
                     <h1>POPMOVIES</h1>
+                    <Image className="image-logo" src='/cinema.png' alt="logo" width={30} height={30}/>
                 </div>
 
                 <div className="icons-header">

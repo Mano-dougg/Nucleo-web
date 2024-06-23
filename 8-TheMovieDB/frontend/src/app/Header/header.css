@@ -23,20 +23,17 @@
     background: none;
 }
 
-
 .additional-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
     color: white;
     font-size: 14px;
-    transition: width 0.5s ease-in-out;
 }
 
 .nome-site{
     color: var(--primary);
+}
+
+.image-logo{
+    display: none;
 }
 
 .esquerdo{
@@ -53,7 +50,32 @@
     margin-right: 25px;
 }
 
+.image-container{
+    max-width: 874px;
+}
+
 .pesquisar button{
     background: none;
     border: none;
+}
+
+@media (max-width: 768px){
+
+    .nome-site h1{
+        display: none;
+    }
+
+    .image-logo{
+        display: flex;
+    }
+
+    .esquerdo{
+        gap:25px;
+        margin-left: 10px;
+    }
+    
+    .direito{
+        margin-right: 10px;
+    }
+
 }
