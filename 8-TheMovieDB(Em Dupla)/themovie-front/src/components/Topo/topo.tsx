@@ -12,8 +12,9 @@ export default function Topo(){
             </div>
 
             <div className='menu-topo'>
-                <h1>Inicio</h1>
+                <h1>Início</h1>
                 <h1>Lista</h1>
+                <h1>Favoritos</h1>
             </div>
 
 

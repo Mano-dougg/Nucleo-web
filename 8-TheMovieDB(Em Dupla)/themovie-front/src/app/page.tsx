@@ -1,6 +1,8 @@
 import Topo from "../components/Topo/topo";
 import Base from "../components/Base/base"
+import Lista from "../components/Lista/lista";
 import './page.css'
+
 
 export default function Home() {
   return (
@@ -19,10 +21,13 @@ export default function Home() {
       consequat risus ullamcorper nec. Aenean in justo id lectus cursus consectetur. 
       Curabitur hendrerit risus sed mattis blandit. Sed eget ligula orci. Phasellus 
       in porttitor velit. Cras ac mi pharetra, sollicitudin urna nec, viverra dolor. 
-      Nunc elementum lorem a eros sollicitudin pellentesque.</p>
+      Nunc elementum lorem a eros sollicitudin pellentesque.
+    </p>
 
 
-      <p>Carrossel</p>
+    <p>Carrossel</p>
+
+    <Lista />
 
     <Base />
 
