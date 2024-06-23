@@ -6,8 +6,10 @@ import { User } from "../../../service/User";
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
 import HomePage from "../Filmes/page";
+import Image from "next/image";
 import axios from 'axios';
 import Filmes from "../Filmes/page";
+import Lancamento from "../Lancamento/page";
 
 interface nomes {
     id: number;
@@ -59,25 +61,10 @@ export default function Home() {
     }, []);
 
     return (
-        <>
-        <Header/>
-            {data ? (
-                <section>
-                    {data.map((item) => (
-                        <div key={item.id}>
-                            <div className='nomes'>
-                                <p className='nome'>Olá, {item.nome}</p>
-                            </div>
-                            <Filmes movies={movies} /> 
-                        </div>
-                    ))}
-                </section>
-            ) : (
-                <>
-                <p>Carregando dados...</p>
-                <Filmes movies={movies} /> 
-                </>
-            )}
-        </>
+        <body className="body-home">
+            <Header/>   
+            <Lancamento/>
+            <Filmes movies={movies} /> 
+        </body>
     );
 }

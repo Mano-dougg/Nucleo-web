@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { NextPage } from 'next';
+import "./filmes.css";
 
 
 interface Movie {

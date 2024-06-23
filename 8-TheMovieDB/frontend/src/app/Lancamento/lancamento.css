@@ -1,0 +1,15 @@
+.lancamento-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.informacoes-movie{
+    color: white;
+    margin-left: 25px;
+}
+
+.image-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Aplica uma sombra suave */
+}
