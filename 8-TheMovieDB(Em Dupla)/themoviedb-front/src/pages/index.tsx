@@ -1,5 +1,5 @@
 "use client";
-import  Card  from "@/components/ui/Card";
+import Card from "@/components/ui/Card";
 import { GetMovies } from "@/hooks/getMovies";
 import { useState } from "react";
 import { cardType } from "@/types/cardType";
