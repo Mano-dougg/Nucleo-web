@@ -1,9 +1,10 @@
-// page.tsx
+'use client'
 import Image from "next/image";
 import "./header.css";
 import { User } from "../../../service/User";
 import React, { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
+import { useRouter } from "next/navigation";
 
 interface nomes {
     id: number;
@@ -11,6 +12,12 @@ interface nomes {
 }
 
 export default function Header() {
+
+    const router = useRouter();
+
+    const handleFavoriteClick = () => {
+        router.push("/Favoritos");
+    };
 
     const Usuario = new User();
     const [data, setData] = useState<nomes[] | null>(null);
@@ -43,7 +50,7 @@ export default function Header() {
 
                 <div className="icons-header">
                     <button> <p className="additional-content"> Ver filmes </p> </button> 
-                    <button><p className="additional-content"> Meus favoritos </p> </button>     
+                    <button onClick={handleFavoriteClick}><p className="additional-content"> Meus favoritos </p> </button>     
                 </div>
                 
             </section>

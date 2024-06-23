@@ -6,7 +6,6 @@ import { User } from "../../../service/User";
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
 import HomePage from "../Filmes/page";
-import Image from "next/image";
 import axios from 'axios';
 import Filmes from "../Filmes/page";
 import Lancamento from "../Lancamento/page";

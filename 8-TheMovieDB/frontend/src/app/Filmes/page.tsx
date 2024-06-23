@@ -26,6 +26,8 @@ const Filmes: NextPage<HomePageProps> = ({ movies }) => {
                         <h2>{movie.title}</h2>
                         <p>Lançamento: {movie.release_date}</p>
                         <p>{movie.overview}</p>
+                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
+                        <button>Favoritar</button>
                     </li>
                 ))}
             </ul>
