@@ -9,6 +9,7 @@ import HomePage from "../Filmes/page";
 import axios from 'axios';
 import Filmes from "../Filmes/page";
 import Lancamento from "../Lancamento/page";
+import FilmesHome from "../FilmesHome/page";
 
 interface nomes {
     id: number;
@@ -63,7 +64,7 @@ export default function Home() {
         <body className="body-home">
             <Header/>   
             <Lancamento/>
-            {/*<Filmes movies={movies} /> */}
+            <FilmesHome movies={movies} /> 
         </body>
     );
 }

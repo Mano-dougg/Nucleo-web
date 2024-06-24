@@ -1,7 +1,8 @@
-ul{
+ul {
     color: white;
 }
 
-button {
-    background-color: red;
+.filmes-card{
+    display: flex;
+    flex-direction: column;
 }

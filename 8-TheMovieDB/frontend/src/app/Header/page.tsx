@@ -23,6 +23,10 @@ export default function Header() {
         router.push("/Home");
     };
 
+    const handleMovieClick = () => {
+        router.push("/Filmes");
+    };
+
     const Usuario = new User();
     const [data, setData] = useState<nomes[] | null>(null);
 
@@ -56,7 +60,7 @@ export default function Header() {
                 </div>
 
                 <div className="icons-header">
-                    <button> <p className="additional-content"> Ver filmes </p> <p className="responsivo"> Filmes </p></button> 
+                    <button onClick={handleMovieClick}> <p className="additional-content"> Ver filmes </p> <p className="responsivo"> Filmes </p></button> 
                     <button onClick={handleFavoriteClick}><p className="additional-content"> Meus favoritos </p> <p className="responsivo"> Favoritos </p></button>     
                 </div>
                 
