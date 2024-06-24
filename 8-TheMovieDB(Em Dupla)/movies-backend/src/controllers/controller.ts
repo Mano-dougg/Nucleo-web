@@ -1,5 +1,3 @@
-
-import { findSourceMap } from "module"
 import prisma from "./prisma"
 import { Request,Response } from "express"
 
@@ -7,10 +5,10 @@ import { Request,Response } from "express"
 1 - Função de cadastro do User */
 export async function cadastro_user(req:Request,res:Response){
     try{
-        const { nome, login, senha } = req.body
+        const { nome, login, senha} = req.body
         // Checando se o nome e a senha providos são válidos
         if (String(nome).match(/[0-9]/) != null){
-            throw new Error("O nome deve não deve conter numeros")
+          throw new Error("O nome deve não deve conter numeros")
         }
         if (String(senha).length <= 5){ 
             throw new Error("Senha muito curta")
@@ -22,10 +20,10 @@ export async function cadastro_user(req:Request,res:Response){
         }
         // Gerando retorno padrão esperado
         const addUser = await prisma.user.create({data:{email: login, name: nome, password: senha}})
-        res.status(200).json({msg:'Usuário Cadastrado' , user: addUser})
+        res.status(200).send(addUser)
     } catch (error: any) {
         console.log(error)
-        res.status(400).json({msg: "Ocorreu um erro ao tentar cadastrar seu usuário!", err: error.message})
+        res.status(400).json({msg: "Ocorreu um erro ao tentar cadastrar seu usuário!", err: error.message}).send()
     }
 }
 // 2 - Rota de pegar o User
@@ -43,11 +41,10 @@ export async function get_user(req: Request, res:Response ) {
         }
         // Gerando retorno padrão esperado
         const getUser = await prisma.user.findUnique({where:{email: login}})
-        res.status(200).json({msg:"Usuário Encontrado!" , user: getUser})
-
+        res.status(200).send(getUser)
     }catch(error: any){
         console.log(error)
-        res.status(400).json({msg:"Ocorreu um erro ao pegar seu usuário!", err: error.message})
+        res.status(400).json({msg:"Ocorreu um erro ao pegar seu usuário!", err: error.message}).send()
     }
     
 }
@@ -67,14 +64,14 @@ export async function get_Favorites(req: Request, res:Response) {
         // Fetch dos dados de Favoritos. 
         const getFavs = await prisma.user.findUnique({where:{id:user}, select:{favorite:true}})
         if(getFavs !== null){
-            res.status(200).json({msg:"Aqui jás os favoritos deste usuário!", favs: getFavs})
+            res.status(200).send(getFavs)
         }else{
-            res.status(200).json({msg:"Este usuário ainda não favoritou nada!"})
+            res.status(200).json({msg:"Este usuário ainda não favoritou nada!"}).send()
         }
 
     } catch (error: any) {
         console.log(error)
-        res.status(400).json({msg: "Erro ao requisitar lista de favoritos!", err: error.message})
+        res.status(400).json({msg: "Erro ao requisitar lista de favoritos!", err: error.message}).send()
     }
 }
 // 2 - criar novos favoritos 
@@ -85,7 +82,8 @@ export async function new_Favorites(req: Request, res: Response) {
             ...Aguarde! Estamos trabalhando nisso!!! Cenas dos proximos capitulos.  
         */
         const newFavs  = await prisma.movies.create({data:{title:titulo, content: conteudo, userId: user}})
-        res.status(200).json({msg:`Novo Favorito Adicionado ao Usuário ${user}`, fav: newFavs})
+        res.status(200).send(newFavs)
+    
     } catch (error:any) {
         console.log(error)
         res.status(400).json({msg: "Erro encontrado ao tentar favoritar um filme!", err: error.message})
@@ -101,7 +99,7 @@ export async function delete_Favorites(req:Request, res:Response) {
         // Database queries pra conseguir pegar o filme especifico no usuário especifico... 
         const movie_to_delete = await prisma.movies.findMany({where:{userId:user, title: titulo}, select:{movieId:true}})
         const delFavs = await prisma.movies.delete({where:{movieId:Number(movie_to_delete)}}) 
-        res.status(200).json({msg:`Registro de favorito do usuário ${user} deletado com sucesso`, carg: delFavs})
+        res.status(200).send(delFavs)
     } catch (error: any) {
         console.log(error)
         res.status(400).json({msg:"Ocorreu um erro ao retificar/deletar um favorito do usuário XXXX", err: error.message})
