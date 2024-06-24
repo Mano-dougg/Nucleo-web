@@ -9,17 +9,16 @@ import Link from "next/link";
 import MovieCard from "../../components/MovieCard";
 import AnatomyOfAFall from "../../../public/anatomy-of-a-fall-landscape.jpg";
 import Barbie from "../../../public/barbie-landscape.jpeg";
-import Navbar from "@/components/Navbar";
+import NavbarFav from "@/components/NavbarFav";
 import Banner from "@/components/Banner";
 
 export default function Home() {
   return (
     <div className="w-screen h-screen relative items-start justify-start flex flex-col">
-      <Navbar />
-      <Banner />
-      <div className="flex flex-col gap-4 pl-12 -mb-[700px]">
-        <h2 className="mt-5 text-lg font-semibold px-2">Novos episódios</h2>
-        <section className="flex flex-row gap-3">
+      <NavbarFav />
+      <main className="ml-12 mt-12">
+        <h2 className="text-lg font-semibold px-2 mb-6">Meus favoritos</h2>
+        <div className="flex flex-row gap-3">
           <MovieCard
             image={AnatomyOfAFall}
             title="Anatomy of a Fall"
@@ -32,8 +31,8 @@ export default function Home() {
             price={0.0}
             director="Greta Gerwig"
           ></MovieCard>
-        </section>
-      </div>
+        </div>
+      </main>
     </div>
   );
 }

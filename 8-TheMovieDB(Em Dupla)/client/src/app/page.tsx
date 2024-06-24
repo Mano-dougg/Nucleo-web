@@ -7,6 +7,7 @@ import axios from "axios";
 import Login from "./login/page";
 import Initial from "./home/page";
 import Feed from "./feed/page";
+import Favorites from "./favorites/page";
 
 type Movie = {
   id: number;
@@ -109,6 +110,7 @@ const MoviesPage = () => {
       </div> */}
       {/* <Initial></Initial> */}
       <Feed />
+      {/* <Favorites /> */}
     </>
   );
 };

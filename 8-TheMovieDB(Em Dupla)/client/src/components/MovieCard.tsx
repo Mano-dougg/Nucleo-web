@@ -29,9 +29,9 @@ const MovieCard: React.FC<MovieProps> = ({ image, title, price, director }) => {
         height={180}
         unoptimized={true}
         objectFit="cover"
-        className="rounded-xl"
+        className="rounded-[9px]"
       ></Image>
-      <div className="flex flex-col gap-1 mt-3 px-2">
+      <div className="flex flex-col mt-3 px-2">
         <p className="font-medium text-base w-full">{title}</p>
         <p className="text-white text-opacity-70">R$ {price.toFixed(2)}</p>
       </div>
