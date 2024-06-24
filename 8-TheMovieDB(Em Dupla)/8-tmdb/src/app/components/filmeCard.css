@@ -1,0 +1,24 @@
+.filmeCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    background-color: #445;
+    border-radius: 25px;
+    width: 350px;
+    padding: 25px;
+    color: white;
+}
+.filmeCard img {
+    width: 300px;
+    height: 450px;
+    border-radius: 20px;
+}
+.filmeCard div {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+.filmeCard div p {
+    text-align:justify
+}
