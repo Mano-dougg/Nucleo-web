@@ -1,8 +1,26 @@
-ul {
+*{
+    background-color: black;
+}
+
+.filmes-page {
     color: white;
+}
+
+.filmes-list{
+    display: flex;
 }
 
 .filmes-card{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.capa-filme {
+    width: 100px;
+}
+
+.capa-filme img{
+    width: 100%;
 }

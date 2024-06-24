@@ -29,17 +29,23 @@ const Filmes: NextPage<HomePageProps> = ({ movies }) => {
     };
     return (
             <div className='filmes-page'>
-                <ul className='filmes-card'>
+                <section className='filmes-card'>
                     {movies.map((movie) => (
-                        <li key={movie.id}>
-                            <h2>{movie.title}</h2>
-                            <p>Lançamento: {movie.release_date}</p>
-                            <p>{movie.overview}</p>
-                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
-                            <button onClick={() => handleFavoritar(movie)}>Favoritar</button>
-                        </li>
+                        <div key={movie.id} className='filmes-list'>
+                            <figure className='capa-filme'>
+                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
+                            </figure>
+
+                            <div className='info-filme'>
+                                <h2>{movie.title}</h2>
+                                <p>Lançamento: {movie.release_date}</p>
+                                <p>{movie.overview}</p>
+                                <button onClick={() => handleFavoritar(movie)}>Favoritar</button>
+                            </div>
+                            
+                        </div>
                     ))}
-                </ul>
+                </section>
             </div>
     );
 };

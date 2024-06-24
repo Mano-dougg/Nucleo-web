@@ -8,7 +8,6 @@ import HomePage from "../Filmes/page";
 import axios from 'axios';
 import Lancamento from "../Lancamento/page";
 import Filmes from "./filmes";
-import "./filmes.css"
 
 interface nomes {
     id: number;
