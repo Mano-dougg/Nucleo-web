@@ -57,6 +57,11 @@ export const addUser = async (data: MinimumUserParams) => {
     })
 };
 
+// pegar usuário para autenticação
+export const getUserAuth = async (where:{email:string}) => {
+    return await db.user.findUnique({where})
+}
+
 // atualizar dados do usuário no banco de dados
 export const updateUser = async (id: number, updateData: MinimumUpdateParams) => {
     if(updateData.email){
@@ -81,9 +86,13 @@ export const updateUser = async (id: number, updateData: MinimumUpdateParams) =>
 
 // apagar usuário do banco de dados
 export const deleteUser = async (id: number) => {
+    
     const user = await db.user.findUnique({
         where:{
             id
+        },
+        select:{
+            friends: true
         }
     })
 
@@ -91,6 +100,36 @@ export const deleteUser = async (id: number) => {
         result: "error",
         message: "Usuário não encontrado"
     }
+
+    await db.user.update({
+        where:{
+            id
+        },
+        data:{
+            friends: {
+                set: []
+            },
+            friendOf: {
+                set: []
+            }
+        },
+        select: {
+            friends: true,
+            friendOf:true
+        }
+    });
+
+    await db.friendRequest.deleteMany({
+        where:{
+            toId: id
+        }
+    })
+
+    await db.friendRequest.deleteMany({
+        where:{
+            fromId: id
+        }
+    })
 
     const deleted = await db.user.delete({
         where:{

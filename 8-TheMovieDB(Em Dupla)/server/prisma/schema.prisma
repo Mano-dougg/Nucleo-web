@@ -19,13 +19,20 @@ model User{
   name String
   email String @unique
   password String
-  whatched Movie[] //movies that the user already watch
   watchList Int[] //movies that the user wants to watch
   favorites Int[] //movies favorited by the user
+
+  // relation between the user and their watched movies
+  whatched Movie[] //movies that the user already watch
+
+  // relation between users
   friends User[] @relation("UserFriends") //user friends self type relation
   friendOf User[] @relation("UserFriends")
   sentFriendRequests   FriendRequest[] @relation("SentFriendRequests") //users that the said user has send requests
   receivedFriendRequests FriendRequest[] @relation("ReceivedFriendRequests") //users that send friend requests to said user
+
+  // relation between an user and its token
+  tokens Token[]
 
   @@map("userList")
 }
@@ -47,6 +54,25 @@ model Movie{
   user User @relation(fields: [userId], references: [id])
   
   @@map("movieRating")
+}
+
+model Token {
+ id         Int       @id @default(autoincrement())
+ createdAt  DateTime  @default(now())
+ updatedAt  DateTime  @updatedAt
+ type       TokenType
+ emailToken String?   @unique // Only used for short lived email tokens
+ valid      Boolean   @default(true)
+ expiration DateTime
+
+ // Relation fields
+ user   User @relation(fields: [userId], references: [id])
+ userId Int
+}
+
+enum TokenType {
+ EMAIL // used as a short-lived token sent to the user's email
+ API
 }
 
 enum FriendRequestStatus {

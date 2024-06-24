@@ -2,6 +2,8 @@
 import { MinimumUserParams, NonTreatedParams, SearchParams } from '../lib/data-types'
 import { setDataToUpdate, validateEmail } from '../lib/data-validation'
 import * as userModels from './users.model'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 
 export const getAllUser = async (name:any, email:any) => {
     const params: SearchParams = {}
@@ -37,7 +39,9 @@ export const addUser = async ({ name, email, password }: NonTreatedParams) => {
         message: "Parametro password deveria ser um tipo de texto válido"
     }
 
-    const newUser = await userModels.addUser({ name, email, password })
+    const hashedPassword = await bcrypt.hash(password, 10)
+
+    const newUser = await userModels.addUser({ name, email, password:hashedPassword })
     
     return newUser? 
     {
@@ -50,6 +54,50 @@ export const addUser = async ({ name, email, password }: NonTreatedParams) => {
     }
 }
 
+//autenticar a sessão de um usuário
+export const authenticateUser = async (email: any, password: any) => {
+    if(!(typeof email === 'string')) return {
+        result: "error",
+        message: "Parametro email deveria ser algum tipo de texto"
+    }
+    else if (!validateEmail(email)) return {
+        result: "error",
+        message: "Parametro email deveria ser algum endereço de email válido."
+    };
+
+    if(!(typeof password === 'string')) return {
+        result: "error",
+        message: "Parametro password deveria ser um tipo de texto válido"
+    };
+
+    const user = await userModels.getUserAuth({email});
+
+    if(!user) return {
+        result: "error",
+        message: "Usuário não encontrado, o endereço de email não está cadastrado"
+    };
+
+    const validPassword = password === user.password;
+    if (!validPassword) return {
+        result: "error",
+        message: "senha inválida"
+    };
+
+    const token = process.env.ACCESS_TOKEN_SECRET;
+
+    const accessToken = jwt.sign({id: user.id, email:user.email},
+        token as string,
+        { expiresIn: '1h' }
+    );
+    console.log(token)
+
+    return {
+        result: "success",
+        data: accessToken
+    }
+}
+
+// atualizar um usuário
 export const updateUser = async(id:number, data: NonTreatedParams) =>{
     
     const updateData = setDataToUpdate(data);
