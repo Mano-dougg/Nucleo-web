@@ -18,10 +18,11 @@ interface HomePageProps {
 }
 
 const Filmes: NextPage<HomePageProps> = ({ movies }) => {
+
     const handleFavoritar = (movie: Movie) => {
         const idsFavoritos = Cookies.get("IdsFavoritos");
         let idsArray = idsFavoritos ? JSON.parse(idsFavoritos) : [];
-        
+
         if (!idsArray.includes(movie.id)) {
             idsArray.push(movie.id);
             Cookies.set('IdsFavoritos', JSON.stringify(idsArray), { expires: 1 });
