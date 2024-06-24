@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { NextPage } from 'next';
 import "./filmes.css";
+import Cookies from 'js-cookie'; 
 
 
 interface Movie {
@@ -17,6 +18,16 @@ interface HomePageProps {
 }
 
 const Filmes: NextPage<HomePageProps> = ({ movies }) => {
+    const handleFavoritar = (movie: Movie) => {
+        // Adicione o ID do filme aos favoritos
+        const idsFavoritos = Cookies.get("IdsFavoritos");
+        let idsArray = idsFavoritos ? JSON.parse(idsFavoritos) : [];
+        
+        if (!idsArray.includes(movie.id)) {
+            idsArray.push(movie.id);
+            Cookies.set('IdsFavoritos', JSON.stringify(idsArray), { expires: 1 });
+        }
+    };
     return (
         <div>
             <h1>Filmes</h1>
@@ -27,7 +38,7 @@ const Filmes: NextPage<HomePageProps> = ({ movies }) => {
                         <p>Lançamento: {movie.release_date}</p>
                         <p>{movie.overview}</p>
                         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
-                        <button>Favoritar</button>
+                        <button onClick={() => handleFavoritar(movie)}>Favoritar</button>
                     </li>
                 ))}
             </ul>

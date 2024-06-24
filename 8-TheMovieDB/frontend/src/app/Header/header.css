@@ -28,6 +28,10 @@
     font-size: 14px;
 }
 
+.responsivo{
+    display: none;
+}
+
 .nome-site{
     color: var(--primary);
 }
@@ -67,6 +71,20 @@
 
     .image-logo{
         display: flex;
+    }
+
+    .icons-header {
+        gap: 10px;
+    }
+
+    .additional-content {
+        display: none;
+    }
+    
+    .responsivo{
+        display: flex;
+        color: white;
+        font-size: 12px;
     }
 
     .esquerdo{

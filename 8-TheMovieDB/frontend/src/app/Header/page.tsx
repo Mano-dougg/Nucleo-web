@@ -50,8 +50,8 @@ export default function Header() {
                 </div>
 
                 <div className="icons-header">
-                    <button> <p className="additional-content"> Ver filmes </p> </button> 
-                    <button onClick={handleFavoriteClick}><p className="additional-content"> Meus favoritos </p> </button>     
+                    <button> <p className="additional-content"> Ver filmes </p> <p className="responsivo"> Filmes </p></button> 
+                    <button onClick={handleFavoriteClick}><p className="additional-content"> Meus favoritos </p> <p className="responsivo"> Favoritos </p></button>     
                 </div>
                 
             </section>
