@@ -1,9 +1,18 @@
-import { GetServerSideProps } from 'next';
-import axios from 'axios';
-import { NextPage } from 'next';
-import "./filmeshome.css";
+'use client'
+import { useRouter } from "next/navigation";
+import Header from "../Header/page";
+import { User } from "../../../service/User";
+import { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
+import HomePage from "../Filmes/page";
+import axios from 'axios';
+import Lancamento from "../Lancamento/page";
+import Filmesc from "./filmesc";
 
+interface nomes {
+    id: number;
+    nome: string;
+}
 
 interface Movie {
     id: number;
@@ -13,33 +22,43 @@ interface Movie {
     poster_path: string;
 }
 
-interface HomePageProps {
-    movies: Movie[];
-}
+export default function FilmesHome() {
+    const Usuario = new User();
+    const [data, setData] = useState<nomes[] | null>(null);
+    const [movies, setMovies] = useState<Movie[]>([]); 
 
-const FilmesHome: NextPage<HomePageProps> = ({ movies }) => {
-    const handleFavoritar = (movie: Movie) => {
-        const idsFavoritos = Cookies.get("Ida");
-        let idsArray = idsFavoritos ? JSON.parse(idsFavoritos) : [];
+    useEffect(() => {
+        const loggedUserId = Cookies.get('Iddoparca');
         
-        if (!idsArray.includes(movie.id)) {
-            idsArray.push(movie.id);
-            Cookies.set('Ida', JSON.stringify(idsArray), { expires: 1 });
-        }
-    };
-    return (
-        <div className='filmeshome-page'>
-            <ul className='filmeshome-card'>
-                {movies.map((movie) => (
-                    <li key={movie.id}>
-                        <h2>{movie.title}</h2>
-                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
-                        <button onClick={() => handleFavoritar(movie)}>Favoritar</button>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-};
+        //User
 
-export default FilmesHome;
+        if (loggedUserId) {
+            Usuario.listarall()
+                .then((response) => {
+                    const allData = response.data;
+                    const filteredData = allData.filter((user: nomes) => user.id === parseInt(loggedUserId));
+                    setData(filteredData);
+                }).catch((error) => {
+                    console.log(error);
+                });
+        } else {
+            console.log('Usuário out');
+        }
+
+        const fetchMovies = async () => {
+            try {
+                const response = await axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1');
+                setMovies(response.data.results);
+            } catch (error) {
+                console.log('Erro');
+            }
+        };
+
+        fetchMovies();
+
+    }, []);
+
+    return (
+            <Filmesc movies={movies} /> 
+    );
+}

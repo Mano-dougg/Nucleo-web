@@ -24,6 +24,7 @@ interface Movie {
     poster_path: string;
 }
 
+
 export default function Home() {
     const Usuario = new User();
     const [data, setData] = useState<nomes[] | null>(null);
@@ -64,7 +65,7 @@ export default function Home() {
         <body className="body-home">
             <Header/>   
             <Lancamento/>
-            <FilmesHome movies={movies} /> 
+            <FilmesHome/> 
         </body>
     );
 }
