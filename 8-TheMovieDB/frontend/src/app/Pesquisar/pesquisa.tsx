@@ -8,6 +8,10 @@ interface Filme {
   titulo: string;
   descricao: string;
   imagem: string;
+  original_language: string;
+  popularity: number;
+  vote_average: number;
+  vote_count: number;
 }
 
 export default function Pesquisar() {
@@ -39,7 +43,11 @@ export default function Pesquisar() {
               id: firstResult.id,
               titulo: firstResult.title,
               descricao: firstResult.overview,
-              imagem: `https://image.tmdb.org/t/p/w500${firstResult.poster_path}`
+              imagem: `https://image.tmdb.org/t/p/w500${firstResult.poster_path}`,
+              original_language: firstResult.original_language,
+              popularity: firstResult.popularity,
+              vote_average: firstResult.vote_average,
+              vote_count: firstResult.vote_count
             });
           } else {
             setResultado(null); 
@@ -82,6 +90,10 @@ export default function Pesquisar() {
             <div className='filme'>
               <img src={resultado.imagem}/>
               <h1>{resultado.titulo}</h1>
+              <p>Linguagem={resultado.original_language}</p>
+              <p>Popularidade={resultado.popularity}</p>
+              <p>Média={resultado.vote_average}</p>
+              <p>Contagem de votos={resultado.vote_count}</p>
               <button onClick={limpar}>Limpar Pesquisa</button>
             </div>
           </div>
