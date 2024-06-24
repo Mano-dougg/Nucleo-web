@@ -91,9 +91,9 @@ const MovieList: React.FC = () => {
                   <FaStar color="gold" className='fa-star'/> {movie.vote_average.toFixed(1)}
                 </div>
 
-                <button className='fav'>
+                {/* <button className='fav'>
                   <FaRegHeart/>
-                </button>
+                </button> */}
 
               </div>
 

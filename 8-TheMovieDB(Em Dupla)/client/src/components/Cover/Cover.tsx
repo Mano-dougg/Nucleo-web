@@ -3,7 +3,7 @@ import { useSelectedMovie } from '@/context/SelectedMovieContext';
 import Image from 'next/image';
 import './Cover.css';
 import { FaRegHeart, FaStar } from 'react-icons/fa';
-import { MdWatchLater } from 'react-icons/md';
+import { MdOutlineWatchLater, MdWatchLater } from 'react-icons/md';
 
 const Cover: React.FC = () => {
   const { selectedMovie } = useSelectedMovie();
@@ -24,11 +24,11 @@ const Cover: React.FC = () => {
               </div>
               
               <button className='watchlist'>
-                <MdWatchLater className="watch"/>
+                <MdOutlineWatchLater className="watch"/>
               </button>
 
               <button className='fav'>
-                  <FaRegHeart className='fav-heart'/>
+                  <FaRegHeart className='fav-heart' />
               </button>
           </div>
             

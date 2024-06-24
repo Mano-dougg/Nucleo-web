@@ -80,9 +80,14 @@
 }
 
 .cover-info .fav{
-    width: 27px;
-    height: 27px;
-    border-radius: 30px;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+}
+
+.fav-heart{
+    height: 18px;
+    width: 18px;
 }
 
 .watch{
