@@ -8,9 +8,10 @@ import buttonFavorited from '../../public/button-favorited.svg';
 interface MovieCardProps {
     banner: string;
     title: string;
+    id: number,
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ banner, title }) => {
+const MovieCard: React.FC<MovieCardProps> = ({ banner, title, id }) => {
     const [isFavorited, setIsFavorited] = useState(false);
 
     const toggleFavorite = () => {
@@ -18,7 +19,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ banner, title }) => {
     };
 
     return (
-        <div className="movie-card">
+        <div className="movie-card" id={`${id}`}>
             <Image src={`https://image.tmdb.org/t/p/w300${banner}`} alt={title} className="movie-banner" layout="responsive" width={150} height={225} />
             <h2>{title}</h2>
             <button className="favorite-button" onClick={toggleFavorite}>

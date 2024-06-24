@@ -53,6 +53,7 @@ export default function Home() {
                         key={movie.id}
                         banner={movie.poster_path}
                         title={movie.title}
+                        id={movie.id}
                     />
                 ))}
             </main>
