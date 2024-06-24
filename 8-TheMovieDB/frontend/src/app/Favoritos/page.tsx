@@ -38,9 +38,8 @@ export default function Favoritos() {
 
   const Apagar = (id: number) => {
     const novosFavoritos = filmesFavoritos.filter(favoritoId => favoritoId !== id);
-  
+    setFilmesFavoritos(novosFavoritos);
     Cookies.set('IdsFavoritos', JSON.stringify(novosFavoritos), { expires: 1 });
-  
     setFilmesDetalhes(filmesDetalhes.filter(filme => filme.id !== id));
   };
 
