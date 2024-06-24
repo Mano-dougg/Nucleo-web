@@ -19,7 +19,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ banner, title }) => {
 
     return (
         <div className="movie-card">
-            <Image src={banner} alt={title} className="movie-banner" layout="responsive" width={150} height={225} />
+            <Image src={`https://image.tmdb.org/t/p/w300${banner}`} alt={title} className="movie-banner" layout="responsive" width={150} height={225} />
             <h2>{title}</h2>
             <button className="favorite-button" onClick={toggleFavorite}>
                 <Image
