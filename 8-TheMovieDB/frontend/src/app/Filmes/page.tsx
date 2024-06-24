@@ -19,13 +19,12 @@ interface HomePageProps {
 
 const Filmes: NextPage<HomePageProps> = ({ movies }) => {
     const handleFavoritar = (movie: Movie) => {
-        // Adicione o ID do filme aos favoritos
-        const idsFavoritos = Cookies.get("IdsFavoritos");
+        const idsFavoritos = Cookies.get("Ida");
         let idsArray = idsFavoritos ? JSON.parse(idsFavoritos) : [];
         
         if (!idsArray.includes(movie.id)) {
             idsArray.push(movie.id);
-            Cookies.set('IdsFavoritos', JSON.stringify(idsArray), { expires: 1 });
+            Cookies.set('Ida', JSON.stringify(idsArray), { expires: 1 });
         }
     };
     return (

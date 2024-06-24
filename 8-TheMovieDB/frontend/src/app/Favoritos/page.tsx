@@ -18,7 +18,7 @@ export default function Favoritos() {
   const [filmesDetalhes, setFilmesDetalhes] = useState<Movie[]>([]);
 
   //Favoritos
-  
+
   useEffect(() => {
     const Favoritos = Cookies.get("IdsFavoritos");
     if (Favoritos) {
@@ -36,6 +36,14 @@ export default function Favoritos() {
     } 
   }, []);
 
+  const Apagar = (id: number) => {
+    const novosFavoritos = filmesFavoritos.filter(favoritoId => favoritoId !== id);
+    setFilmesFavoritos(novosFavoritos);
+    
+    Cookies.set('Ida', JSON.stringify(novosFavoritos), { expires: 1 });
+    setFilmesDetalhes(filmesDetalhes.filter(filme => filme.id !== id));
+  };
+
   return (
     <main className="favoritos-page">
       <Header />
@@ -48,7 +56,7 @@ export default function Favoritos() {
               <p>Lançamento: {filme.release_date}</p>
               <p>{filme.overview}</p>
               <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title}/>
-              <button>Excluir</button>
+              <button onClick={() => Apagar(filme.id)}>Excluir</button>
             </div>
           ))
         ) : (
