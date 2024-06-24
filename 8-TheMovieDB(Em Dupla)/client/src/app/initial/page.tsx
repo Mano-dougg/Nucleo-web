@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Mosaic from "../../public/mosaic-movies.webp";
-import Vignette from "../../public/vignette.png";
+import Mosaic from "../../../public/mosaic-movies.webp";
+import Vignette from "../../../public/vignette.png";
 import Link from "next/link";
 import { useState } from 'react';
 

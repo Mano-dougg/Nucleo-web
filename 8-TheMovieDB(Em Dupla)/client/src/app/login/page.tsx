@@ -4,7 +4,6 @@ import axios from "axios";
 import Mosaic from "../../../public/mosaic-tinted.png";
 import Image from "next/image";
 import { MdOutlineVisibility, MdOutlineVisibilityOff } from "react-icons/md";
-import Home from "../home/page";
 import Feed from "../feed/page";
 
 const Login = () => {
@@ -12,10 +11,10 @@ const Login = () => {
   const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [userData, setUserData] = useState<any>(null);
   const [isRegistering, setIsRegistering] = useState<boolean>(false);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false); // Estado para controlar se o usuário está logado
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
+  // Função para lidar com o login do usuário
   const handleLogin = async () => {
     try {
       const response = await axios.put("http://localhost:3000/login", {
@@ -25,22 +24,21 @@ const Login = () => {
 
       if (response.status === 200) {
         console.log("Login successful");
-        console.log("User data:", response.data);
-        setUserData(response.data);
+        localStorage.setItem("userId", response.data.id); // Armazenar os dados do usuário no localStorage
+        console.log("User ID armazenado:", response.data.id);
         setErrorMessage(null);
-        setIsLoggedIn(true); // Alterar estado para indicar que o usuário está logado
+        setIsLoggedIn(true);
       } else {
         console.log("Login failed");
         setErrorMessage("Login failed");
-        setUserData(null);
       }
     } catch (error) {
       console.error("Error during login:", error);
       setErrorMessage("Error during login");
-      setUserData(null);
     }
   };
 
+  // Função para lidar com o registro de novo usuário
   const handleRegister = async () => {
     try {
       const response = await axios.post("http://localhost:3000/users", {
@@ -50,38 +48,34 @@ const Login = () => {
 
       if (response.status === 201) {
         console.log("Registration successful");
-        console.log("User data:", response.data);
-        setUserData(response.data);
+        localStorage.setItem("userId", response.data.userId);// Armazenar os dados do usuário no localStorage
+        console.log("User ID armazenado:", response.data.userId);
         setErrorMessage(null);
-        setIsLoggedIn(true); // Alterar estado para indicar que o usuário está logado
+        setIsLoggedIn(true);
       } else {
         console.log("Registration failed");
         setErrorMessage("Registration failed");
-        setUserData(null);
       }
     } catch (error) {
       console.error("Error during registration:", error);
       setErrorMessage("Error during registration");
-      setUserData(null);
     }
   };
 
-  const toggleShowPassword = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-  };
-
+  // Função para alternar entre login e registro
   const toggleForm = () => {
     setIsRegistering((prevState) => !prevState);
-    setErrorMessage(null); // Limpar mensagem de erro ao trocar entre login e cadastro
-    setUserName(""); // Limpar campos ao trocar entre login e cadastro
+    setErrorMessage(null);
+    setUserName("");
     setPassword("");
   };
 
-  // Renderizar a tela Home se o usuário estiver logado
+  // Verifica se o usuário está logado e renderiza o componente Feed
   if (isLoggedIn) {
     return <Feed />;
   }
 
+  // Renderiza o formulário de login ou registro
   return (
     <div className="relative flex items-center justify-center min-h-screen w-screen bg-gray-900">
       <div className="relative z-10 flex-col items-center w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
@@ -99,7 +93,7 @@ const Login = () => {
             placeholder="Endereço de e-mail"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
-            className="w-full p-[18px] h-[52px] mb-4  bg-[#303334] bg-opacity-60 backdrop-blur-lg text-white rounded-xl focus:outline-none focus:ring-0"
+            className="w-full p-[18px] h-[52px] mb-4 bg-[#303334] bg-opacity-60 backdrop-blur-lg text-white rounded-xl focus:outline-none focus:ring-0"
           />
           <div className="relative">
             <input
@@ -111,7 +105,7 @@ const Login = () => {
             />
             <div
               className="absolute inset-y-0 right-4 flex items-center cursor-pointer"
-              onClick={toggleShowPassword}
+              onClick={() => setShowPassword((prevShowPassword) => !prevShowPassword)}
             >
               {showPassword ? (
                 <MdOutlineVisibilityOff className="text-white" />
@@ -140,14 +134,6 @@ const Login = () => {
         </div>
         {errorMessage && (
           <p className="mt-4 text-red-500 text-center">{errorMessage}</p>
-        )}
-        {userData && (
-          <div className="mt-4 p-4 bg-white text-black rounded shadow">
-            <h2 className="text-2xl font-bold mb-2">Dados do Usuário</h2>
-            <pre className="bg-gray-100 p-2 rounded">
-              {JSON.stringify(userData, null, 2)}
-            </pre>
-          </div>
         )}
         <div className="mt-4 text-center">
           <button

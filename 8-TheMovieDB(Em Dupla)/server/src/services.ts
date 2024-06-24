@@ -1,11 +1,8 @@
 // src/services/userService.ts
 import { PrismaClient } from '@prisma/client';
 
-
 const prisma = new PrismaClient();
 
-
-// Adicionar um novo usuário
 export const addUser = async (userName: string, password: string) => {
   return prisma.user.create({
     data: {
@@ -37,7 +34,6 @@ export const loginUser = async (user_name: string, password: string) => {
   }
 };
 
-// Buscar um usuário por ID
 export const getUserById = async (userId: number) => {
   return prisma.user.findUnique({
     where: {
@@ -49,7 +45,6 @@ export const getUserById = async (userId: number) => {
   });
 };
 
-// Buscar um usuário por nome de usuário
 export const getUserByUserName = async (userName: string) => {
   return prisma.user.findUnique({
     where: {
@@ -61,26 +56,23 @@ export const getUserByUserName = async (userName: string) => {
   });
 };
 
-// Adicionar um filme aos favoritos de um usuário
 export const addFavoriteMovie = async (userId: number, movieTitle: string) => {
-    // Verificar se o usuário existe
-    const userExists = await prisma.user.findUnique({
-      where: { id: userId },
-    });
-  
-    if (!userExists) {
-      throw new Error('Usuário não encontrado');
-    }
-  
-    return prisma.favorite.create({
-      data: {
-        userId: userId,
-        movieTitle: movieTitle,
-      },
-    });
-  };
+  const userExists = await prisma.user.findUnique({
+    where: { id: userId },
+  });
 
-// Remover um filme dos favoritos de um usuário
+  if (!userExists) {
+    throw new Error('Usuário não encontrado');
+  }
+
+  return prisma.favorite.create({
+    data: {
+      userId: userId,
+      movieTitle: movieTitle,
+    },
+  });
+};
+
 export const removeFavoriteMovie = async (userId: number, movieTitle: string) => {
   return prisma.favorite.deleteMany({
     where: {
@@ -88,4 +80,19 @@ export const removeFavoriteMovie = async (userId: number, movieTitle: string) =>
       movieTitle: movieTitle,
     },
   });
+};
+
+export const getFavoriteMovies = async (userId: number) => {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    include: {
+      favorites: true,
+    },
+  });
+
+  if (!user) {
+    throw new Error('Usuário não encontrado');
+  }
+
+  return user.favorites.map(favorite => favorite.movieTitle);
 };

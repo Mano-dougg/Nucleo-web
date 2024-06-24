@@ -5,7 +5,7 @@ import "./globals.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Login from "./login/page";
-import Initial from "./home/page";
+import Initial from "./initial/page";
 import Feed from "./feed/page";
 import Favorites from "./favorites/page";
 
@@ -108,8 +108,8 @@ const MoviesPage = () => {
           </div>
         ))}
       </div> */}
-      {/* <Initial></Initial> */}
-      <Feed />
+      <Initial/>
+      {/* <Feed /> */}
       {/* <Favorites /> */}
     </>
   );
