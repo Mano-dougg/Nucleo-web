@@ -1,0 +1,42 @@
+nav {
+    display: flex;
+    padding: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    font-style: none;
+   
+}
+
+.links{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.linksTrio{
+    text-decoration: none;
+    color: var(--third-color);
+    font-size: 20px;
+
+}
+
+.dadosUser{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.signOut{
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    color:var(--fourth-color);
+    background-color: #933d21;
+    margin: 20px;
+    border: 1px solid var(--fourth-color);
+    font-family:"Danfo", serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}

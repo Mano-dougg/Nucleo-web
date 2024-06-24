@@ -5,6 +5,7 @@ import "./filmes.css";
 import FilmeCard from "../components/filmeCard";
 import NavBar from "../components/navBar";
 
+
 interface Filme {
     id: number;
     poster_path: string;
@@ -36,6 +37,7 @@ function Filmes(){
                 {listaFilmes.map((filme)=>(
                     <FilmeCard
                     key={filme.id}
+                    
                     imagem={(filme.poster_path)}
                     data={filme.release_date}
                     titulo={filme.original_title}

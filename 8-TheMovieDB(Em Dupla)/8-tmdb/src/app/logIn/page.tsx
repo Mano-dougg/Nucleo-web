@@ -26,7 +26,7 @@ export default function Login() {
     if (response.ok) {
       const data = await response.json();
       localStorage.setItem('token', data.token);
-      router.push('/'); // ir para home // ------------ mudar para pag de movies ----------
+      router.push('/filmes'); // ir para home // ------------ mudar para pag de movies ----------
     } else {
       // Lidar com erro de login
       alert('Os dados estão incorretos, por favor tente novamente!');
@@ -36,7 +36,7 @@ export default function Login() {
   return (
     <main>
       <nav>
-        <Link className="goHome" href="/"><h1>TRIO</h1></Link>
+        <Link className="goHome" href="/"><h2>TRIO</h2></Link>
       </nav>
 
       <div className="form_out">

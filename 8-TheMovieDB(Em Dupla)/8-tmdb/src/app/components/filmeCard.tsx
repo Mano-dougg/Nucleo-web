@@ -8,6 +8,7 @@ interface FilmeCardProps {
 }
 
 const FilmeCard: React.FC<FilmeCardProps> = ({imagem, titulo, descricao, data}) => {
+    
     return (
         <div className="filmeCard">
             <img src={`https://image.tmdb.org/t/p/w500${imagem}`} />
