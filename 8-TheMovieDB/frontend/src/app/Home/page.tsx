@@ -63,7 +63,7 @@ export default function Home() {
         <body className="body-home">
             <Header/>   
             <Lancamento/>
-            <Filmes movies={movies} /> 
+            {/*<Filmes movies={movies} /> */}
         </body>
     );
 }

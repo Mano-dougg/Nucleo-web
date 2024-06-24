@@ -19,6 +19,10 @@ export default function Header() {
         router.push("/Favoritos");
     };
 
+    const handleHomeClick = () => {
+        router.push("/Home");
+    };
+
     const Usuario = new User();
     const [data, setData] = useState<nomes[] | null>(null);
 
@@ -45,8 +49,10 @@ export default function Header() {
 
             <section className="esquerdo">
                 <div className="nome-site">
-                    <h1>POPMOVIES</h1>
-                    <Image className="image-logo" src='/cinema.png' alt="logo" width={30} height={30}/>
+                    <button className="button-logo" onClick={handleHomeClick}>
+                        <h1>POPMOVIES</h1>
+                        <Image className="image-logo" src='/cinema.png' alt="logo" width={30} height={30}/>
+                    </button>
                 </div>
 
                 <div className="icons-header">
@@ -59,7 +65,7 @@ export default function Header() {
             <section className="direito">
 
                 <div className="pesquisar">
-                    <button><Image src="/search.png" alt="Exemplo" width={30} height={30} /></button>
+                    <button><Image src="/search.png" alt="Exemplo" width={20} height={20} /></button>
                 </div>
 
                 {data ? (

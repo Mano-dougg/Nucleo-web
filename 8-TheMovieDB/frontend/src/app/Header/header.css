@@ -63,6 +63,13 @@
     border: none;
 }
 
+.button-logo{
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--primary);
+}
+
 @media (max-width: 768px){
 
     .nome-site h1{
@@ -88,12 +95,18 @@
     }
 
     .esquerdo{
-        gap:25px;
+        gap:15px;
         margin-left: 10px;
     }
     
     .direito{
+        gap:5px;
         margin-right: 10px;
+    }
+
+    .nome,
+    .nomes{
+        display: none;
     }
 
 }
