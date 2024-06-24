@@ -5,6 +5,7 @@ async function main() {
     where: { email: 'revolo6646@exeneli.com' },
     update: {},
     create: {
+      id: 'clxtdewyz00003eddpdsvnunz',
       email: 'revolo6646@exeneli.com',
       name: 'Revolo',
       password: 'Revolo6646@exeneli.com',

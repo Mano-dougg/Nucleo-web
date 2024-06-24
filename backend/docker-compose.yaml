@@ -19,10 +19,13 @@ services:
     env_file: .env
     # Environment variables
     environment:
-      - DB_HOST=postgres
+      - DB_HOST=${DB_HOST}
+      - EXPRESS_PORT=${EXPRESS_PORT}
     depends_on:
       postgres:
         condition: service_healthy
+    user: "${UID}:${GID}"
+    entrypoint: /bin/sh -c "npm install && npm run dev"
     healthcheck:
       # Checks if port 3000 is being used
       test: ["CMD", "lsof", "-t", "-i:3001"]
