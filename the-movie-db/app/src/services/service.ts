@@ -2,6 +2,25 @@
 
 const API_URL = 'http://localhost:3001/';
 
+export const loginUser = async (email: string, password: string) => {
+  try {
+    const response = await fetch(`${API_URL}/login`, {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to login');
+    }
+
+    const logged = await response.json();
+    return logged;
+  } catch (error: any) {
+    throw new Error(`Login failed: ${error.message}`);
+  }
+};
+
 export const getUsers = async () => {
   try {
     const response = await fetch(API_URL);

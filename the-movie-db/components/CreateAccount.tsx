@@ -1,43 +1,64 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Label } from '@/components/ui/label';
 
-interface LoginFormProps {
-  onLogin: (email: string, password: string) => Promise<void>;
+interface CreateAccountProps {
+  addUser: (password: string, email: string, nome: string) => Promise<void>;
 }
 
-export function LoginForm({ onLogin }: LoginFormProps) {
-  const [email, setEmail] = useState('');
+export function CreateAccount({ addUser }: CreateAccountProps) {
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await onLogin(email, password);
+      await addUser(password, email, name.trim()); 
+      
     } catch (error) {
-      console.error('Error logging in:', (error as any).message);
+      console.error('Error creating user:', (error as any).message);
     }
   };
 
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader>
-        <CardTitle className="text-xl">Login</CardTitle>
+        <CardTitle className="text-xl">Sign Up</CardTitle>
         <CardDescription>
-          Enter your credentials to login
+          Enter your information to create an account
         </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="grid gap-4">
+          <div className="grid grid-cols gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="first-name">Name</Label>
+              <Input
+                id="first-name"
+                placeholder="Fulano's tal"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+          </div>
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
               type="email"
-              placeholder="example@example.com"
+              placeholder="talfulano@example.com"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -55,13 +76,13 @@ export function LoginForm({ onLogin }: LoginFormProps) {
             />
           </div>
           <Button type="submit" className="w-full">
-            Login
+            Create an account
           </Button>
         </form>
         <div className="mt-4 text-center text-sm">
-          Dont have an account?{" "}
-          <Link href="/" className="underline">
-            Sign up
+          Already have an account?{" "}
+          <Link href="/src/login" className="underline">
+            Sign in
           </Link>
         </div>
       </CardContent>

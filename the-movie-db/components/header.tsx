@@ -6,6 +6,8 @@ import Icon from './HeaderIcons/StoreIcon';
 import SearchIcon from './HeaderIcons/SearchIcon';
 import UserIcon from './HeaderIcons/UserIcon';
 import Sidebar from './SideBar'; 
+import FavoriteIcon from './MovieIcons/FavoriteIcon';
+
 
 interface HeaderProps {
   addUser: (password: string, email: string, nome: string) => Promise<void>;
@@ -37,18 +39,16 @@ export function Header({ addUser, onSearch }: HeaderProps) {
         O M N I
       </h1>
       <nav className="hidden md:flex font-bold justify-between space-x-16 items-center">
-        <Link href="/home">
+        <Link href="/">
           Home
         </Link>
-        <Link href="/store">
-          Store
-        </Link>
-        <Link href="/library">
-          Library
+        <Link href="/">
+        Favorites
         </Link>
       </nav>
-      <div className='flex items-center gap-4'>
-        <Icon/>
+      <div className='flex items-center gap-4 '>
+        <Link href='/'>
+        <FavoriteIcon/></Link>
         <div className="w-[290px] h-[38px] px-[18px] py-[10px] space-x-4 rounded-[15px] bg-[#354244] items-center gap-4 hidden md:flex">
           <input
             type="text"
