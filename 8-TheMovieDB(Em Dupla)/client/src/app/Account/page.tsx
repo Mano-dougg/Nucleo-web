@@ -16,6 +16,7 @@ export default function Account() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
+  const [advertise, setAdvertise] = useState(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -36,20 +37,31 @@ export default function Account() {
   }, []);
 
   const handleRegister = async () => {
-    const newUser = await createUser(name, email, password);
-    setUser(newUser.data);
-    localStorage.setItem('user', JSON.stringify(newUser.data));
+    try{
+      const newUser = await createUser(name, email, password);
+      setUser(newUser.data);
+      localStorage.setItem('user', JSON.stringify(newUser.data));
+    } catch (error: any) {
+      setAdvertise(true)
+      setTimeout(()=> {setAdvertise(false)}, 10000)
+    }
   };
 
   const handleLogin = async () => {
-    const login = await loginUser(email, password);
-    if (login) {
-      const loggedUser = await getLoggedUser();
-      if (loggedUser) {
-        setUser(loggedUser.data);
-        localStorage.setItem('user', JSON.stringify(loggedUser.data));
-        window.location.replace('/Account');
+    try{
+
+      const login = await loginUser(email, password);
+      if (login) {
+        const loggedUser = await getLoggedUser();
+        if (loggedUser) {
+          setUser(loggedUser.data);
+          localStorage.setItem('user', JSON.stringify(loggedUser.data));
+          window.location.replace('/Account');
+        }
       }
+    } catch(error: any) {
+      setAdvertise(true)
+      setTimeout(()=> {setAdvertise(false)}, 10000)
     }
   };
 
@@ -70,7 +82,7 @@ export default function Account() {
           <h2>Explore seus filmes favoritos</h2>
           <FavMovieList />
           <h2>Sua Watchlist</h2>
-          <WatchMovieList />
+          <WatchMovieList user={user}/>
           <div className='separator'></div>
         </div>
       </main>
@@ -102,12 +114,16 @@ export default function Account() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        {advertise &&
+        <p>Dados de conta inválidos</p>}
         {isRegistering ? (
           <button onClick={handleRegister}>Cadastrar</button>
         ) : (
           <button onClick={handleLogin}>Entrar</button>
         )}
-        <button onClick={() => setIsRegistering(!isRegistering)} className='change'>
+        <button onClick={() => {
+          setIsRegistering(!isRegistering)
+          setAdvertise(false)}} className='change'>
           {isRegistering ? 'Já tem uma conta? Entrar' : 'Não tem uma conta? Cadastre-se'}
         </button>
       </div>

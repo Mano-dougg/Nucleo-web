@@ -5,14 +5,29 @@ import axios from 'axios';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import '../FavMovieList/FavMovieList.css';
-import { Movie } from '@/types/types';
+import { Movie, User } from '@/types/types';
+import { removeFromWatchList, addToWatchList } from '@/server/userdb/movie.services';
+import { getLoggedUser } from '@/server/userdb/users.services';
 
-const WatchMovieList: React.FC = () => {
+const WatchMovieList: React.FC<{user: User}> = ({ user }) => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
-  const favMovies = [1022789, 653346, 573435, 639720, 1001311, 929590, 829402];
+  const favMovies = user.watchList;
+
+  const handleWatchList = async (id: number) => {
+      const user = await getLoggedUser()
+
+      if(user?.data.watchList.includes(id)){
+        const request = await removeFromWatchList(id);
+        const updatedUser = request?.data.data;
+      } else {
+        const request = await addToWatchList(id);
+        const updatedUser = request?.data.data;
+      };
+      window.location.reload();
+  };
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -45,7 +60,7 @@ const WatchMovieList: React.FC = () => {
     };
 
     fetchMovies();
-  }, []);
+  }, [favMovies]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -70,7 +85,7 @@ const WatchMovieList: React.FC = () => {
                 <div className='card-details-carousel'>
                   <h4>{movie.title}</h4>
                   <div className='hidden-info-carousel'>
-                    <button className='remove'>
+                    <button className='remove' onClick={()=>{handleWatchList(movie.id)}}>
                       Remover
                     </button>
                   </div>

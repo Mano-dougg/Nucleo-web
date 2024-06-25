@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function getUserById (id:number, auth: string) {
 
-    const user = await axios.get(`http://localhost:8080/api/users/${id}`,
+    const user = await axios.get(`http://localhost:3001/api/users/${id}`,
         {
             headers:{
                 Authorization: auth
