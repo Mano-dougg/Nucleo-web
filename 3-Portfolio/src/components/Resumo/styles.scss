@@ -1,0 +1,21 @@
+@import '../../styles/index.scss';
+
+#resumo {
+  h1, h2, h4 {
+    text-align: center;
+  }
+
+  // -- RESPONSIVITY
+  @media (min-width: 821px) {
+    flex-direction: row;
+    place-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    
+    #texto-resumo {
+      h1, h2, h4 {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import './variables.scss/';
+
+// -- GERAL
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  /* font-synthesis: none; */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// -- OUTROS
+.white-out {
+  visibility: hidden;
+}
+
+// -- IMPORTS
+@import './themes.scss/';
+@import './typography.scss/';
+@import './sections.scss/';
+@import './objects.scss/';

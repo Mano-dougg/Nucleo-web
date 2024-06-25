@@ -1,0 +1,14 @@
+#pseudo-btn {
+  display: flex;
+  place-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1.25rem;
+  gap: 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+}
+#pseudo-btn a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}/*# sourceMappingURL=styles.css.map */

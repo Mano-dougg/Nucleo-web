@@ -1,0 +1,65 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "titulo_blog": {
+        "type": "Text",
+        "config": {
+          "label": "Titulo Blog",
+          "placeholder": ""
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": ""
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "OG Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "navigation": {
+        "type": "Group",
+        "config": {
+          "label": "Navigation",
+          "repeat": true,
+          "fields": {
+            "label_text": {
+              "type": "Text",
+              "config": {
+                "label": "Label Text",
+                "placeholder": "Texto da Label"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "select": null
+              }
+            },
+            "label_color": {
+              "type": "Color",
+              "config": {
+                "label": "Label Color",
+                "placeholder": "Cor da Label"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

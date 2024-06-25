@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* -- IMPORTAÇÕES -- */
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background: var(--headerDark);
+  height: 5rem;
+  padding: 0 6.25vw;
+  box-shadow: 0 1.5rem 4rem 0 rgba(0, 0, 0, 0.1490196078);
+}
+header nav ul {
+  display: none;
+}
+header section {
+  display: flex;
+  justify-items: stretch;
+  align-items: center;
+  gap: 3.5vw;
+  list-style: none;
+}
+header section div {
+  display: flex;
+  justify-items: stretch;
+  align-items: center;
+  gap: 0.55vw;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  header nav, header nav ul {
+    display: flex;
+    justify-items: stretch;
+    align-items: center;
+    gap: 1.65vw;
+    list-style: none;
+  }
+}/*# sourceMappingURL=styles.css.map */

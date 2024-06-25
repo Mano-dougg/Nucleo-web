@@ -1,0 +1,185 @@
+/* GERAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0; 
+    font-family: Open Sans;
+    font-weight: 700;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+
+/* MÍDIA */
+
+img {
+    display: flex;
+    box-sizing: border-box;
+    max-width: 80%;
+}
+
+
+
+/* TEXTO */
+
+h1 {
+    font-size: 48px;
+}
+    .quem-somos h1, .blog h1, .contato h1 {
+        margin-bottom: 50px;
+        text-align: center;
+}
+    .logo span {
+        color: #7ed321
+}
+
+h2 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    text-align:justify;
+}
+
+
+
+/* LINKS */
+
+a { 
+    text-decoration: none;
+    color: #000000;
+}
+    a:hover {
+        color: #7ed321;
+}
+    .logo, .logo:hover {
+        font-size: 48px;  
+        color: #000000;
+}
+
+
+
+/* BOTÕES */
+
+.pseudo-btn, .pseudo-btn:hover {
+    background: #7ed32166;
+    padding: 10px 32px;
+    border-radius: 15px;
+    
+    color: #1c4701;
+}
+
+button {
+    background: #7ed321;
+    padding: 12px 50px;
+    border-radius: 10px;
+    border: hidden;
+        
+    font-size: 18px;
+    line-height: 24.51px;
+    color: #1c4701;
+}
+
+
+
+/* SEÇÕES */
+
+header {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    margin: 15px;
+}
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        gap: 35px;
+        
+        list-style: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+
+    padding: 30px 8% 0 8%;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}    
+    .quem-somos section {
+        flex-direction: column;
+        align-items: center;
+        max-width: 690px;
+}
+    .blog section {
+        margin-bottom: 45px;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+    .inicio div {
+        max-width: 340px;
+        margin: 0 60px 60px 0;
+}  
+    .blog div {
+        max-width: 780px; 
+}
+
+
+
+/* FORM */
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+
+    margin-bottom: 20px;
+    border: hidden;
+}
+
+label {
+    width: 100px;
+
+    font-size: 18px;
+}
+
+input, textarea {
+    display: inline-flex;
+    width: 420px;
+    padding: 7px;
+    border-radius: 7px;
+    border: 1px solid #9f9f9f;
+
+    font-size: 14px;
+}
+    input {
+        height: 42px;
+}
+    textarea {
+        height: 160px;
+}

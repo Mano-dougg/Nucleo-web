@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  width: auto;
+  height: 100vh;
+
+  background: linear-gradient(
+      to bottom,
+      #588E22 10%,
+      #588E22 13rem,
+      #E2DFDF 13rem,
+      #E2DFDF 90%,
+      black
+  )   white;
+  @media (min-width: 768px) {
+    background: linear-gradient(
+        to bottom,
+        #588E22 10%,
+        #588E22 30rem,
+        #E2DFDF 30rem,
+        #E2DFDF 90%,
+        black
+    )   white;
+  } 
+};
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+};
+p {
+  font-size: 0.75rem;
+  line-height: 1rem;
+};

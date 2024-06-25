@@ -1,0 +1,29 @@
+/* -- ESCOLHA GENERO -- */
+:where(#adventure, #comedy, #drama, #thriller).ativo:checked + label, :where(#adventure, #comedy, #drama, #thriller).ativo + label:hover {
+    @apply text-sm text-white font-bold translate-x-6;
+}
+
+/* -- INDICADOR GENERO -- */
+.indicador-genero::before {
+  content: '';
+  @apply absolute flex top-[-1.8rem] left-[3.8rem] w-5 h-5 rounded-br-2xl;
+  box-shadow: 4px 6px 6px 0 #000;
+  }
+.indicador-genero::after {
+  content: '';
+  @apply absolute flex bottom-[-1.8rem] left-[3.8rem] w-5 h-5 rounded-tr-2xl;
+  box-shadow: 4px -6px 6px 0 #000;
+}
+/* -- MOVIMENTO INDICADOR GENERO -- */
+#adventure:checked ~ .indicador-genero {
+  @apply translate-y-[initial] duration-500;
+}
+#comedy:checked ~ .indicador-genero {
+  @apply translate-y-[3.7rem] duration-500;
+}
+#drama:checked ~ .indicador-genero {
+  @apply translate-y-[7.4rem] duration-500;
+}
+#thriller:checked ~ .indicador-genero {
+  @apply translate-y-[11.2rem] duration-500;
+}

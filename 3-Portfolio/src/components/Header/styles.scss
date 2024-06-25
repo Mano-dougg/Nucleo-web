@@ -1,0 +1,21 @@
+@import '../../styles/index.scss';
+
+#header {
+
+  section {
+    @include nav-desktop(3.5vw);
+  } 
+  div {
+    @include nav-desktop(0.55vw);
+  }
+  nav ul {
+    display: none;
+  }
+
+  // -- RESPONSIVITY
+  @media (min-width: 821px) {
+    nav ul {
+      @include nav-desktop(3.5vw);
+    };
+  }
+}

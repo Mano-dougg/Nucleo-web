@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site para os amantes de cães"/>
+    <meta name="keywords" content="cachorros, dogs"/>
+    <meta name="author" content="Pedro Teles"/>
+
+    <title>Contato</title>
+
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="icon" href="./images/img1_quemSomos.png" />
+</head>
+
+
+<body>
+
+    <header>
+
+        <a class="logo" href="inicio.html">
+            <h1>we<span>love</span>dogs</h1>
+        </a>
+
+        <nav><ul>
+            <li><a href="quemSomos.html">QUEM SOMOS</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a class="pseudo-btn" href="contato.html">INSCREVER</a></li>
+        </ul></nav>
+
+    </header>
+
+    <main class="contato">
+        
+        <h1>Inscrição</h1>
+
+        <section>
+            <form action="..." method="post">
+                <fieldset>
+                    <label for="nome">Nome</label> 
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required autofocus/>
+                </fieldset>
+    
+                <fieldset>
+                    <label for="idade">Idade</label> 
+                    <input type="number" id="idade" name="idade" placeholder="18" min="0" maxlength="2" required/>
+                </fieldset>
+    
+                <fieldset>
+                    <label for="email">E-mail</label> 
+                    <input type="email" id="email" name="email" placeholder="exemplo@exemplo.com" required/>
+                </fieldset>
+    
+                <fieldset>
+                    <label for="ama-cachorros">Ama cachorros?</label>
+                    <textarea id="ama-cachorros" name="ama-cachorros" placeholder="Mensagem" required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <button type="submit">Enviar</button>
+                </fieldset>
+            </form>
+
+            <img src="./images/img1_contato.png" alt="pessoa segurando coração"/>
+        </section>
+
+    </main>
+
+</body>
+
+
+</html>

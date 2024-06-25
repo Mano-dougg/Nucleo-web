@@ -1,0 +1,37 @@
+
+
+/* -- ESCOLHA IDIOMA -- */
+:where(#spanish, #italian, #french, #german).ativo:checked + label, :where(#spanish, #italian, #french, #german).ativo + label:hover {
+    h2 {
+    @apply text-white duration-500;
+    };
+    span {
+    @apply translate-y-12 duration-500;
+    }
+  }
+
+/*-- INDICADOR IDIOMA --*/
+.indicador-idioma::before {
+  content: '';
+  @apply absolute flex top-[-4px] left-[-12px] w-5 h-3 rounded-br-2xl;
+  box-shadow: 2px 3px 0 0 #000;
+  }
+.indicador-idioma::after {
+  content: '';
+  @apply absolute flex top-[-4px] right-[-12px] w-5 h-3 rounded-bl-2xl;
+  box-shadow: -2px 3px 0 0 #000;
+}
+
+/* -- MOVIMENTO INDICADOR IDIOMA -- */
+#spanish:checked ~ .indicador-idioma {
+  @apply translate-x-[initial] duration-500;
+}
+#italian:checked ~ .indicador-idioma {
+  @apply translate-x-[7rem] duration-500;
+}
+#french:checked ~ .indicador-idioma {
+  @apply translate-x-[14rem] duration-500;
+}
+#german:checked ~ .indicador-idioma {
+  @apply translate-x-[21rem] duration-500;
+}

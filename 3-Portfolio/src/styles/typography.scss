@@ -1,0 +1,38 @@
+@import './variables.scss';
+
+// -- IMPORTED FONTS
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+// -- GENERAL
+* {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+h1, h2, h4, caption, .button {
+  font-weight: 700;
+}
+h1, h2, a:hover, .button {
+  color: $azulzim;
+}
+
+// -- SPECIFIC
+h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+}
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+p {
+  text-align: justify;
+  max-width: 87vw;
+}

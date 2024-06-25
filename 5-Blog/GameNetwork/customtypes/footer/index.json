@@ -1,0 +1,51 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "termos": {
+        "type": "Text",
+        "config": {
+          "label": "Termos",
+          "placeholder": ""
+        }
+      },
+      "contatos": {
+        "type": "Group",
+        "config": {
+          "label": "Contatos",
+          "repeat": true,
+          "fields": {
+            "rede_social": {
+              "type": "Select",
+              "config": {
+                "label": "Rede Social",
+                "placeholder": "",
+                "options": ["Instagram", "LinkedIn", "GitHub", "E-mail"]
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

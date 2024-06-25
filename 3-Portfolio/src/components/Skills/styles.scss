@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss/';
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 1.5rem;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    table {
+      display: inline-flex;
+      width: 18rem;
+      min-width: 18rem;
+
+      tr {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  // -- RESPONSIVITY
+  @media (min-width: 821px) {
+    align-items: stretch;
+
+    section {
+      flex-direction: row;
+      justify-content: space-around;
+
+      table {
+        width: 25vw;
+      }
+    }
+  }
+}
