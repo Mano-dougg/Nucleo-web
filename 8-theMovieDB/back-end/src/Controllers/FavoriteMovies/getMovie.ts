@@ -6,9 +6,9 @@ const prisma = new PrismaClient()
 export default {
     async getMovie(req: Request , res: Response) {
         try {
-            const {userId} = req.body
+            const {userId} = req.params
             
-            let favoriteMovies = await prisma.favoriteMovies.findMany({ where: {userId} });
+            let favoriteMovies = await prisma.favoriteMovies.findMany({ where: {userId: Number(userId)} });
 
             return res.status(201).json({ favoriteMovies })
         }

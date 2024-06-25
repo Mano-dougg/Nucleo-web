@@ -16,8 +16,8 @@ router.post("/auth/register", registerUser.registerUser);
 router.post("/auth/login", loginUser.loginUser);
 
 // MOVIES ROUTES
-router.post("/addMovie", postMovie.postMovie);
-router.get("/getMovie", getMovie.getMovie);
-router.delete("/deleteMovie", deleteMovie.deleteMovie);
+router.post("/addMovie/:userId", postMovie.postMovie);
+router.get("/getMovie/:userId", getMovie.getMovie);
+router.delete("/deleteMovie/:id", deleteMovie.deleteMovie);
 
 export { router }

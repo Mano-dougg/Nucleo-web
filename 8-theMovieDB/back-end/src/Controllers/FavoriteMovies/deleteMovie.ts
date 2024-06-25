@@ -6,9 +6,9 @@ const prisma = new PrismaClient()
 export default {
     async deleteMovie(req: Request , res: Response) {
         try {
-            const {id} = req.body
+            const {id} = req.params
             
-            await prisma.favoriteMovies.delete({where: {id}});
+            await prisma.favoriteMovies.delete({where: {id: Number(id)}});
 
             return res.status(201).json({ msg: "Filme removido dos favoritos" })
         }
