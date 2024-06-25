@@ -62,7 +62,10 @@ main.movies-grid {
     padding: 10px;
     border-radius: 10px;
     text-align: center;
-    margin: auto;
+    flex: 15% 1;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .movie-card h2{
