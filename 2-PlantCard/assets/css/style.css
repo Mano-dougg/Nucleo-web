@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --title: #111313;
+    --text: #000000;
+    --bg-card: #dfdfd6;
+    --bg-principal: #bccdd0;
+    --bg-social-med9a:
+        #777c69;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    background-color: var(--bg-principal);
+}
+
+main {
+    display: flex;
+    width: fit-content;
+    background-color: var(--bg-card);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section_image {
+    flex-grow: 2;
+}
+
+
+.section_image img {
+    width: 100%;
+    height: 100%;
+}
+
+.section_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 30px 41px 30px;
+    flex-shrink: 1;
+}
+
+.section_info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+}
+
+.section_info h1 {
+    font-size: 36px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+    color: var(--title);
+}
+
+.section_info p {
+    text-align: justify;
+    font-size: 1rem;
+    font-family: Open sans;
+    max-width: 501px;
+    margin-bottom: 55px;
+}
+
+.section_info-assets {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.section_info-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.section_profile-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.row {
+    width: 100%;
+    height: 50px;
+}
+
+.section_info-socialmedia {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+    padding: 0 12px;
+    border-radius: 22px;
+
+    background-color: var(--bg-social-med9a);
+    position: absolute;
+
+    bottom: 0;
+    right: -200%;
+    visibility: hidden;
+
+    transition: right .2s, top .2s;
+}
+
+.section_info-socialmedia-position {
+    right: 5px;
+    visibility: initial;
+}
+
+.section_info-socialmedia span {
+    font-family: Overpass;
+    font-size: 20px;
+
+    align-items: center;
+
+    margin-top: 5px;
+    color: var(--bg-card);
+}
+
+.profile_name {
+    font-family: Overpass;
+    font-size: 1.5rem;
+}
+
+.profile_date {
+    font-family: Overpass;
+    font-size: 1rem;
+}
+
+@media screen and (min-width:880px) {
+    .section_info-socialmedia {
+        bottom: -30px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    main{
+        flex-direction: column;
+        border-radius: 32px;
+    }
+
+    .section_image img {
+        min-width: 100%;
+        min-height: 100%;
+        content: url('../img/mobile-folhas.png');
+    }
+
+    .section_info{
+        padding: 20px 20px 25px 20px;
+    }
+
+    .section_info h1{
+        text-align: left;
+    }
+
+    .section_info p{
+        margin-bottom: 35px;
+        text-align: left;
+    }
+
+    .section_info-socialmedia{
+        padding: 0 12px;
+    }
+
+    .section_info-socialmedia{
+        margin: 0;
+    }
+
+    .section_profile-text{
+        text-align: left;
+    }
+}
+
+@media screen and (max-width:400px){
+    .section_info h1{
+        font-size: 
+        36px;
+    }
+
+    .section_info p{
+        margin-bottom: 20px;
+
+    }
+
+    .section_info-text{
+        gap: 10px;
+    }
+
+    .section_info-socialmedia{
+        bottom: -15px;
+    }
+}

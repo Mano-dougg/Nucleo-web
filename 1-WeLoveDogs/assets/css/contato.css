@@ -1,0 +1,80 @@
+@import 'main.css';/*Importando estilos da nav do arquivo main, pois, a estrutura e os estilos são os mesmos*/
+
+nav .nav_container .nav_item_link{
+    background-color: var(--main-btn-bg);
+}
+
+
+nav  .nav_container .nav_item_link:hover {
+    background-color: transparent;
+    border: solid 2px var(--main-btn-bg);
+}
+
+nav ul .nav_item_background a {
+    color: var(--btn-text);
+    padding: 10px 30px;
+    border-radius: 14px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+main .content{
+    display: flex;
+    padding: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+form p{
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+
+}
+
+form .form_field{
+    width: 418px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    border:solid 1px var(--field-color);
+    font-weight: bold;
+}
+
+
+form #mensagem label{
+    text-align: center;
+}
+
+form #mensagem textarea{
+    resize: none;
+}
+
+form label{
+    text-align: center;
+    width: 124px;
+}
+
+form #btnSubmit{
+    background-color: var(--main-btn-bg);
+    color: var(--btn-text);
+    padding: 10px 50px;
+    transition: background .5s, border .5s;
+    border: solid 2px transparent;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+form #btnSubmit:hover{
+    background-color: transparent;
+    border: solid 2px var(--main-btn-bg);
+}

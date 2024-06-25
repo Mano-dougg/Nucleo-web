@@ -1,0 +1,76 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"articleinicio": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do adipisicing ad aliqua esse veniam ad excepteur est Lorem ipsum. Laborum elit nostrud enim enim in Lorem veniam eu ex incididunt incididunt ipsum magna eiusmod ut. Anim minim anim eiusmod excepteur ea eiusmod officia eiusmod eu sint aliqua duis amet sunt esse."
+						}
+					}
+				]
+			},
+			"articleimagem2": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+					"width": 3810,
+					"height": 5715
+				},
+				"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+				"width": 3810,
+				"height": 5715,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"articletitulo2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nulla aliquip mollit esse elit nisi fugiat ullamco dolore excepteur eiusmod veniam veniam. Cupidatat laboris velit laborum ullamco dolore. Consectetur amet minim excepteur adipisicing aliquip sint proident."
+						}
+					}
+				]
+			},
+			"articlemeio": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Proident quis incididunt aliqua proident eu. Sunt culpa occaecat veniam velit esse velit laborum nulla. Proident labore adipisicing aliquip ipsum exercitation aute id elit."
+						}
+					}
+				]
+			},
+			"articlefinal": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis incididunt eu in labore commodo id."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

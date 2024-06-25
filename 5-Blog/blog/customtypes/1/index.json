@@ -1,0 +1,55 @@
+{
+  "format": "custom",
+  "id": "1",
+  "label": "Card",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "titulo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Titulo",
+          "placeholder": "Card Titutlo",
+          "allowTargetBlank": true,
+          "multi": "heading1,heading2,heading3,heading4,heading5,heading6"
+        }
+      },
+      "descricao": {
+        "type": "StructuredText",
+        "config": {
+          "label": "descricao",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,hyperlink"
+        }
+      },
+      "cardimagem": {
+        "type": "Image",
+        "config": {
+          "label": "cardImagem",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "postagem": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

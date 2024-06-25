@@ -1,5 +1,6 @@
 # Atividade de Núcleo
 
+- **Núcleo:** web
 - **Orientadores:** Turma  [Fábio Santos Matos de Oliveira](https://gitlab.com/Fabio-Matos1303) | Turma  [Djair Maykon](https://gitlab.com/djairmaykon) | Turma  [Márcio R. Júnior m](https://gitlab.com/marciojunior2109) 
 - **Coorientadores gerais:** [Raissa Luna](https://gitlab.com/raissalunana) | [Lucas Júlio](https://gitlab.com/LucasJulio)
 
