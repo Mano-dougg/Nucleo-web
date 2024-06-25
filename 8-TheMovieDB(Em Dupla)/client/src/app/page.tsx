@@ -14,7 +14,7 @@ export default function Home() {
       
         <Cover/>
           <section className="now-playing">
-            <h1> Filmes </h1>
+            <h1> Filmes - <span> ordenar por </span> </h1>
             <MovieList/>
           </section>  
 
