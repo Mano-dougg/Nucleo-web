@@ -2,11 +2,21 @@
 import { useSelectedMovie } from '@/context/SelectedMovieContext';
 import Image from 'next/image';
 import './Cover.css';
-import { FaRegHeart, FaStar } from 'react-icons/fa';
+import { FaHeart, FaRegHeart, FaStar } from 'react-icons/fa';
 import { MdOutlineWatchLater, MdWatchLater } from 'react-icons/md';
+import { useEffect, useState } from 'react';
+import { User } from '@/types/types';
 
 const Cover: React.FC = () => {
   const { selectedMovie } = useSelectedMovie();
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   return (
     <div>
@@ -24,11 +34,11 @@ const Cover: React.FC = () => {
               </div>
               
               <button className='watchlist'>
-                <MdOutlineWatchLater className="watch"/>
+                {user? <MdWatchLater className='watch'/> :<MdOutlineWatchLater className="watch"/>}
               </button>
 
               <button className='fav'>
-                  <FaRegHeart className='fav-heart' />
+                  {user? < FaHeart className='fav-heart'/> : <FaRegHeart className='fav-heart' /> }
               </button>
           </div>
             

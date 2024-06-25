@@ -107,4 +107,5 @@
 .remove:hover{
     cursor: pointer;
     transform: scale(1.09);
+    background-color: (53, 66, 68, 0);
 }

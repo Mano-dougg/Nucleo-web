@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={comfortaa.className}>
 
         {children}
-      
+
       </body>
       
     </html>

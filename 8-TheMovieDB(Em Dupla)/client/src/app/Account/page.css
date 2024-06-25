@@ -54,8 +54,8 @@ main{
 .user-account h1{
     font-size: 25px;
     font-weight: bold;
-    margin-bottom: 20px;
-    margin-top: 130px;
+    margin-bottom: 10px;
+    /* margin-top: 130px; */
     color: #E2EBEB;
     align-self: flex-start;
     margin-left: 5vw;
@@ -73,4 +73,26 @@ main{
 
 .separator{
     height: 80px;
+}
+
+.logout{
+    color: #E2EBEB;
+    background-color: #080B0C;
+    border: 2px solid #E2EBEB;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+    align-self: flex-end;
+    margin-right: 5vw;
+    margin-top: 80px;
+}
+
+.logout:hover {
+    background-color: #354244;
+    cursor: pointer;
+    transform: scale(1.05);
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useState, useContext } from 'react';
-import { Movie } from '@/types/movie.types';
+import { Movie } from '@/types/types';
 
 interface SelectedMovieContextProps {
   selectedMovie: Movie | null;

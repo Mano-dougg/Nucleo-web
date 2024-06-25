@@ -6,7 +6,7 @@ import Image from 'next/image';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { FaHeart, FaRegHeart, FaStar } from 'react-icons/fa'; 
 import './MovieList.css'; 
-import { Movie } from '@/types/movie.types';
+import { Movie } from '@/types/types';
 import { scrollToTop } from '@/utils/functions';
 import { getMoviesByPopularity } from '@/server/tmdb/GETMovie.services';
 

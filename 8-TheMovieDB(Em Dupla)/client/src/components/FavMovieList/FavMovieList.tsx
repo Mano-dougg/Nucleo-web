@@ -3,18 +3,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import { FaHeart, FaRegHeart} from 'react-icons/fa';
 import useEmblaCarousel from 'embla-carousel-react';
 import './FavMovieList.css';
-import { MdWatchLater } from 'react-icons/md';
-
-interface Movie {
-  id: number;
-  title: string;
-  overview: string;
-  backdropPath: string;
-  vote_average: number;
-}
+import { Movie } from '@/types/types';
 
 const FavMovieList: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
