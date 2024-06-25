@@ -2,13 +2,14 @@
 .link,
 .postImage,
 .postCard .overlay {
+  display: block;
   position: relative;
   width: 100%;
 }
 
 .postImage {
-  height: 20vw;
-  width: auto;
+  width: 100%;
+  height: auto;
 }
 
 .postCard .overlay {
