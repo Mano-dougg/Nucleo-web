@@ -10,12 +10,14 @@ interface NavbarProps {
   onSearch?: (query: string) => void; // Função para lidar com a pesquisa de filmes
   onToggleFavorites?: () => void; // Função para lidar com o clique no botão de favoritos
   onHideFavorites?: () => void; // Função para ocultar os favoritos
+  onHomeClick?: () => void; // Função para lidar com o clique no botão Home
 }
 
 const Navbar: React.FC<NavbarProps> = ({
   onSearch,
   onToggleFavorites,
   onHideFavorites,
+  onHomeClick,
 }) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -43,6 +45,12 @@ const Navbar: React.FC<NavbarProps> = ({
     }
   };
 
+  const handleHomeClick = () => {
+    if (onHomeClick) {
+      onHomeClick();
+    }
+  };
+
   return (
     <nav className="w-full z-40">
       <div
@@ -60,9 +68,15 @@ const Navbar: React.FC<NavbarProps> = ({
             id="list"
           >
             <li>
-              <Link href="" onClick={handleHideFavorites}>
+              <Link href="" onClick={handleHomeClick}>
                 Home
               </Link>
+            </li>
+            <li>
+              <Link href="/store">Store</Link>
+            </li>
+            <li>
+              <Link href="/library">Library</Link>
             </li>
           </ul>
         </div>

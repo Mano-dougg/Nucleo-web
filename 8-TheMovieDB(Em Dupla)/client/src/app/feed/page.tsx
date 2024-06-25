@@ -70,6 +70,11 @@ export default function Home() {
     fetchMovies(query); // Chama a função fetchMovies com o parâmetro de pesquisa
   };
 
+  const handleHomeClick = () => {
+    fetchMovies(); // Chama a função fetchMovies sem parâmetro de pesquisa para carregar filmes populares
+    setShowFavorites(false); // Oculta os favoritos
+  };
+
   const toggleFavorites = async () => {
     setLoading(true);
     setError(null);
@@ -162,6 +167,7 @@ export default function Home() {
         onSearch={handleSearch}
         onToggleFavorites={toggleFavorites}
         onHideFavorites={handleHideFavorites}
+        onHomeClick={handleHomeClick} // Adiciona a função handleHomeClick
       />
       <Banner />
       <div className="flex flex-col gap-4 w-screen items-center -mb-[300000px]">

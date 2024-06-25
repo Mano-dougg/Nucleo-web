@@ -53,6 +53,7 @@ const Login = () => {
         console.log("User ID armazenado:", response.data.userId);
         setErrorMessage(null);
         setIsLoggedIn(true);
+        window.location.reload()
       } else {
         console.log("Registration failed");
         setErrorMessage("Registration failed");
