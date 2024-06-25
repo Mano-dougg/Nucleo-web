@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
-import validationRegister from "../Entities/validationRegister";
+import validationRegister from "../../Entities/validationRegister";
 
 const prisma = new PrismaClient()
 const bcrypt = require('bcrypt')

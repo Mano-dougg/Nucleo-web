@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
-import validationLogin from "../Entities/validationLogin";
-import checkPassword from "../Entities/checkPassword";
+import validationLogin from "../../Entities/validationLogin";
+import checkPassword from "../../Entities/checkPassword";
 
 const prisma = new PrismaClient()
 
