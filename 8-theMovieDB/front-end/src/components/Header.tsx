@@ -10,8 +10,8 @@ export default function Header() {
                 <Logo />
             </Link>
 
-            <Link href='/user'>
-                <Image src={userIcon} alt="ìcone de usuário" width={50} height={50} className="userButton"/>
+            <Link href='/user' className="userLink">
+                <Image src={userIcon} alt="ìcone de usuário" width={25} height={25} className="userButton"/>
             </Link>
         </header>
     );

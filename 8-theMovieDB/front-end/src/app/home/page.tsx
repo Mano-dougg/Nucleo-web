@@ -72,7 +72,6 @@ export default function Home() {
     return (
         <>
             <Header />
-            <h1>Filmes:</h1>
             <main className="movies-grid">
             {movies.length === 0 && <p>Carregando...</p>}
                 {movies.length > 0 && movies.map(movie => (
