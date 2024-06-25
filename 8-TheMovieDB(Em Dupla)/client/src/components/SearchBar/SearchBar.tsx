@@ -2,7 +2,6 @@
 
 import './SearchBar.css';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
 import Image from 'next/image';
 import { useSelectedMovie } from '@/context/SelectedMovieContext';

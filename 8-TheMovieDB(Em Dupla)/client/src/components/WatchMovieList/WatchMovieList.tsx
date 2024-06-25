@@ -5,14 +5,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import '../FavMovieList/FavMovieList.css';
-
-interface Movie {
-  id: number;
-  title: string;
-  overview: string;
-  backdropPath: string;
-  vote_average: number;
-}
+import { Movie } from '@/types/types';
 
 const WatchMovieList: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
