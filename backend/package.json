@@ -2,6 +2,9 @@
   "name": "express",
   "version": "1.0.0",
   "main": "index.js",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
@@ -9,6 +12,7 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node dist/src/server.js",
+    "predev": "npm run build && npx prisma migrate reset -f",
     "dev": "ts-node-dev src/server.ts"
   },
   "keywords": [],
