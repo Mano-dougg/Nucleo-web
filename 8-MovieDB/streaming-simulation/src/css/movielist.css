@@ -1,0 +1,25 @@
+/* MovieList.module.css */
+
+.movieListContainer {
+    padding: 20px; /* Espaçamento geral entre os carrosséis */
+}
+
+.carouselContainer {
+    margin-bottom: 20px; /* Espaçamento entre os diferentes carrosséis */
+}
+
+.movieContainer {
+    margin: 0 10px; /* Espaçamento entre os pôsteres dentro do carrossel */
+    text-align: center; /* Alinhamento do conteúdo */
+}
+
+.movieContainer h1 {
+    font-size: 16px; /* Tamanho da fonte do título */
+    margin-top: 10px; /* Espaçamento superior do título */
+}
+
+.movieContainer img {
+    width: 100%; /* Imagem ocupa toda a largura do contêiner */
+    height: auto; /* Altura ajustada automaticamente */
+    border-radius: 5px; /* Borda arredondada para a imagem */
+}

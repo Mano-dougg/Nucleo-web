@@ -45,7 +45,7 @@ const SignUp = () => {
     if (response.ok) {
       router.push('/');
     } else {
-      setError('Falha ao realizar o cadastro');
+      setError('Email já cadastrado, tente outro');
     }
   };
 

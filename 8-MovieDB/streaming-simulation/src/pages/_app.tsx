@@ -6,6 +6,7 @@ import { AppProps } from 'next/app';
 import Header from '@/components/Header';
 import { useRouter } from 'next/router';
 import MovieList from '@/components/MovieList';
+import '../css/movielist.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className="App">
         <Header />
         <main className="main-content">
+         
           <Component {...pageProps} />
         </main>
         {!isAuthPage && !router.pathname.startsWith('/movie') && (

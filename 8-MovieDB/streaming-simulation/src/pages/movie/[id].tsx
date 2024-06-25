@@ -9,6 +9,9 @@ interface Movie {
     overview: string;
     release_date: string;
     poster_path: string;
+    vote_average: number;
+    runtime: number;
+    genres: { id: number; name: string }[];
 }
 
 const MovieDetailPage = () => {
@@ -27,7 +30,7 @@ const MovieDetailPage = () => {
             setLoading(true);
             try {
                 const response = await axios.get(
-                    `https://api.themoviedb.org/3/movie/${id}?api_key=04c35731a5ee918f014970082a0088b1`
+                    `https://api.themoviedb.org/3/movie/${id}?api_key=04c35731a5ee918f014970082a0088b1&append_to_response=videos`
                 );
                 setMovie(response.data);
                 setError(null);
@@ -95,12 +98,29 @@ const MovieDetailPage = () => {
                 <p>Poster não disponível</p>
             )}
             <p>Data de Lançamento: {movie.release_date}</p>
+            <p>Classificação Indicativa: {movie.genres.map(genre => genre.name).join(', ')}</p>
+            <p>Avaliação Média: {movie.vote_average}</p>
+            <p>Tempo de Duração: {movie.runtime} minutos</p>
             <p>{movie.overview}</p>
 
             {session && (
                 <button onClick={handleFavorite}>
                     {isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos'}
                 </button>
+            )}
+
+            {movie.videos?.results.length > 0 && (
+                <div>
+                    <h2>Trailer</h2>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${movie.videos.results[0].key}`}
+                        title="Trailer"
+                        frameBorder="0"
+                        allowFullScreen
+                    ></iframe>
+                </div>
             )}
         </div>
     );

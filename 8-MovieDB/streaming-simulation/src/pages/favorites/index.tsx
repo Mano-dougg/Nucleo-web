@@ -24,7 +24,7 @@ const FavoritesPage = () => {
 
     const removeFavorite = async (movieId) => {
         try {
-            await axios.post('/api/remove_favorite', { userId: session.user.id, movieId });
+            await axios.post('/api/delete_favorite', { userId: session.user.id, movieId });
             setFavorites(prevFavorites => prevFavorites.filter(favorite => favorite.movie.id !== movieId));
         } catch (error) {
             console.error('Erro ao remover dos favoritos:', error);
