@@ -105,3 +105,14 @@ nav{
   text-decoration: none;
   color: var(--third-color)
 }
+
+@media (max-width:500px){
+  .destaque{
+    text-align: center;
+  }
+  .btnPrincipal{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}

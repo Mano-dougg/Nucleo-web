@@ -40,3 +40,10 @@ nav {
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+@media (max-width:500px){
+    nav {
+        flex-direction: column;
+        height: 150px;
+    }
+}
