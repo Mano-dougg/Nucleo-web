@@ -24,9 +24,7 @@ const Login = () => {
 
       if (response.status === 200) {
         console.log("Login successful");
-                const token = response.data.id;
-        localStorage.setItem("authToken", token);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
         localStorage.setItem("userId", response.data.id); // Armazenar os dados do usuário no localStorage
         console.log("User ID armazenado:", response.data.id);
         setErrorMessage(null);
@@ -51,9 +49,6 @@ const Login = () => {
 
       if (response.status === 201) {
         console.log("Registration successful");
-        const token = response.data.id;
-        localStorage.setItem("authToken", token);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         localStorage.setItem("userId", response.data.userId);// Armazenar os dados do usuário no localStorage
         console.log("User ID armazenado:", response.data.userId);
         setErrorMessage(null);
