@@ -10,6 +10,7 @@ import axios from 'axios';
 import Filmes from "../Filmes/page";
 import Lancamento from "../Lancamento/page";
 import FilmesHome from "../FilmesHome/page";
+import Pesquisar from "../Pesquisar/pesquisa";
 
 interface nomes {
     id: number;
@@ -63,9 +64,10 @@ export default function Home() {
 
     return (
         <body className="body-home">
-            <Header/>   
+            <Header/>  
             <Lancamento/>
             <FilmesHome/> 
+            <Pesquisar/> 
         </body>
     );
 }
