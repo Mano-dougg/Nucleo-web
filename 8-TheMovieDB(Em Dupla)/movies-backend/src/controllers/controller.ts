@@ -11,7 +11,7 @@ export async function cadastro_user(req:Request,res:Response){
           throw new Error("O nome deve não deve conter numeros")
         }
         if (String(senha).length <= 5){ 
-            throw new Error("Senha muito curta")
+            throw new Error("Senha muito curta");
         }
         // Checando se o usuário já existe. 
         const CheckEmail = await prisma.user.findUnique({where:{ email: login }})
@@ -23,7 +23,7 @@ export async function cadastro_user(req:Request,res:Response){
         res.status(200).send(addUser)
     } catch (error: any) {
         console.log(error)
-        res.status(400).json({msg: "Ocorreu um erro ao tentar cadastrar seu usuário!", err: error.message}).send()
+        res.status(400).json({msg: "Ocorreu um erro ao tentar cadastrar seu usuário!"}).send()
     }
 }
 // 2 - Rota de pegar o User
@@ -44,7 +44,7 @@ export async function get_user(req: Request, res:Response ) {
         res.status(200).send(getUser)
     }catch(error: any){
         console.log(error)
-        res.status(400).json({msg:"Ocorreu um erro ao pegar seu usuário!", err: error.message}).send()
+        res.status(400).json({msg:"Ocorreu um erro ao pegar seu usuário!"}).send()
     }
     
 }
@@ -71,7 +71,7 @@ export async function get_Favorites(req: Request, res:Response) {
 
     } catch (error: any) {
         console.log(error)
-        res.status(400).json({msg: "Erro ao requisitar lista de favoritos!", err: error.message}).send()
+        res.status(400).json({msg: "Erro ao requisitar lista de favoritos!"}).send()
     }
 }
 // 2 - criar novos favoritos 
@@ -86,7 +86,7 @@ export async function new_Favorites(req: Request, res: Response) {
     
     } catch (error:any) {
         console.log(error)
-        res.status(400).json({msg: "Erro encontrado ao tentar favoritar um filme!", err: error.message})
+        res.status(400).json({msg: "Erro encontrado ao tentar favoritar um filme!"})
     }
 }
 // 3 - deletar um favorito antigo
@@ -102,6 +102,6 @@ export async function delete_Favorites(req:Request, res:Response) {
         res.status(200).send(delFavs)
     } catch (error: any) {
         console.log(error)
-        res.status(400).json({msg:"Ocorreu um erro ao retificar/deletar um favorito do usuário XXXX", err: error.message})
+        res.status(400).json({msg:"Ocorreu um erro ao retificar/deletar um favorito do usuário XXXX"})
     }
 }

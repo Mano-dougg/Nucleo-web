@@ -1,8 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import axios from "axios";
 import Link from "next/link";
+import { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState<string>("");
+  const [senha, setSenha] = useState<string>("");
+
+  const handleVerificarAccount = () => {
+    if (
+      email != localStorage.getItem("email") ||
+      senha != localStorage.getItem("senha")
+    ) {
+      alert("Nome e senha incorretos");
+      return;
+    }
+    const login = email;
+    const data = { login, senha };
+    const get = axios.get("http://localhost:7001/tmdb-app/user_area", {});
+  };
+
   return (
     <section
       className={`flex h-screen w-full flex-col items-center justify-center bg-primary-color px-4 dark:bg-dark-bg`}
@@ -29,11 +47,15 @@ const Login = () => {
             type="email"
             placeholder="name@example.com"
             className="w-full outline-0"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
           <Input
             type="password"
             placeholder="password"
             className="w-full outline-0"
+            onChange={(e) => setSenha(e.target.value)}
+            value={senha}
           />
           <Button className="w-full">Login with Email</Button>
 
@@ -42,7 +64,7 @@ const Login = () => {
           >
             OR CONTINUE WITH
           </p>
-          <Link href={"/singin"} className="w-full">
+          <Link href={"/"} className="w-full">
             <Button className="w-full" variant={"outline"}>
               You dont hanve a account? Singin here.
             </Button>

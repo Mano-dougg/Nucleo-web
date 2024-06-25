@@ -18,12 +18,12 @@ const NavBar = (props: NavBarProps) => {
     <nav className="relative flex h-auto w-full justify-between gap-2 p-2 after:absolute after:bottom-0 after:w-full after:border">
       <div className="flex items-center gap-6 *:cursor-pointer *:text-sm *:font-semibold *:text-btn-bg">
         <Menu />
-        <Link href="/">
+        <Link href="/home">
           <MdOutlineLocalMovies className="hidden h-8 w-8 sm:flex" />
         </Link>
-        <Link href={"/"}>
-          <span className="hidden sm:flex">Movies JC</span>
-        </Link>
+        <Link href={"/user"}>
+            <span className="hidden sm:flex">User</span>
+          </Link>
         <Link href={"/discover"}>
           <span className="hidden sm:flex">Discover</span>
         </Link>

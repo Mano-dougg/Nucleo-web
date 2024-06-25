@@ -13,17 +13,20 @@ export function Menu() {
     <Menubar className="sm:hidden">
       <MenubarMenu>
         <MenubarTrigger>
-          <IoMenuOutline className="h-6 w-6" />
+          <IoMenuOutline className="h-auto w-6" />
         </MenubarTrigger>
         <MenubarContent>
-        <Link href={"/"}>
+          <Link href={"/user"}>
+            <MenubarItem >User</MenubarItem>
+          </Link>
+          <Link href={"/home"}>
             <MenubarItem>Home</MenubarItem>
           </Link>
           <Link href={"/discover"}>
             <MenubarItem>Discover</MenubarItem>
           </Link>
 
-          <Link href={""}>
+          <Link href={"/filter"}>
             <MenubarItem>Filter</MenubarItem>
           </Link>
         </MenubarContent>

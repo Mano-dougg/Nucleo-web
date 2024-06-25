@@ -91,10 +91,18 @@ export default function Home() {
               />
             ))}
       </section>
-      <Button disabled={page == 1} onClick={() => setPage((e) => e - 1)}>
+      <div className="flex w-full justify-center gap-6">
+        <Button
+          disabled={page == 1}
+          onClick={() => setPage((e) => e - 1)}
+          className="w-fit"
+        >
           Prev Page
         </Button>
-        <Button onClick={() => setPage((e) => e + 1)}>Next Page</Button>
+        <Button onClick={() => setPage((e) => e + 1)} className="w-fit">
+          Next Page
+        </Button>
+      </div>
       <div className="flex h-auto w-full justify-center gap-12 pb-4"></div>
     </main>
   );

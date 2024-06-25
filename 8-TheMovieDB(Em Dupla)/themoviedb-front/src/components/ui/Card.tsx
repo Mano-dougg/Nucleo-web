@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 interface CardProps {
@@ -8,16 +10,23 @@ interface CardProps {
 }
 
 const Card = (props: CardProps) => {
+  const star = localStorage.getItem("star");
+
+  function handleFavorite() {
+    const data = {}
+    const post = axios.post('http://localhost:7001/tmdb-app/add_favorite')
+  }
+
   return (
     <div
-      className={`flex h-[310px] max-h-[310px] max-w-[250px] flex-col justify-start ${props.snap} border-2 rounded-lg`}
+      className={`flex h-[310px] max-h-[310px] max-w-[250px] flex-col justify-start ${props.snap} rounded-lg border-2`}
     >
       <img
         src={`https://image.tmdb.org/t/p/w400${props.image}`}
         alt=""
-        className="max-h-[370px] h-60 max-w-[250px] rounded-md"
+        className="h-60 max-h-[370px] max-w-[250px] rounded-md"
       />
-      <div className="flex flex-col items-start gap-2 py-2 px-1">
+      <div className="flex flex-col items-start gap-2 px-1 py-2">
         <span className="text-[12px] text-primary-border">
           USA, 2016 - Current
         </span>
@@ -26,7 +35,11 @@ const Card = (props: CardProps) => {
           <span className="font-semibold text-btn-bg">
             RATED: {props.rate}/100
           </span>
-          <FaStar className="h-6 w-6" color="yellow" />
+          <FaStar
+            className="h-6 w-6"
+            color={"yellow"}
+            onClick={() => handleFavorite()}
+          />
         </p>
       </div>
     </div>
