@@ -32,7 +32,7 @@
     display: none;
 }
 
-.nome-site{
+.nome-site h1{
     color: var(--primary);
 }
 
@@ -68,6 +68,10 @@
     background: none;
     border: none;
     color: var(--primary);
+}
+
+button{
+    cursor: pointer;
 }
 
 @media (max-width: 768px){

@@ -5,6 +5,7 @@ import { User } from "../../../service/User";
 import React, { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
 import { useRouter } from "next/navigation";
+import Modal from "../Modal/page.tsx";
 
 interface nomes {
     id: number;
@@ -14,6 +15,7 @@ interface nomes {
 export default function Header() {
 
     const router = useRouter();
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleFavoriteClick = () => {
         router.push("/Favoritos");
@@ -69,8 +71,12 @@ export default function Header() {
             <section className="direito">
 
                 <div className="pesquisar">
-                    <button><Image src="/search.png" alt="Exemplo" width={20} height={20} /></button>
+                    <button onClick={() => setIsOpen(true)}><Image src="/search.png" alt="Exemplo" width={20} height={20} /></button>
                 </div>
+
+                <Modal handleClose={() => setIsOpen(false)} isOpen={isOpen}>
+                    <></>
+                </Modal>
 
                 {data ? (
                     <div className="usuario">

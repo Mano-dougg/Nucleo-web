@@ -65,9 +65,13 @@ figure img{
     margin-left: 20px;
     gap: 10px;
 
-    color: #FF2975;
+    
     transition: transform 3s ease-in-out; 
     transform-origin: center;
+}
+
+.favoritar p{
+    color: #FF2975;
 }
 
 .favoritar:hover {

@@ -9,6 +9,9 @@
     justify-content: center;
 
     background-color: black;
-    color: var(--primary);
     font-size: 10px;
+}
+
+.footer p{
+    color: var(--primary);
 }

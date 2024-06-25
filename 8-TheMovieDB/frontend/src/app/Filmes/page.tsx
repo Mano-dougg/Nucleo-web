@@ -8,6 +8,7 @@ import HomePage from "../Filmes/page";
 import axios from 'axios';
 import Lancamento from "../Lancamento/page";
 import Filmes from "./filmes";
+import Footer from "../Footer/page";
 
 interface nomes {
     id: number;
@@ -62,6 +63,7 @@ export default function Filmespage() {
         <body className="movies">
             <Header/>   
             <Filmes movies={movies} /> 
+            <Footer/>
         </body>
     );
 }

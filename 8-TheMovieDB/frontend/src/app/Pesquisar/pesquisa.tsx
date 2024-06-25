@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import axios from 'axios';
+import "./pesquisa.css";
 
 interface Filme {
   id: number;
@@ -65,40 +66,47 @@ export default function Pesquisar() {
   };
 
   return (
-    <header className='header-container'>
-      <section className='direito'>
-        <div className='pesquisar'>
-          <button onClick={() => {
-            Parabrir();
-            Mandar(); 
-          }}>
-            <Image src='/search.png' alt='Pesquisar' width={20} height={20} />
-          </button>
-          {aberto && (
-            <div className='search-bar'>
-              <input type='text' placeholder='busca' value={Textual} onChange={Pesquisa} onKeyDown={(e) => {
-                  if (e.key === 'Enter') Mandar();
-                }}
-              />
-              <button onClick={Mandar}>Buscar</button>
-            </div>
-          )}
-        </div>
+    <main className='container-pesquisa'>
 
-        {resultado && (
-          <div className='resultado-pesquisa'>
-            <div className='filme'>
-              <img src={resultado.imagem}/>
-              <h1>{resultado.titulo}</h1>
-              <p>Linguagem={resultado.original_language}</p>
-              <p>Popularidade={resultado.popularity}</p>
-              <p>Média={resultado.vote_average}</p>
-              <p>Contagem de votos={resultado.vote_count}</p>
-              <button onClick={limpar}>Limpar Pesquisa</button>
-            </div>
+      <section className='pesquisar-modal'>
+          
+          <div className='search-bar'>
+            <input type='text' placeholder='Buscar filme' value={Textual} onChange={Pesquisa} onKeyDown={(e) => {
+                if (e.key === 'Enter') Mandar();
+              }}
+            />
           </div>
-        )}
+
+          <div className='search-button'>
+            <button onClick={() => {
+              Parabrir();
+              Mandar(); 
+            }}>
+              <Image src='/search.png' alt='Pesquisar' width={20} height={20} />
+            </button>
+          </div>
+            
       </section>
-    </header>
+
+      {resultado && (
+        <section className='resultado-pesquisa'>
+              <figure className='capa-filme'>
+                <img src={resultado.imagem}/>
+              </figure>
+
+              <div className='info-pesquisa'>
+                <h1>{resultado.titulo}</h1>
+                <p>Idioma original: {resultado.original_language.toUpperCase()}</p>
+                <p>Acessos: {resultado.popularity.toFixed(0)}</p>
+                <p>Avaliações: {resultado.vote_count}</p>
+                <p>Média: <span>{resultado.vote_average.toFixed(2)}</span></p>
+              </div>
+
+              {/*<button onClick={limpar}>Limpar Pesquisa</button>*/}
+
+        </section>
+        )}
+
+    </main>
   );
 }
