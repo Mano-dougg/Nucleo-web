@@ -88,3 +88,8 @@
 .barra-pesquisa img:hover{
     cursor: pointer;
 }
+
+#line{
+    text-decoration: none;
+    color: white;
+}

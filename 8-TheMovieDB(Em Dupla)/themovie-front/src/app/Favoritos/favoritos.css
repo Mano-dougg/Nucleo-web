@@ -1,0 +1,11 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #723172;
+}
+
+.favoritos-texto{
+    color: white;
+    display: flex;
+    justify-content: center;
+}

@@ -28,6 +28,13 @@ export default {
       const token = jwt.sign({ username: user.username }, JWT_SECRET, { expiresIn: '1h' });
 
       res.status(200).json({message: 'Login realizado com sucesso!',token });
+      
+      const logado = await prisma.logado.create({
+        data: {
+          username,
+          userid: user.id
+        },
+      });
 
     } catch (error) {
       console.error('Erro ao autenticar usuário:', error);

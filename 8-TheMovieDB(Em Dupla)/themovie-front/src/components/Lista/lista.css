@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    color: white;
 }
 
 .main-div{
@@ -24,6 +25,10 @@
 
 .dentro-filme p{
     margin-left: 5px;
-    font-size: 12px;
+    font-size: 10px;
     align-self: flex-start;
+}
+
+#like{
+    cursor: pointer;
 }

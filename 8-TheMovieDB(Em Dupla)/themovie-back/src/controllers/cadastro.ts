@@ -9,13 +9,14 @@ export default{
 
     async user (req: Request, res: Response){
         try {
-          const {username, password} = req.body;
+          const {username, password, email} = req.body;
           const hashPassword = await bcrypt.hash(password,10);
 
           const user = await prisma.user.create({
             data: {
               username,
               password: hashPassword,
+              email,
             },
           });
           console.log('Usuário cadastrado com sucesso:', user);

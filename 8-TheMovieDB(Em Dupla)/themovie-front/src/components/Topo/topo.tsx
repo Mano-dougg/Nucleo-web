@@ -2,6 +2,7 @@ import './topo.css'
 import Image from 'next/image'
 import login from '../../assets/Icon Login.png'
 import lupa from '../../assets/Lupa.png'
+import Link from 'next/link';
 
 export default function Topo(){
     return(
@@ -12,15 +13,15 @@ export default function Topo(){
             </div>
 
             <div className='menu-topo'>
-                <h1>Início</h1>
-                <h1>Lista</h1>
-                <h1>Favoritos</h1>
+                <Link id='line' href={'./'}><h1>Início</h1></Link>
+                <Link id='line' href={'./Lista'}><h1>Lista</h1></Link>
+                <Link id='line' href={'./Favoritos'}><h1>Favoritos</h1></Link>
             </div>
 
 
             <div className='lado-direito'>
                 <div className='menu-login'>
-                    <Image src={login} alt=''></Image>
+                    <Link href={'./Formularios'}><Image src={login} alt=''></Image></Link>
                     {/* <p>Sair</p> */}
                 </div>
 

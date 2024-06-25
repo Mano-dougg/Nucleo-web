@@ -1,0 +1,56 @@
+.page{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.informacoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 260px;
+}
+
+div form{
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 2px;
+    border: 0;
+}
+
+input:focus{
+    outline: 0;
+}
+
+button{
+    margin: 10px;
+    height: 40px;
+    width: 80px;
+    align-self: flex-end;
+    border-radius: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #ecccec;
+}
+
+
+.login{
+    /* background-color: #580658; */
+    border-radius: 10px;
+    height: 200px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

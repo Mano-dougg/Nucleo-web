@@ -1,7 +1,9 @@
+'use client';
 import Topo from "../components/Topo/topo";
 import Base from "../components/Base/base"
 import Lista from "../components/Lista/lista";
 import './page.css'
+import Carrossel from "../components/Carrossel/carrossel";
 
 
 export default function Home() {
@@ -11,23 +13,32 @@ export default function Home() {
 
     <Topo />
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas 
-      vehicula ornare dui, at placerat sem. Nulla eu odio in tortor aliquam 
-      rutrum eget ut neque. Pellentesque auctor et justo eu posuere. Donec 
-      ante odio, tempor non velit in, vestibulum dignissim lectus. Vivamus 
-      vestibulum est in sem blandit, ut vulputate turpis finibus. Curabitur 
-      eleifend nibh placerat nisl euismod placerat. Fusce erat sapien, tempus 
-      quis ultrices nec, egestas quis velit. Nulla ullamcorper justo metus, ut 
-      consequat risus ullamcorper nec. Aenean in justo id lectus cursus consectetur. 
-      Curabitur hendrerit risus sed mattis blandit. Sed eget ligula orci. Phasellus 
-      in porttitor velit. Cras ac mi pharetra, sollicitudin urna nec, viverra dolor. 
-      Nunc elementum lorem a eros sollicitudin pellentesque.
-    </p>
 
+    <div className="primeira-parte">
 
-    <p>Carrossel</p>
+      <div className="inicio-esquerda">
+        <p>
+        Bem-vindo ao Omni: O Seu Portal Cinematográfico!
+        </p>
 
-    <Lista />
+        <p>
+        O Omni é o seu destino definitivo para explorar o mundo do cinema. 
+        Com uma vasta coleção de filmes, séries e documentários, o Omni oferece uma 
+        experiência completa para os amantes da sétima arte.
+        </p>
+
+        <p>Onde a magia do cinema está a um clique de distância! 🎬✨</p>
+      </div>
+
+      <div className="carrossel-direita">
+        <Carrossel />
+      </div>
+
+    </div>
+
+    <div className="segunda-parte">
+      <Lista />
+    </div>
 
     <Base />
 

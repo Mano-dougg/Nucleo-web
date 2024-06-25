@@ -10,13 +10,14 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:../database.db"
 }
 
 model User {
   id       Int      @id @default(autoincrement())
   username String   @unique
   password String
+  email String
   favoritos Favoritos[]
 }
 
@@ -28,4 +29,11 @@ model Favoritos {
   overview      String
   userId    Int
   user      User    @relation(fields: [userId], references: [id])
+}
+
+
+model logado{
+  id Int @id @default(autoincrement())
+  username String @unique
+  userid Int
 }
