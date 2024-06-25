@@ -12,28 +12,34 @@ const WatchMovieList: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
+  const favMovies = [1022789, 653346, 573435, 639720, 1001311, 929590, 829402];
+
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&page=1', {
-          headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDc2NjMyZjQ1ZWRiZGE5OWI1NjcxMzg4Y2I5M2FkMiIsIm5iZiI6MTcxOTAwODkxMS4xODE3MzgsInN1YiI6IjY2NzVmYzE4MGI1N2RlNjRiNjhiODhmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gJltDl8NSL1uIzFOsbDaosC2_e_UMx3lp6BZ5a0ZIEQ'
-          }
-        });
+        const movieRequests = favMovies.map((movieId) =>
+          axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=pt-BR`, {
+            headers: {
+              accept: 'application/json',
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDc2NjMyZjQ1ZWRiZGE5OWI1NjcxMzg4Y2I5M2FkMiIsIm5iZiI6MTcxOTAwODkxMS4xODE3MzgsInN1YiI6IjY2NzVmYzE4MGI1N2RlNjRiNjhiODhmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gJltDl8NSL1uIzFOsbDaosC2_e_UMx3lp6BZ5a0ZIEQ',
+            }
+          })
+        );
 
-        const moviesData = response.data.results.map((movie: any) => ({
-          id: movie.id,
-          title: movie.title,
-          overview: movie.overview,
-          backdropPath: movie.backdrop_path,
-          vote_average: movie.vote_average,
+        const movieResponses = await Promise.all(movieRequests);
+
+        const moviesData = movieResponses.map(response => ({
+          id: response.data.id,
+          title: response.data.title,
+          overview: response.data.overview,
+          backdropPath: response.data.backdrop_path,
+          vote_average: response.data.vote_average,
         }));
 
         setMovies(moviesData);
         setLoading(false);
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching movies:', error);
         setLoading(false);
       }
     };
@@ -65,7 +71,7 @@ const WatchMovieList: React.FC = () => {
                   <h4>{movie.title}</h4>
                   <div className='hidden-info-carousel'>
                     <button className='remove'>
-                        Remover
+                      Remover
                     </button>
                   </div>
                 </div>

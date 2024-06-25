@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 async function postNewUser (name: string, email: string, password: string) {
-    const createdUser = await axios.post('http://localhost:3001/api/users/',
+    const createdUser = await axios.post('http://localhost:8080/api/users/',
         {
             name, 
             email,
@@ -12,7 +12,7 @@ async function postNewUser (name: string, email: string, password: string) {
 };
 
 async function postLogin (email: string, password: string) {
-    const login = await axios.post('http://localhost:3001/api/users/login',
+    const login = await axios.post('http://localhost:8080/api/users/login',
         {
             email,
             password
@@ -37,7 +37,7 @@ async function putUpdate (id: number, {name, email, password}:{
     if(email)data.email = email;
     if(password)data.password = password;
 
-    const update = await axios.put(`http://localhost:3001/api/users/${id}`,
+    const update = await axios.put(`http://localhost:8080/api/users/${id}`,
         data
     );
 
