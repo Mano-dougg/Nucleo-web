@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User{
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String
+  watchList Int[] //movies that the user wants to watch
+  favorites Int[] //movies favorited by the user
+
+  // relation between the user and their watched movies
+  whatched Movie[] //movies that the user already watch
+
+  // relation between users
+  friends User[] @relation("UserFriends") //user friends self type relation
+  friendOf User[] @relation("UserFriends")
+  sentFriendRequests   FriendRequest[] @relation("SentFriendRequests") //users that the said user has send requests
+  receivedFriendRequests FriendRequest[] @relation("ReceivedFriendRequests") //users that send friend requests to said user
+
+  // relation between an user and its token
+  tokens Token[]
+
+  @@map("userList")
+}
+
+model FriendRequest {
+  id        Int      @id @default(autoincrement())
+  fromId    Int
+  toId      Int
+  from      User     @relation("SentFriendRequests", fields: [fromId], references: [id])
+  to        User     @relation("ReceivedFriendRequests", fields: [toId], references: [id])
+  status    FriendRequestStatus   @default(pending) // status can be "pending", "accepted", "rejected"
+}
+
+model Movie{
+  id Int @id @default(autoincrement())
+  movieId Int
+  userRating Int
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+  
+  @@map("movieRating")
+}
+
+model Token {
+ id         Int       @id @default(autoincrement())
+ createdAt  DateTime  @default(now())
+ updatedAt  DateTime  @updatedAt
+ type       TokenType
+ emailToken String?   @unique // Only used for short lived email tokens
+ valid      Boolean   @default(true)
+ expiration DateTime
+
+ // Relation fields
+ user   User @relation(fields: [userId], references: [id])
+ userId Int
+}
+
+enum TokenType {
+ EMAIL // used as a short-lived token sent to the user's email
+ API
+}
+
+enum FriendRequestStatus {
+  pending
+  accepted
+  rejected
+}

@@ -1,0 +1,151 @@
+.cover{
+    position: relative;
+    width: 100vw;
+    height: fit-content;
+    overflow: hidden;
+    margin-top: 64px;
+}
+
+.cover-poster{
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+}
+
+.cover-poster::before{
+    content:'';
+    position: absolute;
+    bottom: -400px;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(0deg, #080B0C 30%, transparent);
+    transition: 0.5s;
+    z-index:1;
+  }
+
+.cover-poster:hover::before {
+    bottom:-70px;
+}
+
+.cover:hover .cover-description p{
+    display: visible;
+}
+
+.cover-poster-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.cover-description{
+    position: absolute;
+    width: 70%;
+    bottom: 20px;
+    left: 2vw;
+    padding: 2%;
+    z-index: 1;
+    text-shadow: 2px 2px 5px black; 
+}
+
+.cover:hover .cover-description p{
+    visibility: visible;
+    transition: ease-in 0.2s;
+}
+
+.cover-description p{
+    visibility: hidden;
+}
+.cover-description h1{
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.cover-description p{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.9;
+}
+
+.cover-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap:4vw;
+    font-size: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 0.2em;
+}
+
+.cover-info .fav{
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+}
+
+.fav-heart{
+    height: 18px;
+    width: 18px;
+}
+
+.fav-heart2{
+    height: 18px;
+    width: 18px;
+}
+
+.hidden{
+    display: none;
+}
+
+.watch{
+    width: 28px;
+    height: auto;
+    
+}
+.watch:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.cover-info{
+    visibility: hidden;
+}
+
+.cover:hover .cover-info{
+    visibility: visible;
+}
+
+.watchlist{
+    background: none;
+}
+
+@media (max-width: 1000px){
+    .cover-description{
+        width:90%;
+    }
+    .cover-description h1{
+        font-size: 25px;
+    }
+    .cover-description p{
+        font-size: 10px;
+    }
+
+    .cover{
+        height: fit-content;
+    }
+
+    .cover-poster{
+        min-width: 500px;
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 500px){
+    .cover-description{
+        width:95%;
+    }
+
+}

@@ -1,0 +1,111 @@
+/* MovieList.css */
+.embla {
+    overflow: hidden;
+    width: 90%;
+  }
+  
+  .embla__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .embla__container {
+    display: flex;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    /* margin-left: -10px;  */
+  }
+  
+  .embla__slide {
+    position: relative;
+    /* min-width: 100%;  */
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  
+  .card-carousel {
+    cursor: pointer;
+    position: relative;
+    width:180px;
+    height:250px;
+    overflow: hidden;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 20px; 
+  }
+  
+  .card-poster-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-poster-carousel::before{
+    content:'';
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(0deg, #000 20%, transparent);
+    transition: 0.5s;
+    z-index:1;
+  }
+
+  .card-poster-carousel:hover::before {
+    bottom:-40px;
+  }
+  
+  .card-poster-img-carousel {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .card-carousel:hover .card-poster-img-carousel{
+    transform: translateY(-20px);
+  }
+  
+  .card-details-carousel {
+    position: absolute;
+    bottom: -40px;
+    left: 15px;
+    right: 15px;
+    z-index: 2;
+    transition: 0.5s;
+  }
+
+  .card-carousel:hover .card-details-carousel{
+    bottom:15px;
+  }
+  
+  .hidden-info-carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-details-carousel h4{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+.icon-btn{
+    background-color: transparent;
+}
+
+.remove{
+    padding: 10px;
+    border-radius: 15px;
+    color: #E2EBEB;
+    font-size: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-left:27px;
+}
+
+.remove:hover{
+    cursor: pointer;
+    transform: scale(1.09);
+    background-color: (53, 66, 68, 0);
+}

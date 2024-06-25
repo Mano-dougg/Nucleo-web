@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    font-family: "Open Sans", sans-serif;
+}
+
+nav{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    max-width: 1440px;
+
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+nav ul li{
+    flex-basis: auto;
+    margin-right: 35px;
+    
+}
+
+nav ul li:nth-last-of-type(1){
+    margin-right:15px;
+}
+
+#inscricao:hover{
+    background-color: #7ED321; 
+}
+
+nav ul li:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.link{
+    text-decoration: none;
+    color: #000000;
+    height: 102px;
+    width: 122px;
+}
+
+#logo{
+    flex-basis: auto;
+    margin-left: 15px;
+    width: 281px;
+    height: 65px;
+    text-decoration: none;
+    font-size: 48px;
+    line-height: 65.37px;
+    font-weight: 700;
+    color: #000000;
+}
+
+#logo:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+
+#logo span{
+    color: #7ED321;
+}
+
+/* frame botão inscrição */
+#inscricao {
+    display:flex;
+    width: 151px;
+    height: 40px;
+
+    background: rgba(126, 211, 33, 0.4);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* texto botão inscrição */
+#inscricao a{
+    text-decoration: none;
+    color: #1C4701;
+}
+
+/*main da página home */
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: calc(100vh-120px);
+    max-width: 1440px;
+}
+
+main section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     
+    margin-right: 60px;
+    margin-bottom: 0px;
+    padding-top: 115;
+}
+
+main section p{
+    max-width: 340px;
+    font-size: 48px;
+    line-height: 65px;    
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+main section div{
+    display: flex;
+    background: rgba(126, 211, 33, 1);
+    border-radius: 15px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    width: 220px;
+    height: 51px;
+}
+
+main section div a {
+    text-decoration: none;
+    color: #1C4701;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+main section div:hover{
+    background-color: rgba(126, 211, 33, 0.4); 
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+/* imagem */
+main div img{
+
+    margin-top: 30px;
+    width: 640px;
+    height: 480px;
+}
+
+main section div:hover{
+    background-color: rgba(126, 211, 33, 0.4); 
+    cursor: pointer;
+    transform: scale(1.03);
+}

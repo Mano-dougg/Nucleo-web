@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    vertical-align: baseline;
+    font-style: normal;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    max-width: 352px;
+    min-width: 156px;
+    min-height: 258px;
+    max-height: 438px;
+
+    background: #EDFFF7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+
+    padding-top: 25px;
+    padding-bottom: 25px;
+    gap:14px
+
+}
+
+.card h1{
+
+    max-width: 85%;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: auto;
+    letter-spacing: -0.02em;
+
+    color: #003720;
+
+}
+
+.card p{
+
+    max-width: 85%;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: auto;
+    letter-spacing: -0.02em;
+
+    color: #067546;
+
+}
+
+.card div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+}
+
+.autor-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+
+.autor-info h2{
+
+    font-weight: 500;
+    font-size: 14px;
+
+    letter-spacing: -0.02em;
+
+    color: #003720;
+
+}
+
+.autor-info p{
+
+    font-weight: 500;
+    font-size: 12px;
+
+    letter-spacing: -0.02em;
+
+    color: #067546;
+
+}
+
+.profile-img{
+    max-width: 44px;
+    max-height: 44px;
+}
+
+.robot-img{
+    width: 85%;
+    height: auto;
+}
+
+@media (max-width:1200){
+    .card{
+        max-width: 100%;
+    }
+}
+
+@media(max-width:1000px){
+    .card{
+        gap:8px;
+    }
+    .card h1{
+        font-size: clamp(18px,4vw,33px);
+    }
+
+    .card p{
+        font-size: clamp(8px,2vw,14px);
+    }
+
+    .profile-img{
+        width: clamp(20px,5vw,44px);
+        height: auto;
+    }
+
+    .share-img{
+        width: clamp(20px,5vw,44px);
+        height: auto; 
+    }
+
+    .autor-info h2{
+        font-size: clamp(8px,2.5vw,14px);
+    }
+
+    .autor-info p{
+        font-size: clamp(8px,2vw,12px);
+    }
+}
+
+@media(max-width:413px){
+    .card{
+        min-width: auto;
+        min-height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media(max-width:360px){
+    .card{
+        gap:2vw;
+    }
+    .card h1{
+        font-size:4vw;
+    }
+
+    .card p{
+        font-size:2vw;
+    }
+
+    .profile-img{
+        width: 5vw;
+        height: auto;
+    }
+
+    .share-img{
+        width:5vw;
+        height: auto; 
+    }
+
+    .autor-info h2{
+        font-size: 2.5vw;
+    }
+
+    .autor-info p{
+        font-size:2vw;
+    }
+}
