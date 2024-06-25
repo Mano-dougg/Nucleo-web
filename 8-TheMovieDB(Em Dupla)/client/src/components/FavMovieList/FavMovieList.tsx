@@ -73,7 +73,6 @@ const FavMovieList: React.FC = () => {
       }
     }
     window.location.reload();
-    window.location.reload();
   };
 
   if (loading) {
