@@ -2,7 +2,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import FavoriteIcon from './MovieIcons/FavoriteIcon';
 
 interface Movie {
   title: string;
@@ -19,6 +18,7 @@ interface MovieListProps {
 
 export const MovieList: React.FC<MovieListProps> = ({ searchTerm }) => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [favorites, setFavorites] = useState<number[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -51,7 +51,20 @@ export const MovieList: React.FC<MovieListProps> = ({ searchTerm }) => {
     };
 
     fetchMovies();
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    setFavorites(storedFavorites);
   }, []);
+
+  const toggleFavorite = (id: number) => {
+    let updatedFavorites = [];
+    if (favorites.includes(id)) {
+      updatedFavorites = favorites.filter(favId => favId !== id);
+    } else {
+      updatedFavorites = [...favorites, id];
+    }
+    setFavorites(updatedFavorites);
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+  };
 
   const filteredMovies = movies.filter(movie =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -64,11 +77,19 @@ export const MovieList: React.FC<MovieListProps> = ({ searchTerm }) => {
         {filteredMovies.map((movie, index) => (
           <div key={index} className="bg-white rounded-xl shadow-md p-4 space-y-3">
             <div>
-            <img src={movie.posterPath} alt={movie.title} className="w-full h-auto mb-2 rounded-xl" />
-            <h3 className="text-lg font-bold mb-2">{movie.title}</h3>
-            <p className="text-gray-500 text-sm">Release Date: {movie.releaseDate}</p>
-            <p className="text-yellow-600 text-sm">Rating: {(movie.vote).toFixed(1)}</p></div>
-            <FavoriteIcon/>
+              <img src={movie.posterPath} alt={movie.title} className="w-full h-auto mb-2 rounded-xl" />
+              <h3 className="text-lg font-bold mb-2">{movie.title}</h3>
+              <p className="text-gray-500 text-sm">Release Date: {movie.releaseDate}</p>
+              <p className="text-yellow-600 text-sm">Rating: {(movie.vote).toFixed(1)}</p>
+            </div>
+            <button
+              className={`py-1 px-1.5 md:px-2 rounded-lg text-black font-bold ${
+                favorites.includes(movie.id) ? 'bg-red-500 hover:bg-red-700' : 'bg-orange-500 hover:bg-orange-600'
+              }`}
+              onClick={() => toggleFavorite(movie.id)}
+            >
+              {favorites.includes(movie.id) ? 'Remove from Favorites' : 'Add to Favorites'}
+            </button>
           </div>
         ))}
       </div>
