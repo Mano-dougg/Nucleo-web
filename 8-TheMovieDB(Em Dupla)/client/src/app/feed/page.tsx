@@ -1,3 +1,5 @@
+// pages/index.tsx
+
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import MovieCard from '../../components/MovieCard';
@@ -23,19 +25,21 @@ export default function Home() {
     fetchMovies();
   }, []);
 
-  const fetchMovies = async () => {
+  const fetchMovies = async (query?: string) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular`,
-        {
-          params: {
-            api_key: process.env.TMDB_API_KEY,
-            language: 'pt-BR',
-          },
-        }
-      );
+      let url = `https://api.themoviedb.org/3/movie/popular`;
+      if (query) {
+        url = `https://api.themoviedb.org/3/search/movie`;
+      }
+      const response = await axios.get(url, {
+        params: {
+          api_key: process.env.TMDB_API_KEY,
+          language: 'pt-BR',
+          query: query || '', // Adicionando a query na requisição apenas se estiver definida
+        },
+      });
       const fetchedMovies = response.data.results.map((movie: any) => ({
         id: movie.id,
         title: movie.title,
@@ -60,6 +64,10 @@ export default function Home() {
       setError('An unknown error occurred.');
     }
     console.error('Failed to fetch movies:', error);
+  };
+
+  const handleSearch = (query: string) => {
+    fetchMovies(query); // Chama a função fetchMovies com o parâmetro de pesquisa
   };
 
   const toggleFavorites = async () => {
@@ -140,15 +148,15 @@ export default function Home() {
 
   return (
     <div className="w-screen h-screen relative items-start justify-start flex flex-col">
-      <Navbar onToggleFavorites={toggleFavorites} onHideFavorites={handleHideFavorites} />
+      <Navbar onSearch={handleSearch} onToggleFavorites={toggleFavorites} onHideFavorites={handleHideFavorites} />
       <Banner />
-      <div className="flex flex-col gap-4 pl-12 -mb-[700px]">
+      <div className="flex flex-col gap-4 pl-12 -mb-[300000px]">
         <h2 className="mt-5 text-lg font-semibold px-2">
           {showFavorites ? 'Favoritos' : 'Novos episódios'}
         </h2>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
-        <section className="flex flex-row gap-3">
+        <section className="grid gap-3 mb-9" id="grid">
           {showFavorites
             ? favorites.map((movie) => (
                 <MovieCard
@@ -179,3 +187,4 @@ export default function Home() {
     </div>
   );
 }
+

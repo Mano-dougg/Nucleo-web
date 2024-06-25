@@ -7,7 +7,7 @@ import Heart from '../../public/svg/icons/heart';
 import Search from '../../public/svg/icons/search';
 
 interface NavbarProps {
-  onSearch?: (query: string) => void; // Tornando onSearch opcional com o '?'
+  onSearch?: (query: string) => void; // Função para lidar com a pesquisa de filmes
   onToggleFavorites?: () => void; // Função para lidar com o clique no botão de favoritos
   onHideFavorites?: () => void; // Função para ocultar os favoritos
 }
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onToggleFavorites, onHideFavo
         </div>
         <div className="flex flex-row gap-8 items-center">
           <button
-            onClick={handleToggleFavorites} // Chama a função handleToggleFavorites ao clicar no botão
+            onClick={handleToggleFavorites} // Chama a função handleToggleFavorites ao clicar no botão de favoritos
             className="flex w-12 h-9 bg-[#26292A] bg-opacity-30 backdrop-blur-xl drop-shadow-button border-white border-opacity-5 border-[1px] rounded-full items-center justify-center"
           >
             <Heart />
