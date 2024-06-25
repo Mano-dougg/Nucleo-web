@@ -87,7 +87,7 @@
 
 }
 
-@media(min-width:561px){
+@media(min-width:561px) and (max-width:768px){
 
     .filmeshome-card{
         flex-direction: column;
