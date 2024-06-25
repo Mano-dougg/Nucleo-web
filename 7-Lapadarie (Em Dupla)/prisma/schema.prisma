@@ -11,6 +11,6 @@ model Sales {
   id              Int     @id @default(autoincrement())
   client_name     String
   breads_qt       Int
-  cost            Int
+  total_cost      Float
   deleted_flag    Boolean
 }

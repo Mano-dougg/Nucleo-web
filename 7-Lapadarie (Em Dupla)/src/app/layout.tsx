@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Main from "@/components/Main";
+import Modal from "@/components/Modal";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,11 +20,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body className={poppins.className}>
         <Header />
         <Main />
+        <Modal />
       </body>
     </html>
   );
