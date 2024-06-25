@@ -2,6 +2,7 @@ import { Router } from "express";
 import loginUser from "../Controllers/Users/loginUser";
 import registerUser from "../Controllers/Users/registerUser";
 import postMovie from "../Controllers/FavoriteMovies/postMovie";
+import getMovie from "../Controllers/FavoriteMovies/getMovie";
 
 const router = Router()
 
@@ -14,6 +15,7 @@ router.post("/auth/register", registerUser.registerUser);
 router.post("/auth/login", loginUser.loginUser);
 
 // MOVIES ROUTES
-router.post("/add_movie", postMovie.postMovie)
+router.post("/addMovie", postMovie.postMovie)
+router.get("/getMovie", getMovie.getMovie)
 
 export { router }
