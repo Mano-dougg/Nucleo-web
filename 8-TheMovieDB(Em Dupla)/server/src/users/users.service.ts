@@ -77,23 +77,23 @@ export const authenticateUser = async (email: any, password: any) => {
         message: "Usuário não encontrado, o endereço de email não está cadastrado"
     };
 
-    const validPassword = password === user.password;
+    const validPassword = await bcrypt.compare(password, user.password);
     if (!validPassword) return {
         result: "error",
         message: "senha inválida"
     };
 
-    const token = process.env.ACCESS_TOKEN_SECRET;
-
     const accessToken = jwt.sign({id: user.id, email:user.email},
-        token as string,
-        { expiresIn: '1h' }
+        process.env.ACCESS_TOKEN_SECRET as string,
+        { expiresIn: '2h' }
     );
-    console.log(token)
 
     return {
         result: "success",
-        data: accessToken
+        data: {
+            id: user.id,
+            token:accessToken
+        }
     }
 }
 

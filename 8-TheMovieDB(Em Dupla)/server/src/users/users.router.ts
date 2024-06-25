@@ -40,7 +40,10 @@ userRouter.get("/:id",
                 result: "error",
                 message: result
             });
-            return response.status(200).json(result);
+            return response.status(200).json({
+                result: "success",
+                data: result
+            });
         } catch (error:any){
             return response.status(500).json({
                 result: "error",
