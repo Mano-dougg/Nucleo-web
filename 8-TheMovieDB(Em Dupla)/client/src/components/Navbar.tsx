@@ -1,10 +1,10 @@
 // components/Navbar.tsx
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Person from '../../public/svg/icons/person';
-import Heart from '../../public/svg/icons/heart';
-import Search from '../../public/svg/icons/search';
+import { useState } from "react";
+import Link from "next/link";
+import Person from "../../public/svg/icons/person";
+import Heart from "../../public/svg/icons/heart";
+import Search from "../../public/svg/icons/search";
 
 interface NavbarProps {
   onSearch?: (query: string) => void; // Função para lidar com a pesquisa de filmes
@@ -12,8 +12,12 @@ interface NavbarProps {
   onHideFavorites?: () => void; // Função para ocultar os favoritos
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onSearch, onToggleFavorites, onHideFavorites }) => {
-  const [searchQuery, setSearchQuery] = useState<string>('');
+const Navbar: React.FC<NavbarProps> = ({
+  onSearch,
+  onToggleFavorites,
+  onHideFavorites,
+}) => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const handleSearch = () => {
     if (onSearch) {
@@ -22,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onToggleFavorites, onHideFavo
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSearch();
     }
   };
@@ -41,24 +45,28 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onToggleFavorites, onHideFavo
 
   return (
     <nav className="w-full z-40">
-      <div className="px-12 py-5 flex flex-row items-center justify-between transition duration-500 bg-opacity-90">
-        <div className="flex flex-row items-center">
+      <div
+        className="px-12 py-5 flex flex-row items-center justify-between transition duration-500 bg-opacity-90"
+        id="navbar"
+      >
+        <div className="flex flex-row items-center" id="navbar-left">
           <button>
-            <span className="ml-10 text-xl font-semibold">Logo</span>
+            <span className="ml-10 text-xl font-semibold" id="logo">
+              Logo
+            </span>
           </button>
-          <ul className="flex flex-row gap-12 ml-[100px] text-base tracking-wide">
+          <ul
+            className="flex flex-row gap-12 ml-[100px] text-base tracking-wide"
+            id="list"
+          >
             <li>
-              <Link href="" onClick={handleHideFavorites}>Home</Link>
-            </li>
-            <li>
-              <Link href="/store">Store</Link>
-            </li>
-            <li>
-              <Link href="/library">Library</Link>
+              <Link href="" onClick={handleHideFavorites}>
+                Home
+              </Link>
             </li>
           </ul>
         </div>
-        <div className="flex flex-row gap-8 items-center">
+        <div className="flex flex-row gap-8 items-center" id="navbar-right">
           <button
             onClick={handleToggleFavorites} // Chama a função handleToggleFavorites ao clicar no botão de favoritos
             className="flex w-12 h-9 bg-[#26292A] bg-opacity-30 backdrop-blur-xl drop-shadow-button border-white border-opacity-5 border-[1px] rounded-full items-center justify-center"
@@ -73,6 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onToggleFavorites, onHideFavo
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={handleKeyDown}
               className="w-[230px] focus:outline-none focus:ring-0 bg-transparent"
+              id="search"
             />
             <button onClick={handleSearch}>
               <Search />

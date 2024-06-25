@@ -48,11 +48,8 @@ const MovieCard: React.FC<MovieCardProps> = ({
         </p>
         <p className="text-white text-opacity-70">R$ {price.toFixed(2)}</p>
       </div>
-      <div className="flex flex-row justify-between items-center mt-3">
-        <button className="flex flex-row items-center justify-center gap-2 bg-[#162E37] px-4 py-3 rounded-full">
-          <span className="text-sm">Add to Cart</span>
-        </button>
-        <div className="flex flex-row gap-6 px-7">
+      <div className="flex flex-row justify-between items-center mt-0 mb-2">
+        <div className="flex flex-row m-auto mr-2">
           {isFavorite ? (
             <button onClick={handleRemoveClick}>
               <HeartFill />
@@ -62,9 +59,6 @@ const MovieCard: React.FC<MovieCardProps> = ({
               <Heart />
             </button>
           )}
-          <button>
-            <AddToAlbum />
-          </button> 
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import Play from "../../public/svg/icons/play";
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-[550px] -mt-[84px]">
+    <div className="relative w-full h-[550px] -mt-[84px]" id="banner">
       <div className="absolute bottom-12 left-12">
         <MovieLogo />
         <p className="w-[420px] mt-6 text-[#E2EBEB] text-opacity-80 font-light">
