@@ -41,14 +41,23 @@ export const addUser = async ({ name, email, password }: NonTreatedParams) => {
 
     const hashedPassword = await bcrypt.hash(password, 10)
 
-    const newUser = await userModels.addUser({ name, email, password:hashedPassword })
-    
-    return newUser? 
-    {
-        result: "success",
-        data: newUser
+    const newUser = await userModels.addUser({ name, email, password:hashedPassword });
+
+    if(newUser){
+
+        const accessToken = jwt.sign({id: newUser.id, email: newUser.email},
+            process.env.ACCESS_TOKEN_SECRET as string,
+            { expiresIn: '2h' }
+        );
+
+        return {
+            result: "success",
+            data: newUser,
+            token: accessToken
+        };
     }
-    :{
+    
+    return {
         result: "error",
         message: "Endereço de email já cadastrado."
     }
@@ -123,12 +132,21 @@ export const updateUser = async(id:number, data: NonTreatedParams) =>{
 
     const updated = await userModels.updateUser(id, data);
 
-    return updated?
-    {
-        result: "success",
-        data: updated
-    }
-    :{
+    if(updated){
+
+        const accessToken = jwt.sign({id: updated.id, email: updated.email},
+            process.env.ACCESS_TOKEN_SECRET as string,
+            { expiresIn: '2h' }
+        );
+
+        return {
+            result: "success",
+            data: updated,
+            token: accessToken
+        };  
+    };
+    
+    return {
         result: "error",
         message: "Email já cadastrado"
     };
