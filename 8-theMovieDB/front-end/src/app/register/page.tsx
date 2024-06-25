@@ -14,7 +14,7 @@ export default function Register() {
         event.preventDefault();
         
         try {
-            await axios.post("http://localhost:8080/auth/register", {
+            await axios.post("http://localhost:3030/auth/register", {
                 nome: nome,
                 email: email,
                 senha: senha,
