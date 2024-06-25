@@ -16,13 +16,14 @@ const MovieList: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
   const [hasMore, setHasMore] = useState<boolean>(true);
+  const [filter, setFilter] = useState('popular')
   const { setSelectedMovie } = useSelectedMovie();
 
 
   //carrega os filmes por página 
-  const fetchMovies = async (page: number) => {
+  const fetchMovies = async (page: number, filter: string) => {
 
-      const moviesData = await getMoviesByPopularity(page);
+      const moviesData = await getMoviesByPopularity(page, filter);
 
       if (moviesData.length === 0) {
         setHasMore(false);
@@ -39,11 +40,11 @@ const MovieList: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchMovies(page);
-  }, [page]);
+    fetchMovies(page, filter);
+  }, [page, filter]);
 
   //passa para a próxima página
-  const fetchMoreData = () => {
+  const  fetchMoreData = () => {
     setPage((prevPage) => prevPage + 1);
   };
 
@@ -58,6 +59,49 @@ const MovieList: React.FC = () => {
   }
 
   return (
+    <>
+    <form className='movie-list-form'>
+      <input className="movie-list-form_input" type="radio" id="playing" name="filter" value="playing" 
+      onClick={()=>{
+        setFilter(filter==='now_playing'?
+          ''
+          :'now_playing'
+        );
+      }} />
+      <label className="movie-list-form__label" htmlFor="playing">Em Cartaz</label>
+      <br className='break'/>
+      <input className="movie-list-form_input" type="radio" id="popular" name="filter" value="popular" 
+      onClick={()=>{
+        setFilter(filter==='popular'?
+          ''
+          :'popular'
+        );
+      }}
+      defaultChecked />
+      <label className="movie-list-form__label" htmlFor="popular">Popular</label>
+      <br className='break'/>
+
+      <input className="movie-list-form_input" type="radio" id="rated" name="filter" value="rated" 
+      onClick={()=>{
+        setFilter(filter==='top_rated'?
+          ''
+          :'top_rated'
+        );
+      }} />
+      <label className="movie-list-form__label" htmlFor="rated">Melhor Avaliados</label>
+      <br className='break'/>
+
+      <input className="movie-list-form_input" type="radio" id="upcoming" name="filter" value="upcoming" 
+      onClick={()=>{
+        setFilter(filter==='upcoming'?
+          ''
+          :'upcoming'
+        );
+      }} />
+      <label className="movie-list-form__label" htmlFor="upcoming">Em Breve</label>
+    <br className='break'/>
+    </form>
+
     <InfiniteScroll
       dataLength={movies.length}
       next={fetchMoreData}
@@ -104,6 +148,7 @@ const MovieList: React.FC = () => {
       </div>
       
     </InfiniteScroll>
+    </>
   );
 
 };

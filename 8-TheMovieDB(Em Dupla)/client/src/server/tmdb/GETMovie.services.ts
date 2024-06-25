@@ -1,4 +1,4 @@
-import { Movie } from "@/types/movie.types";
+import { Movie } from "@/types/types";
 import axios from "axios";
 
 // busca um filme pelo nome
@@ -15,10 +15,12 @@ export async function getMovieByName(query : String): Promise<any>{
 }
 
 // retorna filmes ordenados por popularidade
-export async function getMoviesByPopularity(page : Number): Promise<Movie[]> {
+export async function getMoviesByPopularity(page : Number, filter: String): Promise<Movie[]> {
     try {
 
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?language=pt-BR&page=${page}`, {
+        const response = await axios.get(`https://api.themoviedb.org/3/movie${filter?
+          '/'+filter
+          :''}?language=pt-BR&page=${page}`, {
             headers: {
               accept: 'application/json',
               Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NDc2NjMyZjQ1ZWRiZGE5OWI1NjcxMzg4Y2I5M2FkMiIsIm5iZiI6MTcxOTAwODkxMS4xODE3MzgsInN1YiI6IjY2NzVmYzE4MGI1N2RlNjRiNjhiODhmYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gJltDl8NSL1uIzFOsbDaosC2_e_UMx3lp6BZ5a0ZIEQ'
