@@ -89,6 +89,14 @@ figure img{
         
     }
 
+    .favoritos-list h1{
+        font-size: 30px;
+    }
+
+    .aviso-favoritos{
+        font-size: 12px;
+    }
+
     figure img{
         border-radius: 15px 15px 0px 0px;
     }

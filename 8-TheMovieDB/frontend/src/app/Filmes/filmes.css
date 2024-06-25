@@ -87,6 +87,10 @@ figure img{
         
     }
 
+    .filmes-list h1{
+        font-size: 30px;
+    }
+
     figure img{
         border-radius: 15px 15px 0px 0px;
     }

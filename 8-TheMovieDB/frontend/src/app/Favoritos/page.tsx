@@ -73,7 +73,7 @@ export default function Favoritos() {
             </div>
           ))
         ) : (
-          <p>Você não adicionou nenhum filme aos favoritos</p>
+          <p className="aviso-favoritos">Você não adicionou nenhum filme aos favoritos</p>
         )}
 
       </section>
