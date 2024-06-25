@@ -21,7 +21,7 @@ interface HomePageProps {
 const Filmesh: NextPage<HomePageProps> = ({ movies }) => {
 
 
-    //Função fav 
+    //Função favoritando
     
     const handleFavoritar = (movie: Movie) => {
         const idsFavoritos = Cookies.get("IdsFavoritos");
