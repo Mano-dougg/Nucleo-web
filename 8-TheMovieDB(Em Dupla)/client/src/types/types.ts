@@ -7,11 +7,9 @@ export type Movie = {
 }
 
 export type User = {
-    id: number;
-    name: string;
-    email: string;
-    watchList: any[];
-    watched?: any[];
-    favorites: any[];
-    friends?: any[];
+    "id": number,
+    "name": string,
+    "email": string,
+    "watchList": number[],
+    "favorites": number[]
   }

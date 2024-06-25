@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function getUserById (id:number, auth: string) {
 
-    const user = await axios.get(`http://localhost:3001/api/users/${id}`,
+    const user = await axios.get(`http://localhost:8080/api/users/${id}`,
         {
             headers:{
                 Authorization: auth
@@ -15,12 +15,13 @@ async function getUserById (id:number, auth: string) {
 
 // função deve ser chamada em todos os locais que será verificado se o usuário
 // está logado. não retornará nada se o usuário não estiver logado.
-export async function getLoggedUser ():Promise<void | {
+export async function getLoggedUser ():Promise<void | { "response":string, "data" :{
     "id": number,
     "name": string,
     "email": string,
     "watchList": number[],
     "favorites": number[]
+}    
 }> {
     const id = localStorage.getItem('id');
     if (!id) return;
