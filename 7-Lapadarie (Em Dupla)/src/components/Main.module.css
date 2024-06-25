@@ -1,0 +1,80 @@
+.main {
+  padding: 0 22.5px;
+}
+
+.main,
+.content {
+  display: block;
+}
+
+.content,
+.information,
+.sales,
+.salesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  gap: 86px;
+  position: relative;
+  top: -4.5rem;
+}
+
+.information {
+  gap: 25px;
+}
+
+.sales {
+  gap: 5px;
+}
+
+.salesList,
+.addPeople {
+  color: rgb(var(--highlight));
+
+}
+
+.salesList {
+  gap: 22px;
+}
+
+.addPeople {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.footerMessage {
+  margin: 0 auto;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    gap: 80px;
+  }
+  
+  .information {
+    flex-direction: row;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .main {
+    padding: 0 85px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .main {
+    padding: 0 171px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .main {
+    padding: 0 342px;
+  }
+}
