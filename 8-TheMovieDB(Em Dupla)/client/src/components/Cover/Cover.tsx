@@ -14,8 +14,6 @@ const Cover: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const [isWatch, setIsWatch] = useState<boolean>(false);
-  const [addMessage, setAddMessage] = useState<boolean>(false);
-  const [removeMessage, setRemoveMessage] = useState<boolean>(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -37,15 +35,6 @@ const Cover: React.FC = () => {
 
       const included = updatedUser.favorites.includes(selectedMovie.id)
       setIsFavorite(included);
-
-      if (included){
-        setAddMessage(true);
-        setTimeout(() => setAddMessage(false), 3000); 
-
-      } else{
-        setRemoveMessage(true);
-        setTimeout(() => setRemoveMessage(false), 3000); 
-      }
     } else {
       alert("faça login para favoritar um filme");
     }
@@ -62,16 +51,12 @@ const Cover: React.FC = () => {
 
         setIsWatch(false)
         setUser(updatedUser);
-        setAddMessage(true);
-        setTimeout(() => setAddMessage(false), 3000);
       } else {
         const request = await addToWatchList(selectedMovie.id);
         const updatedUser = request?.data.data;
 
         setIsWatch(true)
         setUser(updatedUser);
-        setAddMessage(true);
-        setTimeout(() => setAddMessage(false), 3000);
         
       };
     } else {
@@ -106,9 +91,6 @@ const Cover: React.FC = () => {
                   <FaHeart className='fav-heart' />
                   :<FaRegHeart className='fav-heart'/>}
               </button>
-              {removeMessage? 
-              <p className='message'>Filme removido com sucesso!</p>
-              : addMessage && <p className='message'>Filme adicionado com sucesso!</p>}
             </div>
             <p>{selectedMovie.overview}</p>
           </div>
@@ -124,7 +106,6 @@ export default Cover;
 
 
 
-
 // 'use client';
 // import { useSelectedMovie } from '@/context/SelectedMovieContext';
 // import Image from 'next/image';
@@ -133,28 +114,76 @@ export default Cover;
 // import { MdOutlineWatchLater, MdWatchLater } from 'react-icons/md';
 // import { useEffect, useState } from 'react';
 // import { User } from '@/types/types';
-// import { addFavorite } from '@/server/userdb/movie.services';
+// import { addFavorite, addToWatchList, removeFromWatchList } from '@/server/userdb/movie.services';
+// import { getLoggedUser } from '@/server/userdb/users.services';
 
 // const Cover: React.FC = () => {
-//   const storedUser = localStorage.getItem('user');
-
 //   const { selectedMovie } = useSelectedMovie();
-//   const [user, setUser] = useState<User | null>(storedUser? JSON.parse(storedUser) : null);
+//   const [user, setUser] = useState<User | null>(null);
+//   const [isFavorite, setIsFavorite] = useState<boolean>(false);
+//   const [isWatch, setIsWatch] = useState<boolean>(false);
+//   const [addMessage, setAddMessage] = useState<boolean>(false);
+//   const [removeMessage, setRemoveMessage] = useState<boolean>(false);
 
 //   useEffect(() => {
 //     const storedUser = localStorage.getItem('user');
 //     if (storedUser) {
-//       setUser(JSON.parse(storedUser));
+//       const parsedUser = JSON.parse(storedUser);
+//       setUser(parsedUser);
+//       if (selectedMovie) {
+//         setIsFavorite(parsedUser.favorites.includes(selectedMovie.id));
+//         setIsWatch(parsedUser.watchList.includes(selectedMovie.id))
+//       }
 //     }
-//   }, [user]);
+//   }, [selectedMovie]);
 
 //   const handleAddFavorite = async () => {
 //     if (selectedMovie && user) {
-//       await addFavorite(selectedMovie.id);
-//       const storedUser = localStorage.getItem('user');
-//       if (storedUser) {
-//         setUser(JSON.parse(storedUser));
+//       const request = await addFavorite(selectedMovie.id);
+//       const updatedUser = request?.data.data
+//       setUser(updatedUser);
+
+//       const included = updatedUser.favorites.includes(selectedMovie.id)
+//       setIsFavorite(included);
+
+//       if (included){
+//         setAddMessage(true);
+//         setTimeout(() => setAddMessage(false), 3000); 
+
+//       } else{
+//         setRemoveMessage(true);
+//         setTimeout(() => setRemoveMessage(false), 3000); 
 //       }
+//     } else {
+//       alert("faça login para favoritar um filme");
+//     }
+//   };
+
+//   const handleWatchList = async () => {
+//     if (selectedMovie && user) {
+//       const user = await getLoggedUser()
+//       const included = user?.data.watchList.includes(selectedMovie.id)
+
+//       if(included){
+//         const request = await removeFromWatchList(selectedMovie.id);
+//         const updatedUser = request?.data.data;
+
+//         setIsWatch(false)
+//         setUser(updatedUser);
+//         setAddMessage(true);
+//         setTimeout(() => setAddMessage(false), 3000);
+//       } else {
+//         const request = await addToWatchList(selectedMovie.id);
+//         const updatedUser = request?.data.data;
+
+//         setIsWatch(true)
+//         setUser(updatedUser);
+//         setAddMessage(true);
+//         setTimeout(() => setAddMessage(false), 3000);
+        
+//       };
+//     } else {
+//       alert("faça login para adicionar um filme a watchlist");
 //     }
 //   };
 
@@ -177,16 +206,17 @@ export default Cover;
 //               <div className='rating'>
 //                 <FaStar color="gold" className='fa-star' /> {selectedMovie.vote_average.toFixed(1)}
 //               </div>
-//               <button className='watchlist'>
-//                 {user ? <MdWatchLater className='watch' /> : <MdOutlineWatchLater className="watch" />}
+//               <button style={{'cursor': `pointer`}} className='watchlist' onClick={handleWatchList}>
+//                 {isWatch ? <MdWatchLater className='watch' /> : <MdOutlineWatchLater className="watch" />}
 //               </button>
 //               <button className='fav' onClick={handleAddFavorite}>
-//                 {user?.favorites.includes(selectedMovie.id) ? (
+//                   {isFavorite?
 //                   <FaHeart className='fav-heart' />
-//                 ) : (
-//                   <FaRegHeart className='fav-heart' />
-//                 )}
+//                   :<FaRegHeart className='fav-heart'/>}
 //               </button>
+//               {removeMessage? 
+//               <p className='message'>Filme removido com sucesso!</p>
+//               : addMessage && <p className='message'>Filme adicionado com sucesso!</p>}
 //             </div>
 //             <p>{selectedMovie.overview}</p>
 //           </div>
@@ -199,3 +229,4 @@ export default Cover;
 // };
 
 // export default Cover;
+

@@ -104,10 +104,10 @@
     height: auto;
     
 }
-/* .watch:hover{
+.watch:hover{
     cursor: pointer;
     transform: scale(1.1);
-} */
+}
 
 .cover-info{
     visibility: hidden;

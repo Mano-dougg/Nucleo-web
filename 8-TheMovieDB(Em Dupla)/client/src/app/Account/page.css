@@ -38,6 +38,13 @@ main{
     margin-top: 15px;
 }
 
+.user button:hover{
+    background-color: #080B0C;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 .user .change {
     border: none;
     background-color: transparent;

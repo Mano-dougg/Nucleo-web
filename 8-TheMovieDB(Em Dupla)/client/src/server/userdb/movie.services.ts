@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //
 async function putAddFavorite (movieId: number, id: string, token: string) {
-    const addedMovie = await axios.put(`http://localhost:3001/api/users/${id}/favorite`, 
+    const addedMovie = await axios.put(`http://localhost:8080/api/users/${id}/favorite`, 
         {
             id: movieId
         },
@@ -16,7 +16,7 @@ async function putAddFavorite (movieId: number, id: string, token: string) {
 };
 
 async function putAddWatchlist (movieId: number, id: string, token: string) {
-    const addedMovie = await axios.put(`http://localhost:3001/api/users/${id}/watchlist`, 
+    const addedMovie = await axios.put(`http://localhost:8080/api/users/${id}/watchlist`, 
         {
             id: movieId
         },
@@ -30,7 +30,7 @@ async function putAddWatchlist (movieId: number, id: string, token: string) {
 };
 
 async function deleteRemoveWatchlist (movieId: number, id: string, token: string) {
-    const addedMovie = await axios.delete(`http://localhost:3001/api/users/${id}/watchlist`, 
+    const addedMovie = await axios.delete(`http://localhost:8080/api/users/${id}/watchlist`, 
         {
             headers:{
                 Authorization: token
