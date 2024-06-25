@@ -20,14 +20,10 @@ const Card = (props: CardProps) => {
     const user = Number(localStorage.getItem("id") )
     const data = {titulo, conteudo, user}
     axios.post('http://localhost:7001/tmdb-app/add_favorite', data)
+    alert('new favorite add')
   }
 
-  function handleDelete(){
-    const user = Number(localStorage.getItem("id") )
-    const titulo = props.title;
-    const data = {titulo, user}
-    axios.delete('http://localhost:7001/tmdb-app/delete_favorite', {data:data})
-  }
+  
 
   return (
     <div
@@ -53,7 +49,7 @@ const Card = (props: CardProps) => {
             onClick={() => handleFavorite()}
           />
         </p>
-        {props.delete && <span className="text-red-500 font-bold cursor-pointer" onClick={() =>handleDelete()}>DELETE</span>}
+        {props.delete && <span className="text-red-500 font-bold cursor-pointer" onClick={() => props.deleteFn() }>DELETE</span>}
       </div>
     </div>
   );

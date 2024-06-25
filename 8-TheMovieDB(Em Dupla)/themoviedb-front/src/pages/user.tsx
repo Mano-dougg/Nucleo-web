@@ -12,12 +12,14 @@ const User = () => {
   const [email, setEmail] = useState<string | null>(null);
   const [id, setId] = useState<string | null>(null);
   const [favorites, setFavorites] = useState<string[]>([]);
+  const [atualizar, setAtualizar] = useState(false)
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedUser = localStorage.getItem("nome");
       const storedEmail = localStorage.getItem("email");
       const storedId = localStorage.getItem("id");
+      
 
       setUser(storedUser);
       setEmail(storedEmail);
@@ -39,7 +41,7 @@ const User = () => {
     }
 
     getFavorite();
-  }, [id]);
+  }, [id, atualizar, favorites]);
 
   function handleLogout() {
     if (typeof window !== "undefined") {
@@ -53,7 +55,15 @@ const User = () => {
       setId(null);
     }
   }
-  
+
+  async function handleDelete(titulol:string){
+    const user = Number(localStorage.getItem("id") )
+    const titulo = titulol;
+    const data = {titulo, user}
+    const response = await axios.delete('http://localhost:7001/tmdb-app/delete_favorite', {data:data})
+    setAtualizar(true)
+  }
+
   return (
     <section className={`flex h-full w-full flex-col`}>
       <NavBar
@@ -101,6 +111,7 @@ const User = () => {
             snap={"center"}
             key={index}
             delete={true}
+            deleteFn={() => handleDelete(item.title?.toString())}
           />
         ))}
       </section>
