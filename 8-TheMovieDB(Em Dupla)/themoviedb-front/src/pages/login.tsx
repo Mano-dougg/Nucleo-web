@@ -7,18 +7,24 @@ import { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [senha, setSenha] = useState<string>("");
+  const [link, setLink] = useState(false)
+  console.log('ola')
 
-  const handleVerificarAccount = () => {
-    if (
-      email != localStorage.getItem("email") ||
-      senha != localStorage.getItem("senha")
-    ) {
-      alert("Nome e senha incorretos");
-      return;
+  const handleVerificarAccount = async  () => {
+
+    const response = await axios.get("http://localhost:7001/tmdb-app/user_area", {params: {'login': email, 'senha':senha}})
+    if(response.status == 200){
+      console.log(response.data)
+      setLink(true)
+      localStorage.setItem("email", response.data.email)
+      localStorage.setItem("senha", response.data.password)
+      localStorage.setItem("nome", response.data.name)
+      localStorage.setItem("id", response.data.id)
+    } else{
+      alert("Dados incorretos")
+      return
     }
-    const login = email;
-    const data = { login, senha };
-    const get = axios.get("http://localhost:7001/tmdb-app/user_area", {});
+    
   };
 
   return (
@@ -42,6 +48,7 @@ const Login = () => {
 
         <form
           className={`flex w-full flex-col items-center justify-center gap-4`}
+          onSubmit={(e) => e.preventDefault()}
         >
           <Input
             type="email"
@@ -57,8 +64,8 @@ const Login = () => {
             onChange={(e) => setSenha(e.target.value)}
             value={senha}
           />
-          <Button className="w-full">Login with Email</Button>
-
+          <Button className="w-full" onClick={() => handleVerificarAccount()}>Login with Email</Button>
+          <Link href={'/home'} className={`text-blue-600 ${link == true ? 'flex': 'hidden'}`}>Go home</Link>
           <p
             className={`after:border-1 before:border-1 flex w-full items-center justify-center gap-2 text-[12px] font-semibold text-primary-border before:flex before:h-[1px] before:w-full before:flex-1 before:border-primary-border before:bg-primary-border after:h-[1px] after:w-full after:flex-1 after:border-primary-border after:bg-primary-border`}
           >

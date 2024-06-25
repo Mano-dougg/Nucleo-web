@@ -6,7 +6,7 @@ const router = Router()
 router.use(cors())
 //Rotas Get 
 router.get('/user_area', get_user)
-router.get('/favorites', get_Favorites)
+router.get('/favorites/:id', get_Favorites)
 //Rotas Post
 router.post('/sigin', cadastro_user)
 router.post('/add_favorite', new_Favorites)

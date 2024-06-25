@@ -17,15 +17,17 @@ const Signin = () => {
     const data = { nome, login, senha };
     if (nome.trim() == "" || login.trim() == "" || senha.trim() == "") {
       alert("Todos os campos precisam ser preenchidos");
-      return
+      return;
     }
 
-    mutate(data);
-    localStorage.setItem("email", login);
-    localStorage.setItem("nome", nome);
-    localStorage.setItem("senha", senha);
-
-    console.log(response);
+    mutate(data, {
+      onSuccess: (data) => {
+        localStorage.setItem("email", login);
+        localStorage.setItem("nome", nome);
+        localStorage.setItem("senha", senha);
+        localStorage.setItem("id", data.data.id) // Acessa o ID do usuário criado
+        console.log(data.data)
+      } })
   }
 
   return (
@@ -89,10 +91,11 @@ const Signin = () => {
           >
             OR CONTINUE WITH
           </p>
-
-          <Button className="w-full" variant={"outline"}>
-            Already an account? Login here.
-          </Button>
+          <Link href={"/login"} className="w-full">
+            <Button className="w-full" variant={"outline"}>
+              Already an account? Login here.
+            </Button>
+          </Link>
         </form>
         <p className={`text-center text-sm text-dark-border`}>
           By clicking continue, you agree to our Terms of Service and Privacy

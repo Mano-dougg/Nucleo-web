@@ -1,11 +1,11 @@
-"use client";
-import Card from "@/components/ui/Card";
+"use client"
 import { GetMovies } from "@/hooks/getMovies";
 import { useState } from "react";
 import { cardType } from "@/types/cardType";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import NavBar from "@/components/NavBar";
+import Card from "@/components/ui/Card";
 
 export default function Home() {
   const [search, setSearch] = useState<string>("");

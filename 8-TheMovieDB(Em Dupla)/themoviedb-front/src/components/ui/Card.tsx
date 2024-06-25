@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useState } from "react";
+import { Axis3D } from "lucide-react";
+import { useInsertionEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 interface CardProps {
@@ -7,19 +8,30 @@ interface CardProps {
   rate: number;
   image: string;
   snap: string;
+  delete?:boolean;
+  deleteFn?:any;
 }
 
 const Card = (props: CardProps) => {
-  const star = localStorage.getItem("star");
 
   function handleFavorite() {
-    const data = {}
-    const post = axios.post('http://localhost:7001/tmdb-app/add_favorite')
+    const titulo = props.title;
+    const conteudo = props.image;
+    const user = Number(localStorage.getItem("id") )
+    const data = {titulo, conteudo, user}
+    axios.post('http://localhost:7001/tmdb-app/add_favorite', data)
+  }
+
+  function handleDelete(){
+    const user = Number(localStorage.getItem("id") )
+    const titulo = props.title;
+    const data = {titulo, user}
+    axios.delete('http://localhost:7001/tmdb-app/delete_favorite', {data:data})
   }
 
   return (
     <div
-      className={`flex h-[310px] max-h-[310px] max-w-[250px] flex-col justify-start ${props.snap} rounded-lg border-2`}
+      className={`flex h-[360px] max-h-[310px] max-w-[250px] flex-col justify-start ${props.snap} rounded-lg border-2`}
     >
       <img
         src={`https://image.tmdb.org/t/p/w400${props.image}`}
@@ -41,6 +53,7 @@ const Card = (props: CardProps) => {
             onClick={() => handleFavorite()}
           />
         </p>
+        {props.delete && <span className="text-red-500 font-bold cursor-pointer" onClick={() =>handleDelete()}>DELETE</span>}
       </div>
     </div>
   );
