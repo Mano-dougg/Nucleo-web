@@ -22,3 +22,16 @@
 .filmeCard div p {
     text-align:justify
 }
+.filmeCard button {
+    border-color: transparent;
+    border-radius: 15px;
+    padding: .75em;
+    cursor: pointer;
+    background-color: burlywood;
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1em;
+}
+.filmeCard button:hover{
+    background-color:orange;
+}

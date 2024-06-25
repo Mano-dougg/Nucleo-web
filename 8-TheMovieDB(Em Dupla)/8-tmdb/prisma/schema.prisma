@@ -29,11 +29,11 @@ model Movie {
 }
 
 model Favoritos {
- id        Int    @id @default(autoincrement())
+  id        Int    @id @default(autoincrement())
   userId    Int
   movieId   Int
   user      User   @relation(fields: [userId], references: [id])
   movie     Movie  @relation(fields: [movieId], references: [id])
-
+ 
   @@unique([userId, movieId])
 }
