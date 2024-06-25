@@ -37,3 +37,7 @@ body {
 ::placeholder {
   font-size: 14px;
 }
+
+#grid {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
