@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import MovieCard from '../../components/MovieCard';
@@ -19,27 +18,24 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [showFavorites, setShowFavorites] = useState<boolean>(false);
-  const [searchQuery, setSearchQuery] = useState<string>('');
 
   useEffect(() => {
     fetchMovies();
-  }, [searchQuery]);
+  }, []);
 
   const fetchMovies = async () => {
     setLoading(true);
     setError(null);
     try {
-      let url = `https://api.themoviedb.org/3/movie/popular`;
-      if (searchQuery) {
-        url = `https://api.themoviedb.org/3/search/movie`;
-      }
-      const response = await axios.get(url, {
-        params: {
-          api_key: process.env.TMDB_API_KEY,
-          language: 'pt-BR',
-          query: searchQuery, // Adicionar o parâmetro de consulta se houver
-        },
-      });
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/popular`,
+        {
+          params: {
+            api_key: process.env.TMDB_API_KEY,
+            language: 'pt-BR',
+          },
+        }
+      );
       const fetchedMovies = response.data.results.map((movie: any) => ({
         id: movie.id,
         title: movie.title,
@@ -138,17 +134,13 @@ export default function Home() {
     }
   };
 
-  const handleSearch = (query: string) => {
-    setSearchQuery(query); // Atualizar o estado de consulta com a nova consulta
-  };
-
   const handleHideFavorites = () => {
     setShowFavorites(false); // Atualizar o estado para ocultar os favoritos
   };
 
   return (
     <div className="w-screen h-screen relative items-start justify-start flex flex-col">
-      <Navbar onToggleFavorites={toggleFavorites} onSearch={handleSearch} onHideFavorites={handleHideFavorites} />
+      <Navbar onToggleFavorites={toggleFavorites} onHideFavorites={handleHideFavorites} />
       <Banner />
       <div className="flex flex-col gap-4 pl-12 -mb-[700px]">
         <h2 className="mt-5 text-lg font-semibold px-2">
@@ -167,6 +159,7 @@ export default function Home() {
                   director={movie.director}
                   isFavorite={true}
                   onToggleFavorite={() => handleRemoveFavorite(movie)}
+                  onRemoveFavorite={() => handleRemoveFavorite(movie)} // Adicionando a função para remover favorito
                 />
               ))
             : movies.map((movie) => (
@@ -178,6 +171,7 @@ export default function Home() {
                   director={movie.director}
                   isFavorite={favorites.some((fav) => fav.id === movie.id)}
                   onToggleFavorite={() => handleAddFavorite(movie)}
+                  onRemoveFavorite={() => handleRemoveFavorite(movie)} // Adicionando a função para remover favorito
                 />
               ))}
         </section>

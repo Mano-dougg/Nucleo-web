@@ -1,11 +1,7 @@
-// components/MovieCard.tsx
-import { StaticImageData } from "next/image";
 import Image from "next/image";
-import CartSm from "../../public/svg/icons/cart.sm";
 import Heart from "../../public/svg/icons/heart";
 import HeartFill from "../../public/svg/icons/heart.fill";
 import AddToAlbum from "../../public/svg/icons/add.to.album";
-import { useState } from "react";
 
 interface MovieCardProps {
   image: string;
@@ -13,7 +9,8 @@ interface MovieCardProps {
   director: string;
   price: number;
   isFavorite: boolean;
-  onToggleFavorite: () => void; // Passar a função como prop
+  onToggleFavorite: () => void; // Função para adicionar ou remover dos favoritos
+  onRemoveFavorite: () => void; // Função para remover dos favoritos
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({
@@ -23,19 +20,15 @@ const MovieCard: React.FC<MovieCardProps> = ({
   price,
   isFavorite,
   onToggleFavorite,
+  onRemoveFavorite,
 }) => {
-  const [favorite, setFavorite] = useState<boolean>(isFavorite);
-
-  const handleFavoriteClick = async () => {
-    try {
-      await onToggleFavorite();
-      setFavorite(!favorite);
-    } catch (error) {
-      console.error("Failed to toggle favorite:", error);
-    }
+  const handleFavoriteClick = () => {
+    onToggleFavorite(); // Chama a função para adicionar ou remover dos favoritos
   };
 
-
+  const handleRemoveClick = () => {
+    onRemoveFavorite(); // Chama a função para remover dos favoritos
+  };
 
   return (
     <div className="flex flex-col">
@@ -54,13 +47,18 @@ const MovieCard: React.FC<MovieCardProps> = ({
       </div>
       <div className="flex flex-row justify-between items-center mt-3">
         <button className="flex flex-row items-center justify-center gap-2 bg-[#162E37] px-4 py-3 rounded-full">
-          <CartSm />
           <span className="text-sm">Add to Cart</span>
         </button>
         <div className="flex flex-row gap-6 px-7">
-          <button onClick={handleFavoriteClick}>
-            {isFavorite ? <HeartFill /> : <Heart />}
-          </button>
+          {isFavorite ? (
+            <button onClick={handleRemoveClick}>
+              <HeartFill />
+            </button>
+          ) : (
+            <button onClick={handleFavoriteClick}>
+              <Heart />
+            </button>
+          )}
           <button>
             <AddToAlbum />
           </button>
