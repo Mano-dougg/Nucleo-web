@@ -32,6 +32,9 @@ const Filmes: NextPage<HomePageProps> = ({ movies }) => {
     return (
             <div className='filmes-page'>
                 <section className='filmes-list'>
+
+                    <h1>Filmes disponíveis</h1>
+                    
                     {movies.map((movie) => (
                         <div key={movie.id} className='filmes-card'>
                             <figure className='capa-filme'>

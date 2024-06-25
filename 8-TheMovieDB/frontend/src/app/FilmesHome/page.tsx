@@ -8,6 +8,7 @@ import HomePage from "../Filmes/page";
 import axios from 'axios';
 import Lancamento from "../Lancamento/page";
 import Filmesc from "./filmesc";
+import Footer from "../Footer/page";
 
 interface nomes {
     id: number;
@@ -59,6 +60,10 @@ export default function FilmesHome() {
     }, []);
 
     return (
+        <>
             <Filmesc movies={movies} /> 
+            <Footer/>
+        </>
+            
     );
 }

@@ -45,23 +45,38 @@ export default function Favoritos() {
 
   return (
     <main className="favoritos-page">
+
       <Header />
-      <div className="favoritos-content">
-        <h1>Essa é a página de favoritos</h1>
+
+      <section className="favoritos-list">
+
+        <h1>Meus favoritos</h1>
+
         {filmesDetalhes.length > 0 ? (
           filmesDetalhes.map(filme => (
-            <div key={filme.id} className="filme-detalhes">
-              <h2>{filme.title}</h2>
-              <p>Lançamento: {filme.release_date}</p>
-              <p>{filme.overview}</p>
-              <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title}/>
-              <button onClick={() => Apagar(filme.id)}>Excluir</button>
+
+            <div key={filme.id} className="favoritos-card">
+
+              <figure>
+                <img src={`https://image.tmdb.org/t/p/w500${filme.poster_path}`} alt={filme.title}/>
+              </figure>
+
+              <div className="info-filme">
+                <h2>{filme.title}</h2>
+                <p>Lançamento: {filme.release_date}</p>
+                <p>{filme.overview}</p>
+                
+                <button className="desfavoritar" onClick={() => Apagar(filme.id)}>Exluir dos favoritos</button>
+              </div>
+
             </div>
           ))
         ) : (
-          <p>Nenhum filme favorito</p>
+          <p>Você não adicionou nenhum filme aos favoritos</p>
         )}
-      </div>
+
+      </section>
+
     </main>
   );
 }

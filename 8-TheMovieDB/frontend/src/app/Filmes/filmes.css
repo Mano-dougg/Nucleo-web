@@ -28,6 +28,13 @@
     width: 80%;
 }
 
+.filmes-list h1{
+    color: var(--primary);
+    font-size: 48px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .info-filme{
     display: flex;
     flex-direction: column;
