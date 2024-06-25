@@ -28,6 +28,7 @@ const Filmesh: NextPage<HomePageProps> = ({ movies }) => {
             idsArray.push(movie.id);
             Cookies.set('IdsFavoritos', JSON.stringify(idsArray), { expires: 1 });
         }
+        alert("Filme Favoritado")
     };
     return (
             <main className='filmeshome-page'>

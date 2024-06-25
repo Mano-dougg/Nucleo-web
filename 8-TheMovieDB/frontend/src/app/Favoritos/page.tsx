@@ -14,6 +14,8 @@ interface Movie {
   poster_path: string;
 }
 
+
+
 export default function Favoritos() {
   const [filmesFavoritos, setFilmesFavoritos] = useState<number[]>([]);
   const [filmesDetalhes, setFilmesDetalhes] = useState<Movie[]>([]);
@@ -67,13 +69,13 @@ export default function Favoritos() {
                 <p>Lançamento: {filme.release_date}</p>
                 <p>{filme.overview}</p>
                 
-                <button className="desfavoritar" onClick={() => Apagar(filme.id)}>Exluir dos favoritos</button>
+                <button className="desfavoritar" onClick={() => Apagar(filme.id)}>Excluir dos favoritos</button>
               </div>
 
             </div>
           ))
         ) : (
-          <p>Você não adicionou nenhum filme aos favoritos</p>
+          <p className="aviso-favoritos">Você não adicionou nenhum filme aos favoritos</p>
         )}
 
       </section>
