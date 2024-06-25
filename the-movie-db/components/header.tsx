@@ -26,29 +26,29 @@ export function Header({ addUser, onSearch }: HeaderProps) {
     setSearchTerm(event.target.value);
     onSearch(event.target.value);
   };
-
   return (
     <header className="flex justify-between px-10 items-center bg-gray-900 text-white py-4 shadow-lg">
       <div className='md:hidden'>
-        <UserIcon/>
+        <button onClick={toggleSidebar}>
+          <UserIcon />
+        </button>
       </div>
       <h1
-        className="text-2xl font-dunerise font-bold leading-11 tracking-wide cursor-pointer"
-        onClick={toggleSidebar} 
+        className="text-2xl font-dunerise font-bold leading-11 tracking-wide cursor-pointer hidden md:flex"
+        onClick={toggleSidebar}
       >
         O M N I
       </h1>
-      <nav className="hidden md:flex font-bold justify-between space-x-16 items-center">
+      <nav className=" space-x-8  md:flex font-bold  md:space-x-16 items-center">
         <Link href="/">
           Home
         </Link>
-        <Link href="/">
-        Favorites
+        <Link href="/src/favorites">
+          Favorites
         </Link>
       </nav>
       <div className='flex items-center gap-4 '>
-        <Link href='/'>
-        <FavoriteIcon/></Link>
+        
         <div className="w-[290px] h-[38px] px-[18px] py-[10px] space-x-4 rounded-[15px] bg-[#354244] items-center gap-4 hidden md:flex">
           <input
             type="text"
