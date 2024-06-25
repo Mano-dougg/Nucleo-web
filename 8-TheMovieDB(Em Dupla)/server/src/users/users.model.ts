@@ -32,9 +32,7 @@ export const getUserById = async (id: number) => {
             name: true,
             email: true,
             watchList: true,
-            whatched: true,
-            favorites: true,
-            friends: true
+            favorites: true
         }
     });
 
