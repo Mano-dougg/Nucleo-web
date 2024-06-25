@@ -1,0 +1,294 @@
+* {margin: 0; padding: 0; list-style: none; font-family: monospace; background-color: #F3F5FC;}
+html {font-size: 16px;}
+
+
+.geral {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+}
+
+.inicio, .inicioDois {
+  width: 20rem;
+  height: 8rem;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  font-family: monospace;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.inicio:hover, .inicioDois:hover {
+  border-radius: 2rem;
+  transform: translateY(-.8rem);
+  transition: 300ms;
+}
+
+.inicio {
+  background: #0A3871;
+  color:white;
+}
+
+.inicioDois {
+  background: white;
+  color:#0A3871;
+}
+
+.jogo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: .6rem;
+  font-weight: bold;
+}
+
+.placar {
+  font-size: 2rem;
+  color: #0A3871;
+  margin: 1rem auto;
+  text-align: center;
+  border: solid .1rem black;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.vez-container {
+  min-height: 5rem; /* Defina a altura mínima conforme necessário */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.vez, .jogaUm, .jogaDois {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.jogaUm, .jogaDois {
+  position: absolute;
+  top: 2rem;
+  left: 0.1rem;
+}
+
+
+.vez {
+  color: #0A3871; /* Vermelho */
+}
+
+.jogaUm {
+  color: #3498db; /* Azul */
+}
+
+.jogaDois {
+  color: #ae2727; /* Verde */
+}
+
+.mensagem {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/*COMPUTADOR*/
+.cabeca {
+  width: 3.1875rem; 
+  height: 3.1875rem; 
+  border-radius: 100%;
+  border: 0.625rem solid #0A3871;
+  position: absolute;
+  top: 3.125rem; 
+  right: -1.875rem; 
+}
+
+.corpo {
+  width: 0.625rem; 
+  height: 6.25rem; 
+  background: #0A3871;
+  position: absolute;
+  top: 7.5rem; 
+  right: 0;
+}
+
+.bracoe {
+  width: 6.25rem; 
+  height: 0.625rem; 
+  background: #0A3871;
+  position: absolute;
+  top: 9.375rem; 
+  right: -6.25rem; 
+  transform: rotate(-30deg);
+  transform-origin: left bottom;
+}
+
+.bracod {
+  width: 6.25rem; 
+  height: 0.625rem; 
+  background: #0A3871;
+  position: absolute;
+  top: 9.375rem; 
+  right: 0.625rem; 
+  transform: rotate(30deg);
+  transform-origin: right bottom;
+}
+
+.pernad {
+  width: 6.25rem; 
+  height: 0.625rem; 
+  background: #0A3871;
+  position: absolute;
+  top: 13.125rem; 
+  right: -5.625rem; 
+  transform: rotate(60deg);
+  transform-origin: left bottom;
+}
+
+.pernae {
+  width: 6.25rem; 
+  height: 0.625rem;
+  background: #0A3871;
+  position: absolute;
+  top: 13.125rem; 
+  right: 0;
+  transform: rotate(-60deg);
+  transform-origin: right bottom;
+}
+
+.forca {
+    height: 3.125rem;
+    width: 0.625rem;
+    background: #0A3871;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .topbar {
+    height: 0.625rem;
+    width: 12.5rem;
+    background: #0A3871;
+    margin-left: 7.5rem;
+  }
+
+  .poll {
+    height: 25rem;
+    width: 0.625rem;
+    background: #0A3871;
+    margin-left: 7.5rem;
+  }
+
+  .bottombar { 
+    height: 0.625rem;
+    width: 15.625rem;
+    background: #0A3871
+  }
+
+.keyboard {
+    display: flex;
+    gap: .25em;
+    font-size: 4.375rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: monospace;
+    margin: 0 auto;
+}
+  
+.historico {
+  font-weight: bold;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.historico h2 {
+  font-size: 1.8rem;
+  color: #0A3871;
+  margin-bottom: 1rem;
+}
+
+.historico ul {
+  width: 100%;
+  padding: 0;
+}
+
+.historico li {
+  background: #F3F5FC;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.historico li:hover {
+  background: #ececec;
+}
+
+.historico .word {
+  font-weight: bold;
+  color: #0A3871;
+}
+
+.historico .result {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.historico .result.loss {
+  color: #e74c3c;
+}
+
+
+@media screen and (max-width: 1030px) {
+  html {
+    font-size: 14px;
+  }
+
+  .jogo {
+    gap: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+
+  .placar {
+    font-size: 1.5rem;
+  }
+}

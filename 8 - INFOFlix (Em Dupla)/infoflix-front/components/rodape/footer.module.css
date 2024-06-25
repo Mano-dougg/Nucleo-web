@@ -1,0 +1,86 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 5rem;
+    border-top: 1px solid #333333;   
+    padding-top: 20px;
+}
+
+.filmes{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    margin-right: 80px;
+}
+
+.subscribe{
+    margin-right: 60px;
+
+}
+.star h3, .redes h3{
+    color: #356B02;
+    margin-left: 10px;
+    
+}
+
+.subscribe h3, .copy h3, .copy h5{
+    color: #356B02;
+}
+
+.copy h5{
+    margin-left: 10px;
+}
+.movies{
+    margin-left: -15px;
+    list-style-type: none;
+}
+
+.movies li{
+    margin-bottom: 1ch;
+}
+
+.movies a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.movies a:hover{
+    color: #356B02;
+}
+
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        height: auto;
+    }
+
+    .filmes, .subscribe, .formsins, .social {
+        margin-right: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .star h3, .redes h3, .subscribe h3, .copy h3, .copy h5 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .movies {
+        margin-left: -30px;
+    }
+
+    .movies li {
+        text-align: center;
+    }
+}

@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans';
+}
+
+/* Header */
+.nav-container {
+    background: #ffff;
+    box-shadow: 0px 10px 24px rgb(0, 0, 0, 0.1);
+    height: 120px;
+    position: relative;
+    z-index: 10;    
+}
+
+.wrapper {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.logo {
+    font-family: 'Open Sans';
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    color: black;
+    transition: 300ms;
+}
+
+.logo .love {
+    color: #7ED321;
+}
+
+.logo:hover {
+    font-size: 52px;;
+}
+
+.nav-items li {
+    list-style: none;
+    margin-right: 20px;
+}
+
+.nav-items LI:nth-last-of-type(1) {
+    margin: 0;
+}
+
+.nav-items li a {
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    display: flex;
+    align-items: center;
+    padding: 9px 32px;
+    border-radius: 15px;
+    transition: 300ms;
+}
+
+.nav-items .sub-button a {
+    color: #1C4701;
+    background: #7ED32166;
+}
+
+.nav-items li a:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+    transform: translateY(-8px)
+}
+
+.nav-items .sub-button a:hover {
+    background: rgba(121, 177, 62, 0.69);
+}
+
+
+/* Main */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.main-container {
+    background: #ffff;
+    display: flex;
+    align-items: center;
+}
+
+header p {
+    width: 340px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+    color: black;
+    margin-bottom: 40px;
+}
+
+header a {
+    text-decoration: none;
+    color: #1C4701;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.51px;
+    text-align: left;
+
+    background: #7ED321;
+    border-radius: 15px;
+    padding: 13px 50px;
+    display: inline-block;
+    transition: 300ms;
+}
+
+header a:hover {
+    transform: translateY(-8px)
+}
+
+header  .main-image {
+    display: flex;
+    position: relative;    
+}
+
+header .main-image img {
+    transition: 300ms;
+}
+
+header .main-image img:hover {
+    transform: rotate(-6deg);
+}

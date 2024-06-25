@@ -1,0 +1,140 @@
+.cabecalho {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    border-bottom: 1px solid #333333;
+    z-index: 2;
+    margin-top: 1rem;
+}
+
+.logo {
+    width: 14rem;
+    height: auto; /* ajuste para manter a proporção */
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.barraPes {
+    position: relative;
+}
+
+.formPesquisa{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 20rem;
+    background-color: white;
+    border-radius: 30px;
+    margin-top: 8px;
+}
+
+.inputPesquisa {
+    width: 100%;
+    padding: 10px 40px 10px 10px; 
+    border: none; 
+    background-color: transparent; 
+    color: black;
+}
+
+.inputPesquisa:focus {
+    outline: none;
+}
+
+.buttonPesquisa{
+    padding: 8px 16px;
+    border: none;
+    background-color: #356B02;
+    color: white;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.buttonMovie{
+    padding: 8px 16px;
+    border: none;
+    background-color: white;
+    color: rgba(174, 172, 172, 0.779);
+    border-radius: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+    background-color: transparent; 
+    border: 1px solid lightgray;
+}
+
+.listaFilmes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.itemFilme {
+    border-bottom: 1px solid #eaeaea;
+    padding: 5px 0;
+    flex-direction: row;
+}
+
+.detailsFilme {
+    color: black;
+    margin: auto;
+}
+
+.itemFilme:last-child {
+    border-bottom: none;
+}
+
+.resultados {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    max-height: 320px;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 12px;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .logo {
+        width: 10rem;
+        margin-left: 0; 
+    }
+
+    .barraPes {
+        width: 70%; 
+        padding: 0 1rem; 
+    }
+
+    .formPesquisa {
+        width: calc(100% - 2rem); 
+    }
+
+    .inputPesquisa {
+        padding: 10px; 
+    }
+
+    .buttonPesquisa {
+        padding: 6px 12px; 
+    }
+
+    .resultados {
+        width: calc(100% - 24px); 
+        left: 12px; 
+        right: 12px;
+    }
+}
