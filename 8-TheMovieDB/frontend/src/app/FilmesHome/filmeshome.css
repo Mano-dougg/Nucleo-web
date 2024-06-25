@@ -80,13 +80,23 @@
     transform: scale(1.05);
 }
 
-@media(max-width:768px){
+@media(max-width:560px){
+    .filmeshome-list{
+        grid-template-columns: 250px;
+    }
+
+}
+
+@media(min-width:561px){
 
     .filmeshome-card{
         flex-direction: column;
         gap:10px;
         padding: 5px;
-        
+    }
+
+    .filmeshome-list{
+        grid-template-columns: 250px 250px;
     }
 
     .figure img{

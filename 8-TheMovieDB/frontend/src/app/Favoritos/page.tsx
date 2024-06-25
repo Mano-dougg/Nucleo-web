@@ -4,6 +4,7 @@ import Header from "../Header/page";
 import "./favoritos.css";
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
+import Footer from "../Footer/page";
 
 interface Movie {
   id: number;
@@ -76,6 +77,8 @@ export default function Favoritos() {
         )}
 
       </section>
+
+      <Footer />
 
     </main>
   );
