@@ -5,7 +5,7 @@ import { User } from "../../../service/User";
 import React, { useEffect, useState } from "react";
 import Cookies from 'js-cookie'; 
 import { useRouter } from "next/navigation";
-import Modal from "../Modal/page.tsx";
+import Modal from "../Modal/page";
 
 interface nomes {
     id: number;

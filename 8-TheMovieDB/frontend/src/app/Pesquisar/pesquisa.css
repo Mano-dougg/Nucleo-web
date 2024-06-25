@@ -73,3 +73,23 @@ figure img{
     width: 100%;
     border-radius: 15px;
 }
+
+@media (max-width: 550px){
+
+    figure{
+      width:100px;
+    }
+
+    .info-pesquisa{
+        width: 150px;
+    }
+    
+    .info-pesquisa h1{
+        font-size: 18px;
+    }
+    
+    .info-pesquisa p{
+        font-size: 12px;
+    }
+  
+  }
