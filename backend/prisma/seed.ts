@@ -21,7 +21,6 @@ async function main() {
       password: '1234'
     },
   })
-  console.log({ revolo, fernando })
 }
 main()
   .then(async () => {

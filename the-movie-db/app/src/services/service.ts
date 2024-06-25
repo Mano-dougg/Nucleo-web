@@ -34,7 +34,7 @@ export const getUsers = async () => {
 export const createUser = async (password: string, email: string, name: string) => {
   try {
     const user = { password, email, name };
-    const response = await fetch(API_URL, {
+    const response = await fetch(`${API_URL}/signup`, {
       method: 'POST',
       body: JSON.stringify(user),
       headers: { 'Content-Type': 'application/json' }

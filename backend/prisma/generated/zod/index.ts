@@ -12,7 +12,7 @@ import type { Prisma } from '@prisma/client';
 
 export const TransactionIsolationLevelSchema = z.enum(['ReadUncommitted','ReadCommitted','RepeatableRead','Serializable']);
 
-export const UserScalarFieldEnumSchema = z.enum(['id','email','name','password','tmdbId','tmdbSessionId']);
+export const UserScalarFieldEnumSchema = z.enum(['id','email','name','password','tmdbId']);
 
 export const SortOrderSchema = z.enum(['asc','desc']);
 
@@ -33,10 +33,17 @@ export const UserSchema = z.object({
   name: z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),
   password: z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),
   tmdbId: z.string().length(8, { message: "Must be 8 characters long" }).nullable(),
-  tmdbSessionId: z.string().nullable(),
 })
 
 export type User = z.infer<typeof UserSchema>
+
+/////////////////////////////////////////
+// USER PARTIAL SCHEMA
+/////////////////////////////////////////
+
+export const UserPartialSchema = UserSchema.partial()
+
+export type UserPartial = z.infer<typeof UserPartialSchema>
 
 /////////////////////////////////////////
 // SELECT & INCLUDE
@@ -51,7 +58,6 @@ export const UserSelectSchema: z.ZodType<Prisma.UserSelect> = z.object({
   name: z.boolean().optional(),
   password: z.boolean().optional(),
   tmdbId: z.boolean().optional(),
-  tmdbSessionId: z.boolean().optional(),
 }).strict()
 
 
@@ -68,7 +74,6 @@ export const UserWhereInputSchema: z.ZodType<Prisma.UserWhereInput> = z.object({
   name: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   password: z.union([ z.lazy(() => StringFilterSchema),z.string() ]).optional(),
   tmdbId: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
-  tmdbSessionId: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
 }).strict();
 
 export const UserOrderByWithRelationInputSchema: z.ZodType<Prisma.UserOrderByWithRelationInput> = z.object({
@@ -77,7 +82,6 @@ export const UserOrderByWithRelationInputSchema: z.ZodType<Prisma.UserOrderByWit
   name: z.lazy(() => SortOrderSchema).optional(),
   password: z.lazy(() => SortOrderSchema).optional(),
   tmdbId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
-  tmdbSessionId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
 }).strict();
 
 export const UserWhereUniqueInputSchema: z.ZodType<Prisma.UserWhereUniqueInput> = z.union([
@@ -101,7 +105,6 @@ export const UserWhereUniqueInputSchema: z.ZodType<Prisma.UserWhereUniqueInput> 
   name: z.union([ z.lazy(() => StringFilterSchema),z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }) ]).optional(),
   password: z.union([ z.lazy(() => StringFilterSchema),z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }) ]).optional(),
   tmdbId: z.union([ z.lazy(() => StringNullableFilterSchema),z.string().length(8, { message: "Must be 8 characters long" }) ]).optional().nullable(),
-  tmdbSessionId: z.union([ z.lazy(() => StringNullableFilterSchema),z.string() ]).optional().nullable(),
 }).strict());
 
 export const UserOrderByWithAggregationInputSchema: z.ZodType<Prisma.UserOrderByWithAggregationInput> = z.object({
@@ -110,7 +113,6 @@ export const UserOrderByWithAggregationInputSchema: z.ZodType<Prisma.UserOrderBy
   name: z.lazy(() => SortOrderSchema).optional(),
   password: z.lazy(() => SortOrderSchema).optional(),
   tmdbId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
-  tmdbSessionId: z.union([ z.lazy(() => SortOrderSchema),z.lazy(() => SortOrderInputSchema) ]).optional(),
   _count: z.lazy(() => UserCountOrderByAggregateInputSchema).optional(),
   _max: z.lazy(() => UserMaxOrderByAggregateInputSchema).optional(),
   _min: z.lazy(() => UserMinOrderByAggregateInputSchema).optional()
@@ -125,7 +127,6 @@ export const UserScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.UserScal
   name: z.union([ z.lazy(() => StringWithAggregatesFilterSchema),z.string() ]).optional(),
   password: z.union([ z.lazy(() => StringWithAggregatesFilterSchema),z.string() ]).optional(),
   tmdbId: z.union([ z.lazy(() => StringNullableWithAggregatesFilterSchema),z.string() ]).optional().nullable(),
-  tmdbSessionId: z.union([ z.lazy(() => StringNullableWithAggregatesFilterSchema),z.string() ]).optional().nullable(),
 }).strict();
 
 export const UserCreateInputSchema: z.ZodType<Prisma.UserCreateInput> = z.object({
@@ -133,8 +134,7 @@ export const UserCreateInputSchema: z.ZodType<Prisma.UserCreateInput> = z.object
   email: z.string().email({ message: "Invalid email address" }).min(8, { message: "Minimum 8 characters" }),
   name: z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),
   password: z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),
-  tmdbId: z.string().length(8, { message: "Must be 8 characters long" }).optional().nullable(),
-  tmdbSessionId: z.string().optional().nullable()
+  tmdbId: z.string().length(8, { message: "Must be 8 characters long" }).optional().nullable()
 }).strict();
 
 export const UserUncheckedCreateInputSchema: z.ZodType<Prisma.UserUncheckedCreateInput> = z.object({
@@ -142,8 +142,7 @@ export const UserUncheckedCreateInputSchema: z.ZodType<Prisma.UserUncheckedCreat
   email: z.string().email({ message: "Invalid email address" }).min(8, { message: "Minimum 8 characters" }),
   name: z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),
   password: z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),
-  tmdbId: z.string().length(8, { message: "Must be 8 characters long" }).optional().nullable(),
-  tmdbSessionId: z.string().optional().nullable()
+  tmdbId: z.string().length(8, { message: "Must be 8 characters long" }).optional().nullable()
 }).strict();
 
 export const UserUpdateInputSchema: z.ZodType<Prisma.UserUpdateInput> = z.object({
@@ -152,7 +151,6 @@ export const UserUpdateInputSchema: z.ZodType<Prisma.UserUpdateInput> = z.object
   name: z.union([ z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   password: z.union([ z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   tmdbId: z.union([ z.string().length(8, { message: "Must be 8 characters long" }),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
-  tmdbSessionId: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
 }).strict();
 
 export const UserUncheckedUpdateInputSchema: z.ZodType<Prisma.UserUncheckedUpdateInput> = z.object({
@@ -161,7 +159,6 @@ export const UserUncheckedUpdateInputSchema: z.ZodType<Prisma.UserUncheckedUpdat
   name: z.union([ z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   password: z.union([ z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   tmdbId: z.union([ z.string().length(8, { message: "Must be 8 characters long" }),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
-  tmdbSessionId: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
 }).strict();
 
 export const UserCreateManyInputSchema: z.ZodType<Prisma.UserCreateManyInput> = z.object({
@@ -169,8 +166,7 @@ export const UserCreateManyInputSchema: z.ZodType<Prisma.UserCreateManyInput> = 
   email: z.string().email({ message: "Invalid email address" }).min(8, { message: "Minimum 8 characters" }),
   name: z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),
   password: z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),
-  tmdbId: z.string().length(8, { message: "Must be 8 characters long" }).optional().nullable(),
-  tmdbSessionId: z.string().optional().nullable()
+  tmdbId: z.string().length(8, { message: "Must be 8 characters long" }).optional().nullable()
 }).strict();
 
 export const UserUpdateManyMutationInputSchema: z.ZodType<Prisma.UserUpdateManyMutationInput> = z.object({
@@ -179,7 +175,6 @@ export const UserUpdateManyMutationInputSchema: z.ZodType<Prisma.UserUpdateManyM
   name: z.union([ z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   password: z.union([ z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   tmdbId: z.union([ z.string().length(8, { message: "Must be 8 characters long" }),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
-  tmdbSessionId: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
 }).strict();
 
 export const UserUncheckedUpdateManyInputSchema: z.ZodType<Prisma.UserUncheckedUpdateManyInput> = z.object({
@@ -188,7 +183,6 @@ export const UserUncheckedUpdateManyInputSchema: z.ZodType<Prisma.UserUncheckedU
   name: z.union([ z.string().min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" }),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   password: z.union([ z.string().min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" }),z.lazy(() => StringFieldUpdateOperationsInputSchema) ]).optional(),
   tmdbId: z.union([ z.string().length(8, { message: "Must be 8 characters long" }),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
-  tmdbSessionId: z.union([ z.string(),z.lazy(() => NullableStringFieldUpdateOperationsInputSchema) ]).optional().nullable(),
 }).strict();
 
 export const StringFilterSchema: z.ZodType<Prisma.StringFilter> = z.object({
@@ -231,8 +225,7 @@ export const UserCountOrderByAggregateInputSchema: z.ZodType<Prisma.UserCountOrd
   email: z.lazy(() => SortOrderSchema).optional(),
   name: z.lazy(() => SortOrderSchema).optional(),
   password: z.lazy(() => SortOrderSchema).optional(),
-  tmdbId: z.lazy(() => SortOrderSchema).optional(),
-  tmdbSessionId: z.lazy(() => SortOrderSchema).optional()
+  tmdbId: z.lazy(() => SortOrderSchema).optional()
 }).strict();
 
 export const UserMaxOrderByAggregateInputSchema: z.ZodType<Prisma.UserMaxOrderByAggregateInput> = z.object({
@@ -240,8 +233,7 @@ export const UserMaxOrderByAggregateInputSchema: z.ZodType<Prisma.UserMaxOrderBy
   email: z.lazy(() => SortOrderSchema).optional(),
   name: z.lazy(() => SortOrderSchema).optional(),
   password: z.lazy(() => SortOrderSchema).optional(),
-  tmdbId: z.lazy(() => SortOrderSchema).optional(),
-  tmdbSessionId: z.lazy(() => SortOrderSchema).optional()
+  tmdbId: z.lazy(() => SortOrderSchema).optional()
 }).strict();
 
 export const UserMinOrderByAggregateInputSchema: z.ZodType<Prisma.UserMinOrderByAggregateInput> = z.object({
@@ -249,8 +241,7 @@ export const UserMinOrderByAggregateInputSchema: z.ZodType<Prisma.UserMinOrderBy
   email: z.lazy(() => SortOrderSchema).optional(),
   name: z.lazy(() => SortOrderSchema).optional(),
   password: z.lazy(() => SortOrderSchema).optional(),
-  tmdbId: z.lazy(() => SortOrderSchema).optional(),
-  tmdbSessionId: z.lazy(() => SortOrderSchema).optional()
+  tmdbId: z.lazy(() => SortOrderSchema).optional()
 }).strict();
 
 export const StringWithAggregatesFilterSchema: z.ZodType<Prisma.StringWithAggregatesFilter> = z.object({

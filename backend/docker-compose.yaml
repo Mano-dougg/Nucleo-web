@@ -21,10 +21,12 @@ services:
     environment:
       - DB_HOST=${DB_HOST}
       - EXPRESS_PORT=${EXPRESS_PORT}
+      - TMDB_API_KEY=${TMDB_API_KEY}
+      - TMDB_READ_TOKEN=${TMDB_READ_TOKEN}
+    user: "${UID}:${GID}"
     depends_on:
       postgres:
         condition: service_healthy
-    user: "${UID}:${GID}"
     entrypoint: /bin/sh -c "npm install && npm run dev"
     healthcheck:
       # Checks if port 3000 is being used
