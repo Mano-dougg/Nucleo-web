@@ -21,19 +21,19 @@ model User {
 
 }
 
-model Movie {
-  id        Int       @id @default(autoincrement())
-  title     String
-  synopsis  String
-  favorites Favoritos[]
-}
+//model Movie {
+//  id        Int       @id @default(autoincrement())
+//  title     String
+//  synopsis  String
+//  favorites Favoritos[]
+//}
 
 model Favoritos {
   id        Int    @id @default(autoincrement())
   userId    Int
   movieId   Int
   user      User   @relation(fields: [userId], references: [id])
-  movie     Movie  @relation(fields: [movieId], references: [id])
+//  movie     Movie  @relation(fields: [movieId], references: [id])
  
-  @@unique([userId, movieId])
+  @@unique([userId]) //incluia movieId
 }

@@ -109,3 +109,72 @@ app.get("/usuario/:id/favoritos",
         }
     }
 )
+
+app.post("/usuario/:userId/favoritos/:filmeId",
+    async (req: Request, res: Response) => {
+        const {userId, filmeId} = req.params
+        try {
+            const usuario = await prisma.user.findUnique({
+                where: {id:Number(userId)},
+                include: {favorites: true}
+            })
+            if (usuario) {
+                const favoritoExistente = await prisma.favoritos.findUnique({
+                    where: {
+                        userId: Number(userId),
+                        movieId: Number(filmeId)
+                    }
+                })
+                if (favoritoExistente) {
+                    return res.status(400).json({ error: "Filme já está favoritado" })
+                }
+                await prisma.favoritos.create({
+                    data: {
+                        userId: Number(userId),
+                        movieId: Number(filmeId),
+                    }
+                })
+            } else { return res.status(404).json({ error: "Usuário não encontrado" }) }
+            return res.status(200).json({ message: "Filme adicionado aos favoritos com sucesso" })
+        } catch (error) {
+            console.error(error)
+            return res.status(500).json({error:"Erro desconhecido"})
+        }
+    }
+)
+
+app.delete("/usuario/:idUser/favoritos/:filmeId",
+    async (req: Request, res: Response) => {
+        const {idUser, filmeId} = req.params
+        try {
+            const usuario = await prisma.user.findUnique({
+                where: {id:Number(idUser)},
+                include: {favorites: true}
+            })
+            if (usuario) {
+                const favorito = await prisma.favoritos.findUnique({
+                    where: {
+                        userId: Number(idUser),
+                        movieId: Number(filmeId)
+                    }
+                })
+                if (favorito) {
+                    await prisma.favoritos.delete({
+                        where: {
+                            userId: Number(idUser),
+                            movieId: Number(filmeId)
+                        }
+                    })
+                    return res.status(200).json({ message: "Favorito removido com sucesso" })
+                } else {
+                    return res.status(404).json({ error: "Favorito não encontrado" })
+                }
+            } else {
+                return res.status(404).json({ error: "Usuário não encontrado" })
+            }
+        } catch (error) {
+            console.error(error)
+            return res.status(500).json({error:"Erro desconhecido"})
+        }
+    }
+)

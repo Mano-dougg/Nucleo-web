@@ -22,7 +22,7 @@
 .filmeCard div p {
     text-align:justify
 }
-.filmeCard button {
+.favoritar {
     border-color: transparent;
     border-radius: 15px;
     padding: .75em;
@@ -32,6 +32,19 @@
     font-weight: bold;
     font-size: 1em;
 }
-.filmeCard button:hover{
+.desfavoritar {
+    border-color: gray;
+    border-radius: 15px;
+    padding: .75em;
+    cursor: pointer;
+    background-color: transparent;
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1em;
+}
+.favoritar:hover{
     background-color:orange;
+}
+.desfavoritar:hover{
+    background-color:black;
 }
