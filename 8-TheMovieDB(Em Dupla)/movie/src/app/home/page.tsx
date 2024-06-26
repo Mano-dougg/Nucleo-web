@@ -5,6 +5,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './components2/header';
+import MovieList from '@/components/movieList';
 
 interface User {
   name: string;
@@ -51,7 +52,7 @@ const Home: React.FC = () => {
       <Header user={user} />
       <div>
         <h1>Pagina Inicial!</h1>
-        
+        <MovieList/>
       </div>
     </>
   );
