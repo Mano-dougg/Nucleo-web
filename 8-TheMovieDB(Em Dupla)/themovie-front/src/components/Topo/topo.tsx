@@ -11,7 +11,7 @@ export default function Topo(){
         <div className="main-topo">
 
             <div className='titulo'>
-                <Link id='line' href={'./'}><h1>OMNI</h1></Link>
+                <Link id='line' href={'./Home'}><h1>OMNI</h1></Link>
             </div>
 
             <div className='menu-topo'>
