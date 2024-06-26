@@ -1,5 +1,5 @@
 .overlay {
-  display: none;
+  /* display: none; */
   position: absolute;
   top: 0;
   left: 0;
@@ -7,17 +7,25 @@
   width: 100%;
   height: 100%;
   background-color: rgba(var(--overlay-modal));
+  cursor: pointer;
+}
+
+.overlay * {
+  cursor: default;
 }
 
 .modal,
 .fields,
 .modal form,
+.inputs,
 .options {
   display: flex;
   flex-direction: column;
 }
 
 .modal {
+  position: relative;
+  margin: 0 auto;
   background-color: rgba(var(--background-card));
   width: 330px;
   padding: 50px 30px 30px;
@@ -40,10 +48,15 @@
 }
 
 .fields form {
+  gap: 63px;
+}
+
+.fields form .inputs {
   gap: 15px;
 }
 
 .fields form input {
+  width: 100%;
   height: 50px;
   padding: 16px 25px;
   border: none;
@@ -60,7 +73,7 @@
   gap: 30px;
 }
 
-.options button {
+.options * {
   height: 60px;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -76,6 +89,8 @@
 
 .cancel {
   color: rgb(var(--cancel));
+  text-align: center;
+  padding: 5%;
   border: 1px solid rgb(var(--cancel));
   background-color: rgb(var(--background-card)   );
 }

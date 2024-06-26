@@ -1,27 +1,45 @@
-import { useState, useEffect } from "react";
-import styles from "./Modal.module.css";
+import React from 'react';
+import styles from './Modal.module.css';
 
-const Modal = () => {
+interface ModalProps {
+  isOpen: boolean;
+  openMenu: (open: boolean) => void;
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, openMenu }) => {
+  const closeModal = () => {
+    openMenu(false);
+  };
+
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).id === 'overlay') {
+      closeModal();
+    }
+  };
+
   return (
-    <div id="overlay" className={styles.overlay} /*onClick={close}*/>
+    <div
+      id="overlay"
+      className={`${styles.overlay} ${isOpen ? styles.open : ''}`}
+      onClick={handleOverlayClick}
+    >
       <div className={styles.modal}>
-
         <div className={styles.fields}>
           <span>Adicionar pessoa a fila</span>
-          
           <form action="/add-person" method="POST">
-            <input type="text" id="name" name="name" placeholder="Nome completo do cliente" />
-            <input type="text" id="breads" name="breads" placeholder="Total de pães:" />
+            <div className={styles.inputs}>
+              <input type="text" id="name" name="name" placeholder="Nome completo do cliente" />
+              <input type="text" id="breads" name="breads" placeholder="Total de pães:" />
+            </div>
+            <div className={styles.options}>
+              <button className={styles.send} type="submit">Enviar</button>
+              <div className={styles.cancel} onClick={closeModal}>Cancelar</div>
+            </div>
           </form>
-        </div>
-        
-        <div className={styles.options}>
-          <button className={styles.send} type="submit" >Enviar</button>
-          <button className={styles.cancel} /*onClick={close}*/ >Cancelar</button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Modal;
