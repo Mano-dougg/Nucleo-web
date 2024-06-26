@@ -1,3 +1,4 @@
+'use client';
 import './lista.css'
 import Topo from '../../components/Topo/topo'
 import Base from '../../components/Base/base'

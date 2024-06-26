@@ -23,9 +23,8 @@
 }
 
 .menu-topo h1{
-    font-size: 20px;
+   font-size: 20px; 
 }
-
 
 .lado-direito{
     display: flex;
@@ -92,4 +91,9 @@
 #line{
     text-decoration: none;
     color: white;
+}
+
+#imagem-pesquisa{
+    background-color: transparent;
+    border: 0;
 }

@@ -7,8 +7,8 @@ const prisma = new PrismaClient()
 export default{
 
     async favoritos (req: Request, res: Response){
-    const {userId} = req.body;
-    const usuario = await prisma.favoritos.findMany({where: { userId }});
+    // const {userId} = req.body;
+    const usuario = await prisma.favoritos.findMany();
     try{
       return res.json(usuario)
     }

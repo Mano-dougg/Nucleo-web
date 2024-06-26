@@ -11,7 +11,6 @@ const Cadastrar = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            console.log("VAIIII BAHIAAAA")
             await axios.post('http://localhost:5000/cadastro', { username, password, email });
             window.location.reload();
         } catch (error) {

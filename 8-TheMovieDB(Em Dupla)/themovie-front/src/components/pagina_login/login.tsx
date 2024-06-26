@@ -12,8 +12,8 @@ const Acesso = () => {
         e.preventDefault();
         try {
             await axios.post('http://localhost:5000/login', { username: loginUser, password: loginPassword });
-            console.log('Login successful');
-            window.location.href = '/page';
+            // console.log('Login successful');
+            window.location.href = '/';
         } catch (error) {
             console.error('Erro ao fazer login: ', error);
         }

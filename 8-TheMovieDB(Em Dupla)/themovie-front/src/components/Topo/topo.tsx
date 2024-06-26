@@ -27,7 +27,7 @@ export default function Topo(){
 
                 <div className='barra-pesquisa'>
                     <input type='text' placeholder='Pesquisar filme'></input>
-                    <Image src={lupa} alt=''/>
+                    <button id='imagem-pesquisa'><Image src={lupa} alt=''/></button>
                 </div>
             </div>
         
