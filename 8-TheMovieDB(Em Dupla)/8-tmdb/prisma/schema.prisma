@@ -13,7 +13,7 @@ datasource db {
 model User {
   id          Int           @id @default(autoincrement())
   email       String        @unique
-  name        String?
+  name        String
   password    String
   favorites   Favoritos[]
   createdAt   DateTime      @default(now())
@@ -35,5 +35,5 @@ model Favoritos {
   user      User   @relation(fields: [userId], references: [id])
 //  movie     Movie  @relation(fields: [movieId], references: [id])
  
-  @@unique([userId]) //incluia movieId
+  //@@unique([userId]) //incluia movieId
 }
