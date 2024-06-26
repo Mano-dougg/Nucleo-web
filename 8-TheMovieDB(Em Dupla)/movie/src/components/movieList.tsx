@@ -8,14 +8,21 @@ const MovieListContainer = styled.div`
 
 const MovieGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(5, 1fr); 
   gap: 20px;
 `;
 
 const MovieCard = styled.div`
-  background-color: ;
+  position: relative;
+  background-color: #333;
   border-radius: 8px;
   padding: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const MovieTitle = styled.h3`
@@ -24,20 +31,41 @@ const MovieTitle = styled.h3`
   color: #ffffff; 
 `;
 
-const MovieOverview = styled.p`
-  font-size: 1rem;
-  color: #ffffff;
-  margin-bottom: 10px;
-`;
-
 const MovieImage = styled.img`
   width: 100%;
   border-radius: 8px;
 `;
 
-const Tagh2 =styled.h2`
-color:white;
-`
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  ${MovieCard}:hover & {
+    opacity: 1;
+  }
+`;
+
+const OverlayText = styled.p`
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+`;
+
+const OverlayLink = styled.a`
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+`;
 
 interface Movie {
   id: number;
@@ -67,7 +95,7 @@ const MovieList: React.FC = () => {
 
   return (
     <MovieListContainer>
-      <Tagh2>Filmes Populares</Tagh2>
+      <h2>Filmes Populares</h2>
       <MovieGrid>
         {movies.map((movie) => (
           <MovieCard key={movie.id}>
@@ -76,7 +104,11 @@ const MovieList: React.FC = () => {
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
             />
-           
+            <Overlay>
+              
+              <OverlayLink href="#">Adicionar aos favoritos</OverlayLink>
+              <OverlayLink href="#">Mais Informações</OverlayLink>
+            </Overlay>
           </MovieCard>
         ))}
       </MovieGrid>

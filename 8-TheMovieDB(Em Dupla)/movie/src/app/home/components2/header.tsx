@@ -3,7 +3,8 @@ import Netflix from '../../../../img/netflix.jpg';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons'; // Importa o ícone de busca
+import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 interface HeaderProps {
   user: {
@@ -19,14 +20,14 @@ const Tagheader = styled.header`
   height: auto;
   min-height: 70px;
   z-index: 1;
-  background-color: #000; /* Cor corrigida para preto (#000) */
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  font-family: 'Netflix Sans', 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Ubuntu', sans-serif;
+  font-family:inherit;
   color: #fff;
-  
+
   nav ul {
     display: flex;
     list-style: none;
@@ -49,21 +50,10 @@ const Tagheader = styled.header`
     color: #e50914;
   }
 
-  div {
-    display: flex;
-    align-items: center;
-  }
-
-  p {
-    margin: 0 10px;
-    cursor: pointer;
-  }
-
   .user-icon {
     margin-right: 5px;
   }
 
-  /* Estilo para o campo de pesquisa */
   .search-container {
     display: flex;
     align-items: center;
@@ -92,9 +82,8 @@ const UserContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap:10px;
+  gap: 10px;
 `;
-
 
 const UserName = styled.p`
   margin: 0 10px;
@@ -103,6 +92,7 @@ const UserName = styled.p`
 
 const Options = styled.div`
   display: none;
+  position: absolute;
   top: calc(100% + 10px);
   right: 0;
   background-color: #333;
@@ -117,23 +107,62 @@ const Options = styled.div`
   }
 `;
 
+const SearchResultContainer = styled.div`
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+`;
+
+const SearchResultItem = styled.div`
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 0;
+
+  &:hover {
+    background-color: #555;
+  }
+`;
+
 const Header: React.FC<HeaderProps> = ({ user }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState<any[]>([]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     window.location.href = '/home';
-    window.location.reload(); 
+    window.location.reload();
   };
 
   const handleLogin = () => {
-    window.location.href = '/'; // Redireciona para a página inicial após o login
+    window.location.href = '/';
   };
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-    // Aqui você pode implementar a lógica para realizar a pesquisa conforme o termo digitado
+  const handleSearch = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const query = event.target.value;
+    setSearchTerm(query);
+
+    try {
+      const response = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
+        params: {
+          api_key: 'ad1c12884f4a7421c3d9e6d859be97a9',
+          query: query,
+        },
+      });
+
+      setSearchResults(response.data.results);
+    } catch (error) {
+      console.error('Erro ao buscar filmes:', error);
+      setSearchResults([]);
+    }
   };
 
   return (
@@ -145,11 +174,10 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
           <li><a href="/">Series</a></li>
           <li><a href="/">Filmes</a></li>
           <li><a href="/">Minha Lista</a></li>
-          
         </ul>
       </nav>
       <UserContainer>
-      <div className="search-container">
+        <div className="search-container">
           <FontAwesomeIcon icon={faSearch} style={{ cursor: 'pointer' }} />
           <input
             type="text"
@@ -170,8 +198,17 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
         ) : (
           <p onClick={handleLogin}>Fazer Login <FontAwesomeIcon icon={faUser} className="user-icon" /></p>
         )}
-        
       </UserContainer>
+
+      {searchResults.length > 0 && (
+        <SearchResultContainer>
+          {searchResults.map((movie) => (
+            <SearchResultItem key={movie.id}>
+              <h3>{movie.title}</h3>
+            </SearchResultItem>
+          ))}
+        </SearchResultContainer>
+      )}
     </Tagheader>
   );
 };
