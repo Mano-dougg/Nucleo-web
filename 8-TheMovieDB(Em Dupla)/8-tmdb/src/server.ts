@@ -1,11 +1,12 @@
 import express, { Request, Response } from 'express'
 import { PrismaClient } from '@prisma/client';
-import { get } from 'http';
+import cors from 'cors'
 
 const app = express()
 const port = process.env.PORT || 8080;
 const prisma = new PrismaClient()
 app.use(express.json())
+app.use(cors({origin: '*'}))
 
 app.listen(port, () =>
 console.log(`Server running on port: ${port}`))
@@ -112,33 +113,37 @@ app.get("/usuario/:id/favoritos",
 
 app.post("/usuario/:userId/favoritos/:filmeId",
     async (req: Request, res: Response) => {
-        const {userId, filmeId} = req.params
+        const { userId, filmeId } = req.params
+        console.log("User ID: ", userId)
+        console.log("Filme ID:", filmeId)
         try {
             const usuario = await prisma.user.findUnique({
-                where: {id:Number(userId)},
-                include: {favorites: true}
+                where: { id: Number(userId) }
             })
-            if (usuario) {
-                const favoritoExistente = await prisma.favoritos.findUnique({
-                    where: {
-                        userId: Number(userId),
-                        movieId: Number(filmeId)
-                    }
-                })
-                if (favoritoExistente) {
-                    return res.status(400).json({ error: "Filme já está favoritado" })
+
+            if (!usuario) { return res.status(404).json({ error: "Usuário não encontrado" }) }
+
+            const favoritoExistente = await prisma.favoritos.findFirst({
+                where: {
+                    userId: Number(userId),
+                    movieId: Number(filmeId)
                 }
-                await prisma.favoritos.create({
-                    data: {
-                        userId: Number(userId),
-                        movieId: Number(filmeId),
-                    }
-                })
-            } else { return res.status(404).json({ error: "Usuário não encontrado" }) }
+            })
+
+            if (favoritoExistente) {
+                return res.status(400).json({ error: "Filme já está favoritado" })
+            }
+            await prisma.favoritos.create({
+                data: {
+                    userId: Number(userId),
+                    movieId: Number(filmeId),
+                }
+            })
+
             return res.status(200).json({ message: "Filme adicionado aos favoritos com sucesso" })
         } catch (error) {
             console.error(error)
-            return res.status(500).json({error:"Erro desconhecido"})
+            return res.status(500).json({ error: "Erro desconhecido" })
         }
     }
 )

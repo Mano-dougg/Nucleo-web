@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./filmeCard.css"
 import { Favoritos } from "@prisma/client";
-import axios from "axios";
 
 interface FilmeCardProps {
     movieID: number;
@@ -17,7 +16,7 @@ const FilmeCard: React.FC<FilmeCardProps> = ({imagem, titulo, descricao, data, m
     const [listaFavoritos, setListaFavoritos] = useState<Favoritos[]>([])
     const [favoritado, setFavoritado] = useState<boolean>(false)
 
-
+    
     useEffect(()=>{
         if (typeof window !== 'undefined') {
             const token = localStorage.getItem('token')
@@ -25,6 +24,7 @@ const FilmeCard: React.FC<FilmeCardProps> = ({imagem, titulo, descricao, data, m
             if (token){
                 const payload = JSON.parse(atob(token.split('.')[1]))
                 setUserID(payload.id)
+                console.log(payload.id)
             }
         }
     }, [])
@@ -33,9 +33,15 @@ const FilmeCard: React.FC<FilmeCardProps> = ({imagem, titulo, descricao, data, m
         if (userID) {
             const getFavoritos = async () => {
                 try {
-                    const resposta = await axios.get(`/usuario/${userID}/favoritos`)
-                    setListaFavoritos(resposta.data)
-                    setFavoritado(listaFavoritos.some((favorito: any) => favorito.movieId === userID))
+                    const resposta = await fetch(`http://localhost:8080/usuario/${userID}/favoritos`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({userID})
+                    })
+                    setListaFavoritos(await resposta.json())
+                    setFavoritado(listaFavoritos.some((favorito: any) => favorito.movieId === movieID))
                 } catch (error) {
                     console.error('Erro ao obter favoritos:', error)
                 }
@@ -49,17 +55,31 @@ const FilmeCard: React.FC<FilmeCardProps> = ({imagem, titulo, descricao, data, m
         if (!token) return
 
         if (favoritado) {
-            axios.delete(`/usuario/${userID}/favoritos/${movieID}`)
+            fetch(`http://localhost:8080/usuario/${userID}/favoritos/${movieID}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({userID, movieID})
+            })
             .then(response => {
-                if (response.status === 200) {
+                if (response.ok) {
                     setFavoritado(false)
                 }
             })
             .catch(error => console.error('Erro ao remover dos favoritos:', error))
         } else {
-            axios.post(`/usuario/${userID}/favoritos/${movieID}`)
+            console.log(userID)
+            console.log(movieID)
+            fetch(`http://localhost:8080/usuario/${userID}/favoritos/${movieID}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({userID, movieID})
+            })
             .then(response => {
-                if (response.status === 200) {
+                if (response.ok) {
                     setFavoritado(true)
                 }
             })
