@@ -1,0 +1,109 @@
+body{
+    background-color: white;
+}
+
+
+#love{
+    color:rgba(126, 211, 33, 1);
+    text-decoration: none;
+}
+
+.header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 80px ;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    width: 281px;
+    height: 65px;
+    font-weight: 700;
+    top: 27px;
+    left: 15px;
+    font-size: 48px;
+    align-items:center;
+    font-family: "Open Sans", sans-serif;
+
+
+
+}
+.navigation{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21.79px;
+    font-family: "Open Sans", sans-serif;
+    gap: 4em;
+    justify-content: end;
+    align-items:center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    gap: 35px;
+  
+}
+
+.quemsomos, .blog, .b1, .b2{
+   text-decoration:none;
+   color: black;
+} 
+
+.b1{
+    display: flex;
+    align-items: center;
+    width: 151px;
+    height: 40px;
+    background: rgba(126, 211, 33, 0.4);
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 15px;
+    justify-content: center;
+
+
+
+}
+
+/* CORPO DO SITE */
+
+
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.we, .dogs{
+    color: #000;
+    text-decoration: none;
+}
+
+.texto{
+    max-width: 687px;
+    max-height: 180px;
+    font-family: "Open sans", sans-serif;
+    text-align: justify;
+    margin: 0;
+    font-size: 16px;
+
+}
+
+.quemsomost{
+    font-family: "Open sans", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 10px;
+    height: 110px ;
+
+}
+
+.b1:hover{
+    background-color: #7dd321a1
+}
