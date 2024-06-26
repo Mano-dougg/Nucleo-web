@@ -16,14 +16,14 @@ export default function Login() {
         event.preventDefault();
         
         try {
-            await axios.post("http://localhost:3030/auth/login", {
+            const response = await axios.post("http://localhost:3030/auth/login", {
                 email: email,
                 senha: senha,
             });
             router.push('/home');
         } 
         catch (error: any) {
-            setError(error.data || "An error occurred during login.");
+            setError(error.response.data.error || "An error occurred during login.");
         }
     };
 
