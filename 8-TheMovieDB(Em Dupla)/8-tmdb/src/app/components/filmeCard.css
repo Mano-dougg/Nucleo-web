@@ -41,6 +41,7 @@
     margin-top: 1em;
     font-weight: bold;
     font-size: 1em;
+    color:white;
 }
 .favoritar:hover{
     background-color:orange;

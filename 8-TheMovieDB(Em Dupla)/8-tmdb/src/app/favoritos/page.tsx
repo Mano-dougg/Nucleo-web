@@ -53,7 +53,7 @@ function Favoritos(){
     return(
         <>
             <NavBar />
-            <h1>Seus filmes favoritos</h1>
+            <h1 id="favtitulo">Seus filmes favoritos</h1>
             <div className="gradeFavoritos">
                 {listaFavoritos.map((Favorito)=>(
                     <FilmeCard

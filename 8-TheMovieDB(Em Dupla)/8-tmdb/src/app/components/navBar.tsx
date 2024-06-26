@@ -32,7 +32,9 @@ const NavBar = () => {
     <nav>
         <div className='links'>
           <Link className='linksTrio' href="/"><h1>TRIO</h1></Link>
-          <h1>Favoritos</h1>
+          <Link className='linksTrio' href="/filmes"><h1>Filmes</h1></Link>
+          <Link className='linksTrio' href="/favoritos"><h1>Favoritos</h1></Link>
+          
         </div>
 
 
