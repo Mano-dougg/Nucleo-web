@@ -154,10 +154,9 @@ app.delete("/usuario/:idUser/favoritos/:filmeId",
         try {
             const usuario = await prisma.user.findUnique({
                 where: {id:Number(idUser)},
-                include: {favorites: true}
             })
             if (usuario) {
-                const favorito = await prisma.favoritos.findUnique({
+                const favorito = await prisma.favoritos.findFirst({
                     where: {
                         userId: Number(idUser),
                         movieId: Number(filmeId)
