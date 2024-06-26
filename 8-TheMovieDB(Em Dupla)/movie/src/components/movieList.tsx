@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import Image from 'next/image';
+import Gostei from '../../img/gostar.png'
+import Sobre from '../../img/maisSobre.png'
+import Imglike from './imgs';
+import ImgAbout from './imgAbout';
+
 
 const MovieListContainer = styled.div`
   margin-top: 20px;
@@ -44,8 +50,8 @@ const Overlay = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
@@ -106,8 +112,8 @@ const MovieList: React.FC = () => {
             />
             <Overlay>
               
-              <OverlayLink href="#">Adicionar aos favoritos</OverlayLink>
-              <OverlayLink href="#">Mais Informações</OverlayLink>
+            <OverlayLink href="#"><Imglike/></OverlayLink>
+              <OverlayLink href="#"><ImgAbout/></OverlayLink>
             </Overlay>
           </MovieCard>
         ))}
