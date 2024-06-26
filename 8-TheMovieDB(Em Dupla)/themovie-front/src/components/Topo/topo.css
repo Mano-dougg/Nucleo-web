@@ -64,28 +64,34 @@
     border-radius: 10px;
 }
 
-.barra-pesquisa input{
+.barra-pesquisa form input{
     background-color: #723172;
     border: 0;
     color: white;
     width: 255px;
     height: 36px;
+    margin-top: 22px;
     margin-left: 5px;
     font-size: 15px;
     border-radius: 10px;
 }
 
-.barra-pesquisa input:focus{
+.barra-pesquisa form input:focus{
     outline: 0;
 }
 
-.barra-pesquisa input::placeholder{
+.barra-pesquisa form input::placeholder{
     color: white;
     font-size: 15px;
 }
 
-.barra-pesquisa img:hover{
+.barra-pesquisa form img:hover{
     cursor: pointer;
+}
+
+.form-main{
+    display: flex;
+    flex-direction: row;
 }
 
 #line{
@@ -94,6 +100,9 @@
 }
 
 #imagem-pesquisa{
+    position: relative;
+    top:-28px;
+    left: 260px;
     background-color: transparent;
     border: 0;
 }

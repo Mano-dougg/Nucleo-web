@@ -1,3 +1,4 @@
+"use client";
 import Topo from '../../components/Topo/topo'
 import './favoritos.css'
 import Base from '../../components/Base/base'

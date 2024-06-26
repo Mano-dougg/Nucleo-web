@@ -47,18 +47,47 @@ app.get('/logado', async(req, res) =>{
   }
 })
 
-// app.post('/update', async(req, res) =>{
-//   try{
-//     const atualizar = await prisma.logado.update({
-//       where: {id:1},
-//       data:{
-//         username,
-//         userid
-//       }
-//     })
-//   }
-// })
+app.post('/iniciapesquisa', async (req, res)=>{
+  const {title} = req.body;
+  try{
+    const existe = await prisma.pesquisa.findFirst();
+    if (!existe) {
+        await prisma.pesquisa.create({
+            data: {
+              title: ''
+            },
+        });
+    }
+  }catch(error){
+    res.status(500).json({ error: 'Falha' });
+  }
+})
 
+
+app.post('/pesquisar', async (req, res)=>{
+  const {title} = req.body;
+  try{
+        await prisma.pesquisa.update({
+          where: { id: 1},
+            data: {
+              title
+            },
+        });  
+      }catch(error){
+          res.status(500).json({ error: 'Falha' });
+      }
+})
+
+
+
+app.get('/analisar', async(req, res) =>{
+  const pesquisa = await prisma.pesquisa.findMany();
+  try{
+    return res.json(pesquisa)
+  } catch (error){
+    res.status(500).json({ error: 'Falha' });
+  }
+})
 
 
 app.delete('/deletar/:title', async(req, res)=>{
