@@ -1,12 +1,23 @@
+'use client';
+import React, { useState } from "react";
 import styles from "./Main.module.css";
+
 import InfoCard from "@/components/InfoCard"
 import SaleCard from "@/components/SaleCard"
+
 import PeopleIcon from "@/assets/People.svg"
 import CartIcon from "@/assets/Cart.svg"
 import DollarSignIcon from "@/assets/DollarSign.svg"
 import TrashIcon from "@/assets/Trash.svg"
 
 export default function Main() {
+  const [showAddPerson, setShowAddPerson] = useState(false)
+
+  const handleModal = () => {
+    setShowAddPerson(!showAddPerson);
+    console.log(showAddPerson);
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.content}>
@@ -17,7 +28,7 @@ export default function Main() {
         </section>
 
         <section className={styles.sales}>
-          <span className={styles.addPeople}>+ Adicionar pessoa a fila</span>
+          <span className={styles.addPeople} onClick={handleModal}>+ Adicionar pessoa a fila</span>
           <div className={styles.salesList}>
             <SaleCard Name={"Alexandre Shyjada Sousa"} Breads={50} Value={25} Icon={TrashIcon} />
             <SaleCard Name={"Matheus Novais"} Breads={50} Value={25} Icon={TrashIcon} />

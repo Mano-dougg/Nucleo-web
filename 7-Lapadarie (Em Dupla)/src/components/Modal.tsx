@@ -1,16 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "./Modal.module.css";
 
-export default function Modal() {
-  
-  function close(event: { currentTarget: any; }) {
-    const element = event.currentTarget;
-    const modal = document.getElementById("overlay");
-    modal?.classList.toggle("open");
-  }
-
+const Modal = () => {
   return (
-    <div id="overlay" className={styles.overlay} onClick={close}>
+    <div id="overlay" className={styles.overlay} /*onClick={close}*/>
       <div className={styles.modal}>
 
         <div className={styles.fields}>
@@ -24,9 +17,11 @@ export default function Modal() {
         
         <div className={styles.options}>
           <button className={styles.send} type="submit" >Enviar</button>
-          <button className={styles.cancel} onClick={close} >Cancelar</button>
+          <button className={styles.cancel} /*onClick={close}*/ >Cancelar</button>
         </div>
       </div>
     </div>
   );
 }
+
+export default Modal;
