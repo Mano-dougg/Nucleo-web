@@ -54,6 +54,10 @@
     border: 0;
 }
 
+#image-pesquisa:hover{
+    cursor: pointer;
+}
+
 
 .titulo-pesquisa{
     margin-top: 35px;
@@ -75,6 +79,7 @@
 }
 
 .div-filme{
+
     width: 170px;
     height: 280px;
     background-color: #580658;
@@ -112,17 +117,17 @@
 
 @media (max-width: 600px) {
     .barra-pesquisa{
-        width: 290px;
+        width: 270px;
     }
     
     .barra-pesquisa form input{
-        width: 254px;
+        width: 234px;
         height: 34px;
     }
 
     #imagem-pesquisa{
         top:-28px;
-        left: 265px;
+        left: 242px;
     }
     .titulo-pesquisa h2{
         margin-top: 35px;
