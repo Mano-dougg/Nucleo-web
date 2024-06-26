@@ -1,8 +1,13 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link'; // Importe o Link do Next.js
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Arrow from '../assets/arrow.png'
+import Image from 'next/image';
+import HomePage from '@/pages';
 
 interface Movie {
     id: number;
@@ -70,27 +75,40 @@ const MovieList = () => {
             <div className="popularMoviesDetails">
                 {selectedMovie && (
                     <>
-                        <h3>{selectedMovie.title}</h3>
-                        <p>Classificação indicativa: {selectedMovie.vote_average}</p>
-                        <p>{selectedMovie.overview}</p>
-                        <Link legacyBehavior href={`/movie/${selectedMovie.id}`}>
-                            <a className="btn-details">Detalhes</a>
-                        </Link>
+                        <h3 className='dtl-h1'>{selectedMovie.title}</h3>
+                        <p className='dtl-cl' >Ranking pelos usuários: {selectedMovie.vote_average}</p>
+                        <p className='dtl-res'>{selectedMovie.overview}</p>
+                        <div className="dtl-link">
+                            <Link legacyBehavior href={`/movie/${selectedMovie.id}`}>
+                                <a className="dtl-dtl">
+                                    <Image
+                                        className='dtl-dtl-img'
+                                        src={Arrow}
+                                        alt='arrow'
+                                    />
+                                    Detalhes
+                                </a>
+                            </Link>
+                        </div>
                     </>
                 )}
+                 
             </div>
             <div className="popularMoviesPosters">
                 {popularMovies.map((movie) => (
                     <div className={`posterContainer ${selectedPosterId === movie.id ? 'selected' : ''}`} key={movie.id} onClick={() => handleMovieClick(movie)}>
                         <img
+                            className='posterimg'
                             src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                             alt={`${movie.title} Poster`}
-                            style={{ transform: selectedPosterId === movie.id ? 'scale(1.2)' : 'scale(1)' }} // Aplica a transformação de escala condicionalmente
+                            style={{ transform: selectedPosterId === movie.id ? 'scale(1)' : 'scale(0.8)' }} // Aplica a transformação de escala condicionalmente
                         />
                     </div>
                 ))}
             </div>
+            
         </div>
+        
     );
 
     const responsive = {
@@ -113,16 +131,17 @@ const MovieList = () => {
     };
 
     const renderCarousel = (movies: Movie[], genre: string) => (
-        <div>
-            <h2>{genre}</h2>
+        <div className='carroussel'>
+            <h2 className='car-gen'>{genre}</h2>
             <Carousel responsive={responsive}>
                 {movies.map((movie) => (
                     <div className="movieContainer" key={movie.id}>
-                        <h3>{movie.title}</h3>
-                        <Link legacyBehavior href={`/movie/${movie.id}`}>
+                        <h3 className='moviecontainertitle'>{movie.title}</h3>
+                        <Link className='car-posterimg' legacyBehavior href={`/movie/${movie.id}`}>
                             <a>
                                 {movie.poster_path && (
                                     <img
+                                        className='imgimg'
                                         src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                                         alt={`${movie.title} Poster`}
                                     />
@@ -138,6 +157,7 @@ const MovieList = () => {
     return (
         <div>
             {renderPopularMovies()}
+           
             {renderCarousel(actionMovies, 'Ação')}
             {renderCarousel(comedyMovies, 'Comédia')}
             {renderCarousel(horrorMovies, 'Terror')}

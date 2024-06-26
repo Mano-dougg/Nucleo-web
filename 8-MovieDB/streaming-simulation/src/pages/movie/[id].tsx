@@ -87,42 +87,55 @@ const MovieDetailPage = () => {
     }
 
     return (
-        <div>
-            <h1>{movie.title}</h1>
-            {movie.poster_path ? (
-                <img
-                    src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                    alt={`Poster de ${movie.title}`}
-                />
-            ) : (
-                <p>Poster não disponível</p>
-            )}
-            <p>Data de Lançamento: {movie.release_date}</p>
-            <p>Classificação Indicativa: {movie.genres.map(genre => genre.name).join(', ')}</p>
-            <p>Avaliação Média: {movie.vote_average}</p>
-            <p>Tempo de Duração: {movie.runtime} minutos</p>
-            <p>{movie.overview}</p>
+        <>
+        <h1 className='id-title'>{movie.title}</h1>
+        <div className='idcontent'>
+            
+            <div className="id-division">
+                {movie.poster_path ? (
+                    <img
+                        className='id-image'
+                        src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                        alt={`Poster de ${movie.title}`}
+                    />
+                ) : (
+                    <p>Poster não disponível</p>
+                )}
 
-            {session && (
-                <button onClick={handleFavorite}>
-                    {isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos'}
-                </button>
-            )}
-
-            {movie.videos?.results.length > 0 && (
-                <div>
-                    <h2>Trailer</h2>
-                    <iframe
-                        width="560"
-                        height="315"
-                        src={`https://www.youtube.com/embed/${movie.videos.results[0].key}`}
-                        title="Trailer"
-                        frameBorder="0"
-                        allowFullScreen
-                    ></iframe>
+                <div className="id-inf">
+                    <p className='id-date'>Data de Lançamento: {movie.release_date}</p>
+                    <p className='id-cla'>Classificação Indicativa: {movie.genres.map(genre => genre.name).join(', ')}</p>
+                    <p className='id-ava'>Avaliação Média: {movie.vote_average}</p>
+                    <p className='id-time'>Tempo de Duração: {movie.runtime} minutos</p>
                 </div>
-            )}
+                {session && (
+                    <button className='id-btn' onClick={handleFavorite}>
+                        {isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos'}
+                    </button>
+                )}
+            </div>
+
+            <div className="division">
+                <p className='id-over'>{movie.overview}</p>
+
+            
+
+                {movie.videos?.results.length > 0 && (
+                    <div>
+                        <h2>Trailer</h2>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src={`https://www.youtube.com/embed/${movie.videos.results[0].key}`}
+                            title="Trailer"
+                            frameBorder="0"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                )}
+            </div>
         </div>
+        </>
     );
 };
 

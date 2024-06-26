@@ -5,10 +5,8 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 const HomePage = () => {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const [greeting, setGreeting] = useState('');
-  const [query, setQuery] = useState('');
-  const router = useRouter();
 
   useEffect(() => {
     if (session?.user?.name) {
@@ -24,31 +22,20 @@ const HomePage = () => {
         greetingMessage = 'Boa noite';
       }
 
-      setGreeting(`${greetingMessage}, ${userName}!`);
+      setGreeting(`${greetingMessage}, ${userName}! `);
+     
     }
   }, [session]);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (query.trim()) {
-      router.push(`/search?query=${query}`);
-    }
-  };
+  
 
   return (
-    <div>
-      <h1>Homepage</h1>
+    <div className='greeting'>
+     
       {greeting && <p>{greeting}</p>}
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Pesquise por um filme..."
-        />
-        <button type="submit">Search</button>
-      </form>
+      
     </div>
+    
   );
 };
 

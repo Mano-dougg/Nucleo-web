@@ -1,0 +1,149 @@
+body {
+    background-color: black;
+    color: var(--white);
+}
+
+.popularMovies {
+    display: flex;
+    height: 37rem;
+    width: 100%;
+    padding: 5rem;
+    gap: 7rem;
+    object-fit: fill;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.popularMovies::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: inherit;
+    opacity: 0.6; /* Ajuste a opacidade conforme necessário */
+    z-index: -1;
+}
+
+.popularMoviesDetails {
+    font-family: var(--font-poppins);
+    color: var(--white);
+    width: 45%;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.popularMoviesPosters {
+    display: flex;
+    width: 55%;
+    align-items: flex-start;
+    transition: all 0.5s ease-in-out;
+}
+
+.posterContainer {
+    width: 75%;
+    margin-top: -5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.posterimg {
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.dtl-h1{
+    font-size: 2.4rem;
+    line-height: 2.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.dtl-cl{
+    font-family: var(--font-montserrat);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.dtl-res{
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(200px);
+    border-radius: 0 2rem 0 2rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dtl-dtl{
+    font-family: var(--font-poppins);
+    padding: 0.7rem 3rem;
+    border-radius: 0.4rem;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: rgb(117, 37, 16);
+    color: var(--white);
+    margin-top: 2rem;
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.dtl-dtl-img{
+    width: 1.2rem;
+    height: auto;
+}
+
+.dtl-dtl:hover{
+    background-color: rgb(80, 25, 11);
+}
+
+.dtl-link{
+    box-shadow: rgb(218, 69, 69);
+}
+
+.greeting{
+   display: block;
+   position: absolute;
+   top: 105%;
+   z-index: 10000;
+   font-family: var(--font-poppins);
+   font-weight: 700;
+   font-size: 2.4rem;
+   margin-left: 3.3rem;
+   margin-bottom: 1rem;
+}
+
+.gre-text{
+    font-size: 1.5rem;
+    opacity: 0.8;
+    font-family: var(--font-montserrat);
+    margin-top: -0.5rem;
+    text-align: start;
+    padding-left: -2rem;
+    margin-right: -2rem;
+}
+
+.carroussel{
+    margin-top: 7rem;
+}
+
+.car-gen{
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: 2rem;
+    margin-left: 3.3rem;
+}
+
+.car-posterimg{
+    width: 10%;
+    height: 15%;
+}

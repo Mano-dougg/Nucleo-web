@@ -5,21 +5,37 @@
 }
 
 .carouselContainer {
-    margin-bottom: 20px; /* Espaçamento entre os diferentes carrosséis */
+    margin-bottom: 0.3rem; /* Espaçamento entre os diferentes carrosséis */
 }
-
+.moviecontainertitle{
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-align: start;
+    padding-left: 3.6rem;
+    font-size: 1rem;
+}
 .movieContainer {
-    margin: 0 10px; /* Espaçamento entre os pôsteres dentro do carrossel */
+    margin: 0 0px; /* Espaçamento entre os pôsteres dentro do carrossel */
     text-align: center; /* Alinhamento do conteúdo */
 }
 
 .movieContainer h1 {
-    font-size: 16px; /* Tamanho da fonte do título */
-    margin-top: 10px; /* Espaçamento superior do título */
+    font-size: 1rem; /* Tamanho da fonte do título */
+    margin-top: 1.5rem; /* Espaçamento superior do título */
 }
 
 .movieContainer img {
-    width: 100%; /* Imagem ocupa toda a largura do contêiner */
+    width: 65%; /* Imagem ocupa toda a largura do contêiner */
     height: auto; /* Altura ajustada automaticamente */
-    border-radius: 5px; /* Borda arredondada para a imagem */
+    border-radius: 5px;
+}
+
+.imgimg{
+    box-shadow: rgba(255, 255, 255, 0.8); /* Borda arredondada para a imagem */
+
+}
+
+.car-posterimg{
+    box-shadow: rgba(255, 255, 255, 0.8); /* Borda arredondada para a imagem */
+
 }
