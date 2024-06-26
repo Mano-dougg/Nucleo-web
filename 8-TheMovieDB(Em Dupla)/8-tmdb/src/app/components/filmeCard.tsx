@@ -23,8 +23,8 @@ const FilmeCard: React.FC<FilmeCardProps> = ({imagem, titulo, descricao, data, m
             setLogado(!!token)
             if (token){
                 const payload = JSON.parse(atob(token.split('.')[1]))
-                setUserID(payload.id)
-                console.log(payload.id)
+                setUserID(payload.userId)
+                console.log(payload.userId)
             }
         }
     }, [])
