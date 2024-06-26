@@ -6,13 +6,7 @@ import ListaFavoritos from '@/components/ListaFavoritos/listaFavoritos';
 import Link from 'next/link';
 
 
-const getData = async () => {
-    const data = await axios.get("http://localhost:5000/logado");
-    return data;
-};
-
-export default async function Formularios(){
-    const dados = await getData()
+export default function Formularios(){
     return(
         <div>
             <Topo />
