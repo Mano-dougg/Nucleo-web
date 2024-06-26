@@ -1,0 +1,200 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.noticia-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titulo1{
+    font-family: Rubik;
+    color: #003720;
+    font-size: 40px;
+}
+
+.conteudo1{
+    width: 1120px;
+    height: 374px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.conteudo1 img{
+    width: 544px;
+    height: 374px;
+}
+
+.texto1{
+    width: 547px;
+    height: 374px;
+}
+
+.texto1 h2{
+    font-family: Rubik;
+    color:#003720;
+    font-size: 30px;
+    margin: 0;
+}
+
+.texto1 p{
+    font-family: Rubik;
+    color: #404540;
+    font-size: 18px;
+}
+
+.conteudo2{
+    width: 1120px;
+    height: 1302px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.conteudo2 p{
+    font-family: Rubik;
+    color: #404540;
+    font-size: 18px;
+}
+
+.imagens{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagens img{
+    width: 544px;
+    height: 354px;
+}
+
+.autor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.autor img{
+    width: 100px;
+    height: 100px;
+}
+
+.nomeAutor{
+    display: flex;
+    flex-direction: column;
+    width: 215px;
+    height: 63px;
+    margin-left: 8px;
+    justify-content: space-evenly;
+}
+
+#nome{
+    margin: 0;
+    font-family: Rubik;
+    color: #003720;
+    font-size: 20px;
+}
+
+#line{
+    text-decoration: none;
+}
+
+#data{
+    font-family: Rubik;
+    color: #067546;
+    font-size: 15px;
+}
+
+.mais_postagens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 1090px) {
+
+    .maior_post{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto1 h2{
+        display: none;
+    }
+
+    .texto1{
+        width: 328px;
+    }
+    
+    .texto1 p{
+        margin: 0;
+        font-size: 14px;
+        width: 328px;
+        margin-bottom: 10px;
+    }
+
+    .conteudo1{
+        width: 328px;
+        height: 423px;
+        flex-direction: column;
+    }
+
+    .conteudo1 img{
+        width: 328px;
+        height: 225px;
+    }
+
+    #titulo1{
+        font-size: 25px;
+    }
+
+    .imagens{
+        width: 325px;
+        height: 157px;
+        justify-content: space-evenly;
+    }
+
+    .imagens img{
+        width: 155px;
+        height: 127px;
+    }
+
+    .conteudo2, .conteudo2 p{
+        margin-top: 35px;
+        width: 328px;
+        height: 1700px;
+    }
+
+    .conteudo2 p{
+        font-size: 14px;
+    }
+
+
+    .autor{
+        width: 350px;
+        height: 50px;
+    }
+
+    .autor img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .nomeAutor{
+        width: 135px;
+        height: 38px;
+    }
+
+    #nome{
+        font-size: 15px;
+    }
+
+    #data{
+        font-size: 12px;
+    }
+
+
+}

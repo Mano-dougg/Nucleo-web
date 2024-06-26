@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+  body{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .inicio{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .jogo{
+    font-family: inter;
+    width: 317px;
+    height: 105px;
+    background-color: purple;
+    color: white;
+    border-radius: 24px;
+    cursor: pointer;
+    border: 0px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .jogo:hover{
+    background-color: #5C0A5C;
+    transition: 10ms;
+  }
+
+  .adicao{
+    font-family: inter;
+    width: 317px;
+    height: 102px;
+    border: 2px solid purple;
+    background-color: white;
+    border-radius: 24px;
+    cursor: pointer;
+    color: purple;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .adicao:hover{
+    background-color: #e8e6e6;
+  }

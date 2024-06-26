@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro');
+
+#fundo{
+    background-color: #222222;
+    color: antiquewhite;
+    transition: 0.3s;
+}
+
+.redes #fundo{
+    filter: invert(75%);
+    background-color: transparent;
+}
+
+#nada{
+    transition: 0.3s;
+}
+
+.conteudo{
+    height: 82px;
+    display: flex;
+    font-family: Be Vietnam;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 15px 15px 15px #00000026;
+}
+
+.conteudo-black{
+    height: 82px;
+    display: flex;
+    font-family: Be Vietnam;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 15px 15px 15px #00000026;
+
+    background-color: #222222;
+    color: antiquewhite;
+    transition: 0.3s;
+}
+
+.conteudo-dark{
+    height: 82px;
+    display: flex;
+    font-family: Be Vietnam;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 15px 15px 15px #00000026;
+}
+
+
+
+.nomes{
+    width: 420px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links{
+    width: 290px;
+    height: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.links a{
+    text-decoration: none;
+}
+
+.nomes > h4{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0px;
+    color: #202020;
+}
+
+.links p{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0px;
+    color: #00008B;
+}
+
+.direita{
+    width: 285px;
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.redes{
+    width: 111px;
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.seletor{
+    width: 124px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.seletor p{
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.indicador-white{
+    width: 40px;
+    height: 22px;
+    background-color: #E5E5E5;
+    border: 1px solid #3C3B3A;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.botao-white{
+    width: 17px;
+    height: 17px;
+    background-color: #3C3B3A;
+    border-radius: 100%;
+    margin-left: 5%;
+    transition: 0.3s;
+}
+
+.indicador-black{
+    width: 40px;
+    height: 22px;
+    background-color: #FAF4E6;
+    border: 1px solid #222222;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.botao-black{
+    width: 17px;
+    height: 17px;
+    background-color: #3C3B3A;
+    border-radius: 100%;
+    margin-left: 50%;
+    transition: 0.3s;
+}
+
+
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+
+    .conteudo{
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nomes{
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .links{
+        display: none;
+    }
+
+    .redes{
+        display: none;
+    }
+
+
+    .seletor{
+        margin-left: 65px;
+    }
+
+}
+
+

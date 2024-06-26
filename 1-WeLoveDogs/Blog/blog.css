@@ -1,0 +1,131 @@
+*{
+    font-family: Open Sans;
+}
+
+.topo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* width: 1440px; */
+    height: 120px;
+}
+
+.nomesite{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    left: 15px;
+    top: 22px;
+    width: 281px;
+    height: 65px;
+    font-size: 48px;
+    font-weight: 700;
+}
+.nomesite p{
+    margin-top: 0px; 
+}
+#love a{
+    color: #7ED321;
+}
+
+.menu{
+    position: relative;
+    top: 22px;
+    width: 400px;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#botaotitulo{
+    height: 40px;
+    width: 151px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1C4701;
+    background-color: #7ED32166;
+    border-radius: 15px;
+    border: 0px;
+    cursor: pointer;
+}
+
+p>a{
+    color: black;
+    text-decoration: none;
+}
+
+.menu p a:hover{
+    text-shadow: 0px 0px 1px #1C4701;
+    transition: 10ms;
+}
+
+#botaotitulo:hover{
+    text-shadow: 0px 0px 1px #7ED32166;
+    background-color: #9bd26166;
+    transition: 10ms;
+}
+
+/* Css do corpo */
+
+
+.corpo{
+    margin-top: -1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog h1{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.post1{
+    margin-top: 1%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.titulo1 h1{
+    margin-top: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.conteudo1 p{
+    width: 778px;
+    height: 185px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.imagem1{
+    position:relative;
+    top: 9px;
+}
+
+.post2{
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.titulo2 h1{
+    margin-top: 0px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.conteudo2 p{
+    width: 778px;
+    height: 185px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.imagem2{
+    margin-top: 0px;
+}

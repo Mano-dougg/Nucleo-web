@@ -1,0 +1,76 @@
+{
+  "format": "custom",
+  "id": "autor",
+  "label": "Autor",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titulo": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Titulo",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "imagem_autor": {
+        "type": "Image",
+        "config": {
+          "label": "Imagem_autor",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "conteudo_1": {
+        "type": "StructuredText",
+        "config": {
+          "label": "conteudo_1",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "rede_social_1": {
+        "type": "Image",
+        "config": {
+          "label": "rede_social_1",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "rede_social_2": {
+        "type": "Image",
+        "config": {
+          "label": "rede_social_2",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "rede_social_3": {
+        "type": "Image",
+        "config": {
+          "label": "rede_social_3",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "conteudo_2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "conteudo_2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}

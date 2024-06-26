@@ -1,0 +1,174 @@
+*{
+    font-family: Open Sans;
+}
+
+.topo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* width: 1440px; */
+    height: 120px;
+}
+
+.nomesite{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    left: 15px;
+    top: 22px;
+    width: 281px;
+    height: 65px;
+    font-size: 48px;
+    font-weight: 700;
+}
+.nomesite p{
+    margin-top: 0px; 
+}
+#love a{
+    color: #7ED321;
+}
+
+.menu{
+    position: relative;
+    top: 22px;
+    width: 400px;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#botaotitulo{
+    height: 40px;
+    width: 151px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1C4701;
+    background-color: #7ED321;
+    border-radius: 15px;
+    border: 0px;
+    cursor: pointer;
+}
+
+p>a{
+    color: black;
+    text-decoration: none;
+}
+
+.menu p a:hover{
+    text-shadow: 0px 0px 1px #1C4701;
+    transition: 10ms;
+}
+
+#botaotitulo:hover{
+    text-shadow: 0px 0px 1px #7ED321;
+    background-color: #9dd75f;
+    transition: 10ms;
+}
+
+
+/* Css do corpo */
+
+
+.corpo{
+    display: flex;
+    flex-direction: column;  
+}
+
+.titulo{
+    align-self: center;
+}
+
+.titulo h1{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+}
+
+.formulario{
+    display: flex;
+}
+
+.formulario>div>form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+form>label{
+    text-align: center;
+    align-self: center;
+    position: relative;
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-bottom: 45%;
+    margin-right: 45%;
+    
+
+}
+
+form>input, form>textarea{
+    display: flex;
+    margin-bottom: 4.5%;
+    width: 419px;
+    height: 43px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid #9F9F9F;
+}
+
+form>input::placeholder{ 
+    position: absolute;
+    left: 13px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9F9F9F;
+}
+
+#amor{
+    width: 418px;
+    height: 160px;
+    resize: none;
+}
+#amor::placeholder{ 
+    position: absolute;
+    top: 12px;
+    left: 13px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9F9F9F;
+}
+
+.imagem img{
+    width: 582px;
+    height: 436px;
+}
+
+#botaoenviar{
+    border-radius: 10px;
+    border: 0px;
+    background-color: #7ED321;
+    width: 141px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1C4701;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#botaoenviar:hover{
+    text-shadow: 0px 0px 1px #7ED321;
+    background-color: #9dd75f;
+    transition: 10ms;
+}

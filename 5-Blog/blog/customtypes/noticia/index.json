@@ -1,0 +1,77 @@
+{
+  "format": "custom",
+  "id": "noticia",
+  "label": "Noticia",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titulo_noticia": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Titulo_noticia",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "conteudo_noticia": {
+        "type": "StructuredText",
+        "config": {
+          "label": "conteudo_noticia",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "imagem_autor_noticia": {
+        "type": "Image",
+        "config": {
+          "label": "imagem_autor_noticia",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "autor_noticia": {
+        "type": "StructuredText",
+        "config": {
+          "label": "autor_noticia",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "data_noticia": {
+        "type": "StructuredText",
+        "config": {
+          "label": "data_noticia",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "share": {
+        "type": "Image",
+        "config": {
+          "label": "share",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "imagem_noticia": {
+        "type": "Image",
+        "config": {
+          "label": "imagem_noticia",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}
