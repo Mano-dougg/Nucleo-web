@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import "./favoritos.css";
 import FilmeCard from "../components/filmeCard";
 import NavBar from "../components/navBar";
-import axios from "axios";
 
 
 interface Favorito {
@@ -24,7 +23,7 @@ function Favoritos(){
         const token = localStorage.getItem('token');
         if (token) {
             const payload = JSON.parse(atob(token.split('.')[1]));
-            setUserID(payload.id);
+            setUserID(payload.userId);
         }
     }, []);
 
@@ -32,14 +31,14 @@ function Favoritos(){
         if (userID) {
             const getFavoritos = async () => {
                 try {
-                    const resposta = await axios.get(`/usuario/${userID}/favoritos`)
-                    const favoritos = resposta.data
-                    const promisesFilmes = favoritos.map((favorito: { IDfilme: number }) =>
-                        axios.get(`https://api.themoviedb.org/3/movie/${favorito.IDfilme}?api_key=f5fafab7843ff239883cf22420e887df`)
-                    )
-                    const filmes = await Promise.all(promisesFilmes)
-                    const detalhes = filmes.map(resposta => resposta.data)
-                    setListaFavoritos(detalhes)
+                    const resposta = await fetch(`http://localhost:8080/usuario/${userID}/favoritos`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({userID})
+                    })
+                    setListaFavoritos(await resposta.json())
                 } catch (error) {
                     console.error('Erro ao obter favoritos:', error)
                 }
