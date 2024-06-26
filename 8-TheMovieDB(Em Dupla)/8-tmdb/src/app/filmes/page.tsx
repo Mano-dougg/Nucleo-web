@@ -37,7 +37,7 @@ function Filmes(){
                 {listaFilmes.map((filme)=>(
                     <FilmeCard
                     key={filme.id}
-                    
+                    movieID={filme.id}
                     imagem={(filme.poster_path)}
                     data={filme.release_date}
                     titulo={filme.original_title}
