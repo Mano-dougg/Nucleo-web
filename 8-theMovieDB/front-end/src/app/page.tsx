@@ -10,10 +10,10 @@ export default function Page() {
                 <h1>Bem vindo à <Logo /></h1>
                 <div className="buttons">
                     <Link href="/register">
-                        <Link href='register' className="button">Crie sua conta</Link>
+                        <div className="button">Crie sua conta</div>
                     </Link>
                     <Link href="/login">
-                        <Link href='login' className="button">Já tem conta? Faça login</Link>
+                        <div className="button">Já tem conta? Faça login</div>
                     </Link>
                 </div>
             </div>
