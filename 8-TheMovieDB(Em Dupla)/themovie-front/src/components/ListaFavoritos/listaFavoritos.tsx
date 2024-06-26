@@ -21,7 +21,7 @@ export default async function ListaFavoritos(){
     const dados = await getData();
     // console.log(dados.data)
     return(
-        <div className="main-div">
+        <div className="main-div-fav">
 
             {dados.data.map((todo: { id: Key; title: string; poster_path: string;}) => ( 
 

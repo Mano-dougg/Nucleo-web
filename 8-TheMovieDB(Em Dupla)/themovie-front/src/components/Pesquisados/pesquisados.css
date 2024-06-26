@@ -55,6 +55,9 @@
 }
 
 
+.titulo-pesquisa{
+    margin-top: 35px;
+}
 
 .titulo-pesquisa{
     color: white;
@@ -121,7 +124,7 @@
         top:-28px;
         left: 265px;
     }
-    .titulo-pesquisa h1{
+    .titulo-pesquisa h2{
         margin-top: 35px;
         font-size: 20px;
     }

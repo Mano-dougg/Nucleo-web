@@ -3,17 +3,3 @@ html, body{
     padding: 0;
     background-color: #723172;
 }
-
-.favoritos-texto{
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-
-@media (max-width: 600px) {
-    .favoritos-texto h2{
-        font-size: 20px;
-    }
-}

@@ -14,12 +14,9 @@ export default function Favoritos(){
         <div className='main-favoritos'>
             <Topo />
 
-            <div className='favoritos-texto'>
-                <h2>Aqui estão os filmes favoritados</h2>
-            </div>
-
+            <div className='favoritos-lista'>
             <ListaFavoritos/>
-
+            </div>
      
             <Base />
         </div>

@@ -9,9 +9,9 @@ import lupa from '../../assets/Lupa.png'
 
 
 interface testeFilme {
-    id: number
-    title: string
-    poster_path: string
+    id: number;
+    title: string;
+    poster_path: string;
 }
 
 const cadastrarFav = async (id: Key, path: string, title: string) => {
@@ -30,7 +30,7 @@ const cadastrarFav = async (id: Key, path: string, title: string) => {
 export default function Pesquisados() {
 
     const [title, useTitle] = useState('')
-    const [dado, setDado] = useState<testeFilme | null>(null);
+    const [dado, setDado] = useState <testeFilme | null>(null);
 
 
     const enviar = () => {
@@ -44,12 +44,13 @@ export default function Pesquisados() {
                 .then((response) => {
                     if (response.data.results && response.data.results.length > 0) {
                         const resultado = response.data.results[0]
+                        alert(resultado.title)
                         setDado({
                             id: resultado.id,
                             title: resultado.title,
                             poster_path: resultado.poster_path
                         })
-                        alert(dado?.poster_path)
+                        alert(dado?.title)
                     } else {setDado(null);}
                 })
                 .catch((error) => {
@@ -79,7 +80,7 @@ export default function Pesquisados() {
                 
                 {/* {dado && (                */}
                 <><div className='titulo-pesquisa'>
-                    <h1>Resultado da pesquisa:</h1>
+                    <h2>Resultado da pesquisa:</h2>
                 </div><div className='div-pesquisa'>
                         <div className="div-filme">
                             <div className="dentro-filme">

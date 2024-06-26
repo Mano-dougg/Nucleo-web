@@ -2,6 +2,7 @@
 import './login-form.css'
 import React, { useState } from "react";
 import axios from "axios";
+import Link from 'next/link';
 
 const Acesso = () => {
 
@@ -13,7 +14,7 @@ const Acesso = () => {
         try {
             await axios.post('http://localhost:5000/login', { username: loginUser, password: loginPassword });
             // console.log('Login successful');
-            window.location.href = '/';
+            window.location.href = '/Home';
         } catch (error) {
             console.error('Erro ao fazer login: ', error);
         }
@@ -46,7 +47,10 @@ const Acesso = () => {
                             onChange={(e) => setLoginPassword(e.target.value)}
                             required
                         />
+                        <div className='botoes-login'>
                         <button type="submit">Login</button>
+                        <Link href={'/'}><button>Voltar</button></Link>
+                        </div>
                     </form>
                 </div>
 

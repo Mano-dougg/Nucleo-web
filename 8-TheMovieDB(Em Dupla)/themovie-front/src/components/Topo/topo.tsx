@@ -6,13 +6,6 @@ import Link from 'next/link';
 import axios from 'axios';
 
 
-const iniciarPesquisa = async() =>{
-    await axios.post('http://localhost:5000/iniciapesquisa')
-}
-  
-iniciarPesquisa()
-
-
 export default function Topo(){
     return(
         <div className="main-topo">
@@ -22,7 +15,7 @@ export default function Topo(){
             </div>
 
             <div className='menu-topo'>
-                <Link id='line' href={'./'}><h1 id='inicio-resp'>Início</h1></Link>
+                <Link id='line' href={'./Home'}><h1 id='inicio-resp'>Início</h1></Link>
                 <Link id='line' href={'./Lista'}><h1>Lista</h1></Link>
                 <Link id='line' href={'./Favoritos'}><h1>Favoritos</h1></Link>
                 <Link id='line' href={'./Pesquisa'}><h1>Pesquisar</h1></Link>
@@ -31,7 +24,7 @@ export default function Topo(){
 
             <div className='lado-direito'>
                 <div className='menu-login'>
-                    <Link href={'./Formularios'}><Image src={login} alt=''></Image></Link>
+                    <Link href={'./Perfil'}><Image src={login} alt=''></Image></Link>
                     {/* <p>Sair</p> */}
                 </div>
             </div>

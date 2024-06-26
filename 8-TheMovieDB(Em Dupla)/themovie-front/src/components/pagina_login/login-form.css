@@ -31,12 +31,17 @@ input:focus{
     outline: 0;
 }
 
-button{
+.botoes-login{
+    align-self: flex-end;
+}
+
+.botoes-login button{
     margin: 10px;
     height: 40px;
     width: 80px;
     align-self: flex-end;
     border-radius: 5px;
+    border: 0;
 }
 
 button:hover{

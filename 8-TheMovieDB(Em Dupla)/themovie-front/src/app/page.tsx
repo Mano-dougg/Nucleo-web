@@ -1,47 +1,21 @@
-'use client';
-import Topo from "../components/Topo/topo";
-import Base from "../components/Base/base"
-import Lista from "../components/Lista/lista";
 import './page.css'
-import Carrossel from "../components/Carrossel/carrossel";
+import Link from 'next/link';
+import Base from '../components/Base/base';
 
+export default function Formularios(){
+    return(
+        <div className='mae-main'>
+            <div className='botoes-forms'>
+                <div className='login-forms'>
+                    <Link href={'./Login'}><button id='botaozin'>Fazer Login</button></Link>
+                </div>
 
-export default function Home() {
-  return (
-   <div className="main">
-    
-
-    <Topo />
-
-
-    <div className="primeira-parte">
-
-      <div className="inicio-esquerda">
-        <p>
-        Bem-vindo ao Omni: O Seu Portal Cinematográfico!
-        </p>
-
-        <p>
-        O Omni é o seu destino definitivo para explorar o mundo do cinema. 
-        Com uma vasta coleção de filmes, séries e documentários, o Omni oferece uma 
-        experiência completa para os amantes da sétima arte.
-        </p>
-
-        <p>Onde a magia do cinema está a um clique de distância! 🎬✨</p>
-      </div>
-
-      <div className="carrossel-direita">
-        <Carrossel />
-      </div>
-
-    </div>
-
-    <div className="segunda-parte">
-      <Lista />
-    </div>
-
-    <Base />
-
-   </div>
-  );
+                <div className='cadastrar-forms'>
+                    <Link href={'./Cadastro'}><button id='botaozin'>Não tenho uma conta</button></Link>
+                </div>
+            </div>
+            
+            <Base />
+        </div>
+    )
 }

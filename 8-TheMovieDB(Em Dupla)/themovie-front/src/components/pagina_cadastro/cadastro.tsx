@@ -2,6 +2,7 @@
 import './cadastro.css'
 import React, { useState } from "react";
 import axios from "axios";
+import Link from 'next/link';
 
 const Cadastrar = () => {
     const [username, setUsername] = useState('');
@@ -12,7 +13,7 @@ const Cadastrar = () => {
         e.preventDefault();
         try {
             await axios.post('http://localhost:5000/cadastro', { username, password, email });
-            window.location.reload();
+            window.location.href = '/';
         } catch (error) {
             console.error('Erro ao cadastrar pessoa: ', error);
         }
@@ -54,7 +55,10 @@ const Cadastrar = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
-                        <button type="submit">Cadastrar</button>
+                        <div className='botoes-cadastro'>
+                            <button type="submit">Cadastrar</button>
+                            <Link href={'/'}><button>Voltar</button></Link>
+                        </div>
                     </form>
                 </div>
 

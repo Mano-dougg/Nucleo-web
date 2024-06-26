@@ -47,22 +47,6 @@ app.get('/logado', async(req, res) =>{
   }
 })
 
-app.post('/iniciapesquisa', async (req, res)=>{
-  const {title} = req.body;
-  try{
-    const existe = await prisma.pesquisa.findFirst();
-    if (!existe) {
-        await prisma.pesquisa.create({
-            data: {
-              title: ''
-            },
-        });
-    }
-  }catch(error){
-    res.status(500).json({ error: 'Falha' });
-  }
-})
-
 
 app.post('/pesquisar', async (req, res)=>{
   const {title} = req.body;
