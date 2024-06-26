@@ -29,7 +29,7 @@ const cadastrarFav = async (id: Key, path: string, title: string) => {
 
 export default function Pesquisados() {
 
-    const [title, useTitle] = useState('')
+    const [title, setTitle] = useState('')
     const [dado, setDado] = useState <testeFilme | null>(null);
 
 
@@ -68,7 +68,7 @@ export default function Pesquisados() {
                     placeholder='Pesquisar filme'
                     name='guardar'
                     value={title}
-                    onChange={(e) => useTitle(e.target.value)}
+                    onChange={(e) => setTitle(e.target.value)}
                     />
                      <button onClick={()=>enviar()} type='submit' id='imagem-pesquisa'><Image src={lupa} alt=''/></button>
                      </form>
@@ -78,19 +78,20 @@ export default function Pesquisados() {
 
 
                 
-                {/* {dado && (                */}
-                <><div className='titulo-pesquisa'>
-                    <h2>Resultado da pesquisa:</h2>
-                </div><div className='div-pesquisa'>
+                {dado && (               
+                    <><div className='titulo-pesquisa'>
+                        <h2>Resultado da pesquisa:</h2>
+                    </div>
+                    <div className='div-pesquisa'>
                         <div className="div-filme">
                             <div className="dentro-filme">
                                 <Image src={'https://image.tmdb.org/t/p/w500' + dado?.poster_path} alt="" width={150} height={201} />
                                 <p>{dado?.title}</p>
-                                <Image onClick={() => cadastrarFav(1, 'oi', 'oi')} src={like} alt="" width={25} height={25} id="like"></Image>
+                                <Image onClick={() => cadastrarFav(1, dado.poster_path, dado.title)} src={like} alt="" width={25} height={25} id="like"></Image>
                             </div>
                         </div>
                     </div></> 
-            {/* )} */}
+                )}
 
         </div>
     )
