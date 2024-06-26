@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
-import Netflix from "../img/netflix.jpg";
+import Netflix from "../../img/netflix.jpg";
 import Image from "next/image";
-import Modall from "../components/modal";
+import Modall from "./modal";
 import axios from "axios";
 
 export default function Header() {
@@ -16,7 +16,7 @@ export default function Header() {
       const response = await axios.post('http://localhost:1080/login', { email, password });
       setMessage('Login realizado com sucesso!');
       localStorage.setItem('token', response.data.token);
-      // window.location.href = '/home'; // Redirecionar para a página principal 
+      window.location.href = "../home"; // Redirecionar para a página principal 
     } catch (error: any) {
       setMessage(error.response?.data?.message || 'Erro ao realizar login');
     }
