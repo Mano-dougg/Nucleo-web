@@ -1,10 +1,10 @@
-'use client';
+// 'use client';
 import './carrossel.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from 'next/image';
-import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 
 export default function Carrossel(){
 
@@ -21,15 +21,14 @@ export default function Carrossel(){
     <div className='testando-div'>
 
         <Swiper
-        loop={true}
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        slidesPerView={1}
-        pagination={{clickable: true}}
-        navigation={true}
+        modules={[Navigation, Autoplay, Scrollbar, A11y]}
+        // slidesPerView={1}
+        // pagination={{clickable: true}}
+        // navigation={true}
         >
         {dados.map((item)=>(
             <SwiperSlide key={item.id}>
-                <Image src={item.image} alt="" width={500} height={300}></Image>
+                <img src={item.image} alt='Carrossel' id='image-carro'></img>
             </SwiperSlide>
         ))}
         </Swiper>

@@ -1,0 +1,128 @@
+.div-mae-pesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.barra-pesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 490px;
+    height: 38px;
+    border-radius: 10px;
+}
+
+.barra-pesquisa form input{
+    background-color: white;
+    border: 0;
+    color: black;
+    width: 454px;
+    height: 36px;
+    margin-top: 22px;
+    margin-left: 5px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.barra-pesquisa form input:focus{
+    outline: 0;
+}
+
+.barra-pesquisa form input::placeholder{
+    color: black;
+    font-size: 15px;
+}
+
+.barra-pesquisa form img:hover{
+    cursor: pointer;
+}
+
+.form-main{
+    display: flex;
+    flex-direction: row;
+}
+
+#imagem-pesquisa{
+    position: relative;
+    top:-28px;
+    left: 462px;
+    background-color: transparent;
+    border: 0;
+}
+
+
+
+.titulo-pesquisa{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-pesquisa{
+    margin-top: 5px;
+    display: flex;
+    gap:10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-filme{
+    width: 170px;
+    height: 280px;
+    background-color: #580658;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+}
+
+.main-div{
+    margin-left: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.dentro-filme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dentro-filme p{
+    margin-left: 5px;
+    font-size: 10px;
+    align-self: flex-start;
+}
+
+#like{
+    cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+    .barra-pesquisa{
+        width: 290px;
+    }
+    
+    .barra-pesquisa form input{
+        width: 254px;
+        height: 34px;
+    }
+
+    #imagem-pesquisa{
+        top:-28px;
+        left: 265px;
+    }
+    .titulo-pesquisa h1{
+        margin-top: 35px;
+        font-size: 20px;
+    }
+}

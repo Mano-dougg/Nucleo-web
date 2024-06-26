@@ -4,52 +4,9 @@ html, body{
     background-color: #723172;
 }
 
-.titulo-pesquisa{
-    color: white;
+.pesquisa-item{
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.div-pesquisa{
-    margin-top: 5px;
-    display: flex;
-    gap:10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.div-filme{
-    width: 170px;
-    height: 280px;
-    background-color: #580658;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    color: white;
-}
-
-.main-div{
-    margin-left: 15px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-}
-
-.dentro-filme{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.dentro-filme p{
-    margin-left: 5px;
-    font-size: 10px;
-    align-self: flex-start;
-}
-
-#like{
-    cursor: pointer;
 }

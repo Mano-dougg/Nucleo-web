@@ -7,3 +7,14 @@
     width: 500px;
     /* background-color: red; */
 }
+
+#image-carro{
+    width: 500px;
+    height: 300px;
+}
+
+@media (max-width: 550px) {
+    .testando-div{
+        display: none;
+    }
+}

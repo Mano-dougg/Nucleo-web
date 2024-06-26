@@ -22,12 +22,12 @@ const Acesso = () => {
     return (
         <div className="page">
             <div className="texto">
-                <h1>Acesse sua conta!</h1>
+                <h2>Acesse sua conta!</h2>
             </div>
 
             <div className='informacoes'>
                 <div className="login">
-                    <form onSubmit={handleLoginSubmit}>
+                    <form onSubmit={handleLoginSubmit} id='form-login'>
                         <input
                             type="text"
                             id="username"

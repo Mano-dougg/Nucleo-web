@@ -1,3 +1,4 @@
+"use client";
 import './base.css'
 
 export default function Base(){
