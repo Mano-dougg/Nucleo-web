@@ -1,0 +1,30 @@
+.button{
+    width: 80%;
+    padding: 1.5vh 0;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--color2);
+}
+
+.main-button{
+    background-color: var(--button1);
+    border: 1px solid var(--button2);
+}
+
+.secondary-button{
+    background-color: var(--button2);
+    border: 1px solid var(--button1);
+}
+
+@media  screen and (min-width:600px) {
+    .button{
+        width: 50%;
+    }
+}
+
+@media  screen and (min-width:950px) {
+    .button{
+        width: 30%;
+    }
+}

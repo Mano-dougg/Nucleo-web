@@ -1,0 +1,44 @@
+.mistery-characters{
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 10% 1% 10%;
+    background-color: var(--background2);
+    color: var(--background);
+    opacity: .45;
+    min-height: 15vh;
+    text-align: center;
+}
+
+.mistery-characters__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.mistery-character{
+    width: 10%;
+    font-size: 2rem;
+}
+
+.mistery-characters__guesses{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+@media screen and (min-width: 800px) {
+    .mistery-characters{
+        position: relative;
+        justify-content: space-evenly;
+        height: 20vh;
+    }
+
+    .mistery-character{
+        width: 5%;
+    }
+    
+}

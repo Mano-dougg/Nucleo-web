@@ -1,0 +1,58 @@
+/* Css document that contains the style declarations for the home page. */
+.main{
+    width: 100%;
+}
+
+.main__container{
+    display: flex;
+    align-items: center;
+    align-items: flex-start;
+    width: 80%;
+}
+
+.main__container__content{
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.main__container__content__text{
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+.main__container__content__button{
+    background-color: #7ed321;
+    color: #1C4701;
+    padding: 10px 35px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* This is part of the document that treats responsivity. It has been made
+    after observing what needed to be changed when the screen is smaller. */
+@media screen and (max-width: 1000px) {
+    .main__container{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .main__container__content{
+        align-items: center;
+        text-align: center;
+        padding: 0;
+    }
+
+    .container-image{
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container-image{
+        height: 300px;
+    }
+}

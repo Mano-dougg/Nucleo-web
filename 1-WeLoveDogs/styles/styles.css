@@ -1,0 +1,100 @@
+/* Css document that contains the general style declarations 
+    and the ones that are present in more than one page */
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+/* This is a general class for centralizing elements */
+.flexer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    padding: 50px 15px 100px 15px;
+}
+
+.header__logo, .header__navbar__link{
+    user-select: none;
+}
+
+.header__logo{
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+.header__navbar{
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 30%;
+}
+
+.header__navbar__link{
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.subscribe-nav-button{
+    background-color: #CBEDA6;
+    color: #1C4701;
+    max-height: 40px;
+    border-radius: 10px;
+}
+
+.main{
+    width: 100%;
+}
+
+/* These are the declarations for the link animations. They should be growing in size when
+    hovered. */
+.header__navbar__link, .main__container__content__hover, .submit-button{
+ transition: transform .2s ease-in-out;   
+}
+
+.header__navbar__link:hover, .main__container__content__button:hover, .submit-button:hover{
+ transform: scale(1.1);
+}
+
+/* This is part of the document that treats responsivity. It has been made
+    after observing what needed to be changed when the screen is smaller. */
+@media screen and (max-width: 1000px) {
+    .header{
+        height: 80px;
+        padding: 40px 10px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .header__logo{
+        font-size: 2.2rem;
+    }
+
+    .header__navbar__link{
+        padding: 10px 5px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header{
+        flex-direction: column;
+        padding-top: 20px;
+        margin-bottom: 70px;
+    }
+
+    .header__logo{
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+
+    .header__navbar{
+        width: 80%;
+        justify-content: space-between;
+    }
+}

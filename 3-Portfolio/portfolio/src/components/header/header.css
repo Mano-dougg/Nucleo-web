@@ -1,0 +1,86 @@
+.header, .header__left, .header__right, .header__left__navigation, .header__right__social{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header{
+    position: fixed;
+    z-index: 1;
+    background-color: inherit;
+    top: 0;
+    width: 100%;
+    height: 7vh;
+    padding: 15px 40px;
+    /* box-shadow criada com https://www.cssmatic.com/box-shadow */
+    -webkit-box-shadow: 0px 8px 30px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 30px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 8px 30px -1px rgba(0,0,0,0.75);
+}
+
+.header__left{
+    font-size: 0.95rem;
+    width: 40%;
+}
+
+.header__left__navigation{
+    width: 60%;
+}
+
+.header__right{
+    width: 30%;
+}
+.header__right__social{
+    width: 40%;
+}
+
+.header__right__dark-mode{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    .header__left{
+        width: 50%;
+    }
+
+    .header__left__brand{
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    .header__left__navigation{
+        width: 0;
+        display: none;
+    }
+
+    .header__right__social{
+        display: none;
+    }
+
+    .header__right__dark-mode{
+        font-size: 1.1rem;
+    }
+
+    .header__right__dark-mode__text{
+        width: 100px;
+    }
+  }
+
+@media screen and (max-width: 500px) {
+    .header{
+        padding: 5px;
+    }
+
+    .header__left{
+        width: 60%;
+    }
+
+    .header__left__brand{
+        font-size: 1rem;
+    }
+
+    .header__right{
+        width: auto;
+    }
+  }

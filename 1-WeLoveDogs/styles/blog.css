@@ -1,0 +1,36 @@
+/* Css document that contains the style declarations for the blog page. */
+.main__container__title{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main__container__post{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    padding-bottom: 10px;
+}
+
+.post-title{
+    font-weight: bold;
+}
+
+.post-text{
+    text-align: justify;
+    font-size: 0.9rem;
+}
+
+/* This is part of the document that treats responsivity. It has been made
+    after observing what needed to be changed when the screen is smaller. */
+@media screen and (max-width: 1000px) {
+    .main__container__post{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main__container__post{
+        flex-direction: column;
+        margin-bottom: 35px;
+    }
+}

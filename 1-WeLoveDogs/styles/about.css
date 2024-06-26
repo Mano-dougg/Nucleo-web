@@ -1,0 +1,21 @@
+/* Css document that contains the style declarations for the about page. */
+.main__container{
+    width: 50%;
+}
+
+.main__container__content__title{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main__container__content__text{
+    text-align: justify;
+}
+
+/* This is part of the document that treats responsivity. It has been made
+    after observing what needed to be changed when the screen is smaller. */
+@media screen and (max-width: 1000px) {
+    .main__container{
+        width: 90%;
+    }
+}

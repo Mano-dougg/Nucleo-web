@@ -1,0 +1,80 @@
+.hang-container{
+    min-height: 50vh;
+    width: 80%;
+    margin-top: 30vh;
+}
+
+.hang-item{
+    position: relative;
+    background-color: var(--other-color);
+}
+
+.hang-upper{
+    left: 18%;
+    top: 0;
+    width: 40%;
+    height: 0.5%;
+}
+
+.hang-pole{
+    left: 18%;
+    width: 2px;
+    height: 70%;
+}
+
+.hang-rope{
+    bottom: 70%;
+    left: 58%;
+    width: 2px;
+    height: 15%;
+}
+
+.hang-base{
+    bottom: 15%;
+    width: 70%;
+    height: 0.5%;
+}
+
+.hang-body{
+    width: 30%;
+    height: 50%;
+    bottom: 71%;
+    left: 43%;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 500px) {
+    .hang-container{
+        min-height: 60vh;
+        width: 60%;
+        margin-top: 35vh;
+    }
+    
+}
+
+@media screen and (min-width: 800px) {
+    .hang-container{
+        min-height: 50vh;
+        width: 50%;
+        margin-top: 0;
+        margin-bottom: -10%;
+    }
+    
+}
+
+@media screen and (min-width: 950px) {
+    .hang-container{
+        min-height: 60vh;
+        width: 40%;
+    }
+    
+}
+
+@media screen and (min-width: 1150px) {
+    .hang-container{
+        min-height: 40vh;
+        width: 30%;
+        margin-bottom: -5vh;
+    }
+    
+}

@@ -1,0 +1,66 @@
+/* Css document that contains the style declarations for the subscribe page. */
+.subscribe-nav-button{
+    background-color: #7ed321;
+    color: #1C4701;
+
+}
+
+.main__container__title{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main__container__content{
+    display: flex;
+    align-items: center;
+}
+
+.main__container__content__form{
+    text-align: right;
+}
+
+.form-label{
+    padding-right: 25px;
+}
+
+.form-input{
+    width: 320px;
+    padding: 7px 10px;
+    border: 1px solid #B7B7B7;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.big-input{
+    height: 100px;
+    vertical-align: top;
+    text-wrap: wrap;
+}
+
+.submit-button{
+    background-color: #7ed321;
+    color: #1C4701;
+    padding: 10px 35px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* This is part of the document that treats responsivity. It has been made
+    after observing what needed to be changed when the screen is smaller. */
+@media screen and (max-width: 1000px) {
+    .main__container__content{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .form-label{
+        display: block;
+        text-align: left;
+    }
+
+    .content-image{
+        width: 95vw;
+    }
+}

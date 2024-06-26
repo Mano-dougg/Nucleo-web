@@ -1,0 +1,60 @@
+/* Este arquivo tem por fim "resetar" o css da aplicação, ou seja,
+ remover algumas propriedades de alguns elementos que não serão úteis.
+ Caso necessário, mais "resets" serão adicionados ao decorrer do desenvolvimento. */
+
+/* aqui garantimo o tipo de box-sizing de todos os elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remoção de margem e padding padrão de alguns elementos */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+figure,
+blockquote,
+fieldset,
+legend {
+  padding: 0;
+  margin: 0;
+}
+
+/* Remover estilo padrão de listas pois o design padrão não é muito
+ agradável visualmente atualmente. */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Definir para que os headings herdem a cor e o peso da fonte quando
+ não especificado */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* Remover a decoração dos links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* remover a borda dos botões */
+button, input{
+  border: none;
+}

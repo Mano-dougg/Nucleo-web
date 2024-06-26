@@ -1,0 +1,119 @@
+/* general play-setting stylization */
+
+.play-setting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.play-setting__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+}
+
+.play-setting__form__input{
+    width: 90%;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 50px;
+    color: var(--color);
+    background-color: var(--button2);
+}
+
+.choose-mode-container{
+    width: 100%;
+}
+
+.random-choice-select{
+    width: 90%;
+    border-radius: 10px;
+    appearance: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* stylization of the player-adder form */
+
+.player-list{
+    border: 3px solid gray;
+    width: 60%;
+    height: 30vh;
+    max-height: 30vh;
+    padding: 1% 0;
+    border-radius: 30px;
+    overflow: scroll;
+}
+
+.player-list::-webkit-scrollbar{
+    display: none;
+}
+
+.player-list__item{
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.player-list__item__form{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    color: var(--color);
+    padding: 0 5%;
+}
+
+.player-adder{
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.player-adder__title{
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.player-name-input{
+    width: 80%;
+    padding-left: 10px;
+    background-color: var(--button2);
+    color: var(--color);
+    border-radius: 10px;
+}
+
+input::placeholder{
+    color: var(--lesser-color);
+}
+
+.player-entry{
+    padding-left: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.player-button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: inherit;
+}
+
+.add-button{
+    color: var(--color);
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.remove-button{
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+
+}
