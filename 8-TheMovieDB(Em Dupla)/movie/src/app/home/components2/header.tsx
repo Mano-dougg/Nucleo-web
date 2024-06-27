@@ -167,7 +167,7 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
           <li><a href="/home">Home</a></li>
           <li><a href="/">Series</a></li>
           <li><a href="/">Filmes</a></li>
-          <li><a href="/">Minha Lista</a></li>
+          <li><a href="/favoritos">Minha Lista</a></li>
         </ul>
       </nav>
       <UserContainer>

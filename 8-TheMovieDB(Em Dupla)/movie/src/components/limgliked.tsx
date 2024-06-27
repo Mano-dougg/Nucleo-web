@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import ImgLike from '../../img/bookmark-star-solid-24(1).png' 
+import ImgLiked from '../../img/bookmark-star-solid-24(2).png' 
 
-export default function Imglike() {
+export default function Imgliked() {
   return (
     <Image
-      src={ImgLike}
+      src={ImgLiked}
       width={50}
       height={50}
       alt="Picture of the author"

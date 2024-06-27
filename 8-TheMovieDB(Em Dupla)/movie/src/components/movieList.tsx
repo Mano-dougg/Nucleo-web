@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import Image from 'next/image';
-import Gostei from '../../img/gostar.png'
-import Sobre from '../../img/maisSobre.png'
 import Imglike from './imgs';
 import ImgAbout from './imgAbout';
+import Imgliked from './limgliked';
 
 
 const MovieListContainer = styled.div`
@@ -62,15 +60,19 @@ const Overlay = styled.div`
 `;
 
 const OverlayText = styled.p`
+cursor:pointer;
   color: white;
   font-size: 1.2rem;
   margin-bottom: 8px;
 `;
 
 const OverlayLink = styled.a`
-  color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
+  cursor:pointer;
+  color:white;
+
+  
 `;
 
 interface Movie {
@@ -112,7 +114,9 @@ const MovieList: React.FC = () => {
             />
             <Overlay>
               
-            <OverlayLink href="#"><Imglike/></OverlayLink>
+            <OverlayLink><Imglike/></OverlayLink>
+            
+            
               <OverlayLink href="#"><ImgAbout/></OverlayLink>
             </Overlay>
           </MovieCard>
