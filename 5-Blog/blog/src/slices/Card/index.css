@@ -1,0 +1,87 @@
+.card{
+    display:flex;
+    align-self:center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quadro{
+    display:flex;
+    flex-direction:row;
+    width:60%;
+    justify-content: center;
+    align-items: center;
+
+}
+.card h2{
+   
+    
+}
+
+.coisasdocard{
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-evenly;
+    background-color: gray;
+    width: 600px;
+    height: 450px;
+    border-radius: 10px;
+    margin:1.55%;
+    padding:2%;
+    
+}
+
+.imagem{
+    margin: 3%;
+    display: flex;
+    align-self: center;
+    width:100%;
+}
+
+.titulo{
+    font-weight:bold ;
+}
+
+.perfil{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.profile{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.nome{
+    margin-left: 3%;
+}
+
+
+@media (max-width: 700px){
+
+
+.card{
+    
+}    
+    .quadro{
+        flex-direction: column;
+        
+    }
+
+
+    .coisasdocard{
+        
+        width:75%;
+        height: 40%;
+    }
+  
+    .imagem{
+        width:40%;
+        height: 30%;
+    }
+  
+  }

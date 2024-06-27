@@ -26,3 +26,4 @@ Git Básico
 5. Para saber se finalizou a atividade, verifique cuidadosamente se todos os requisitos foram cumpridos
 6. Após finalizar a atividade, faça um merge request com o padrão de título: `[número da atividade]` - `[nome da atividade]` (por exemplo: 2 - Coffee Shop)
 7. Esteja pronto para apresentar o que você fez na próxima RN (Reunião de Núcleo)
+

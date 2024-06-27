@@ -1,0 +1,98 @@
+{
+  "id": "card",
+  "type": "SharedSlice",
+  "name": "Card",
+  "description": "Card",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "categoria": {
+          "type": "StructuredText",
+          "config": {
+            "label": "categoria",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2"
+          }
+        },
+        "modelo": {
+          "type": "Group",
+          "config": {
+            "label": "modelo",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "icon": {
+                "type": "Select",
+                "config": {
+                  "label": "icon",
+                  "placeholder": "",
+                  "options": [
+                    "jogoicon",
+                    "emaltaicon",
+                    "filmeicon",
+                    "serieicon"
+                  ]
+                }
+              },
+              "titulo": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "titulo",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "descricao": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "descriçao",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "perfil": {
+                "type": "Image",
+                "config": {
+                  "label": "perfil",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "nome": {
+                "type": "Text",
+                "config": {
+                  "label": "nome",
+                  "placeholder": ""
+                }
+              },
+              "data": {
+                "type": "Date",
+                "config": {
+                  "label": "data",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

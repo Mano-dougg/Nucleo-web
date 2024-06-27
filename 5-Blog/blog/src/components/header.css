@@ -1,0 +1,53 @@
+
+
+header{
+    background: rgba(31, 53, 25, 1);
+    height: 4rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+
+}
+
+
+.logo{
+    width: 60%;
+    margin-left: 8%;
+    display:flex;
+    justify-content: flex-start;
+    text-decoration: none;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 54px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: aquamarine
+}
+
+
+
+.barra{
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 8%;
+    width: 12%;
+    height: 12%;
+    padding: 10px 8px 10px 8px;
+    gap: 95px;
+    border-radius: 20px 20px 20px 20px;
+    background: rgba(217, 217, 217, 1);
+    align-items: 'center';
+
+}
+
+.barra p{
+    font-size: 0.6rem;
+    font-family: "Montserrat",sans-serif;
+    margin:0%;
+    overflow-wrap: break-word;
+    }
+
+

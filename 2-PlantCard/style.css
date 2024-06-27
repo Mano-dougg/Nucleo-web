@@ -1,0 +1,295 @@
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+body, html{
+    background: rgba(188, 205, 208, 1);
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+
+}
+
+/* CARD */
+
+.card{
+
+    margin:auto;
+    min-width: 375px;
+    max-width: 875px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 30px ;
+    height: 500px; 
+}
+
+
+picture{
+    height: 100%;
+    width: auto;
+}
+
+#imgteste{
+    height: 100%;
+    width: auto;
+}
+
+
+
+.info{
+    padding: 50px 30px 41px 30px;
+    justify-content: space-between;
+    background: rgba(223, 223, 214, 1);
+    height: 500px;
+    width: 100%;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.text{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.text h1{
+    width: 100%;    
+    font-family: "Josefin Sans",sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    display: flex;
+    margin-bottom: 5%;
+    
+
+}
+
+.text p{
+    
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+/* FOOTER */
+
+.footer{
+    
+    width:100%;
+    display: flex;
+    margin-top: 6%;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.profile{
+
+    width:75%;
+    display:flex;
+    flex-direction: row;
+    
+
+}
+
+#frm{
+
+    border-radius: 50%;
+    display:flex;
+    justify-content: left;
+    
+}
+
+.littleinfo{
+    margin-left: 5%;
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+}
+
+.doguito{
+    font-family: "Overpass",sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30.38px;
+    text-align: left;
+}
+
+.data{
+    font-family: "Overpass",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.26px;
+    text-align: left;
+}
+
+
+
+.share{
+    border:none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10%;
+    width: 50px; 
+    height: 50px ; 
+    border-radius: 50%;    
+    background: rgba(105, 111, 90, 1);
+}
+
+/* SHARE CARD */
+
+.share-card.active{
+    visibility: visible;
+    
+}
+.share-card{
+
+    visibility: hidden;
+    display:flex;
+    margin-top: 11%;
+    margin-left: 45%;
+    background: rgba(105, 111, 90, 1);
+    border-radius: 15px;
+    width: 36%;
+    height: 12%;
+    
+    
+}
+
+
+
+ul {
+    list-style: none;
+    display:flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: center;
+    margin-left:3%;
+    
+}
+
+.redes-sociais ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: right;   
+}
+
+.redes-sociais li{
+    display: flex;
+    margin-right: 16%;    
+}
+
+.texto-share{
+    text-decoration: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:5%;
+    font-family: "Overpass",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100.32px;
+    text-align: left;
+    color: rgba(223, 223, 214, 1);
+
+
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        width:350px;
+        align-items: center;
+        justify-content: center;
+        height: 750px;
+    }
+
+    .info{
+
+        height: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        margin:auto;
+        border-radius: 0px 0px 30px 30px;
+        padding: 25px;
+        margin-bottom: 5%;
+        
+        
+    }
+
+    picture{
+        height: auto;
+        width:78.82%;
+        margin-bottom: -21%;
+        transform: rotate(90deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #imgteste{
+
+        height: auto;
+        width: 75%;
+        display: flex;
+        justify-content: center;
+       
+    }
+
+    .share-card{
+        display:flex;
+        margin-top: 5%;
+        margin-left: 30%;
+        width: 60%;
+        height: 8%;
+
+    }
+
+    .footer{
+        margin-bottom: -5%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
