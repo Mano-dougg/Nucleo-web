@@ -11,18 +11,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, openMenu }) => {
     openMenu(false);
   };
 
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if ((e.target as HTMLElement).id === 'overlay') {
-      closeModal();
-    }
-  };
-
   return (
-    <div
-      id="overlay"
-      className={`${styles.overlay} ${isOpen ? styles.open : ''}`}
-      onClick={handleOverlayClick}
-    >
+    <div id="overlay" className={`${styles.overlay} ${isOpen ? styles.open : ''}`} >
       <div className={styles.modal}>
         <div className={styles.fields}>
           <span>Adicionar pessoa a fila</span>
