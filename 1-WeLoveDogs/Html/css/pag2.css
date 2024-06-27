@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*header*/
+
+.header-container {
+    background: #FFFFFF;
+    height: 0px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.wrapper {
+    width: 1440px;
+    margin: 15px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav .logo {
+    width: 281px;
+    height: 65px;
+    top: 27px;
+    left: 15px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.nav-items li {
+    list-style: none;
+    width: 112px;
+    height: 22px;
+    margin-right: 50px;
+}
+
+.nav-items li:nth-child(1) {
+    width: 112px;
+    height: 22px;
+    top: 49px;
+    left: 1047px;
+    gap: 0px;
+    opacity: 0px;
+    
+}
+
+.nav-items li:nth-child(2) {
+    width: 45px;
+    height: 22px;
+    top: 49px;
+    left: 1194px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.nav-items li:nth-child(3) {
+    width: 87px;
+    height: 22px;
+    top: 49px;
+    left: 1306px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.nav-items li:nth-child(1) a,
+.nav-items li:nth-child(2) a {
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: left;
+
+}
+
+.nav-items li:nth-child(3) a {
+    color: #1C4701;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: left;
+    border-radius: 15px;
+    background: #7ED32166;
+    padding: 12px 28px;
+
+}
+
+/*main*/
+.main-container {
+    background: #FFFFFF;
+    width: 1440px;
+    height: 904px;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 687px;
+    height: 535px;
+    margin-left:450px;
+    text-align: center;
+    
+}
+
+header h1 {
+    width: 334px;
+    height: 65px;
+    top: 150px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-left: 140px;
+    
+    
+    
+}
+
+header p {
+    font-size: 16px;
+    line-height: 21.79px;
+    color: #000000;
+    Width: 687px;
+    height: 176px;
+    text-align: left;
+    margin-left: -10px;
+    
+}
+
+header img {
+    margin-top: 20px;
+    margin-right: 100px;
+    
+}

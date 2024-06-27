@@ -1,0 +1,31 @@
+:root {
+    --background-color: #FFF;
+    --nav-color: #FFF;
+    --nav-color-btn: #3C3B3A;
+    --contact: #F8F9FA;
+    --font-color: #202020;
+    --font-color-emphasis: #0065FF;
+    --toggle-background: #E5E5E5;
+    --underline-text: #fff;
+    --eb-font: 'EB Garamond';
+    --be-font: 'Be Vietnam Pro';
+    --img-saturation: grayscale(0%) contrast(100%);
+}
+  
+[data-theme="dark"] {
+    --background-color: #222222;
+    --nav-color: #3C3B3A;
+    --nav-color-btn: #3C3B3A;
+    --contact: #3C3B3A;
+    --font-color: #FAF4E6;
+    --underline-text: #FAF4E6;
+    --font-color-emphasis: #FAF4E6;
+    --toggle-background: #FAF4E6;
+    --img-saturation: grayscale(100%) contrast(115%);
+}
+
+.app{
+    width: 100%;
+    height: 100vh;
+}
+

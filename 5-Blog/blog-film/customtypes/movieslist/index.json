@@ -1,0 +1,63 @@
+{
+  "format": "custom",
+  "id": "movieslist",
+  "label": "MoviesList",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "movie": {
+        "type": "Group",
+        "config": {
+          "label": "Movie",
+          "repeat": true,
+          "fields": {
+            "moviebg": {
+              "type": "Image",
+              "config": {
+                "label": "MovieBG",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "title": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Title",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "year": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Year",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "description": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Description",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

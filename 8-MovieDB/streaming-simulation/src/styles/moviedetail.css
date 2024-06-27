@@ -1,0 +1,39 @@
+.idcontent{
+    padding: 4rem;
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+
+*{
+    font-family: var(--font-poppins);
+}
+
+.id-title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+}
+.id-inf{
+    font-size: 1.3rem;
+    margin-left: 2rem;
+}
+.id-image{
+    border-radius: 1rem;
+}
+.division{
+    display: flex;
+    width: 100%;
+    margin-top: 3rem;
+    gap: 3rem;
+}
+
+.id-division{
+    display: flex;
+}
+
+.id-over{
+    font-size: 1rem;
+}

@@ -1,0 +1,137 @@
+
+
+header{
+    background-color: var(--black);
+    height: 4rem;
+    width: 100%;
+    padding: 0 3rem 0 3rem;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.sign-search{
+    display: flex;
+    gap: 1rem;
+}
+.signin-up{
+    display: flex;
+    gap: 0.8rem;
+}
+.link{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.hometext{
+    font-family: var(--font-josefin);
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 800;
+}
+
+.btnsign{
+    font-family: var(--font-poppins);
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+    font-weight: 500;
+}
+
+.favorites{
+    font-family: var(--font-poppins);
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.cadastro:hover{
+    background-color: #494949;
+}
+
+.login{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.login:hover{
+    background-color: #dfdfe0;
+}
+
+.cadastro{
+    background-color: var(--gray);
+}
+
+form{
+    display: flex;
+    background: none;
+    margin: 0;
+}
+
+form > input{
+    border: 0;
+    background-color: var(--gray);
+    border-radius: 0.4rem 0 0 0.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--white);
+    font-family: var(--font-poppins);
+    opacity: 1;
+
+}
+
+form > button{
+    cursor: pointer;
+    background-color: var(--gray);
+    border: 0;
+    border-radius: 0 0.4rem 0.4rem 0;
+    padding: 0 0.5rem 0rem 0.5rem ;
+    align-items: center;
+    justify-content: center;
+
+}
+
+form > button:hover{
+    background-color: #494949;
+}
+
+.favoritess{
+    text-decoration: none;
+    background-color: rgb(153, 51, 65);
+    color: var(--white);
+    align-items: center;
+    display: flex;
+    padding: 0 1.2rem 0 1.2rem;
+    border-radius: 0.5rem;
+    font-family: var(--font-poppins);
+}
+
+.favoritess:hover{
+    background-color: rgb(95, 33, 41);
+}
+.favoritess > a{
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--font-poppins);
+    font-weight: 500;
+}
+
+.btnsign{
+    text-decoration: none;
+    color: var(--black);
+    font-family: var(--font-poppins);
+    padding: 0 1rem 0 1rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btnsign:hover{
+    background-color: rgb(164, 164, 165);
+}

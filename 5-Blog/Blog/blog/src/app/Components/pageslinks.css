@@ -1,0 +1,43 @@
+:root {
+    --li-color: #067546;
+}
+
+.paginas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 50px; 
+    margin-top: 50px;
+}
+
+.paginas ul {
+    display: flex;
+    gap: 50px; 
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.paginas li {
+    font-size: 20px;
+    color: var(--li-color);
+    list-style: none;
+    font-weight: 700;
+    cursor: pointer;
+    background-image: linear-gradient(90deg, black, black);
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    background-position: left bottom;
+    transition: background-size 500ms ease;
+}
+
+.paginas li a {
+    text-decoration: none;
+    color: inherit; /* Mantém a cor do texto dentro do link */
+}
+
+.paginas li:hover {
+    background-size: 100% 3px;
+}

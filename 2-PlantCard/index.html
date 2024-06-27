@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoração com Plantas!</title>
+    <link rel="shortcut icon" type="imagex/png" href="assets/img/logo folha.png">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;1,600&family=Open+Sans:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <article class="card">
+            <div class="card-image">
+                <img src="assets/img/folhinha.svg" class="card-img">
+            </div>
+
+            <div class="card-content">
+                <div class="card-content-text">
+                    <h2>Decore sua casa com plantas!</h2>
+                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut. Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. Tristique velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, varius auctor cursus commodo. Nisi, non molestie tincidunt posuere leo etiam eu, orci. Consequat diam facilisi neque, est sit. Gravida nibh magna cursus eget eget velit cras.
+                    </p>
+                </div>
+
+                <div class="card-content-footer">
+                    <div class="card-dog">
+                        <img src="assets/img/dog.svg">
+                        <div class="card-dog-text">
+                            <h3>Doguito</h3>
+                            <p>29/09/2022</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-wrap" id="Menu">
+                        <div class="menu">
+                            <div class="socialmedia">
+                                <div class="socialmedia-title">
+                                    <h2>SHARE</h2>
+                                </div>
+                                <a href="https://pt-br.facebook.com/" target="_blank"><img src="assets/img/facebook icon.svg"></a>
+                                <a href="https://x.com" target="_blank"><img src="assets/img/twitter icon.svg"></a>
+                                <a href="https://br.pinterest.com" target="_blank"><img src="assets/img/pinterest icon.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img class="card-content-footer-arrow" src="assets/img/arrow.svg" onclick="toggleMenu()">
+                </div>
+        </article>
+    </section>
+
+    <script>
+        let Menu = document.getElementById("Menu");
+
+        function toggleMenu(){
+            Menu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+</html>

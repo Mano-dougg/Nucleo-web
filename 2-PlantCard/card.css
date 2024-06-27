@@ -1,0 +1,404 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'minhafonte';
+    src: url('Josefin_Sans/static/JosefinSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url("Overpass/static/Overpass-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("Open_Sans/static/OpenSans-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-size: normal;
+}
+
+body{
+    background-color: #BCCDD0; ;
+}
+
+.desktop {
+    background: #BCCDD0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.card-container{
+    margin-bottom: 200px;
+    width: 875px;
+    top: 294px;
+    left: 523px;
+    height: 492px;
+    padding: 50px 30px 41px 30px;
+    border-radius: 30px 30px;
+    justify-content: space-evenly;
+    background: #DFDFD6;  
+    margin-top: 200px;
+   
+    
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.info img {
+    width: 291px;
+    height: 492px;
+    border-radius: 30px 0px 0px 30px;
+    margin-right: 600px;
+    margin-top: -50px;
+}
+
+.info h1 {
+    text-align: left;
+    margin-top: -450px;
+    margin-left: 265px;
+    width: 492px;
+    height: 36px;
+    font-family:'minhafonte', Times, serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 36px;
+    cursor: pointer;
+    text-decoration: none;
+    background-image: linear-gradient(90deg, black, black);
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    background-position: left bottom;
+    transition: background-size 500ms ease;
+}
+
+.info h1:hover {
+    background-size: 100% 3px;
+}
+
+.info p{
+    margin-top: 20px;
+    display: flex;
+    width: 524px;
+    height: 154px;
+    margin-left: 300px;
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: left;
+    transition-property: transform  ;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    
+
+}
+
+.info p:hover{
+    transform: translateY(-10px);
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+.profile{
+    display:flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.profile section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.profile img {
+    width: 60px;
+    height: 60px;
+}
+
+.profile h2{
+    width: 87px;
+    height: 30px;
+    font-family: 'Overpass';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30.38px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.profile h3{
+    width: 96px;
+    height: 20px;
+    font-family: 'Overpass';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.26px;
+    text-align: left;
+
+}
+
+.social{
+    margin-top: -20px;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    width: 231.02px;
+    height: 44px;
+    padding: 10px 15px 10px 15px;
+    gap: 15px;
+    border-radius: 15px;
+    background: #696F5A;
+    margin-bottom: 15px;
+
+}
+
+.icons h4 {
+    width: 84px;
+    height: 21px;
+    font-family: "Overpass";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25.32px;
+    text-align: left;
+    color: #DFDFD6;
+    animation-name: infiniteupdown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all , 3s;
+}
+
+@keyframes infiniteupdown {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.icons nav {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+}
+
+.icons#hide{
+    transition: 0.8s;
+    opacity: 0;
+    pointer-events: all;
+}
+
+nav :nth-child(2),
+nav :nth-child(1){
+    margin-right: 10px;
+}
+
+nav img{
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+nav img:hover{
+   transform: translateY(-5px);
+}
+
+
+.share {
+    margin-left: 170px;
+    transition-property: transform  ;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    
+}
+
+.share:hover {
+    transform: translateY(-10px);
+}
+
+@media screen and (max-width: 916px) {
+    .card-container{
+        margin-bottom: 200px;
+        width: 350px;
+        top: 294px;
+        left: 523px;
+        height: 750px;
+        padding: 50px 30px 41px 30px;
+        border-radius: 40px 30px;
+        justify-content: space-evenly;
+        background: #DFDFD6;  
+        margin-top: 200px;
+       
+        
+    }
+    
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    
+    .info img {
+        width: 350px;
+        height: 202px;
+        margin-right: -2px;
+        margin-top: -50px;
+        border-radius: 30px 30px  0 0;
+
+    }
+    
+    .info h1 {
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 5px;
+        width: 290px;
+        height: 72px;
+        font-family:'minhafonte', Times, serif;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 36px;
+    
+    }
+    
+    .info p{
+        margin-top: 10px;
+        display: flex;
+        width: 290px;
+        height: 286px;
+        margin-left: 0px;
+        font-family: "Open Sans",sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21.79px;
+        text-align: left;
+    
+    }
+    
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-left: -1px;
+    }
+    
+    .profile{
+        display:flex;
+        
+    }
+    
+    .profile section {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    
+    .profile h2{
+        width: 87px;
+        height: 30px;
+        font-family: 'Overpass';
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 30.38px;
+        text-align: left;
+    }
+    
+    .profile h3{
+        width: 96px;
+        height: 20px;
+        font-family: 'Overpass';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20.26px;
+        text-align: left;
+    
+    }
+    
+    .social{
+        margin-top: -10px;
+    }
+    
+    .icons {
+        display: flex;
+        flex-direction: row;
+        width: 221.02px; 
+        height: 34px;
+        padding: 5px 10px 5px 10px;
+        gap: 15px;
+        border-radius: 15px ;
+        opacity: 0px;
+        background: #696F5A;
+        margin-bottom: 15px;
+        margin-left: -89px;
+    
+    }
+    
+    .icons h4 {
+        width: 84px;
+        height: 21px;
+        font-family: "Overpass";
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 25.32px;
+        text-align: left;
+        color: #DFDFD6;
+        margin-top: 2px;
+    }
+    
+    .icons nav {
+        display: flex;
+        flex-direction: row ;
+        justify-content: space-between;
+        width: 100px;
+    }
+    
+    
+    nav :nth-child(2),
+    nav :nth-child(1){
+        margin-right: 13px;
+    }
+
+    nav img:hover{
+        background: 0px;
+        height: 27px;
+        width: 27px;
+    }
+    
+
+    .share{
+        margin-left: 80px;
+    }
+    
+}
