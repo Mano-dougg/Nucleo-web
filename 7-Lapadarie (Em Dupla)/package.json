@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "ts-node-dev --respawn --transpile-only src/server.ts"
+    "server": "ts-node-dev --respawn --transpile-only src/server/server.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.16.0",
