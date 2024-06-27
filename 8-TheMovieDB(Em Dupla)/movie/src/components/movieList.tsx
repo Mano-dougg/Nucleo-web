@@ -12,7 +12,7 @@ const MovieListContainer = styled.div`
 
 const MovieGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr); 
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 `;
 
@@ -32,7 +32,7 @@ const MovieCard = styled.div`
 const MovieTitle = styled.h3`
   font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #ffffff; 
+  color: #ffffff;
 `;
 
 const MovieImage = styled.img`
@@ -57,13 +57,6 @@ const Overlay = styled.div`
   ${MovieCard}:hover & {
     opacity: 1;
   }
-`;
-
-const OverlayText = styled.p`
-  cursor: pointer;
-  color: white;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
 `;
 
 const OverlayLink = styled.a`
@@ -104,11 +97,30 @@ const MovieList: React.FC = () => {
     return favorites.some(favorite => favorite.id === movie.id);
   };
 
-  const handleFavoriteClick = (movie: Movie) => {
+  const handleFavoriteClick = async (movie: Movie) => {
     if (isFavorite(movie)) {
-      removeFavorite(movie);
+      try {
+        const favorite = favorites.find(fav => fav.id === movie.id);
+        if (favorite) {
+          await axios.delete(`http://localhost:1080/favoritos/${favorite.id}`);
+          removeFavorite(movie);
+          console.log('Filme removido dos favoritos');
+        }
+      } catch (error) {
+        console.error('Erro ao remover filme dos favoritos:', error);
+      }
     } else {
-      addFavorite(movie);
+      try {
+        const response = await axios.post('http://localhost:1080/favoritos', {
+          id: movie.id,
+          title: movie.title,
+          poster_path: movie.poster_path,
+        });
+        addFavorite(movie);
+        console.log('Filme adicionado aos favoritos:', response.data);
+      } catch (error) {
+        console.error('Erro ao adicionar filme', error);
+      }
     }
   };
 
@@ -124,10 +136,8 @@ const MovieList: React.FC = () => {
               alt={movie.title}
             />
             <Overlay>
-
               <OverlayLink onClick={() => handleFavoriteClick(movie)}>
                 {isFavorite(movie) ? <Imgliked /> : <Imglike />}
-
               </OverlayLink>
               <OverlayLink href="#"><ImgAbout/></OverlayLink>
             </Overlay>
