@@ -1,7 +1,5 @@
-// controllers/favoriteController.ts
-
-import { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
+import { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
 import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
@@ -26,6 +24,11 @@ export const addFavorite = async (req: Request, res: Response): Promise<void> =>
         },
       },
     });
+
+    if (existingFavorite) {
+      res.status(400).json({ error: 'Filme já está nos favoritos.' });
+      return;
+    }
 
     // Cria um novo favorito
     const favorite = await prisma.favorite.create({

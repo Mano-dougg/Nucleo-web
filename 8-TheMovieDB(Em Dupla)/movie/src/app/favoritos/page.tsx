@@ -19,7 +19,8 @@ export default function Favoritos() {
     <>
       <Header/>
       <Container>
-      
+      Lista de favoritos
+    
       </Container>
     </>
   );

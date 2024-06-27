@@ -1,4 +1,3 @@
-'use client';
 import React, { createContext, useState, ReactNode, useContext } from "react";
 import styled from "styled-components";
 
@@ -12,10 +11,16 @@ const Favorites = styled.div`
   padding-top: 88px;
 `;
 
+interface FavoriteItem {
+  id: number;
+  title: string;
+  
+}
+
 interface FavoritesContextType {
-  favorites: any[]; 
-  addFavorite: (item: any) => void; 
-  removeFavorite: (item: any) => void; 
+  favorites: FavoriteItem[];
+  addFavorite: (item: FavoriteItem) => void;
+  removeFavorite: (item: FavoriteItem) => void;
 }
 
 export const FavoritesContext = createContext<FavoritesContextType | undefined>(undefined);
@@ -26,37 +31,26 @@ interface FavoritesProviderProps {
 }
 
 export function FavoritesProvider({ children }: FavoritesProviderProps) {
-  const [favorites, setFavorites] = useState<any[]>([]);
+  const [favorites, setFavorites] = useState<FavoriteItem[]>([]);
 
-  const addFavorite = (newFavorite: any) => { 
-
-    const repeatedFavorite = favorites.some(item => item.id === newFavorite.id);
-
-    let newList = [...favorites]
+  const addFavorite = (newFavorite: FavoriteItem) => {
+    const repeatedFavorite = favorites.some((item) => item.id === newFavorite.id);
 
     if (!repeatedFavorite) {
-      newList.push(newFavorite)
-      return setFavorites(newList);
+      setFavorites([...favorites, newFavorite]);
+    } else {
+      // Se já existe, pode remover da lista de favoritos (simulação de troca de estado)
+      setFavorites(favorites.filter((fav) => fav.id !== newFavorite.id));
     }
-
-
-    //se for repetid ele vai ser tirado da lista 
-    newList = favorites.filter((fav) => fav.id !== newFavorite.id)
-    return setFavorites(newList) 
-
-
-
   };
 
-  const removeFavorite = (favoriteToRemove: any) => { 
-    setFavorites(favorites.filter(item => item.id !== favoriteToRemove.id));
+  const removeFavorite = (favoriteToRemove: FavoriteItem) => {
+    setFavorites(favorites.filter((item) => item.id !== favoriteToRemove.id));
   };
 
   return (
     <FavoritesContext.Provider value={{ favorites, addFavorite, removeFavorite }}>
-     
-        {children}
-      
+      {children}
     </FavoritesContext.Provider>
   );
 }
