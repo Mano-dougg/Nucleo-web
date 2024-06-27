@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Imglike from './imgs';
 import ImgAbout from './imgAbout';
 import Imgliked from './limgliked';
-
+import { useFavoriteContext } from '../app/favoritos/components3/favoriteComponent';
 
 const MovieListContainer = styled.div`
   margin-top: 20px;
@@ -60,7 +60,7 @@ const Overlay = styled.div`
 `;
 
 const OverlayText = styled.p`
-cursor:pointer;
+  cursor: pointer;
   color: white;
   font-size: 1.2rem;
   margin-bottom: 8px;
@@ -69,10 +69,8 @@ cursor:pointer;
 const OverlayLink = styled.a`
   text-decoration: none;
   font-size: 1rem;
-  cursor:pointer;
-  color:white;
-
-  
+  cursor: pointer;
+  color: white;
 `;
 
 interface Movie {
@@ -84,6 +82,7 @@ interface Movie {
 
 const MovieList: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const { favorites, addFavorite, removeFavorite } = useFavoriteContext();
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -101,6 +100,18 @@ const MovieList: React.FC = () => {
     fetchMovies();
   }, []);
 
+  const isFavorite = (movie: Movie) => {
+    return favorites.some(favorite => favorite.id === movie.id);
+  };
+
+  const handleFavoriteClick = (movie: Movie) => {
+    if (isFavorite(movie)) {
+      removeFavorite(movie);
+    } else {
+      addFavorite(movie);
+    }
+  };
+
   return (
     <MovieListContainer>
       <h2>Filmes Populares</h2>
@@ -113,10 +124,11 @@ const MovieList: React.FC = () => {
               alt={movie.title}
             />
             <Overlay>
-              
-            <OverlayLink><Imglike/></OverlayLink>
-            
-            
+
+              <OverlayLink onClick={() => handleFavoriteClick(movie)}>
+                {isFavorite(movie) ? <Imgliked /> : <Imglike />}
+
+              </OverlayLink>
               <OverlayLink href="#"><ImgAbout/></OverlayLink>
             </Overlay>
           </MovieCard>

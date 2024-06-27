@@ -1,16 +1,14 @@
-// app/home.tsx
-
 'use client';
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './components2/header';
 import MovieList from '@/components/movieList';
+import { FavoritesProvider } from '../favoritos/components3/favoriteComponent';
 
 interface User {
   name: string;
   email: string;
-  
 }
 
 const Home: React.FC = () => {
@@ -18,7 +16,6 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Função para buscar dados do usuário usando o token JWT do localStorage
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem('token');
@@ -32,8 +29,8 @@ const Home: React.FC = () => {
           }
         });
 
-        setUser(response.data); // Armazena os dados do usuário no estado
-        setLoading(false); // Indica que a página carregou os dados do usuário
+        setUser(response.data); 
+        setLoading(false);
       } catch (error) {
         console.error('Erro ao buscar dados do usuário:', error);
         setLoading(false);
@@ -49,10 +46,13 @@ const Home: React.FC = () => {
 
   return (
     <>
+
       <Header user={user} />
       <div>
-        <h1>Pagina Inicial!</h1>
-        <MovieList/>
+        <h1>Página Inicial!</h1>
+        <FavoritesProvider> 
+        <MovieList />
+        </FavoritesProvider>
       </div>
     </>
   );
