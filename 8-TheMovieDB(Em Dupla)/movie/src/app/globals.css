@@ -93,3 +93,11 @@ height: 100px;
    .Titulo{
     padding-left: 30px;
    }
+
+   .AboutFilme{
+    display: flex;
+   }
+
+   .h1{
+    color: white;
+   }
