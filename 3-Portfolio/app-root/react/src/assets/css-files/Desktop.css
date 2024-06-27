@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.container{
+    display: flex;
+    flex-flow: column;
+    box-sizing: border-box; 
+    row-gap: 132px;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.nav {
+    display: flex;
+    justify-self: flex-start;
+    flex-flow: row ;
+    justify-items: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    min-height: 82px; 
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    padding: 0px 46px;
+    box-shadow: 30px;
+
+    .left-nav {
+        display: flex;
+        align-self: flex-start;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 50px;
+        height: fit-content;
+        color: black;
+
+        .name {
+            font-family: "Be Vietnam Pro", sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+
+    .right-nav {
+        display: flex;
+        flex-flow: row;
+        height: fit-content;
+        justify-content: space-between;
+        justify-items: center;
+        align-items: center;
+        column-gap: 50px;
+
+    }
+ }
+
+.content{
+    display: flex;
+    flex-flow: column;
+    align-self: flex-end;
+    box-sizing: border-box;
+    overflow-y: none;
+    top: 82px;
+    align-items: center;
+    min-width: 100%;
+    height: fit-content;
+    border-top: 10px;
+    padding-left: 46px;
+    padding-right: 46px;
+    padding-bottom: 0px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.content-off {
+    display: none;
+}
+
+.content-show {
+    display: flex;
+    flex-flow: column;
+    align-self: flex-end;
+    box-sizing: border-box;
+    overflow-y: none;
+    top: 82px;
+    align-items: center;
+    min-width: 100%;
+    height: fit-content;
+}
+
+.menu-ribbon {
+    display: flex;
+    flex-flow: column;
+    align-self: flex-start;
+    box-sizing: border-box;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    max-width: 962px;
+    padding-left: 46px;
+    padding-right: 46px;
+    background-color: white;
+
+    .menu-button{
+        display: flex;
+        align-self: flex-start;
+        justify-self: flex-start;
+        align-items: center;
+        width: 30px;
+        padding: 0px;
+        background-color: whitesmoke;
+    }
+    .menu-img{
+        display: flex;
+        padding: 0px;
+    }
+    .menu-off{
+        display: none;
+    }
+    .menu-show{
+        display: flex;
+        flex-flow: column wrap;
+        min-width: 251px ;
+        row-gap: 25px;
+    }
+}
+
+@media screen and (min-width: 785px) {
+    .menu-ribbon{
+        display: none;
+        .menu-img{
+            display: none;
+        }
+    }
+}
+ 

@@ -1,0 +1,19 @@
+.links-c {
+    display: flex;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    font-family: "Be Vietnam Pro", sans-serif;
+    column-gap: 10px;
+    color:rgba(0, 101, 255, 1);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 101, 255, 1);
+}
+
+@media screen and (min-width: 785px) {
+    .links-c{
+        display: none;
+    }
+
+}

@@ -1,0 +1,19 @@
+.icons {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+
+    .img {
+        display: flex;
+        max-width: 16px;
+        max-height: 16px ;
+    }
+}
+
+@media screen and (max-width: 785px) {
+    .icons{
+        display: none;
+    }
+}
