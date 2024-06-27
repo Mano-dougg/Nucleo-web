@@ -91,19 +91,13 @@ const UserName = styled.p`
 `;
 
 const Options = styled.div`
-  display: none;
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  cursor:pointer;
+ text-align: center;
+
 
   ${Tagheader}:hover & {
     display: block;
+    color:red;
   }
 `;
 
