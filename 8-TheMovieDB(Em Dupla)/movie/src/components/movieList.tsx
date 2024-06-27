@@ -104,21 +104,11 @@ const MovieList: React.FC = () => {
     return favorites.some(favorite => favorite.id === movie.id);
   };
 
-  const handleFavoriteClick = async (movie: Movie) => {
+  const handleFavoriteClick = (movie: Movie) => {
     if (isFavorite(movie)) {
       removeFavorite(movie);
     } else {
-      try {
-        const response = await axios.post('http://localhost:1080/favoritos', {
-          id: movie.id,
-          title: movie.title,
-          poster_path: movie.poster_path,
-        });
-        addFavorite(movie); // Adiciona aos favoritos localmente apenas após sucesso na API (opcional)
-        console.log('Filme adicionado aos favoritos:', response.data);
-      } catch (error) {
-        console.error('Erro ao adicionar filme aos favoritos:', error);
-      }
+      addFavorite(movie);
     }
   };
 
@@ -134,8 +124,10 @@ const MovieList: React.FC = () => {
               alt={movie.title}
             />
             <Overlay>
+
               <OverlayLink onClick={() => handleFavoriteClick(movie)}>
                 {isFavorite(movie) ? <Imgliked /> : <Imglike />}
+
               </OverlayLink>
               <OverlayLink href="#"><ImgAbout/></OverlayLink>
             </Overlay>
