@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*.ts"  // Inclui todos os arquivos TypeScript dentro do diretório 'src'
+  ],
+  "exclude": [
+    "node_modules"  // Exclui o diretório 'node_modules' da compilação
+  ]
+}
