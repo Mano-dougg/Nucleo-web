@@ -1,1 +1,1 @@
-# e-commerce-info
+## Repositório privado criação do projeto final da infojr
