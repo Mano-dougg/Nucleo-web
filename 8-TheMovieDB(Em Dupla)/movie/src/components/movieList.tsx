@@ -67,7 +67,6 @@ const OverlayLink = styled.a`
 `;
 
 interface Movie {
-  isFavorite: any;
   id: number;
   title: string;
   overview: string;
@@ -77,65 +76,52 @@ interface Movie {
 const MovieList: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const { favorites, addFavorite, removeFavorite } = useFavoriteContext();
-  const [token, setToken] = useState<string | null>(() => {
-    return localStorage.getItem('jwtToken');
-  });
 
   useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const apiKey = 'ad1c12884f4a7421c3d9e6d859be97a9';
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&page=1`
+        );
+        setMovies(response.data.results);
+      } catch (error) {
+        console.error('Erro ao buscar filmes:', error);
+      }
+    };
+
     fetchMovies();
   }, []);
 
-  const fetchMovies = async () => {
-    try {
-      const apiKey = 'ad1c12884f4a7421c3d9e6d859be97a9';
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&page=1`
-      );
-
-      const moviesWithFavorites = response.data.results.map((movie: Movie) => {
-        return {
-          ...movie,
-          isFavorite: favorites.some((favorite) => favorite.id === movie.id),
-        };
-      });
-
-      setMovies(moviesWithFavorites);
-    } catch (error) {
-      console.error('Erro ao buscar filmes:', error);
-    }
+  const isFavorite = (movie: Movie) => {
+    return favorites.some(favorite => favorite.id === movie.id);
   };
 
   const handleFavoriteClick = async (movie: Movie) => {
-    try {
-      if (!token) {
-        console.error('Token JWT não encontrado.');
-        return;
-      }
-
-      const response = await axios.post(
-        'http://localhost:1080/favoritos',
-        { movieId: movie.id },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+    if (isFavorite(movie)) {
+      try {
+        const favorite = favorites.find(fav => fav.id === movie.id);
+        if (favorite) {
+          await axios.delete(`http://localhost:1080/favoritos/${favorite.id}`);
+          removeFavorite(movie);
+          console.log('Filme removido dos favoritos');
         }
-      );
-
-      addFavorite(movie);
-      updateMovieFavoriteStatus(movie.id, true);
-      console.log('Filme adicionado aos favoritos:', response.data);
-    } catch (error) {
-      console.error('Erro ao adicionar filme aos favoritos:', error);
+      } catch (error) {
+        console.error('Erro ao remover filme dos favoritos:', error);
+      }
+    } else {
+      try {
+        const response = await axios.post('http://localhost:1080/favoritos', {
+          id: movie.id,
+          title: movie.title,
+          poster_path: movie.poster_path,
+        });
+        addFavorite(movie);
+        console.log('Filme adicionado aos favoritos:', response.data);
+      } catch (error) {
+        console.error('Erro ao adicionar filme', error);
+      }
     }
-  };
-
-  const updateMovieFavoriteStatus = (movieId: number, isFavorite: boolean) => {
-    setMovies((prevMovies) =>
-      prevMovies.map((movie) =>
-        movie.id === movieId ? { ...movie, isFavorite } : movie
-      )
-    );
   };
 
   return (
@@ -151,11 +137,9 @@ const MovieList: React.FC = () => {
             />
             <Overlay>
               <OverlayLink onClick={() => handleFavoriteClick(movie)}>
-                {movie.isFavorite ? <Imgliked /> : <Imglike />}
+                {isFavorite(movie) ? <Imgliked /> : <Imglike />}
               </OverlayLink>
-              <OverlayLink href="#">
-                <ImgAbout />
-              </OverlayLink>
+              <OverlayLink href="#"><ImgAbout/></OverlayLink>
             </Overlay>
           </MovieCard>
         ))}
