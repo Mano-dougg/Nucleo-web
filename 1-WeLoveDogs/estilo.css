@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/*Importei a fonte*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*Tirei algumas Configurações do navegador(Pois o navegador nativo ja vem com algumas Configurações pré definidas)*/
+/* corpo do site ja e definido pelo figma */
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: left;
+}
+.Cabecalho-Pagina-Home {
+    width: 1350px;
+    height: 120px;
+}
+.BannerPrincipal{
+    max-width: 1440px;
+    margin: 0 auto;
+    
+}
+a {
+    text-decoration: none;
+}
+/*.imagen {
+    width: 281px;
+    height: 65px;
+    position: absolute;
+    top: 27px;
+    left: 15px;
+    opacity: 0;
+}*/
+nav {
+    justify-content: space-between;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+}
+/*Parametos do figma*/
+nav .NavegacaoHome{
+    font-family: Open Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+
+}
+nav span{
+    color:#7ED321;
+}
+.NavegacaoHome li {
+    list-style: none;
+    margin-right: 50px;
+}
+.NavegacaoHome li:nth-last-of-type(1){
+    margin: 0;
+}
+/* Configuraçoes Typography do figma: li= lista; a= referente ao link*/
+.NavegacaoHome li a {
+    text-transform: uppercase;
+    color: #000000;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: left;
+    width: 112px;
+    height: 22px;
+    top: 49px;
+    left: 1047px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+/*Configiração padão do botão home, bolg, quemsomos, contato*/
+.BotaoPag1 {
+    height: 40px;
+    color:#7ED32166;
+    background-color: #7ED32166;
+    border-radius: 15px;
+    padding: 12px 40px;
+    text-decoration: none;
+}
+.BotaoPag1:hover {
+    background-color: #7ED32166;
+}
+.BotaoPag1:focus {
+    outline: nome;
+}
+.BotaoPag1 span {
+    color:#1C4701;
+}
+.CorpoDaPagina {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    width: 340px;
+    height:234px;
+    top:235;
+    left:200;
+    font-family: Open Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+header a {
+    color:#1C4701;
+    background: #7ED321;
+    border-radius: 8px;
+    padding: 12px 48px;
+    display: inline-block;
+    transition:300ms;
+
+}
+header a:hover {
+    transform: scale(1.1);
+}
+/*-----------------------------------------------------------------------------------------------------------------------*/
+.BannerPrincipal {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.Principall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Principall h1 {
+    height: 65px;
+    gap: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Open Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+}
+
+.Principall p {
+    margin-top:1rem;
+    width: 687px;
+    height: 176px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: justify;
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+.ConteuPrincipa{
+    width: auto;
+    height:65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Posttex {
+    width: 778px;
+    height: 185px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align:justify;
+}
+.Post{
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    text-align: left;
+    margin-top: 2rem ;
+    height: 8.5rem;
+}
+.post1 {
+    height: 64px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 43.58px;
+    text-align: left;
+    font-family: Open Sans;
+}
+.post2 {
+    height: 64px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 43.58px;
+    text-align: left;
+    font-family: Open Sans;
+}
+.CaixaTexto1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1084px; 
+    margin: 0 auto;
+}
+.ConteudoTextoPost {
+    width:780px;
+}
+.TituloPost2 {
+    height: 2rem;
+}
+/*-------------------------------------------------------------------------------------------------------*/
+.Enquadramento{
+    flex: 1;
+    padding: 0 auto;
+    border: none;
+    margin: 0 10px;
+}
+.Enquadramento button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-left: 69%;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: left;
+}
+.CaixaFlex p {
+    width: 124px;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.51px;
+    padding: 10px;
+}
+.CaixaFlex input[type="text"],
+.CaixaFlex textarea{
+    width: 419px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.CaixaFlex textarea {
+    height: 160px; 
+    resize: none;
+}
+.CaixaFlex p,input,textarea{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.CaixaFlex button{
+    color:#1C4701;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+.CaixaFlex, form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: reverse;
+    max-width: 1084px; 
+    margin: 0 auto;
+  
+}
+
+.CaixaFlex p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+.CaixaFlex p,input,textarea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}

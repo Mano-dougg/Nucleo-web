@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Plant</title>
+    <link rel="icon" href="/nucleo-web/2-PlantCard/AssestImg/2998123-ecology-green-leaf-plant-spring_99865.png" type="image/png">
+    <link rel="shortcut icon" type="imagex/png" href="assets/img/logo folha.png">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;1,600&family=Open+Sans:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/nucleo-web/2-PlantCard/EstiloCss/Estilo.css">
+</head>
+<!--Adicionei links das fontes
+    e o frufru.icon da pagina -->
+<body>
+    <!--meu conteudo principal ja e o card Plant!-->
+    <main>
+        <section>
+            <div class="ImagenPlantaDesckTop">
+                <img src="/nucleo-web/2-PlantCard/AssestImg/plantadesck.svg">
+            </div>
+            <div class="caixa-Principal">
+                <div class="caixinhaTexto">
+                    <h1>
+                        Decore sua casa com plantas!
+                    </h1>
+                    <p class="paragrafo">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus at ornare tortor, magna interdum ut. 
+                        Fringilla tellus neque malesuada ullamcorper. Lacinia interdum sollicitudin sed sit eget sit. Tristique 
+                        velit gravida aenean nulla. Ut gravida lobortis magnis purus dui. At nibh massa orci, varius auctor cursus commodo.
+                        Nisi, non molestie tincidunt posuere leo etiam eu, orci. Consequat diam facilisi neque, est sit. Gravida nibh magna
+                        cursus eget eget velit cras.
+                    </p>
+                </div>
+                <!---Meu roda pé e o Doguito, data e o botao -->
+                <footer>
+                    <div class="Caixa-dog-h2-p">
+                        <img src="/nucleo-web/2-PlantCard/AssestImg/Doguito.svg">
+                        <article>
+                            <h2>
+                                Doguito
+                            </h2>
+                            <p>
+                                29/09/2022
+                            </p>
+                        </article>
+                    </div>
+                    <!--Essa div eu coloquei o id para usar exclusivamente no meu Js-->
+                    <!--Ele e unico no meu codigo-->
+                    <div class="Referencia" id="ChamaAnimacaozinha">
+                        <aside>
+                            <nav>
+                                <div class="Share">
+                                    <h3>
+                                        SHARE
+                                    </h3>
+                                </div>
+                                <a href="https://pt-br.facebook.com/"><img src="/nucleo-web/2-PlantCard/AssestImg/facebook.svg"></a>
+                                <a href="https://x.com"><img src="/nucleo-web/2-PlantCard/AssestImg/TWITTER.svg"></a>
+                                <a href="https://br.pinterest.com"><img src="/nucleo-web/2-PlantCard/AssestImg/pinterest.svg"></a>
+                            </nav>
+                        </aside>
+                    </div>
+                    <!--onclick ao click na img.svg ele chama a Uma função.Js-->
+                    <img class="Animacao" src="/nucleo-web/2-PlantCard/AssestImg/Botao.svg" onclick="Animacaozinha()">
+                </footer>
+            </div>
+        </section>
+    </main>
+    <!--Codigo de estudos vindos de referencias de colega-->
+    <script>
+        let ChamaAnimacaozinha = document.getElementById("ChamaAnimacaozinha");
+
+        function Animacaozinha(){
+        ChamaAnimacaozinha.classList.toggle("Apareceani");
+        }
+    </script>
+</body>
+</html>

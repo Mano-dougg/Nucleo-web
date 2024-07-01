@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Primeiro vamos adicionar as fontes e linpar as configurações padrão do navegador*/
+body{
+    background-color: #BCCDD0;
+}
+/* Codigo base para Pcs e afims*/
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+section {
+    max-width: 875px;
+    max-height: 491px;
+    background-color: #DFDFD6;
+    display: flex;
+    border-radius: 25px 25px 25px 25px;
+}
+
+.ImagenPlantaDesckTop {
+    max-height: inherit;
+   
+}
+/*Abreviação do css Pai > Filho*/
+.ImagenPlantaDesckTop > img {
+    border-radius: 30px 0 0 30px;
+    max-width: 280px;
+    object-fit: fill;
+    max-height: 100%;
+    position: relative;
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+.caixa-Principal {
+    padding: 50px 30px 50px 15px;
+    flex-wrap: wrap;
+    display: block;
+}
+/* Pai > Filho */
+.caixinhaTexto > h1{
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 32px;
+}
+/* Configurações vindas do Figma*/
+.paragrafo {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    margin-top: 30px;
+}
+/* Roda pé do nosso Site ! */
+footer {
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    height: auto;
+    margin-top: 95px;
+    justify-content: space-between;
+}
+
+.Animacao:hover {
+    cursor:grabbing;
+}
+
+.Caixa-dog-h2-p {
+    display: flex;
+}
+article {
+    font-family: "Overpass", sans-serif;
+    justify-content: space-between;
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+
+article > h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+article > p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.Referencia {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s, transform 0.5s;
+    transform: scale(0);
+    position: absolute;
+    bottom: 110%;
+    left: 55%;
+    width: 220px;
+}
+
+.Referencia.Apareceani {
+    max-height: 45px;
+    transform: scale(1);
+}
+
+
+aside {
+    background-color: #696F5A;
+    padding: 10px;
+    border-radius: 14px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.Share{
+    display: flex;
+    max-width: 84px;
+    max-height: 21px;
+}
+
+.Share > h3{
+    font-family: "Overpass", sans-serif;
+    display: block;
+    color: #DFDFD6;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 19px;
+}
+
+nav img{
+    width: 24px;
+    height: 24px;
+}
+
+nav > a:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+/* Parte da media Queri. E uso de tecnicas de desenvolvimento de layouts responsivos em CSS */
+
+@media (min-width: 470px) and (max-width: 769px){ /*minino de largura de Tela, para passar a considerar uma tela de celular*/
+    /*Parametros*/
+    section {
+        flex-direction: column;
+        max-width: 375px;
+        max-height:812px;
+    }
+
+    footer {
+        margin-top: 70px;
+    }
+
+    aside {
+        border-radius: 30px;
+        padding: 5px;
+    }
+
+    .ImagenPlantaDesckTop { 
+        background-image: url(/nucleo-web/2-PlantCard/AssestImg/plantaModile.svg); 
+        max-height: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 30px 30px 0 0;
+        object-fit: cover;
+        max-width: 390px;
+        max-height: 202px;
+        margin: 0;
+        position: relative;
+    }
+    
+    .ImagenPlantaDesckTop img {
+        opacity: 0;
+    }
+
+    .caixa-Principal {
+        padding: 25px;
+    }
+
+    .caixinhaTexto.text {
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    .Referencia {
+        width: 200px;
+        left: 25%;
+    }
+}
