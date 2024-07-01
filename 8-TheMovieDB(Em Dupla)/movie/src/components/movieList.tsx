@@ -127,10 +127,14 @@ const MovieList: React.FC = () => {
       console.log('Filme adicionado aos favoritos:', response.data);
     } catch (error) {
 <<<<<<< HEAD
+<<<<<<< HEAD
       console.error('Erro ao adicionar filme aos favoritos:', movie.id);
 =======
       console.error('Erro ao adicionar filme aos favoritos:', error);
 >>>>>>> 0318f823d99d7b019d8d1903bfdfd870d111ce4c
+=======
+      console.error('Erro ao adicionar filme aos favoritos:', error);
+>>>>>>> parent of 238ee2876 (Revert "post favorite")
     }
   };
 
