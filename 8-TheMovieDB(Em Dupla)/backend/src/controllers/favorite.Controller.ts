@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
+import { Request, Response } from 'express';
+import { PrismaClient } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
@@ -45,10 +45,13 @@ export const addFavorite = async (req: Request, res: Response): Promise<void> =>
   }
 };
 
+// Listar todos os favoritos de um usuário
 export const listFavorites = async (req: Request, res: Response): Promise<void> => {
   try {
     const token = req.headers.authorization?.split(' ')[1];
     const { id } = jwt.verify(token!, process.env.JWT_PASS!) as JWTPayload;
+
+    // Busca todos os favoritos do usuário
     const favorites = await prisma.favorite.findMany({
       where: {
         userId: id,

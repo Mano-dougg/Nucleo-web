@@ -4,83 +4,108 @@ import { prisma } from "../database";
 import bcrypt from 'bcrypt';
 
 type JWTPayload = {
-    id: number
+    id: number;
+}
+
+type User = {
+    id: number;
+    email: string;
+    password: string;
+    [key: string]: any; // Para incluir outras propriedades do usuário
+}
+
+const messages = {
+    missingCredentials: "Email e senha são obrigatórios.",
+    invalidCredentials: "Email ou senha inválidos.",
+    loginSuccess: "Login realizado com sucesso.",
+    userNotFound: "Usuário não encontrado.",
+    unauthorized: "Não autorizado",
+    serverError: "Internal Server Error"
 }
 
 export default {
     async login(request: Request, response: Response) {
         const { email, password } = request.body;
 
-        // Verifica se o email e a senha foram fornecidos
         if (!email || !password) {
             return response.status(400).json({
                 error: true,
-                message: "Email e senha são obrigatórios."
+                message: messages.missingCredentials
             });
         }
 
-        // Procura o usuário pelo email no banco de dados
-        const user = await prisma.user.findUnique({ where: { email } });
+        const user: User | null = await prisma.user.findUnique({ where: { email } });
 
-        // Verifica se o usuário existe
         if (!user) {
             return response.status(401).json({
                 error: true,
-                message: "Email ou senha inválidos."
+                message: messages.invalidCredentials
             });
         }
 
-        // Compara a senha fornecida com a senha armazenada no banco de dados
         const verifyPassword = await bcrypt.compare(password, user.password);
 
-        // Verifica se a senha está correta
         if (!verifyPassword) {
             return response.status(401).json({
                 error: true,
-                message: "Email ou senha inválidos."
+                message: messages.invalidCredentials
             });
         }
 
-        // Gera um token JWT para o usuário
         const token = jwt.sign({ id: user.id }, process.env.JWT_PASS ?? '', { expiresIn: '1h' });
 
-        // Retorna o token no response
         return response.status(200).json({
             error: false,
-            message: "Login realizado com sucesso.",
+            message: messages.loginSuccess,
             token: token
         });
     },
 
     async getProfile(request: Request, response: Response) {
         try {
-            const { authorization } = request.headers;
-            if (!authorization) {
-                return response.status(401).send('Não autorizado');
-            }
-            const token = authorization.split(' ')[1];
+            const authHeader = request.headers.authorization;
 
-            const { id } = jwt.verify(token, process.env.JWT_PASS ?? '') as JWTPayload;
-
-            // Verificar se existe user no banco
-            const user = await prisma.user.findUnique({ where: { id } });
-
-            // Verifica se o usuário existe
-            if (!user) {
+            if (!authHeader) {
                 return response.status(401).json({
                     error: true,
-                    message: "Usuário não encontrado."
+                    message: messages.unauthorized
                 });
             }
 
-            const { password, ...loggerUser } = user;
+            const token = authHeader.split(' ')[1];
 
-            return response.status(200).json(loggerUser);
+            if (!token) {
+                return response.status(401).json({
+                    error: true,
+                    message: messages.unauthorized
+                });
+            }
 
-            
+            const { id } = jwt.verify(token, process.env.JWT_PASS ?? '') as JWTPayload;
+
+            const user: User | null = await prisma.user.findUnique({ where: { id } });
+
+            if (!user) {
+                return response.status(401).json({
+                    error: true,
+                    message: messages.userNotFound
+                });
+            }
+
+            const { password, ...loggedUser } = user;
+
+            return response.status(200).json({
+                error: false,
+                ...loggedUser,
+                userId: user.id
+            });
+
         } catch (error) {
             console.error('Error fetching profile:', error);
-            return response.status(500).send('Internal Server Error');
+            return response.status(500).json({
+                error: true,
+                message: messages.serverError
+            });
         }
     }
 };

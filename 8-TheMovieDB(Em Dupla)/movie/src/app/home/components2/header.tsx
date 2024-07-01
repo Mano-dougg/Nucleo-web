@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import Modal from '@/components/modalFav'; 
 
 interface HeaderProps {
   user: {
@@ -25,7 +26,7 @@ const Tagheader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  font-family:inherit;
+  font-family: inherit;
   color: #fff;
 
   nav ul {
@@ -91,13 +92,12 @@ const UserName = styled.p`
 `;
 
 const Options = styled.div`
-  cursor:pointer;
- text-align: center;
-
+  cursor: pointer;
+  text-align: center;
 
   ${Tagheader}:hover & {
     display: block;
-    color:red;
+    color: red;
   }
 `;
 
@@ -128,6 +128,7 @@ const SearchResultItem = styled.div`
 const Header: React.FC<HeaderProps> = ({ user }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [showFavoritesModal, setShowFavoritesModal] = useState(false); // Estado para controlar a exibição do modal
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -159,6 +160,14 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
     }
   };
 
+  const handleFavoritesClick = () => {
+    setShowFavoritesModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowFavoritesModal(false);
+  };
+
   return (
     <Tagheader>
       <Image src={Netflix} alt="Netflix Logo" width={100} height={50} />
@@ -167,7 +176,9 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
           <li><a href="/home">Home</a></li>
           <li><a href="/">Series</a></li>
           <li><a href="/">Filmes</a></li>
-          <li><a href="/favoritos">Minha Lista</a></li>
+          <li>
+            <button onClick={handleFavoritesClick}>Meus Favoritos</button>
+          </li>
         </ul>
       </nav>
       <UserContainer>
@@ -203,6 +214,8 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
           ))}
         </SearchResultContainer>
       )}
+
+      {showFavoritesModal && <Modal onClose={handleCloseModal} />}
     </Tagheader>
   );
 };
