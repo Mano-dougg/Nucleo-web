@@ -48,22 +48,31 @@ export const addFavorite = async (req: Request, res: Response): Promise<void> =>
 // Listar todos os favoritos de um usuário
 export const listFavorites = async (req: Request, res: Response): Promise<void> => {
   try {
+  
     const token = req.headers.authorization?.split(' ')[1];
+
+    
     const { id } = jwt.verify(token!, process.env.JWT_PASS!) as JWTPayload;
 
+<<<<<<< HEAD
     // Busca todos os favoritos do usuário
+=======
+    
+>>>>>>> 0318f823d99d7b019d8d1903bfdfd870d111ce4c
     const favorites = await prisma.favorite.findMany({
       where: {
-        userId: id,
+        userId: id,  
       },
     });
 
+    
     res.json(favorites);
   } catch (error) {
     console.error('Erro ao buscar favoritos:', error);
     res.status(500).json({ error: 'Erro interno ao buscar favoritos.' });
   }
 };
+
 
 // Remover um favorito específico
 export const removeFavorite = async (req: Request, res: Response): Promise<void> => {
