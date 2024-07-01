@@ -1,17 +1,17 @@
 import cors from 'cors';
 import { Router } from 'express';
 import { UserCreateInputSchema, UserPartialSchema } from '../../prisma/generated/zod/index';
-import { createUser, deleteUser, getUserByEmail, login } from '../controller/userController';
-import { validateUser } from '../middleware/validateUser';
+import { createUser, deleteUser, getSessionId, getUserByEmail, login } from '../controller/userController';
 import { getRequestToken } from '../middleware/getRequestToken';
+import { validateUser } from '../middleware/validateUser';
 
 const userRouter = Router();
 
 userRouter.use(cors());
 userRouter.delete('/', deleteUser);
 userRouter.get('/', getUserByEmail);
-userRouter.use(getRequestToken());
-userRouter.post('/login', validateUser(UserPartialSchema), login);
+userRouter.post('/authenticate', getSessionId);
+userRouter.post('/login', validateUser(UserPartialSchema), getRequestToken(), login);
 userRouter.post('/signup', validateUser(UserCreateInputSchema), createUser);
 
 export default userRouter;

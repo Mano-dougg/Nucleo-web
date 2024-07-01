@@ -1,26 +1,19 @@
-import React, { useState } from 'react';
+'use client';
+
+import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { authenticate } from '@/lib/actions/actions';
+import { ShieldAlert } from 'lucide-react';
+import { useFormState, useFormStatus } from 'react-dom';
 
-interface LoginFormProps {
-  onLogin: (email: string, password: string) => Promise<void>;
-}
-
-export function LoginForm({ onLogin }: LoginFormProps) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await onLogin(email, password);
-    } catch (error) {
-      console.error('Error logging in:', (error as any).message);
-    }
-  };
+export function LoginForm(
+) {
+  const [ state, formAction ] = useFormState(authenticate, undefined);
+  const { pending } = useFormStatus();
 
   return (
     <Card className="mx-auto max-w-sm">
@@ -31,16 +24,18 @@ export function LoginForm({ onLogin }: LoginFormProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="grid gap-4">
+        <form
+          action={formAction}
+          className="grid gap-4"
+        >
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
               type="email"
+              name="email"
               placeholder="example@example.com"
               required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="grid gap-2">
@@ -48,15 +43,24 @@ export function LoginForm({ onLogin }: LoginFormProps) {
             <Input
               id="password"
               type="password"
+              name="password"
               placeholder="123456789"
               required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Button type="submit" className="w-full">
+          <Button
+            type="submit"
+            aria-disabled={pending}
+            className="w-full"
+          >
             Login
           </Button>
+          {state && (
+            <>
+              <ShieldAlert className="w-6 h-6 text-red-500" />
+              <p className="text-red-500">{state}</p>
+            </>
+          )}
         </form>
         <div className="mt-4 text-center text-sm">
           Dont have an account?{" "}

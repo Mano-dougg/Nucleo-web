@@ -1,10 +1,11 @@
-'use client'
-
 import React, { useState } from 'react';
 import Link from 'next/link'; 
 import SearchIcon from '@/components/HeaderIcons/SearchIcon';
 import UserIcon from '@/components/HeaderIcons/UserIcon';
 import FavoriteIcon from '@/components/MovieIcons/FavoriteIcon';
+import { signOut } from '@/auth';
+import { Power } from 'lucide-react';
+import { logOut } from '@/lib/actions/actions';
 
 
 
@@ -26,6 +27,14 @@ function FavoritesHeader() {
             <Link href="/src/favorites">
             Favorites
             </Link>
+        <form
+          action={logOut}
+        >
+          <button className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
+            <Power className="w-6" />
+            <div className="hidden md:block">Sign Out</div>
+          </button>
+        </form>
           </nav>
          
     

@@ -1,17 +1,37 @@
 'use client'
-import Image from "next/image";
-import {Header} from "@/components/header";
+import { Header } from "@/components/header";
 import { MovieList } from "@/components/MovieList";
 import Footer from "@/components/footer";
 import { createUser } from "./src/services/service";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { redirect, useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState('');
-  
-  const addUser = async (password: string, email: string, name: string)  => {
+  const [ searchTerm, setSearchTerm ] = useState('');
+  const searchParams = useSearchParams()
+  const { data: session, status, update } = useSession();
+  const approved = searchParams.get('approved');
+  console.log(approved);
+
+  console.log(status);
+  console.log(session);
+
+  useEffect(() => {
+    const requestToken = (session as any)?.requestToken;
+    console.log(requestToken);
+    if (approved && requestToken) {
+      update({ requestToken });
+    }
+  }, []);
+
+  const addUser = async (password: string, email: string, name: string) => {
     try {
-      await createUser(password, email, name);
+      const createdUser = await createUser(password, email, name);
+      console.log(createdUser);
+      if (createdUser) {
+        redirect('/login')
+      }
     } catch (error: any) {
       console.error('Error adding user:', error.message);
     }
