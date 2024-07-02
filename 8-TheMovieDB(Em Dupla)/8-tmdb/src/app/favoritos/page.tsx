@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import "./favoritos.css";
 import FilmeCard from "../components/filmeCard";
 import NavBar from "../components/navBar";
+import { Pesquisar } from "../components/pesquisar";
 
 
 interface Favorito {
@@ -78,6 +79,7 @@ function Favoritos(){
         <>
             <NavBar />
             <h1 id="favtitulo">Seus filmes favoritos</h1>
+            <Pesquisar />
             <div className="gradeFavoritos">
                 {filmesFiltrados.map((Favorito)=>(
                     <FilmeCard

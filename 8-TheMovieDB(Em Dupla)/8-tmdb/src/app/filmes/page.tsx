@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import "./filmes.css";
 import FilmeCard from "../components/filmeCard";
 import NavBar from "../components/navBar";
+import { Pesquisar } from "../components/pesquisar";
 
 
 interface Filme {
@@ -33,6 +34,7 @@ function Filmes(){
     return(
         <>
             <NavBar />
+            <Pesquisar />
             <div className="gradeFilmes">
                 {listaFilmes.map((filme)=>(
                     <FilmeCard
