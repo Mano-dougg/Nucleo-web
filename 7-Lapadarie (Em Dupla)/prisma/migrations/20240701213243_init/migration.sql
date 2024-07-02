@@ -4,5 +4,5 @@ CREATE TABLE "Sales" (
     "client_name" TEXT NOT NULL,
     "breads_qt" INTEGER NOT NULL,
     "total_cost" REAL NOT NULL,
-    "deleted_flag" BOOLEAN NOT NULL
+    "deleted" BOOLEAN
 );

@@ -20,7 +20,7 @@
 
 .modal,
 .fields,
-.modal form,
+.modal > .fields > div,
 .inputs,
 .options {
   display: flex;
@@ -51,15 +51,15 @@
   color: rgba(var(--highlight));
 }
 
-.fields form {
+.fields > div {
   gap: 63px;
 }
 
-.fields form .inputs {
+.fields > div .inputs {
   gap: 15px;
 }
 
-.fields form input {
+.fields > div input {
   width: 100%;
   height: 50px;
   padding: 16px 25px;
@@ -69,7 +69,7 @@
   color: rgb(var(--font-form));
 }
 
-.fields form input::placeholder {
+.fields > div input::placeholder {
   color: rgb(var(--font-form));
 }
 

@@ -16,16 +16,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, openMenu }) => {
       <div className={styles.modal}>
         <div className={styles.fields}>
           <span>Adicionar pessoa a fila</span>
-          <form action="/add-person" method="POST">
+          <div>
             <div className={styles.inputs}>
               <input type="text" id="name" name="name" placeholder="Nome completo do cliente" />
-              <input type="text" id="breads" name="breads" placeholder="Total de pães:" />
+              <input type="number" id="breads" name="breads" placeholder="Total de pães:" />
             </div>
             <div className={styles.options}>
               <button className={styles.send} type="submit">Enviar</button>
               <div className={styles.cancel} onClick={closeModal}>Cancelar</div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

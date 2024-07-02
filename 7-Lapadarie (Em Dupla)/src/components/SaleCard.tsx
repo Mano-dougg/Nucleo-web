@@ -14,6 +14,12 @@ const SaleCard: React.FC<SaleCardProps> = ({Name, Breads, Value, Icon}) => {
     maximumFractionDigits:2
   }).format(Value);
 
+  const removePerson = () => {
+
+  }
+
+  console.log(Name, Breads, Value);
+
   return (
     <div className={styles.saleCard}>
       <div className={styles.saleInformation}>
@@ -22,7 +28,7 @@ const SaleCard: React.FC<SaleCardProps> = ({Name, Breads, Value, Icon}) => {
         <div><span className={styles.bold}>Total a pagar:</span> R$ {Price}</div>
       </div>
 
-      <Image className={styles.remove} src={Icon} alt="Remover" />
+      <Image className={styles.remove} src={Icon} alt="Remover" onClick={removePerson} />
     </div>
   );
 }
