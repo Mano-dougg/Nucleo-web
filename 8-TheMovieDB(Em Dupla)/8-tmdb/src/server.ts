@@ -163,8 +163,12 @@ app.delete("/usuario/:idUser/favoritos/:filmeId",
                     }
                 })
                 if (favorito) {
+                    console.log(idUser)
+                    console.log(filmeId)
+                    console.log(favorito)
                     await prisma.favoritos.delete({
                         where: {
+                            id: favorito.id,
                             userId: Number(idUser),
                             movieId: Number(filmeId)
                         }

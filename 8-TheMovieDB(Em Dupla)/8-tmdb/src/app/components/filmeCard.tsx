@@ -38,10 +38,11 @@ const FilmeCard: React.FC<FilmeCardProps> = ({imagem, titulo, descricao, data, m
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({userID})
+                        //body: JSON.stringify({userID})
                     })
-                    setListaFavoritos(await resposta.json())
-                    setFavoritado(listaFavoritos.some((favorito: any) => favorito.movieId === movieID))
+                    const favs = await resposta.json()
+                    setListaFavoritos(favs)
+                    setFavoritado(favs.some((favorito: any) => favorito.movieId === movieID))
                 } catch (error) {
                     console.error('Erro ao obter favoritos:', error)
                 }
