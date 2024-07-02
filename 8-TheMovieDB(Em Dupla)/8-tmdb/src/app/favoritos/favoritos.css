@@ -3,3 +3,11 @@
     padding: 1em;
     color: orange;
 }
+.gradeFavoritos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 25px 0;
+}
