@@ -21,7 +21,7 @@ function Filmes(){
     const getFilmes = () => {
         fetch("https://api.themoviedb.org/3/discover/movie?api_key=f5fafab7843ff239883cf22420e887df")
         .then(res => res.json())
-        .then(json => setListaFilmes(json.results))
+        .then(json => setListaFilmes(json.total_results))
     }
 
     useEffect(()=>{
