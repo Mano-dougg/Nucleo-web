@@ -10,7 +10,7 @@ interface Filme {
     id: number;
     poster_path: string;
     release_date: string;
-    original_title: string;
+    title: string;
     overview: string
 }
 
@@ -40,7 +40,7 @@ function Filmes(){
                     movieID={filme.id}
                     imagem={(filme.poster_path)}
                     data={filme.release_date}
-                    titulo={filme.original_title}
+                    titulo={filme.title}
                     descricao={filme.overview}
                     />
                 ))}

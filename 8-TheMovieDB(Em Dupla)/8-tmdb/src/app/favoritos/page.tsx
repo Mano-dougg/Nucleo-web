@@ -15,7 +15,7 @@ interface Filme {
     id: number;
     poster_path: string;
     release_date: string;
-    original_title: string;
+    title: string;
     overview: string
 }
 
@@ -85,7 +85,7 @@ function Favoritos(){
                     movieID={Favorito.id}
                     imagem={(Favorito.poster_path)}
                     data={Favorito.release_date}
-                    titulo={Favorito.original_title}
+                    titulo={Favorito.title}
                     descricao={Favorito.overview}
                     />
                 ))}
