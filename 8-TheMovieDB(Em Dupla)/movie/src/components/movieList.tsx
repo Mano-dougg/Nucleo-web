@@ -127,9 +127,8 @@ const MovieList: React.FC = () => {
       addFavorite(movie);
       updateMovieFavoriteStatus(movie.id, true);
       console.log('Filme adicionado aos favoritos:', response.data);
-    } catch (error:any) {
-      console.error('Erro ao adicionar filme aos favoritos:', movie.id);
-      console.log(error.response)
+    } catch (error) {
+      console.error('Erro ao adicionar filme aos favoritos:', error);
     }
   };
 
