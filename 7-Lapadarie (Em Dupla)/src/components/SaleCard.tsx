@@ -1,25 +1,25 @@
+import axios from "axios";
 import Image, { ImageProps } from "next/image";
 import styles from "./SaleCard.module.css";
 
 interface SaleCardProps {
+  id: number;
   Name: string;
   Breads: number;
   Value: number;
   Icon: ImageProps['src'];
+  onRemove: (id: number) => void;
 }
 
-const SaleCard: React.FC<SaleCardProps> = ({Name, Breads, Value, Icon}) => {
+const SaleCard: React.FC<SaleCardProps> = ({id, Name, Breads, Value, Icon, onRemove}) => {
   const Price = new Intl.NumberFormat('pt-BR', {
     minimumFractionDigits: 2,
     maximumFractionDigits:2
   }).format(Value);
 
-  const removePerson = () => {
-
+  const handleDelete = () => {
+    onRemove(id);
   }
-
-  console.log(Name, Breads, Value);
-
   return (
     <div className={styles.saleCard}>
       <div className={styles.saleInformation}>
@@ -28,7 +28,7 @@ const SaleCard: React.FC<SaleCardProps> = ({Name, Breads, Value, Icon}) => {
         <div><span className={styles.bold}>Total a pagar:</span> R$ {Price}</div>
       </div>
 
-      <Image className={styles.remove} src={Icon} alt="Remover" onClick={removePerson} />
+      <Image className={styles.remove} src={Icon} alt="Remover" onClick={handleDelete} />
     </div>
   );
 }

@@ -1,16 +1,14 @@
 .main {
   padding: 0 22.5px;
+  height: calc(100vh - 113px);
 }
 
 .main,
-.content {
-  display: block;
-}
-
 .content,
 .information,
 .sales,
 .salesList {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
