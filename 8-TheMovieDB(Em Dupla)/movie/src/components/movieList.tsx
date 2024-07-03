@@ -111,7 +111,6 @@ const MovieList: React.FC = () => {
         console.error('Token JWT não encontrado.');
         return;
       }
-
       const response = await axios.post(
         'http://localhost:1080/favoritos',
         { movieId: movie.id },
@@ -125,8 +124,9 @@ const MovieList: React.FC = () => {
       addFavorite(movie);
       updateMovieFavoriteStatus(movie.id, true);
       console.log('Filme adicionado aos favoritos:', response.data);
-    } catch (error) {
-      console.error('Erro ao adicionar filme aos favoritos:', error);
+    } catch (error:any) {
+      console.error('Erro ao adicionar filme aos favoritos:', movie.id);
+      console.log(error.response)
     }
   };
 

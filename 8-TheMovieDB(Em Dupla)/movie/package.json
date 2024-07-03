@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@types/axios": "^0.14.0",
     "axios": "^1.7.2",
     "modal": "^1.2.0",
     "next": "14.2.4",
@@ -25,6 +26,8 @@
     "@types/react": "18.3.3",
     "@types/react-dom": "^18",
     "@types/react-modal": "^3.16.3",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
     "typescript": "5.5.2"
   }
 }
