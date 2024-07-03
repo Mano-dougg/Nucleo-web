@@ -18,6 +18,8 @@ const SaleCard: React.FC<SaleCardProps> = ({Name, Breads, Value, Icon}) => {
 
   }
 
+  console.log(Name, Breads, Value);
+
   return (
     <div className={styles.saleCard}>
       <div className={styles.saleInformation}>
