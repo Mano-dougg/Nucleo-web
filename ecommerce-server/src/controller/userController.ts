@@ -67,6 +67,7 @@ export const createUser = async (req: Request, res: Response) => {
     name,
     email,
     password,
+    role,
   // }: Pick<User, 'name' | 'email' | 'password'> = req.body;
   } = req.body;
 
@@ -76,6 +77,7 @@ export const createUser = async (req: Request, res: Response) => {
         name,
         email,
         password,
+        role: role ?? 'USER',
       }
     });
     return res.status(StatusCodes.CREATED).json(createdUser);
