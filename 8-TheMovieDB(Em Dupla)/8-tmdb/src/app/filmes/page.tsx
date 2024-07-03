@@ -18,6 +18,7 @@ interface Filme {
 function Filmes(){
 
     const [listaFilmes, setListaFilmes] = useState<Filme[]>([])
+    const [resultados, setResultados] = useState<Filme[]>([])
 
     const getFilmes = () => {
         fetch("https://api.themoviedb.org/3/discover/movie?api_key=f5fafab7843ff239883cf22420e887df")
@@ -30,11 +31,14 @@ function Filmes(){
     }, [])
 
     console.log(listaFilmes)
+    useEffect(()=>{
+            setListaFilmes(resultados)
+    }, resultados)
 
     return(
         <>
             <NavBar />
-            <Pesquisar />
+            <Pesquisar setResultados={setResultados} />
             <div className="gradeFilmes">
                 {listaFilmes.map((filme)=>(
                     <FilmeCard

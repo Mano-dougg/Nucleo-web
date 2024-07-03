@@ -26,6 +26,7 @@ function Favoritos(){
     const [userID, setUserID] = useState<number | null>(null)
     const [listaFilmes, setListaFilmes] = useState<Filme[]>([])
     const [filmesFiltrados, setFilmesFiltrados] = useState<Filme[]>([])
+    const [resultados, setResultados] = useState<Filme[]>([])
 
     const getFilmes = () => {
         fetch("https://api.themoviedb.org/3/discover/movie?api_key=f5fafab7843ff239883cf22420e887df")
@@ -75,11 +76,15 @@ function Favoritos(){
         console.log(filmesFiltrados)
     }, [listaFavoritos, listaFilmes])
 
+    useEffect(()=>{
+        setListaFilmes(resultados)
+    }, resultados)
+
     return(
         <>
             <NavBar />
             <h1 id="favtitulo">Seus filmes favoritos</h1>
-            <Pesquisar />
+            <Pesquisar setResultados={setResultados} />
             <div className="gradeFavoritos">
                 {filmesFiltrados.map((Favorito)=>(
                     <FilmeCard
