@@ -1,0 +1,23 @@
+.App {
+  height: 100%;
+  padding: 1.5rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: block;
+  width: 32px;
+}
+
+@media (min-width: 768px) {
+  .App {
+    padding: 4.67rem 2.5rem 2.5rem;
+  }
+}
+
+@media (min-width: 1366px) {
+  .App {
+    padding: 2.5rem 5.25rem 3.3125rem;
+  }
+}

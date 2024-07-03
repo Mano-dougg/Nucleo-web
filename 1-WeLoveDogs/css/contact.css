@@ -1,0 +1,94 @@
+/* subscribe page */
+nav .subscribe button {
+    background-color: rgb(var(--light_green));
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+main h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+    margin-bottom: 24px;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+main figure {
+    margin: 0;
+}
+
+main img {
+    width: 582px;
+    height: 436px;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+}
+
+main form div {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    gap: 14px;
+}
+
+form label {
+    width: 124px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.51px;
+    text-align: center;
+}
+
+form input, form textarea {
+    width: 418px;
+    border: 1px solid;
+    border-radius: 7px;
+    border-color: rgb(var(--gray));
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19.07px;
+}
+
+form input {
+    height: 43px;
+}
+
+form textarea {
+    height: 160px;
+    resize: none;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: rgb(var(--gray));
+    opacity: 1; /* firefox */
+}
+
+form input::placeholder::-ms-input-placeholder, form textarea::-ms-input-placeholder { /* Edge 12 -18 */
+    color: rgb(var(--gray));
+  }
+
+form button {
+    width: 141px;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+}

@@ -1,0 +1,12 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0.25rem 0;
+  padding-bottom: 5rem;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+}

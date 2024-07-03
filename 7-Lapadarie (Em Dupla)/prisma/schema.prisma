@@ -1,0 +1,16 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Sales {
+  id            Int       @id @default(autoincrement())
+  client_name   String
+  breads_qt     Int
+  total_cost    Float
+  deleted       Boolean
+}

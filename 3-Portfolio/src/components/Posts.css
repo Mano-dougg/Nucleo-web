@@ -1,0 +1,148 @@
+.posts {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.posts-section-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.posts-section-line {
+  height: 1px;
+  width: 100%;
+  background-color: rgb(var(--highlight));
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.posts-section-title {
+  color: rgb(var(--highlight));
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+.posts-section-paragraph {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24.84px;
+  
+}
+
+.post-item {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-direction: row;
+
+}
+
+.post-item:nth-child(2n-1) {
+  flex-direction: row-reverse;
+}
+
+.post-image {
+  flex-shrink: 0;
+  background-color: rgb(var(--image-background-color));
+  width: 40rem;
+  height: 23.125rem;
+  border-radius: 10px;
+}
+
+#image1 {
+  background-image: url("../assets/ror2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#image2 {
+  background-image: url("../assets/nms.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.post-info {
+  flex-grow: 1;
+  width: auto;
+}
+
+.post-title {
+  width: auto;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+}
+
+.post-paragraph {
+  margin-top: 0.625rem;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24.84px;
+}
+
+.post-button {
+  margin-top: 1.75rem;
+  width: 12rem;
+  height: 3.125rem;
+  border-radius: 44.5px;
+  border: 1px solid rgb(var(--highlight));
+  background-color: rgb(var(--secondary-background-color));
+  padding: 16px 30px 16px 30px ;
+  color: rgb(var(--highlight));
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17.53px;
+}
+
+.post-button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1366px) {
+  .posts-section-title {
+    text-align: center;
+  }
+
+  .post-item,
+  .post-item:nth-child(2n-1) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post-paragraph {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 975px) {
+  .post-image {
+    width: 100%;
+    height: 40vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .posts-section-line {
+    margin-top: 3.125rem;
+    margin-bottom: 1.563rem;
+  }
+
+  .post-image {
+    min-height: 11.25rem;
+  }
+
+  .post-button {
+    width: 100%;
+  }
+}

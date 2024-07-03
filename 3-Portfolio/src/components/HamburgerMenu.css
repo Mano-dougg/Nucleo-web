@@ -1,0 +1,28 @@
+.hamburger-menu {
+  z-index: 2;
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 6rem;
+  left: 5.44rem;
+}
+
+[data-theme="dark"] .hamburger-menu-icon {
+  content: url("../assets/hamburger-menu-dark.svg");
+}
+
+[data-theme="dark"] .hamburger-menu.toggled .hamburger-menu-icon {
+  content: url("../assets/close-menu-dark.svg");
+}
+
+@media (max-width: 1024px) {
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    left: 1.5rem;
+  }
+}

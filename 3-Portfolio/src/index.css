@@ -1,0 +1,49 @@
+:root {
+  --primary-background-color: 255, 255, 255;
+  --secondary-background-color: 248, 249, 250;
+  --header-background-color: 255, 255, 255;
+  --image-background-color: 229, 229, 229;
+  --highlight: 0, 101, 255;
+  --font-color: 32, 32, 32;
+  --box-shadow-header: 0, 0, 0, 0.15;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url('./fonts/EBGaramond-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: "Be Vietnam";
+  src: url('./fonts/BeVietnamPro[wght].ttf');
+}
+
+* {
+  font-family: "Be Vietnam";
+  color: rgb(var(--font-color));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(var(--primary-background-color));
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+[data-theme="dark"] { 
+  --primary-background-color: 34, 34, 34;
+  --secondary-background-color: 60, 59, 58;
+  --header-background-color: 60, 59, 58;
+  --image-background-color: 60, 59, 58;
+  --highlight: 250, 244, 230;
+  --font-color: 250, 244, 230;
+}
+
+.highlight-text {
+  text-decoration: dashed;
+}

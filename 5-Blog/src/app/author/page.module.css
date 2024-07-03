@@ -1,0 +1,18 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.profile_picture,
+.author_name {
+  position: relative;
+  margin: 0 auto;
+}
+
+.profile_picture {
+  width: 10rem;
+  height: auto;
+  border-radius: 100%;
+}

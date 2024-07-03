@@ -1,0 +1,100 @@
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 300px 22.5px 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--overlay-modal));
+  cursor: pointer;
+}
+
+.open {
+  display: block;
+}
+
+.overlay * {
+  cursor: default;
+}
+
+.modal,
+.fields,
+.modal .fields form,
+.inputs,
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  position: relative;
+  margin: 0 auto;
+  background-color: rgba(var(--background-card));
+  width: 330px;
+  padding: 50px 30px 30px;
+  gap: 63px;
+}
+
+.fields,
+.options {
+  width: 100%;
+}
+
+.fields {
+  gap: 25px;
+}
+
+.fields span {
+  text-align: center;
+  font-weight: 700;
+  color: rgba(var(--highlight));
+}
+
+.fields form {
+  gap: 63px;
+}
+
+.fields form .inputs {
+  gap: 15px;
+}
+
+.fields form input {
+  width: 100%;
+  height: 50px;
+  padding: 16px 25px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: rgb(var(--background-form));
+  color: rgb(var(--font-form));
+}
+
+.fields form input::placeholder {
+  color: rgb(var(--font-form));
+}
+
+.options {
+  gap: 30px;
+}
+
+.options * {
+  height: 60px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.send {
+  border: none;
+  background-color: rgb(var(--highlight));
+  color: rgb(var(--font-white));
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.cancel {
+  color: rgb(var(--cancel));
+  text-align: center;
+  padding: 5%;
+  border: 1px solid rgb(var(--cancel));
+  background-color: rgb(var(--background-card)   );
+}

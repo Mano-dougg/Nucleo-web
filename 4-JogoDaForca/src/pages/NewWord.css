@@ -1,0 +1,105 @@
+.newWord {
+  padding-top: 5rem;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.newWord > .text {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+}
+
+.newWord .options,
+.newWord .options .input,
+.newWord .options .input .text
+{
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.newWord .options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newWord .options .input {
+  display: flex;
+  flex-direction: column;
+}
+
+.newWord .options .input .text {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  border: 0;
+}
+
+.newWord .options .warning img {
+  width: 1rem;
+}
+
+.newWord .options .input .warning {
+  position: relative;
+  left: 0;
+  display: flex;
+  width: fit-content;
+  gap: 0.5rem;
+}
+
+.newWord .options .warning span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+.newWord .options .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.newWord .options .buttons button {
+  width: 21.43rem;
+  height: 4.18rem;
+  padding: 1.5rem;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.21rem;
+}
+
+.newWord .options .save-continue {
+  color: rgb(var(--white));
+  background-color: rgb(var(--dark-blue));
+}
+
+.newWord .options .cancel {
+  background-color: rgb(var(--white));
+  border: 1px solid rgb(var(--dark-blue));
+}
+
+@media (min-width: 768px) {
+  .newWord .options .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: auto;
+  }
+
+  .newWord .options .cancel {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .newWord {
+    width: 43rem;
+    margin: 0 auto;
+  }
+}
