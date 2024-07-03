@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Danfo&display=swap');
+
+
+:root {
+  --first-color: #222831;
+  --second-color: #393E46;
+  --third-color: #D65A31;
+  --fourth-color: #EEEEEE;
+ }
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body{
+  background-color: var(--first-color);
+}
+nav{
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  color: var(--third-color);
+  font-family:"Danfo", serif;
+  letter-spacing: 1px;
+}
+
+.Trio{
+  font-family:"Danfo", serif;
+  color: var(--third-color);
+  letter-spacing: 1px;
+}
+.main{
+  background:radial-gradient(circle, rgba(88,87,86,1) 0%, rgba(57,62,70,1) 35%, rgba(34,40,49,1) 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.destaque{
+  color:var(--third-color);
+  font-size: 40px;
+  font-family:"DM Serif Display", serif;
+  letter-spacing: 1px;
+  font-style: italic;
+
+}
+
+.chamada{
+  margin-top: 20px  ;
+  align-self: center;
+  text-align: center;
+  color: var(--fourth-color);
+  font-family:"DM Serif Display", serif;
+  font-weight:lighter;
+}
+
+.btnPrincipal{
+  margin-top: 50px;
+  gap: 50px;
+
+
+}
+.acessaLogIn{
+  padding: 15px 55px 15px 55px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--fourth-color);
+  background-color: var(--third-color);
+  margin: 20px;
+  border: 1px solid var(--fourth-color);
+  font-family:"Danfo", serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+
+
+}
+.acessaSignUp{
+  padding: 15px 50px 15px 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  color:var(--fourth-color);
+  background-color: #933d21;
+  margin: 20px;
+  border: 1px solid var(--fourth-color);
+  font-family:"Danfo", serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.goHome{
+  text-decoration: none;
+  color: var(--third-color)
+}
+
+@media (max-width:500px){
+  .destaque{
+    text-align: center;
+  }
+  .btnPrincipal{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}

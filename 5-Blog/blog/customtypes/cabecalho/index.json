@@ -1,0 +1,35 @@
+{
+  "format": "custom",
+  "id": "cabecalho",
+  "label": "Cabeçalho",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "conteudo": {
+        "type": "Group",
+        "config": {
+          "label": "Conteudo",
+          "repeat": true,
+          "fields": {
+            "link_logo": {
+              "type": "Link",
+              "config": {
+                "label": "Link Logo",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "caixa_pesquisa": {
+              "type": "Text",
+              "config": {
+                "label": "caixa pesquisa",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

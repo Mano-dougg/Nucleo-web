@@ -1,0 +1,157 @@
+html, body, #__next {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.pagina {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 1000px;
+    justify-content: center;
+    padding-bottom: 32px;
+}
+
+p {
+    line-height: 1em;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main img {
+    width: 544px;
+    height: 100%;
+    border-radius: 30px;
+    align-self: center;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.75em;
+}
+.carrosselFake {
+    width: 100vw;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    padding: 2em 0;
+}
+.iconePost {
+    border-radius: 30px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1em;
+    gap: 16px;
+    width: 700px;
+}
+.iconePost.Vertical {
+    flex-direction: column;
+    width: 400px;
+}
+.iconePost .thumbnail {
+    height: 320px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 36px;
+}
+.iconePost.Vertical .thumbnail {
+    width: 360px;
+    height: 200px;
+}
+.iconePost h1 {
+    font-size: 1.75em;
+    font-weight: bolder;
+}
+.iconePost p {
+    font-size: .9em;
+}
+.iconePost div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+}
+.iconePost div div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.iconePost a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.iconePost a div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.iconePost a img {
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+}
+h3 {font-weight: bold;}
+h4 {font-size: .8em}
+
+.compart {
+    width: 50px;
+}
+@media (max-width:1500px){
+    .carrosselFake {
+        flex-direction: column;
+        align-items: center;
+    }
+    .iconePost.Vertical {
+        width: 600px;
+        align-items: center;
+    }
+    .iconePost.Vertical .thumbnail {
+        width: 400px;
+    }
+}
+@media (max-width:720px){
+    main img {
+        width: 100%;
+    }
+    .iconePost, .iconePost.Vertical {
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+    }
+    .iconePost .thumbnail, .iconePost.Vertical .thumbnail {
+        width: 100%;
+        height: 200px;
+    }
+}
+@media (max-width:1025px){
+    main {
+        width:80vw;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    main div {
+        flex-direction: column-reverse;
+    }
+    main img {
+        align-self: center;
+    }
+}

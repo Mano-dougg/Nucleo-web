@@ -1,0 +1,181 @@
+.modalOut{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(243, 230, 168, 0.5);
+    z-index: 1000;
+}
+
+.modalIn{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    width: 605px;
+    height: 347px;
+    padding: 10px;
+
+}
+
+.modalConteudo{
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.inputData {
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 95%;
+    padding: 15px;
+    margin-bottom: 10px;
+
+}
+
+.modalConteudo p{
+    color: #5F3305;
+    font-size: 16px ;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.btnsModal{
+    display: flex;
+    margin-top:-68px;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.btnModal{
+    background-color: white;
+    color: red;
+    padding: 15px 100px 15px 100px;
+    border: 1px red solid;
+    font-weight: bolder;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 300px;
+
+}
+
+.btnModalMarrom{
+    background-color: #5F3305;
+    color: white;
+    padding: 15px 100px 15px 100px;
+    border: 1px #5F3305 solid;
+    font-weight: bolder;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+
+
+}
+
+.btnPessoas{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 50%;
+    margin-left: 160px;
+    height: 100px;
+}
+
+.btnPessoas button{
+    background-color: rgba(0,0,0,0.0);
+    border: 0;
+    font-size: 14px;
+    color:#5F3305;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.divTabelaOut{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.divTabela{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.83);
+    width: 80%;
+    padding: 10px;
+    color: #5F3305;
+
+
+}
+
+.divTabelaItens{
+    display: flex;
+    gap: 10px;
+    margin-top: -5px;
+  
+}
+.divTabela h1{
+    font-size: 12px;
+
+}
+
+.divTabela p{ 
+    font-size: 10px;
+}
+
+.btnDelete{
+    cursor: pointer;
+}
+
+@media (max-width: 450px) {
+   .btnPessoas{
+    top: 0;
+    left: 0;
+    margin-top: 50px;
+    margin-left: 50px;
+   }
+
+   .modalIn{
+    width: 330px;
+    height: 457px;
+   }
+
+   .modal_input{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    }
+
+    .btnsModal{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-left: -300px;
+        align-items: center;
+    }
+
+    .btnModalMarrom{
+        margin-top: 50px;
+        margin-left: 10px;
+        padding: 15px 110px 15px 110px;
+    }
+}
+
+@media (max-width: 375px){
+    .btnPessoas{
+        top: 0;
+        left: 0;
+        margin-top: 50px;
+        margin-left: 10px;
+       }
+}

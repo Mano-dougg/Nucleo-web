@@ -1,0 +1,58 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import "./filmes.css";
+import FilmeCard from "../components/filmeCard";
+import NavBar from "../components/navBar";
+import { Pesquisar } from "../components/pesquisar";
+
+
+interface Filme {
+    id: number;
+    poster_path: string;
+    release_date: string;
+    title: string;
+    overview: string
+}
+
+function Filmes(){
+
+    const [listaFilmes, setListaFilmes] = useState<Filme[]>([])
+    const [resultados, setResultados] = useState<Filme[]>([])
+
+    const getFilmes = () => {
+        fetch("https://api.themoviedb.org/3/discover/movie?api_key=f5fafab7843ff239883cf22420e887df")
+        .then(res => res.json())
+        .then(json => setListaFilmes(json.results))
+    }
+
+    useEffect(()=>{
+        getFilmes()
+    }, [])
+
+    console.log(listaFilmes)
+    useEffect(()=>{
+            setListaFilmes(resultados)
+    }, resultados)
+
+    return(
+        <>
+            <NavBar />
+            <Pesquisar setResultados={setResultados} />
+            <div className="gradeFilmes">
+                {listaFilmes.map((filme)=>(
+                    <FilmeCard
+                    key={filme.id}
+                    movieID={filme.id}
+                    imagem={(filme.poster_path)}
+                    data={filme.release_date}
+                    titulo={filme.title}
+                    descricao={filme.overview}
+                    />
+                ))}
+            </div>
+        </>
+    )
+}
+
+export default Filmes

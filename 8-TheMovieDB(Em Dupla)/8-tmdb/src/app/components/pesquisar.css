@@ -1,0 +1,35 @@
+.pesquisarea {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputWrapper {
+    background-color: white;
+    border-radius: 15px;
+    width: 725px;
+    height: 2.5rem;
+    padding: 0 15px;
+    box-shadow: 0 0 16px #ffffff80;
+    align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+input:focus {
+    outline: none;
+}
+
+#icone {
+    color: brown;
+}

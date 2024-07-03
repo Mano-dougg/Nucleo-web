@@ -1,0 +1,50 @@
+{
+  "format": "custom",
+  "id": "rodape",
+  "label": "Rodapé",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "conteudo": {
+        "type": "Group",
+        "config": {
+          "label": "Conteudo",
+          "repeat": true,
+          "fields": {
+            "conheca": {
+              "type": "Text",
+              "config": {
+                "label": "Conheça",
+                "placeholder": ""
+              }
+            },
+            "instagram": {
+              "type": "Link",
+              "config": {
+                "label": "Instagram",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "linkedin": {
+              "type": "Link",
+              "config": {
+                "label": "Linkedin",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "copyright": {
+              "type": "Text",
+              "config": {
+                "label": "Copyright",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

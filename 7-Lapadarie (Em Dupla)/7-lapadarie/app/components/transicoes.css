@@ -1,0 +1,68 @@
+.transicoesOut{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+
+}
+
+.fila, .paes, .entrada{
+    display: flex;
+    width: 300px;
+    height: 120px;
+    padding: 0px 20px 0px 20px;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    color: #5F3305 ;
+    
+}
+.fila p, .paes p{
+    color: black;
+}
+
+.entrada{
+    background-color: #5F3305;
+    color: white;
+}
+ 
+
+.nomeIcone{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+input{
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    font-size: 30px;
+
+    color: black
+}
+
+.entrada input{
+    color: white;
+
+}
+
+.labelDin{
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    gap: 10px;
+}
+
+
+@media (max-width: 450px) {
+    .transicoesOut{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

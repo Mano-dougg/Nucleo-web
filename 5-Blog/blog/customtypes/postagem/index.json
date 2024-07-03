@@ -1,0 +1,86 @@
+{
+  "format": "custom",
+  "id": "postagem",
+  "label": "postagem",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "titulo": {
+        "type": "Text",
+        "config": {
+          "label": "titulo",
+          "placeholder": ""
+        }
+      },
+      "texto1": {
+        "type": "StructuredText",
+        "config": {
+          "label": "texto1",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "imagem1": {
+        "type": "Image",
+        "config": {
+          "label": "imagem1",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "texto2": {
+        "type": "StructuredText",
+        "config": {
+          "label": "texto2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "imagem2": {
+        "type": "Image",
+        "config": {
+          "label": "imagem2",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "imagem3": {
+        "type": "Image",
+        "config": {
+          "label": "imagem3",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "texto3": {
+        "type": "StructuredText",
+        "config": {
+          "label": "texto3",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "icone_post": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #BCCDD0;
+    height: 100vh;
+    width: 100vw;
+}
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #111313;
+    font-size: 36px;
+    font-weight: 600;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+}
+img {
+    object-fit: cover;
+}
+
+#imgFolhas{
+    border-radius: 30px 0px 0px 30px;
+    width: 291px;
+}
+#carta {
+    display: flex;
+    width: 875px;
+    height: 492px;
+}
+#conteudoCarta {
+    display: flex;
+    padding: 50px 30px 41px 30px;
+    border-radius: 0px 30px 30px 0px;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #DFDFD6;
+}
+#textoCarta {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+#userShare {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+#usuario {
+    display: flex;
+    justify-content: space-between;
+    gap: 11px;
+}
+#dadosUser {
+    font-family: 'Overpass';
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#dadosUser p {font-family: 'Overpass';}
+#dadosUser h2 {font-size: 24px;}
+#iconeDog{
+    width: 60px;
+    height: 60px;
+    border-radius: 110px;
+}
+#botaoShare {
+    width: 52px;
+    height: 52px;
+    border-radius: 85px;
+    background-color: #696F5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+#botaoShare:hover {
+    transform: scale(1.05);
+}
+#compartilhar {
+    position: absolute;
+    display: flex;
+    visibility: hidden;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #696F5A00;
+    padding: 10px 15px;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    gap: 15px;
+    transition: .5s;
+}
+#compartilhar li {
+    color: #DFDFD6;
+    font-family: 'Overpass';
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0%;
+    transition: .5s;
+    letter-spacing: 8px;
+    display: flex;
+}
+#compartilhar li img {
+    cursor: pointer;
+    transition: .25s;
+}
+#compartilhar li img:hover{
+    transform: scale(1.05);
+}
+#compartilhar.ativo {
+    visibility: visible;
+    overflow: auto;
+    bottom: 72px;
+    background-color: #696F5A;
+    width: 231px;
+}
+#compartilhar.ativo li {
+    opacity: 100%;
+}
+
+@media (max-width: 900px) {
+    #carta {
+        width: 350px;
+        height: 750px;
+        flex-direction: column;
+    }
+    #imgFolhas{
+        border-radius: 30px 30px 0px 0px;
+        height: 202px;
+        width: 350px;
+    }
+    #conteudoCarta {
+        padding: 25px 30px;
+        border-radius: 0px 0px 30px 30px;
+        height: 548px;
+    }
+    #textoCarta {
+        gap: 10px;
+    }
+    #compartilhar {
+        padding: 5px 10px;
+    }
+}

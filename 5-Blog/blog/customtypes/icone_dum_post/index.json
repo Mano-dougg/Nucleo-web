@@ -1,0 +1,61 @@
+{
+  "format": "custom",
+  "id": "icone_dum_post",
+  "label": "icone dum Post",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "thumbnail": {
+        "type": "Image",
+        "config": {
+          "label": "Thumbnail",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "titulo": {
+        "type": "Text",
+        "config": {
+          "label": "Titulo",
+          "placeholder": ""
+        }
+      },
+      "descricao": {
+        "type": "Text",
+        "config": {
+          "label": "Descricao",
+          "placeholder": ""
+        }
+      },
+      "icone_autor": {
+        "type": "Image",
+        "config": {
+          "label": "icone autor",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "nome_autor": {
+        "type": "Text",
+        "config": {
+          "label": "nome autor",
+          "placeholder": ""
+        }
+      },
+      "data": {
+        "type": "Date",
+        "config": {
+          "label": "data",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

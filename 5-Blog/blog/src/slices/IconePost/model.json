@@ -1,0 +1,120 @@
+{
+  "id": "icone_post",
+  "type": "SharedSlice",
+  "name": "IconePost",
+  "description": "IconePost",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo": {
+          "type": "Text",
+          "config": {
+            "label": "Titulo",
+            "placeholder": ""
+          }
+        },
+        "descricao": {
+          "type": "Text",
+          "config": {
+            "label": "Descricao",
+            "placeholder": ""
+          }
+        },
+        "thumbnail": {
+          "type": "Image",
+          "config": {
+            "label": "Thumbnail",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "autor": {
+          "type": "Group",
+          "config": {
+            "label": "Autor",
+            "repeat": true,
+            "fields": {
+              "icone": {
+                "type": "Image",
+                "config": {
+                  "label": "icone",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "nome": {
+                "type": "Text",
+                "config": {
+                  "label": "Nome",
+                  "placeholder": ""
+                }
+              },
+              "data": {
+                "type": "Text",
+                "config": {
+                  "label": "data",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "displayDiferente",
+      "name": "Display diferente",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo": {
+          "type": "Text",
+          "config": {
+            "label": "Titulo",
+            "placeholder": ""
+          }
+        },
+        "descricao": {
+          "type": "Text",
+          "config": {
+            "label": "Descricao",
+            "placeholder": ""
+          }
+        },
+        "autor": {
+          "type": "Link",
+          "config": {
+            "label": "Autor",
+            "select": "document"
+          }
+        },
+        "botao_compartilhar": {
+          "type": "Image",
+          "config": {
+            "label": "Botao Compartilhar",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "thumbnail": {
+          "type": "Image",
+          "config": {
+            "label": "Thumbnail",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
