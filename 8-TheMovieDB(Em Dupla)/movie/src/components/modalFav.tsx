@@ -87,7 +87,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, userId }) => {
         return;
       }
 
-      const response = await axios.get<Movie[]>(`http://localhost:1080/favoritos?userId=${userId}`, {
+      const response = await axios.get<Movie[]>(`http://localhost:1080/favoritos?${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

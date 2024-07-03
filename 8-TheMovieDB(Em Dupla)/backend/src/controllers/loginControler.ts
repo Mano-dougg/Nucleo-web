@@ -35,7 +35,7 @@ export default {
         }
 
         const user: User | null = await prisma.user.findUnique({ where: { email } });
-
+        console.log("usuario login")
         if (!user) {
             return response.status(401).json({
                 error: true,
@@ -52,8 +52,8 @@ export default {
             });
         }
 
-        const token = jwt.sign({ id: user.id }, process.env.JWT_PASS ?? '', { expiresIn: '1h' });
-
+        const token = jwt.sign({ id: user.id }, process.env.JWT_PASS ?? '', { expiresIn: '9999999' });
+        console.log(`header: ${request.header}`)
         return response.status(200).json({
             error: false,
             message: messages.loginSuccess,

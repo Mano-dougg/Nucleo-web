@@ -131,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
   const [showFavoritesModal, setShowFavoritesModal] = useState(false); // Estado para controlar a exibição do modal
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwtToken');
     localStorage.removeItem('user');
     window.location.href = '/home';
     window.location.reload();

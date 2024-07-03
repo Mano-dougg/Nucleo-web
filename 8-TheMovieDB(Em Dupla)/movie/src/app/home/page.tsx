@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('jwtToken');
         if (!token) {
           throw new Error('Token JWT não encontrado.');
         }

@@ -136,7 +136,7 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
   const [searchResults, setSearchResults] = useState<any[]>([]);
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwtToken');
     localStorage.removeItem('user');
     window.location.href = '/home';
     window.location.reload();

@@ -108,6 +108,7 @@ const MovieList: React.FC = () => {
   const handleFavoriteClick = async (movie: Movie) => {
     try {
       if (!token) {
+        console.log()
         console.error('Token JWT não encontrado.');
         return;
       }
@@ -119,7 +120,9 @@ const MovieList: React.FC = () => {
             Authorization: `Bearer ${token}`,
           },
         }
+        
       );
+      
 
       addFavorite(movie);
       updateMovieFavoriteStatus(movie.id, true);

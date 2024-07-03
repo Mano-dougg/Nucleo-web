@@ -35,7 +35,7 @@ export const FavoriteProvider: React.FC<FavoriteProviderProps> = ({ children }) 
 
   const addFavorite = async (movie: Movie) => {
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('jwtToken');
       const response = await axios.post(`${API_BASE_URL}/favoritos`, { movieId: movie.id }, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -53,7 +53,7 @@ export const FavoriteProvider: React.FC<FavoriteProviderProps> = ({ children }) 
 
   const removeFavorite = async (movie: Movie) => {
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('jwtToken');
       const response = await axios.delete(`${API_BASE_URL}/favoritos/${movie.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,

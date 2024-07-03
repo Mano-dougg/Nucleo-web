@@ -15,7 +15,7 @@ export default function Header() {
     try {
       const response = await axios.post('http://localhost:1080/login', { email, password });
       setMessage('Login realizado com sucesso!');
-      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('jwtToken', response.data.token);
       window.location.href = "../home"; // Redirecionar para a página principal 
     } catch (error: any) {
       setMessage(error.response?.data?.message || 'Erro ao realizar login');

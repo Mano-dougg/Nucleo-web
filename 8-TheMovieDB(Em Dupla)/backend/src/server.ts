@@ -7,6 +7,7 @@ import { authenticateJWT } from "./middleware/authenticate";
 const express = require('express');
 const app = express();
 const port = 1080;
+require('dotenv').config()
 
 app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.json());
