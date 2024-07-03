@@ -10,7 +10,7 @@ interface ComentarioProps{
 
 const Comentario = (props:ComentarioProps) => {
   return (
-    <div className={`max-w-[600px] max-h-[216px] p-3 border border-black flex gap-4`}>
+    <div className={`max-w-[600px] max-h-[216px] p-3 border border-black flex gap-4 justify-center`}>
       <Image
         src={props.userImageUrl}
         height={100}
