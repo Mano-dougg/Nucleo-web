@@ -1,10 +1,11 @@
-
 import CardOutros from "@/components/CardOutros";
 import CardProduto from "@/components/CardSemelhante";
 import Comentario from "@/components/comentario/Comentario";
 import BaseText from "@/components/comentario/textoBase/BaseText";
 import SizeSelect from "@/components/SizeSelect";
+import { GetStaticPathsResult, GetStaticProps } from "next";
 import Image from "next/image";
+import data from "./teste";
 
 const produto = () => {
   return (
@@ -13,7 +14,7 @@ const produto = () => {
     >
       <nav className="w-full h-[115px] bg-red-500"></nav>
 
-      <div
+      <section
         className={` h-auto w-full flex lg:flex-row flex-col items-center justify-center py-10 lg:gap-20 gap-4 gap px-6`}
       >
         <Image
@@ -45,7 +46,24 @@ const produto = () => {
             <SizeSelect peerName={"GG"} value={"GG"} />
           </div>
         </div>
-      </div>
+      </section>
+
+      <section
+        className={` h-auto w-full flex lg:flex-row flex-col items-center justify-center py-10 lg:gap-20 gap-4 gap px-6`}
+      >
+        <div className={`flex flex-col gap-10`}>
+          <BaseText isBlack={true}>Comentários:</BaseText>
+          {data?.map((comment, index) => (
+            <Comentario
+              userImageUrl={comment.userImageUrl}
+              userName={comment.userName}
+              comentario={comment.comentario}
+              time={comment.time}
+              key={index}
+            />
+          ))}
+        </div>
+      </section>
     </section>
   );
 };
