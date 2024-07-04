@@ -24,6 +24,8 @@ const MovieList = styled.ul`
 `;
 
 const MovieItem = styled.li`
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
   padding: 10px;
   background-color: #f0f0f0;
@@ -33,6 +35,33 @@ const MovieItem = styled.li`
 
   &:hover {
     background-color: #e0e0e0;
+  }
+`;
+
+const MovieTitle = styled.h3`
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #333;
+`;
+
+const MovieImage = styled.img`
+  width: 50px;
+  height: auto;
+  border-radius: 8px;
+`;
+
+const RemoveButton = styled.button`
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ff6666;
   }
 `;
 
@@ -55,6 +84,7 @@ const CloseButton = styled.button`
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
   transition: background-color 0.3s ease;
 
   &:hover {
@@ -65,21 +95,42 @@ const CloseButton = styled.button`
 interface Movie {
   id: number;
   title: string;
+  poster_path: string;
 }
 
 interface ModalProps {
   onClose: () => void;
-  userId: number; // Adjust according to your actual usage
+  userId: number;
 }
 
 const Modal: React.FC<ModalProps> = ({ onClose, userId }) => {
   const [favoriteMovies, setFavoriteMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
-    fetchFavoriteMovies();
-  }, []);
+    const fetchFavoriteMovies = async () => {
+      try {
+        const token = localStorage.getItem('jwtToken');
+        if (!token) {
+          console.error('Token JWT não encontrado.');
+          return;
+        }
 
-  const fetchFavoriteMovies = async () => {
+        const response = await axios.get<Movie[]>(`http://localhost:1080/favoritos?userId=${userId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setFavoriteMovies(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar filmes favoritos:', error);
+      }
+    };
+
+    fetchFavoriteMovies();
+  }, [userId]);
+
+  const handleRemoveFavorite = async (movieId: number) => {
     try {
       const token = localStorage.getItem('jwtToken');
       if (!token) {
@@ -87,15 +138,16 @@ const Modal: React.FC<ModalProps> = ({ onClose, userId }) => {
         return;
       }
 
-      const response = await axios.get<Movie[]>(`http://localhost:1080/favoritos?${userId}`, {
+      await axios.delete(`http://localhost:1080/favoritos/${movieId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      setFavoriteMovies(response.data);
+      setFavoriteMovies((prevMovies) => prevMovies.filter((movie) => movie.id !== movieId));
+      console.log('Filme removido dos favoritos');
     } catch (error) {
-      console.error('Erro ao buscar filmes favoritos:', error);
+      console.error('Erro ao remover filme dos favoritos:', error);
     }
   };
 
@@ -105,7 +157,11 @@ const Modal: React.FC<ModalProps> = ({ onClose, userId }) => {
       {favoriteMovies.length > 0 ? (
         <MovieList>
           {favoriteMovies.map((movie) => (
-            <MovieItem key={movie.id}>{movie.title}</MovieItem>
+            <MovieItem key={movie.id}>
+              <MovieImage src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+              <MovieTitle>{movie.title}</MovieTitle>
+              <RemoveButton onClick={() => handleRemoveFavorite(movie.id)}>Remover</RemoveButton>
+            </MovieItem>
           ))}
         </MovieList>
       ) : (
