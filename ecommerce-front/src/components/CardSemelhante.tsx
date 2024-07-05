@@ -5,12 +5,13 @@ interface ProdutoProps {
   imageUrl: string;
   produtoNome: string;
   preco: string;
+  show:string;
 }
 
 const CardSemelhante = (props: ProdutoProps) => {
   return (
     <div
-      className={`h-auto w-52 max-w-52 flex flex-col gap-8 bg-bg-card border border-black py-2 items-center justify-center`}
+      className={`h-auto w-52 max-w-52 flex flex-col gap-8 bg-bg-card border border-black py-2 items-center justify-center lg:flex ${props.show}`}
     >
       <Image
         src={props.imageUrl}

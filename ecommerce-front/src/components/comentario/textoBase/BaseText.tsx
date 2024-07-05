@@ -8,7 +8,7 @@ interface TextProps {
 export const BaseText = (props: TextProps) => {
   return (
     <p
-      className={`text-2xl font-semibold max-w-[441px] ${
+      className={`lg:text-2xl text-xl font-semibold max-w-[441px] flex gap-4 ${
         props.isBlack == true ? "text-text-primary" : "text-text-footer"
       }`}
     >

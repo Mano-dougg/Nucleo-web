@@ -11,7 +11,7 @@ interface ComentarioProps {
 const Comentario = (props: ComentarioProps) => {
   return (
     <div
-      className={`max-w-[600px] max-h-[216px] p-3 border border-black flex gap-4 justify-start overflow-hidden`}
+      className={`max-w-[600px] bg-bg-card lg:max-h-[216px] h-auto p-3 border lg:border-black flex lg:gap-4 gap- 2 lg:justify-start overflow-hidden lg:flex-row flex-col lg:items-start items-center `}
     >
       <div className="w-auto h-full">
         <Image
@@ -19,13 +19,13 @@ const Comentario = (props: ComentarioProps) => {
           height={100}
           width={100}
           alt={"image do perfil"}
-          className="rounded-full max-h-24 max-w-24"
+          className="rounded-full lg:max-h-24 lg:max-w-24 max-w-20 max-h-20"
         />
       </div>
-      <div className={`h-full flex flex-col gap-9 `}>
-        <BaseText isBlack={true}>{props.userName}</BaseText>
-        <BaseText isBlack={true}>{props.comentario}</BaseText>
-        <BaseText isBlack={false}>{props.time}</BaseText>
+      <div className={`h-full flex flex-col lg:gap-9 gap-1`}>
+        <p className="font-semibold w-full lg:text-2xl text-xl">{props.userName}</p>
+        <p className="font-semibold w-full lg:text-2xl text-base">{props.comentario}</p >
+        <p className="font-semibold w-full lg:text-2xl text-base text-text-footer">{props.time}</p>
       </div>
     </div>
   );

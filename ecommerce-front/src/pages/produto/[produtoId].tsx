@@ -5,7 +5,12 @@ import BaseText from "@/components/comentario/textoBase/BaseText";
 import SizeSelect from "@/components/SizeSelect";
 import { GetStaticPathsResult, GetStaticProps } from "next";
 import Image from "next/image";
-import data from "./teste";
+import data from "./coments"; // for testing
+import { semelhantes, outros } from "./teste2"; // for testing
+import ServiceCard from "@/components/ServiceCard";
+import Dropdown from "@/components/comentario/dropdown/Dropdown";
+import CardSemelhante from "@/components/CardSemelhante";
+import SectionCard from "@/components/SectionCard";
 
 const produto = () => {
   return (
@@ -49,9 +54,9 @@ const produto = () => {
       </section>
 
       <section
-        className={` h-auto w-full flex lg:flex-row flex-col items-center justify-center py-10 lg:gap-20 gap-4 gap px-6`}
+        className={` h-auto w-full flex lg:flex-row flex-col items-center justify-center py-10 lg:gap-20 gap-4 gap px-6 mb-20`}
       >
-        <div className={`flex flex-col gap-10`}>
+        <div className={`lg:flex flex-col gap-10 hidden`}>
           <BaseText isBlack={true}>Comentários:</BaseText>
           {data?.map((comment, index) => (
             <Comentario
@@ -63,7 +68,69 @@ const produto = () => {
             />
           ))}
         </div>
+        <Dropdown />
+        <div
+          className={`lg:flex flex-col gap-4 justify-between w-auto h-autoo bg-bg-filter items-center px-5 py-6  hidden`}
+        >
+          <p className="text-3xl font-semibold w-full text-start text-text-primary">
+            Sobre o serviço
+          </p>
+          <ServiceCard rightImgUrl="/send.svg">
+            Frete gratis em pedidos acima de R$60,00
+          </ServiceCard>
+          <ServiceCard rightImgUrl="/refresh-cw.svg">
+            Politica de Devolução
+          </ServiceCard>
+          <ServiceCard rightImgUrl="/shield.svg">
+            Seguraça de compra
+          </ServiceCard>
+        </div>
       </section>
+
+      <SectionCard title={"Items semelhantes"}>
+        <CardSemelhante
+          imageUrl="/Frame 153.png"
+          produtoNome="Blusa estampada"
+          preco="19,99"
+          show={""}
+        />
+        <CardSemelhante
+          imageUrl="/Frame 153.png"
+          produtoNome="Blusa estampada"
+          preco="19,99"
+          show={""}
+        />
+        <CardSemelhante
+          imageUrl="/Frame 153.png"
+          produtoNome="Blusa estampada"
+          preco="19,99"
+          show={"hidden"}
+        />
+        <CardSemelhante
+          imageUrl="/Frame 153.png"
+          produtoNome="Blusa estampada"
+          preco="19,99"
+          show={"hidden"}
+        />
+      </SectionCard>
+
+      <SectionCard title={"Outros itens"}>
+        <CardOutros
+          imageUrl="/Frame 1.png"
+          produtoName="Sapatos"
+          show={"hidden"}
+        />
+        <CardOutros imageUrl="/Frame 1.png" produtoName="Sapatos" />
+        <CardOutros imageUrl="/Frame 1.png" produtoName="Sapatos" />
+        <CardOutros
+          imageUrl="/Frame 1.png"
+          produtoName="Sapatos"
+          show={"hidden"}
+        />
+      </SectionCard>
+      <footer className="h-80 bg-red-500 w-full">
+        Footer
+      </footer>
     </section>
   );
 };
