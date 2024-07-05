@@ -14,8 +14,8 @@ export default function Bounded({
     ...restProps
 }: BoundedProps) {
     return (
-        <Comp className={clsx("flex justify-center", className)} {...restProps}>
-            <div className="flex justify-center sm:w-[1224px] sm:h-[357px] w-[310px] h-[90px] mt-12 mx-auto ">
+        <Comp className={clsx(" ", className)} {...restProps}>
+            <div className="flex justify-center items-center  sm:w-[80%] w-[98%] mt-12 mx-auto ">
                 {children}
             </div>
         </Comp>

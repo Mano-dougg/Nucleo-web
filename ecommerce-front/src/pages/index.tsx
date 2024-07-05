@@ -7,6 +7,9 @@ import { components } from "@/slices";
 import { createClient } from "@/prismicio";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SearchBar from "@/components/SearchBar";
+import ProductsQueue from "@/components/products/ProductsQueue";
+import PromotionQueue from "@/components/promotions/PromotionsQueue";
 
 export default function Page({
   page,
@@ -19,25 +22,23 @@ export default function Page({
           <meta name="description" content={page.data.meta_description} />
         ) : null}
       </Head>
-      <Header/>
-      <SliceZone slices={page.data.slices} components={components} />
-      <Footer/>
-
-
+      <Header />
+      <main className="container mx-auto flex flex-col items-center mt-5 space-y-10">
+        <SearchBar />
+        <SliceZone slices={page.data.slices} components={components} />
+        <ProductsQueue />
+        <PromotionQueue />
+      </main>
+      <Footer />
     </>
   );
 }
 
 export async function getStaticProps({ previewData }: GetStaticPropsContext) {
-  // The `previewData` parameter allows your app to preview
-  // drafts from the Page Builder.
   const client = createClient({ previewData });
-
-  // The query fetches the page's data based on the current URL.
   const page = await client.getSingle("home");
 
   return {
-    
     props: { page },
   };
 }
