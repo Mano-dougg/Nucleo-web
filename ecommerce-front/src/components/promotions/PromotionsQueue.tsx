@@ -15,21 +15,20 @@ const PromotionQueue = () => {
   ]);
 
   return (
-    <div className='flex flex-col space-y-10 sm:text-[32px] text-[16px] font-bold '>
-      <p className='sm:text-4xl text-[24px] font-bold '>
+    <div className='flex flex-col items-center space-y-10 sm:text-[32px] text-[16px] font-bold w-[80%] mx-auto'>
+      <p className='self-start sm:text-4xl text-[24px] font-bold'>
         Promoções
       </p>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 max-w-4xl w-full'>
         {queue.map((product, index) => (
           <Product key={index} name={product.name} imgUrl={product.imgUrl} price={product.price} />
         ))}
-      </div>
-
-      <div className='flex sm:justify-end justify-center'>
-      <button className=' bg-black text-white rounded-[60px] text-[24px] px-8 py-2'>
-      Ver mais
-        </button>
+        <div className='flex sm:justify-self-end justify-center col-span-full mt-6'>
+          <button className='bg-black text-white rounded-[60px] text-[24px] px-8 py-2'>
+            Ver mais
+          </button>
+        </div>
       </div>
     </div>
   );

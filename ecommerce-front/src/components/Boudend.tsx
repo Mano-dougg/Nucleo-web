@@ -15,7 +15,7 @@ export default function Bounded({
 }: BoundedProps) {
     return (
         <Comp className={clsx(" ", className)} {...restProps}>
-            <div className="flex justify-center items-center  sm:w-[80%] w-[98%] mt-12 mx-auto ">
+            <div className="flex justify-center items-center  sm:w-[80%] w-[98%]  mx-auto ">
                 {children}
             </div>
         </Comp>

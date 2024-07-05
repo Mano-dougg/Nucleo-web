@@ -23,7 +23,7 @@ export default function Page({
         ) : null}
       </Head>
       <Header />
-      <main className="container mx-auto flex flex-col items-center mt-5 space-y-10">
+      <main className="  flex flex-col items-center space-y-10 ">
         <SearchBar />
         <SliceZone slices={page.data.slices} components={components} />
         <ProductsQueue />
