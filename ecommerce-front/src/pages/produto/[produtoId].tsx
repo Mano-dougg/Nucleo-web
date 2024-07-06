@@ -1,12 +1,9 @@
 import CardOutros from "@/components/CardOutros";
-import CardProduto from "@/components/CardSemelhante";
 import Comentario from "@/components/comentario/Comentario";
 import BaseText from "@/components/comentario/textoBase/BaseText";
 import SizeSelect from "@/components/SizeSelect";
-import { GetStaticPathsResult, GetStaticProps } from "next";
 import Image from "next/image";
 import data from "./coments"; // for testing
-import { semelhantes, outros } from "./teste2"; // for testing
 import ServiceCard from "@/components/ServiceCard";
 import Dropdown from "@/components/comentario/dropdown/Dropdown";
 import CardSemelhante from "@/components/CardSemelhante";
