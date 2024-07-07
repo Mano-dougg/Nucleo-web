@@ -1,26 +1,26 @@
 "use client";
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
 } from "@/components/ui/dialog";
-import Image from "next/image";
-import useDialog from "@/hooks/useDialog";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import deleteFn from "@/controlers/delete";
-import createFn from "@/controlers/create";
-import UpdataForm from "../formularios/UpdataForm";
+import UpdateForm from "../formularios/UpdataForm";
+import { deleteProduct } from "@/controlers/deleteProduct";
+import { useState, useEffect } from "react";
 
-interface UpdataModalProps {
+interface UpdateModalProps {
   ver: boolean;
   fechar: () => void;
   abrir: () => void;
+  link:string;
+
 }
 
-const UpdataModal = ({ ver, fechar, abrir }: UpdataModalProps) => {
+const UpdateModal = ({ ver, fechar, abrir, link }: UpdateModalProps) => {
+
   return (
     <Dialog open={ver} modal defaultOpen={ver}>
       <DialogTrigger asChild>
@@ -41,7 +41,10 @@ const UpdataModal = ({ ver, fechar, abrir }: UpdataModalProps) => {
         <DialogHeader>
           <DialogTitle className="text-center text-4xl">Editar</DialogTitle>
         </DialogHeader>
-        <UpdataForm />
+        <UpdateForm link={link} onDelete={() => {
+          deleteProduct(Number(link));
+          alert("Excluído")
+          }}/>
         <button
           type="button"
           className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"
@@ -54,4 +57,4 @@ const UpdataModal = ({ ver, fechar, abrir }: UpdataModalProps) => {
   );
 };
 
-export default UpdataModal;
+export default UpdateModal;

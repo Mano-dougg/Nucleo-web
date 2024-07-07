@@ -34,3 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Ignorar todos os arquivos com nome específico em um diretório
+ecommerce-front/src/pages/produtoS/*

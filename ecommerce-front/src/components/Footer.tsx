@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
 function Footer() {
@@ -77,7 +78,7 @@ function Footer() {
         <div className=' flex-col  sm:hidden text-[16px] '>
             <p className=' text-white pl-5 mt-2'>Cadastre-se para receber emails</p>
         <div className='sm:hidden flex relative pt-2'>
-          <div className="flex w-[288px] sm:hidden h-[31px] rounded-[60px] bg-[white] border-black">
+          <div className="flex w-[268px] sm:hidden h-[31px] rounded-[60px] bg-[white] border-black">
             <input
               type="text"
               placeholder="Seu email..."
