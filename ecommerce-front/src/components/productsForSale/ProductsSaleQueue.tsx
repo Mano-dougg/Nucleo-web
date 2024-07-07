@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Product from './Product';
+import Button from '../Button';
 
 interface Product {
   name: string;
@@ -25,9 +26,7 @@ const ProductsSaleQueue = () => {
           <Product key={index} name={product.name} imgUrl={product.imgUrl} price={product.price} />
         ))}
         <div className='flex sm:justify-self-end justify-center col-span-full mt-6'>
-          <button className='bg-black text-white rounded-[60px] text-[24px] px-8 py-2 '>
-            Ver mais
-          </button>
+        <Button url="/produtos">Ver mais</Button>
         </div>
       </div>
     </div>
