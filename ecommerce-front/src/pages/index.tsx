@@ -32,7 +32,6 @@ export default function Page({
       <Footer />
     </>
   );
-}
 
 export async function getStaticProps({ previewData }: GetStaticPropsContext) {
   const client = createClient({ previewData });
