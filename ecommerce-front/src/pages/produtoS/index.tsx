@@ -2,12 +2,14 @@ import Filter from '@/components/filter'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import ProductsSaleQueue from '@/components/productsForSale/ProductsSaleQueue'
+import SearchBar from '@/components/SearchBar'
 import React from 'react'
 
-const produtos = () => {
+const Produtos = () => {
   return (
     <><Header/>
-    <div className='flex justify-center mt-[150px] '>
+    <div className='flex justify-center flex-col sm:flex-row items-center sm:items-start sm:mt-[150px] '>
+      <SearchBar/>
       <Filter/>
       <div>
         <ProductsSaleQueue/>
@@ -18,4 +20,4 @@ const produtos = () => {
   )
 }
 
-export default produtos
+export default Produtos
