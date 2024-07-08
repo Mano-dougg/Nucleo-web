@@ -13,7 +13,7 @@ const config: Config = {
         "bg-nav": "#3B8039",
         "bg-footer": "#3B8039",
         "bg-card": "#FFFFFF",
-        "bg-filter": "#CBE8CAh",
+        "bg-filter": "#CBE8CA",
         "text-primary": "#000000",
         "text-promo": "#E41212",
         "text-footer-title": "#FFFFFF",
