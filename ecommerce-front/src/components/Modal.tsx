@@ -10,12 +10,12 @@ interface ModalProps {
 export const Modal = (props: ModalProps) => {
   return (
     <dialog
-      className={`max-h-[800px] max-w-7xl w-full h-full shadow-2xl rounded-[60px] flex-col items-center justify-evenly absolute inset-0 ${props.open} bg-bg-card`}
+      className={`max-h-[800px] max-w-7xl w-full h-full shadow-2xl rounded-[60px] flex-col items-center justify-evenly  inset-0 ${props.open} bg-bg-card px-5 hidden md:flex`}
     >
       <h1 className="text-5xl font-semibold">Editar</h1>
 
       <div
-        className={`max-w-5xl h-3/4 flex items-center border border-black p-12 gap-16`}
+        className={`max-w-5xl w-full h-3/4 flex items-center border border-black justify-center gap-16 px-2 overflow-hidden`}
       >
         <Image
           src={"/Frame 157.png"}
@@ -23,7 +23,7 @@ export const Modal = (props: ModalProps) => {
           width={414}
           alt="Imagem do produto"
         />
-        <form className="flex flex-col h-auto gap-4">
+        <form className="flex flex-col h-auto gap-4 ">
           <h3 className="modal_edit_form_title">Nome</h3>
           <input
             type="text"
@@ -37,8 +37,8 @@ export const Modal = (props: ModalProps) => {
             value={"R$120,00"}
             className={`modal_edit_form_input`}
           />
-          <h3 className="modall_edit_form_title">Cor:</h3>
-          <div className="flex gap-2 ml-4">
+          <h3 className="modal_edit_form_title">Cor:</h3>
+          <div className="flex gap-2 ml-2">
             <input
               type="radio"
               name="color"
@@ -65,7 +65,7 @@ export const Modal = (props: ModalProps) => {
             />
           </div>
           <h3 className="modal_edit_form_title">Tamanhos</h3>
-          <div className="flex gap-2 ml-4">
+          <div className="flex w-full justify-between  items-center flex-wrap ml-2">
             <SizeSelect peerName={"p"} value={"P"} />
             <SizeSelect peerName={"m"} value={"M"} />
             <SizeSelect peerName={"g"} value={"G"} />
