@@ -23,7 +23,7 @@ const Product = ({ name, imgUrl, price, size }: Props) => {
         <p className='text-left'>Tam: {size}</p>
 
         <div className='flex items-center justify-between '>
-          <p className='font-bold'>R${price.toFixed(2)}</p>
+          <p className='font-bold hidden sm:flex'>R${price.toFixed(2)}</p>
           <select
             value={quantity}
             onChange={handleQuantityChange}

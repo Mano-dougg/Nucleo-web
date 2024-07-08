@@ -17,10 +17,10 @@ const ProductsSaleQueue = () => {
   ]);
 
   return (
-    <div className='flex mt-[150px] flex-col items-center space-y-10 sm:text-[24px] text-[16px] font-bold w-[95%] mx-auto'>
+    <div className='flex mt-[150px] flex-col items-center space-y-10 sm:text-[24px] text-[16px] font-bold w-[95%]  mx-auto'>
       
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-10 mb-8 max-w-4xl w-full'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-10 mb-8   '>
         {queue.map((product, index) => (
           <Product key={index} name={product.name} imgUrl={product.imgUrl} price={product.price} />
         ))}
