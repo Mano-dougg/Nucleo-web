@@ -1,8 +1,8 @@
-import { Request, Response, NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import { z, ZodError } from 'zod';
 
-export function validateUser(zodSchema: z.ZodType<any, any>) {
+export function validateSchema(zodSchema: z.ZodType<any, any>) {
   return (req: Request, res: Response, next: NextFunction) => {
     try {
       zodSchema.parse(req.body);

@@ -7,14 +7,14 @@ import {
   getUserByEmail,
   login
 } from '../controller/userController';
-import { validateUser } from '../middleware/validateUser';
+import { validateSchema } from '../middleware/validateSchema';
 
 const userRouter = Router();
 
 userRouter.use(cors());
 userRouter.delete('/', deleteUser);
 userRouter.get('/', getUserByEmail);
-userRouter.post('/login', validateUser(UserPartialSchema), login);
-userRouter.post('/signup', validateUser(UserCreateInputSchema), createUser);
+userRouter.post('/login', validateSchema(UserPartialSchema), login);
+userRouter.post('/signup', validateSchema(UserCreateInputSchema), createUser);
 
 export default userRouter;
