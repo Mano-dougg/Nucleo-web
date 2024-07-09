@@ -2,13 +2,10 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import SizeSelect from "./SizeSelect";
 import Image from "next/image";
 import useDialog from "@/hooks/useDialog";
 import Link from "next/link";
@@ -18,9 +15,9 @@ import createFn from "@/controlers/create";
 
 const Modal = () => {
   const { isOpen, onClose, onOpen } = useDialog();
-  const [tag, setTag] = useState<string>("Selecionar Tags");
+  const [tag, setTag] = useState<string>("");
   const [tags, setTags] = useState<string[]>([""]);
-  const [size, setSize] = useState<string>("Selecionar Tamanhos");
+  const [size, setSize] = useState<string>("");
   const [sizes, setSizes] = useState<string[]>([""]);
 
   useEffect(() => {

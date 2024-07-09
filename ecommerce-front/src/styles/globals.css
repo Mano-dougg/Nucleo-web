@@ -7,7 +7,7 @@
   }
   
   .modal_edit_form_input{
-    @apply w-full py-2 px-1 font-semibold text-xl border border-black rounded-3xl
+    @apply w-full py-2 px-1 font-semibold text-xl border border-black rounded-3xl min-w-60
   }
   
   .modal_edit_form_radio{

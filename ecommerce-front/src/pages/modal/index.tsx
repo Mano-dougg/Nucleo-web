@@ -1,67 +1,220 @@
 "use client";
 
-import { useState } from "react";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import deleteFn from "@/controlers/delete";
+import createFn from "@/controlers/create";
 
 const Produto = () => {
   const [file, setFile] = useState("");
 
-  const handleUploadFile = (e: any) => {
-    setFile(URL.createObjectURL(e.target.files[0]));
-    console.log(e.target.files[0]);
-    console.log(file);
-  };
+  // const handleUploadFile = (e: any) => {
+  //   setFile(URL.createObjectURL(e.target.files[0]));
+  //   console.log(e.target.files[0]);
+  //   console.log(file);
+  // };
+  const [tag, setTag] = useState<string>("Selecionar Tags");
+  const [tags, setTags] = useState<string[]>([""]);
+  const [size, setSize] = useState<string>("Selecionar Tamanhos");
+  const [sizes, setSizes] = useState<string[]>([""]);
 
-  async function createInvoice(formData: FormData) {
-    const rawFormData = {
-      nome: formData.get("nome"),
-      idade: Number(formData.get("idade")),
-      email: formData.get("email"),
-      senha: formData.get("senha"),
-      estado: formData.get("estado"),
-      cidade: formData.get("cidade"),
-      image: file,
-    };
-
-    console.log(rawFormData);
-
-    try {
-      const response = await fetch("http://localhost:3001/usuario/cadastro", {
-        method: "POST",
-        cache: "no-cache",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(rawFormData),
-      });
-      if (!response.ok) {
-        throw "deu algum erro";
+  useEffect(() => {
+    if (tag.trim() !== "") {
+      if (tags.includes(tag)) {
+        return;
       }
-      console.log(rawFormData);
-    } catch (err) {
-      return err;
+
+      const newTags = [...tags, tag];
+      setTags(newTags);
+      setTag("");
     }
-  }
+  }, [tag, tags]);
+
+  useEffect(() => {
+    if (size.trim() !== "") {
+      if (sizes.includes(size)) {
+        return;
+      }
+
+      const newSizes = [...sizes, size];
+      setSizes(newSizes);
+      setSize("");
+    }
+  }, [size]);
+
   return (
-    <form action={createInvoice}>
-      <h1>Outra página</h1>
-      <div className="flex flex-col gap-3">
-        <input
-          type="file"
-          onChange={handleUploadFile}
-          name="image"
-          id="image"
-          className="hidden"
+    <div className="w-full flex flex-col h-auto">
+      <Header />
+      <div
+        className={`w-full h-auto flex flex-col items-center  justify-center gap-16 px-2 overflow-hidden mb-14`}
+      >
+        <h3 className="text-4xl font-semibold">Editar</h3>
+        <Image
+          src={"/Frame 153.png"}
+          height={486}
+          width={414}
+          alt="Imagem do produto"
         />
-        <input type="text" placeholder="nome" name="nome" />
-        <input type="text" placeholder="idade" name="idade" />
-        <input type="text" placeholder="email" name="email" />
-        <input type="text" placeholder="senha" name="senha" />
-        <input type="text" placeholder="cidade" name="cidade" />
-        <input type="text" placeholder="estado" name="estado" />
-        <label htmlFor="image">
-          <img src={file} alt="aqui está a imagem" />
-        </label>
+        <form className="flex flex-col h-auto gap-4 py-3 sm:w-1/2 w-full justify-center items-center">
+          <h3 className="modal_edit_form_title">Nome</h3>
+          <input
+            type="text"
+            disabled
+            value={"Moletom estampado masculino"}
+            className={`modal_edit_form_input`}
+            id="inTeste"
+          />
+          <h3 className="modal_edit_form_title">Valor:</h3>
+          <input
+            type="text"
+            value={"R$120,00"}
+            className={`modal_edit_form_input`}
+          />
+          <h3 className="modal_edit_form_title">Cor:</h3>
+          <div className="flex gap-2 ml-2">
+            <input
+              type="radio"
+              name="color"
+              className=" modal_edit_form_radio bg-white"
+              value={"white"}
+            />
+            <input
+              type="radio"
+              name="color"
+              className=" modal_edit_form_radio bg-zinc-800"
+              value={"gray"}
+            />
+            <input
+              type="radio"
+              name="color"
+              className=" modal_edit_form_radio bg-red-500"
+              value={"red"}
+            />
+            <input
+              type="radio"
+              name="color"
+              className=" modal_edit_form_radio bg-blue-800 checked:bg-blue-600 "
+              value={"blue"}
+            />
+          </div>
+          <h3 className="modal_edit_form_title">Tamanhos</h3>
+          <div className="flex w-full flex-col justify-between  items-center ml-2 mb-5">
+            <select
+              name=""
+              id=""
+              className="modal_edit_form_input bg-bg-card mb-2"
+              value={size}
+              onChange={(e) =>
+                createFn({ stateFn: setSize, item: e.target.value })
+              }
+            >
+              <option value="P">P</option>
+              <option value="M">M</option>
+              <option value="G">G</option>
+              <option value="GG">GG</option>
+            </select>
+            <div className="flex gap-2 flex-wrap font-bold">
+              {sizes?.map((item, index) =>
+                item !== "" ? (
+                  <div
+                    key={index}
+                    className="bg-black text-white p-2 rounded-2xl"
+                  >
+                    {item}
+                    <span
+                      className="text-white font-bold ml-2 cursor-pointer"
+                      onClick={() =>
+                        deleteFn({ array: sizes, index, stateFn: setSizes })
+                      }
+                    >
+                      X
+                    </span>
+                  </div>
+                ) : (
+                  ""
+                )
+              )}
+            </div>
+          </div>
+          <h3 className="modal_edit_form_title">Categorias</h3>
+          <select
+            className="modal_edit_form_input bg-bg-card"
+            title="tags"
+            onChange={(e) =>
+              createFn({ stateFn: setTag, item: e.target.value })
+            }
+            value={tag}
+          >
+            <option value="">Tags</option>
+            <optgroup title="categorias" label="Categorias">
+              <option value="Calças">Calças</option>
+              <option value="Blusas">Blusas</option>
+              <option value="Jaquetas">Jaquetas</option>
+              <option value="Vestidos">Vestidos</option>
+            </optgroup>
+            <optgroup title="categorias" label="Estilo">
+              <option value="Calças">Casual</option>
+              <option value="Blusas">Street</option>
+              <option value="Jaquetas">Sensual</option>
+              <option value="Vestidos">Social</option>
+            </optgroup>
+            <optgroup title="categorias" label="Caimento da peça">
+              <option value="Oversize">Oversize</option>
+              <option value="Skinny">Skinny</option>
+              <option value="Solto">Solto</option>
+              <option value="Slim Fit">Slim Fit</option>
+            </optgroup>
+          </select>
+          <div className="flex gap-2 flex-wrap font-bold">
+            {tags?.map((item, index) =>
+              item !== "" ? (
+                <div
+                  key={index}
+                  className="bg-black text-white p-2 rounded-2xl"
+                >
+                  {item}
+                  <span
+                    className="text-white font-bold ml-2 cursor-pointer"
+                    onClick={() =>
+                      deleteFn({ array: tags, index, stateFn: setTags })
+                    }
+                  >
+                    X
+                  </span>
+                </div>
+              ) : (
+                ""
+              )
+            )}
+          </div>
+          <h3 className="modal_edit_form_title">Quant</h3>
+          <input
+            type="number"
+            name=""
+            id=""
+            className="modal_edit_form_input"
+            placeholder="quant"
+          />
+          <div className="flex justify-evenly">
+            <button
+              type="submit"
+              className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"
+            >
+              Salvar
+            </button>
+            <button
+              type="button"
+              className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"
+            >
+              Excluir
+            </button>
+          </div>
+        </form>
       </div>
-      <button>Enviar requisição</button>
-    </form>
+      <Footer />
+    </div>
   );
 };
 
