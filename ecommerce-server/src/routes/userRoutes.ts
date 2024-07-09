@@ -1,4 +1,3 @@
-import cors from 'cors';
 import { Router } from 'express';
 import { UserCreateInputSchema, UserPartialSchema } from '../../prisma/generated/zod/index';
 import {
@@ -11,7 +10,6 @@ import { validateSchema } from '../middleware/validateSchema';
 
 const userRouter = Router();
 
-userRouter.use(cors());
 userRouter.delete('/', deleteUser);
 userRouter.get('/', getUserByEmail);
 userRouter.post('/login', validateSchema(UserPartialSchema), login);

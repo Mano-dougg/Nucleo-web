@@ -1,8 +1,8 @@
 import { PrismaClient } from '@prisma/client'
- 
+
 const prisma = new PrismaClient()
 async function main() {
- 
+
   const seededUsers = await prisma.user.createMany({
     data: [
       {
@@ -25,10 +25,10 @@ async function main() {
       }
     ]
   })
- 
+
   console.log('Users created:');
   console.table(seededUsers);
- 
+
   const seededColors = await prisma.color.createMany({
     data: [
       {
@@ -53,10 +53,10 @@ async function main() {
       }
     ]
   })
- 
+
   console.log('Colors created:');
   console.table(seededColors);
- 
+
   const seededCollections = await prisma.collection.createMany({
     data: [
       {
@@ -69,10 +69,10 @@ async function main() {
       }
     ]
   })
- 
+
   console.log('Collections created:');
   console.table(seededCollections);
- 
+
   const seededCategories = await prisma.category.createMany({
     data: [
       {
@@ -93,218 +93,178 @@ async function main() {
       },
     ]
   })
- 
+
   console.log('Categories created:');
   console.table(seededCategories);
- 
-  const seededProducts = await prisma.product.createMany({
-    data: [
-      {
-        title: 'Camisa feminina de manga curta',
-        description: 'Camisa feminina de manga curta',
-        currentPrice: 4899,
-        previousPrice: 6000,
-        inPromotion: false,
-        categoryId: 2,
-        collectionId: 2,
-        fitting: 'SKINNY',
-        style: 'STREET',
-        image: 'https:unsplash.com/photos/woman-leaning-on-wall-TjOtIMl2LFE',
-      },
-      {
-        title: 'Calça masculina estampada',
-        description: 'Calça masculina estampada',
-        currentPrice: 12999,
-        previousPrice: 22999,
-        inPromotion: false,
-        categoryId: 1,
-        collectionId: 2,
-        fitting: 'LOOSE',
-        style: 'CASUAL',
-        image: 'https:unsplash.com/photos/person-wearing-orange-and-blue-low-top-sneakers-0q_tROKZ9ek'
-      },
-      {
-        title: 'Jaqueta jeans feminina',
-        description: 'Jaqueta jeans feminina',
-        currentPrice: 14999,
-        previousPrice: 24999,
-        inPromotion: false,
-        categoryId: 3,
-        collectionId: 2,
-        fitting: 'OVERSIZE',
-        style: 'SOCIAL',
-        image: 'https:unsplash.com/photos/woman-holding-denim-jacket--r4n8oBR_-Y'
-      },
-      {
-        title: 'Vestido floral',
-        description: 'Vestido floral',
-        currentPrice: 14999,
-        previousPrice: 24999,
-        inPromotion: false,
-        categoryId: 4,
-        collectionId: 1,
-        fitting: 'SLIMFIT',
-        style: 'SENSUAL',
-        image: 'https:unsplash.com/photos/woman-wearing-black-sunglasses-standing-near-white-wooden-wall-lSLq_xQdFNI'
-      },
-      {
-        title: 'Moletom estampado masculino',
-        description: 'Moletom estampado masculino',
-        currentPrice: 12000,
-        previousPrice: 22000,
-        inPromotion: true,
-        categoryId: 3,
-        collectionId: 2,
-        fitting: 'OVERSIZE',
-        style: 'CASUAL',
-        image: 'https:unsplash.com/photos/man-wearing-gray-bomber-jacket-FN7IKFbyf0c'
-      },
-    ]
+
+  const camFem = await prisma.product.create({
+    data: {
+      title: 'Camisa feminina de manga curta',
+      description: 'Camisa feminina de manga curta',
+      currentPrice: 4899,
+      previousPrice: 6000,
+      inPromotion: false,
+      categoryId: 2,
+      collectionId: 2,
+      fitting: 'SKINNY',
+      style: 'STREET',
+      image: 'https:unsplash.com/photos/woman-leaning-on-wall-TjOtIMl2LFE',
+      sizes: [ 'P', 'M', 'G', 'GG' ],
+      quantity: 10,
+      colors: {
+        connect: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 } ]
+      }
+    }
+  });
+
+  const calMasc = await prisma.product.create({
+    data: {
+      title: 'Calça masculina estampada',
+      description: 'Calça masculina estampada',
+      currentPrice: 12999,
+      previousPrice: 22999,
+      inPromotion: false,
+      categoryId: 1,
+      collectionId: 2,
+      fitting: 'LOOSE',
+      style: 'CASUAL',
+      image: 'https:unsplash.com/photos/person-wearing-orange-and-blue-low-top-sneakers-0q_tROKZ9ek',
+      sizes: [ 'P', 'M', 'G', 'GG' ],
+      quantity: 10,
+      colors: {
+        connect: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 } ]
+      }
+    },
+  });
+
+  const jaqFem = await prisma.product.create({
+    data: {
+      title: 'Jaqueta jeans feminina',
+      description: 'Jaqueta jeans feminina',
+      currentPrice: 14999,
+      previousPrice: 24999,
+      inPromotion: false,
+      categoryId: 3,
+      collectionId: 2,
+      fitting: 'OVERSIZE',
+      style: 'SOCIAL',
+      image: 'https:unsplash.com/photos/woman-holding-denim-jacket--r4n8oBR_-Y',
+      sizes: [ 'P', 'M', 'G', 'GG' ],
+      quantity: 10,
+      colors: {
+        connect: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 } ]
+      }
+    }
+  });
+
+  const vestFlor = await prisma.product.create({
+    data: {
+      title: 'Vestido floral',
+      description: 'Vestido floral',
+      currentPrice: 14999,
+      previousPrice: 24999,
+      inPromotion: false,
+      categoryId: 4,
+      collectionId: 1,
+      fitting: 'SLIMFIT',
+      style: 'SENSUAL',
+      image: 'https:unsplash.com/photos/woman-wearing-black-sunglasses-standing-near-white-wooden-wall-lSLq_xQdFNI',
+      sizes: [ 'P', 'M', 'G', 'GG' ],
+      quantity: 10,
+      colors: {
+        connect: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 } ]
+      }
+    },
+  });
+  const molEst = await prisma.product.create({
+    data: {
+      title: 'Moletom estampado masculino',
+      description: 'Moletom estampado masculino',
+      currentPrice: 12000,
+      previousPrice: 22000,
+      inPromotion: true,
+      categoryId: 3,
+      collectionId: 2,
+      fitting: 'OVERSIZE',
+      style: 'CASUAL',
+      image: 'https:unsplash.com/photos/man-wearing-gray-bomber-jacket-FN7IKFbyf0c',
+      sizes: [ 'P', 'M', 'G', 'GG' ],
+      quantity: 10,
+      colors: {
+        connect: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 } ]
+      }
+    },
   })
- 
+
   console.log('Products created:');
-  console.table(seededProducts);
- 
-  const seededProductItems = await prisma.productItem.createMany({
-    data: [
-      {
-        sku: '0000001',
-        quantity: 1,
-        size: 'P',
-        image: '',
-        productId: 1,
-        colorId: 1
-      },
-      {
-        sku: '0000002',
-        quantity: 2,
-        size: 'M',
-        image: '',
-        productId: 1,
-        colorId: 1
-      },
-      {
-        sku: '0000003',
-        quantity: 3,
-        size: 'G',
-        image: '',
-        productId: 1,
-        colorId: 1
-      },
-      {
-        sku: '0000004',
-        quantity: 4,
-        size: 'GG',
-        image: '',
-        productId: 1,
-        colorId: 1
-      },
-      {
-        sku: '0000005',
-        quantity: 1,
-        size: 'P',
-        image: '',
-        productId: 1,
-        colorId: 2
-      },
-      {
-        sku: '0000006',
-        quantity: 2,
-        size: 'M',
-        image: '',
-        productId: 1,
-        colorId: 2
-      },
-      {
-        sku: '0000007',
-        quantity: 3,
-        size: 'G',
-        image: '',
-        productId: 1,
-        colorId: 2
-      },
-      {
-        sku: '0000008',
-        quantity: 4,
-        size: 'GG',
-        image: '',
-        productId: 1,
-        colorId: 2
-      },
-    ]
- 
-  })
- 
-  console.log('Product items created:');
-  console.table(seededProductItems);
- 
- 
+  console.table([ camFem, calMasc, jaqFem, vestFlor, molEst ]);
+
   console.log('Creating tags:');
   const seededInvernoTag = await prisma.tag.create({
     data: {
       title: 'Inverno',
       products: {
-        connect: [{ id: 2 }, { id: 3 }, { id: 5 }]
+        connect: [ { id: 2 }, { id: 3 }, { id: 5 } ]
       }
     }
   })
   console.log(seededInvernoTag);
- 
+
   const seededVeraoTag = await prisma.tag.create({
     data: {
       title: 'Verão',
       products: {
-        connect: [{ id: 1 }, { id: 2 }, { id: 4 }]
+        connect: [ { id: 1 }, { id: 2 }, { id: 4 } ]
       }
     }
   })
   console.log(seededVeraoTag);
- 
+
   const seededCamisasTag = await prisma.tag.create({
     data: {
       title: 'Camisas',
       products: {
-        connect: [{ id: 1 }]
+        connect: [ { id: 1 } ]
       }
     }
   })
   console.log(seededCamisasTag);
- 
+
   const seededCalcasTag = await prisma.tag.create({
     data: {
       title: 'Calças',
       products: {
-        connect: [{ id: 2 }]
+        connect: [ { id: 2 } ]
       }
     }
   })
   console.log(seededCalcasTag);
- 
+
   const seededJaquetasTag = await prisma.tag.create({
     data: {
       title: 'Jaquetas',
       products: {
-        connect: [{ id: 3 }]
+        connect: [ { id: 3 } ]
       }
     }
   })
   console.log(seededJaquetasTag);
- 
+
   const seededVestidosTag = await prisma.tag.create({
     data: {
       title: 'Vestidos',
       products: {
-        connect: [{ id: 4 }]
+        connect: [ { id: 4 } ]
       }
     }
   })
   console.log(seededVestidosTag);
- 
+
   const seededPromocaoTag = await prisma.tag.create({
     data: {
       title: 'Promoção',
       products: {
-        connect: [{ id: 5 }]
+        connect: [ { id: 5 } ]
       }
     }
   })

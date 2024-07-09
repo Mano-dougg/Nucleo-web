@@ -1,8 +1,6 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-// import { User } from '../../prisma/generated/zod';
-// import { passwordlessUser } from '../utils/sensitiveDataRemoval';
 
 const prisma = new PrismaClient();
 
@@ -34,11 +32,6 @@ export const getUserByEmail = async (req: Request, res: Response) => {
   }
 }
 
-// const userResponse = (res: Response, responseCode: StatusCodes, user: User) => {
-//   const sanitizedUser = passwordlessUser(user);
-//   return res.status(responseCode).json({ ...sanitizedUser });
-// }
-
 const errorResponse = (
   res: Response,
   responseCode: StatusCodes,
@@ -68,7 +61,6 @@ export const createUser = async (req: Request, res: Response) => {
     email,
     password,
     role,
-  // }: Pick<User, 'name' | 'email' | 'password'> = req.body;
   } = req.body;
 
   try {
@@ -95,7 +87,6 @@ export const login = async (req: Request, res: Response) => {
   const {
     email,
     password,
-  // }: Pick<User, 'email' | 'password'> = req.body;
   } = req.body;
 
   try {
@@ -131,24 +122,3 @@ export const deleteUser = async (req: Request, res: Response) => {
     return res.status(StatusCodes.NOT_FOUND).json({ error: error.message });
   }
 }
-
-
-// export const updateUser = async (req: Request, res: Response) => {
-//   const { email } = req.body;
-
-//   if (!email) return res.status(StatusCodes.BAD_REQUEST).json({ error: 'Missing required property' });
-
-//   try {
-//     const user = await findUser(email);
-//     if (user) {
-//       await prisma.user.update({
-//         where: { email },
-//       });
-//     } else {
-//       throw new Error(NOT_FOUND_MESSAGE('email', email));
-//     }
-//     return res.status(StatusCodes.OK).json({ ...user });
-//   } catch (error: any) {
-//     return res.status(StatusCodes.NOT_FOUND).json({ error: error.message });
-//   }
-// }

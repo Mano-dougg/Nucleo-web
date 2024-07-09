@@ -1,25 +1,25 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-// import { Product } from '../../prisma/generated/zod';
 
 const prisma = new PrismaClient();
 
+const PRODUCT_RELATED_FIELDS = {
+  category: true,
+  collection: true,
+  tags: true,
+  colors: true,
+}
+
 const NOT_FOUND_MESSAGE = (fieldName: string, field: string) =>
   `No product found with ${fieldName} ${field}`;
-
-const randomSku = Math.random().toString(36).substring(7);
 
 const findProduct = async (id: string) => {
   const product = await prisma.product.findUnique({
     where: {
       id: Number(id),
     },
-    include: {
-      category: true,
-      collection: true,
-      productItems: true,
-    },
+    include: PRODUCT_RELATED_FIELDS,
   });
   if (!product) {
     throw new Error(NOT_FOUND_MESSAGE('id', id));
@@ -43,30 +43,14 @@ export const getProductById = async (req: Request, res: Response) => {
   }
 };
 
-export const getProductsByCategory = async (req: Request, res: Response) => {
-  const { category } = req.params;
-
-  if (!category)
-    return errorResponse(res, StatusCodes.BAD_REQUEST, {
-      message: 'Id is required',
-    });
-
+export const listProducts = async (req: Request, res: Response) => {
   try {
-    const foundProduct = await prisma.product.findMany({
-      where: {
-        category: {
-          name: category,
-        },
-      },
-      include: {
-        category: true,
-        collection: true,
-        productItems: true,
-      },
+    const allProducts = await prisma.product.findMany({
+      include: PRODUCT_RELATED_FIELDS,
     });
-    return res.status(StatusCodes.OK).json(foundProduct);
+    return res.status(StatusCodes.OK).json(allProducts);
   } catch (err: any) {
-    return errorResponse(res, StatusCodes.NOT_FOUND, err);
+    return errorResponse(res, StatusCodes.INTERNAL_SERVER_ERROR, err);
   }
 };
 
@@ -114,8 +98,8 @@ export const createProduct = async (req: Request, res: Response) => {
     currentPrice,
     image,
     tags,
-    colorId,
-    size,
+    colors,
+    sizes,
     quantity,
   } = req.body;
 
@@ -132,19 +116,16 @@ export const createProduct = async (req: Request, res: Response) => {
         image,
         categoryId,
         collectionId,
-        productItems: {
-          create: {
-            colorId,
-            size,
-            quantity,
-            image,
-            sku: randomSku,
-          },
+        sizes,
+        quantity,
+        colors: {
+          connect: colors ? [ ...colors ] : undefined,
         },
         tags: {
-          connect: [ ...tags ],
-        }
-      }
+          connect: tags ? [ ...tags ] : undefined,
+        },
+      },
+      include: PRODUCT_RELATED_FIELDS,
     });
     return res.status(StatusCodes.CREATED).json(createdProduct);
   } catch (err) {
@@ -160,7 +141,10 @@ export const createProduct = async (req: Request, res: Response) => {
 
 export const deleteProduct = async (req: Request, res: Response) => {
   const { id } = req.params;
-  if (!id) return errorResponse(res, StatusCodes.BAD_REQUEST, 'Id is required');
+  if (!id)
+    return errorResponse(res, StatusCodes.BAD_REQUEST, {
+      message: 'Id is required',
+    });
 
   try {
     const product = await findProduct(id);
@@ -175,49 +159,49 @@ export const deleteProduct = async (req: Request, res: Response) => {
   }
 };
 
-// export const updateProduct = async (req: Request, res: Response) => {
-//   const { id } = req.params;
-//   if (!id) return errorResponse(res, StatusCodes.BAD_REQUEST, 'Id is required');
+export const updateProduct = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  if (!id)
+    return errorResponse(res, StatusCodes.BAD_REQUEST, {
+      message: 'Id is required',
+    });
 
-//   const {
-//     title,
-//     currentPrice,
-//     image,
-//     tags,
-//     colorId,
-//     size,
-//     quantity,
-//   } = req.body;
+  const {
+    title,
+    currentPrice,
+    image,
+    tags,
+    colors,
+    sizes,
+    quantity,
+  } = req.body;
 
 
-//   try {
-//     const product = await findProduct(id);
-//     console.log(
-//       `Updating product ${product.title} with body:`
-//     );
-//     console.table(req.body)
-//     const updatedProduct = await prisma.product.update({
-//       where: { id: Number(id) },
-//       data: {
-//         title,
-//         currentPrice,
-//         image,
-//         productItems: {
-//           upsert: {
-//             where: {
-//               id: '', // Replace with the actual ID of the product item
-//               sku: '', // Replace with the actual SKU of the product item
-//             },
-//             update: { quantity },
-//           },
-//         },
-//         tags: {
-//           connect: [ ...tags ],
-//         }
-//       }
-//     });
-//     return res.status(StatusCodes.OK).json({ ...updatedProduct });
-//   } catch (error: any) {
-//     return res.status(StatusCodes.NOT_FOUND).json({ error: error.message });
-//   }
-// };
+  try {
+    const product = await findProduct(id);
+    console.log(
+      `Updating product ${product.title} with body:`
+    );
+    console.table(req.body)
+    const updatedProduct = await prisma.product.update({
+      where: { id: Number(id) },
+      data: {
+        title,
+        currentPrice,
+        image,
+        sizes,
+        quantity,
+        colors: {
+          set: colors ? [ ...colors ] : undefined,
+        },
+        tags: {
+          set: tags ? [ ...tags ] : undefined,
+        }
+      },
+      include: PRODUCT_RELATED_FIELDS,
+    });
+    return res.status(StatusCodes.OK).json(updatedProduct);
+  } catch (error: any) {
+    return res.status(StatusCodes.NOT_FOUND).json({ error: error.message });
+  }
+};
