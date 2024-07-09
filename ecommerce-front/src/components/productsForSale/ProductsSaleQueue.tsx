@@ -17,7 +17,7 @@ const ProductsSaleQueue = () => {
   ]);
 
   return (
-    <div className='flex mt-[150px] flex-col items-center space-y-10 sm:text-[24px] text-[16px] font-bold w-[95%]  mx-auto'>
+    <div className='flex sm:mt-[150px] mt-[75px] flex-col items-center space-y-10 sm:text-[24px] text-[16px] font-bold sm:w-[95%]  w-[80%] mx-auto'>
       
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-10 mb-8   '>
@@ -25,7 +25,7 @@ const ProductsSaleQueue = () => {
           <Product key={index} name={product.name} imgUrl={product.imgUrl} price={product.price} />
         ))}
         <div className='flex sm:justify-self-end justify-center col-span-full mt-6'>
-          <button className='bg-black text-white rounded-[60px] text-[24px] px-8 py-2 '>
+          <button className='bg-black text-white rounded-[60px] sm:text-[24px] text-[16px] px-8 py-2 '>
             Ver mais
           </button>
         </div>
