@@ -8,13 +8,16 @@ import ServiceCard from "@/components/ServiceCard";
 import Dropdown from "@/components/comentario/dropdown/Dropdown";
 import CardSemelhante from "@/components/CardSemelhante";
 import SectionCard from "@/components/SectionCard";
+import Button from "@/components/Button";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const produto = () => {
   return (
     <section
       className={`flex h-auto w-screen flex-col items-center bg-bg-primary `}
     >
-      <nav className="w-full h-[115px] bg-red-500"></nav>
+      <Header />
 
       <section
         className={` h-auto w-full flex lg:flex-row flex-col items-center justify-center py-10 lg:gap-20 gap-4 gap px-6`}
@@ -47,23 +50,34 @@ const produto = () => {
             <SizeSelect peerName={"G"} value={"G"} />
             <SizeSelect peerName={"GG"} value={"GG"} />
           </div>
+          <Button
+            url={"/produtos"}
+            addClass="self-center h-auto text-2xl font-semibold lg:w-auto lg:px-48 lg:py-5 w-full"
+          >
+            Ver mais
+          </Button>
         </div>
       </section>
 
       <section
         className={` h-auto w-full flex lg:flex-row flex-col items-center justify-center py-10 lg:gap-20 gap-4 gap px-6 mb-20`}
       >
-        <div className={`lg:flex flex-col gap-10 hidden`}>
+        <div
+          className={`lg:flex flex-col gap-10 hidden items-center justify-center`}
+        >
           <BaseText isBlack={true}>Comentários:</BaseText>
           {data?.map((comment, index) => (
-            <Comentario
-              userImageUrl={comment.userImageUrl}
-              userName={comment.userName}
-              comentario={comment.comentario}
-              time={comment.time}
-              key={index}
-            />
+            <>
+              <Comentario
+                userImageUrl={comment.userImageUrl}
+                userName={comment.userName}
+                comentario={comment.comentario}
+                time={comment.time}
+                key={index}
+              />
+            </>
           ))}
+          <Button url={""}>Ver mais</Button>
         </div>
         <Dropdown />
         <div
@@ -125,9 +139,7 @@ const produto = () => {
           show={"hidden"}
         />
       </SectionCard>
-      <footer className="h-80 bg-red-500 w-full">
-        Footer
-      </footer>
+      <Footer />
     </section>
   );
 };

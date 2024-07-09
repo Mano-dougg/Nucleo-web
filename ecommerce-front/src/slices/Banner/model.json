@@ -1,0 +1,76 @@
+{
+  "id": "header",
+  "type": "SharedSlice",
+  "name": "Banner",
+  "description": "Header",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3,heading4,heading5,heading6,strong"
+          }
+        },
+        "winter": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Winter",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "button_text",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "button_link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "first_image": {
+          "type": "Image",
+          "config": {
+            "label": "first_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "seconde_image": {
+          "type": "Image",
+          "config": {
+            "label": "seconde_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "third_image": {
+          "type": "Image",
+          "config": {
+            "label": "third_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

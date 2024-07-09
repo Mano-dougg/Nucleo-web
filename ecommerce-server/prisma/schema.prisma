@@ -1,0 +1,136 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  seed     = "prisma/seed.ts"
+}
+
+generator zod {
+  provider                  = "zod-prisma-types"
+  createPartialTypes        = true
+  createRelationValuesTypes = true
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  ///@zod.string.email({ message: "Invalid email address" }).min(8, { message: "Minimum 8 characters" })
+  email    String @unique
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
+  name     String
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(50, { message: "Maximum 50 characters" })
+  password String
+  ///@zod.enum
+  role     Role   @default(USER)
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Tag {
+  id       Int       @id @default(autoincrement())
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
+  title    String @unique
+  products Product[]
+}
+
+model Product {
+  id            Int           @id @default(autoincrement())
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
+  title         String
+  ///@zod.string.min(0, { message: "Minimum 0 characters" }).max(1000, { message: "Maximum 1000 characters" })
+  description   String
+  ///@zod.number.int().nonnegative({ message: "Minimum 0" })
+  currentPrice  Int
+  ///@zod.number.int().nonnegative({ message: "Minimum 0" })
+  previousPrice Int
+  inPromotion   Boolean
+  ///@zod.enum
+  fitting       Fitting
+  ///@zod.enum
+  style         Style
+  ///@zod.string.url()
+  image         String
+  category      Category      @relation(fields: [categoryId], references: [id])
+  categoryId    Int
+  collection    Collection    @relation(fields: [collectionId], references: [id])
+  collectionId  Int
+  tags          Tag[]
+  productItems  ProductItem[]
+}
+
+model ProductItem {
+  id        String  @id @default(uuid())
+  ///@zod.string
+  sku       String  @unique
+  /// zod.number.int().nonnegative({ message: "Minimum 0" })
+  quantity  Int
+  ///@zod.enum
+  size      Size
+  ///@zod.string.url()
+  image     String
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  color     Color?  @relation(fields: [colorId], references: [id])
+  colorId   Int?
+}
+
+model Color {
+  id        Int           @id @default(autoincrement())
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
+  name      String        @unique
+  ///@zod.string
+  reference String
+  products  ProductItem[]
+}
+
+model Collection {
+  id       Int       @id @default(autoincrement())
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
+  name     String    @unique
+  ///@zod.string.url()
+  image    String
+  products Product[]
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
+  name     String    @unique
+  ///@zod.string
+  image    String
+  products Product[]
+}
+
+enum Fitting {
+  OVERSIZE
+  SKINNY
+  LOOSE
+  SLIMFIT
+}
+
+enum Style {
+  CASUAL
+  STREET
+  SENSUAL
+  SOCIAL
+}
+
+enum Size {
+  P
+  M
+  G
+  GG
+}
