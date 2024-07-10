@@ -265,7 +265,7 @@ async function main() {
     data: {
       title: 'Inverno',
       products: {
-        connect: [ { id: 2 }, { id: 3 }, { id: 5 } ]
+        connect: [ { id: 4 }, { id: 6 } ]
       }
     }
   })
@@ -275,7 +275,7 @@ async function main() {
     data: {
       title: 'Verão',
       products: {
-        connect: [ { id: 1 }, { id: 2 }, { id: 4 } ]
+        connect: [ { id: 1 }, { id: 2 }, { id: 3 }, { id: 5 }, { id: 7 }, { id: 8 } ]
       }
     }
   })
@@ -285,7 +285,7 @@ async function main() {
     data: {
       title: 'Camisas',
       products: {
-        connect: [ { id: 1 } ]
+        connect: [ { id: 1 }, { id: 8 } ]
       }
     }
   })
@@ -305,7 +305,7 @@ async function main() {
     data: {
       title: 'Jaquetas',
       products: {
-        connect: [ { id: 3 } ]
+        connect: [ { id: 3 }, { id: 7 } ]
       }
     }
   })
@@ -315,7 +315,7 @@ async function main() {
     data: {
       title: 'Vestidos',
       products: {
-        connect: [ { id: 4 } ]
+        connect: [ { id: 4 }, { id: 6 } ]
       }
     }
   })
@@ -325,7 +325,7 @@ async function main() {
     data: {
       title: 'Promoção',
       products: {
-        connect: [ { id: 5 } ]
+        connect: [ { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 } ]
       }
     }
   })
