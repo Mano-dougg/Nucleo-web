@@ -176,6 +176,7 @@ async function main() {
       }
     },
   });
+
   const molEst = await prisma.product.create({
     data: {
       title: 'Moletom estampado masculino',
@@ -196,8 +197,68 @@ async function main() {
     },
   })
 
+  const vestLongo = await prisma.product.create({
+    data: {
+      title: 'Vestido longo',
+      description: 'Vestido longo',
+      currentPrice: 9000,
+      previousPrice: 22000,
+      inPromotion: true,
+      categoryId: 4,
+      collectionId: 1,
+      fitting: 'SLIMFIT',
+      style: 'SENSUAL',
+      image: 'https://unsplash.com/photos/woman-wearing-red-spaghetti-strap-dress-SQZl2ykH7E8',
+      sizes: [ 'P', 'M' ],
+      quantity: 2,
+      colors: {
+        connect: [ { id: 1 } ],
+      }
+    },
+  })
+
+  const jaqCouro = await prisma.product.create({
+    data: {
+      title: 'Jaqueta de couro',
+      description: 'Jaqueta de couro',
+      currentPrice: 7000,
+      previousPrice: 12000,
+      inPromotion: true,
+      categoryId: 3,
+      collectionId: 2,
+      fitting: 'LOOSE',
+      style: 'SOCIAL',
+      image: 'https://unsplash.com/photos/woman-lying-on-white-wall-KA3BpKEI0kg',
+      sizes: [ 'M', 'G' ],
+      quantity: 3,
+      colors: {
+        connect: [ { id: 4 } ],
+      }
+    },
+  })
+
+  const molFem = await prisma.product.create({
+    data: {
+      title: 'Moletom Feminino',
+      description: 'Moletom Feminino',
+      currentPrice: 10000,
+      previousPrice: 22000,
+      inPromotion: true,
+      categoryId: 2,
+      collectionId: 2,
+      fitting: 'OVERSIZE',
+      style: 'CASUAL',
+      image: 'https://unsplash.com/photos/woman-in-red-knit-sweater-holding-white-ceramic-mug-Wor4E7biO9A',
+      sizes: [ 'P', 'GG' ],
+      quantity: 4,
+      colors: {
+        connect: [ { id: 1 } ],
+      }
+    },
+  })
+
   console.log('Products created:');
-  console.table([ camFem, calMasc, jaqFem, vestFlor, molEst ]);
+  console.table([ camFem, calMasc, jaqFem, vestFlor, molEst, vestLongo, jaqCouro, molFem ]);
 
   console.log('Creating tags:');
   const seededInvernoTag = await prisma.tag.create({
