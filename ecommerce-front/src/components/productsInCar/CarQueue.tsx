@@ -13,6 +13,8 @@ interface Product {
 const CarQueue = () => {
   const [queue, setQueue] = useState<Product[]>([
     { name: 'Vestido Longo Turquesa', imgUrl: 'URL.example', price: 110.00, size: 'M' },
+    { name: 'Vestido Longo Turquesa', imgUrl: 'URL.example', price: 110.00, size: 'M' },
+
   ]);
 
   return (
@@ -21,8 +23,8 @@ const CarQueue = () => {
         <EmptyCar />
       ) : (
         <>
-          <p className="self-start text-[32px] font-bold mb-2">Itens no carrinho</p>
-          <div className="grid grid-cols-1 gap-10 mb-8">
+          <p className="self-start sm:text-[32px] font-bold mb-2">Itens no carrinho</p>
+          <div className="grid grid-cols-1 gap-16 mb-8">
             {queue.map((product, index) => (
               <div key={index} className="flex flex-col xl:flex-row gap-5 items-center">
                 <Product name={product.name} imgUrl={product.imgUrl} price={product.price} size={product.size} />
