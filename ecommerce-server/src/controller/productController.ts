@@ -11,7 +11,7 @@ const PRODUCT_RELATED_FIELDS = {
   colors: true,
 }
 
-const NOT_FOUND_MESSAGE = (fieldName: string, field: string) =>
+const NOT_FOUND_MESSAGE = (fieldName: string, field: string[]) =>
   `No product found with ${fieldName} ${field}`;
 
 const findProduct = async (id: string) => {
@@ -22,7 +22,7 @@ const findProduct = async (id: string) => {
     include: PRODUCT_RELATED_FIELDS,
   });
   if (!product) {
-    throw new Error(NOT_FOUND_MESSAGE('id', id));
+    throw new Error(NOT_FOUND_MESSAGE('id', [ id ]));
   }
   return product;
 };
@@ -204,4 +204,39 @@ export const updateProduct = async (req: Request, res: Response) => {
   } catch (error: any) {
     return res.status(StatusCodes.NOT_FOUND).json({ error: error.message });
   }
+};
+
+// Filter routes
+
+const getProductsByCategory = async (categoryIds: string[]) => {
+  const categoryIdNumbers = categoryIds.map(id => Number(id));
+  const foundProducts = await prisma.product.findMany({
+    where: {
+      OR: categoryIdNumbers.map(id => ({ categoryId: id })),
+    },
+    distinct: [ 'id' ],
+    include: PRODUCT_RELATED_FIELDS,
+  });
+  return foundProducts;
+}
+
+export const filterProductsByQuery = async (req: Request, res: Response) => {
+  const queryParams: {
+    [ key: string ]: string | Array<string>
+  } = {};
+
+  // Iterate over all query parameters and add them to the queryParams object
+  Object.entries(req.query).forEach(([ key, value ]) => {
+    queryParams[ key ] = Array.isArray(value)
+      ? value.filter(v => typeof v === 'string')
+      : [ value ].filter(v => typeof v === 'string');
+  });
+  const filters = Object.entries(queryParams)
+  console.log(filters);
+
+  if (queryParams.category) {
+    const foundProducts = await getProductsByCategory([ ...queryParams.category ]);
+    return res.status(StatusCodes.OK).json(foundProducts);
+  }
+  return res.status(StatusCodes.OK).json([]);
 };
