@@ -23,7 +23,7 @@ export default function Page({
         ) : null}
       </Head>
       <Header />
-      <main className="  flex flex-col items-center space-y-10 ">
+      <main className="flex flex-col items-center space-y-10">
         <SearchBar />
         <SliceZone slices={page.data.slices} components={components} />
         <ProductsQueue />
@@ -31,7 +31,7 @@ export default function Page({
       </main>
       <Footer />
     </>
-  )};
+  );
 
 export async function getStaticProps({ previewData }: GetStaticPropsContext) {
   const client = createClient({ previewData });

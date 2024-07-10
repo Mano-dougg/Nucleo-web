@@ -6,7 +6,9 @@ import React from 'react'
 const ProductsInCar = () => {
   return (
     <><Header isCarrinho={true}/>
+    <main className='items-center flex-col flex '>
     <CarQueue/>
+    </main>
     
       <Footer/></>
   )

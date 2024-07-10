@@ -17,12 +17,10 @@ const ProductsQueue = () => {
   ]);
 
   return (
-    <div className="flex flex-col items-center mt-10 space-y-10 text-[24px] font-bold mb-10 w-[80%] mx-auto">
-      <p className="self-start sm:text-[36px] text-[24px] font-bold">
-        Produtos
-      </p>
+    <div className='flex flex-col items-center mt-10 space-y-10 text-[24px] font-bold mb-10 w-[80%] mx-auto'>
+      <p className='self-start sm:text-[36px] text-[24px] font-bold'>Produtos</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 max-w-4xl w-full">
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 max-w-4xl w-full'>
         {queue.map((product, index) => (
           <Product key={index} name={product.name} imgUrl={product.imgUrl} />
         ))}

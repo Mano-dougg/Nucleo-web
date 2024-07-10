@@ -17,10 +17,12 @@ const PromotionQueue = () => {
   ]);
 
   return (
-    <div className="flex flex-col items-center space-y-10 sm:text-[32px] text-[16px] font-bold w-[80%] mx-auto">
-      <p className="self-start sm:text-4xl text-[24px] font-bold">Promoções</p>
+    <div className='flex flex-col items-center space-y-10 sm:text-[32px] text-[16px] font-bold w-[80%] mx-auto'>
+      <p className='self-start sm:text-4xl text-[24px] font-bold'>
+        Promoções
+      </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 max-w-4xl w-full">
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 max-w-4xl w-full'>
         {queue.map((product, index) => (
           <Product
             key={index}
