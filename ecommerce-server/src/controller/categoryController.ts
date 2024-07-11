@@ -1,15 +1,13 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
+import { errorResponse, NOT_FOUND_MESSAGE } from '../utils/errorResponse';
 
 const prisma = new PrismaClient();
 
 const CATEGORY_RELATED_FIELDS = {
   products: true,
 }
-
-const NOT_FOUND_MESSAGE = (fieldName: string, field: string) =>
-  `No category found with ${fieldName} ${field}`;
 
 const findCategory = async (id: string) => {
   const category = await prisma.category.findUnique({
@@ -19,18 +17,13 @@ const findCategory = async (id: string) => {
     include: CATEGORY_RELATED_FIELDS,
   });
   if (!category) {
-    throw new Error(NOT_FOUND_MESSAGE('id', id));
+    throw new Error(NOT_FOUND_MESSAGE(id));
   }
   return category;
 };
 
 export const getCategoryById = async (req: Request, res: Response) => {
   const { id } = req.params;
-
-  if (!id)
-    return errorResponse(res, StatusCodes.BAD_REQUEST, {
-      message: 'Id is required',
-    });
 
   try {
     const foundCategory = await findCategory(id);
@@ -48,30 +41,6 @@ export const listCategories = async (req: Request, res: Response) => {
     return res.status(StatusCodes.OK).json(allcategorys);
   } catch (err: any) {
     return errorResponse(res, StatusCodes.INTERNAL_SERVER_ERROR, err);
-  }
-};
-
-const errorResponse = (
-  res: Response,
-  responseCode: StatusCodes,
-  err: any,
-  attribute?: string
-) => {
-  switch (responseCode) {
-    case StatusCodes.BAD_REQUEST:
-      return res.status(responseCode).json({ error: err.message });
-    case StatusCodes.NOT_FOUND:
-      return res.status(responseCode).json({ error: err.message });
-    case StatusCodes.INTERNAL_SERVER_ERROR:
-      return res.status(responseCode).json({ error: 'Internal server error' });
-    case StatusCodes.CONFLICT:
-      return res
-        .status(responseCode)
-        .json({
-          error: `Unique attribute ${attribute ?? 'provided'} already taken`,
-        });
-    default:
-      break;
   }
 };
 
@@ -112,10 +81,6 @@ export const createCategory = async (req: Request, res: Response) => {
 
 export const deleteCategory = async (req: Request, res: Response) => {
   const { id } = req.params;
-  if (!id)
-    return errorResponse(res, StatusCodes.BAD_REQUEST, {
-      message: 'Id is required',
-    });
 
   try {
     const category = await findCategory(id);
@@ -132,10 +97,6 @@ export const deleteCategory = async (req: Request, res: Response) => {
 
 export const updateCategory = async (req: Request, res: Response) => {
   const { id } = req.params;
-  if (!id)
-    return errorResponse(res, StatusCodes.BAD_REQUEST, {
-      message: 'Id is required',
-    });
 
   const {
     name,

@@ -15,6 +15,6 @@ categoryRouter.post('/', validateSchema(CategoryCreateInputSchema), createCatego
 categoryRouter.get('/:id', getCategoryById);
 categoryRouter.get('/', listCategories);
 categoryRouter.put('/:id', validateSchema(CategoryUpdateInputSchema), updateCategory);
-categoryRouter.delete('/', deleteCategory);
+categoryRouter.delete('/:id', deleteCategory);
 
 export default categoryRouter;

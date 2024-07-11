@@ -1,6 +1,7 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
+import { errorResponse, NOT_FOUND_MESSAGE } from '../utils/errorResponse';
 
 const prisma = new PrismaClient();
 
@@ -11,9 +12,6 @@ const PRODUCT_RELATED_FIELDS = {
   colors: true,
 }
 
-const NOT_FOUND_MESSAGE = (fieldName: string, field: string[]) =>
-  `No product found with ${fieldName} ${field}`;
-
 const findProduct = async (id: string) => {
   const product = await prisma.product.findUnique({
     where: {
@@ -22,7 +20,7 @@ const findProduct = async (id: string) => {
     include: PRODUCT_RELATED_FIELDS,
   });
   if (!product) {
-    throw new Error(NOT_FOUND_MESSAGE('id', [ id ]));
+    throw new Error(NOT_FOUND_MESSAGE(id));
   }
   return product;
 };
@@ -51,30 +49,6 @@ export const listProducts = async (req: Request, res: Response) => {
     return res.status(StatusCodes.OK).json(allProducts);
   } catch (err: any) {
     return errorResponse(res, StatusCodes.INTERNAL_SERVER_ERROR, err);
-  }
-};
-
-const errorResponse = (
-  res: Response,
-  responseCode: StatusCodes,
-  err: any,
-  attribute?: string
-) => {
-  switch (responseCode) {
-    case StatusCodes.BAD_REQUEST:
-      return res.status(responseCode).json({ error: err.message });
-    case StatusCodes.NOT_FOUND:
-      return res.status(responseCode).json({ error: err.message });
-    case StatusCodes.INTERNAL_SERVER_ERROR:
-      return res.status(responseCode).json({ error: 'Internal server error' });
-    case StatusCodes.CONFLICT:
-      return res
-        .status(responseCode)
-        .json({
-          error: `Unique attribute ${attribute ?? 'provided'} already taken`,
-        });
-    default:
-      break;
   }
 };
 
