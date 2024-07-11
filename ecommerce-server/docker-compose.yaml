@@ -21,13 +21,12 @@ services:
     environment:
       - DB_HOST=${DB_HOST}
       - EXPRESS_PORT=${EXPRESS_PORT}
-    # user: "${UID}:${GID}"
     depends_on:
       postgres:
         condition: service_healthy
     entrypoint: /bin/sh -c "npm install && npm run dev"
     healthcheck:
-      # Checks if port 3000 is being used
+      # Checks if port 3001 is being used
       test: ["CMD", "lsof", "-t", "-i:3001"]
       timeout: 10s
       retries: 5
