@@ -5,69 +5,67 @@ import { errorResponse, NOT_FOUND_MESSAGE } from '../utils/errorResponse';
 
 const prisma = new PrismaClient();
 
-const CATEGORY_RELATED_FIELDS = {
+const TAG_RELATED_FIELDS = {
   products: true,
 }
 
-const findCategory = async (id: string) => {
-  const category = await prisma.category.findUnique({
+const findTag = async (id: string) => {
+  const tag = await prisma.tag.findUnique({
     where: {
       id: Number(id),
     },
-    include: CATEGORY_RELATED_FIELDS,
+    include: TAG_RELATED_FIELDS,
   });
-  if (!category) {
+  if (!tag) {
     throw new Error(NOT_FOUND_MESSAGE(id));
   }
-  return category;
+  return tag;
 };
 
-export const getCategoryById = async (req: Request, res: Response) => {
+export const getTagById = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
-    const foundCategory = await findCategory(id);
-    return res.status(StatusCodes.OK).json(foundCategory);
+    const foundTag = await findTag(id);
+    return res.status(StatusCodes.OK).json(foundTag);
   } catch (err: any) {
     return errorResponse(res, StatusCodes.NOT_FOUND, err);
   }
 };
 
-export const listCategories = async (req: Request, res: Response) => {
+export const listTags = async (req: Request, res: Response) => {
   try {
-    const allcategorys = await prisma.category.findMany({
-      include: CATEGORY_RELATED_FIELDS,
+    const allTags = await prisma.tag.findMany({
+      include: TAG_RELATED_FIELDS,
     });
-    return res.status(StatusCodes.OK).json(allcategorys);
+    return res.status(StatusCodes.OK).json(allTags);
   } catch (err: any) {
     return errorResponse(res, StatusCodes.INTERNAL_SERVER_ERROR, err);
   }
 };
 
-export const createCategory = async (req: Request, res: Response) => {
+export const createTag = async (req: Request, res: Response) => {
   console.log(
-    'Creating category with body:'
+    'Creating tag with body:'
   );
   console.table(req.body)
 
   const {
-    name,
-    image,
+    title,
     products,
   } = req.body;
 
   try {
-    const createdcategory = await prisma.category.create({
+    const createdTag = await prisma.tag.create({
       data: {
-        name,
-        image,
+        title,
         products: {
           connect: products ? [ ...products ] : undefined,
         },
       },
-      include: CATEGORY_RELATED_FIELDS,
+      include: TAG_RELATED_FIELDS,
     });
-    return res.status(StatusCodes.CREATED).json(createdcategory);
+    return res.status(StatusCodes.CREATED).json(createdTag);
   } catch (err) {
     if (err instanceof Prisma.PrismaClientKnownRequestError) {
       if (err.code === 'P2002') {
@@ -79,46 +77,43 @@ export const createCategory = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteCategory = async (req: Request, res: Response) => {
+export const deleteTag = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
-    const category = await findCategory(id);
-    await prisma.category.delete({
+    const tag = await findTag(id);
+    await prisma.tag.delete({
       where: { id: Number(id) },
     });
     return res
       .status(StatusCodes.OK)
-      .json({ message: `Category ${category.name} deleted` });
+      .json({ message: `tag ${tag.title} deleted` });
   } catch (error: any) {
     return res.status(StatusCodes.NOT_FOUND).json({ error: error.message });
   }
 };
 
-export const updateCategory = async (req: Request, res: Response) => {
+export const updateTag = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   const {
-    name,
-    image
+    title,
   } = req.body;
 
-
   try {
-    const category = await findCategory(id);
+    const tag = await findTag(id);
     console.log(
-      `Updating category ${category.name} with body:`
+      `Updating tag ${tag.title} with body:`
     );
     console.table(req.body)
-    const updatedcategory = await prisma.category.update({
+    const updatedTag = await prisma.tag.update({
       where: { id: Number(id) },
       data: {
-        image,
-        name,
+        title,
       },
-      include: CATEGORY_RELATED_FIELDS,
+      include: TAG_RELATED_FIELDS,
     });
-    return res.status(StatusCodes.OK).json(updatedcategory);
+    return res.status(StatusCodes.OK).json(updatedTag);
   } catch (error: any) {
     return res.status(StatusCodes.NOT_FOUND).json({ error: error.message });
   }
