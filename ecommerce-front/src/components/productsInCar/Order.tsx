@@ -10,7 +10,7 @@ const Order = ({price}: Props) => {
       <div className='flex flex-col justify-around w-full'>
         <p className='text-left justify-self-end font-bold'> Resumo do Pedido</p>
         <p className=' font-bold text-right'>R${price.toFixed(2)}</p>
-        <button className='text-white self-center bg-black rounded-[60px] min-w-[244px] '> Comprar Agora </button>
+        <button className='text-white self-center bg-black rounded-[60px] min-w-[60%] px-2 '> Comprar Agora </button>
         </div>
       </div>
         
