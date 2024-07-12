@@ -258,7 +258,7 @@ async function main() {
   })
 
   console.log('Products created:');
-  console.table([ camFem, calMasc, jaqFem, vestFlor, molEst, vestLongo, jaqCouro, molFem ]);
+  console.log([ camFem, calMasc, jaqFem, vestFlor, molEst, vestLongo, jaqCouro, molFem ]);
 
   console.log('Creating tags:');
   const seededInvernoTag = await prisma.tag.create({

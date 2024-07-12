@@ -5,9 +5,9 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["relationJoins"]
-  seed     = "prisma/seed.ts"
+  seed            = "prisma/seed.ts"
 }
 
 generator zod {
@@ -53,9 +53,9 @@ model Product {
   title         String
   ///@zod.string.min(0, { message: "Minimum 0 characters" }).max(1000, { message: "Maximum 1000 characters" })
   description   String
-  ///@zod.number.int().nonnegative({ message: "Minimum 0" })
+  ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
   currentPrice  Int
-  ///@zod.number.int().nonnegative({ message: "Minimum 0" })
+  ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
   previousPrice Int
   inPromotion   Boolean
   ///@zod.enum
@@ -64,7 +64,7 @@ model Product {
   style         Style
   ///@zod.string.url()
   image         String
-  /// zod.number.int().nonnegative({ message: "Minimum 0" })
+  ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
   quantity      Int
   category      Category   @relation(fields: [categoryId], references: [id])
   categoryId    Int
@@ -80,7 +80,7 @@ model Product {
 //   id        String  @id @default(uuid())
 //   ///@zod.string
 //   sku       String  @unique
-//   /// zod.number.int().nonnegative({ message: "Minimum 0" })
+//   ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
 //   quantity  Int
 //   ///@zod.enum
 //   size      Size
