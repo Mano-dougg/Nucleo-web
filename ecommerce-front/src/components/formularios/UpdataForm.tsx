@@ -54,7 +54,7 @@ const UpdataForm = (props: CreateFormProps) => {
 
   useEffect(() => {
     async function getProduct(id: number) {
-      const response = await fetch("http://localhost:3001/product/2");
+      const response = await fetch("http://localhost:3001/product/12");
       const dados = await response.json();
       setData(dados);
     }
@@ -74,6 +74,7 @@ const UpdataForm = (props: CreateFormProps) => {
       }
     }
     setTags(newTags);
+    setFile(data?.image)
   }, [data]);
 
   async function createInvoice(formData: FormData) {
