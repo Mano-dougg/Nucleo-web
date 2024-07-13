@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from '../Modal'
+import UpdataForm from '../formularios/UpdataForm'
+import UpdataModal from '../modal/UpdateModal'
 
 const ButtonsAndSearch = () => {
+const [ver, setVer] = useState<boolean>(false)
+
   return (
     <div className='justify-around  flex items-center'>
          <div className="w-[38%] hidden sm:flex h-[46px] rounded-[60px] border-[1px] bg-[white] border-black items-center px-4 py-1 mt-4">
@@ -13,12 +18,8 @@ const ButtonsAndSearch = () => {
     </div>
 
         <div className=' sm:gap-9 gap-3 flex mt-10'>
-        <button className='bg-black text-white rounded-[60px] sm:text-[24px] text-[16px] sm:px-16 px-8  py-2 '>
-            Criar
-          </button>
-          <button className='bg-black text-white rounded-[60px] sm:text-[24px] text-[16px] sm:px-16 px-8 py-2 '>
-            Editar
-          </button>
+        <Modal />
+        <UpdataModal ver={ver} fechar={() => setVer(false)} abrir={() =>setVer(true)} />
 
         </div>
       
