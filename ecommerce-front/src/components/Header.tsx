@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 
 type Props = {
   isCarrinho?: boolean;
@@ -8,6 +9,8 @@ type Props = {
 function Header({ isCarrinho, searchProduct }: Props) {
   const [showModal, setShowModal] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+
+  const router = useRouter();
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -21,6 +24,11 @@ function Header({ isCarrinho, searchProduct }: Props) {
     if (searchProduct) {
       searchProduct(searchTerm);
     }
+  };
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+    setShowModal(false);
   };
 
   return (
@@ -62,12 +70,40 @@ function Header({ isCarrinho, searchProduct }: Props) {
 
       {showModal && (
         <div className='absolute bg-[#CBE8CA] border border-black w-[252px] top-full right-0 flex flex-col items-center gap-0 space-y-6 sm:hidden pb-3'>
-          <p className='text-[20px] font-inter mt-4'>Produtos</p>
-          <p className='text-[20px] font-inter'>Carrinho</p>
-          <p className='text-[20px] font-inter'>HomePage</p>
-          <p className='text-[20px] font-inter'>Criação</p>
-          <p className='text-[20px] font-inter'>Dark Mode</p>
-          <p className='text-[20px] font-inter'>Suporte</p>
+          <p
+            className='text-[20px] font-inter mt-4 cursor-pointer'
+            onClick={() => handleNavigation('/produtoS')}
+          >
+            Produtos
+          </p>
+          <p
+            className='text-[20px] font-inter cursor-pointer'
+            onClick={() => handleNavigation('/itemCar')}
+          >
+            Carrinho
+          </p>
+          <p
+            className='text-[20px] font-inter cursor-pointer'
+            onClick={() => handleNavigation('/')}
+          >
+            HomePage
+          </p>
+          <p
+            className='text-[20px] font-inter cursor-pointer'
+            onClick={() => handleNavigation('/createAndEdit')}
+          >
+            Criação
+          </p>
+          <p
+            className='text-[20px] font-inter cursor-pointer'
+          >
+            Dark Mode
+          </p>
+          <p
+            className='text-[20px] font-inter cursor-pointer'
+          >
+            Suporte
+          </p>
         </div>
       )}
     </header>

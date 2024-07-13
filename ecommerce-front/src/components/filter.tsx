@@ -173,20 +173,35 @@ const Filter = ({ onCategoryChange }: any) => {
         </div>
       </div>
 
+     
       <div className='sm:hidden flex flex-col mt-20'>
         <select
-          className='form-select min-w-[190px] py-3 border-black border-[1px] text-[24px] text-center'
+          className='form-select min-w-[190px] py-3 border-black border-[1px] text-[24px] text-center mb-4'
           onChange={handleCategoryChange}
         >
-          <option value=''>Filtro</option>
+          <option value=''>Categoria</option>
           <option value='1'>Calças</option>
           <option value='2'>Blusas</option>
           <option value='3'>Jaquetas</option>
           <option value='4'>Vestidos</option>
+        </select>
+
+        <select
+          className='form-select min-w-[190px] py-3 border-black border-[1px] text-[24px] text-center mb-4'
+          onChange={handleStyleChange}
+        >
+          <option value=''>Estilo</option>
           <option value='casual'>Casual</option>
           <option value='street'>Street</option>
           <option value='sensual'>Sensual</option>
           <option value='social'>Social</option>
+        </select>
+
+        <select
+          className='form-select min-w-[190px] py-3 border-black border-[1px] text-[24px] text-center mb-4'
+          onChange={handleFittingChange}
+        >
+          <option value=''>Caimento</option>
           <option value='oversize'>Oversize</option>
           <option value='skinny'>Skinny</option>
           <option value='loose'>Solto</option>
