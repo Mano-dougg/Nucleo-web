@@ -62,7 +62,7 @@ model Product {
   fitting       Fitting
   ///@zod.enum
   style         Style
-  ///@zod.string.url()
+  ///@zod.string
   image         String
   ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
   quantity      Int
