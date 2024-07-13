@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 type Props = {
   isCarrinho?: boolean;
@@ -50,13 +51,17 @@ function Header({ isCarrinho, searchProduct }: Props) {
 
       <button className='sm:hidden' onClick={toggleModal}>
         <img src='/menu-home.svg' alt='Menu' />
+
+      
       </button>
 
       {!isCarrinho && (
-        <div className='sm:flex hidden md:gap-10 gap-4'>
-          <img src='/user-home.svg' alt='Usuário' />
-          <img src='/headphones-home.svg' alt='Fones de ouvido' />
-          <img src='/shopping-cart-home.svg' alt='Carrinho de compras' />
+        <div className="sm:flex hidden md:gap-10 gap-4">
+          <img src="/user-home.svg" alt="Usuário" />
+          <img src="/headphones-home.svg" alt="Fones de ouvido" />
+          <Link href={"/itemCar"}>
+            <img src="/shopping-cart-home.svg" alt="Carrinho de compras" />
+          </Link>
         </div>
       )}
 

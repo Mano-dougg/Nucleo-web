@@ -74,5 +74,3 @@ const ProductsSaleQueue = ({ selectedCategory, selectedStyle, selectedFitting, s
 };
 
 export default ProductsSaleQueue;
-
-

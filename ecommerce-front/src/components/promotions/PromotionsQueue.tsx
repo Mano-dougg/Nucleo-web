@@ -39,7 +39,7 @@ const PromotionQueue = () => {
         Promoções
       </p>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8 max-w-5xl w-full'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8 max-w-5xl sm:w-full'>
         {queue.map((product, index) => (
           <Product key={product.id} name={product.title} imgUrl={product.image} price={product.currentPrice} />
         ))}

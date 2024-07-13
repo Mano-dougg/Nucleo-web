@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
 function Footer() {
   return (
-    <footer className='bg-[#3B8039] flex justify-around md:justify-around  sm:pt-7 pt-3 pb-3 mt-10 flex-col items-center sm:items-start sm:pl-5 lg:pl-0 lg:flex-row '>
+    <footer className='bg-[#3B8039] flex justify-around md:justify-around  sm:pt-7 pt-3 pb-3 mt-10 flex-col items-center sm:items-start sm:pl-5 lg:pl-0 lg:flex-row w-full'>
       <div className='sm:flex hidden gap-10'>
         <div className='space-y-6 max-w-[175px]'>
           <h6 className=' text-white text-[24px]'>

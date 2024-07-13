@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React from "react";
 
 type Props = {
   name: string;
@@ -9,14 +9,14 @@ type Props = {
 
 const Product = ({ name, imgUrl, id }: Props) => {
   return (
-    <div className='bg-white border-[1px] border-black items-center flex flex-col justify-around py-9 px-9 gap-9'>
+    <div className='bg-white border-[1px] border-black flex flex-col items-center py-9 px-9 gap-4'>
       <img
         src={imgUrl}
         alt={name}
-        style={{ width: '140px', height: '140px', objectFit:'cover' }}
-        className='rounded-[120px]'
+        style={{ width: '140px', height: '140px', objectFit: 'cover' }}
+        className='rounded-full' 
       />
-      <p>{name}</p>
+      <p className='text-center text-[16px] font-semibold'>{name}</p>
     </div>
   );
 };

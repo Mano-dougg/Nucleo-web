@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
 type Props = {
@@ -14,7 +15,7 @@ const Product = ({ name, imgUrl, price }: Props) => {
         <p className='text-center mt-4'>{name}</p>
       </div>
       <div className='flex items-center justify-center gap-3'>
-        <img src='trending-down.svg'></img>
+        <img src='trending-down.svg' alt=''></img>
         <p className='text-red-600 font-bold'>R${price.toFixed(2)}</p>
         <img src='shopping-cart.svg' alt='Ícone do carrinho' className='w-6 h-6' />
       </div>

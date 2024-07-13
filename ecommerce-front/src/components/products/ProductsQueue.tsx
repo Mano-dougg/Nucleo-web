@@ -34,7 +34,7 @@ const ProductsQueue = () => {
     <div className='flex flex-col items-center mt-10 space-y-10 text-[24px] font-bold mb-10 w-[85%] mx-auto'>
       <p className='self-start sm:text-[36px] text-[24px] font-bold'>Produtos</p>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 max-w-5xl w-full'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 max-w-5xl sm:w-full'>
         {queue.map((category) => (
           <Product key={category.id} id={category.id} name={category.name} imgUrl={category.image} />
         ))}

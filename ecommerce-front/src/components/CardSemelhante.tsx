@@ -1,17 +1,19 @@
 import Image from "next/image";
 import BaseText from "./comentario/textoBase/BaseText";
+import Card from "./Card";
 
 interface ProdutoProps {
   imageUrl: string;
   produtoNome: string;
   preco: string;
-  show:string;
+  show: string;
 }
 
 const CardSemelhante = (props: ProdutoProps) => {
   return (
-    <div
+    <Card
       className={`h-auto w-52 max-w-52 flex flex-col gap-8 bg-bg-card border border-black py-2 items-center justify-center lg:flex ${props.show}`}
+      link={"/"}
     >
       <Image
         src={props.imageUrl}
@@ -31,7 +33,7 @@ const CardSemelhante = (props: ProdutoProps) => {
           className="max-h-6 max-w-6"
         />
       </div>
-    </div>
+    </Card>
   );
 };
 
