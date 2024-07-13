@@ -1,5 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
-import React from 'react';
+
+import React from "react";
+import Card from "../Card";
+
 
 type Props = {
   name: string;
@@ -16,8 +18,7 @@ const Product = ({ name, imgUrl, id }: Props) => {
         style={{ width: '140px', height: '140px', objectFit:'cover' }}
         className='rounded-[120px]'
       />
-      <p>{name}</p>
-    </div>
+
   );
 };
 
