@@ -5,8 +5,9 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
-  seed     = "prisma/seed.ts"
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+  seed            = "prisma/seed.ts"
 }
 
 generator zod {
@@ -40,21 +41,21 @@ enum Role {
 model Tag {
   id       Int       @id @default(autoincrement())
   ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
-  title    String @unique
+  title    String    @unique
   products Product[]
 }
 
 model Product {
-  id            Int           @id @default(autoincrement())
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
+  id            Int        @id @default(autoincrement())
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
   ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
   title         String
   ///@zod.string.min(0, { message: "Minimum 0 characters" }).max(1000, { message: "Maximum 1000 characters" })
   description   String
-  ///@zod.number.int().nonnegative({ message: "Minimum 0" })
+  ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
   currentPrice  Int
-  ///@zod.number.int().nonnegative({ message: "Minimum 0" })
+  ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
   previousPrice Int
   inPromotion   Boolean
   ///@zod.enum
@@ -63,37 +64,42 @@ model Product {
   style         Style
   ///@zod.string.url()
   image         String
-  category      Category      @relation(fields: [categoryId], references: [id])
+  ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
+  quantity      Int
+  category      Category   @relation(fields: [categoryId], references: [id])
   categoryId    Int
-  collection    Collection    @relation(fields: [collectionId], references: [id])
+  collection    Collection @relation(fields: [collectionId], references: [id])
   collectionId  Int
   tags          Tag[]
-  productItems  ProductItem[]
+  colors        Color[]
+  sizes         Size[]
+  // productItems  ProductItem[]
 }
 
-model ProductItem {
-  id        String  @id @default(uuid())
-  ///@zod.string
-  sku       String  @unique
-  /// zod.number.int().nonnegative({ message: "Minimum 0" })
-  quantity  Int
-  ///@zod.enum
-  size      Size
-  ///@zod.string.url()
-  image     String
-  product   Product @relation(fields: [productId], references: [id])
-  productId Int
-  color     Color?  @relation(fields: [colorId], references: [id])
-  colorId   Int?
-}
+// model ProductItem {
+//   id        String  @id @default(uuid())
+//   ///@zod.string
+//   sku       String  @unique
+//   ///@zod.number.int({ message: "Must be an integer" }).gte(0, { message: "Minimum 0" })
+//   quantity  Int
+//   ///@zod.enum
+//   size      Size
+//   ///@zod.string.url()
+//   image     String
+//   product   Product @relation(fields: [productId], references: [id])
+//   productId Int
+//   color     Color?  @relation(fields: [colorId], references: [id])
+//   colorId   Int?
+// }
 
 model Color {
-  id        Int           @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   ///@zod.string.min(3, { message: "Minimum 3 characters" }).max(100, { message: "Maximum 100 characters" })
-  name      String        @unique
+  name      String    @unique
   ///@zod.string
   reference String
-  products  ProductItem[]
+  product   Product[]
+  // products  ProductItem[]
 }
 
 model Collection {
