@@ -15,8 +15,8 @@ const Product = ({ name, imgUrl, price }: Props) => {
       </div>
       <div className='flex items-center sm:justify-center justify-around gap-3'>
         <img src='trending-down (1).svg'></img>
-        <p className='text-red-600 font-bold'>R${price.toFixed(2)}</p>
-        <img src='shopping-cart.svg' alt='Ícone do carrinho' className='w-6 h-6' />
+        <p className='text-red-600 font-bold'>R${(price/100).toFixed(2)}</p>
+        <img src='shopping-cart.svg' alt='Ícone do carrinho' className='w-12 h-12' />
       </div>
     </div>
   );
