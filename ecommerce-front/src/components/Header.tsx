@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
+
 type Props = {
   isCarrinho?: boolean;
   searchProduct?: (searchTerm: string) => void;
@@ -33,9 +34,11 @@ function Header({ isCarrinho, searchProduct }: Props) {
   };
 
   return (
-    <header className='bg-[#3B8039] flex items-center sm:justify-center lg:space-x-10 space-x-2 justify-between relative'>
+    <header className='bg-[#3B8039] flex items-center sm:justify-center lg:space-x-10 space-x-2 justify-between relative w-full'>
+      <Link href={'/'}>
       <img className='sm:w-auto w-[68px]' src='/Clothes 1.svg' alt='Logo' />
 
+      </Link>
       <div className="w-[48%] hidden h-[47px] rounded-[60px] border-[1px] sm:flex bg-[white] border-black items-center px-4">
         <input
           type="text"

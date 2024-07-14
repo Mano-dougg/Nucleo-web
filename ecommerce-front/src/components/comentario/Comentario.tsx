@@ -14,7 +14,7 @@ const Comentario = (props: ComentarioProps) => {
       className={`max-w-[600px] bg-bg-card lg:max-h-[216px] h-auto p-3 border lg:border-black flex lg:gap-4 gap- 2 lg:justify-start overflow-hidden lg:flex-row flex-col lg:items-start items-center `}
     >
       <div className="w-auto h-full">
-        <Image
+        <img
           src={props.userImageUrl}
           height={100}
           width={100}

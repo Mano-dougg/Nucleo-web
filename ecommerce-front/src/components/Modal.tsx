@@ -6,12 +6,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import Image from "next/image";
 import useDialog from "@/hooks/useDialog";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import deleteFn from "@/controlers/delete";
-import createFn from "@/controlers/create";
 import CreateForm from "./formularios/CreateForm";
 
 const Modal = () => {
@@ -39,7 +35,7 @@ const Modal = () => {
         <DialogHeader>
           <DialogTitle className="text-center text-4xl">Criar</DialogTitle>
         </DialogHeader>
-        <CreateForm  />
+        <CreateForm  close={onClose}/>
         <button
           type="button"
           className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"

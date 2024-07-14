@@ -9,7 +9,7 @@ type Props = {
 
 const Product = ({ name, imgUrl, id }: Props) => {
   return (
-    <div className='bg-white border-[1px] border-black flex flex-col items-center py-9 px-9 gap-4'>
+    <div className='bg-white border-[1px] border-black flex flex-col items-center sm:py-9 py-4 sm:px-9 px-4 gap-4'>
       <img
         src={imgUrl}
         alt={name}

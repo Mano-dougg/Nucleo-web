@@ -11,9 +11,9 @@ interface Products {
   fitting: string;
 }
 
-const ProductsSaleQueue = ({ selectedCategory, selectedStyle, selectedFitting, searchProduct }: any) => {
-  const [queue, setQueue] = useState<Products[]>([]);
-  const [queueLength, setQueueLength] = useState<number>(4);
+const ProductsSaleQueue = ({ selectedCategory, selectedStyle, selectedFitting, searchProduct, isEdit }: any) => {
+  const [ queue, setQueue ] = useState<Products[]>([]);
+  const [ queueLength, setQueueLength ] = useState<number>(4);
   console.log(selectedStyle)
 
   const addToQueue = () => {
@@ -29,7 +29,6 @@ const ProductsSaleQueue = ({ selectedCategory, selectedStyle, selectedFitting, s
         }
         const data = await response.json();
         setQueue(data);
-
       } catch (error) {
         console.error('Failed to fetch products:', error);
       }
@@ -39,13 +38,12 @@ const ProductsSaleQueue = ({ selectedCategory, selectedStyle, selectedFitting, s
   }, []);
 
   const filteredQueue = queue
-
     .filter((product) => !selectedCategory || product.categoryId === Number(selectedCategory))
     .filter((product) => !selectedStyle || product.style.toLocaleLowerCase() === selectedStyle)
     .filter((product) => !selectedFitting || product.fitting.toLocaleLowerCase() === selectedFitting)
     .filter((product) => !searchProduct || product.title.toLowerCase().includes(searchProduct.toLowerCase()
-)
-);
+    )
+    );
 
 
   return (
@@ -58,6 +56,8 @@ const ProductsSaleQueue = ({ selectedCategory, selectedStyle, selectedFitting, s
             imgUrl={product.image}
             price={product.currentPrice}
             id={product.id}
+            isEdit={isEdit}
+            link={product.id.toString()}
           />
         ))}
         <div className='flex sm:justify-self-end justify-center col-span-full mt-6'>

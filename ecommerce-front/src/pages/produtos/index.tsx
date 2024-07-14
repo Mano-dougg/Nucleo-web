@@ -16,9 +16,6 @@ const Produtos = () => {
     setSelectedCategory(category);
     setSelectedStyle(style);
     setSelectedFitting(fitting);
-    
-
-    
   };
 
   return (
@@ -34,7 +31,6 @@ const Produtos = () => {
             selectedStyle={selectedStyle}
             selectedFitting={selectedFitting}
             searchProduct={searchProduct}
-            
           />
         </div>
       </main>

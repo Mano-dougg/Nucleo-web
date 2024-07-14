@@ -9,7 +9,7 @@ interface CardProps extends ComponentProps<"a"> {
 const Card = (props: CardProps) => {
   return (
     <Link
-      href={`/produto/${props.link}`}
+      href={`/produto${props.link}`}
       className={`border border-black h-auto w-auto`}
       {...props}
     >

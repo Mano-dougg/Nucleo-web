@@ -5,11 +5,15 @@ import Image from "next/image";
 import { postproduct } from "@/controlers/postProduct";
 import { tagsEnum } from "@/enum/tags";
 import { updateProduct } from "@/controlers/updateProduct";
+import { deleteProduct } from "@/controlers/deleteProduct";
 
 
 interface CreateFormProps extends ComponentProps<"form"> {
   divStyle?: string;
   formStyle?:string;
+  link?: string;
+  onDelete?:() => void;
+
 }
 
 const UpdataForm = (props: CreateFormProps) => {
@@ -53,12 +57,12 @@ const UpdataForm = (props: CreateFormProps) => {
   }, [size]);
 
   useEffect(() => {
-    async function getProduct(id: number) {
-      const response = await fetch("http://localhost:3001/product/2");
+    async function getProduct() {
+      const response = await fetch(`http://localhost:3001/product/${props.link}`);
       const dados = await response.json();
       setData(dados);
     }
-    getProduct(1);
+    getProduct();
   }, []);
 
   useEffect(() => {
@@ -74,9 +78,12 @@ const UpdataForm = (props: CreateFormProps) => {
       }
     }
     setTags(newTags);
+    setFile(data?.image)
   }, [data]);
 
-  async function createInvoice(formData: FormData) {
+
+
+  async function submitProductUpdate(formData: FormData) {
     const rawFormData = {
       title: formData.get("title"),
       currentPrice: Number(formData.get("value")),
@@ -91,13 +98,13 @@ const UpdataForm = (props: CreateFormProps) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    await createInvoice(formData);
+    await submitProductUpdate(formData);
   };
 
   return (
     <form
-      className={`max-w-5xl w-full h-auto flex items-center border border-black justify-center gap-16 px-2 overflow-hidden mb-14 ${props.formStyle}`}
-      action={createInvoice}
+      className={`max-w-5xl w-full h-auto flex items-center border border-black justify-center gap-16 px-2 overflow-hidden mb-5 ${props.formStyle}`}
+      action={submitProductUpdate}
       onSubmit={handleSubmit}
     >
       <input
@@ -108,7 +115,7 @@ const UpdataForm = (props: CreateFormProps) => {
         onChange={handleUploadFile}
       />
       <label htmlFor="file" className="border border-black">
-        <Image src={file} height={486} width={414} alt="" />
+        <img src={file} height={486} width={414} alt="" />
       </label>
       <input
         type="text"
@@ -260,12 +267,14 @@ const UpdataForm = (props: CreateFormProps) => {
           <button
             type="submit"
             className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"
+            onClick={() => alert('Salvo!')}
           >
             Salvar
           </button>
           <button
             type="button"
             className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"
+            onClick={props.onDelete}
           >
             Excluir
           </button>

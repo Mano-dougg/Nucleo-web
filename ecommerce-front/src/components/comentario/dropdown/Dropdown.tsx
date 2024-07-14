@@ -1,13 +1,12 @@
 import data from "@/pages/produto/coments";
 import Comentario from "../Comentario";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import BaseText from "../textoBase/BaseText";
 import Image from "next/image";
 
 const Dropdown = () => {
   const [show, setShow] = useState<string>("flex");
   
-
   const handleClick = () => {
     setShow(() => (show == "flex" ? "hidden" : "flex"));
   };

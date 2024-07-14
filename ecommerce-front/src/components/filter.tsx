@@ -174,7 +174,7 @@ const Filter = ({ onCategoryChange }: any) => {
       </div>
 
      
-      <div className='sm:hidden flex flex-col mt-20'>
+      <div className='sm:hidden flex flex-col mt-20 gap-8'>
         <select
           className='form-select min-w-[190px] py-3 border-black border-[1px] text-[24px] text-center mb-4'
           onChange={handleCategoryChange}

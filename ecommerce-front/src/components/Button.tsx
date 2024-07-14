@@ -4,6 +4,7 @@ interface ButtonProps {
   url: string;
   children: React.ReactNode;
   addClass?:string;
+  onClick?: () => void;
 }
 
 const Button = (props: ButtonProps) => {

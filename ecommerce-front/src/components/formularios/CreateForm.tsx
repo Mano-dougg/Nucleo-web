@@ -1,26 +1,26 @@
 import createFn from "@/controlers/create";
 import deleteFn from "@/controlers/delete";
-import { useState, useEffect, ComponentProps } from "react";
-import Image from "next/image";
 import { postproduct } from "@/controlers/postProduct";
-import { rawListeners } from "process";
+import { tagsEnum, tagsEnumType } from "@/enum/tags";
+import { ComponentProps, useEffect, useState } from "react";
 
 interface CreateFormProps extends ComponentProps<"form"> {
-    divStyle?: string;
-    formStyle?:string;
+  divStyle?: string;
+  formStyle?: string;
+  close?: () => void
 }
 
 const CreateForm = (props: CreateFormProps) => {
-  const [file, setFile] = useState("");
+  const [ file, setFile ] = useState("");
 
   const handleUploadFile = (e: any) => {
-    setFile(URL.createObjectURL(e.target.files[0]));
+    setFile(URL.createObjectURL(e.target.files[ 0 ]));
   };
 
-  const [tag, setTag] = useState<string>("");
-  const [tags, setTags] = useState<string[]>([""]);
-  const [size, setSize] = useState<string>("");
-  const [sizes, setSizes] = useState<string[]>([]);
+  const [ tag, setTag ] = useState<string>("");
+  const [ tags, setTags ] = useState<string[]>([ "" ]);
+  const [ size, setSize ] = useState<string>("");
+  const [ sizes, setSizes ] = useState<string[]>([]);
 
   useEffect(() => {
     if (tag.trim() !== "") {
@@ -28,11 +28,11 @@ const CreateForm = (props: CreateFormProps) => {
         return;
       }
 
-      const newTags = [...tags, tag];
+      const newTags = [ ...tags, tag ];
       setTags(newTags);
       setTag("");
     }
-  }, [tag, tags]);
+  }, [ tag, tags ]);
 
   useEffect(() => {
     if (size.trim() !== "") {
@@ -40,18 +40,25 @@ const CreateForm = (props: CreateFormProps) => {
         return;
       }
 
-      const newSizes = [...sizes, size];
+      const newSizes = [ ...sizes, size ];
       setSizes(newSizes);
       setSize("");
     }
-  }, [size]);
+  }, [ size ]);
 
   async function createInvoice(formData: FormData) {
+    const createTags = []
+    for (const createTag of tags) {
+      console.log(createTag)
+      if ((tagsEnum[ createTag as tagsEnumType ] !== undefined)) {
+        createTags.push({ id: Number(tagsEnum[ createTag as tagsEnumType ]) })
+      }
+    }
     const rawFormData = {
       title: formData.get("title"),
       currentPrice: Number(formData.get("value")),
       sizes: sizes,
-      tags: { connect: [{ id: 2 }] },
+      tags: { connect: createTags },
       quantity: Number(formData.get("quantity")),
       image: formData.get("imageUrl"),
     };
@@ -68,7 +75,7 @@ const CreateForm = (props: CreateFormProps) => {
 
   return (
     <form
-      className={`max-w-5xl w-full h-auto flex items-center border border-black justify-center gap-16 px-2 overflow-hidden mb-14 ${props.formStyle}`}
+      className={`max-w-5xl w-full h-auto flex items-center border border-black justify-center gap-16 px-2 overflow-hidden mb-5 ${props.formStyle}`}
       action={createInvoice}
       onSubmit={handleSubmit}
     >
@@ -80,7 +87,7 @@ const CreateForm = (props: CreateFormProps) => {
         onChange={handleUploadFile}
       />
       <label htmlFor="file" className="border border-black">
-        <Image src={file} height={486} width={414} alt="" />
+        <img src={file} height={486} width={414} alt="" />
       </label>
       <input
         type="text"
@@ -223,14 +230,9 @@ const CreateForm = (props: CreateFormProps) => {
           <button
             type="submit"
             className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"
+            onSubmit={() => close()}
           >
             Salvar
-          </button>
-          <button
-            type="button"
-            className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"
-          >
-            Excluir
           </button>
         </div>
       </div>
