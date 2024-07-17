@@ -1,10 +1,10 @@
 "use client";
 import {
-    Dialog,
-    DialogContent,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import Link from "next/link";
 import UpdateForm from "../formularios/UpdataForm";
@@ -15,11 +15,14 @@ interface UpdateModalProps {
   ver: boolean;
   fechar: () => void;
   abrir: () => void;
-  link:string;
-
+  link: string;
 }
 
 const UpdateModal = ({ ver, fechar, abrir, link }: UpdateModalProps) => {
+  const handleClick = () => {
+
+      sessionStorage.setItem('pageId', link)
+  };
 
   return (
     <Dialog open={ver} modal defaultOpen={ver}>
@@ -34,6 +37,7 @@ const UpdateModal = ({ ver, fechar, abrir, link }: UpdateModalProps) => {
       <Link
         href={"/modal/update"}
         className=" border border-black p-5 sm:hidden bg-black text-white rounded-[60px] sm:text-[24px] text-[16px] sm:px-16 px-8 py-2"
+        onClick={() => handleClick()}
       >
         Editar
       </Link>
@@ -41,10 +45,13 @@ const UpdateModal = ({ ver, fechar, abrir, link }: UpdateModalProps) => {
         <DialogHeader>
           <DialogTitle className="text-center text-4xl">Editar</DialogTitle>
         </DialogHeader>
-        <UpdateForm link={link} onDelete={() => {
-          deleteProduct(Number(link));
-          alert("Excluído")
-          }}/>
+        <UpdateForm
+          link={link}
+          onDelete={() => {
+            deleteProduct(Number(link));
+            alert("Excluído");
+          }}
+        />
         <button
           type="button"
           className="bg-black text-white rounded-[60px] text-[24px] px-8 py-2 text-center lg:w-max"

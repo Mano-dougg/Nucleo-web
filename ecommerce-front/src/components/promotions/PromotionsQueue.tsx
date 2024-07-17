@@ -11,7 +11,7 @@ interface Product {
 }
 
 const PromotionQueue = () => {
-  const [queue, setQueue] = useState<Product[]>([]);
+  const [queue, setQueue] = useState<Product[]>([])
   useEffect(() => {
     const fetchProducts = async () => {
       try {

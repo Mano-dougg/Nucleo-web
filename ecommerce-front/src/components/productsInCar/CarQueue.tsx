@@ -4,6 +4,7 @@ import EmptyCar from './EmptyCar';
 import Order from './Order';
 
 interface Product {
+  id: string;
   name: string;
   imgUrl: string;
   price: number;
@@ -13,31 +14,22 @@ interface Product {
   currentPrice: number;
 }
 
-const CarQueue = ({ products }) => {
-  const [ data, setData ] = useState<Product[]>([]);
+const CarQueue = ({ products }: any) => {
+  const [data, setData] = useState<Product[]>([]);
+  console.log(data);
+  console.log(products);
 
   useEffect(() => {
-    const populateCarProducts = async (products, parsedProducts: number[]) => {
-      products?.forEach((product) => {
-        const parsedId = parseInt(product?.id, 10);
-        if (parsedProducts.includes(parsedId)) {
-          setData([ ...data, product ]);
-        }
-      });
-    };
+    try {
+      const carrinhoProducts = sessionStorage.getItem('cartIds') || '';
+      const carrinhoIds: string[] = JSON.parse(carrinhoProducts);
 
-    if (typeof window !== undefined) {
-      const carrinhoProducts = localStorage.getItem('carrinho');
-      if (carrinhoProducts) {
-        try {
-          const parsedProducts = JSON.parse(carrinhoProducts);
-          populateCarProducts(products, parsedProducts);
-        } catch (error) {
-          console.log(error);
-        }
-      }
+      const filteredProducts = products.filter(item => carrinhoIds.includes(item.id));
+      setData(filteredProducts);
+    } catch (err) {
+      console.log(err);
     }
-  }, [ products ]);
+  }, [products]);
 
   const sumPrice = data.reduce(
     (previousValue, currentValue) => previousValue + currentValue.currentPrice,
@@ -45,13 +37,13 @@ const CarQueue = ({ products }) => {
   );
 
   return (
-    <div className="flex mt-[50px] flex-col  sm:text-[24px] text-[24px] ">
+    <div className="flex mt-[50px] flex-col sm:text-[24px] text-[24px]">
       {data?.length === 0 ? (
         <EmptyCar />
       ) : (
         <>
           <p className="self-start sm:text-[32px] font-bold mb-2">Itens no carrinho</p>
-          <div className="flex flex-col gap-16 mb-8">
+          <div className="flex flex-col lg:flex-wrap gap-16 mb-8 items-center">
             {data?.map((product, index) => (
               <div key={index} className="flex flex-col xl:flex-row gap-5 items-center mb-5">
                 <Product
@@ -60,9 +52,14 @@ const CarQueue = ({ products }) => {
                   price={product.currentPrice / 100}
                   size={product.sizes.join('-')}
                 />
+                {data.length === 1 && (
+                  <Order sumPrice={sumPrice} />
+                )}
               </div>
             ))}
-            <Order sumPrice={sumPrice} />
+            {data.length > 1 && (
+              <Order sumPrice={sumPrice} />
+            )}
           </div>
         </>
       )}

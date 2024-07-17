@@ -167,7 +167,7 @@ const Filter = ({ onCategoryChange }: any) => {
             />
             <span className='ml-2 mr-2 text-left text-[24px]'>Slim Fit</span>
           </label>
-          <button className='bg-black text-white rounded-[60px] text-[24px] px-8 py-2 self-center mt-10'>
+          <button className='bg-black text-white font-bold rounded-[60px] text-[24px] px-8 py-2 self-center mt-10 font-inter '>
             Ver mais
           </button>
         </div>

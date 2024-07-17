@@ -31,6 +31,7 @@ const UpdataForm = (props: CreateFormProps) => {
   const [price, setPrice] = useState<number>();
   const [quant, setQuan] = useState<number>();
   const [data, setData] = useState<any>();
+  
 
   useEffect(() => {
     if (tag.trim() !== "") {
@@ -63,7 +64,8 @@ const UpdataForm = (props: CreateFormProps) => {
       setData(dados);
     }
     getProduct();
-  }, []);
+    console.log(props.link)
+  }, [props.link]);
 
   useEffect(() => {
     setPrice(data?.currentPrice);
@@ -81,7 +83,9 @@ const UpdataForm = (props: CreateFormProps) => {
     setTags(newTags);
     console.log(tags)
     setFile(data?.image)
-  }, [data]);
+  }, [data, file]);
+
+  useEffect(() => {}, [file])
 
 
 
@@ -124,7 +128,7 @@ const UpdataForm = (props: CreateFormProps) => {
         onChange={handleUploadFile}
       />
       <label htmlFor="file" className="border border-black">
-        <img src={file} height={486} width={414} alt="" />
+        <img src={file} height={486} width={414}  />
       </label>
       <input
         type="text"

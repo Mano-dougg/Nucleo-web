@@ -16,6 +16,11 @@ const Produtos = () => {
     setSelectedCategory(category);
     setSelectedStyle(style);
     setSelectedFitting(fitting);
+    console.log(selectedCategory)
+    console.log(selectedStyle)
+
+
+    
   };
 
   return (
@@ -31,6 +36,7 @@ const Produtos = () => {
             selectedStyle={selectedStyle}
             selectedFitting={selectedFitting}
             searchProduct={searchProduct}
+            
           />
         </div>
       </main>

@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps = async () => {
   console.log('Getting Static Side Props');
   const res = await fetch(`http://localhost:3001/product/`);
   const products: Product[] | any = await res.json();
-  console.log(products);
+  
   return {
     props: {
       products
@@ -23,12 +23,13 @@ export const getStaticProps: GetStaticProps = async () => {
 type StaticProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const ProductsInCar: React.FC<StaticProps> = ({ products }) => {
-  console.log(products);
+  const produtos = products
+  
   return (
     <><Header isCarrinho={true} />
       <main className='items-center flex-col flex gap-10'>
         <SearchBar />
-        <CarQueue products={products} />
+        <CarQueue products={produtos} />
         <RecentlySeen />
         <ProductsQueue />
       </main>

@@ -14,7 +14,16 @@ const CreateForm = (props: CreateFormProps) => {
   const [ file, setFile ] = useState("");
 
   const handleUploadFile = (e: any) => {
-    setFile(URL.createObjectURL(e.target.files[ 0 ]));
+    const reader = new FileReader();
+    const blob = e.target.files?.[0];
+
+    if (blob) {
+      reader.readAsDataURL(blob);
+      reader.onloadend = () => {
+        setFile(reader.result as string);
+      };
+    }
+    console.log(file)
   };
 
   const [ tag, setTag ] = useState<string>("");
