@@ -40,7 +40,7 @@ function Footer() {
       <div className=''>
         <div className='flex space-x-8 sm:space-x-0'>
           <div className='sm:hidden'>
-            <img className='w-[81px]' src='Clothes 1.svg' alt='Logo' />
+            <img className='w-[81px]' src='/Clothes 1.svg' alt='Logo' />
             <p className=' text-white text-[20px]'>BoxClothes</p>
           </div>
 
@@ -49,10 +49,10 @@ function Footer() {
               Encontre-nos em:
             </h6>
             <div className='flex sm:gap-x-8 space-x-4'>
-              <img src='facebook-white.svg' alt='Facebook' />
-              <img src='instagram-white.svg' alt='Instagram' />
-              <img src='twitter-white.svg' alt='Twitter' />
-              <img src='linkedin-white.svg' alt='LinkedIn' />
+              <img src='/facebook-white.svg' alt='Facebook' />
+              <img src='/instagram-white.svg' alt='Instagram' />
+              <img src='/twitter-white.svg' alt='Twitter' />
+              <img src='/linkedin-white.svg' alt='LinkedIn' />
               <img className='hidden sm:flex' src='youtube-white.svg' alt='YouTube' />
             </div>
             <h6 className='text-[24px] hidden sm:flex  text-white'>
@@ -66,7 +66,7 @@ function Footer() {
                   className="w-full text-[16px] font-medium bg-transparent focus:outline-none"
                 />
               </div>
-              <button className="bg-black w-[40%] h-[54px] text-white text-center text-[20px]">
+              <button className="bg-black w-[40%] h-[54px] text-white text-center text-[20px] ">
                 Inscreva-se
               </button>
               

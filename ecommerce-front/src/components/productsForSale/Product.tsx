@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from 'next/router';
+import { useState } from 'react';
+import UpdateModal from '../modal/UpdateModal';
 
 type Props = {
   id: number; 
@@ -7,13 +9,16 @@ type Props = {
   imgUrl: string;
   price: number;
   isEdit?: boolean;
+  link: string;
 };
 
-const Product = ({ id, name, imgUrl, price, isEdit }: Props) => {
+const Product = ({ id, name, imgUrl, price, isEdit, link }: Props) => {
+  const [ver, setVer] = useState(false)
   const router = useRouter();
 
   const handleClick = () => {
     router.push(`/produto/${id}`);
+
   
     const storageIdExist = sessionStorage.getItem('productsIds');
     let storageId;
@@ -35,7 +40,7 @@ const Product = ({ id, name, imgUrl, price, isEdit }: Props) => {
       </div>
       <div className={`${isEdit ? 'flex-col' : ''} flex items-center justify-between flex-wrap`}>
         {isEdit ? (
-          <button className='bg-black text-white px-8 py-2 rounded-full text-[24px]'>Editar</button>
+         <UpdateModal ver={ver} fechar={() => setVer(false)} abrir={() => setVer(true)} link={id.toString()} />
         ) : (
           <>
             <p className='font-bold'>R${(price / 100).toFixed(2)}</p>

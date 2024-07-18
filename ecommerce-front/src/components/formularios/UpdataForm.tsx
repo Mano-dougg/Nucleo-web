@@ -3,7 +3,7 @@ import deleteFn from "@/controlers/delete";
 import { useState, useEffect, ComponentProps } from "react";
 import Image from "next/image";
 import { postproduct } from "@/controlers/postProduct";
-import { tagsEnum } from "@/enum/tags";
+import { tagsEnum, tagsEnumType } from "@/enum/tags";
 import { updateProduct } from "@/controlers/updateProduct";
 import { deleteProduct } from "@/controlers/deleteProduct";
 
@@ -31,6 +31,7 @@ const UpdataForm = (props: CreateFormProps) => {
   const [price, setPrice] = useState<number>();
   const [quant, setQuan] = useState<number>();
   const [data, setData] = useState<any>();
+  
 
   useEffect(() => {
     if (tag.trim() !== "") {
@@ -63,7 +64,8 @@ const UpdataForm = (props: CreateFormProps) => {
       setData(dados);
     }
     getProduct();
-  }, []);
+    console.log(props.link)
+  }, [props.link]);
 
   useEffect(() => {
     setPrice(data?.currentPrice);
@@ -71,28 +73,39 @@ const UpdataForm = (props: CreateFormProps) => {
     setQuan(data?.quantity);
     setSizes(data?.sizes);
     const dataTags = data?.tags;
+    console.log(dataTags)
     const newTags: string[] = [];
     if (dataTags) {
       for (const dataTag of dataTags) {
-        newTags.push(tagsEnum[`${dataTag.id}`]);
+        newTags.push(dataTag?.title);
       }
     }
     setTags(newTags);
+    console.log(tags)
     setFile(data?.image)
-  }, [data]);
+  }, [data, file]);
+
+  useEffect(() => {}, [file])
 
 
 
   async function submitProductUpdate(formData: FormData) {
+    const createTags = []
+    for (const createTag of tags) {
+      console.log(createTag)
+      if ((tagsEnum[ createTag as tagsEnumType ] !== undefined)) {
+        createTags.push({ id: Number(tagsEnum[ createTag as tagsEnumType ]) })
+      }
+    }
     const rawFormData = {
       title: formData.get("title"),
       currentPrice: Number(formData.get("value")),
       sizes: sizes,
-      tags: { set: [{ id: 2 }] },
+      tags: { set: createTags },
       quantity: Number(formData.get("quantity")),
     };
-
-    updateProduct(rawFormData, 2);
+    console.log(rawFormData)
+    updateProduct(rawFormData, Number(props.link));
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -115,7 +128,7 @@ const UpdataForm = (props: CreateFormProps) => {
         onChange={handleUploadFile}
       />
       <label htmlFor="file" className="border border-black">
-        <img src={file} height={486} width={414} alt="" />
+        <img src={file} height={486} width={414}  />
       </label>
       <input
         type="text"

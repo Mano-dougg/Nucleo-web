@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['unsplash.com', 'figma.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,12 +9,8 @@ const nextConfig = {
         port: '',
         pathname: 'unsplash/**',
       },
-      {
-        protocol: 'https',
-        hostname: 's3-alpha-sig.figma.com',
-        port: '',
-      },
     ],
+    domains: ['s3-alpha-sig.figma.com'],
   },
 };
 
