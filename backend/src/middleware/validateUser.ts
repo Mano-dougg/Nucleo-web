@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { type Request, type Response, type NextFunction } from 'express';
 import { z, ZodError } from 'zod';
 
 export function validateUser(zodSchema: z.ZodType<any, any>) {

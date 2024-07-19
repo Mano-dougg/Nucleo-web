@@ -1,9 +1,9 @@
 import cors from 'cors';
 import { Router } from 'express';
-import { UserCreateInputSchema, UserPartialSchema } from '../../prisma/generated/zod/index';
-import { createUser, deleteUser, getSessionId, getUserByEmail, login } from '../controller/userController';
-import { getRequestToken } from '../middleware/getRequestToken';
-import { validateUser } from '../middleware/validateUser';
+import { UserCreateInputSchema, UserPartialSchema } from '../../prisma/generated/zod/index.js';
+import { createUser, deleteUser, getSessionId, getUserByEmail, login } from '../controller/userController.js';
+import { getRequestToken } from '../middleware/getRequestToken.js';
+import { validateUser } from '../middleware/validateUser.js';
 
 const userRouter = Router();
 

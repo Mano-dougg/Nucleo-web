@@ -1,13 +1,13 @@
 import { Prisma, PrismaClient } from '@prisma/client';
-import { Request, Response } from 'express';
+import { type Request,type Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import { User } from '../../prisma/generated/zod';
-import { TMDBErrorResponse } from '../types/TMDBErrorResponse';
+import { type User } from '../../prisma/generated/zod/index.js';
+import { type TMDBErrorResponse } from '../types/TMDBErrorResponse.js';
 // import { passwordlessUser } from '../utils/sensitiveDataRemoval';
 import {
   // fetchUserDetails,
   generateSessionId
-} from '../utils/tmdbServices';
+} from '../utils/tmdbServices.js';
 
 const prisma = new PrismaClient();
 

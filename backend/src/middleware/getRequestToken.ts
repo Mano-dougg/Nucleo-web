@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
-import { generateRequestToken } from '../utils/tmdbServices';
-import { TMDBErrorResponse } from '../types/TMDBErrorResponse';
+import { type Request, type Response, type NextFunction } from 'express';
+import { generateRequestToken } from '../utils/tmdbServices.js';
+import { type TMDBErrorResponse } from '../types/TMDBErrorResponse.js';
 import { StatusCodes } from 'http-status-codes';
 
 export function getRequestToken() {

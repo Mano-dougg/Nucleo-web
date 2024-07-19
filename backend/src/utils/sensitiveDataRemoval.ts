@@ -1,4 +1,4 @@
-import { User } from "../../prisma/generated/zod";
+import { type User } from "../../prisma/generated/zod/index.js";
 
 export const passwordlessUser = (user: User) => {
   function exclude<User, Key extends keyof User>(

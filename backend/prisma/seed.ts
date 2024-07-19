@@ -21,6 +21,7 @@ async function main() {
       password: '1234'
     },
   })
+  console.log('Test users created: ', { revolo, fernando });
 }
 main()
   .then(async () => {
