@@ -25,10 +25,13 @@ export const authConfig = {
     },
     async session({ session, token }) {
       // Send properties to the client, like an access_token from a provider.
+      console.log('Session callback');
       if (token.requestToken) {
+        console.log('Request token is: ', token.requestToken);
         (session as any).requestToken = token.requestToken;
       }
       if (token.sessionId) {
+        console.log('SessionId is: ', token.requestToken);
         (session as any).sessionId = token.sessionId;
       }
       return session;
