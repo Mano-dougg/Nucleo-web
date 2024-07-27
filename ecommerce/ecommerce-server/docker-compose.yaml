@@ -1,0 +1,77 @@
+services:
+  node:
+    image: node:18-alpine
+    container_name: node
+    # Keeps container running
+    tty: true
+    # Allows to read from stdin
+    stdin_open: true
+    command: sh
+    # Restarts the container unless stopped
+    restart: unless-stopped
+    # Exposes default Node.js port
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    # Configuration and sensitive data
+    env_file: .env
+    # Environment variables
+    environment:
+      - DB_HOST=${DB_HOST}
+      - EXPRESS_PORT=${EXPRESS_PORT}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    entrypoint: /bin/sh -c "npm install && npm run dev"
+    healthcheck:
+      # Checks if port 3001 is being used
+      test: ["CMD", "lsof", "-t", "-i:3001"]
+      timeout: 10s
+      retries: 5
+
+  postgres:
+    image: postgres
+    hostname: postgreshost
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - ${POSTGRES_PORT}:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  pgadmin:
+    image: dpage/pgadmin4
+    env_file:
+      - .env
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+      - POSTGRES_HOST=postgreshost
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - PGADMIN_CONFIG_SERVER_MODE=False
+      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
+    ports:
+      - ${PGADMIN_PORT}:80
+    depends_on:
+      postgres:
+        condition: service_healthy
+    user: root
+    volumes:
+      - ./entrypoint.sh:/entrypoint_custom.sh
+    entrypoint: /entrypoint_custom.sh
+
+volumes:
+  postgres_data:

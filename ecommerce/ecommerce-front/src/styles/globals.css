@@ -1,0 +1,16 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+  .modal_edit_form_title{
+    @apply text-xl font-semibold
+  }
+  
+  .modal_edit_form_input{
+    @apply w-full py-2 px-1 font-semibold text-xl border border-black rounded-3xl min-w-60
+  }
+  
+  .modal_edit_form_radio{
+    @apply border border-black h-6 w-6 appearance-none rounded-full checked:border-4
+  }
+  
